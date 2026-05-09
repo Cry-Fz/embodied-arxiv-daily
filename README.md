@@ -130,7 +130,7 @@ git push -u origin main
 https://你的用户名.github.io/你的仓库名/
 ```
 
-自动更新由 `.github/workflows/update-arxiv.yml` 执行，默认每天北京时间 13:30 抓取一次。若 workflow 无法提交更新，到 `Settings -> Actions -> General -> Workflow permissions` 选择 `Read and write permissions`。
+自动更新由 `.github/workflows/update-arxiv.yml` 执行，默认每天北京时间 08:00 抓取一次。若 workflow 无法提交更新，到 `Settings -> Actions -> General -> Workflow permissions` 选择 `Read and write permissions`。
 
 ## 文件结构
 

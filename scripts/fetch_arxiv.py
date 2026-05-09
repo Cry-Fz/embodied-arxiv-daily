@@ -97,6 +97,13 @@ def build_query(config: dict[str, Any], target_date: dt_date, use_date_filter: b
   return f"({category_query}) AND submittedDate:[{stamp}0000 TO {stamp}2359]"
 
 
+def build_category_query(category: str, target_date: dt_date, use_date_filter: bool) -> str:
+  if not use_date_filter:
+    return f"cat:{category}"
+  stamp = target_date.strftime("%Y%m%d")
+  return f"cat:{category} AND submittedDate:[{stamp}0000 TO {stamp}2359]"
+
+
 def make_api_url(query: str, max_results: int) -> str:
   params = {
     "search_query": query,
@@ -108,7 +115,7 @@ def make_api_url(query: str, max_results: int) -> str:
   return f"{API_URL}?{urllib.parse.urlencode(params)}"
 
 
-def fetch_feed(query: str, max_results: int) -> str:
+def fetch_feed(query: str, max_results: int, attempts: int = 6) -> str:
   url = make_api_url(query, max_results)
   request = urllib.request.Request(
     url,
@@ -117,8 +124,17 @@ def fetch_feed(query: str, max_results: int) -> str:
       "Accept": "application/atom+xml, application/xml;q=0.9, */*;q=0.8",
     },
   )
-  with urllib.request.urlopen(request, timeout=45) as response:
-    return response.read().decode("utf-8")
+  last_error: Exception | None = None
+  for attempt in range(1, attempts + 1):
+    try:
+      with urllib.request.urlopen(request, timeout=75) as response:
+        return response.read().decode("utf-8")
+    except Exception as error:
+      last_error = error
+      if attempt == attempts:
+        break
+      time.sleep(8 * attempt)
+  raise RuntimeError(f"Failed to fetch arXiv feed after {attempts} attempts: {last_error}") from last_error
 
 
 def child_text(entry: ET.Element, path: str) -> str:
@@ -353,8 +369,24 @@ def fetch_daily(
   tz_name: str,
 ) -> dict[str, Any]:
   query = build_query(config, target_date, use_date_filter)
-  xml_text = fetch_feed(query, max_results)
-  raw_papers = parse_feed(xml_text)
+  try:
+    xml_text = fetch_feed(query, max_results)
+    raw_papers = parse_feed(xml_text)
+  except Exception as error:
+    if not use_date_filter:
+      raise
+    print(f"{target_date.isoformat()}: combined query failed, falling back to per-category queries: {error}", file=sys.stderr)
+    raw_papers = []
+    for category in config.get("categories", []):
+      category_query = build_category_query(category, target_date, use_date_filter)
+      try:
+        raw_papers.extend(parse_feed(fetch_feed(category_query, max_results)))
+      except Exception as category_error:
+        print(
+          f"{target_date.isoformat()}: category {category} failed and was skipped: {category_error}",
+          file=sys.stderr,
+        )
+      time.sleep(3)
   matched = []
   for paper in raw_papers:
     scored = score_paper(paper, config, minimum_score)
