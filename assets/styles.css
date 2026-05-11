@@ -247,7 +247,21 @@ h2 {
 .rail {
   position: sticky;
   top: 16px;
+  display: flex;
+  max-height: calc(100vh - 32px);
+  flex-direction: column;
+  overflow: hidden;
   padding: 18px;
+}
+
+.filter-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin-top: 22px;
+  padding-right: 4px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
 }
 
 .control-block + .control-block {
@@ -709,6 +723,15 @@ h2 {
 
   .rail {
     position: static;
+    display: block;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .filter-body {
+    margin-top: 22px;
+    padding-right: 0;
+    overflow: visible;
   }
 
   .rules-aside {
