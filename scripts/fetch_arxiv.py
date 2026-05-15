@@ -71,7 +71,7 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument("--date", help="Archive date in YYYY-MM-DD. Defaults to today in --timezone.")
   parser.add_argument("--days", type=int, default=1, help="Fetch N days ending at --date.")
   parser.add_argument("--timezone", default=None, help="Timezone used for default date and metadata.")
-  parser.add_argument("--max-results", type=int, default=700, help="Maximum arXiv records to inspect per day.")
+  parser.add_argument("--max-results", type=int, default=2000, help="Maximum arXiv records to inspect per day.")
   parser.add_argument("--minimum-score", type=int, default=None, help="Override config minimum_score.")
   parser.add_argument("--no-date-filter", action="store_true", help="Fetch latest category papers without submittedDate.")
   parser.add_argument("--rebuild-index", action="store_true", help="Only rebuild data/index.json from local daily files.")

@@ -3,6 +3,7 @@ name: Update arXiv archive
 on:
   schedule:
     # GitHub Actions uses UTC. 00:00 UTC is 08:00 in Beijing/Singapore.
+    # The job fetches the last completed UTC date and backfills recent days.
     - cron: "0 0 * * *"
   workflow_dispatch:
     inputs:
@@ -29,9 +30,10 @@ jobs:
       - name: Fetch arXiv papers
         run: |
           if [ -n "${{ github.event.inputs.date }}" ]; then
-            python scripts/fetch_arxiv.py --date "${{ github.event.inputs.date }}" --timezone Asia/Shanghai --max-results 700
+            python scripts/fetch_arxiv.py --date "${{ github.event.inputs.date }}" --timezone Asia/Shanghai --max-results 2000
           else
-            python scripts/fetch_arxiv.py --timezone Asia/Shanghai --max-results 700
+            ARCHIVE_DATE="$(date -u -d 'yesterday' +'%F')"
+            python scripts/fetch_arxiv.py --date "$ARCHIVE_DATE" --days 8 --timezone Asia/Shanghai --max-results 2000
           fi
 
       - name: Commit archive updates

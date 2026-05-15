@@ -1,12 +1,12 @@
 {
   "date": "2026-05-07",
-  "generated_at": "2026-05-09T15:15:13.418242+00:00",
+  "generated_at": "2026-05-15T03:39:41.457794+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202605070000 TO 202605072359]",
-  "total_fetched": 636,
-  "total_matched": 36,
+  "total_fetched": 833,
+  "total_matched": 43,
   "papers": [
     {
       "title": "Hitting Time Isomorphism for Multi-Stage Planning with Foundation Policies",
@@ -46,6 +46,51 @@
         "offline reinforcement learning",
         "policy learning",
         "reinforcement learning"
+      ]
+    },
+    {
+      "title": "HumanNet: Scaling Human-centric Video Learning to One Million Hours",
+      "authors": [
+        "Yufan Deng",
+        "Daquan Zhou"
+      ],
+      "summary": "Progress in embodied intelligence increasingly depends on scalable data infrastructure. While vision and language have scaled with internet corpora, learning physical interaction remains constrained by the lack of large, diverse, and richly annotated human activity data. We present HumanNet, a one-million-hour human-centric video corpus that captures how humans interact with the physical world at scale. HumanNet spans both first-person and third-person perspectives and covers fine-grained activities, human-object interactions, tool use, and long-horizon behaviors across diverse real-world environments. Beyond raw video, the dataset provides interaction-centric annotations, including captions, motion descriptions, and hand and body-related signals, enabling motion-aware and interaction-aware learning. Beyond scale, HumanNet introduces a systematic data curation paradigm for embodied learning, where human-centric filtering, temporal structuring, viewpoint diversity, and annotation enrichment are treated as first-class design principles. This design transforms unstructured internet video into a scalable substrate for representation learning, activity understanding, motion generation, and human-to-robot transfer. We conduct a first-step validation on the value of this design through controlled vision-language-action ablation: under a fixed set of validation data, continued training from the Qwen VLM model with 1000 hours of egocentric video drawn from HumanNet surpasses the continued training with 100 hours of real-robot data from Magic Cobot, indicating that egocentric human video could be a scalable and cost-effective substitute for robot data. By building this project, we aim to explore the opportunity to scale embodied foundation models using human-centric videos, rather than relying solely on robot-specific data.",
+      "published": "2026-05-07T15:21:58Z",
+      "updated": "2026-05-07T15:21:58Z",
+      "arxiv_id": "2605.06747v1",
+      "abs_url": "http://arxiv.org/abs/2605.06747v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.06747v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "comment": "Github: https://github.com/DAGroup-PKU/HumanNet Project website: https://dagroup-pku.github.io/HumanNet/",
+      "code_url": "https://github.com/DAGroup-PKU/HumanNet",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "机器人操作",
+        "VLA/多模态策略",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 16,
+      "anchor_terms": [
+        "embodied",
+        "robot",
+        "vision-language-action"
+      ],
+      "matched_terms": [
+        "egocentric",
+        "embodied",
+        "embodied intelligence",
+        "embodied learning",
+        "foundation model",
+        "robot",
+        "vision-language-action"
       ]
     },
     {
@@ -106,10 +151,10 @@
       ],
       "summary": "Vision-language-action (VLA) models inherit rich visual-semantic priors from pre-trained vision-language backbones, but adapting them to robotic control remains challenging. Full fine-tuning (FFT) is prone to overfitting on downstream robotic data and catastrophic forgetting of pretrained vision-language capabilities. Parameter-efficient fine-tuning (PEFT) better preserves pre-trained knowledge, yet existing PEFT methods still struggle to adapt effectively to robot control tasks. To address this gap, we propose VLA-GSE, a parameter-efficient VLA fine-tuning framework that improves control adaptation while retaining PEFT's knowledge preservation advantage. Specifically, VLA-GSE (Generalized and Specialized Experts) is initialized by spectrally decomposing the frozen backbone, assigning leading singular components to generalized experts (shared experts) and disjoint residual components to specialized experts (routed experts). This decomposition improves adaptation capacity under a fixed trainable-parameter budget. Under a comparable parameter budget, VLA-GSE updates only 2.51% of the full model parameters and consistently outperforms strong FFT and PEFT baselines. It achieves 81.2% average zero-shot success on LIBERO-Plus, preserves pre-trained VLM capability comparably to LoRA on multimodal understanding benchmarks, and improves real-world manipulation success under multiple distribution shifts. Code is available at: https://github.com/YuhuaJiang2002/VLA-GSE",
       "published": "2026-05-07T12:56:58Z",
-      "updated": "2026-05-07T12:56:58Z",
-      "arxiv_id": "2605.06175v1",
-      "abs_url": "http://arxiv.org/abs/2605.06175v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.06175v1",
+      "updated": "2026-05-08T06:32:29Z",
+      "arxiv_id": "2605.06175v2",
+      "abs_url": "http://arxiv.org/abs/2605.06175v2",
+      "pdf_url": "https://arxiv.org/pdf/2605.06175v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -188,6 +233,190 @@
         "navigation",
         "robot",
         "robotic"
+      ]
+    },
+    {
+      "title": "Learning Material-Aware Hamiltonian Risk Fields for Safe Navigation",
+      "authors": [
+        "Aditya Sai Ellendula",
+        "Yi Wang",
+        "Chandrajit Bajaj"
+      ],
+      "summary": "Risk-aware navigation should be selective: a policy should expose evasive degrees of freedom only when the local scene admits a lower-risk feasible maneuver, and suppress them when no safer alternative exists. We show that adding one context-energy term to a port-Hamiltonian navigation policy produces a learned force channel with exactly this falsifiable signature. When the local risk field contains a feasible lower-risk direction, the induced context force activates toward it; when the apparent escape is blocked or not yet available, a route-aware gate suppresses lateral force rather than hallucinating an unsafe maneuver. A CVaR tail-risk objective focuses gradient updates on rare but consequential risk transitions. We validate the selectivity signature across four settings. In the primary delayed-required-escape benchmark, route-aware CVaR reduces premature force activation from 0.950 to 0.180 versus DWA while raising success from 0.480 to 0.810 with zero replans. On real off-road terrain (RELLIS-3D), route-aware enrichment achieves correct activation rate 0.837 and false activation rate 0.114, compared to 0.378/0.752 for scalar risk gradients. On static semantic maps (DFC2018), enrichment reduces catastrophic failure from 0.60 to 0.10 and oscillation by 90.7% while preserving path efficiency. In highway traffic, collisions drop from 100% to 0% when a lane escape is feasible; when no escape exists, the policy suppresses the lateral maneuver. The selectivity property follows from the gradient structure of the context energy rather than from training-time tuning.",
+      "published": "2026-05-07T23:33:34Z",
+      "updated": "2026-05-07T23:33:34Z",
+      "arxiv_id": "2605.07038v1",
+      "abs_url": "http://arxiv.org/abs/2605.07038v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.07038v1",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.MA",
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "数据集/评测",
+        "感知与3D理解"
+      ],
+      "topic": "导航与移动",
+      "score": 4,
+      "anchor_terms": [
+        "navigation"
+      ],
+      "matched_terms": [
+        "navigation"
+      ]
+    },
+    {
+      "title": "Intention assimilation control for accurate tracking with variable impedance in teleoperation",
+      "authors": [
+        "Atsushi Takagi",
+        "Yanan Li",
+        "Hiroaki Gomi",
+        "Etienne Burdet"
+      ],
+      "summary": "Robot systems for teleoperation commonly use a spring-like force pulling the follower robot towards the leader's position to track their movements. With this control strategy, the tracking accuracy deteriorates when the follower' stiffness is low, but high stiffness poses a danger to objects or people in the follower robot's environment. To address this trade-off between tracking accuracy and safety, we propose an alternative intention assimilation control (IAC) strategy where the robot's tracking accuracy can be ensured without high stiffness. Different from traditional approaches, which transmit the leader's current position to the follower, this new controller estimates the leader's target position and transmits it to the follower. With this strategy, the follower impedance can be changed on-the-fly to continuously reflect the user's desired impedance or modulated automatically to fulfill the task requirements. Our controller was validated on two 7 degree-of-freedom manipulators, yielding high tracking accuracy with varying impedance. Four experiments were conducted to compare {teleoperation} with IAC to tele-impedance control (TIC) during free tracking, interaction with a balloon, during peg insertion, and table polishing with force feedback. The results show that IAC increases tracking accuracy, improves task completion rate and reduces completion time. IAC enables the robot to accurately replicate the user's movement while giving them freedom to modulate the impedance according to their intention, providing an unprecedented level of control of the follower's position and its impedance during unilateral and bilateral teleoperation.",
+      "published": "2026-05-07T23:31:12Z",
+      "updated": "2026-05-07T23:31:12Z",
+      "arxiv_id": "2605.07037v1",
+      "abs_url": "http://arxiv.org/abs/2605.07037v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.07037v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 7,
+      "anchor_terms": [
+        "manipulator",
+        "robot",
+        "teleoperation"
+      ],
+      "matched_terms": [
+        "manipulator",
+        "robot",
+        "teleoperation"
+      ]
+    },
+    {
+      "title": "A Systematic Investigation of The RL-Jailbreaker in LLMs",
+      "authors": [
+        "Montaser Mohammedalamen",
+        "Kevin Roice",
+        "Reginald McLean",
+        "Alyssa Lefaivre Škopac"
+      ],
+      "summary": "The evolution of generative models from next-token predictors to autonomous engines of complex systems necessitates rigorous safety hardening. Adversarial jailbreaking, the strategic manipulation of models to elicit harmful output, remains a primary threat to safe deployment. While Reinforcement Learning (RL) frames jailbreaking as a multi-step attack through sequential optimization, a mechanistic understanding of why the framework succeeds remains incomplete. To fill this gap, we present the first systematic decomposition of RL jailbreaking. We deconstruct the framework into problem formalization (reward function, action space, episode length), and algorithmic measures (RL algorithm, training data, reward-shaping) to identify the structural determinants of adversarial success. Our results reveal that the RL-jailbreaker successfully compromised all targeted models and safeguards. Through this first-of-its-kind analysis, we demonstrate that environment formalization, specifically dense rewards and extended episode lengths, is the primary driver of jailbreaking success. This work provides a tool for improving RL-jailbreaker efficiency and, ultimately, harden generative models resistant to RL-based attacks.",
+      "published": "2026-05-07T23:22:07Z",
+      "updated": "2026-05-07T23:22:07Z",
+      "arxiv_id": "2605.07032v1",
+      "abs_url": "http://arxiv.org/abs/2605.07032v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.07032v1",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "comment": "Warning: To demonstrate vulnerabilities, this paper contains unfiltered and potentially offensive jailbreaking examples. Reader discretion advised",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "强化/模仿学习"
+      ],
+      "topic": "机器人操作",
+      "score": 2,
+      "anchor_terms": [
+        "reinforcement learning"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "reinforcement learning"
+      ]
+    },
+    {
+      "title": "AirBender: Adaptive Transportation of Bendable Objects Using Dual UAVs",
+      "authors": [
+        "Jiawei Xu",
+        "Longsen Gao",
+        "Rafael Fierro",
+        "David Saldaña"
+      ],
+      "summary": "The interaction of robots with bendable objects in midair presents significant challenges in control, often resulting in performance degradation and potential crashes, especially for aerial robots due to their limited actuation capabilities and constant need to remain airborne. This paper presents an adaptive controller that enables two aerial vehicles to collaboratively follow a trajectory while transporting a bendable object without relying on explicit elasticity models. Our method allows on-the-fly adaptation to the object's unknown deformable properties, ensuring stability and performance in trajectory-tracking tasks. We use Lyapunov analysis to demonstrate that our adaptive controller is asymptotically stable. Our method is evaluated through hardware experiments in various scenarios, demonstrating the capabilities of using multirotor aerial vehicles to handle bendable objects.",
+      "published": "2026-05-07T22:36:03Z",
+      "updated": "2026-05-07T22:36:03Z",
+      "arxiv_id": "2605.07003v1",
+      "abs_url": "http://arxiv.org/abs/2605.07003v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.07003v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 5,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "aerial robot",
+        "robot"
+      ]
+    },
+    {
+      "title": "Bi3: A Biplatform, Bicultural, Biperson Dataset for Social Robot Navigation",
+      "authors": [
+        "Andrew Stratton",
+        "Phani Teja Singamaneni",
+        "Pranav Goyal",
+        "Rachid Alami",
+        "Christoforos Mavrogiannis"
+      ],
+      "summary": "We contribute Bi3, a dataset of social robot navigation among groups of people in a constrained lab space. Compared to prior data collection efforts for social robot navigation, our dataset is unique in that it features: an original experiment design giving rise to close navigation encounters between two humans and a robot; five different navigation algorithms; two different robot platforms; a diverse participant pool of 74 people recruited from two sites in the USA and France; multimodal data streams including 10.5 hours of human and robot ground-truth motion tracks, RGB video, and user impressions over robot performance. Our analysis of the collected dataset through metrics like interaction density and human velocity suggests that Bi3 represents a benchmark of unique diversity and modeling complexity. Bi3 contributes towards understanding how humans and robots can productively mesh their activities in constrained environments, and can be a resource for training models of human motion prediction and robot control policies for navigation in densely crowded spaces.",
+      "published": "2026-05-07T19:05:37Z",
+      "updated": "2026-05-07T19:05:37Z",
+      "arxiv_id": "2605.06863v1",
+      "abs_url": "http://arxiv.org/abs/2605.06863v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.06863v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.HC"
+      ],
+      "comment": "ICRA 2026",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 7,
+      "anchor_terms": [
+        "navigation",
+        "robot"
+      ],
+      "matched_terms": [
+        "navigation",
+        "robot"
       ]
     },
     {
@@ -317,6 +546,56 @@
         "quadruped",
         "reinforcement learning",
         "robot"
+      ]
+    },
+    {
+      "title": "An Aerial Manipulator for Perception-Driven Flower Targeting Toward Contactless Pollination in Vertical Farming",
+      "authors": [
+        "Chenzhe Jin",
+        "Zhuohang Wu",
+        "Yifan Cai",
+        "Xiangqi Li",
+        "Jan Ming Kevin Tan",
+        "Narsimlu Kemsaram",
+        "Valerio Modugno"
+      ],
+      "summary": "The decline of natural pollinators has created a major challenge for crop production in controlled indoor agriculture, particularly in vertical farming environments where natural insect pollination is absent. This motivates the development of robotic systems capable of performing precise flower targeting tasks while minimizing physical interference with delicate floral structures. This paper presents an aerial manipulator platform for perception driven flower detection, localization, and approach in vertical farming environments. The proposed system integrates onboard RGBD based perception, model predictive path integral (MPPI) based unmanned aerial vehicle (UAV) control on a PX4 platform, and a lightweight 2DoF manipulator for precise end effector positioning. The platform is evaluated in both MuJoCo simulation and UAV lab experiments using a flower targeting testbed. The experimental results demonstrate stable UAV flight, reliable flower localization, and centimeter level end effector positioning accuracy. In simulation, the proposed controller achieves consistent trajectory convergence and accurate target alignment. In the real world UAV lab environment, the integrated perception control manipulation framework enables stable flower targeted positioning and end effector alignment under constrained aerial operation. These results validate the proposed aerial manipulator as a robust robotic carrier and positioning framework for future contactless pollination systems. While the current study focuses on perception guided targeting and positioning, the developed platform provides a practical foundation for integrating advanced contactless end effectors, including acoustic based pollen manipulation modules, in future work.",
+      "published": "2026-05-07T16:58:28Z",
+      "updated": "2026-05-07T16:58:28Z",
+      "arxiv_id": "2605.06759v1",
+      "abs_url": "http://arxiv.org/abs/2605.06759v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.06759v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "This paper has been accepted for publication in the Proceedings of the 2026 4th International Conference on Robotics, Control and Vision Engineering (RCVE 2026), 10-12 July, 2026, Tokyo, Japan",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "感知与3D理解",
+        "机械臂",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 11,
+      "anchor_terms": [
+        "manipulation",
+        "manipulator",
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "manipulator",
+        "mujoco",
+        "robot",
+        "robotic",
+        "robotics",
+        "uav"
       ]
     },
     {
@@ -666,10 +945,10 @@
       ],
       "summary": "Existing Vision-Language Navigation (VLN) methods typically adopt an egocentric, step-by-step paradigm, which struggles with error accumulation and limits efficiency. While recent approaches attempt to leverage pre-built environment maps, they often rely on incrementally updating memory graphs or scoring discrete path proposals, which restricts continuous spatial reasoning and creates discrete bottlenecks. We propose Top-Down VLN (TD-VLN), reformulating navigation as a one-step global path planning problem on pre-built top-down maps, supported by our newly constructed R2R-TopDown dataset. To solve this, we introduce NavOne, a unified framework that directly predicts dense path probabilities over multi-modal maps in a single end-to-end forward pass. NavOne features a Top-Down Map Fuser for joint multi-modal map representation, and extends Attention Residuals for spatial-aware depth mixing. Extensive experiments on R2R-TopDown show that NavOne achieves state-of-the-art performance among map-based VLN methods, with a planning-stage speedup of 8x over existing map-based baselines and 80x over egocentric methods, enabling highly efficient global navigation.",
       "published": "2026-05-07T14:16:58Z",
-      "updated": "2026-05-07T14:16:58Z",
-      "arxiv_id": "2605.06317v1",
-      "abs_url": "http://arxiv.org/abs/2605.06317v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.06317v1",
+      "updated": "2026-05-08T03:00:23Z",
+      "arxiv_id": "2605.06317v2",
+      "abs_url": "http://arxiv.org/abs/2605.06317v2",
+      "pdf_url": "https://arxiv.org/pdf/2605.06317v2",
       "primary_category": "cs.CV",
       "categories": [
         "cs.CV",
@@ -859,10 +1138,10 @@
       ],
       "summary": "World Action Models (WAMs) have recently emerged as a promising paradigm for robotic manipulation by jointly predicting future visual observations and future actions. However, current WAMs typically execute a fixed number of predicted actions after each model inference, leaving the robot blind to whether the imagined future remains consistent with the actual physical rollout. In this work, we formulate adaptive WAM execution as a future-reality verification problem: the robot should execute longer when the WAM-predicted future remains reliable, and replan earlier when reality deviates from imagination. To this end, we propose Future Forward Dynamics Causal Attention (FFDC), a lightweight verifier that jointly reasons over predicted future actions, predicted visual dynamics, real observations, and language instructions to estimate whether the remaining action rollout can still be trusted. FFDC enables adaptive action chunk sizes as an emergent consequence of prediction-observation consistency, preserving the efficiency of long-horizon execution while restoring responsiveness in contact-rich or difficult phases. We further introduce Mixture-of-Horizon Training to improve long-horizon trajectory coverage for adaptive execution. Experiments on the RoboTwin benchmark and in the real world demonstrate that our method achieves a strong robustness-efficiency trade-off: on RoboTwin, it reduces WAM forward passes by 69.10% and execution time by 34.02%, while improving success rate by 2.54% over the short-chunk baseline; in real-world experiments, it improves success rate by 35%.",
       "published": "2026-05-07T13:18:28Z",
-      "updated": "2026-05-07T13:18:28Z",
-      "arxiv_id": "2605.06222v1",
-      "abs_url": "http://arxiv.org/abs/2605.06222v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.06222v1",
+      "updated": "2026-05-09T10:59:29Z",
+      "arxiv_id": "2605.06222v2",
+      "abs_url": "http://arxiv.org/abs/2605.06222v2",
+      "pdf_url": "https://arxiv.org/pdf/2605.06222v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -1066,15 +1345,15 @@
       ],
       "summary": "Ingestible electronic systems enable non-invasive, in situ sensing within the gastrointestinal (GI) tract, yet clinical translation has been limited by uncontrolled transit, short operational lifetimes, and unreliable wireless communication that prevent continuous monitoring. Here, we present a gastric-resident ingestible robotic platform that achieves week-long operation through integration of a bioinspired, electrically triggered release mechanism with a kirigami-enabled electronic architecture. A kirigami-patterned flexible printed circuit board spans the capsule body and deployable superelastic arms, enabling high-density integration of sensing, power management, and wireless modules within a constrained volume while tolerating large mechanical deformation during gastric residence. Stable retention and on-demand disassembly are achieved using thermally responsive polycaprolactone joints that transition from rigid to compliant states under electrical activation, avoiding dependence on variable chemical triggers. Reliable telemetry in the highly attenuating gastric environment is maintained using a dual-band Bluetooth Low Energy and sub-gigahertz module with RSSI- and throughput-aware adaptive transmission, balancing link robustness and energy consumption. We demonstrate long-term, continuous monitoring of gastric radiation exposure, enabling early detection of dose accumulation and providing a promising in vivo alternative to wearable or handheld dosimeters. Swine studies confirm stable gastric residence, sustained real-time telemetry, and safe gastrointestinal passage following triggered disassembly. This work establishes kirigami-enabled integration as a scalable strategy for long-term gastric-resident robotic systems.",
       "published": "2026-05-07T11:32:02Z",
-      "updated": "2026-05-07T11:32:02Z",
-      "arxiv_id": "2605.06045v1",
-      "abs_url": "http://arxiv.org/abs/2605.06045v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.06045v1",
+      "updated": "2026-05-08T13:01:18Z",
+      "arxiv_id": "2605.06045v2",
+      "abs_url": "http://arxiv.org/abs/2605.06045v2",
+      "pdf_url": "https://arxiv.org/pdf/2605.06045v2",
       "primary_category": "eess.SY",
       "categories": [
         "eess.SY"
       ],
-      "comment": "",
+      "comment": "This submission is withdrawn because the author/contributor information in the current version was submitted before explicit confirmation had been obtained from all relevant team members. We are withdrawing the article to avoid an inaccurate or unverified authorship/contribution record",
       "code_url": "",
       "has_code": false,
       "labels": [
@@ -1141,10 +1420,10 @@
       ],
       "summary": "The recent advancement of Vision Language Action (VLA) models has driven a critical demand for large scale egocentric datasets. However, existing datasets are often limited by short episode durations, typically spanning only a few minutes, which fails to capture the long horizon temporal dependencies necessary for complex robotic task execution. To bridge this gap, we present MobileEgo Anywhere, a framework designed to facilitate the collection of robust, hour plus egocentric trajectories using commodity mobile hardware. We leverage the ubiquitous sensor suites of modern smartphones to provide high fidelity, long term camera pose tracking, effectively removing the high hardware barriers associated with traditional robotics data collection. Our contributions are three fold: (1) we release a novel dataset comprising 200 hours of diverse, long form egocentric data with persistent state tracking; (2) we open source a mobile application that enables any user to record egocentric data, and (3) we provide a comprehensive processing pipeline to convert raw mobile captures into standardized, training ready formats for Vision Language Action model and foundation model research. By democratizing the data collection process, this work enables the massive scale acquisition of long horizon data across varied global environments, accelerating the development of generalizable robotic policies.",
       "published": "2026-05-07T09:55:20Z",
-      "updated": "2026-05-07T09:55:20Z",
-      "arxiv_id": "2605.05945v1",
-      "abs_url": "http://arxiv.org/abs/2605.05945v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.05945v1",
+      "updated": "2026-05-14T07:57:22Z",
+      "arxiv_id": "2605.05945v4",
+      "abs_url": "http://arxiv.org/abs/2605.05945v4",
+      "pdf_url": "https://arxiv.org/pdf/2605.05945v4",
       "primary_category": "cs.CV",
       "categories": [
         "cs.CV",
@@ -1229,21 +1508,20 @@
         "Yiyuan Zhang",
         "Anye Zhong",
         "Junkai Chen",
-        "Wenci Xin",
-        "Cecilia Laschi"
+        "Wenci Xin"
       ],
       "summary": "Cephalopod pulsed-jet locomotion is not a single isolated expulsion event, but a coordinated cycle involving jet expulsion, passive gliding, and mantle refilling. Inspired by this cycle-resolved biological strategy, this paper presents a cephalopod-inspired pulsed-jet robot with a rigid-soft hybrid origami mantle that enables large, actively driven, and geometry-guided body deformation. The proposed mantle integrates rigid folding panels with a compliant silicone framework, allowing a 75% effective cavity-volume reduction during expulsion and reducing the projected cross-sectional drag area by approximately 75.7% in the contracted gliding configuration. Using this platform, we formulate a cycle-resolved framework to separately investigate how expelled volume, glide duration, and refill pathway influence whole-cycle locomotion performance. Experiments show that the robot reaches a peak speed of approximately 0.5 m/s (3.8 BL/s) and an average speed exceeding 0.2 m/s (1.5 BL/s) within the first jetting cycle. The results further demonstrate the roles of high expelled-volume-ratio contraction in speed generation, reduced-drag-area gliding under different glide durations, and mantle-aperture-inspired passive inlet valves in assisting refill. This work provides both a robotic implementation of actively deformable cephalopod-like jet propulsion and a unified experimental platform for studying expulsion-gliding-refilling dynamics in pulsed-jet locomotion.",
       "published": "2026-05-07T08:43:26Z",
-      "updated": "2026-05-07T08:43:26Z",
-      "arxiv_id": "2605.05875v1",
-      "abs_url": "http://arxiv.org/abs/2605.05875v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.05875v1",
+      "updated": "2026-05-13T02:04:07Z",
+      "arxiv_id": "2605.05875v2",
+      "abs_url": "http://arxiv.org/abs/2605.05875v2",
+      "pdf_url": "https://arxiv.org/pdf/2605.05875v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
         "physics.flu-dyn"
       ],
-      "comment": "This work has been submitted to the IEEE for possible publication",
+      "comment": "Updated author list; no changes to the scientific content",
       "code_url": "",
       "has_code": false,
       "labels": [

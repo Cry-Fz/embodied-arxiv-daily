@@ -130,7 +130,11 @@ git push -u origin main
 https://你的用户名.github.io/你的仓库名/
 ```
 
-自动更新由 `.github/workflows/update-arxiv.yml` 执行，默认每天北京时间 08:00 抓取一次。若 workflow 无法提交更新，到 `Settings -> Actions -> General -> Workflow permissions` 选择 `Read and write permissions`。
+自动更新由 `.github/workflows/update-arxiv.yml` 执行，默认每天北京时间 08:00 抓取一次。
+
+定时任务不会抓取“刚进入当天的 UTC 日期”，因为 arXiv API 的 `submittedDate` 在当天早些时候往往还没有完整数据，直接抓当天容易得到 0。当前 workflow 会抓取前一 UTC 日，并滚动回填最近 8 天，这样即使 arXiv API 有延迟，前几天的空结果也会在后续运行中被修正。
+
+若 workflow 无法提交更新，到 `Settings -> Actions -> General -> Workflow permissions` 选择 `Read and write permissions`。
 
 ## 文件结构
 
