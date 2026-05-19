@@ -1,12 +1,12 @@
 {
   "date": "2026-05-15",
-  "generated_at": "2026-05-18T02:24:27.803103+00:00",
+  "generated_at": "2026-05-19T02:15:38.368895+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202605150000 TO 202605152359]",
-  "total_fetched": 362,
-  "total_matched": 50,
+  "total_fetched": 492,
+  "total_matched": 58,
   "papers": [
     {
       "title": "Health-Conditioned Vision-Language-Action Models for Malfunction-Aware Robot Control",
@@ -140,15 +140,16 @@
       "authors": [
         "Zhen Huang",
         "Zhihuang Liu",
+        "Mengxuan Luo",
         "Weishang Wu",
         "Zhiping Cai"
       ],
       "summary": "Large language models (LLMs) are increasingly used as general planners in embodied intelligence, enabling high level coordination and low level task planning for both single robot and multi-robot collaboration. This increasing reliance on embodied LLM planners also raises critical security concerns, since misaligned or manipulated instructions can be translated into physical actions. Prior work has studied such threats in single robot settings, while security risks in LLM controlled multi-robot collaboration, especially those propagated through inter robot communication, remain largely unexplored. To bridge this gap, we propose a novel attack paradigm for multi-robot system in which the adversary interacts with only a single entry robot. The compromised robot then propagates malicious intent through peer communication, leading to coordinated unsafe actions across the system. Our evaluation, covering high risk dimensions of dereliction of duty, privacy compromise, and public safety hazards, reveals a persistent safety alignment gap in multi-robot planners. We quantify this process with three metrics, obedience, infectiousness, and stealthiness. Experiments demonstrate both persistent attacker control and rapid propagation: obedience reaches 1.00 in the strongest cases, and infectiousness rises to 0.90. Notably, the attack is highly efficient, requiring as few as 3.0 rounds to compromise all the robots while maintaining a stealthiness score of 0.81. Such risks are amplified when robots must resolve trade offs in critical situations, such as emergencies or conflicts of rights, because the coordination mechanism can unintentionally allow adversarial instructions to override safety requirements. The code is available at https://github.com/TheFatInsect/InfectBot.",
       "published": "2026-05-15T05:45:52Z",
-      "updated": "2026-05-15T05:45:52Z",
-      "arxiv_id": "2605.15641v1",
-      "abs_url": "http://arxiv.org/abs/2605.15641v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.15641v1",
+      "updated": "2026-05-18T02:26:21Z",
+      "arxiv_id": "2605.15641v2",
+      "abs_url": "http://arxiv.org/abs/2605.15641v2",
+      "pdf_url": "https://arxiv.org/pdf/2605.15641v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -218,6 +219,316 @@
         "robotic",
         "robotics",
         "uav"
+      ]
+    },
+    {
+      "title": "EfficientTDMPC: Improved MPC Objectives for Sample-Efficient Continuous Control",
+      "authors": [
+        "Thomas Evers",
+        "Cristian Meo",
+        "Wendelin Bohmer",
+        "Justin Dauwels",
+        "Yaniv Oren"
+      ],
+      "summary": "We introduce EfficientTDMPC, a sample-efficient model-based reinforcement learning method for continuous control built on the TD-MPC family of algorithms. Central to this family is a planner that aims to find an action sequence that maximizes the estimated return. The return is estimated using a learned model and value networks, each of which can introduce error. EfficientTDMPC proposes to reduce this error in two ways. First, it introduces an ensemble of dynamics models and averages the return estimates across those models and across different rollout depths. Second, it adds the option to apply an uncertainty penalty to the planner objective, yielding a planner that avoids actions with uncertain return estimates. It then adds practical improvements which increase buffer data freshness and reduce compute. Lastly, we find that our contributions enable EfficientTDMPC to benefit more from a higher update-to-data (UTD) ratio, further improving sample efficiency. To the best of our knowledge, in the low data regime of each benchmark, EfficientTDMPC achieves state-of-the-art (SOTA) in terms of sample efficiency on HumanoidBench-Hard and DMC hard, while matching SOTA on DMC easy.",
+      "published": "2026-05-15T23:08:02Z",
+      "updated": "2026-05-15T23:08:02Z",
+      "arxiv_id": "2605.16692v1",
+      "abs_url": "http://arxiv.org/abs/2605.16692v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.16692v1",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "强化/模仿学习",
+        "人形与灵巧",
+        "数据集/评测",
+        "双足机器人"
+      ],
+      "topic": "强化/模仿学习",
+      "score": 4,
+      "anchor_terms": [
+        "humanoid"
+      ],
+      "matched_terms": [
+        "humanoid",
+        "reinforcement learning"
+      ]
+    },
+    {
+      "title": "Bayesian Networks for Path-Based Sensors: Gathering Information and Path Planning in Communication Denied Environments",
+      "authors": [
+        "Alkesh K. Srivastava",
+        "George P. Kontoudis",
+        "Donald Sofge",
+        "Michael Otte"
+      ],
+      "summary": "A \"path-based sensor\" produces a single observation along a continuous path. For example, a boolean path-based sensor returns a single \"1\" if an event of interest is detected at any point along the path and a \"0\" otherwise. Notably, a \"1\" provides no direct information about where along the path the event(s) may have occurred. Previous work has demonstrated that observations from multiple path-based sensors can be fused to create a Bayesian belief map over the spatial locations of the underlying event or phenomenon. Moreover, path planning can employ Shannon information theory to accelerate the rate of convergence of the belief map. In this paper, we present a new method to update the belief map based on a path-based sensor observation, and then plan paths to increase information gain. In contrast to prior work that approximates the posterior by averaging over the alternative event histories, we introduce a Bayesian Network (BN) formulation that models the probabilistic relationships between the latent variables and path-based sensor measurements, enabling a more principled Bayesian belief update. We consider static hazard detection in a communication-denied environment as a representative problem setting. The event of a robot returning from its path corresponds to a path-based hazard sensor reading of \"0\" (hazard not detected), while a robot failing to return corresponds to a reading of \"1\" (hazard detected). We consider false positives and false negatives. We find that the new method leads to quicker convergence of the belief map than prior work in both single- and multi-robot cases.",
+      "published": "2026-05-15T22:25:56Z",
+      "updated": "2026-05-15T22:25:56Z",
+      "arxiv_id": "2605.16673v1",
+      "abs_url": "http://arxiv.org/abs/2605.16673v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.16673v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "This paper has been accepted for presentation at 17th World Symposium on the Algorithmic Foundations of Robotics (WAFR 2026)",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 8,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "path planning",
+        "robot",
+        "robotic",
+        "robotics"
+      ]
+    },
+    {
+      "title": "SCARED-C: Corrected Camera Poses for Endoscopic Depth Estimation",
+      "authors": [
+        "John J. Han",
+        "Adam Schmidt",
+        "Max Allan",
+        "Jie Ying Wu",
+        "Omid Mohareri"
+      ],
+      "summary": "The SCARED dataset is a widely used benchmark for endoscopic depth estimation, offering ground-truth 3D reconstructions captured with a structured light sensor. However, the depth maps for non-keyframe images rely on robot kinematics that introduce substantial pose errors, limiting the reliably labeled portion of the dataset to 35 keyframes. We present SCARED-C, a corrected version of the SCARED dataset that expands the number of reliable RGB-D pairs from 35 to 17,135. Our pipeline applies COLMAP, a Structure-from-Motion system, to re-estimate camera poses for all frames, followed by a scale recovery step that aligns the resulting reconstructions to metric space using the ground-truth keyframe depth maps. We validate the corrected poses through (1) stereo disparity evaluation and (2) monocular depth estimation experiments. The corrected dataset and code are publicly released to the community.",
+      "published": "2026-05-15T20:48:51Z",
+      "updated": "2026-05-15T20:48:51Z",
+      "arxiv_id": "2605.16628v1",
+      "abs_url": "http://arxiv.org/abs/2605.16628v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.16628v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "数据集/评测",
+      "score": 2,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "robot"
+      ]
+    },
+    {
+      "title": "From Prompts to Protocols: An AI Agent for Laboratory Automation",
+      "authors": [
+        "Angelos Angelopoulos",
+        "James F. Cahoon",
+        "Ron Alterovitz"
+      ],
+      "summary": "Automating science laboratories enables faster, safer, more accurate, and more reproducible execution of protocols, accelerating the discovery and testing of new materials, drugs, and more. However, setting up and running autonomous labs requires coordinating numerous instruments and robots, forcing scientists to write code, manage configuration files, and navigate complex software infrastructure. We present an AI agent architecture that integrates large language models with laboratory orchestration, enabling scientists to interactively create and monitor automated lab protocols using natural language. Integrated into the Experiment Orchestration System (EOS), the AI agent operates under an agentic loop with automated validation and error correction, and supports the complete experimental lifecycle: creating protocols, running and monitoring both protocols and closed-loop optimization campaigns, and analyzing results. A visual graph editor renders protocols as interactive node-based diagrams synchronized with the AI agent's protocol representation, enabling seamless alternation between AI-assisted and manual protocol construction. Evaluated on three simulated automated labs spanning chemistry, biology, and materials science, the AI agent achieves a 97% first-attempt protocol generation success rate and an order of magnitude reduction in required interface actions.",
+      "published": "2026-05-15T18:52:41Z",
+      "updated": "2026-05-15T18:52:41Z",
+      "arxiv_id": "2605.16552v1",
+      "abs_url": "http://arxiv.org/abs/2605.16552v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.16552v1",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 4,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "robot"
+      ]
+    },
+    {
+      "title": "World Model-Enabled Causal Digital Twins for Semantic Communications in Physical AI Systems",
+      "authors": [
+        "Lingyi Wang",
+        "Tingyu Shui",
+        "Walid Saad",
+        "Pascal Adjakple"
+      ],
+      "summary": "Semantic communication has emerged as a promising paradigm for enabling goal-oriented networking. However, most existing semantic communication solutions are tailored to one-shot tasks and optimize instantaneous performance. Hence, they cannot be used to support closed-loop dynamic systems with physical artificial intelligence (AI), in which the transmitted semantics affect not only the current inference outcome but also future control actions, state evolution, and ultimately long-horizon task performance. To address this gap, this paper investigates goal-oriented semantic communications for physical AI systems with closed-loop sensing-communication-inference-control. In particular, the problem of semantic communications is formulated as a long-term return-per-bit maximization under wireless bit-budget constraints while capturing both control efficiency and communication efficiency. To solve this problem, a novel causal information value (CIV) metric is introduced to evaluate the marginal contribution of each semantic token to the expected long-term return by transmission interventions. Then, a world-model-enabled causal digital twin (WM-CDT) framework is proposed to capture the dynamics of closed-loop physical AI systems and enable counterfactual reasoning for long-horizon imagined rollouts. Based on these imagined rollouts, an actor-critic policy is trained for long-horizon agent control with high data efficiency, while the semantic token selector is trained through CIV-per-bit evaluation. Extensive simulations on an AirSim-Sionna-based unmanned aerial vehicle (UAV) navigation simulator show that the proposed WM-CDT framework achieves significant improvement in return-per-kbit and navigation success rate compared to existing reinforcement learning solutions.",
+      "published": "2026-05-15T18:41:51Z",
+      "updated": "2026-05-15T18:41:51Z",
+      "arxiv_id": "2605.16547v1",
+      "abs_url": "http://arxiv.org/abs/2605.16547v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.16547v1",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 6,
+      "anchor_terms": [
+        "navigation",
+        "world model"
+      ],
+      "matched_terms": [
+        "navigation",
+        "reinforcement learning",
+        "simulator",
+        "uav",
+        "world model"
+      ]
+    },
+    {
+      "title": "Nori Bot: A Sub-$1,000 Floor-to-Counter Mobile Manipulator",
+      "authors": [
+        "Antonio Li",
+        "Sungjoon Park",
+        "Wen Ni Chew"
+      ],
+      "summary": "Open-source mobile manipulators have reached $660 (XLeRobot) but every sub-$1,000 platform shares three limitations: a fixed-height workspace, reactive-only control, and no protection against the stall-induced burn-out that destroys cheap Feetech servos. We present Nori Bot, a 17-DoF dual-arm mobile manipulator at $947 (~3% the cost of comparable commercial platforms) that addresses all three: (1) a 600mm Z-axis lift on the existing servo bus for floor-to-counter reach; (2) a thin-client Raspberry Pi 4 paired with the OpenClaw proactive agent runtime so cron jobs and hooks trigger physical tasks autonomously; and (3) a software safety stack with sensorless grip-force feedback via motor current on a soft TPU finger. Code, CAD, and the skill manifest will be released.",
+      "published": "2026-05-15T18:33:21Z",
+      "updated": "2026-05-15T18:33:21Z",
+      "arxiv_id": "2605.16537v1",
+      "abs_url": "http://arxiv.org/abs/2605.16537v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.16537v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "7 pages, 3 figures, 2 tables. Columbia University Deep Learning Robot Manipulation course project, Spring 2026",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 11,
+      "anchor_terms": [
+        "manipulation",
+        "manipulator",
+        "robot",
+        "robot manipulation"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "manipulator",
+        "open-source",
+        "robot",
+        "robot manipulation"
+      ]
+    },
+    {
+      "title": "A Mechanistic Model for Collective Motion from Sensorimotor Regularities",
+      "authors": [
+        "Vito Mengers",
+        "Bao Duc Cao",
+        "Oliver Brock"
+      ],
+      "summary": "Collective behavior in animals has long been modeled through self-propelled particle models, which reproduce striking group-level phenomena through abstract interaction forces. Yet these models are fundamentally descriptive: they leave open the question of how collective behavior is actually produced. Recent empirical work makes this gap concrete: locusts do not align with neighbors, sensory and cognitive mechanisms mediate interaction instead. A mechanistic model must therefore operate at the sensorimotor level, grounded in what individual organisms can actually perceive, estimate, and physically execute. We present such a model based on a modeling framework from robotics, extended here to collective motion. Each agent perceives neighbors through bearing and apparent-size cues within a limited field of view, maintains uncertain internal state estimates, and selects actions through gradient descent on a desired social distance -- without any prescribed interaction forces. This simple model produces diverse collective behaviors including polarized motion, milling, ring formations, and subgroup fragmentation. A global sensitivity analysis shows that behavioral transitions are governed by sensorimotor parameters corresponding to measurable biological quantities: field of view geometry, sensory noise, turning agility, and memory. Collective behavior can therefore be understood as the emergent outcome of interacting sensorimotor regularities, and differences across species as the emergent outcome of differences in embodiment and environment.",
+      "published": "2026-05-15T18:17:41Z",
+      "updated": "2026-05-15T18:17:41Z",
+      "arxiv_id": "2605.16522v1",
+      "abs_url": "http://arxiv.org/abs/2605.16522v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.16522v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.MA"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 6,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ]
+    },
+    {
+      "title": "No Plan, Yet Human: A Reactive Robotics Model Predicts Human Planning Failures on a Clinical Task",
+      "authors": [
+        "Michael Migacev",
+        "Vito Mengers",
+        "Antonia Köngeter",
+        "Oliver Brock"
+      ],
+      "summary": "Understanding why some sequential planning problems are harder than others requires models that go beyond average performance. They should capture the specific pattern of which problems are hard, and ideally fail in the same way people do when planning capacity is reduced. We apply AICON, a reactive gradient-descent framework developed for robotic manipulation, to the Tower of London test, a cognitive test used to assess planning in Parkinson's disease, mild cognitive impairment, and stroke. Without any lookahead planning or knowledge of human cognition, AICON reproduces the fine-grained human difficulty ordering across 24 problems better than structural task parameters and generalizes to held-out problems in a leave-two-out evaluation. Crucially, AICON outperforms a planning baseline for groups with reduced planning capacity while the planning baseline better captures healthy controls. This dissociation was predicted by the original AICON paper, which noted that the model's failure modes resemble those of Parkinson's patients who struggle with goal hierarchies but not move counts. This suggests that as planning capacity is reduced, human behavior shifts toward the reactive mode AICON models. The finding extends a broader pattern: AICON, originally built for robotics, now captures aspects of biological behavior across perception, eye movements, and sequential planning, suggesting its core abstraction reflects something real about how biological systems are organized.",
+      "published": "2026-05-15T18:07:34Z",
+      "updated": "2026-05-15T18:07:34Z",
+      "arxiv_id": "2605.16514v1",
+      "abs_url": "http://arxiv.org/abs/2605.16514v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.16514v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 10,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "robot",
+        "robotic",
+        "robotics"
       ]
     },
     {
@@ -1500,10 +1811,10 @@
       ],
       "summary": "Vision--language--action (VLA) models are typically built by fine-tuning a pretrained vision--language model (VLM) on action data. However, we show that this standard recipe systematically erodes the VLM's multimodal competence, a side effect we call the embodiment tax. But do VLAs have to forget? Inspired by the two-stream organization of biological vision, we trace this degradation to a structural bottleneck: current VLAs ask a single encoder to support both language-grounded semantics and control-relevant visual features, whereas biological vision separates recognition and visuomotor control into distinct pathways. Building on this view, we propose the Unified Action Model (UAM), which adds a parallel Dorsal Expert, an analog of the brain's dorsal pathway. To make the Dorsal Expert an effective second pathway and reduce the control-learning burden on the VLM, we initialize it from a pretrained generative model and train it with a mid-level reasoning objective that predicts visual dynamics. This design allows us to train the whole VLA end-to-end on action data alone: with no parameter freezing, no gradient stopping, and no auxiliary VL co-training, UAM retains over $95\\%$ of the underlying VLM's multimodal capability and at the same time achieves the highest average success rate among baselines on a variety of manipulation tasks that probe out-of-distribution generalization, including unseen objects, novel object--target compositions, and instruction variation. Together, these results suggest that semantic preservation in VLAs can emerge from architectural separation itself, rather than being enforced by frozen weights or auxiliary data replay, and that this preserved semantic capability can naturally transfer from VLMs to semantic generalization in actions.",
       "published": "2026-05-15T08:45:37Z",
-      "updated": "2026-05-15T08:45:37Z",
-      "arxiv_id": "2605.15735v1",
-      "abs_url": "http://arxiv.org/abs/2605.15735v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.15735v1",
+      "updated": "2026-05-18T07:08:58Z",
+      "arxiv_id": "2605.15735v2",
+      "abs_url": "http://arxiv.org/abs/2605.15735v2",
+      "pdf_url": "https://arxiv.org/pdf/2605.15735v2",
       "primary_category": "cs.CV",
       "categories": [
         "cs.CV",
