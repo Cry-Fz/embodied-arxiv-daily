@@ -359,6 +359,35 @@ def dedupe_papers(papers: list[dict[str, Any]]) -> list[dict[str, Any]]:
   return unique
 
 
+def paper_key(paper: dict[str, Any]) -> str:
+  return str(paper.get("arxiv_id") or paper.get("abs_url") or paper.get("title") or "")
+
+
+def preserve_existing_translations(papers: list[dict[str, Any]], path: Path) -> list[dict[str, Any]]:
+  if not path.exists():
+    return papers
+
+  try:
+    existing_payload = load_json(path)
+  except json.JSONDecodeError as error:
+    print(f"Skipping translation preservation for invalid JSON {path}: {error}", file=sys.stderr)
+    return papers
+
+  existing_by_key = {
+    paper_key(paper): paper
+    for paper in existing_payload.get("papers", [])
+    if paper_key(paper)
+  }
+  for paper in papers:
+    existing = existing_by_key.get(paper_key(paper))
+    if not existing:
+      continue
+    for field in ("title_zh", "summary_zh", "translation", "translations"):
+      if existing.get(field) and not paper.get(field):
+        paper[field] = existing[field]
+  return papers
+
+
 def fetch_daily(
   target_date: dt_date,
   config: dict[str, Any],
@@ -398,6 +427,8 @@ def fetch_daily(
     key=lambda item: (bool(item.get("has_code")), item.get("published", ""), item.get("score", 0)),
     reverse=True,
   )
+  output_path = output_dir / f"{target_date.isoformat()}.json"
+  matched = preserve_existing_translations(matched, output_path)
 
   payload = {
     "date": target_date.isoformat(),
@@ -410,7 +441,7 @@ def fetch_daily(
     "total_matched": len(matched),
     "papers": matched,
   }
-  write_json(output_dir / f"{target_date.isoformat()}.json", payload)
+  write_json(output_path, payload)
   return payload
 
 

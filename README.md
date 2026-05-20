@@ -49,6 +49,39 @@
 
 `开源` 标签不靠关键词判断，而是从摘要和 comment 中解析代码链接生成。目前识别 GitHub、GitLab、Bitbucket、Codeberg、Hugging Face。
 
+## 中英文切换与翻译
+
+首页右上角提供中英文切换按钮。默认显示 arXiv 原始英文；切换到中文时，前端会优先读取论文里的 `title_zh` 和 `summary_zh` 字段。如果某篇论文没有中文字段，会自动回退显示英文。
+
+翻译不是在浏览器里实时生成，而是通过 `scripts/translate_papers.py` 写入每日 JSON。默认使用 `deep-translator` 的 Google Translate 封装，不需要 API key；如果你需要更强的术语控制，也可以切换到兼容 OpenAI Chat Completions 的大模型接口。
+
+手动翻译最近 7 天：
+
+```bash
+pip install -r requirements.txt
+python scripts/translate_papers.py --days 7
+python scripts/fetch_arxiv.py --rebuild-index
+```
+
+翻译全部本地数据：
+
+```bash
+python scripts/translate_papers.py --all
+python scripts/fetch_arxiv.py --rebuild-index
+```
+
+默认免费翻译依赖第三方网页接口，可能偶发限流或失败；失败时脚本会回退原文。若要改用大模型翻译，可以设置：
+
+```bash
+export TRANSLATION_PROVIDER="llm"
+export TRANSLATION_API_KEY="你的翻译接口密钥"
+export TRANSLATION_MODEL="你的模型名"
+export TRANSLATION_API_URL="https://你的接口地址/v1/chat/completions"
+python scripts/translate_papers.py --provider llm --days 7
+```
+
+GitHub Actions 默认会安装 `requirements.txt`，抓取论文后自动运行免费翻译，并保留已有翻译字段，避免滚动回填时每天重复翻译同一批论文。若要在 GitHub Actions 中改用大模型翻译，可在仓库变量里设置 `TRANSLATION_PROVIDER=llm`，并添加对应的 `TRANSLATION_API_KEY` secret 与 `TRANSLATION_MODEL` variable。
+
 ## 迁移示例
 
 如果要改成医学图像方向，可以大致这样调整：
@@ -102,6 +135,7 @@ python scripts/fetch_arxiv.py --rebuild-index
 
 - 首页 `index.html`：论文归档、检索、多标签筛选、日期筛选、论文链接。
 - 规则页 `rules.html`：查看配置摘要、编辑 JSON、校验配置、导出配置。
+- 中英文切换：优先显示 `title_zh` / `summary_zh`，没有翻译时回退英文。
 - 明暗主题：默认跟随系统，也可以在页面右上角手动切换，选择会保存在浏览器本地。
 - 开源优先：任意筛选结果中，带代码链接的论文排在前面。
 
@@ -151,6 +185,9 @@ https://你的用户名.github.io/你的仓库名/
 │   ├── index.json
 │   └── papers/
 ├── index.html
+├── requirements.txt
 ├── rules.html
-└── scripts/fetch_arxiv.py
+└── scripts/
+    ├── fetch_arxiv.py
+    └── translate_papers.py
 ```

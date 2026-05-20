@@ -1,9 +1,12 @@
+const LANGUAGE_STORAGE_KEY = "paper-language";
+
 const state = {
   archive: null,
   papers: [],
   query: "",
   selectedLabels: new Set(),
   date: "全部",
+  language: storedLanguage(),
 };
 
 const fallbackArchive = {
@@ -37,6 +40,22 @@ const labelColors = new Map([
 ]);
 
 const $ = (selector) => document.querySelector(selector);
+
+function storedLanguage() {
+  try {
+    return localStorage.getItem(LANGUAGE_STORAGE_KEY) === "zh" ? "zh" : "en";
+  } catch (error) {
+    return "en";
+  }
+}
+
+function saveLanguage(language) {
+  try {
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+  } catch (error) {
+    console.warn(error);
+  }
+}
 
 function escapeHtml(value) {
   return String(value ?? "")
@@ -93,6 +112,34 @@ function sortPapers(papers) {
     if (dateDiff) return dateDiff;
     return Number(b.score || 0) - Number(a.score || 0);
   });
+}
+
+function translatedValue(paper, field) {
+  const directValue = paper?.[`${field}_zh`];
+  const nestedValue = paper?.translations?.zh?.[field] || paper?.translation?.zh?.[field];
+  return directValue || nestedValue || "";
+}
+
+function paperTitle(paper) {
+  return state.language === "zh" ? translatedValue(paper, "title") || paper.title : paper.title;
+}
+
+function paperSummary(paper) {
+  return state.language === "zh" ? translatedValue(paper, "summary") || paper.summary : paper.summary;
+}
+
+function renderLanguageToggle() {
+  const button = $("#languageToggle");
+  if (!button) return;
+  const isChinese = state.language === "zh";
+  const label = button.querySelector("[data-language-label]");
+  button.classList.toggle("active", isChinese);
+  button.setAttribute("aria-pressed", String(isChinese));
+  button.setAttribute("title", isChinese ? "切换到英文" : "切换到中文");
+  button.setAttribute("aria-label", isChinese ? "切换到英文" : "切换到中文");
+  if (label) {
+    label.textContent = isChinese ? "English" : "中文";
+  }
 }
 
 async function loadJson(path) {
@@ -175,7 +222,13 @@ function matchesQuery(paper) {
   if (!state.query) return true;
   const haystack = [
     paper.title,
+    paper.title_zh,
     paper.summary,
+    paper.summary_zh,
+    paper.translations?.zh?.title,
+    paper.translations?.zh?.summary,
+    paper.translation?.zh?.title,
+    paper.translation?.zh?.summary,
     paper.arxiv_id,
     paper.primary_category,
     paper.code_url,
@@ -270,12 +323,12 @@ function renderPaper(paper) {
     <article class="paper-card">
       <div class="paper-head">
         <a class="paper-title" href="${escapeHtml(paper.abs_url || "#")}" target="_blank" rel="noreferrer">
-          ${escapeHtml(paper.title)}
+          ${escapeHtml(paperTitle(paper))}
         </a>
         <span class="paper-date">${escapeHtml(compactDate(paper.published))}</span>
       </div>
       <div class="paper-meta">${paperMeta(paper)}</div>
-      <p class="paper-summary">${escapeHtml(paper.summary)}</p>
+      <p class="paper-summary">${escapeHtml(paperSummary(paper))}</p>
       <div class="paper-tags">${tags}${scoreTag}</div>
       <div class="paper-links">
         <a class="paper-link" href="${escapeHtml(paper.abs_url || "#")}" target="_blank" rel="noreferrer">
@@ -383,11 +436,19 @@ function bindEvents() {
     renderDateFilters();
     renderResults();
   });
+
+  $("#languageToggle")?.addEventListener("click", () => {
+    state.language = state.language === "zh" ? "en" : "zh";
+    saveLanguage(state.language);
+    renderLanguageToggle();
+    renderResults();
+  });
 }
 
 async function init() {
   await loadArchive();
   renderMetrics();
+  renderLanguageToggle();
   renderLabelFilters();
   renderDateFilters();
   renderResults();

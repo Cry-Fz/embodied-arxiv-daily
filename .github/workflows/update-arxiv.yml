@@ -27,13 +27,33 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
       - name: Fetch arXiv papers
         run: |
           if [ -n "${{ github.event.inputs.date }}" ]; then
-            python scripts/fetch_arxiv.py --date "${{ github.event.inputs.date }}" --timezone Asia/Shanghai --max-results 2000
+            ARCHIVE_DATE="${{ github.event.inputs.date }}"
+            UPDATE_DAYS=1
           else
             ARCHIVE_DATE="$(date -u -d 'yesterday' +'%F')"
-            python scripts/fetch_arxiv.py --date "$ARCHIVE_DATE" --days 8 --timezone Asia/Shanghai --max-results 2000
+            UPDATE_DAYS=8
+          fi
+          echo "ARCHIVE_DATE=$ARCHIVE_DATE" >> "$GITHUB_ENV"
+          echo "UPDATE_DAYS=$UPDATE_DAYS" >> "$GITHUB_ENV"
+          python scripts/fetch_arxiv.py --date "$ARCHIVE_DATE" --days "$UPDATE_DAYS" --timezone Asia/Shanghai --max-results 2000
+
+      - name: Translate paper metadata
+        env:
+          TRANSLATION_API_KEY: ${{ secrets.TRANSLATION_API_KEY }}
+          TRANSLATION_API_URL: ${{ vars.TRANSLATION_API_URL }}
+          TRANSLATION_MODEL: ${{ vars.TRANSLATION_MODEL }}
+          TRANSLATION_PROVIDER: ${{ vars.TRANSLATION_PROVIDER }}
+        run: |
+          if python scripts/translate_papers.py --date "$ARCHIVE_DATE" --days "$UPDATE_DAYS" --timezone Asia/Shanghai; then
+            python scripts/fetch_arxiv.py --rebuild-index --timezone Asia/Shanghai
+          else
+            echo "Translation failed; keeping English metadata and continuing archive update."
           fi
 
       - name: Commit archive updates
