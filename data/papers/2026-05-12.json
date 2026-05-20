@@ -1,12 +1,12 @@
 {
   "date": "2026-05-12",
-  "generated_at": "2026-05-19T02:15:14.458407+00:00",
+  "generated_at": "2026-05-20T02:28:28.659137+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202605120000 TO 202605122359]",
-  "total_fetched": 758,
-  "total_matched": 75,
+  "total_fetched": 774,
+  "total_matched": 69,
   "papers": [
     {
       "title": "The Unified Autonomy Stack: Toward a Blueprint for Generalizable Robot Autonomy",
@@ -265,56 +265,6 @@
       "matched_terms": [
         "robot",
         "world model"
-      ]
-    },
-    {
-      "title": "When Simulation Lies: A Sim-to-Real Benchmark and Domain-Randomized RL Recipe for Tool-Use Agents",
-      "authors": [
-        "Xiaolin Zhou",
-        "Aojie Yuan",
-        "Zheng Luo",
-        "Zipeng Ling",
-        "Xixiao Pan",
-        "Yicheng Gao",
-        "Haiyue Zhang",
-        "Jiate Li",
-        "Shuli Jiang",
-        "Prince Zizhuang Wang",
-        "Zixuan Zhu",
-        "Jinbo Liu",
-        "Ryan A. Rossi",
-        "Hua Wei",
-        "Xiyang Hu"
-      ],
-      "summary": "Tool-use language agents are evaluated on benchmarks that assume clean inputs, unambiguous tool registries, and reliable APIs. Real deployments violate all these assumptions: user typos propagate into hallucinated tool names, a misconfigured request timeout can stall an agent indefinitely, and duplicate tool names across servers can freeze an SDK. We study these failures as a sim-to-real gap in the tool-use partially observable Markov decision process (POMDP), where deployment noise enters through the observation, action space, reward-relevant metadata, or transition dynamics. We introduce RobustBench-TC, a benchmark with 22 perturbation types organized by these four POMDP components, each grounded in a verified GitHub issue or documented tool-calling failure. Across 21 models from 1.5B to 32B parameters (including the closed-source o4-mini), the robustness profile is sharply uneven: observation perturbations reduce accuracy by less than 5%, while reward-relevant and transition perturbations reduce accuracy by roughly 40% and 30%, respectively; scale alone does not close these gaps. We then propose ToolRL-DR, a domain-randomization reinforcement learning (RL) recipe that trains a tool-use agent on perturbation-augmented trajectories spanning the three statically encodable POMDP components. On a 3B backbone, ToolRL-DR-Full retains roughly three-quarters of clean accuracy and reaches an aggregate perturbed accuracy comparable to open-source 14B function-calling baselines while substantially narrowing the gap to o4-mini. It closes approximately 27% of the Transition gap despite never seeing transition perturbations in training, suggesting that RL on adversarial static tool-use inputs induces a more persistent retry policy that transfers to unseen runtime failures. The dataset, code and benchmark leaderboard are publicly available.",
-      "published": "2026-05-12T10:40:28Z",
-      "updated": "2026-05-12T10:40:28Z",
-      "arxiv_id": "2605.11928v1",
-      "abs_url": "http://arxiv.org/abs/2605.11928v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.11928v1",
-      "primary_category": "cs.AI",
-      "categories": [
-        "cs.AI"
-      ],
-      "comment": "Dataset, code, and benchmark leaderboard are available at https://github.com/WillChow66/robustbench-tc-release.git and https://huggingface.co/spaces/willchow66/robustbench-tc-leaderboard",
-      "code_url": "https://github.com/WillChow66/robustbench-tc-release.git",
-      "has_code": true,
-      "labels": [
-        "开源",
-        "世界模型与仿真",
-        "强化/模仿学习",
-        "数据集/评测"
-      ],
-      "topic": "世界模型与仿真",
-      "score": 7,
-      "anchor_terms": [
-        "reinforcement learning",
-        "sim-to-real"
-      ],
-      "matched_terms": [
-        "open-source",
-        "reinforcement learning",
-        "sim-to-real"
       ]
     },
     {
@@ -738,47 +688,6 @@
       ]
     },
     {
-      "title": "CoT-Guard: Small Models for Strong Monitoring",
-      "authors": [
-        "Nirav Diwan",
-        "Han Wang",
-        "Berkcan Kapusuzoglu",
-        "Ramin Moradi",
-        "Supriyo Chakraborty",
-        "Giri Iyengar",
-        "Sambit Sahu",
-        "Huan Zhang",
-        "Gang Wang"
-      ],
-      "summary": "Monitoring the chain-of-thought (CoT) of reasoning models is a promising approach for detecting covert misbehavior (i.e., hidden objectives) in code generation tasks. While large models (GPT-5, Gemini-3-Flash) can serve as effective CoT monitors, they are expensive to deploy due to the lengthy reasoning traces and high API cost, emphasizing the need for smaller, cheaper alternatives. Nevertheless, we find that current small models (4B--8B) struggle to detect hidden objectives despite access to the CoT, frequently misattributing them as part of the user query. To address this, we propose a post-training pipeline combining supervised fine-tuning (SFT) and reinforcement learning (RL), where SFT narrows the gap for in-domain tasks by distilling detection behavior from stronger monitors, and RL on hard and subtly crafted hidden objectives helps the model generalize to out-of-domain monitoring tasks. To validate this generalization, we evaluate under a realistic threat model motivated by practical supply-chain attacks, where the adversary is a third-party LLM router injecting hidden objectives into code-generation requests through either prompt manipulation or code manipulation attacks. To push beyond objectives that large monitors already saturate, we also introduce four new challenging tasks even for strong monitors. Finally, we introduce CoT-Guard, a 4B-parameter monitor that demonstrates superior generalization performance under both prompt and code manipulation attacks, achieving a G-mean^2 (i.e., TNR x TPR) of 75% and outperforming GPT-5.4 (56%), GPT-5-mini (41%), and Qwen3-32B (54%), while closing the gap to Gemini-3-Flash (83%). These results demonstrate that CoT-Guard provides a practical and cost-effective user-side defense, substantially improving hidden-objective detection while avoiding the deployment cost of large monitors.",
-      "published": "2026-05-12T20:49:30Z",
-      "updated": "2026-05-12T20:49:30Z",
-      "arxiv_id": "2605.12746v1",
-      "abs_url": "http://arxiv.org/abs/2605.12746v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.12746v1",
-      "primary_category": "cs.CR",
-      "categories": [
-        "cs.CR",
-        "cs.AI"
-      ],
-      "comment": "",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "机器人操作",
-        "强化/模仿学习"
-      ],
-      "topic": "机器人操作",
-      "score": 2,
-      "anchor_terms": [
-        "reinforcement learning"
-      ],
-      "matched_terms": [
-        "manipulation",
-        "reinforcement learning"
-      ]
-    },
-    {
       "title": "3D RL-DWA: A Hybrid Reinforcement Learning and Dynamic Window Approach for Goal-Directed Local Navigation in Multi-DoF Robots",
       "authors": [
         "Chiara Castellani",
@@ -1055,49 +964,6 @@
       "matched_terms": [
         "vla",
         "vla model"
-      ]
-    },
-    {
-      "title": "Think Twice, Act Once: Verifier-Guided Action Selection For Embodied Agents",
-      "authors": [
-        "Nishad Singhi",
-        "Christian Bialas",
-        "Snehal Jauhri",
-        "Vignesh Prasad",
-        "Georgia Chalvatzaki",
-        "Marcus Rohrbach",
-        "Anna Rohrbach"
-      ],
-      "summary": "Building generalist embodied agents capable of solving complex real-world tasks remains a fundamental challenge in AI. Multimodal Large Language Models (MLLMs) have significantly advanced the reasoning capabilities of such agents through strong vision-language knowledge and chain-of-thought (CoT) reasoning, yet remain brittle when faced with challenging out-of-distribution scenarios. To address this, we propose Verifier-Guided Action Selection (VegAS), a test-time framework designed to improve the robustness of MLLM-based embodied agents through an explicit verification step. At inference time, rather than committing to a single decoded action, VeGAS samples an ensemble of candidate actions and uses a generative verifier to identify the most reliable choice, without modifying the underlying policy. Crucially, we find that using an MLLM off-the-shelf as a verifier yields no improvement, motivating our LLM-driven data synthesis strategy, which automatically constructs a diverse curriculum of failure cases to expose the verifier to a rich distribution of potential errors at training time. Across embodied reasoning benchmarks spanning the Habitat and ALFRED environments, VeGAS consistently improves generalization, achieving up to a 36% relative performance gain over strong CoT baselines on the most challenging multi-object, long-horizon tasks.",
-      "published": "2026-05-12T18:08:24Z",
-      "updated": "2026-05-12T18:08:24Z",
-      "arxiv_id": "2605.12620v1",
-      "abs_url": "http://arxiv.org/abs/2605.12620v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.12620v1",
-      "primary_category": "cs.AI",
-      "categories": [
-        "cs.AI"
-      ],
-      "comment": "CVPR 2026 (Findings)",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "世界模型与仿真",
-        "数据集/评测",
-        "其他机器人"
-      ],
-      "topic": "世界模型与仿真",
-      "score": 16,
-      "anchor_terms": [
-        "embodied",
-        "embodied agent",
-        "embodied agents"
-      ],
-      "matched_terms": [
-        "embodied",
-        "embodied agent",
-        "embodied agents",
-        "habitat"
       ]
     },
     {
@@ -1446,50 +1312,6 @@
         "robot",
         "robotic",
         "robotics"
-      ]
-    },
-    {
-      "title": "Reinforcing VLAs in Task-Agnostic World Models",
-      "authors": [
-        "Yucen Wang",
-        "Rui Yu",
-        "Fengming Zhang",
-        "Junjie Lu",
-        "Xinyao Qin",
-        "Tianxiang Zhang",
-        "Kaixin Wang",
-        "Li Zhao"
-      ],
-      "summary": "Post-training Vision-Language-Action (VLA) models via reinforcement learning (RL) in learned world models has emerged as an effective strategy to adapt to new tasks without costly real-world interactions. However, while using imagined trajectories reduces the sample complexity of policy training, existing methods still heavily rely on task-specific data to fine-tune both the world and reward models, fundamentally limiting their scalability to unseen tasks. To overcome this, we argue that world and reward models should capture transferable physical priors that enable zero-shot inference. We propose RAW-Dream (Reinforcing VLAs in task-Agnostic World Dreams), a new paradigm that completely disentangles world model learning from downstream task dependencies. RAW-Dream utilizes a world model pre-trained on diverse task-free behaviors for predicting future rollouts, and an off-the-shelf Vision-Language Model (VLM) for reward generation. Because both components are task-agnostic, VLAs can be readily finetuned for any new task entirely within this zero-shot imagination. Furthermore, to mitigate world model hallucinations, we introduce a dual-noise verification mechanism to filter out unreliable rollouts. Extensive experiments across simulation and real-world settings demonstrate consistent performance gains, proving that generalized physical priors can effectively substitute for costly task-dependent data, offering a highly scalable roadmap for VLA adaptation.",
-      "published": "2026-05-12T16:16:15Z",
-      "updated": "2026-05-12T16:16:15Z",
-      "arxiv_id": "2605.12334v1",
-      "abs_url": "http://arxiv.org/abs/2605.12334v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.12334v1",
-      "primary_category": "cs.AI",
-      "categories": [
-        "cs.AI"
-      ],
-      "comment": "",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "VLA/多模态策略",
-        "世界模型与仿真",
-        "强化/模仿学习"
-      ],
-      "topic": "VLA/多模态策略",
-      "score": 6,
-      "anchor_terms": [
-        "vision-language-action",
-        "vla",
-        "world model"
-      ],
-      "matched_terms": [
-        "reinforcement learning",
-        "vision-language-action",
-        "vla",
-        "world model"
       ]
     },
     {
@@ -2272,6 +2094,45 @@
       ]
     },
     {
+      "title": "Composition of Memory Experts for Diffusion World Models",
+      "authors": [
+        "Sebastian Stapf",
+        "Pablo Acuaviva Huertos",
+        "Aram Davtyan",
+        "Paolo Favaro"
+      ],
+      "summary": "World models aim to predict plausible futures consistent with past observations, a capability central to planning and decision-making in reinforcement learning. Yet, existing architectures face a fundamental memory trade-off: transformers preserve local detail but are bottlenecked by quadratic attention, while recurrent and state-space models scale more efficiently but compress history at the cost of fidelity. To overcome this trade-off, we suggest decoupling future-past consistency from any single architecture and instead leveraging a set of specialized experts. We introduce a diffusion-based framework that integrates heterogeneous memory models through a contrastive product-of-experts formulation. Our approach instantiates three complementary roles: a short-term memory expert that captures fine local dynamics, a long-term memory expert that stores episodic history in external diffusion weights via lightweight test-time finetuning, and a spatial long-term memory expert that enforces geometric and spatial coherence. This compositional design avoids mode collapse and scales to long contexts without incurring a quadratic cost. Across simulated and real-world benchmarks, our method improves temporal consistency, recall of past observations, and navigation performance, establishing a novel paradigm for building and operating memory-augmented diffusion world models.",
+      "published": "2026-05-12T09:43:10Z",
+      "updated": "2026-05-12T09:43:10Z",
+      "arxiv_id": "2605.18813v1",
+      "abs_url": "http://arxiv.org/abs/2605.18813v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.18813v1",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "数据集/评测"
+      ],
+      "topic": "导航与移动",
+      "score": 4,
+      "anchor_terms": [
+        "world model"
+      ],
+      "matched_terms": [
+        "navigation",
+        "reinforcement learning",
+        "world model"
+      ]
+    },
+    {
       "title": "Learning Action Manifold with Multi-view Latent Priors for Robotic Manipulation",
       "authors": [
         "Junjin Xiao",
@@ -2367,90 +2228,6 @@
         "humanoid",
         "robot",
         "tactile"
-      ]
-    },
-    {
-      "title": "Beyond World-Frame Action Heads: Motion-Centric Action Frames for Vision-Language-Action Models",
-      "authors": [
-        "Huoren Yang",
-        "Jianchao Zhao",
-        "Hu Yusong",
-        "Qiguan Ou",
-        "Yuyang Gao",
-        "Wei Ke",
-        "Yuhang He",
-        "SongLin Dong",
-        "Zhiheng Ma",
-        "Yihong Gong"
-      ],
-      "summary": "Vision-Language-Action (VLA) models have advanced rapidly with stronger backbones, broader pre-training, and larger demonstration datasets, yet their action heads remain largely homogeneous: most directly predict action commands in a fixed world coordinate frame. We propose \\textbf{MCF-Proto}, a lightweight action head that equips VLA policies with a Motion-Centric Action Frame (MCF) and a prototype-based action parameterization. At each step, the policy predicts a rotation $R_t \\in SO(3)$, composes actions in the transformed local frame from a set of prototypes, and maps them back to the world frame for end-to-end training, using only standard demonstrations without auxiliary supervision. This simple design induces stable emergent structure. Without explicit directional labels, the learned local frames develop a stable geometric structure whose axes are strongly compatible with demonstrated end-effector motion. Meanwhile, actions in the learned representation become substantially more compact, with variation captured by fewer dominant directions and more regularly organized by shared prototypes. These structural properties translate into improved robustness, especially under geometric perturbations. Our results suggest that adding lightweight geometric and compositional structure to the action head can materially improve how VLA policies organize and generalize robotic manipulation behavior. An anonymized code repository is provided in the supplementary material.",
-      "published": "2026-05-12T09:03:39Z",
-      "updated": "2026-05-12T09:03:39Z",
-      "arxiv_id": "2605.11809v1",
-      "abs_url": "http://arxiv.org/abs/2605.11809v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.11809v1",
-      "primary_category": "cs.AI",
-      "categories": [
-        "cs.AI"
-      ],
-      "comment": "",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "机器人操作",
-        "VLA/多模态策略",
-        "数据集/评测",
-        "机械臂"
-      ],
-      "topic": "机器人操作",
-      "score": 10,
-      "anchor_terms": [
-        "manipulation",
-        "robot",
-        "robotic",
-        "vision-language-action",
-        "vla"
-      ],
-      "matched_terms": [
-        "end-effector",
-        "manipulation",
-        "robot",
-        "robotic",
-        "vision-language-action",
-        "vla"
-      ]
-    },
-    {
-      "title": "Observer-Based Fixed-Time Nested Sliding-Mode Control for Tip-Position Regulation of a Single-Link Flexible Manipulator",
-      "authors": [
-        "Atul Sharma",
-        "Chayan Kumar Paul",
-        "S. Janardhanan"
-      ],
-      "summary": "This paper presents a novel position control strategy for a single-link flexible manipulator, tailored for applications where precise position must be achieved within strict time constraints. To accomplish this objective, firstly, a nested non-singular terminal sliding mode controller is designed for the system, enabling precise and robust control. Furthermore, a fixed-time sliding mode observer is designed to estimate unmeasured system states accurately in a fixed time, thereby enabling closed-loop control implementation. A stability analysis is presented to guarantee the robustness and efficacy of the proposed composite control algorithm. The effectiveness of the proposed fixed-time controller is demonstrated through numerical simulation on accuracy, stability, and convergence speed. The proposed controller's performance is also compared with that of other state-of-the-art control schemes. The proposed controller is further validated through experiments conducted on a real hardware setup.",
-      "published": "2026-05-12T08:54:49Z",
-      "updated": "2026-05-12T08:54:49Z",
-      "arxiv_id": "2605.11795v1",
-      "abs_url": "http://arxiv.org/abs/2605.11795v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.11795v1",
-      "primary_category": "eess.SY",
-      "categories": [
-        "eess.SY"
-      ],
-      "comment": "",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "世界模型与仿真",
-        "机械臂"
-      ],
-      "topic": "世界模型与仿真",
-      "score": 2,
-      "anchor_terms": [
-        "manipulator"
-      ],
-      "matched_terms": [
-        "manipulator"
       ]
     },
     {
@@ -2703,41 +2480,6 @@
       "matched_terms": [
         "domain adaptation",
         "sim-to-real"
-      ]
-    },
-    {
-      "title": "OOM-Free Alpamayo via CPU-GPU Memory Swapping for Vision-Language-Action Models",
-      "authors": [
-        "Seungwoo Roh",
-        "Huiyeong Kim",
-        "Jong-Chan Kim"
-      ],
-      "summary": "End-to-end Vision-Language-Action (VLA) models for autonomous driving unify perception, reasoning, and control in a single neural network, achieving strong driving performance but requiring 20-60GB of GPU memory-far exceeding the 12-16GB available on commodity GPUs. We present a framework, which enables memory-efficient VLA inference on VRAM-constrained GPUs through system-level optimization alone, without model modification. Our work proceeds in three stages: (1) Sequential Demand Layering reduces VRAM usage from model-level to layer-level granularity; (2) Pipelined Demand Layering hides parameter transfer time within layer execution time via transfer--compute overlap; and (3) a GPU-Resident Layer Decision Policy, informed by per-module residency benefit analysis, eliminates the residual transfer overhead that pipelining cannot hide. We further propose a performance prediction model that determines the optimal configuration-both the number and placement of resident layers-from a single profiling run with less than 1.3% prediction error across all configurations. Applied to NVIDIA's Alpamayo-R1-10B (21.52GB) on an RTX 5070Ti (16GB), our work achieves up to 3.55x speedup over Accelerate offloading while maintaining full BF16 precision.",
-      "published": "2026-05-12T07:37:10Z",
-      "updated": "2026-05-12T07:37:10Z",
-      "arxiv_id": "2605.11678v1",
-      "abs_url": "http://arxiv.org/abs/2605.11678v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.11678v1",
-      "primary_category": "cs.AI",
-      "categories": [
-        "cs.AI"
-      ],
-      "comment": "Submitted to IEEE RTCSA on March 26, 2026 (KST); Accepted on May 4, 2026 (KST)",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "VLA/多模态策略",
-        "感知与3D理解"
-      ],
-      "topic": "VLA/多模态策略",
-      "score": 5,
-      "anchor_terms": [
-        "vision-language-action",
-        "vla"
-      ],
-      "matched_terms": [
-        "vision-language-action",
-        "vla"
       ]
     },
     {
