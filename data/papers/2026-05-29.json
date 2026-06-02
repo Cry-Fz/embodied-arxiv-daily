@@ -1,13 +1,67 @@
 {
   "date": "2026-05-29",
-  "generated_at": "2026-06-01T02:14:59.650092+00:00",
+  "generated_at": "2026-06-02T02:38:22.221861+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202605290000 TO 202605292359]",
-  "total_fetched": 487,
-  "total_matched": 54,
+  "total_fetched": 658,
+  "total_matched": 74,
   "papers": [
+    {
+      "title": "Per-Group Error, Not Total MSE: Fine-Tuning Vision-Language-Action Models for 11-DoF Mobile Manipulation",
+      "authors": [
+        "Pau Montagut Bofi",
+        "Mario García Blasco",
+        "Tessa Pulli",
+        "Markus Vincze"
+      ],
+      "summary": "Fine-tuning Vision-Language-Action (VLA) models for mobile manipulators with heterogeneous joint spaces can produce a counterintuitive result: the checkpoint with the lowest aggregate MSE is not the one that performs best on the real robot. We argue this is a predictable consequence of collapsing heterogeneous joint groups (arm, gripper, head, wheeled base) into a single metric, where easy-to-predict joints can mask joints that still fail. We fine-tune SmolVLA (450M, action-expert only) on the 11-DoF Toyota HSR and compare it against $π_{0.5}$ (3.3B), a stronger pretrained baseline. Per-group analysis exposes two patterns: in SmolVLA, the mobile base converges slowest and limits overall performance. In expert-only fine-tuning of $π_{0.5}$ (training only the action head, backbone frozen), total MSE drops below the baseline but arm accuracy degrades. On 60 real-robot trials (20 per model), $π_{0.5}$ 80k (4.0/4) significantly outperforms both fine-tuned variants (expert-only 3k: 3.75/4; HSR-SmolVLA: 3.5/4; Mann-Whitney $p \\leq 0.010$), despite expert-only 3k having the lowest total MSE. This separation is most consistent with the offline arm-group error, not total MSE or base-group error. We conclude that per-group error is a more reliable signal than total MSE for checkpoint selection on robots with heterogeneous action spaces. Code: https://github.com/paumontagut/per-group-mse-vla",
+      "published": "2026-05-29T18:36:08Z",
+      "updated": "2026-05-29T18:36:08Z",
+      "arxiv_id": "2606.00253v1",
+      "abs_url": "http://arxiv.org/abs/2606.00253v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00253v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "comment": "4 pages, 3 figures, 3 tables. Accepted as poster at ICRA 2026 Workshop \"From Data to Decisions: VLA Pipelines for Real Robots\". Code: [https://github.com/paumontagut/per-group-mse-vla](https://github.com/paumontagut/per-group-mse-vla)",
+      "code_url": "https://github.com/paumontagut/per-group-mse-vla",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "机器人操作",
+        "VLA/多模态策略",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 17,
+      "anchor_terms": [
+        "manipulation",
+        "manipulator",
+        "robot",
+        "vision-language-action",
+        "vla"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "manipulator",
+        "mobile manipulation",
+        "robot",
+        "vision-language-action",
+        "vla"
+      ],
+      "title_zh": "每组误差，而非总 MSE：微调 11-DoF 移动操纵的视觉-语言-动作模型",
+      "summary_zh": "对具有异构关节空间的移动机械臂进行视觉-语言-动作（VLA）模型的微调可能会产生违反直觉的结果：具有最低总 MSE 的检查点并不是在真实机器人上表现最好的检查点。我们认为，这是将异构关节组（手臂、夹具、头部、轮式底座）折叠成单个度量的可预测结果，其中易于预测的关节可以掩盖仍然失败的关节。我们在 11-DoF Toyota HSR 上微调 SmolVLA（450M，仅限动作专家），并将其与更强的预训练基线 $π_{0.5}$ (3.3B) 进行比较。每组分析揭示了两种模式：在 SmolVLA 中，移动基础收敛最慢并限制整体性能。在仅限专家的 $π_{0.5}$ 微调中（仅训练动作头，骨干冻结），总 MSE 降至基线以下，但手臂准确性下降。在 60 个真实机器人试验中（每个模型 20 个），$π_{0.5}$ 80k (4.0/4) 显着优于两种微调变体（仅专家 3k：3.75/4；HSR-SmolVLA：3.5/4；Mann-Whitney $p \\leq 0.010$），尽管仅专家 3k 的总 MSE 最低。这种分离与离线臂组误差最一致，而不是总 MSE 或基组误差。我们得出的结论是，对于具有异构动作空间的机器人的检查点选择，每组误差是比总 MSE 更可靠的信号。代码：https://github.com/paumontagut/per-group-mse-vla",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
+      }
+    },
     {
       "title": "Batched Differentiable Rigid Body Dynamics in PyTorch for GPU-Accelerated Robot Learning",
       "authors": [
@@ -63,6 +117,56 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-06-01T02:17:48.326905+00:00"
+      }
+    },
+    {
+      "title": "Modeling Robotics Dataset Construction as an Artifact-Based Build Process",
+      "authors": [
+        "Leon Pohl",
+        "Lukas Beer",
+        "George Sebastian",
+        "Mirko Maehlisch"
+      ],
+      "summary": "Robotic systems generate large volumes of multimodal sensor data, but converting ROS bag recordings into machine learning datasets is often handled by ad hoc sequential scripts, creating engineering overhead and slow iteration cycles. We model dataset construction as an artifact-based build process over a dependency graph and implement this approach in Bagzel, an open-source Bazel extension for reproducible, incremental dataset generation (including nuScenes-format export). We compare Bagzel and Bagzel-xattr (server-side digest management) against a sequential rosbag2nuscenes baseline. Bagzel reduces runtime in all evaluated execution modes, with the largest gains in iterative workflows (up to 386.26x in warm builds and 7.21x in incremental builds on a 20.4 GB dataset). Across dataset sizes from 5.1 to 20.4 GB, Bagzel variants show markedly better scaling behavior than the baseline, especially in warm and incremental modes. Bagzel-xattr provides additional gains, with a mean runtime reduction of 5.9% compared to Bagzel in the input granularity study. Overall, modeling robotics dataset construction as an artifact-based build process substantially reduces dataset update latency while maintaining a deterministic build design that supports reproducibility. Bagzel is publicly available at https://github.com/UniBwTAS/bagzel.",
+      "published": "2026-05-29T10:11:45Z",
+      "updated": "2026-05-29T10:11:45Z",
+      "arxiv_id": "2606.00162v1",
+      "abs_url": "http://arxiv.org/abs/2606.00162v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00162v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "comment": "Accepted 2026 IEEE 22nd International Conference on Automation Science and Engineering (CASE 2026), 6 pages, 6 figures, 2 tables",
+      "code_url": "https://github.com/UniBwTAS/bagzel",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "数据集/评测",
+      "score": 10,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "open-source",
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "将机器人数据集构建建模为基于工件的构建过程",
+      "summary_zh": "机器人系统会生成大量多模式传感器数据，但将 ROS 包记录转换为机器学习数据集通常由临时顺序脚本处理，从而产生工程开销和缓慢的迭代周期。我们将数据集构建建模为依赖图上基于工件的构建过程，并在 Bagzel 中实现此方法，Bagzel 是一个开源 Bazel 扩展，用于可重复的增量数据集生成（包括 nuScenes 格式导出）。我们将 Bagzel 和 Bagzel-xattr（服务器端摘要管理）与顺序 rosbag2nuscenes 基线进行比较。 Bagzel 减少了所有评估的执行模式中的运行时间，其中迭代工作流程的收益最大（在 20.4 GB 数据集上的热构建中最高可达 386.26 倍，在增量构建中最高可达 7.21 倍）。在 5.1 到 20.4 GB 的数据集大小中，Bagzel 变体显示出比基线明显更好的扩展行为，特别是在热模式和增量模式下。 Bagzel-xattr 提供了额外的收益，在输入粒度研究中，与 Bagzel 相比，平均运行时间减少了 5.9%。总体而言，将机器人数据集构建建模为基于工件的构建过程可显着减少数据集更新延迟，同时保持支持可重复性的确定性构建设计。 Bagzel 已在 https://github.com/UniBwTAS/bagzel 上公开提供。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
       }
     },
     {
@@ -322,6 +426,773 @@
       }
     },
     {
+      "title": "Literary Emotions in Motion: A Soft Robotics Installation for Tactile Storytelling",
+      "authors": [
+        "Carolina Silva-Plata",
+        "Abraham Villavicencio-Carmona",
+        "Miguel Silva Plata",
+        "Stefan Escaida",
+        "Ruben Fernandez"
+      ],
+      "summary": "Soft robotics is increasingly explored in artistic contexts, where tactile interaction provides audiences with embodied engagement beyond visual or auditory signals. This work presents an interactive installation that maps semantic emotion analysis of narrative text into variable stiffness of soft pneumatic modules. A natural language model identifies two dominant emotions from a predefined set of six, driving the inflation of seven hexagonally arranged soft actuators. The central actuator represents the primary emotion, while the surrounding ones express the secondary. We develop and mechanically characterize silicone actuators, called soft modules, featuring a thin membrane layer, demonstrating how this morphological control expands the achievable stiffness range while preserving simplicity and low-cost fabrication. A user study with ten participants further evaluates how multisensory coupling of stiffness and LEDs intensity influences emotional perception. The results suggest that stiffness modulation accompanied by color change can support emotionally meaningful and engaging tactile interaction in soft robotic installations.",
+      "published": "2026-05-29T23:14:55Z",
+      "updated": "2026-05-29T23:14:55Z",
+      "arxiv_id": "2606.00418v1",
+      "abs_url": "http://arxiv.org/abs/2606.00418v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00418v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.HC"
+      ],
+      "comment": "8 pages, 8 figures",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "感知与3D理解",
+      "score": 12,
+      "anchor_terms": [
+        "embodied",
+        "robot",
+        "robotic",
+        "robotics",
+        "tactile"
+      ],
+      "matched_terms": [
+        "embodied",
+        "robot",
+        "robotic",
+        "robotics",
+        "tactile"
+      ],
+      "title_zh": "运动中的文学情感：用于触觉讲故事的软机器人装置",
+      "summary_zh": "软机器人技术在艺术环境中得到越来越多的探索，其中触觉交互为观众提供了超越视觉或听觉信号的具体参与。这项工作提出了一种交互式装置，将叙事文本的语义情感分析映射到软气动模块的可变刚度中。自然语言模型从预定义的六种情绪中识别出两种主要情绪，驱动七个六边形排列的软执行器的膨胀。中央执行器代表主要情绪，而周围的执行器则表达次要情绪。我们开发并机械表征了称为软模块的硅树脂执行器，具有薄膜层，展示了这种形态控制如何扩大可实现的刚度范围，同时保持简单性和低成本制造。一项由 10 名参与者参与的用户研究进一步评估了硬度和 LED 强度的多感官耦合如何影响情绪感知。结果表明，伴随颜色变化的刚度调制可以支持软机器人装置中具有情感意义和吸引力的触觉交互。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
+      }
+    },
+    {
+      "title": "SoFiE: Soft Finger Exoskeleton for Intelligent Grasping",
+      "authors": [
+        "Magnus Malthe Sigsgaard Nielsen",
+        "Nicklas Nikolaj Grønvall",
+        "Xiaofeng Xiong",
+        "Saravana Prashanth Murali Babu"
+      ],
+      "summary": "Soft wearable robotic systems have emerged as a promising solution for assisting individuals with reduced hand function. This paper presents SoFiE, a modular soft finger exoskeleton designed to assist index-finger flexion during grasping tasks. The proposed system is primarily fabricated using 3D-printed flexible materials, enabling a lightweight, low-profile, and modular design. Actuation is achieved through a tendon-driven mechanism powered by a compact DC motor, while passive extension is provided by a compliant conductive spring. This element, termed StretchSense, also functions as a proprioceptive sensor by exhibiting resistance changes under deformation. Furthermore, a novel tactile sensing approach, MagSense, is introduced, using a magnet and magnetometer pair embedded in a soft fingertip structure to estimate contact force and object compliance. The system is fully untethered and controlled by an embedded microcontroller. In addition, actuator-level sensing through motor encoder feedback enables estimation of the system state, providing a foundation for safe and adaptive control strategies. Experimental validation demonstrates the capability of the system to provide reliable pose estimation, distinguish between materials with different stiffness, and generate distinct sensor signatures across different grasping tasks. This paper details the design, fabrication, and sensing concepts of the proposed exoskeleton as a proof of concept toward modular, soft, and assistive wearable robotics.",
+      "published": "2026-05-29T22:31:35Z",
+      "updated": "2026-05-29T22:31:35Z",
+      "arxiv_id": "2606.00397v1",
+      "abs_url": "http://arxiv.org/abs/2606.00397v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00397v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 11,
+      "anchor_terms": [
+        "grasp",
+        "grasping",
+        "robot",
+        "robotic",
+        "robotics",
+        "tactile"
+      ],
+      "matched_terms": [
+        "grasp",
+        "grasping",
+        "robot",
+        "robotic",
+        "robotics",
+        "tactile"
+      ],
+      "title_zh": "SoFiE：用于智能抓取的软手指外骨骼",
+      "summary_zh": "软可穿戴机器人系统已成为帮助手部功能障碍人士的一种有前途的解决方案。本文介绍了 SoFiE，这是一种模块化软手指外骨骼，旨在帮助食指在抓取任务中弯曲。所提出的系统主要使用 3D 打印柔性材料制造，实现轻质、薄型和模块化设计。驱动是通过由紧凑型直流电机驱动的腱驱动机构实现的，而被动延伸则由顺应性导电弹簧提供。该元件被称为 StretchSense，还可以通过在变形下表现出电阻变化来充当本体感受传感器。此外，还引入了一种新颖的触觉传感方法 MagSense，使用嵌入柔软指尖结构中的磁铁和磁力计对来估计接触力和物体顺应性。该系统完全不受束缚，由嵌入式微控制器控制。此外，通过电机编码器反馈进行执行器级传感可以估计系统状态，为安全和自适应控制策略奠定基础。实验验证证明了系统能够提供可靠的姿态估计、区分不同刚度的材料以及在不同的抓取任务中生成不同的传感器签名。本文详细介绍了所提出的外骨骼的设计、制造和传感概念，作为模块化、软体和辅助可穿戴机器人的概念证明。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
+      }
+    },
+    {
+      "title": "Behavior Cloning of MPC for 3-DOF Robotic Manipulators",
+      "authors": [
+        "Theo Guegan",
+        "Dexter Wen Jie Teo"
+      ],
+      "summary": "While Model Predictive Control (MPC) provides strong stability and robustness, it imposes a significant computational burden on real-time systems. This paper investigates the application of Behavior Cloning to approximate MPC policies for the real-time control of a 3-degree-of-freedom robotic manipulator. We present a baseline controller combining Inverse Kinematics with MPC and evaluate neural network architectures, ranging from classical regression algorithms to deep learning models including Deep MLPs and RNNs, to derive computationally efficient surrogate policies. We analyze generalization capabilities, stability considerations, and the trade-offs inherent in different architectural choices. Our empirical study employs both online and offline evaluations to assess performance regarding accuracy, computational efficiency, and fidelity to the original MPC policy. Our results demonstrate that Behavior Cloning can effectively reduce the computational burden of MPC policies for 3-DOF robotic manipulators, achieving a 3x reduction in inference latency with a 84.98% success rate under relaxed tolerances. Notably, we find that static architectures outperform temporal variants, confirming the sufficiency of instantaneous state observations for this task. However, we observe a precision gap under strict tolerances, which suggest that while Behavior Cloning captures the global optimal trajectory, further research is needed to minimize terminal steady-state error.",
+      "published": "2026-05-29T21:51:43Z",
+      "updated": "2026-05-29T21:51:43Z",
+      "arxiv_id": "2606.00383v1",
+      "abs_url": "http://arxiv.org/abs/2606.00383v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00383v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG",
+        "eess.SY"
+      ],
+      "comment": "Accepted at the IEEE ICRA 2026 Workshop on Reinforcement Learning in the Era of Imitation Learning (RL4IL), 6 pages excluding references",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "强化/模仿学习",
+        "数据集/评测",
+        "机械臂"
+      ],
+      "topic": "强化/模仿学习",
+      "score": 13,
+      "anchor_terms": [
+        "imitation learning",
+        "manipulator",
+        "reinforcement learning",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "behavior cloning",
+        "imitation learning",
+        "manipulator",
+        "reinforcement learning",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "3-DOF 机器人操纵器 MPC 的行为克隆",
+      "summary_zh": "虽然模型预测控制（MPC）提供了强大的稳定性和鲁棒性，但它给实时系统带来了巨大的计算负担。本文研究了应用行为克隆来近似 MPC 策略，以实现 3 自由度机器人操纵器的实时控制。我们提出了一种将逆运动学与 MPC 相结合的基线控制器，并评估从经典回归算法到包括深度 MLP 和 RNN 在内的深度学习模型的神经网络架构，以导出计算高效的代理策略。我们分析泛化能力、稳定性考虑以及不同架构选择中固有的权衡。我们的实证研究采用在线和离线评估来评估准确性、计算效率以及对原始 MPC 策略的保真度方面的性能。我们的结果表明，行为克隆可以有效减少 3-DOF 机器人操纵器的 MPC 策略的计算负担，在宽松的容差下将推理延迟减少 3 倍，成功率达到 84.98%。值得注意的是，我们发现静态架构优于时间变体，证实了瞬时状态观察对于该任务的充分性。然而，我们观察到严格公差下的精度差距，这表明虽然行为克隆捕获了全局最优轨迹，但仍需要进一步研究以最小化最终稳态误差。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
+      }
+    },
+    {
+      "title": "Constrained Whole-Body Tracking for Humanoid Robots",
+      "authors": [
+        "Daniel Morton",
+        "Pranit Mohnot",
+        "Marco Pavone"
+      ],
+      "summary": "Recent advances in reinforcement learning (RL) have demonstrated impressive whole-body agility for humanoid robots, yet ensuring safety and satisfying constraints -- particularly those specified after training -- remains a challenge. Towards this goal, we present ConstrainedMimic, a control framework that leverages whole-body kinematics and dynamics for real-time constraint enforcement within RL tracking policies. By integrating principles from operational space control and control barrier functions (CBFs), we enable the satisfaction of arbitrary runtime constraints on both the kinematic reference motion and the underlying dynamics. In whole-body motion-tracking and teleoperation experiments on a (simulated) Unitree G1 with a learned policy, we demonstrate collision avoidance (both with the robot body and external obstacles), joint limits, and center of mass stability constraints. By remaining consistent with the current contact mode and tracking objectives, we minimally restrict the capabilities of the policy when constraints are active. Our method is fully differentiable, runs on CPU, GPU, and TPU, and can be deployed at up to 300-500 Hz. All software will be freely available upon publication.",
+      "published": "2026-05-29T21:33:03Z",
+      "updated": "2026-05-29T21:33:03Z",
+      "arxiv_id": "2606.00374v1",
+      "abs_url": "http://arxiv.org/abs/2606.00374v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00374v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "强化/模仿学习",
+        "人形与灵巧",
+        "双足机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 9,
+      "anchor_terms": [
+        "humanoid",
+        "reinforcement learning",
+        "robot",
+        "teleoperation"
+      ],
+      "matched_terms": [
+        "humanoid",
+        "reinforcement learning",
+        "robot",
+        "teleoperation"
+      ],
+      "title_zh": "人形机器人的约束全身跟踪",
+      "summary_zh": "强化学习 (RL) 的最新进展已证明人形机器人具有令人印象深刻的全身敏捷性，但确保安全性和满足约束条件（尤其是训练后指定的约束条件）仍然是一个挑战。为了实现这一目标，我们提出了 ConstrainedMimic，这是一个控制框架，它利用全身运动学和动力学在 RL 跟踪策略中进行实时约束实施。通过集成操作空间控制和控制障碍函数（CBF）的原理，我们能够满足运动学参考运动和底层动力学的任意运行时约束。在具有学习策略的（模拟）Unitree G1 上的全身运动跟踪和远程操作实验中，我们演示了避免碰撞（与机器人身体和外部障碍物）、关节限制和质心稳定性约束。通过与当前的联系模式和跟踪目标保持一致，我们可以在约束处于活动状态时最大限度地限制策略的功能。我们的方法是完全可微分的，在 CPU、GPU 和 TPU 上运行，并且可以在高达 300-500 Hz 的频率下部署。所有软件在发布后都将免费提供。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
+      }
+    },
+    {
+      "title": "GLENS: Global Search via Learning from Solver Iterates with Diffusion Models",
+      "authors": [
+        "Anjian Li",
+        "Bartolomeo Stellato",
+        "Ryne Beeson"
+      ],
+      "summary": "We consider the problem of generating a large collection of initial guesses for local minima of multimodal non-convex continuous optimization problems. The goal is for these initial guesses to be high-quality (i.e., a numerical solver converges quickly) and diverse (i.e., represent many different local minima). Identifying multiple locally optimal solutions enables flexible downstream decision-making, but typically requires expensive global search. Existing data-driven methods predict initial guesses using only the final converged optima from offline solver runs, which discards information about the local neighborhoods of solutions and limits the available training data. We propose GLENS (Global Search via Learning from Solver Iterates), a data-efficient global search method that leverages intermediate solver iterates as free data augmentation. GLENS consists of two components: a neighborhood structure model that uses diffusion models to learn the local geometry around optima conditioned on problem parameters, and a solver behavior model that learns refinement directions to further guide samples towards nearby optima during diffusion sampling. Experiments on modified non-convex benchmark problems and a two-robot obstacle-avoidance navigation problem show that GLENS generates high-quality initial guesses while preserving the multimodal distribution of diverse local optima. The resulting initial guesses lead to faster solver convergence across different problem settings and solvers. We also analyze how key hyperparameter choices affect the performance.",
+      "published": "2026-05-29T21:09:56Z",
+      "updated": "2026-05-29T21:09:56Z",
+      "arxiv_id": "2606.00366v1",
+      "abs_url": "http://arxiv.org/abs/2606.00366v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00366v1",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 3,
+      "anchor_terms": [
+        "navigation",
+        "robot"
+      ],
+      "matched_terms": [
+        "navigation",
+        "robot"
+      ],
+      "title_zh": "GLENS：通过学习求解器迭代扩散模型进行全局搜索",
+      "summary_zh": "我们考虑为多模态非凸连续优化问题的局部最小值生成大量初始猜测的问题。目标是使这些初始猜测具有高质量（即数值求解器快速收敛）和多样化（即代表许多不同的局部最小值）。确定多个局部最优解决方案可以实现灵活的下游决策，但通常需要昂贵的全局搜索。现有的数据驱动方法仅使用离线求解器运行的最终收敛最优值来预测初始猜测，这会丢弃有关解的局部邻域的信息并限制可用的训练数据。我们提出 GLENS（通过从求解器迭代学习进行全局搜索），这是一种数据高效的全局搜索方法，利用中间求解器迭代作为免费数据增强。 GLENS 由两个组件组成：一个邻域结构模型，它使用扩散模型来学习以问题参数为条件的最优值周围的局部几何形状；以及一个求解器行为模型，它学习细化方向以在扩散采样期间进一步引导样本朝向附近的最优值。对修改后的非凸基准问题和双机器人避障导航问题的实验表明，GLENS 可以生成高质量的初始猜测，同时保留不同局部最优值的多模态分布。由此产生的初始猜测导致不同问题设置和求解器之间的求解器收敛速度更快。我们还分析了关键超参数选择如何影响性能。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
+      }
+    },
+    {
+      "title": "FAIR^2 Drones: An AI-Ready Standard for Cross-Domain Wildlife Drone Datasets",
+      "authors": [
+        "Jenna Kline",
+        "Kilian Meier",
+        "Vandita Shukla",
+        "Edouard G. A. Rolland",
+        "Elena Iannino",
+        "Lucie Laporte-Devylder",
+        "Constanza Andrea Molina Catricheo",
+        "Blair Costelloe",
+        "Elizabeth Campolongo",
+        "Henrik S. Midtiby",
+        "Devis Tuia",
+        "Benjamin Risse",
+        "Ulrik P. S. Lundquist",
+        "Anders Lyhne Christensen",
+        "Fabio Remondino",
+        "Thomas Richardson",
+        "Tanya Berger-Wolf"
+      ],
+      "summary": "Animal ecology data collection using drones represents a substantial investment of time, expertise, and financial resources. Yet most existing datasets serve only a single research community, limiting interdisciplinary reuse. We propose a unified drone dataset standard, FAIR^2 Drones, that bridges ecology, robotics, and computer vision by building on existing FAIR and AI-ready data frameworks while adding essential platform metadata and annotation specifications. Our standard enables datasets to simultaneously support ecological analysis, robotics algorithm development, and computer vision benchmarking. We provide open-source validation tools, reference implementations, and multimodal extensions linking drone imagery with complementary sensors such as camera traps, GPS, and acoustics. By standardizing metadata across disciplines, this framework maximizes the scientific return on investment for costly field deployments and accelerates cross-domain collaboration in environmental monitoring.",
+      "published": "2026-05-29T20:58:53Z",
+      "updated": "2026-05-29T20:58:53Z",
+      "arxiv_id": "2606.00355v1",
+      "abs_url": "http://arxiv.org/abs/2606.00355v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00355v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "数据集/评测",
+      "score": 9,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "drone",
+        "open-source",
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "FAIR^2 无人机：跨域野生动物无人机数据集的 AI 就绪标准",
+      "summary_zh": "使用无人机收集动物生态数据需要大量时间、专业知识和财政资源的投资。然而，大多数现有数据集仅服务于单个研究社区，限制了跨学科的重用。我们提出了一个统一的无人机数据集标准 FAIR^2 Drones，它通过构建现有的 FAIR 和人工智能就绪数据框架，同时添加必要的平台元数据和注释规范，在生态学、机器人技术和计算机视觉之间架起桥梁。我们的标准使数据集能够同时支持生态分析、机器人算法开发和计算机视觉基准测试。我们提供开源验证工具、参考实现以及将无人机图像与相机陷阱、GPS 和声学等互补传感器连接起来的多模式扩展。通过标准化跨学科的元数据，该框架最大限度地提高了昂贵的现场部署的科学投资回报，并加速了环境监测中的跨领域协作。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
+      }
+    },
+    {
+      "title": "From Noise to Control: Parameterized Diffusion Policies",
+      "authors": [
+        "Renhao Zhang",
+        "Haotian Fu",
+        "Mingxi Jia",
+        "George Konidaris",
+        "Yilun Du",
+        "Bruno Castro da Silva"
+      ],
+      "summary": "We propose Parameterized Diffusion Policy (PDP), a framework for learning diffusion policies conditioned on low-dimensional, continuous parameters embedded in a learned behavior manifold. By constructing this manifold so that distances between latent representations reflect the semantic similarity between physical trajectories, we transform diffusion from a mechanism for stochastic diversity into a precise and optimizable tool for behavior steering. Our approach enables smooth interpolation between known strategies and efficient adaptation to novel constraints without updating policy weights. We demonstrate that PDP significantly improves adaptation performance on complex multimodal benchmarks in both simulated and real-robot experiments compared to standard diffusion policies, particularly in scenarios requiring the synthesis of novel behaviors.",
+      "published": "2026-05-29T20:21:50Z",
+      "updated": "2026-05-29T20:21:50Z",
+      "arxiv_id": "2606.00336v1",
+      "abs_url": "http://arxiv.org/abs/2606.00336v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00336v1",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "强化/模仿学习",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "强化/模仿学习",
+      "score": 5,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "diffusion policy",
+        "robot"
+      ],
+      "title_zh": "从噪声到控制：参数化扩散策略",
+      "summary_zh": "我们提出了参数化扩散策略（PDP），这是一种学习扩散策略的框架，其条件是嵌入在学习行为流形中的低维连续参数。通过构建这个流形，使潜在表示之间的距离反映物理轨迹之间的语义相似性，我们将扩散从随机多样性机制转变为精确且可优化的行为引导工具。我们的方法能够在已知策略之间进行平滑插值，并有效地适应新的约束，而无需更新策略权重。我们证明，与标准扩散策略相比，PDP 在模拟和真实机器人实验中显着提高了复杂多模式基准的适应性能，特别是在需要综合新行为的场景中。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
+      }
+    },
+    {
+      "title": "Belief Consistency Between Foundation-Model Evidence and Geometric Perception in Persistent Robotic Maps",
+      "authors": [
+        "Christoffer Heckman",
+        "Harel Biggie",
+        "Brendan Crowe",
+        "Nicholas Roy"
+      ],
+      "summary": "Persistent maps used by autonomous robots increasingly fuse a geometric perception stack whose assertions are well-characterized with a foundation-model channel that produces semantic claims without calibrated reliability about the same scene. Contemporary mapping systems integrate the two channels by treating the foundation-model channel as an additional voter into a per-element posterior, uncalibrated for its own per-class reliability and without machinery to flag when the two channels contradict each other at a given moment. We propose an update operator with two cooperating mechanisms: a per-class calibrated commit gate, and a per-event conflict-drop window that refuses to commit foundation-model claims contradicted by the geometric channel at the moment of the claim. We evaluate on KITTI-360 and ScanNet, with an oracle geometric channel (panoptic ground truth) and an off-the-shelf online semantic segmenter (Mask2Former) to demonstrate real-world performance. The operator produces substantially more accurate committed maps (KITTI is car commit precision 99.7% vs. 43.9% for the calibration-only operator; mean per-class IoU 0.522 vs. 0.180), retains more compositional true positives at higher precision than a monolithic compositional VLM prompt. The framework operates at deployment quality across both oracle and off-the-shelf-segmenter geometric channels, and is invariant under foundation-model substitution.",
+      "published": "2026-05-29T19:48:51Z",
+      "updated": "2026-05-29T19:48:51Z",
+      "arxiv_id": "2606.00318v1",
+      "abs_url": "http://arxiv.org/abs/2606.00318v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00318v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "感知与3D理解",
+      "score": 7,
+      "anchor_terms": [
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "持久机器人地图中基础模型证据与几何感知之间的置信一致性",
+      "summary_zh": "自主机器人使用的持久地图越来越多地融合了几何感知堆栈，其断言通过基础模型通道得到了很好的表征，该通道产生语义声明，而无需对同一场景进行校准可靠性。现代地图系统通过将基础模型通道视为每个元素后验的附加投票者来集成这两个通道，其自身的每类可靠性未经校准，并且当两个通道在给定时刻相互矛盾时没有机制进行标记。我们提出了一个具有两种协作机制的更新运算符：每个类校准的提交门，以及每个事件的冲突删除窗口，该窗口拒绝提交与声明时的几何通道相矛盾的基础模型声明。我们使用预言机几何通道（全景地面真相）和现成的在线语义分割器（Mask2Former）对 KITTI-360 和 ScanNet 进行评估，以展示真实世界的性能。该算子生成了更加准确的提交地图（KITTI 的汽车提交精度为 99.7%，而仅校准算子为 43.9%；平均每类 IoU 为 0.522 比 0.180），与整体组合 VLM 提示相比，以更高的精度保留了更多的组合真阳性。该框架在预言机和现成的分段器几何通道中以部署质量运行，并且在基础模型替换下保持不变。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
+      }
+    },
+    {
+      "title": "Generalized Model Predictive Path Integral Control as Expectation--Maximization",
+      "authors": [
+        "Jiarui Wang",
+        "Sina Sharifi",
+        "Mahyar Fazlyab"
+      ],
+      "summary": "Model Predictive Path Integral (MPPI) control is a powerful sampling-based method for solving stochastic optimal control problems and has enabled real-time control in complex robotic systems. Despite its empirical success, its theoretical understanding remains limited. In this work, we show that MPPI can be interpreted as a special case of the Expectation-Maximization (EM) algorithm applied to a probabilistic inference formulation of optimal control. This perspective leads to a generalized EM-MPPI framework that extends MPPI beyond the commonly used Gaussian parameterization. We analyze the convergence behavior of this algorithm and characterize the local convergence rate in terms of the covariance of the posterior trajectory distribution and the exploration distribution. For exponential-family distributions, we establish a sufficient increase property of the log-likelihood when the log-partition function is strongly convex. Specializing the analysis to Gaussian MPPI yields explicit global and local convergence characterizations. The code for the experiments will be available upon acceptance.",
+      "published": "2026-05-29T19:46:07Z",
+      "updated": "2026-05-29T19:46:07Z",
+      "arxiv_id": "2606.00317v1",
+      "abs_url": "http://arxiv.org/abs/2606.00317v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00317v1",
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY",
+        "math.OC"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 3,
+      "anchor_terms": [
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "广义模型预测路径积分控制作为期望--最大化",
+      "summary_zh": "模型预测路径积分 (MPPI) 控制是一种强大的基于采样的方法，用于解决随机最优控制问题，并可在复杂的机器人系统中实现实时控制。尽管它在实证上取得了成功，但其理论理解仍然有限。在这项工作中，我们表明 MPPI 可以解释为应用于最优控制概率推理公式的期望最大化 (EM) 算法的特例。这种观点导致了一个通用的 EM-MPPI 框架，它将 MPPI 扩展到常用的高斯参数化之外。我们分析了该算法的收敛行为，并根据后验轨迹分布和探索分布的协方差来表征局部收敛速度。对于指数族分布，当对数划分函数是强凸函数时，我们建立了对数似然的充分增加性质。对高斯 MPPI 进行专业化分析可以产生明确的全局和局部收敛特征。实验代码将在接受后提供。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
+      }
+    },
+    {
+      "title": "DRL-Based Pose Control for Double-Ackermann Robots Under Actuation Uncertainties",
+      "authors": [
+        "Oussama Zaim",
+        "Mélodie Daniel",
+        "Aly Magassouba",
+        "Miguel Aranda",
+        "Olivier Ly"
+      ],
+      "summary": "Robust deployment of deep reinforcement learning (DRL) policies on real robots remains challenging due to discrepancies between simulation and real-world dynamics. We address this issue in the context of maneuvering with double-Ackermann-steering mobile robots, which introduce additional constraints due to their non-holonomic nature. Building upon the DRL framework ManeuverNet, we extend its objective from position control to full pose control, resulting in a more challenging task. We further investigate the impact of actuation-related uncertainties on policy transfer. The use of simplified actuation models during training of the extended policy can lead to poor generalization, shown by a success rate drop from 100% in PyBullet to 25% in Gazebo under stricter evaluation conditions. To address this limitation, we adopt a sim-to-sim-to-real approach, where actuation effects observed in Gazebo are incorporated into the PyBullet training environment. Using multi-environment DRL with SAC and CrossQ, we learn policies that remain robust despite modeling inaccuracies. This approach can significantly reduce the performance gap across simulators, achieving up to 92% success rate in Gazebo and maintaining 69% under stricter thresholds, with successful transfer to a real robot without additional tuning.",
+      "published": "2026-05-29T19:37:30Z",
+      "updated": "2026-05-29T19:37:30Z",
+      "arxiv_id": "2606.00313v1",
+      "abs_url": "http://arxiv.org/abs/2606.00313v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00313v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "6 pages, 4 figures, 2 tables, Accepted for Uncertainty in Open-World Robotics an IEEE International Conference on Robotics & Automation (ICRA 2026) workshop",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 13,
+      "anchor_terms": [
+        "reinforcement learning",
+        "robot",
+        "robotic",
+        "robotics",
+        "sim-to-real"
+      ],
+      "matched_terms": [
+        "mobile robot",
+        "reinforcement learning",
+        "robot",
+        "robotic",
+        "robotics",
+        "sim-to-real",
+        "simulator"
+      ],
+      "title_zh": "驱动不确定性下双阿克曼机器人基于 DRL 的位姿控制",
+      "summary_zh": "由于模拟与现实世界动态之间的差异，在真实机器人上稳健部署深度强化学习（DRL）策略仍然具有挑战性。我们在使用双阿克曼转向移动机器人进行操纵的背景下解决了这个问题，由于其非完整性质，这引入了额外的约束。基于 DRL 框架 ManeuverNet，我们将其目标从位置控制扩展到全姿态控制，从而实现更具挑战性的任务。我们进一步研究了与驱动相关的不确定性对政策转移的影响。在扩展策略的训练过程中使用简化的驱动模型可能会导致泛化能力较差，在更严格的评估条件下，成功率从 PyBullet 中的 100% 下降到 Gazebo 中的 25%。为了解决这个限制，我们采用了模拟到模拟到真实的方法，其中在 Gazebo 中观察到的驱动效果被纳入 PyBullet 训练环境中。使用带有 SAC 和 CrossQ 的多环境 DRL，我们学习到的策略在建模不准确的情况下仍然保持稳健。这种方法可以显着缩小模拟器之间的性能差距，在 Gazebo 中实现高达 92% 的成功率，并在更严格的阈值下保持 69%，无需额外调整即可成功转移到真实机器人。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
+      }
+    },
+    {
+      "title": "Predicted-Flow Control Barrier Functions for Real-Time Safe Optimal Control",
+      "authors": [
+        "Amirsaeid Safari",
+        "Jesse B. Hoagg"
+      ],
+      "summary": "Control barrier functions (CBFs) provide real-time safety guarantees through pointwise conditions on the state. However, synthesizing a valid CBF is difficult and the resulting controllers are myopic. To address myopia, this article introduces predicted-flow control barrier functions (P-CBFs), which generalize the CBF from a function of the current state to a functional of a predicted flow under a parametrized control plan over a finite prediction horizon. For safety, a P-CBF can certify that the predicted flow is in a safe set over the entire prediction horizon. However, candidate P-CBFs suffer from the same challenge as candidate CBFs, namely, control constraints make it difficult to guarantee that the P-CBF is valid. This article resolves this challenge by introducing a terminal candidate P-CBF requiring that the predicted flow end in a backup safe set at the terminal time, and a planning-time shift that modulates the prediction horizon, providing an additional degree of freedom to ensure feasibility. The real-time control and the evolution of the control-plan parameter and planning-time shift are determined jointly by a single convex optimization that is guaranteed to be feasible and renders the associated safe set forward invariant. The resulting safe optimal flow control provides a safety certificate over the entire prediction horizon and unifies finite-horizon integral-cost optimization with safety certification. This optimization reduces to a quadratic program (QP) if the control constraints are a convex polytope. The QP implementation, termed FlowBarrier, is validated on a nonholonomic ground robot navigating a dense environment. FlowBarrier is compared to nonlinear model predictive control and two CBF-based safety filter methods across 100 trials, where FlowBarrier achieves the highest goal-reaching rate, zero safety violations, and the lowest computation time.",
+      "published": "2026-05-29T19:27:24Z",
+      "updated": "2026-05-29T19:27:24Z",
+      "arxiv_id": "2606.00297v1",
+      "abs_url": "http://arxiv.org/abs/2606.00297v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00297v1",
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY",
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 4,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "robot"
+      ],
+      "title_zh": "用于实时安全最优控制的预测流量控制屏障函数",
+      "summary_zh": "控制屏障函数 (CBF) 通过状态的逐点条件提供实时安全保证。然而，合成有效的 CBF 很困难，而且生成的控制器也是短视的。为了解决短视问题，本文引入了预测流量控制障碍函数 (P-CBF)，它将 CBF 从当前状态的函数推广到有限预测范围内参数化控制计划下的预测流量的函数。为了安全起见，P-CBF 可以证明预测流量在整个预测范围内处于安全集中。然而，候选P-CBF面临着与候选CBF相同的挑战，即控制约束使得难以保证P-CBF的有效性。本文通过引入终端候选 P-CBF 来解决这一挑战，该终端候选 P-CBF 要求预测流在终端时间结束于备份安全集中，以及调节预测范围的规划时间偏移，提供额外的自由度以确保可行性。实时控制以及控制计划参数的演化和计划时间偏移由单个凸优化共同确定，该凸优化保证可行并使得相关的安全集前向不变。由此产生的安全最优流量控制提供了整个预测范围内的安全证书，并将有限范围积分成本优化与安全认证相结合。如果控制约束是凸多面体，则此优化可简化为二次规划 (QP)。 QP 实现称为 FlowBarrier，在密集环境中导航的非完整地面机器人上进行了验证。通过 100 次试验，将 FlowBarrier 与非线性模型预测控制和两种基于 CBF 的安全过滤方法进行比较，其中 FlowBarrier 实现了最高的目标达成率、零安全违规和最短的计算时间。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
+      }
+    },
+    {
+      "title": "Closed-Loop Neural Activation Control in Vision-Language-Action Models",
+      "authors": [
+        "Abhijith Babu",
+        "Ramneet Kaur",
+        "Nathaniel D. Bastian",
+        "Olivera Kotevska",
+        "Susmit Jha",
+        "Yanzhao Wu",
+        "Sumit Kumar Jha",
+        "Anirban Roy"
+      ],
+      "summary": "Vision-Language-Action (VLA) models can be steered at test time by intervening on semantically meaningful internal directions, but existing methods use a fixed steering coefficient, effectively operating in open loop. This is poorly suited to embodied control, where task state and concept error evolve over time, often causing overcorrection, oscillation, and reduced task success, especially for temporal behaviors such as speed and smoothness. We propose CTRL-STEER, a closed-loop framework that replaces static intervention strength with adaptive, time-varying control signals. The key idea is to decouple representation from regulation: rather than assuming temporal concepts are directly controlled by individual neurons, we steer along motion-aligned residual directions while a feedback controller adjusts intervention magnitude online. We instantiate this framework with both PID and reinforcement learning based controllers. Experiments with a fine-tuned OpenVLA policy on four LIBERO task suites show that CTRL-STEER achieves more stable concept regulation and a better steering-task success trade-off than fixed-coefficient baselines, without modifying or retraining the base model.",
+      "published": "2026-05-29T18:59:53Z",
+      "updated": "2026-05-29T18:59:53Z",
+      "arxiv_id": "2606.00269v1",
+      "abs_url": "http://arxiv.org/abs/2606.00269v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00269v1",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "comment": "Accepted at the IEEE/CVF CVPR 2026 Workshop on Visual Concepts (VisCon). 25 pages, 8 figures, including supplementary material",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "强化/模仿学习",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 14,
+      "anchor_terms": [
+        "embodied",
+        "openvla",
+        "reinforcement learning",
+        "vision-language-action",
+        "vla"
+      ],
+      "matched_terms": [
+        "embodied",
+        "libero",
+        "openvla",
+        "reinforcement learning",
+        "vision-language-action",
+        "vla"
+      ],
+      "title_zh": "视觉-语言-动作模型中的闭环神经激活控制",
+      "summary_zh": "视觉-语言-动作（VLA）模型可以在测试时通过干预语义上有意义的内部方向来进行转向，但现有方法使用固定的转向系数，有效地在开环中运行。这不太适合具体控制，其中任务状态和概念错误随着时间的推移而演变，通常会导致过度校正、振荡和任务成功率降低，特别是对于速度和平滑度等时间行为。我们提出了 CTRL-STEER，这是一种闭环框架，用自适应时变控制信号取代静态干预强度。关键思想是将表示与调节分离：我们不假设时间概念直接由单个神经元控制，而是沿着运动对齐的残差方向行驶，同时反馈控制器在线调整干预幅度。我们使用基于 PID 和强化学习的控制器来实例化该框架。在四个 LIBERO 任务套件上进行微调 OpenVLA 策略的实验表明，与固定系数基线相比，CTRL-STEER 实现了更稳定的概念调节和更好的转向任务成功权衡，而无需修改或重新训练基本模型。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
+      }
+    },
+    {
+      "title": "StressDream: Steering Video World Models for Robust Policy Evaluation and Improvement",
+      "authors": [
+        "Junwon Seo",
+        "Sushant Veer",
+        "Ran Tian",
+        "Wenhao Ding",
+        "Apoorva Sharma",
+        "Karen Leung",
+        "Edward Schmerling",
+        "Marco Pavone",
+        "Andrea Bajcsy"
+      ],
+      "summary": "Video world models (WMs) have shown promise for policy evaluation and improvement by imagining realistic future observations conditioned on ego-robot actions. While WMs can model distributions over futures, policy evaluation and improvement typically rely on nominal imaginations, which can miss high-impact outcomes of robot actions unless prohibitively many samples are drawn. To enable robust policy evaluation and improvement over WM imaginations, we propose StressDream, which steers imaginations toward high-impact yet plausible outcomes specified at inference time by optimizing the initial noise of diffusion-based WMs. However, optimizing high-dimensional noise is challenging: the optimization must reason about nuanced, scene-dependent target events in generated videos while avoiding out-of-distribution (OOD) noise that yields implausible imaginations. We address this with two complementary objectives: a semantic objective with a Vision-Language Model that provides informative gradients by reasoning about the generated video, and a plausibility objective that prevents the optimized noise from drifting OOD. With state-of-the-art video world models for autonomous driving and robotic manipulation, we show that StressDream effectively steers imaginations toward high-impact yet plausible outcomes specified by text at inference time, such as task failures, enabling robust policy evaluation and improvement by identifying actions whose plausible futures include undesirable outcomes. Video results are available at https://junwon.me/StressDream/.",
+      "published": "2026-05-29T18:57:57Z",
+      "updated": "2026-05-29T18:57:57Z",
+      "arxiv_id": "2606.00267v1",
+      "abs_url": "http://arxiv.org/abs/2606.00267v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00267v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "comment": "Project page: https://junwon.me/StressDream/",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 8,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robotic",
+        "world model"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "robot",
+        "robotic",
+        "world model"
+      ],
+      "title_zh": "StressDream：引导视频世界模型进行稳健的政策评估和改进",
+      "summary_zh": "视频世界模型（WM）通过想象以自我机器人行为为条件的现实未来观察，显示出政策评估和改进的前景。虽然 WM 可以对未来的分布进行建模，但政策评估和改进通常依赖于名义想象力，除非抽取大量样本，否则可能会错过机器人行动的高影响力结果。为了实现稳健的政策评估和改进 WM 想象力，我们提出了 StressDream，它通过优化基于扩散的 WM 的初始噪声，将想象力引导到推理时指定的高影响力但合理的结果。然而，优化高维噪声具有挑战性：优化必须推理生成视频中细微的、与场景相关的目标事件，同时避免产生令人难以置信的想象力的分布外 (OOD) 噪声。我们通过两个互补的目标来解决这个问题：带有视觉语言模型的语义目标，通过推理生成的视频提供信息梯度，以及防止优化噪声漂移 OOD 的合理性目标。借助用于自动驾驶和机器人操作的最先进的视频世界模型，我们表明，StressDream 可以有效地将想象力引导到推理时文本指定的高影响力但合理的结果（例如任务失败），通过识别可能的未来包括不良结果的行动，实现稳健的政策评估和改进。视频结果可在 https://junwon.me/StressDream/ 获取。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
+      }
+    },
+    {
+      "title": "HOIST: Humanoid Optimization with Imitation and Sample-efficient Tuning for Manipulating Suspended Loads",
+      "authors": [
+        "Songyang Liu",
+        "Shunyu Yao",
+        "Dingyuan Huang",
+        "Shuai Li"
+      ],
+      "summary": "Manipulating suspended payloads with humanoid robots is challenging because the robot can only influence an underactuated, oscillatory load through whole-body motion and intermittent contact. Imitation learning provides safe initial behavior but does not directly optimize final placement, while reinforcement learning from scratch is unsafe and sample-inefficient on real humanoids. We present HOIST-Humanoid Optimized with Imitation and Sample-efficient Tuning for manipulating suspended loads. HOIST first finetunes a high-level vision-language-action (VLA) policy from virtual-reality (VR) teleoperation demonstrations and executes its commands through a whole-body controller. It then uses VLA rollouts and iterative batched RL to improve placement accuracy and stopping behavior. Experiments in simulation and on a real humanoid show that HOIST improves over imitation-only and additional-demonstration baselines; compared with pure VLA rollouts, HOIST reduces translational placement error by 19.9 cm and raw angular error by 3.56 degrees, demonstrating the potential of humanoids for underactuated material-handling tasks.",
+      "published": "2026-05-29T18:33:32Z",
+      "updated": "2026-05-29T18:33:32Z",
+      "arxiv_id": "2606.00252v1",
+      "abs_url": "http://arxiv.org/abs/2606.00252v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00252v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "VLA/多模态策略",
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "人形与灵巧",
+        "双足机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 12,
+      "anchor_terms": [
+        "humanoid",
+        "imitation learning",
+        "reinforcement learning",
+        "robot",
+        "teleoperation",
+        "vision-language-action",
+        "vla"
+      ],
+      "matched_terms": [
+        "humanoid",
+        "imitation learning",
+        "reinforcement learning",
+        "robot",
+        "teleoperation",
+        "vision-language-action",
+        "vla"
+      ],
+      "title_zh": "HOIST：通过模仿和样本高效调整进行人形优化，以操纵悬挂负载",
+      "summary_zh": "用人形机器人操纵悬挂的有效负载具有挑战性，因为机器人只能通过全身运动和间歇接触来影响欠驱动的振荡负载。模仿学习提供安全的初始行为，但不会直接优化最终的放置，而从头开始的强化学习在真实的人形机器人上是不安全的且样本效率低下。我们推出了 HOIST-Humanoid Optimized，具有模仿和样本高效调整功能，用于操纵悬挂负载。 HOIST 首先从虚拟现实 (VR) 远程操作演示中微调高级视觉语言动作 (VLA) 策略，并通过全身控制器执行其命令。然后，它使用 VLA 推出和迭代批量强化学习来提高放置精度和停止行为。模拟实验和真实人形机器人实验表明，HOIST 比仅模仿和附加演示基线有所改进；与纯 VLA 相比，HOIST 将平移放置误差减少了 19.9 厘米，原始角度误差减少了 3.56 度，展示了类人机器人在欠驱动物料搬运任务中的潜力。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
+      }
+    },
+    {
+      "title": "Continuous Reasoning for Vision-Language-Action",
+      "authors": [
+        "Yueh-Hua Wu",
+        "Tatsuya Matsushima",
+        "Kei Ota"
+      ],
+      "summary": "Natural language is a powerful reasoning medium for language and vision-language models, but it is mismatched to the granularity of continuous control. Text and explicit subgoals operate at task-level granularity, whereas vision-language-action (VLA) policies must choose actions at a much finer temporal scale; a single reasoning step can therefore span many action chunks while remaining only weakly coupled to the action needed now. This suggests a different question for VLA: what should play the role of language? We argue that a useful VLA reasoning medium must be shareable across model instances, verifiable through downstream action improvement, and aligned with temporally extended control structure. Based on this view, we propose Continuous Reasoning for Vision-Language-Action. Our model first predicts continuous reasoning in the form of a structured set of continuous thoughts, then reuses them as shared context for chunk-structured action generation. Better action prediction alone does not certify good reasoning: if the same internal medium cannot be shared across model instances and independently verified through improved downstream control, the added latent may simply become a model-private shortcut that helps on seen behaviors without supporting generalizable control. We therefore instantiate continuous reasoning as a shared Gaussian latent interface and train it with a self-verification objective in which an exponential-moving-average teacher must successfully consume the student's reasoning when predicting target actions. Empirically, Continuous Reasoning improves LIBERO-PRO robustness and performs strongly on real robots, raising mean subtask success over π0.5 by 40.4% on TX-G2, an AgiBot G2-compatible variant, and 26.3% on HSR. This suggests that reasoning in VLA is less about extra tokens than about a shareable, verifiable internal language for action.",
+      "published": "2026-05-29T18:02:09Z",
+      "updated": "2026-05-29T18:02:09Z",
+      "arxiv_id": "2606.00229v1",
+      "abs_url": "http://arxiv.org/abs/2606.00229v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00229v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "comment": "Project page: https://continuous-reasoning.airoa.io",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 12,
+      "anchor_terms": [
+        "robot",
+        "vision-language-action",
+        "vla"
+      ],
+      "matched_terms": [
+        "libero",
+        "robot",
+        "vision-language-action",
+        "vla"
+      ],
+      "title_zh": "视觉-语言-行动的连续推理",
+      "summary_zh": "自然语言是语言和视觉语言模型的强大推理媒介，但它与连续控制的粒度不匹配。文本和显式子目标在任务级粒度上运行，而视觉语言动作（VLA）策略必须在更精细的时间尺度上选择动作；因此，单个推理步骤可以跨越许多动作块，同时仅与现在所需的动作保持弱耦合。这向 VLA 提出了一个不同的问题：语言应该扮演什么角色？我们认为，有用的 VLA 推理媒介必须可在模型实例之间共享，可通过下游操作改进进行验证，并与时间扩展的控制结构保持一致。基于这个观点，我们提出了视觉-语言-行动的连续推理。我们的模型首先以一组结构化的连续思维的形式预测连续推理，然后将它们重新用作块结构动作生成的共享上下文。更好的动作预测本身并不能证明良好的推理：如果相同的内部介质无法在模型实例之间共享，并通过改进的下游控制进行独立验证，则添加的潜在可能只是成为模型私有的捷径，有助于看到的行为而不支持可概括的控制。因此，我们将连续推理实例化为共享高斯潜在接口，并使用自我验证目标对其进行训练，其中指数移动平均教师在预测目标动作时必须成功地消耗学生的推理。根据经验，连续推理提高了 LIBERO-PRO 的鲁棒性，并在真实机器人上表现强劲，在 TX-G2（AgiBot G2 兼容变体）上将平均子任务成功率提高 40.4%，在 π0.5 上提高 40.4%，在 HSR 上提高 26.3%。这表明 VLA 中的推理与其说是关于额外的标记，不如说是关于可共享、可验证的内部操作语言。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
+      }
+    },
+    {
       "title": "Joint Multi-Camera LiDAR Extrinsic Calibration via Learned Pairwise Initialization and Geometric Refinement",
       "authors": [
         "Aziz Al-Najjar",
@@ -364,6 +1235,104 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-06-01T02:17:48.326905+00:00"
+      }
+    },
+    {
+      "title": "Series-Parallel Integrated Nonlinear Elastic Actuator applied to the lean motion of a bicycle simulator",
+      "authors": [
+        "Christina Kohler",
+        "Michiel Plooij",
+        "Nuria Peña-Perez",
+        "Arend L. Schwab",
+        "Heike Vallery"
+      ],
+      "summary": "Designing robots for high-torque, high-fidelity haptic interaction is challenging. Parallel Elastic Actuators (PEAs) use elastic elements in parallel to smaller motors to complement torques, and Series Elastic Actuators (SEAs) use elastic elements in series to decouple motor impedance and improve force control. Recent work combines SEAs and PEAs to obtain both benefits but requires separate elastic elements or clutching. This paper presents the Series Parallel Integrated Nonlinear Elastic Actuator (SPINEA), which merges SEA and PEA such that a single elastic element takes on dual roles simultaneously, parallel and series. This is achieved by a nonlinear transmission in which the motor and load have misaligned rotation axes and are elastically connected. This geometry enables both high peak torque and precise torque tracking. We apply SPINEA to actuate lean of a haptic bicycle simulator, which requires high moments and precise rendering for safe and realistic rider interactions. We realized a prototype and performed experiments, both with an external excitation setup and with riders cycling. Our results confirm SPINEA's low impedance and precise torque tracking, up to 4.25 Hz with the bicycle frame fixed and up to 4 Hz with riders. The benefits may transfer to other applications requiring compact, high-performance actuation.",
+      "published": "2026-05-29T17:13:06Z",
+      "updated": "2026-05-29T17:13:06Z",
+      "arxiv_id": "2606.00201v1",
+      "abs_url": "http://arxiv.org/abs/2606.00201v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00201v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 8,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "force control",
+        "haptic",
+        "robot",
+        "simulator"
+      ],
+      "title_zh": "串并联集成非线性弹性执行器在自行车模拟器倾斜运动中的应用",
+      "summary_zh": "设计高扭矩、高保真触觉交互的机器人具有挑战性。并联弹性执行器 (PEA) 使用与小型电机并联的弹性元件来补充扭矩，而串联弹性执行器 (SEA) 使用串联的弹性元件来解耦电机阻抗并改善力控制。最近的工作将 SEA 和 PEA 结合起来以获得这两种好处，但需要单独的弹性元件或离合器。本文提出了串联并联集成非线性弹性执行器（SPINEA），它将 SEA 和 PEA 结合在一起，使单个弹性元件同时承担并联和串联的双重作用。这是通过非线性传动实现的，其中电机和负载具有未对准的旋转轴并弹性连接。这种几何形状可实现高峰值扭矩和精确的扭矩跟踪。我们应用 SPINEA 来驱动触觉自行车模拟器的倾斜，这需要高力矩和精确的渲染来实现安全和现实的骑手交互。我们实现了一个原型并进行了实验，包括外部激励设置和骑手骑行。我们的结果证实了 SPINEA 的低阻抗和精确的扭矩跟踪，自行车车架固定时高达 4.25 Hz，骑手时高达 4 Hz。这些优势可能会转移到需要紧凑、高性能驱动的其他应用。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
+      }
+    },
+    {
+      "title": "Cuttlebot: a platform demonstration for complex, autonomous, bio-inspired swimmers",
+      "authors": [
+        "Alexander Nicholas White",
+        "Ang Leo Li",
+        "Alexander Yin",
+        "Derrick Roseman",
+        "Valeria Saro-Cortes",
+        "Hannah Wiswell",
+        "Aimy Wissa",
+        "Mihai Duduta"
+      ],
+      "summary": "Increasing interest in deep-sea operations and resources motivates the development of ecologically sensitive but environmentally durable robots. Dielectric elastomer actuator artificial muscles are good candidates for powering such systems due to their pressure and temperature tolerance and soft makeup, but they are difficult to integrate with robotic systems. This work presents an autonomous robotic platform: the CORE, capable of driving six artificial muscles while sensing visual and spatial information. To validate the platform, we developed the Cuttlebot - a cuttlefish-inspired robot that swims in three dimensions using undulatory fin locomotion. The Cuttlebot has four primary artificial muscles in its fins in addition to a tentacle-inspired soft gripper. The robot was evaluated in a series of tethered and untethered swimming tests, demonstrating a top speed of 2.5 centimeters per second translation and 10 degrees per second rotation. Furthermore, the CORE system was capable of driving specialized control signals into the artificial muscles to controllably output force and torque in six axes. This work provides a platform for developing complex, bio-inspired swimming robots for ocean exploration and monitoring, laying the foundation with our leading example: the Cuttlebot.",
+      "published": "2026-05-29T16:48:52Z",
+      "updated": "2026-05-29T16:48:52Z",
+      "arxiv_id": "2606.00197v1",
+      "abs_url": "http://arxiv.org/abs/2606.00197v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00197v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 6,
+      "anchor_terms": [
+        "locomotion",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "locomotion",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "Cuttlebot：为复杂、自主、仿生游泳者提供的平台演示",
+      "summary_zh": "人们对深海作业和资源的兴趣日益浓厚，推动了对生态敏感但环境耐用的机器人的开发。由于介电弹性体致动器人造肌肉具有耐压、耐温和柔软的结构，因此它们是为此类系统提供动力的良好候选者，但它们很难与机器人系统集成。这项工作提出了一个自主机器人平台：CORE，能够驱动六块人造肌肉，同时感知视觉和空间信息。为了验证该平台，我们开发了 Cuttlebot——一种受乌贼启发的机器人，它利用波动鳍运动在三个维度上游泳。 Cuttlebot 的鳍上有四块主要的人造肌肉，还有一个受触手启发的软抓手。该机器人在一系列系绳和自由游泳测试中进行了评估，展示了每秒 2.5 厘米平移和每秒 10 度旋转的最高速度。此外，CORE系统能够将专门的控制信号驱动到人造肌肉中，以在六个轴上可控地输出力和扭矩。这项工作为开发用于海洋探索和监测的复杂的仿生游泳机器人提供了一个平台，为我们的领先示例：Cuttlebot 奠定了基础。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
       }
     },
     {
@@ -2015,12 +2984,12 @@
         "Hao Wang",
         "Qian Wang"
       ],
-      "summary": "Large-scale Vision-Language-Action (VLA) pretraining is increasingly adopted as the foundation for robot policies, yet the evidence for pretrained VLAs is almost invariably reported after task-specific fine-tuning.This leaves a foundational question unanswered: does VLA pretraining itself yield executable robot behavior, or does it merely furnish a better initialization for downstream policy learning? We present Wall-OSS-0.5, an open-source 4B VLA built upon a 3B VLM backbone augmented with action-generation components, designed so that pretrained robotic capability is directly measurable on physical hardware.The model is pretrained across more than 20 embodiments, processing over one million robot trajectories per epoch alongside a grounded multimodal corpus. We adopt a gradient-bridged co-training recipe in which three objectives play distinct and complementary roles: discrete action prediction routes strong VLM-native gradients into the backbone, multimodal prediction preserves grounded vision-language understanding, and continuous flow matching serves as the deployment-time action interface. Before task-specific fine-tuning, the pretrained checkpoint achieves non-trivial zero-shot real-robot behavior, completing several tasks, including a held-out deformable manipulation task, at high task progress on a 17-task suite. After fine-tuning, the same checkpoint serves as a stronger adaptation prior, reaching 60.5% average task progress on 15 real-robot tasks and outperforming π_0.5 by 17.5%. Multimodal evaluations further confirm that action training does not erode grounded vision-language competence: the model preserves broad vision-language ability while strengthening embodied grounding. Together, these results reposition VLA pretraining from an initialization strategy to a directly testable, already useful source of robot capability.",
+      "summary": "Large-scale Vision-Language-Action (VLA) pretraining is increasingly adopted as the foundation for robot policies, yet the evidence for pretrained VLAs is almost invariably reported after task-specific fine-tuning. This leaves a foundational question unanswered: does VLA pretraining itself yield executable robot behavior, or does it merely furnish a better initialization for downstream policy learning? We present Wall-OSS-0.5, an open-source 4B VLA built upon a 3B VLM backbone augmented with action-generation components, designed so that pretrained robotic capability is directly measurable on physical hardware. The model is pretrained across more than 20 embodiments, processing over one million robot trajectories per epoch alongside a grounded multimodal corpus. We adopt a gradient-bridged co-training recipe in which three objectives play distinct and complementary roles: discrete action prediction routes strong VLM-native gradients into the backbone, multimodal prediction preserves grounded vision-language understanding, and continuous flow matching serves as the deployment-time action interface. Before task-specific fine-tuning, the pretrained checkpoint achieves non-trivial zero-shot real-robot behavior, completing several tasks, including a held-out deformable manipulation task, at high task progress on a 17-task suite. After fine-tuning, the same checkpoint serves as a stronger adaptation prior, reaching 60.5% average task progress on 15 real-robot tasks and outperforming π_0.5 by 17.5%. Multimodal evaluations further confirm that action training does not erode grounded vision-language competence: the model preserves broad vision-language ability while strengthening embodied grounding. Together, these results reposition VLA pretraining from an initialization strategy to a directly testable, already useful source of robot capability.",
       "published": "2026-05-29T06:04:03Z",
-      "updated": "2026-05-29T06:04:03Z",
-      "arxiv_id": "2605.30877v1",
-      "abs_url": "http://arxiv.org/abs/2605.30877v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.30877v1",
+      "updated": "2026-06-01T02:49:15Z",
+      "arxiv_id": "2605.30877v2",
+      "abs_url": "http://arxiv.org/abs/2605.30877v2",
+      "pdf_url": "https://arxiv.org/pdf/2605.30877v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -2056,12 +3025,12 @@
         "vla"
       ],
       "title_zh": "Wall-OSS-0.5 技术报告",
-      "summary_zh": "大规模视觉语言动作 (VLA) 预训练越来越多地被采用作为机器人策略的基础，但预训练 VLA 的证据几乎总是在特定任务的微调后报告。这留下了一个没有答案的基本问题：VLA 预训练本身会产生可执行的机器人行为，还是仅仅为下游策略学习提供更好的初始化？我们推出了 Wall-OSS-0.5，这是一种基于 3B VLM 主干构建的开源 4B VLA，并配有动作生成组件，其设计使得预训练的机器人能力可以在物理硬件上直接测量。该模型经过 20 多个实施例的预训练，每个时期可处理超过 100 万条机器人轨迹以及接地的多模态语料库。我们采用梯度桥协同训练方法，其中三个目标发挥着独特且互补的作用：离散动作预测将强大的 VLM 原生梯度路由到主干，多模态预测保留了基础的视觉语言理解，连续流匹配充当部署时动作接口。在针对特定任务进行微调之前，预训练的检查点实现了非平凡的零样本真实机器人行为，在 17 个任务套件上以高任务进度完成了多项任务，包括保留的可变形操作任务。经过微调后，相同的检查点作为更强的适应先验，在 15 个真实机器人任务上达到了 60.5% 的平均任务进度，比 π_0.5 提高了 17.5%。多模态评估进一步证实，动作训练不会削弱扎根的视觉语言能力：该模型保留了广泛的视觉语言能力，同时加强了具体的扎根。总之，这些结果将 VLA 预训练从初始化策略重新定位为可直接测试、已经有用的机器人能力来源。",
+      "summary_zh": "大规模视觉语言动作 (VLA) 预训练越来越多地被采用作为机器人策略的基础，但预训练 VLA 的证据几乎总是在特定任务的微调后报告。这就留下了一个没有答案的基本问题：VLA 预训练本身是否会产生可执行的机器人行为，或者它只是为下游策略学习提供更好的初始化？我们推出了 Wall-OSS-0.5，这是一种基于 3B VLM 主干构建的开源 4B VLA，并增强了动作生成组件，其设计目的是让预训练的机器人能力可以在物理硬件上直接测量。该模型经过 20 多个实施例的预训练，每个时期处理超过一百万条机器人轨迹以及接地的多模态语料库。我们采用梯度桥协同训练方法，其中三个目标发挥着独特且互补的作用：离散动作预测将强大的 VLM 原生梯度路由到主干，多模态预测保留了基础的视觉语言理解，连续流匹配充当部署时动作接口。在针对特定任务进行微调之前，预训练的检查点实现了非平凡的零样本真实机器人行为，在 17 个任务套件上以高任务进度完成了多项任务，包括保留的可变形操作任务。经过微调后，相同的检查点作为更强的适应先验，在 15 个真实机器人任务上达到了 60.5% 的平均任务进度，比 π_0.5 提高了 17.5%。多模态评估进一步证实，动作训练不会削弱扎根的视觉语言能力：该模型保留了广泛的视觉语言能力，同时加强了具体的扎根。总之，这些结果将 VLA 预训练从初始化策略重新定位为可直接测试、已经有用的机器人能力来源。",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-06-01T02:17:48.326905+00:00"
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
       }
     },
     {
@@ -2517,6 +3486,49 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-06-01T02:17:48.326905+00:00"
+      }
+    },
+    {
+      "title": "Completion at the Boundary (CaB): Deployable Switching with Completion-Aware Control under Limited Calibration",
+      "authors": [
+        "Yusuke Sano",
+        "Takeshi Itoga"
+      ],
+      "summary": "Vision-language-action (VLA) agents can execute natural-language instructions, yet deployed systems still lack an operational interface: deciding when the instruction is complete. This gap is acute in short composites (\"do A, then B\"), where mistimed handoffs cascade into downstream failures. Completion is inherently closed-loop because switching is an intervention that changes the instruction context and thus future actions and observations. We study completion under a deployable low-calibration regime motivated by open-ended instruction spaces, enforcing no test-time relearning and a single globally calibrated switching rule selected once on development set and reused unchanged on test set. Under this constraint, collapsing asymmetric boundary evidence into a single scalar can be brittle under polarity shifts across tasks. We propose Completion at the Boundary (CaB), which predicts an event-local completion object in the form of Boundary-Phase Tokens (Before/Hit/After), retaining two-sided boundary evidence under this discipline. CaB-When converts this completion object into a minimal, auditable switching decision (when), while CaB-How reuses the same completion object to condition action generation for boundary-stable control through handoffs (how). Using an intervention-aware E1/E2 protocol, we show that CaB improves composite execution and handoff quality on a first-person Minecraft VLA benchmark under matched capacity and deployability constraints.",
+      "published": "2026-05-29T02:48:13Z",
+      "updated": "2026-05-29T02:48:13Z",
+      "arxiv_id": "2606.00145v1",
+      "abs_url": "http://arxiv.org/abs/2606.00145v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.00145v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "数据集/评测"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 5,
+      "anchor_terms": [
+        "vision-language-action",
+        "vla"
+      ],
+      "matched_terms": [
+        "vision-language-action",
+        "vla"
+      ],
+      "title_zh": "边界完成 (CaB)：有限校准下具有完成感知控制的可部署切换",
+      "summary_zh": "视觉语言动作（VLA）代理可以执行自然语言指令，但部署的系统仍然缺乏操作界面：决定指令何时完成。这种差距在短组合（“先做 A，然后 B”）中非常严重，其中不合时宜的切换会导致下游故障。完成本质上是闭环的，因为切换是一种改变指令上下文的干预，从而改变未来的行动和观察。我们在开放式教学空间的推动下，在可部署的低校准机制下研究完成情况，强制执行无测试时间重新学习和在开发集上选择一次的单一全局校准切换规则，并在测试集上重复使用不变。在这种约束下，在跨任务的极性转变下，将不对称边界证据折叠成单个标量可能会很脆弱。我们提出边界完成（CaB），它以边界阶段令牌（之前/命中/之后）的形式预测事件局部完成对象，在该学科下保留两侧边界证据。 CaB-When 将此完成对象转换为最小的、可审核的切换决策（何时），而 CaB-How 重用相同的完成对象来条件动作生成，以通过切换（如何）实现边界稳定控制。使用干预感知 E1/E2 协议，我们证明 CaB 在匹配的容量和可部署性约束下提高了第一人称 Minecraft VLA 基准的复合执行和切换质量。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-02T02:39:56.150838+00:00"
       }
     },
     {
