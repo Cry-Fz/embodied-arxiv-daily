@@ -1,6 +1,6 @@
 {
   "date": "2026-05-28",
-  "generated_at": "2026-06-02T02:38:14.524240+00:00",
+  "generated_at": "2026-06-03T03:09:22.045218+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
@@ -405,10 +405,10 @@
       ],
       "summary": "Industrial visual sim-to-real is often described as transferring from synthetic images to real images, but industrial deployment usually involves a broader mismatch between available evidence and required decisions. A system may be built from CAD renderings, simulated RGB-D observations, normal reference images, synthetic defects, pretrained feature spaces, or language prompts, yet deployed under different sensors, lighting, materials, fixtures, calibration, production variation, and rare defect modes. This review reframes industrial visual sim-to-real as a domain-gap problem organized by prior availability. We distinguish CAD-available settings, where explicit object geometry can support rendering, calibration, pose estimation, segmentation, and test-time geometric verification; CAD-unavailable settings, where geometry is replaced by normal-reference appearance, feature distributions, teacher-student residuals, synthetic anomaly assumptions, foundation features, or vision-language priors; and boundary-prior settings, where approximate models, templates, reference views, or semantic correspondences preserve only part of the CAD role. This framing connects CAD-based detection and 6D pose-estimation literature with industrial anomaly and surface-inspection literature that is usually reviewed separately. To make the taxonomy concrete, we use empirical anchors on T-LESS/BOP, MVTec AD, and VisA. The anchors show that CAD render count alone does not close transfer; source-distribution design, detector capacity, and small real calibration can matter more. They also show that CAD at test time creates a distinct verification channel through mask, pose, and depth consistency, whereas CAD-unavailable inspection relies on calibrated normality and feature deviation. The review therefore argues against a single cross-task leaderboard and instead asks what prior grounds the deployment decision.",
       "published": "2026-05-28T21:18:27Z",
-      "updated": "2026-05-28T21:18:27Z",
-      "arxiv_id": "2605.30581v1",
-      "abs_url": "http://arxiv.org/abs/2605.30581v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.30581v1",
+      "updated": "2026-06-01T16:22:35Z",
+      "arxiv_id": "2605.30581v2",
+      "abs_url": "http://arxiv.org/abs/2605.30581v2",
+      "pdf_url": "https://arxiv.org/pdf/2605.30581v2",
       "primary_category": "cs.CV",
       "categories": [
         "cs.CV",
@@ -435,7 +435,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-06-01T02:15:55.931151+00:00"
+        "generated_at": "2026-06-03T03:10:45.259609+00:00"
       }
     },
     {
@@ -1205,7 +1205,7 @@
         "Junzhe Wu",
         "Zheng Li",
         "XiLin Fang",
-        "Tingyu Cui",
+        "Ting-Yu Tsui",
         "Shengcheng Fu",
         "Haoyang Li",
         "Anqi Wang",
@@ -1247,10 +1247,10 @@
       ],
       "summary": "Simulation-based RL for contemporary robot control is increasingly organized around GPU-resident simulation: physics, rollout collection, and learning are placed on a single GPU-centric execution path. This paradigm has greatly improved training speed, but it has also encouraged a default assumption that efficient training requires physics to reside on the GPU. We revisit this assumption. Our view is that, in simulation-dominated robot control, the essential question is not which processor runs physics, but whether simulation throughput, policy learning, and runtime synchronization form an efficient end-to-end loop. We present UniLab, a heterogeneous CPU-simulation / GPU-learning architecture that decouples CPU-parallel simulation from GPU policy updates through a unified runtime for data movement, buffering, and synchronization. UniLab is implemented as a complete and extensible training system using MuJoCoUni and MotrixSim CPU-batched physics backends, supporting PPO, FastSAC, FlashSAC, and APPO. On representative simulation-based robot control tasks, UniLab improves end-to-end training efficiency by 3--10$\\times$ under the same hardware configuration, while reducing dependence on the NVIDIA CUDA-based software stack and supporting cross-platform execution on the Apple macOS platform and the AMD ROCm and Intel XPU accelerator backends. These results show that GPU simulation is an effective path to efficient training, but not a necessary one, broadening the practical system choices available for robot RL training. Project page: https://unilabsim.github.io.",
       "published": "2026-05-28T17:53:50Z",
-      "updated": "2026-05-29T12:47:38Z",
-      "arxiv_id": "2605.30313v2",
-      "abs_url": "http://arxiv.org/abs/2605.30313v2",
-      "pdf_url": "https://arxiv.org/pdf/2605.30313v2",
+      "updated": "2026-06-02T16:21:55Z",
+      "arxiv_id": "2605.30313v3",
+      "abs_url": "http://arxiv.org/abs/2605.30313v3",
+      "pdf_url": "https://arxiv.org/pdf/2605.30313v3",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -1279,7 +1279,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-06-01T02:15:55.931151+00:00"
+        "generated_at": "2026-06-03T03:10:45.259609+00:00"
       }
     },
     {
@@ -1394,10 +1394,10 @@
       ],
       "summary": "Embodied intelligence is often studied through specialized models for individual tasks such as manipulation or navigation, resulting in fragmented capabilities and limited generalization across tasks, environments, and robot embodiments. In this work, we study whether heterogeneous embodied decision-making problems can be unified within a single vision-language-action model. We present Qwen-VLA, a unified embodied foundation model that extends Qwen's vision-language modeling stack from perception, understanding, and reasoning to continuous action and trajectory generation through a DiT-based action decoder. Qwen-VLA is trained with a large-scale joint pretraining recipe over diverse data sources, including robotics manipulation trajectories, human egocentric demonstrations, synthetic simulation data, vision-and-language navigation data, trajectory-centric supervision, and auxiliary vision-language data. To support multiple robot platforms, we introduce embodiment-aware prompt conditioning, where robot-specific textual descriptions specify the current embodiment and control convention. We further cast manipulation, navigation, and trajectory prediction into a unified action-and-trajectory prediction framework, enabling transferable visual grounding, spatial reasoning, and continuous action generation across robot morphologies, task families, and environments. Experiments on manipulation, navigation, and trajectory-centric benchmarks show consistent multi-task performance and out-of-distribution generalization under variations in scene layout, background, lighting, object configuration, and robot embodiment. Qwen-VLA-Instruct achieves 97.9% on LIBERO, 73.7% on Simpler-WidowX, 86.1%/87.2% on RoboTwin-Easy/Hard, 69.0% OSR on R2R, 59.6% SR on RxR, 76.9% average OOD success in real-world ALOHA experiments, and 26.6% zero-shot success on DOMINO dynamic manipulation.",
       "published": "2026-05-28T17:36:31Z",
-      "updated": "2026-05-28T17:36:31Z",
-      "arxiv_id": "2605.30280v1",
-      "abs_url": "http://arxiv.org/abs/2605.30280v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.30280v1",
+      "updated": "2026-06-01T13:48:35Z",
+      "arxiv_id": "2605.30280v2",
+      "abs_url": "http://arxiv.org/abs/2605.30280v2",
+      "pdf_url": "https://arxiv.org/pdf/2605.30280v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -1448,7 +1448,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-05-30T02:30:07.792615+00:00"
+        "generated_at": "2026-06-03T03:10:45.259609+00:00"
       }
     },
     {
@@ -2188,10 +2188,10 @@
       ],
       "summary": "Ground robots often carry payloads, implements, or other attachments that turn their effective footprint into complex, non-convex shapes. Navigating safely through clutter then requires reasoning about this true geometry, yet most local planners simplify it with convex or inflated proxies and rasterize sensor data into occupancy grids or distance fields. Both choices eliminate feasible motions when clearance is comparable to the footprint geometry. We present EXACT-MPPI, a training-free local navigation framework that maps local point-cloud observations and sparse guidance directly to motion commands, without any intermediate map representation. The framework embeds an analytic, exact signed-distance evaluator into a Model Predictive Path Integral (MPPI) controller. The footprint is represented as a simple polygon for general convex or concave planar shapes, with a rectangle-cover specialization for faster evaluation of rectilinear footprints, enabling footprint-aware collision costs without convex decomposition, inflation, or learned encoders. During each MPPI rollout, observed obstacle points are transformed into the predicted body frame and evaluated against the footprint. All operations are batched in JAX, leveraging GPU parallelism for real-time receding-horizon control. Experiments show that EXACT-MPPI accelerates batched distance evaluation over a learned point-to-robot baseline, preserves feasible motion where convex-footprint planners fail, and remains robust under dense static and moving obstacles. The same framework deploys on differential-drive, Ackermann, omnidirectional, and hybrid-mode platforms by changing only the footprint description and motion model without per-platform training. Pairing exact footprint geometry with sampling-based predictive control thus offers a practical, training-free path to footprint-aware local navigation across diverse robots.",
       "published": "2026-05-28T09:23:54Z",
-      "updated": "2026-05-28T09:23:54Z",
-      "arxiv_id": "2605.29663v1",
-      "abs_url": "http://arxiv.org/abs/2605.29663v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.29663v1",
+      "updated": "2026-06-02T02:44:20Z",
+      "arxiv_id": "2605.29663v2",
+      "abs_url": "http://arxiv.org/abs/2605.29663v2",
+      "pdf_url": "https://arxiv.org/pdf/2605.29663v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -2221,7 +2221,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-05-30T02:30:07.792615+00:00"
+        "generated_at": "2026-06-03T03:10:45.259609+00:00"
       }
     },
     {
@@ -2296,10 +2296,10 @@
       ],
       "summary": "Monocular 3D shape recovery is fundamental to geometric understanding, yet achieving robust generalization across arbitrary viewpoints and unseen object categories remains a significant challenge. In this paper, we present a generalizable deformation learning framework that reconstructs 3D objects by explicitly deforming a category-level shape template to match the target observation. To address complex shape variations between the template and the target, we introduce a geometry-guided feature modeling mechanism. This process first enriches foundation features with template topology to yield a geometry-aware representation, which is then explicitly correlated with the target observation to guide precise deformation. Furthermore, to bridge the disparity between the fixed template and arbitrary target views, we propose a view-adaptive feature aggregation module. This module leverages multi-view template features and their corresponding camera poses to enrich the canonical template representation, ensuring robust feature alignment regardless of the target's perspective. Extensive experiments demonstrate that our approach significantly outperforms state-of-the-art methods in handling large shape variations and diverse viewpoints, exhibiting strong generalization to novel categories and effectively supporting downstream real-world dexterous robotic manipulation tasks. Project homepage: https://GODeform.github.io/",
       "published": "2026-05-28T09:22:57Z",
-      "updated": "2026-05-28T09:22:57Z",
-      "arxiv_id": "2605.29661v1",
-      "abs_url": "http://arxiv.org/abs/2605.29661v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.29661v1",
+      "updated": "2026-06-02T02:37:36Z",
+      "arxiv_id": "2605.29661v2",
+      "abs_url": "http://arxiv.org/abs/2605.29661v2",
+      "pdf_url": "https://arxiv.org/pdf/2605.29661v2",
       "primary_category": "cs.CV",
       "categories": [
         "cs.CV"
@@ -2332,7 +2332,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-05-30T02:30:07.792615+00:00"
+        "generated_at": "2026-06-03T03:10:45.259609+00:00"
       }
     },
     {

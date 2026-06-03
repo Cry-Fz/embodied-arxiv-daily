@@ -1,12 +1,12 @@
 {
   "date": "2026-05-26",
-  "generated_at": "2026-06-02T02:38:03.505953+00:00",
+  "generated_at": "2026-06-03T03:07:02.984675+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202605260000 TO 202605262359]",
-  "total_fetched": 620,
-  "total_matched": 58,
+  "total_fetched": 403,
+  "total_matched": 49,
   "papers": [
     {
       "title": "OSMa-Bench++: Toward Open-Ended Benchmarking of Semantic Mapping for Manipulation with Prompt-Generated Synthetic Scenes",
@@ -378,16 +378,17 @@
       "authors": [
         "Yuchen Guo",
         "Junli Gong",
+        "Weicheng Wang",
         "Hongmin Cai",
         "Yiu-ming Cheung",
         "Weifeng Su"
       ],
       "summary": "We present PEAM, a Parametric Embodied Agent Memory framework in Minecraft that transforms agent memory from inference-time retrieval into parameter-resident skills internalized through experience. PEAM pairs a slow deliberative LLM for open-ended reasoning with a fast parametric module for reflexive execution of consolidated skills. The fast module is a multimodal Mixture-of-Experts LoRA architecture with per-category physically isolated adapters, enabling parameter-level continual learning without catastrophic forgetting. We treat failure as a first-class training signal: failure--correction trajectory pairs are internalized through a joint behavioral-cloning and contrastive objective, so the agent learns not only what succeeds but also how corrected actions differ from failed ones. To govern consolidation, PEAM introduces a parameterization-worthiness score for deciding which experience should be internalized, and a scale-free self-triggered consolidation mechanism for deciding when to internalize without task-specific hand-tuned thresholds, making the agent self-evolving as the trigger transfers across task distributions without re-tuning. Experiments in Minecraft show that PEAM improves long-horizon task performance, mitigates forgetting on previously consolidated skills, and improves parametric-versus-retrieval efficiency over retrieval-based embodied agents and parametric memory variants.",
       "published": "2026-05-26T23:20:58Z",
-      "updated": "2026-05-26T23:20:58Z",
-      "arxiv_id": "2605.27762v1",
-      "abs_url": "http://arxiv.org/abs/2605.27762v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.27762v1",
+      "updated": "2026-06-01T19:20:53Z",
+      "arxiv_id": "2605.27762v2",
+      "abs_url": "http://arxiv.org/abs/2605.27762v2",
+      "pdf_url": "https://arxiv.org/pdf/2605.27762v2",
       "primary_category": "cs.AI",
       "categories": [
         "cs.AI"
@@ -416,7 +417,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-05-30T02:27:55.314504+00:00"
+        "generated_at": "2026-06-03T03:10:34.819651+00:00"
       }
     },
     {
@@ -859,66 +860,6 @@
       }
     },
     {
-      "title": "What-If World: A Causal Benchmark for General World Models in Embodied Scenarios",
-      "authors": [
-        "Kunlin Cai",
-        "Rui Song",
-        "Jinghuai Zhang",
-        "Kaiyuan Zhang",
-        "Pranav Bodapati",
-        "Alicia Yu",
-        "Fnu Suya",
-        "Mohammad Rostami",
-        "Jiaqi Ma",
-        "Yuan Tian"
-      ],
-      "summary": "Video generation models are increasingly used as world simulators for tasks like driving and robotic manipulation. What matters in these settings is not whether a single video looks right, but whether the model's output changes when its input changes. We test this by giving a model two prompts describing the same scene with one physical detail varied, and checking whether the two videos diverge the way physics predicts. The wording difference between the prompts is small by design, since only one variable is changed, but the correct physical difference is not. A model that misses this can still produce two videos that each look plausible individually, and existing benchmarks score videos one at a time and cannot detect this failure. We introduce What-If World, 319 such prompt pairs built on real frames from nuScenes and DROID, organized by a taxonomy of six physical variables shared across driving and manipulation. Each pair is scored with APEO, a four-part rubric checking whether each video follows its prompt (Adherence), is physically consistent (Physics), preserves the shared scene (Environment), and ends in the correct difference (Outcome). Across nine state-of-the-art models, no system exceeds 52% on the paired score, and open-source models cluster near 28%. Every model tested fails on a large fraction of causal interventions, indicating substantial room before these models can reliably support action-conditioned simulation or model-based planning. Where models do score well, performance appears to track the visual prominence of the intervention rather than the tractability of its underlying physics. Some visually subtle interventions score as low as 14.2%, while visually pronounced ones reach 40.4%.",
-      "published": "2026-05-26T19:02:26Z",
-      "updated": "2026-05-26T19:02:26Z",
-      "arxiv_id": "2605.27589v1",
-      "abs_url": "http://arxiv.org/abs/2605.27589v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.27589v1",
-      "primary_category": "cs.CV",
-      "categories": [
-        "cs.CV"
-      ],
-      "comment": "38 pages, World Model Benchmark",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "机器人操作",
-        "世界模型与仿真",
-        "数据集/评测",
-        "其他机器人"
-      ],
-      "topic": "机器人操作",
-      "score": 10,
-      "anchor_terms": [
-        "embodied",
-        "manipulation",
-        "robot",
-        "robotic",
-        "world model"
-      ],
-      "matched_terms": [
-        "embodied",
-        "manipulation",
-        "open-source",
-        "robot",
-        "robotic",
-        "simulator",
-        "world model"
-      ],
-      "title_zh": "假设世界：具体场景中一般世界模型的因果基准",
-      "summary_zh": "视频生成模型越来越多地用作驾驶和机器人操作等任务的世界模拟器。在这些设置中，重要的不是单个视频看起来是否正确，而是当输入发生变化时模型的输出是否会发生变化。我们通过向模型提供两个描述同一场景但一个物理细节有所不同的提示来测试这一点，并检查两个视频是否与物理预测的方式存在差异。提示之间的措辞差异在设计上很小，因为只更改了一个变量，但正确的物理差异却没有。错过这一点的模型仍然可以生成两个视频，每个视频看起来都很合理，而现有的基准测试一次对一个视频进行评分，无法检测到这种失败。我们引入了 What-If World，319 个这样的提示对构建在 nuScenes 和 DROID 的真实框架上，按照驾驶和操作过程中共享的六个物理变量的分类法进行组织。每对都用 APEO 进行评分，这是一个由四部分组成的评分标准，检查每个视频是否遵循其提示（遵守）、物理一致（物理）、保留共享场景（环境），并以正确的差异结束（结果）。在 9 个最先进的模型中，没有系统的配对分数超过 52%，开源模型集群接近 28%。每个测试的模型在很大一部分因果干预上都失败了，这表明这些模型在可靠地支持行动条件模拟或基于模型的规划之前还有很大的空间。在模型得分较高的情况下，性能似乎会跟踪干预的视觉突出性，而不是其基础物理的易处理性。一些视觉上微妙的干预措施得分低至 14.2%，而视觉上明显的干预措施得分高达 40.4%。",
-      "translation": {
-        "language": "zh-CN",
-        "provider": "google",
-        "model": "deep-translator/google",
-        "generated_at": "2026-05-28T03:37:32.552097+00:00"
-      }
-    },
-    {
       "title": "Uni-LaViRA: Language-Vision-Robot Actions Translation for Unified Embodied Navigation",
       "authors": [
         "Hongyu Ding",
@@ -991,44 +932,6 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-05-28T03:37:32.552097+00:00"
-      }
-    },
-    {
-      "title": "From Task Allocation to Risk Clearing: A Unifying Interface for Mixed Human-Agent Societies",
-      "authors": [
-        "Vassilis Vassiliades"
-      ],
-      "summary": "As humans, robots, and software agents increasingly share safety-critical environments, coordination must move from static task allocation to managing uncertain commitments. Existing frameworks fall short: they either assume rigid, static teams or learn opaque joint policies that are hard to adapt and difficult to integrate with human decision-makers. To overcome these limitations, we propose Risk-Aware Option Clearing (ROC), a unifying coordination mechanism in which agents expose options (temporally extended skills) paired with risk summaries that predict outcome distributions. A central clearinghouse then assigns tasks by optimizing risk-adjusted mission utility under deadlines and safety constraints. ROC is a family of mechanisms, ranging from deployments where the clearinghouse learns outcome models from data to ones that consume full distributional predictions from agents. By treating risk-aware options as the basic coordination unit, ROC sketches a scalable, transparent infrastructure for integrating heterogeneous agents into future mixed human--agent societies and outlines a research agenda for such risk-aware clearing layers.",
-      "published": "2026-05-26T18:17:01Z",
-      "updated": "2026-05-26T18:17:01Z",
-      "arxiv_id": "2605.27547v1",
-      "abs_url": "http://arxiv.org/abs/2605.27547v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.27547v1",
-      "primary_category": "cs.MA",
-      "categories": [
-        "cs.MA"
-      ],
-      "comment": "Presented at EMAS 2026",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "其他机器人"
-      ],
-      "topic": "其他机器人",
-      "score": 2,
-      "anchor_terms": [
-        "robot"
-      ],
-      "matched_terms": [
-        "robot"
-      ],
-      "title_zh": "从任务分配到风险清除：混合人类代理社会的统一界面",
-      "summary_zh": "随着人类、机器人和软件代理越来越多地共享安全关键环境，协调必须从静态任务分配转向管理不确定的承诺。现有框架存在缺陷：它们要么采用僵化、静态的团队，要么学习难以适应且难以与人类决策者整合的不透明联合政策。为了克服这些限制，我们提出了风险意识选项清算（ROC），这是一种统一的协调机制，其中代理公开选项（暂时扩展的技能）与预测结果分布的风险摘要配对。然后，中央清算所通过在截止日期和安全约束下优化风险调整后的任务效用来分配任务。 ROC 是一系列机制，范围从清算所从数据中学习结果模型的部署到使用代理的完整分布式预测的部署。通过将风险意识选项视为基本协调单元，ROC 勾勒出一个可扩展、透明的基础设施，用于将异构代理集成到未来混合的人类代理社会中，并概述了此类风险意识清算层的研究议程。",
-      "translation": {
-        "language": "zh-CN",
-        "provider": "google",
-        "model": "deep-translator/google",
-        "generated_at": "2026-05-30T02:27:55.314504+00:00"
       }
     },
     {
@@ -1407,51 +1310,6 @@
       }
     },
     {
-      "title": "Touch-R1: Reinforcing Touch Reasoning in MLLMs",
-      "authors": [
-        "Yingxin Lai",
-        "Yafei Zhou",
-        "Fucai Zhu",
-        "Siyu Zhu",
-        "Weihao Yuan"
-      ],
-      "summary": "While rule-based reinforcement learning has recently catalyzed explicit reasoning in multimodal models, tactile reasoning remains largely underexplored. Existing tactile-language models primarily rely on supervised or contrastive objectives, which limits their capacity to ground predictions in physical evidence or rectify misleading visual priors. Tactile reasoning introduces two modality-specific challenges: the ordinal nature of physical attributes (e.g., hardness, roughness) and the cross-sensor distribution shifts inherent in optical tactile hardware. In this work, we introduce TouchReason-1M, a large-scale multimodal dataset comprising over 1M synchronized tactile pairs across four distinct sensors, and TouchReason-Bench, a rigorous framework for evaluating tactile perception and visual-tactile conflict resolution. Building upon these, we propose Touch-R1, a tactile reasoning MLLM based on Qwen2.5-VL-7B. Touch-R1 is trained via a tactile-grounded GRPO objective that combines ordinal-aware accuracy, cross-sensor physical consistency, structured-format control, and an input-side tactile grounding objective. Specifically, the tactile-use reward assigns credit only when authentic tactile inputs yield superior correctness relative to counterfactual controls where the tactile stream is removed, shuffled, or noise-masked. On TouchReason-Bench, Touch-R1-7B outperforms Octopi-13B by 18.4\\% and GPT-4o by 24.7\\% on average. Its structured reasoning traces reveal emergent behaviors of probing, comparison, and revision, demonstrating that R1-style reasoning can be effectively grounded in physical contact.",
-      "published": "2026-05-26T15:14:56Z",
-      "updated": "2026-05-26T15:14:56Z",
-      "arxiv_id": "2605.27154v1",
-      "abs_url": "http://arxiv.org/abs/2605.27154v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.27154v1",
-      "primary_category": "cs.CV",
-      "categories": [
-        "cs.CV"
-      ],
-      "comment": "Our code and data will be made public on the https://laiyingxin2.github.io/Projects",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "强化/模仿学习",
-        "数据集/评测",
-        "感知与3D理解"
-      ],
-      "topic": "强化/模仿学习",
-      "score": 2,
-      "anchor_terms": [
-        "tactile"
-      ],
-      "matched_terms": [
-        "reinforcement learning",
-        "tactile"
-      ],
-      "title_zh": "Touch-R1：强化 MLLM 中的触摸推理",
-      "summary_zh": "虽然基于规则的强化学习最近促进了多模态模型中的显式推理，但触觉推理在很大程度上仍未得到充分探索。现有的触觉语言模型主要依赖于监督或对比目标，这限制了它们根据物理证据进行预测或纠正误导性视觉先验的能力。触觉推理引入了两个特定于模态的挑战：物理属性（例如硬度、粗糙度）的顺序性质和光学触觉硬件固有的跨传感器分布变化。在这项工作中，我们介绍了 TouchReason-1M（一个大规模多模态数据集，包含四个不同传感器上超过 100 万个同步触觉对）和 TouchReason-Bench（一个用于评估触觉感知和视觉触觉冲突解决的严格框架）。在此基础上，我们提出了 Touch-R1，一种基于 Qwen2.5-VL-7B 的触觉推理 MLLM。 Touch-R1 通过触觉接地 GRPO 目标进行训练，该目标结合了序数感知准确性、跨传感器物理一致性、结构化格式控制和输入侧触觉接地目标。具体来说，只有当真实的触觉输入相对于触觉流被删除、打乱或噪声屏蔽的反事实控制产生更高的正确性时，触觉使用奖励才会分配信用。在 TouchReason-Bench 上，Touch-R1-7B 的平均性能优于 Octopi-13B 18.4%，平均优于 GPT-4o 24.7%。其结构化推理痕迹揭示了探究、比较和修正的涌现行为，表明 R1 式推理可以有效地建立在身体接触的基础上。",
-      "translation": {
-        "language": "zh-CN",
-        "provider": "google",
-        "model": "deep-translator/google",
-        "generated_at": "2026-05-27T02:28:38.852908+00:00"
-      }
-    },
-    {
       "title": "Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation",
       "authors": [
         "Heng Qu",
@@ -1607,62 +1465,6 @@
       }
     },
     {
-      "title": "Adversarial Dual On-Policy Distillation from Expressive Flow-based Teacher",
-      "authors": [
-        "Zhenglin Wan",
-        "Jingxuan Wu",
-        "Xingrui Yu",
-        "Chubin Zhang",
-        "Mingcong Lei",
-        "Bo An",
-        "Ivor W. Tsang",
-        "Yang You"
-      ],
-      "summary": "Learning from demonstrations in embodied control is often cast as behavioral cloning, and recent diffusion or flow-matching policies improve this paradigm by modeling multi-modal expert actions. Yet these methods remain offline supervised learners: the policy is trained only on expert states and receives no corrective signal on the states it actually visits. On-policy distillation (OPD) offers a natural remedy, but standard OPD assumes a strong fixed teacher, which is unavailable in demonstration-only control. We propose \\textbf{FA-OPD}, an \\emph{adversarial dual on-policy distillation} method in which a Flow Matching (FM) teacher is learned from demonstrations and co-trained with a lightweight MLP student. The teacher provides two complementary signals on student rollouts. The reward channel learns an expert-likeness objective over state-action pairs and drives online exploration through long-horizon policy optimization. The action channel supplies dense local targets at student-visited states, stabilizing exploitation. FA-OPD couples them so that reward distillation enables generalization beyond point-wise demonstrations, while action distillation keeps exploration anchored near expert-like behavior. Across six robot navigation, manipulation, and locomotion benchmarks, FA-OPD beats strong baselines and shows much stronger robustness under noisy or limited demonstrations.",
-      "published": "2026-05-26T14:38:03Z",
-      "updated": "2026-05-26T14:38:03Z",
-      "arxiv_id": "2605.27095v1",
-      "abs_url": "http://arxiv.org/abs/2605.27095v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.27095v1",
-      "primary_category": "cs.LG",
-      "categories": [
-        "cs.LG"
-      ],
-      "comment": "",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "机器人操作",
-        "导航与移动",
-        "数据集/评测",
-        "其他机器人"
-      ],
-      "topic": "机器人操作",
-      "score": 6,
-      "anchor_terms": [
-        "embodied",
-        "locomotion",
-        "manipulation",
-        "navigation",
-        "robot"
-      ],
-      "matched_terms": [
-        "embodied",
-        "locomotion",
-        "manipulation",
-        "navigation",
-        "robot"
-      ],
-      "title_zh": "基于表达流的教师的对抗性双在策略蒸馏",
-      "summary_zh": "从体现控制的示范中学习通常被视为行为克隆，而最近的扩散或流量匹配政策通过对多模式专家行为进行建模来改进这种范式。然而，这些方法仍然是离线监督学习者：该策略仅在专家状态上进行训练，并且在其实际访问的状态上没有收到任何纠正信号。按策略蒸馏 (OPD) 提供了一种自然的补救措施，但标准 OPD 假设有一个强大的固定教师，这在仅演示控制中是不可用的。我们提出了 \\textbf{FA-OPD}，一种 \\emph{对抗性双同策略​​蒸馏} 方法，其中流匹配（FM）教师从演示中学习并与轻量级 MLP 学生共同训练。教师针对学生的展示提供了两个互补的信号。奖励通道通过状态-动作对学习专家相似的目标，并通过长期策略优化驱动在线探索。该行动渠道为学生访问的州提供密集的当地目标，稳定了剥削。 FA-OPD 将它们结合起来，以便奖励蒸馏能够实现超越逐点演示的泛化，而行动蒸馏则使探索锚定在专家般的行为附近。在六个机器人导航、操作和运动基准测试中，FA-OPD 击败了强大的基线，并在嘈杂或有限的演示下表现出更强的鲁棒性。",
-      "translation": {
-        "language": "zh-CN",
-        "provider": "google",
-        "model": "deep-translator/google",
-        "generated_at": "2026-05-27T02:28:38.852908+00:00"
-      }
-    },
-    {
       "title": "Learning to Balance Motor Thermal Safety and Quadrupedal Locomotion Performance with Residual Policy",
       "authors": [
         "Yuhang Wan",
@@ -1714,55 +1516,6 @@
       ],
       "title_zh": "学习通过剩余策略来平衡电机热安全和四足运动性能",
       "summary_zh": "在电动机器人（尤其是腿式机器人）的背景下，电机热管理经常被忽视，但电机过热是限制长时间运动的关键因素，尤其是在有效负载条件下。本文将四足机器人的全身热模型集成到强化学习管道中以更新电机温度，并提出了电机热管理的两阶段训练框架。在此框架中，首先将名义策略预训练为能够穿越不同地形的运动基线。然后在名义策略之上训练剩余策略，以根据机器人的热状态提供纠正措施，确保低温条件下的高性能并防止高温条件下电机过热。仿真结果表明，所提出的策略实现了电机热安全和运动性能之间的有效平衡。在 Unitree A1 四足机器人上进行的真实实验进一步验证了该方法：在 3 公斤有效载荷下，机器人在多个地形上实现了超过 13 分钟的稳定运动，而仅名义策略会在大约 5 分钟内导致电机过热。",
-      "translation": {
-        "language": "zh-CN",
-        "provider": "google",
-        "model": "deep-translator/google",
-        "generated_at": "2026-05-27T02:28:38.852908+00:00"
-      }
-    },
-    {
-      "title": "Probabilistic Recurrent Intention Switching Model",
-      "authors": [
-        "Wenyuan Sheng",
-        "Hao Zhu",
-        "Joschka Boedecker"
-      ],
-      "summary": "Inverse reinforcement learning (IRL) recovers reward functions from observed behavior, yet traditional methods assume a single stationary reward that cannot capture goal switching within an episode. Recent multi-intention IRL methods address this by segmenting trajectories, but model intention transitions as either a memoryless Markov chain or via manual state augmentation with a fixed history window. We propose the Probabilistic Recurrent Intention Switching Model (PRISM), which replaces both mechanisms with a lightweight recurrent network that maps observation history to a per-step intention distribution. We prove that the resulting EM objective decomposes exactly into independent per-intention reward subproblems, each solvable in closed form, yielding an $\\mathcal{O}(nK)$ E-step with no variational approximation. We evaluate PRISM on a non-Markovian gridworld, a mouse labyrinth, and BridgeData~V2 robotic manipulation, the first large-scale robotic application of multi-intention IRL. Across all settings PRISM achieves the highest held-out log-likelihood while recovering nameable, temporally coherent intentions from unlabeled demonstrations, suggesting that discrete goal switching is present in both biological and artificial agents.",
-      "published": "2026-05-26T13:19:00Z",
-      "updated": "2026-05-26T13:19:00Z",
-      "arxiv_id": "2605.26998v1",
-      "abs_url": "http://arxiv.org/abs/2605.26998v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.26998v1",
-      "primary_category": "cs.LG",
-      "categories": [
-        "cs.LG",
-        "q-bio.NC"
-      ],
-      "comment": "",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "机器人操作",
-        "强化/模仿学习",
-        "其他机器人"
-      ],
-      "topic": "机器人操作",
-      "score": 5,
-      "anchor_terms": [
-        "manipulation",
-        "reinforcement learning",
-        "robot",
-        "robotic"
-      ],
-      "matched_terms": [
-        "manipulation",
-        "reinforcement learning",
-        "robot",
-        "robotic"
-      ],
-      "title_zh": "概率循环意图切换模型",
-      "summary_zh": "逆强化学习（IRL）从观察到的行为中恢复奖励函数，但传统方法假设单一固定奖励，无法捕获一个情节内的目标切换。最近的多意图 IRL 方法通过分割轨迹来解决这个问题，但将意图转换建模为无记忆马尔可夫链或通过具有固定历史窗口的手动状态增强。我们提出了概率循环意图切换模型（PRISM），它用一个轻量级循环网络取代了这两种机制，该网络将观察历史记录映射到每步意图分布。我们证明，由此产生的 EM 目标完全分解为独立的每意图奖励子问题，每个子问题都可以封闭形式求解，产生一个没有变分近似的 $\\mathcal{O}(nK)$ E 步。我们在非马尔可夫网格世界、鼠标迷宫和 BridgeData~V2 机器人操作（多意图 IRL 的第一个大规模机器人应用）上评估 PRISM。在所有设置中，PRISM 都实现了最高的保留对数似然，同时从未标记的演示中恢复可命名的、时间上一致的意图，这表明生物和人工代理中都存在离散的目标切换。",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
@@ -2481,52 +2234,6 @@
       }
     },
     {
-      "title": "DelowlightSplat: Feed-Forward Gaussian Splatting for Lowlight 3D Scene Reconstruction",
-      "authors": [
-        "Fuzhen Jiang",
-        "Zengtian Xie",
-        "Zhuoran Li"
-      ],
-      "summary": "Novel-view synthesis and 3D reconstruction from sparse posed images are central to robotics and AR/VR. Yet, feed-forward 3D Gaussian reconstruction fails under lowlight due to noise, color shifts, and unreliable correspondence. We propose DelowlightSplat, a lowlight-aware feed-forward Gaussian splatting framework for clean novel-view rendering. We build a controllable multi-view lowlight benchmark by degrading only context views while keeping target views clean. We introduce a lightweight Lowlight Adapter for residual enhancement to improve matchability, and couple it with cost-volume-based multi-view inference to directly predict clean 3D Gaussians. Experiments show that DelowlightSplat significantly outperforms previous feed-forward method and two-stage pipeline under lowlight conditions.",
-      "published": "2026-05-26T07:05:10Z",
-      "updated": "2026-05-26T07:05:10Z",
-      "arxiv_id": "2605.26629v1",
-      "abs_url": "http://arxiv.org/abs/2605.26629v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.26629v1",
-      "primary_category": "cs.CV",
-      "categories": [
-        "cs.CV"
-      ],
-      "comment": "",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "数据集/评测",
-        "感知与3D理解",
-        "其他机器人"
-      ],
-      "topic": "数据集/评测",
-      "score": 4,
-      "anchor_terms": [
-        "robot",
-        "robotic",
-        "robotics"
-      ],
-      "matched_terms": [
-        "robot",
-        "robotic",
-        "robotics"
-      ],
-      "title_zh": "DelowlightSplat：用于低光 3D 场景重建的前馈高斯泼溅",
-      "summary_zh": "从稀疏姿势图像中进行新颖视图合成和 3D 重建是机器人技术和 AR/VR 的核心。然而，由于噪声、色移和不可靠的对应关系，前馈 3D 高斯重建在低光下会失败。我们提出了 DelowlightSplat，一种低光感知的前馈高斯泼溅框架，用于干净的小说视图渲染。我们通过仅降级上下文视图同时保持目标视图干净来构建可控的多视图低光基准。我们引入了一种轻量级低光适配器，用于残差增强，以提高可匹配性，并将其与基于成本体积的多视图推理相结合，以直接预测干净的 3D 高斯。实验表明，在弱光条件下，DelowlightSplat 显着优于之前的前馈方法和两级管道。",
-      "translation": {
-        "language": "zh-CN",
-        "provider": "google",
-        "model": "deep-translator/google",
-        "generated_at": "2026-05-27T02:28:38.852908+00:00"
-      }
-    },
-    {
       "title": "Breaking the Epistemic Trap: Active Perception Under Compound Uncertainty",
       "authors": [
         "Chayan Banerjee",
@@ -2659,147 +2366,6 @@
       ],
       "title_zh": "使用神经网络验证器 alpha-beta-CROWN 进行桥接控制：教程",
       "summary_zh": "基于学习的综合控制器方法因其高表达性和强大的经验性能而受到欢迎。然而，在自动驾驶、机器人和电力系统等安全关键场景中，仅凭经验性能是不够的，非常需要对稳定性和安全性等控制器属性进行形式化验证。不幸的是，许多先前的验证方法要么与系统或证书的特定结构假设相关，使得它们难以跨设置转移，要么在高维神经网络系统上存在较差的可扩展性。在本教程中，我们提出了一个统一的框架，旨在通过与最先进的神经网络验证器 $α,\\!β$-CROWN (alpha-beta-CROWN) 进行桥接控制来缩小这一差距。从本质上讲，$α,\\!β$-CROWN 是一个用于表示为计算图的非线性函数的通用边界引擎：给定输入域，它可以生成非线性函数的经过认证的边界和显式线性松弛。这些经过认证的边界本身对于可达性分析等任务很有用，它们还为执行可满足性检查和优化的更复杂例程提供了基础。更具体地说，许多控制问题简化为验证状态域上的实值不等式（例如，李雅普诺夫理论）。因此，$α,\\!β$-CROWN 通过计算紧边界并根据边界递归地分区和修剪子域来实现对此类条件的可扩展验证。得益于 GPU 并行化，该管道在验证和优化问题上展现了卓越的可扩展性，而这对于传统方法来说是具有挑战性的。在本教程中，我们讨论 $α,\\!β$-CROWN 的基础知识，并介绍其在各种控制相关任务中的应用。",
-      "translation": {
-        "language": "zh-CN",
-        "provider": "google",
-        "model": "deep-translator/google",
-        "generated_at": "2026-05-27T02:28:38.852908+00:00"
-      }
-    },
-    {
-      "title": "TrackRef3D: Multi-View Consistent Track-then-Label for Open-World Referring Segmentation in 3D Gaussian Splatting",
-      "authors": [
-        "Yuyang Tan",
-        "Renhe Zhang",
-        "Hang Zhang",
-        "Ao Li",
-        "Xin Tan"
-      ],
-      "summary": "Referring 3D Gaussian Splatting (R3DGS), which utilizes natural language for 3D object segmentation, has emerged as a crucial capability for embodied AI. However, existing methods typically rely on expensive per-scene manual annotation and per-view pseudo mask generation, which suffer from multi-view inconsistency and poor generalization to varying query specificities. To address this, we present TrackRef3D, a fully automatic pipeline that achieves open-world referring segmentation in 3D Gaussian Splatting (3DGS) without manual annotation by introducing a multi-view consistent track-then-label paradigm that fundamentally decouples object discovery from semantic grounding. Specifically, we propose a Trajectory-Aware Semantic Consensus Module (TSCM) which aggregates cross-view predictions via synonymous clustering and trajectory-aware voting to establish a canonical semantic identity, thereby ensuring multi-view consistency. Furthermore, we employ a visibility-aware description generation strategy to mitigate ambiguity and propose a Hybrid Training Strategy (HTS) that jointly optimizes coarse category semantics and fine-grained referential cues to ensure robustness under varying query specificities using a multi-positive contrastive objective. Extensive experiments on benchmarks demonstrate that TrackRef3D achieves state-of-the-art performance.",
-      "published": "2026-05-26T05:49:12Z",
-      "updated": "2026-05-26T05:49:12Z",
-      "arxiv_id": "2605.26576v1",
-      "abs_url": "http://arxiv.org/abs/2605.26576v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.26576v1",
-      "primary_category": "cs.CV",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "comment": "",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "数据集/评测",
-        "感知与3D理解",
-        "其他机器人"
-      ],
-      "topic": "数据集/评测",
-      "score": 5,
-      "anchor_terms": [
-        "embodied ai"
-      ],
-      "matched_terms": [
-        "embodied",
-        "embodied ai"
-      ],
-      "title_zh": "TrackRef3D：用于 3D 高斯泼溅中开放世界参考分割的多视图一致 Track-then-Label",
-      "summary_zh": "3D 高斯分布 (R3DGS) 利用自然语言进行 3D 对象分割，已成为嵌入式 AI 的一项关键功能。然而，现有方法通常依赖于昂贵的每个场景手动注释和每个视图伪掩码生成，这会遭受多视图不一致和对不同查询特异性的泛化能力差的问题。为了解决这个问题，我们提出了 TrackRef3D，这是一个全自动管道，通过引入多视图一致的跟踪然后标签范式，从根本上将对象发现与语义基础解耦，在 3D 高斯分布 (3DGS) 中实现开放世界引用分割，无需手动注释。具体来说，我们提出了一个轨迹感知语义共识模块（TSCM），它通过同义聚类和轨迹感知投票来聚合跨视图预测，以建立规范的语义身份，从而确保多视图一致性。此外，我们采用可见性感知描述生成策略来减轻歧义，并提出一种混合训练策略（HTS），该策略联合优化粗略类别语义和细粒度参考线索，以使用多重正对比目标确保不同查询特异性下的鲁棒性。大量基准测试表明 TrackRef3D 实现了最先进的性能。",
-      "translation": {
-        "language": "zh-CN",
-        "provider": "google",
-        "model": "deep-translator/google",
-        "generated_at": "2026-05-27T02:28:38.852908+00:00"
-      }
-    },
-    {
-      "title": "Uncertainty-Aware Gaussian Map for Vision-Language Navigation",
-      "authors": [
-        "Jianzhe Gao",
-        "Rui Liu",
-        "Yuxuan Xu",
-        "Tongtong Cao",
-        "Yingxue Zhang",
-        "Zhanguang Zhang",
-        "Sida Peng",
-        "Yi Yang",
-        "Wenguan Wang"
-      ],
-      "summary": "Vision-Language Navigation (VLN) requires an agent to navigate 3D environments following natural language instructions. During navigation, existing agents commonly encounter perceptual uncertainty, such as insufficient evidence for reliable grounding or ambiguity in interpreting spatial cues, yet they typically ignore such information when predicting actions. In this work, we explicitly model three forms of perceptual uncertainty (i.e., geometric, semantic, and appearance uncertainty) and integrate them into the agent's observation space to enable informed decision-making. Concretely, our agent first constructs a Semantic Gaussian Map (SGM), composed of differentiable 3D Gaussian primitives initialized from panoramic observations, that encodes both the geometric structure and semantic content of the environment. On top of SGM, geometric uncertainty is estimated through variational perturbations of Gaussian position and scale to assess structural reliability; semantic uncertainty is captured by perturbing Gaussian semantic attributes to reveal ambiguous interpretations; and appearance uncertainty is characterized by Fisher Information, which measures the sensitivity of rendered observations to Gaussian-level variations. These uncertainties are incorporated into SGM, extending it into a unified 3D Value Map, which grounds them as affordances and constraints that support reliable navigation. Comprehensive evaluations across multiple VLN benchmarks show the effectiveness of our agent.",
-      "published": "2026-05-26T03:33:47Z",
-      "updated": "2026-05-26T03:33:47Z",
-      "arxiv_id": "2605.26503v1",
-      "abs_url": "http://arxiv.org/abs/2605.26503v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.26503v1",
-      "primary_category": "cs.CV",
-      "categories": [
-        "cs.CV"
-      ],
-      "comment": "",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "导航与移动",
-        "数据集/评测",
-        "感知与3D理解"
-      ],
-      "topic": "导航与移动",
-      "score": 4,
-      "anchor_terms": [
-        "affordance",
-        "navigation"
-      ],
-      "matched_terms": [
-        "affordance",
-        "navigation",
-        "vln"
-      ],
-      "title_zh": "用于视觉语言导航的不确定性感知高斯图",
-      "summary_zh": "视觉语言导航 (VLN) 需要代理按照自然语言指令在 3D 环境中导航。在导航过程中，现有智能体通常会遇到感知不确定性，例如可靠基础的证据不足或解释空间线索的模糊性，但它们在预测动作时通常会忽略这些信息。在这项工作中，我们明确地建模了三种形式的感知不确定性（即几何、语义和外观不确定性），并将它们集成到代理的观察空间中，以实现明智的决策。具体来说，我们的代理首先构建一个语义高斯图（SGM），它由从全景观测初始化的可微 3D 高斯基元组成，对环境的几何结构和语义内容进行编码。在SGM之上，通过高斯位置和尺度的变分扰动来估计几何不确定性，以评估结构可靠性；通过扰动高斯语义属性来捕获语义不确定性，以揭示模糊的解释；外观不确定性由费希尔信息表征，它测量渲染观测值对高斯水平变化的敏感性。这些不确定性被纳入 SGM，将其扩展为统一的 3D 价值图，从而将它们作为支持可靠导航的可供性和约束。多个 VLN 基准的综合评估显示了我们代理的有效性。",
-      "translation": {
-        "language": "zh-CN",
-        "provider": "google",
-        "model": "deep-translator/google",
-        "generated_at": "2026-05-27T02:28:38.852908+00:00"
-      }
-    },
-    {
-      "title": "3D Gaussian Map with Open-Set Semantic Grouping for Vision-Language Navigation",
-      "authors": [
-        "Jianzhe Gao",
-        "Rui Liu",
-        "Wenguan Wang"
-      ],
-      "summary": "Vision-language navigation (VLN) requires an agent to traverse complex 3D environments based on natural language instructions, necessitating a thorough scene understanding. While existing works equip agents with various scene representations to enhance spatial awareness, they often neglect the complex 3D geometry and rich semantics in VLN scenarios, limiting the ability to generalize across diverse and unseen environments. To address these challenges, this work proposes a 3D Gaussian Map that represents the environment as a set of differentiable 3D Gaussians and accordingly develops a navigation strategy for VLN. Specifically, Egocentric Scene Map is constructed online by initializing 3D Gaussians from sparse pseudo-lidar point clouds, providing informative geometric priors for scene understanding. Each Gaussian primitive is further enriched through Open-Set Semantic Grouping operation, which groups 3D Gaussians based on their membership in object instances or stuff categories within the open world, resulting in a unified 3D Gaussian Map. Building on this map, Multi-Level Action Prediction strategy, which combines spatial-semantic cues at multiple granularities, is designed to assist agents in decision-making. Extensive experiments conducted on three public benchmarks (i.e., R2R, R4R, and REVERIE) validate the effectiveness of our method.",
-      "published": "2026-05-26T03:25:49Z",
-      "updated": "2026-05-26T03:25:49Z",
-      "arxiv_id": "2605.26500v1",
-      "abs_url": "http://arxiv.org/abs/2605.26500v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.26500v1",
-      "primary_category": "cs.CV",
-      "categories": [
-        "cs.CV"
-      ],
-      "comment": "",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "导航与移动",
-        "数据集/评测",
-        "感知与3D理解"
-      ],
-      "topic": "导航与移动",
-      "score": 4,
-      "anchor_terms": [
-        "navigation"
-      ],
-      "matched_terms": [
-        "egocentric",
-        "navigation",
-        "vln"
-      ],
-      "title_zh": "用于视觉语言导航的具有开放集语义分组的 3D 高斯图",
-      "summary_zh": "视觉语言导航 (VLN) 需要代理根据自然语言指令遍历复杂的 3D 环境，从而需要彻底的场景理解。虽然现有的工作为智能体配备了各种场景表示以增强空间感知，但它们经常忽略 VLN 场景中复杂的 3D 几何和丰富的语义，限制了在不同和不可见的环境中泛化的能力。为了应对这些挑战，这项工作提出了一个 3D 高斯地图，将环境表示为一组可微分的 3D 高斯，并相应地开发了 VLN 的导航策略。具体来说，以自我为中心的场景地图是通过从稀疏伪激光雷达点云初始化 3D 高斯函数在线构建的，为场景理解提供了信息丰富的几何先验。每个高斯基元通过开放集语义分组操作得到进一步丰富，该操作根据开放世界中对象实例或事物类别的成员资格对 3D 高斯进行分组，从而产生统一的 3D 高斯图。在此地图的基础上，多级动作预测策略结合了多个粒度的空间语义线索，旨在帮助智能体做出决策。在三个公共基准（即 R2R、R4R 和 REVERIE）上进行的大量实验验证了我们方法的有效性。",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
