@@ -1,12 +1,12 @@
 {
   "date": "2026-06-04",
-  "generated_at": "2026-06-09T02:23:15.896568+00:00",
+  "generated_at": "2026-06-10T02:04:35.410281+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202606040000 TO 202606042359]",
-  "total_fetched": 593,
-  "total_matched": 58,
+  "total_fetched": 596,
+  "total_matched": 59,
   "papers": [
     {
       "title": "Will the Agent Recuse Itself? Measuring LLM-Agent Compliance with In-Band Access-Deny Signals",
@@ -636,17 +636,17 @@
       ],
       "summary": "For a humanoid robot to be deployed in the real world, the choice of command space (i.e., the interface between task planning and whole-body control) is crucial. Existing whole-body controllers typically demand dense kinematic or spatial references that planners struggle to synthesize from task semantics. We instead propose a compact, explicit interface that is intuitive, general, modular, and expressive enough for diverse loco-manipulation skills. To this end, we introduce HANDOFF, a single humanoid whole-body controller that follows this interface and is distilled via multi-teacher KL distillation under a context-conditioned gating scheme into a mixture-of-experts student from three complementary specialists: whole-body motion tracking with safety-filtered data, locomotion, and fall-recovery. On the Unitree G1, HANDOFF matches state-of-the-art velocity tracking and offers one of the largest robust manipulation workspaces. We further demonstrate hardware feasibility through multiple natural-language-driven task roll-outs, powered by a VLM-driven agentic planner with no task-specific data or controller fine-tuning.",
       "published": "2026-06-04T17:59:50Z",
-      "updated": "2026-06-08T08:17:30Z",
-      "arxiv_id": "2606.06493v2",
-      "abs_url": "http://arxiv.org/abs/2606.06493v2",
-      "pdf_url": "https://arxiv.org/pdf/2606.06493v2",
+      "updated": "2026-06-09T07:34:32Z",
+      "arxiv_id": "2606.06493v3",
+      "abs_url": "http://arxiv.org/abs/2606.06493v3",
+      "pdf_url": "https://arxiv.org/pdf/2606.06493v3",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
         "cs.AI",
         "cs.LG"
       ],
-      "comment": "22 pages, 9 figures",
+      "comment": "22 pages, 9 figures, Project page: https://lzyang2000.github.io/HANDOFF/",
       "code_url": "",
       "has_code": false,
       "labels": [
@@ -676,7 +676,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-06-09T02:23:42.493151+00:00"
+        "generated_at": "2026-06-10T02:05:13.202611+00:00"
       }
     },
     {
@@ -1027,10 +1027,10 @@
       ],
       "summary": "Humans often take longer to demonstrate a task than a robot would need to execute it. Rather than learning to replicate the demonstration at the same pace, many industrial and practical applications require robots to perform tasks as quickly as possible. In this paper, we investigate several hypotheses for learning policies that operate faster-than-demonstrations. Our experiments show that the most effective strategy is to downsample recorded demonstrations and train the robot's policy on this accelerated data. However, uniformly downsampling an entire trajectory can be problematic. Some parts of a task can be safely sped up (e.g., unconstrained motion), while others demand slower, more precise motion (e.g., object interactions or fine manipulation). To address this challenge, we introduce VOLT, a vision-and-language trajectory segmentation method that reasons over video demonstrations, and leverages contextual cues to determine when acceleration is appropriate and when careful precision is required. VOLT identifies segments where slow, deliberate motion is necessary, then selectively downsamples the remaining segments. The resulting reformatted trajectories can be used with standard imitation learning approaches, such as diffusion policies. Our results highlight that segmentation quality is critical -- baseline methods often misidentify when acceleration is possible, leading to overly cautious or unreliable policies. Compared to state-of-the-art alternatives, VOLT allows robots to execute tasks faster while maintaining strong performance.",
       "published": "2026-06-04T15:57:29Z",
-      "updated": "2026-06-04T15:57:29Z",
-      "arxiv_id": "2606.06323v1",
-      "abs_url": "http://arxiv.org/abs/2606.06323v1",
-      "pdf_url": "https://arxiv.org/pdf/2606.06323v1",
+      "updated": "2026-06-09T15:35:02Z",
+      "arxiv_id": "2606.06323v2",
+      "abs_url": "http://arxiv.org/abs/2606.06323v2",
+      "pdf_url": "https://arxiv.org/pdf/2606.06323v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -1061,7 +1061,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-06-06T02:30:28.917018+00:00"
+        "generated_at": "2026-06-10T02:05:13.202611+00:00"
       }
     },
     {
@@ -2902,6 +2902,60 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-06-06T02:30:28.917018+00:00"
+      }
+    },
+    {
+      "title": "Discrete-WAM: Unified Discrete Vision-Action Token Editing for World-Policy Learning",
+      "authors": [
+        "Ziyang Yao",
+        "Haochen Liu",
+        "Yuncheng Jiang",
+        "Zeyu Zhu",
+        "Zibin Guo",
+        "Jingru Wang",
+        "Tianle Liu",
+        "Jianwei Cui",
+        "Kuiyuan Yang",
+        "Hongwei Xie",
+        "Jingwei Zhao",
+        "Guang Chen",
+        "Hangjun Ye"
+      ],
+      "summary": "Autonomous driving requires reasoning about how ego actions shape future world evolution, rather than merely mapping observations to actions. However, most end-to-end methods rely on direct state-to-action imitation, while existing world models often remain weakly aligned with downstream policy generation. We introduce Discrete-WAM, a unified discrete vision-action world-policy framework that represents visual observations, future states, high-level decisions, and ego actions within a shared token space. Built on this discrete alignment, Discrete-WAM jointly trains world modeling, world-policy modeling, and policy modeling through multi-task and multi-stage pretraining, allowing action-conditioned future prediction to directly support policy generation. For downstream planning, Discrete-WAM further decomposes policy generation into hierarchical decision prediction and parallel action-token editing, where the decision token provides a high-level planning skeleton and confidence-based scheduling refines dense future actions efficiently. Experiments on large-scale autonomous-driving benchmarks show that Discrete-WAM achieves strong planning performance while supporting controllable future generation, counterfactual evaluation, surprise-based world-model analysis, and efficient parallel policy decoding. These results suggest that discrete representation alignment, unified world-policy training, and hierarchical token editing provide a promising design paradigm for physical AI.",
+      "published": "2026-06-04T03:16:31Z",
+      "updated": "2026-06-09T07:25:40Z",
+      "arxiv_id": "2606.05645v2",
+      "abs_url": "http://arxiv.org/abs/2606.05645v2",
+      "pdf_url": "https://arxiv.org/pdf/2606.05645v2",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "数据集/评测",
+        "感知与3D理解"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 5,
+      "anchor_terms": [
+        "world model"
+      ],
+      "matched_terms": [
+        "policy learning",
+        "world model"
+      ],
+      "title_zh": "Discrete-WAM：用于世界政策学习的统一离散视觉行动令牌编辑",
+      "summary_zh": "自动驾驶需要推理自我行为如何塑造未来世界的演变，而不仅仅是将观察映射到行动。然而，大多数端到端方法依赖于直接的状态到行动的模仿，而现有的世界模型往往与下游政策生成的一致性较差。我们引入 Discrete-WAM，这是一个统一的离散视觉行动世界政策框架，它代表共享代币空间内的视觉观察、未来状态、高层决策和自我行动。建立在这种离散对齐的基础上，Discrete-WAM 通过多任务和多阶段预训练联合训练世界建模、世界政策建模和政策建模，从而允许以行动为条件的未来预测直接支持政策生成。对于下游规划，Discrete-WAM 进一步将策略生成分解为分层决策预测和并行操作令牌编辑，其中决策令牌提供高级规划框架，而基于置信度的调度可有效细化密集的未来操作。大规模自动驾驶基准测试表明，Discrete-WAM 实现了强大的规划性能，同时支持可控的未来生成、反事实评估、基于惊喜的世界模型分析和高效的并行策略解码。这些结果表明，离散表示对齐、统一的世界策略训练和分层令牌编辑为物理人工智能提供了一种有前途的设计范例。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-10T02:05:13.202611+00:00"
       }
     },
     {
