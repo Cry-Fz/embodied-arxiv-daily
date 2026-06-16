@@ -1,12 +1,12 @@
 {
   "date": "2026-06-11",
-  "generated_at": "2026-06-15T02:30:40.339065+00:00",
+  "generated_at": "2026-06-16T02:34:13.455334+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202606110000 TO 202606112359]",
-  "total_fetched": 497,
-  "total_matched": 59,
+  "total_fetched": 506,
+  "total_matched": 61,
   "papers": [
     {
       "title": "SpikF-GO: Spiking Fourier Graph Operators for Multivariate Time Series Forecasting",
@@ -118,15 +118,15 @@
       ],
       "summary": "This work presents RepWAM, a representation-centric world action model (WAM) built on representation visual-action tokenizers. Existing WAMs typically inherit reconstruction-oriented video tokenizers from pretrained video generation models. Although these tokenizers preserve visual fidelity, pixel reconstruction alone provides limited guidance for learning instruction-following dynamics that connect future prediction with robot control. To address this, we explore a semantic visual-action latent space for representation-centric world action modeling. Specifically, we train a representation visual-action tokenizer that maps visual inputs into aligned visual and latent action tokens. We then pretrain our WAM to jointly model future visual states and the latent actions that connect them under language instructions, followed by adaptation to real robot trajectories for closed-loop manipulation. Experiments on real-world manipulation tasks and simulation benchmarks show that RepWAM delivers strong performance across diverse manipulation settings, while ablations highlight the value of semantic visual-action tokenization over reconstruction-oriented alternatives. These results establish representation visual-action tokenization as a promising foundation for world action models and a step toward generalist robot policies. Code and weights will be available at https://github.com/wdrink/RepWAM.",
       "published": "2026-06-11T17:59:43Z",
-      "updated": "2026-06-11T17:59:43Z",
-      "arxiv_id": "2606.13674v1",
-      "abs_url": "http://arxiv.org/abs/2606.13674v1",
-      "pdf_url": "https://arxiv.org/pdf/2606.13674v1",
+      "updated": "2026-06-13T07:02:30Z",
+      "arxiv_id": "2606.13674v2",
+      "abs_url": "http://arxiv.org/abs/2606.13674v2",
+      "pdf_url": "https://arxiv.org/pdf/2606.13674v2",
       "primary_category": "cs.CV",
       "categories": [
         "cs.CV"
       ],
-      "comment": "Project page: https://wdrink.github.io/RepWAM",
+      "comment": "",
       "code_url": "https://github.com/wdrink/RepWAM",
       "has_code": true,
       "labels": [
@@ -153,7 +153,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-06-12T02:13:51.073523+00:00"
+        "generated_at": "2026-06-16T02:35:20.273838+00:00"
       }
     },
     {
@@ -891,6 +891,64 @@
       }
     },
     {
+      "title": "QPILOTS: Efficient Test-Time Q-Steering for Flow Policies",
+      "authors": [
+        "Yifan Ruan",
+        "Chenyang Cao",
+        "Andreas Burger",
+        "Ali Pesaranghader",
+        "Kaveh Kamali",
+        "Jaehong Kim",
+        "Nandita Vijaykumar",
+        "Alan Aspuru-Guzik",
+        "Igor Gilitschenski",
+        "Nicholas Rhinehart"
+      ],
+      "summary": "Flow-matching and diffusion policies are expressive action generators, but optimizing them with temporal-difference reinforcement learning (RL) remains difficult. Effective policy extraction requires exploiting the critic's action gradient, yet directly backpropagating this signal through a multi-step denoising process can be numerically unstable. Existing methods work around this either by discarding gradient information, distilling the policy into a simpler one-step actor, or repeatedly fine-tuning the denoising policy as the critic improves. We propose QPILOTS, a method that leaves the original policy unmodified and steers the denoising process at inference time. At each denoising step, instead of evaluating the critic on the noisy intermediate action where critic predictions are unreliable, we first project that intermediate state to an estimate of the final clean action and compute the critic gradient there. We introduce two variants: QPILOTS-U uses a fast single-point approximation, while QPILOTS-M draws differentiable posterior samples via a learned auxiliary network. On a standard offline-to-online RL benchmark, QPILOTS achieves the best aggregate performance, reaching an average success rate of 90% across 50 tasks. We also apply QPILOTS to steer a large, frozen, pretrained Vision-Language Action (VLA) foundation model, outperforming or matching prior inference-time approaches across six manipulation tasks in simulation.",
+      "published": "2026-06-11T18:22:03Z",
+      "updated": "2026-06-11T18:22:03Z",
+      "arxiv_id": "2606.14801v1",
+      "abs_url": "http://arxiv.org/abs/2606.14801v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.14801v1",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "comment": "10 pages, 7 figures",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "VLA/多模态策略",
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "数据集/评测"
+      ],
+      "topic": "机器人操作",
+      "score": 5,
+      "anchor_terms": [
+        "manipulation",
+        "reinforcement learning",
+        "vla"
+      ],
+      "matched_terms": [
+        "foundation model",
+        "manipulation",
+        "reinforcement learning",
+        "vla"
+      ],
+      "title_zh": "QPILOTS：针对流量策略的高效测试时 Q 转向",
+      "summary_zh": "流匹配和扩散策略是富有表现力的动作生成器，但使用时差强化学习（RL）对其进行优化仍然很困难。有效的策略提取需要利用批评家的动作梯度，但通过多步去噪过程直接反向传播该信号可能在数值上不稳定。现有方法通过丢弃梯度信息、将策略提炼为更简单的单步参与者或随着批评家的改进而反复微调去噪策略来解决这个问题。我们提出了 QPILOTS，一种不修改原始策略并在推理时引导去噪过程的方法。在每个去噪步骤中，我们首先将该中间状态投影为最终干净动作的估计，并计算那里的批评梯度，而不是在批评预测不可靠的嘈杂的中间动作上评估批评。我们引入两种变体：QPILOTS-U 使用快速单点近似，而 QPILOTS-M 通过学习的辅助网络绘制可微的后验样本。在标准的离线到在线 RL 基准测试中，QPILOTS 实现了最佳综合性能，在 50 项任务中达到了 90% 的平均成功率。我们还应用 QPILOTS 来引导大型、冻结、预训练的视觉语言动作 (VLA) 基础模型，在模拟中的六个操作任务中超越或匹配先前的推理时间方法。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-16T02:35:20.273838+00:00"
+      }
+    },
+    {
       "title": "$μ_0$: A Scalable 3D Interaction-Trace World Model",
       "authors": [
         "Seungjae Lee",
@@ -905,10 +963,10 @@
       ],
       "summary": "World models that capture how actions induce physical change enable scalable robot learning without reliance on embodiment-specific action labels. Pixel-space video models provide broad visual priors but expend model capacity on dense appearance reconstruction, while direct action models require embodiment-specific labels that hinder scalability. We present $μ_0$, a scalable world model based on 3D traces. Rather than predicting dense pixels or directly modeling actions, $μ_0$ forecasts smooth 3D trajectories for salient interaction points such as objects, tools, hands, and contact regions, yielding a compact, embodiment-agnostic motion interface. To enable training from diverse video sources, our TraceExtract system automatically extracts 3D supervision by selecting keypoints, constructing globally aligned traces, and associating motion segments with hierarchical language captions. This TraceExtract supervision pretrains $μ_0$ by combining a pretrained vision-language backbone with a modular trace expert, which represents each query via B-spline control points and predicts future traces. Experiments show that $μ_0$ outperforms baselines in both 2D and 3D trace prediction, including trace prediction models and tokenized VLM methods. Because $μ_0$ is frozen and reusable, it can be paired with action experts for downstream robot embodiments. Despite action-free pretraining, the resulting trace-conditioned policies achieve performance competitive with VLA models pretrained with action supervision, such as $π_0$. These results establish 3D traces as a scalable and transferable representation for cross-embodiment manipulation.",
       "published": "2026-06-11T17:59:56Z",
-      "updated": "2026-06-11T17:59:56Z",
-      "arxiv_id": "2606.13769v1",
-      "abs_url": "http://arxiv.org/abs/2606.13769v1",
-      "pdf_url": "https://arxiv.org/pdf/2606.13769v1",
+      "updated": "2026-06-15T06:13:42Z",
+      "arxiv_id": "2606.13769v2",
+      "abs_url": "http://arxiv.org/abs/2606.13769v2",
+      "pdf_url": "https://arxiv.org/pdf/2606.13769v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -948,7 +1006,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-06-15T02:31:55.826976+00:00"
+        "generated_at": "2026-06-16T02:35:20.273838+00:00"
       }
     },
     {
@@ -1606,6 +1664,56 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-06-12T02:13:51.073523+00:00"
+      }
+    },
+    {
+      "title": "Computing Smooth Geodesics under Two-Sided Curvature Bounds with Applications to Robotics and Image Analysis",
+      "authors": [
+        "Da Chen",
+        "Zhenjiang Li",
+        "Jean-Marie Mirebeau",
+        "Xuecheng Tai",
+        "Jinglin Zhang",
+        "Wei Zhang",
+        "Laurent D. Cohen"
+      ],
+      "summary": "Curvature of planar curves serves as a key regularization term for computing second-order minimal paths, due to its tight relevance to desirable geometric properties such as smoothness, rigidity, and elasticity. In this paper, we tackle a more challenging problem in computational physics and geometry problem: tracking minimal paths whose curvature is constrained by arbitrary upper and lower bounds. For that purpose, we propose a new curvature-bounded geodesic model, developed under the Hamilton-Jacobi-Bellman (HJB) partial differential equation (PDE) framework. It provides strong geometric control over minimal paths by enforcing curvature range constraints, whose paths are smooth and of bounded curvature limitation. We also present a discretization scheme for the Hamiltonian and the HJB PDE incorporating curvature bounds, allowing efficient solver for estimating numerical solutions to the model. Finally, we illustrate the capability of the proposed curvature-bounded geodesic model in applications of robot path planning and curvilinear structures tracking from images. Numerical experiments demonstrate that the proposed curvature-bounded geodesic model serves as a powerful and robust tool for finding satisfactory paths.",
+      "published": "2026-06-11T14:13:24Z",
+      "updated": "2026-06-11T14:13:24Z",
+      "arxiv_id": "2606.14794v1",
+      "abs_url": "http://arxiv.org/abs/2606.14794v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.14794v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 10,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "path planning",
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "计算两侧曲率边界下的平滑测地线及其在机器人和图像分析中的应用",
+      "summary_zh": "平面曲线的曲率是计算二阶最小路径的关键正则化项，因为它与所需的几何属性（例如平滑度、刚度和弹性）密切相关。在本文中，我们解决了计算物理和几何问题中更具挑战性的问题：跟踪曲率受任意上限和下限约束的最小路径。为此，我们提出了一种新的曲率有界测地线模型，该模型是在 Hamilton-Jacobi-Bellman (HJB) 偏微分方程 (PDE) 框架下开发的。它通过强制曲率范围约束来提供对最小路径的强大几何控制，其路径是平滑的并且具有有界曲率限制。我们还提出了哈密顿量和结合曲率边界的 HJB PDE 的离散化方案，允许高效的求解器来估计模型的数值解。最后，我们说明了所提出的曲率有界测地线模型在机器人路径规划和图像曲线结构跟踪应用中的能力。数值实验表明，所提出的曲率有界测地线模型可以作为寻找满意路径的强大且稳健的工具。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-06-16T02:35:20.273838+00:00"
       }
     },
     {
@@ -2269,7 +2377,7 @@
       }
     },
     {
-      "title": "EA-WM: Event-Aware World Models with Task-Specification Grounding for Long-Horizon Manipulation",
+      "title": "EV-WM: Event-Verified World Models for Long-Horizon Robotic Manipulation",
       "authors": [
         "Kailin Wang",
         "Haoxiang Jie",
@@ -2277,12 +2385,12 @@
         "Jiacheng Zhou",
         "Zhiyou Heng"
       ],
-      "summary": "Pretrained-feature world models provide a useful substrate for robot imagination, but visual or latent prediction alone does not determine whether an imagined future satisfies task-relevant events. Long-horizon manipulation requires progress signals that are relational, predicate-level, and physically grounded: whether an object has moved, whether a drawer or contact state has changed, whether a placement predicate is satisfied, and whether a candidate future is reliable enough for execution. We introduce EA-WM, an event-aware world-model framework that augments frozen visual-feature dynamics with task-specification-grounded event prediction and verification. EA-WM rolls out candidate futures in pretrained visual-feature space, decodes them into structured event states, and scores them using task-progress, semantic-consistency, physical-feasibility, and uncertainty terms. The verifier guides sampling-based planning, gates candidate actions, and, in the contact-sensitive LIBERO wine-rack setting, selects among PPOgenerated proposals. Across navigation, deformable-object, wall-constrained, and languagedescribed manipulation studies, EA-WM shows that event-aware verification can make featurespace world models more interpretable and better aligned with task progress.",
+      "summary": "Pretrained-feature world models provide a useful substrate for robot imagination, but visual or latent prediction alone does not determine whether an imagined future satisfies task-relevant predicates. Long-horizon manipulation requires progress signals that are relational, predicate-level, and physically grounded: whether an object has moved, whether a drawer or contact state has changed, whether a placement predicate is satisfied, and whether a candidate future is reliable enough for execution. We introduce \\textbf{EV-WM}, a predicate-grounded verification framework for world-model planning. EV-WM rolls out candidate futures in pretrained visual-feature space, decodes them into structured event states, and scores them using task-progress, semantic-consistency, physical-feasibility, and uncertainty terms. The verifier guides sampling-based planning, gates candidate actions, and, in the contact-sensitive LIBERO wine-rack setting, selects among PPO-generated proposals. Across navigation, deformable-object, wall-constrained, and language-described manipulation studies, EV-WM shows that predicate-grounded verification can make feature-space world-model planning more interpretable and better aligned with task progress.",
       "published": "2026-06-11T08:35:37Z",
-      "updated": "2026-06-11T08:35:37Z",
-      "arxiv_id": "2606.13053v1",
-      "abs_url": "http://arxiv.org/abs/2606.13053v1",
-      "pdf_url": "https://arxiv.org/pdf/2606.13053v1",
+      "updated": "2026-06-15T03:07:35Z",
+      "arxiv_id": "2606.13053v2",
+      "abs_url": "http://arxiv.org/abs/2606.13053v2",
+      "pdf_url": "https://arxiv.org/pdf/2606.13053v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -2299,11 +2407,12 @@
         "其他机器人"
       ],
       "topic": "机器人操作",
-      "score": 12,
+      "score": 15,
       "anchor_terms": [
         "manipulation",
         "navigation",
         "robot",
+        "robotic",
         "world model"
       ],
       "matched_terms": [
@@ -2311,15 +2420,16 @@
         "manipulation",
         "navigation",
         "robot",
+        "robotic",
         "world model"
       ],
-      "title_zh": "EA-WM：具有任务规范基础的事件感知世界模型，用于长视野操作",
-      "summary_zh": "预训练的特征世界模型为机器人的想象力提供了有用的基础，但仅靠视觉或潜在预测并不能确定想象的未来是否满足与任务相关的事件。长范围操作需要关系性、谓词级和物理基础的进度信号：对象是否已移动、抽屉或接触状态是否已更改、放置谓词是否满足以及候选未来是否足够可靠以执行。我们引入了 EA-WM，这是一个事件感知的世界模型框架，它通过基于任务规范的事件预测和验证来增强冻结的视觉特征动态。 EA-WM 在预训练的视觉特征空间中推出候选未来，将它们解码为结构化事件状态，并使用任务进度、语义一致性、物理可行性和不确定性术语对它们进行评分。验证者指导基于抽样的规划，控制候选行动，并在接触敏感的 LIBERO 酒架设置中，从 PPO 生成的提案中进行选择。通过导航、可变形对象、墙壁约束和语言描述的操作研究，EA-WM 表明事件感知验证可以使特征空间世界模型更具可解释性并更好地与任务进度保持一致。",
+      "title_zh": "EV-WM：用于长视野机器人操作的经过事件验证的世界模型",
+      "summary_zh": "预训练特征世界模型为机器人想象力提供了有用的基础，但仅靠视觉或潜在预测并不能确定想象的未来是否满足与任务相关的谓词。长范围操作需要关系性、谓词级和物理基础的进度信号：对象是否已移动、抽屉或接触状态是否已更改、放置谓词是否满足以及候选未来是否足够可靠以执行。我们引入了 \\textbf{EV-WM}，一个用于世界模型规划的基于谓词的验证框架。 EV-WM 在预训练的视觉特征空间中推出候选未来，将它们解码为结构化事件状态，并使用任务进度、语义一致性、物理可行性和不确定性术语对它们进行评分。验证者指导基于抽样的规划，控制候选行动，并在接触敏感的 LIBERO 酒架设置中，在 PPO 生成的提案中进行选择。在导航、可变形对象、墙壁约束和语言描述的操纵研究中，EV-WM 表明，基于谓词的验证可以使特征空间世界模型规划更具可解释性，并更好地与任务进度保持一致。",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-06-12T02:13:51.073523+00:00"
+        "generated_at": "2026-06-16T02:35:20.273838+00:00"
       }
     },
     {
@@ -2510,10 +2620,10 @@
       ],
       "summary": "Vision-language-action (VLA) policies bring natural language into closed-loop robot control, enabling robots to execute manipulation tasks directly from text instructions. The same interface gives text a recurring role in control because the prompt is reused at every replanning step, and each prompt-conditioned action changes the future observations on which the policy acts. Existing VLA attacks study adversarial prompts that elicit targeted low-level actions or make such actions persist across changing images. We identify a stronger trajectory-level failure mode: a prompt that still $\\textit{appears}$ to specify the intended task but redirects the final physical outcome. We mathematically formalize this setting as $\\textit{command-preserving trajectory redirection}$, a prompt-only threat model in which the attacker chooses one prompt before the episode, all policy and environment components remain fixed, and the prompt must stay close to the benign instruction while omitting target words and correction language. To find such prompts, we introduce an on-policy prompt search method that uses rollouts to discover perturbations whose closed-loop behavior tracks a target task while satisfying the command-preserving constraints. Experiments in simulation and on hardware show that near-benign prompt perturbations can redirect VLA rollouts to attacker-specified targets. These results expose a trajectory-level vulnerability in VLA instruction grounding: text that appears to preserve the intended command can still give an adversary control over the robot's final physical outcome. Project website: https://vla-redirection-attack.github.io/",
       "published": "2026-06-11T07:12:17Z",
-      "updated": "2026-06-11T07:12:17Z",
-      "arxiv_id": "2606.12978v1",
-      "abs_url": "http://arxiv.org/abs/2606.12978v1",
-      "pdf_url": "https://arxiv.org/pdf/2606.12978v1",
+      "updated": "2026-06-13T05:51:59Z",
+      "arxiv_id": "2606.12978v2",
+      "abs_url": "http://arxiv.org/abs/2606.12978v2",
+      "pdf_url": "https://arxiv.org/pdf/2606.12978v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -2549,7 +2659,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-06-12T02:13:51.073523+00:00"
+        "generated_at": "2026-06-16T02:35:20.273838+00:00"
       }
     },
     {
