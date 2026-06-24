@@ -1,11 +1,11 @@
 {
   "date": "2026-06-17",
-  "generated_at": "2026-06-23T01:58:36.348235+00:00",
+  "generated_at": "2026-06-24T01:59:41.700548+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202606170000 TO 202606172359]",
-  "total_fetched": 472,
+  "total_fetched": 474,
   "total_matched": 71,
   "papers": [
     {
@@ -220,10 +220,10 @@
       ],
       "summary": "End-to-end autonomous driving models are typically trained on offline human-demonstration datasets that provide limited state coverage and often no closed-loop feedback, making them prone to compounding errors when deployed in closed-loop and brittle to long-tail agent interactions. To overcome these limitations, we propose an alternative strategy for training end-to-end driving models: large-scale self-play directly from pixels in simulation. While prior self-play approaches have shown promising transfer to real-world driving, they typically assume vectorized Bird's-Eye-View (BEV) observations that are incompatible with end-to-end policies operating directly on sensor observations. To this end, we introduce Gigapixel, a high-throughput batched driving simulator with perspective rendering, enabling scalable self-play directly from pixel observations. Rather than targeting compute-costly photorealistic sensor simulation, Gigapixel renders a simplified bounding-box world that preserves essential scene structure while achieving throughput at 50k agent steps per second. Since direct pixel-space self-play RL is prohibitively sample-inefficient at end-to-end model scale, we propose self-play DAgger training: we train pixel-based policies in self-play via on-policy distillation from a privileged RL teacher. To bridge the sim-to-real gap, we subsequently transfer the self-play trained policies to real-world sensor data through lightweight perception adaptation. Policies trained in Gigapixel and adapted to real-world sensor data achieve competitive performance on the HUGSIM and NAVSIM-v2 benchmarks without human trajectory supervision. Moreover, scaling self-play training yields proportional gains in policy performance, establishing self-play as a practical and scalable strategy for training end-to-end models.",
       "published": "2026-06-17T22:39:11Z",
-      "updated": "2026-06-17T22:39:11Z",
-      "arxiv_id": "2606.19641v1",
-      "abs_url": "http://arxiv.org/abs/2606.19641v1",
-      "pdf_url": "https://arxiv.org/pdf/2606.19641v1",
+      "updated": "2026-06-19T17:53:33Z",
+      "arxiv_id": "2606.19641v2",
+      "abs_url": "http://arxiv.org/abs/2606.19641v2",
+      "pdf_url": "https://arxiv.org/pdf/2606.19641v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -252,7 +252,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-06-19T02:46:11.316005+00:00"
+        "generated_at": "2026-06-24T02:00:23.688950+00:00"
       }
     },
     {
@@ -2941,17 +2941,17 @@
       ],
       "summary": "Model-based learning agents use learned world models to predict future states, plan actions, and adapt to new environments. However, the process of updating world models from collected experience creates a training-time attack surface: adversarially poisoned fine-tuning trajectories can manipulate the learned dynamics and thereby corrupt downstream planning. In this paper, we propose SWAAP, the first two-stage data poisoning framework for learned world models. In the first stage, SWAAP identifies a harmful target world model that induces low-return behavior under planning while remaining close to clean dynamics, using first-order bilevel optimization enabled by a transition-gradient theorem. In the second stage, SWAAP realizes this target through stealth-constrained gradient matching, modifying only a limited fraction of fine-tuning transition targets so that the induced training gradients steer the victim model toward the adversarial target, while a prediction-error regularizer encourages the poisoned targets to remain close to the world model's natural approximation error. To assess attack stealthiness, we evaluate defenses and detectability across three stages of the poisoning pipeline: pre-training detection of poisoned transitions, robust training during fine-tuning, and test-time monitoring of the resulting world model. Across diverse continuous-control tasks, SWAAP causes substantial performance degradation while keeping poisoned transitions close to clean data and evading the evaluated non-adaptive residual/CUSUM/TRIM-style defenses. These results reveal a practical vulnerability in world-model adaptation pipelines and highlight the need for robustness methods that protect both world-model training data and learned dynamics.",
       "published": "2026-06-17T05:24:18Z",
-      "updated": "2026-06-17T05:24:18Z",
-      "arxiv_id": "2606.18697v1",
-      "abs_url": "http://arxiv.org/abs/2606.18697v1",
-      "pdf_url": "https://arxiv.org/pdf/2606.18697v1",
+      "updated": "2026-06-22T13:58:09Z",
+      "arxiv_id": "2606.18697v2",
+      "abs_url": "http://arxiv.org/abs/2606.18697v2",
+      "pdf_url": "https://arxiv.org/pdf/2606.18697v2",
       "primary_category": "cs.LG",
       "categories": [
         "cs.LG",
         "cs.CR",
         "cs.RO"
       ],
-      "comment": "41 pages, 8 figures, 11 tables. Submitted to NeurIPS 2026",
+      "comment": "41 pages, 8 figures, 11 tables",
       "code_url": "",
       "has_code": false,
       "labels": [
@@ -2973,7 +2973,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-06-18T02:31:55.193755+00:00"
+        "generated_at": "2026-06-24T02:00:23.688950+00:00"
       }
     },
     {
@@ -3340,10 +3340,10 @@
       ],
       "summary": "Evaluating generalist robot manipulation policies in the real world is expensive, slow, and difficult to scale. Action-conditioned video world models offer a scalable alternative by simulating policy rollouts. Autoregressive rollouts accumulate compounding errors, observations across multiple camera views must remain mutually consistent, and the evaluator must generalize to policies whose behaviors lie outside the training distribution. We address these challenges with SC3-Eval, a self-consistent video generation recipe that adapts a pre-trained video foundation model into an accurate policy evaluator by enforcing three complementary forms of consistency. First, forward-inverse dynamics consistency jointly trains the model to predict frames from actions and to recover actions from frames, anchoring generated rollouts to a physically plausible action manifold and counteracting the drift a forward-only model cannot penalize. Second, cross-view consistency trains the model to inpaint each camera view from the other, keeping the multi-camera observation coherent over long rollouts without any explicit memory mechanism. Third, test-time consistency reuses the inverse dynamics mode at inference as a per-action-chunk uncertainty signal that terminates rollouts whose generated frames drift away from the requested actions. We also demonstrate SC3-Eval rollouts reproduce the failure modes that policies exhibit in real-world rollouts, supporting fine-grained diagnostic comparison rather than aggregate ranking alone. Across seven real-world vision-language-action policies, SC3-Eval attains a closed-loop Pearson correlation of $0.929$ and MMRV of $0.119$, outperforming three strong prior video-model-based baselines, and generalizes to new tasks.",
       "published": "2026-06-17T02:15:46Z",
-      "updated": "2026-06-17T02:15:46Z",
-      "arxiv_id": "2606.18610v1",
-      "abs_url": "http://arxiv.org/abs/2606.18610v1",
-      "pdf_url": "https://arxiv.org/pdf/2606.18610v1",
+      "updated": "2026-06-23T00:20:02Z",
+      "arxiv_id": "2606.18610v2",
+      "abs_url": "http://arxiv.org/abs/2606.18610v2",
+      "pdf_url": "https://arxiv.org/pdf/2606.18610v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -3383,7 +3383,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-06-18T02:31:55.193755+00:00"
+        "generated_at": "2026-06-24T02:00:23.688950+00:00"
       }
     },
     {
