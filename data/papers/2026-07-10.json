@@ -1,13 +1,404 @@
 {
   "date": "2026-07-10",
-  "generated_at": "2026-07-13T01:24:47.800961+00:00",
+  "generated_at": "2026-07-14T01:14:28.797302+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202607100000 TO 202607102359]",
-  "total_fetched": 237,
-  "total_matched": 32,
+  "total_fetched": 325,
+  "total_matched": 42,
   "papers": [
+    {
+      "title": "A Numerically-Robust ROS 2 Port of iG-LIO: Diagnosing and Fixing Toolchain-Induced Failures in Incremental GICP LiDAR-Inertial Odometry",
+      "authors": [
+        "Afonso E. Carvalho",
+        "David Portugal",
+        "Paulo Peixoto"
+      ],
+      "summary": "iG-LIO is a tightly-coupled LiDAR-inertial odometry system fusing generalized-ICP and point-to-plane constraints in an iterated error-state Kalman filter over an incremental voxel map. We report an open-source ROS 2 Jazzy port of the original ROS 1 implementation and, more importantly, the diagnosis of environment-induced numerical failures that appear only after the port: a mechanically faithful migration -- estimation mathematics left unchanged -- compiled and ran, yet diverged with NaN internal values. Both causes trace to the modern ROS 2 toolchain, not the algorithm: a Quality-of-Service (QoS) mismatch that silently drops and reorders IMU samples, and an uninitialized parallel-reduce accumulator arising from the oneTBB + Eigen combination shipped with current distributions. We further correct Ouster point-field parsing to ensure correct point cloud undistortion with newer Ouster revisions, add Velodyne Velarray M1600 support, provide both a compile-time-gated Livox CustomMsg path and a driver-free path for Livox sensors publishing standard PointCloud2 (e.g. Mid-360), and expose the runtime via YAML. The result has been validated in an Ouster OS0 Rev7, an Ouster OS1 Rev 7, and a Livox MID-360. This report is a citable reference for the port itself, not a claim on the underlying algorithm [1]. The ROS 2 port of iG-LIO described in this document can be found at https://github.com/Forestry-Robotics-UC/ig_lio/tree/ros2-jazzy.",
+      "published": "2026-07-10T19:57:40Z",
+      "updated": "2026-07-10T19:57:40Z",
+      "arxiv_id": "2607.09947v1",
+      "abs_url": "http://arxiv.org/abs/2607.09947v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.09947v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "3 pages, 1 figure, 4 references",
+      "code_url": "https://github.com/Forestry-Robotics-UC/ig_lio/tree/ros2-jazzy",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "感知与3D理解",
+      "score": 7,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "open-source",
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "iG-LIO 的数值稳健 ROS 2 端口：诊断和修复增量 GICP LiDAR 惯性里程计中工具链引起的故障",
+      "summary_zh": "iG-LIO 是一种紧耦合 LiDAR 惯性里程计系统，在增量体素图上的迭代误差状态卡尔曼滤波器中融合了广义 ICP 和点到平面约束。我们报告了原始 ROS 1 实现的开源 ROS 2 Jazzy 端口，更重要的是，对仅在端口之后出现的环境引起的数值故障的诊断：机械忠实的迁移 - 估计数学保持不变 - 编译和运行，但与 NaN 内部值发生分歧。这两个原因都可以追溯到现代 ROS 2 工具链，而不是算法：服务质量 (QoS) 不匹配会默默地删除和重新排序 IMU 样本，以及由当前发行版附带的 oneTBB + Eigen 组合产生的未初始化的并行归约累加器。我们进一步修正了 Ouster 点场解析，以确保使用较新的 Ouster 版本实现正确的点云不失真，添加 Velodyne Velarray M1600 支持，为发布标准 PointCloud2（例如 Mid-360）的 Livox 传感器提供编译时门控 Livox CustomMsg 路径和免驱动程序路径，并通过 YAML 公开运行时。结果已在 Ouster OS0 Rev7、Ouster OS1 Rev 7 和 Livox MID-360 中得到验证。该报告是端口本身的可引用参考，而不是对底层算法的声明 [1]。本文档中描述的 iG-LIO ROS 2 端口可以在 https://github.com/Forestry-Robotics-UC/ig_lio/tree/ros2-jazzy 找到。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:15:28.142127+00:00"
+      }
+    },
+    {
+      "title": "Plug-and-Play Reweighting for Resilient Collaborative Decision-Making in Connected Autonomous Driving",
+      "authors": [
+        "Jiewen Liu",
+        "Rui Liu",
+        "Matthew Lee",
+        "Ming C. Lin",
+        "Xiaorui Liu",
+        "Peng Gao"
+      ],
+      "summary": "Collaborative decision-making is a fundamental capability in multi-robot systems, such as connected autonomous vehicles. However, perceptual noise and adversarial attacks in collaborators can severely affect decision reliability. Overall, existing methods typically rely on retraining with attack-specific defenses or on restrictive perturbation assumptions to improve resilience, which limits their practicality. In this paper, we propose a novel Resilient Collaborative Decision-Making (RCDM) framework that consists of an attention-based encoder for extracting individual robot perceptual embeddings and an attention-based decoder for fusing collaborator perceptions and making decisions. To improve resilience to corrupted observations, we design a novel plug-and-play reweighting module that down-weights the influence of corrupted inputs by analyzing the consistency of neighborhood points relative to the local structure and assigning smaller weights to points that deviate strongly from the local median. This module can be seamlessly integrated into attention-based collaborative decision-making without requiring additional training. We evaluate our method in high-fidelity simulations, considering perceptual noise and five types of attacks across diverse accident-prone scenarios. Experimental results demonstrate that our approach consistently outperforms existing methods by up to 26% and achieves state-of-the-art resilient performance.",
+      "published": "2026-07-10T23:36:31Z",
+      "updated": "2026-07-10T23:36:31Z",
+      "arxiv_id": "2607.10037v1",
+      "abs_url": "http://arxiv.org/abs/2607.10037v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10037v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "8 pages, 4 figures, 2 tables. Accepted to the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 5,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "autonomous vehicle",
+        "robot"
+      ],
+      "title_zh": "即插即用重新权重，实现互联自动驾驶中的弹性协作决策",
+      "summary_zh": "协作决策是多机器人系统（例如联网自动驾驶汽车）的一项基本功能。然而，协作者的感知噪音和对抗性攻击可能会严重影响决策的可靠性。总体而言，现有方法通常依赖于针对特定攻击的防御进行再训练或依赖于限制性扰动假设来提高弹性，这限制了它们的实用性。在本文中，我们提出了一种新颖的弹性协作决策（RCDM）框架，该框架由用于提取单个机器人感知嵌入的基于注意力的编码器和用于融合协作者感知并做出决策的基于注意力的解码器组成。为了提高对损坏观测值的恢复能力，我们设计了一种新颖的即插即用重新加权模块，通过分析邻域点相对于局部结构的一致性并向严重偏离局部中值的点分配较小的权重，来降低损坏输入的影响。该模块可以无缝集成到基于注意力的协作决策中，无需额外培训。我们在高保真模拟中评估我们的方法，考虑感知噪声和跨不同事故多发场景的五种类型的攻击。实验结果表明，我们的方法始终优于现有方法高达 26%，并实现了最先进的弹性性能。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:15:28.142127+00:00"
+      }
+    },
+    {
+      "title": "PinFT: Miniature 5-Axis Force/Torque Sensor Embeddable to Tweezer-like Tool",
+      "authors": [
+        "Leo King",
+        "Jenny Chen",
+        "Tae Myung Huh"
+      ],
+      "summary": "We present PinFT, a miniature five-axis capacitive force/torque sensor designed for direct tip-level integration into tweezer-like tools. The sensor employs a compact three-PCB stack with segmented plated through-hole electrodes and a silicone elastomer dielectric, enabling five-degree-of-freedom force and torque sensing ($F_x$, $F_y$, $F_z$, $T_x$, $T_y$) through displacement of a central 2\\,mm-diameter stainless steel pin. The fabricated prototype was calibrated using a higher-order polynomial mapping, yielding mean absolute errors of approximately 0.23\\,N for forces and 2.5\\,mN$\\cdot$m for torques, with coefficients of determination ($R^2$) exceeding 0.97 across all axes. To demonstrate practical utility, a 3D-printed tweezer integrating PinFT sensors at both tips was mounted on a parallel-jaw gripper and evaluated across three representative manipulation tasks: grasping a sub-millimeter SMD capacitor, pulling a simulated hair from a silicone substrate, and tearing a compliant silicone specimen. In all cases, per-tip force sensing reliably captured characteristic force signatures that distinguish successful manipulation from failure events -- including slip and object ejection -- using gradient-based features derived from internal grasp force and net interaction force. These results demonstrate that direct, per-tip force sensing enables standard parallel-jaw grippers to monitor and interpret fine manipulation tasks performed through a handheld tweezer.",
+      "published": "2026-07-10T21:58:48Z",
+      "updated": "2026-07-10T21:58:48Z",
+      "arxiv_id": "2607.10000v1",
+      "abs_url": "http://arxiv.org/abs/2607.10000v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10000v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "感知与3D理解"
+      ],
+      "topic": "机器人操作",
+      "score": 5,
+      "anchor_terms": [
+        "grasp",
+        "grasping",
+        "manipulation"
+      ],
+      "matched_terms": [
+        "grasp",
+        "grasping",
+        "manipulation"
+      ],
+      "title_zh": "PinFT：可嵌入类似镊子的工具的微型 5 轴力/扭矩传感器",
+      "summary_zh": "我们推出 PinFT，这是一款微型五轴电容式力/扭矩传感器，专为直接尖端集成到类似镊子的工具中而设计。该传感器采用紧凑的三 PCB 堆栈，具有分段电镀通孔电极和有机硅弹性体电介质，通过中心 2mm 直径不锈钢销的位移实现五自由度力和扭矩传感（$F_x$、$F_y$、$F_z$、$T_x$、$T_y$）。制造的原型使用高阶多项式映射进行校准，力的平均绝对误差约为 0.23\\,N，扭矩的平均绝对误差约为 2.5\\,mN$\\cdot$m，所有轴上的决定系数 ($R^2$) 超过 0.97。为了演示实用性，将两端集成 PinFT 传感器的 3D 打印镊子安装在平行钳口夹具上，并在三个代表性操作任务中进行评估：抓取亚毫米 SMD 电容器、从硅胶基板上拉出模拟头发以及撕扯顺应性硅胶样本。在所有情况下，每个尖端力感测都使用从内部抓握力和净相互作用力导出的基于梯度的特征，可靠地捕获特征力特征，区分成功操作和失败事件（包括滑动和物体弹出）。这些结果表明，直接的每个尖端力传感使标准平行钳口夹具能够监控和解释通过手持镊子执行的精细操作任务。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:15:28.142127+00:00"
+      }
+    },
+    {
+      "title": "Chalito: An Extensible Library for Filtering-Based State Estimation in Quadruped Robots",
+      "authors": [
+        "Hilton Marques Souza Santana",
+        "João Carlos Virgolino Soares",
+        "Marco Antonio Meggiolaro",
+        "Claudio Semini"
+      ],
+      "summary": "State estimation is essential for quadruped robots, enabling robust locomotion, navigation, and control. While many estimators have been proposed in the literature, existing implementations are often tied to specific robots or software stacks, making fair comparisons difficult. This lack of a general-purpose benchmarking framework hinders reproducibility and slows down algorithmic innovation. In this paper, we introduce Chalito, an extensible MATLAB/Python library for benchmarking filter-based state estimation algorithms in quadruped robots. Chalito imports robot models directly from URDF, supports multiple filtering approaches, and is designed to be easily extended with new methods. The framework runs on both simulated and real datasets, enabling systematic evaluation across robots and filters. To the best of our knowledge, this is the first open-source library exclusively dedicated to benchmarking filtering algorithms for quadruped robots.",
+      "published": "2026-07-10T20:48:34Z",
+      "updated": "2026-07-10T20:48:34Z",
+      "arxiv_id": "2607.09968v1",
+      "abs_url": "http://arxiv.org/abs/2607.09968v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.09968v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "数据集/评测",
+        "四足机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 10,
+      "anchor_terms": [
+        "locomotion",
+        "navigation",
+        "quadruped",
+        "robot"
+      ],
+      "matched_terms": [
+        "locomotion",
+        "navigation",
+        "open-source",
+        "quadruped",
+        "robot"
+      ],
+      "title_zh": "Chalito：四足机器人中基于过滤的状态估计的可扩展库",
+      "summary_zh": "状态估计对于四足机器人至关重要，可以实现稳健的运动、导航和控制。虽然文献中提出了许多估计器，但现有的实现通常与特定的机器人或软件堆栈相关，这使得公平的比较变得困难。缺乏通用基准测试框架会阻碍可重复性并减慢算法创新。在本文中，我们介绍了 Chalito，一个可扩展的 MATLAB/Python 库，用于对四足机器人中基于滤波器的状态估计算法进行基准测试。 Chalito 直接从 URDF 导入机器人模型，支持多种过滤方法，并且旨在通过新方法轻松扩展。该框架在模拟和真实数据集上运行，从而能够跨机器人和过滤器进行系统评估。据我们所知，这是第一个专门用于四足机器人基准过滤算法的开源库。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:15:28.142127+00:00"
+      }
+    },
+    {
+      "title": "Task Planning for Mobile Manipulation in Retail Stores using Foundation Models with Iterative Re-planning",
+      "authors": [
+        "Vismay Vakharia",
+        "Sanjana Garai",
+        "Rolif Lima",
+        "Nijil George",
+        "Vighnesh Vatsal",
+        "Kaushik Das"
+      ],
+      "summary": "Automation in industries such as retail, warehousing and logistics presents opportunities for greater throughput, cost reduction and mitigation of disruptions from labour shortages. Previously, such efforts have focused on back-room operations involving packing and sorting in relatively structured environments. With advances in robotic mobile manipulation hardware and foundation models, automation can now be applied to more variable and human-centric environments such as retail store shelves. In this work, we present a task-planning approach using Large Language Models (LLMs) and Vision-Language Models (VLMs) to address the restocking problem in retail scenarios such as supermarkets. We demonstrate this system on a custom omnidirectional mobile manipulation platform, with user-driven prompts and a feedback-based iterative re-planning approach for error correction. The end-to-end system is validated in a PyBullet simulation environment for pick-and-place tasks.",
+      "published": "2026-07-10T20:32:22Z",
+      "updated": "2026-07-10T20:32:22Z",
+      "arxiv_id": "2607.09962v1",
+      "abs_url": "http://arxiv.org/abs/2607.09962v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.09962v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 17,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "foundation model",
+        "manipulation",
+        "mobile manipulation",
+        "pick-and-place",
+        "robot",
+        "robotic",
+        "task planning"
+      ],
+      "title_zh": "使用具有迭代重新规划的基础模型对零售店中的移动操作进行任务规划",
+      "summary_zh": "零售、仓储和物流等行业的自动化为提高吞吐量、降低成本和缓解劳动力短缺造成的干扰提供了机会。此前，此类工作主要集中在后台操作，涉及在相对结构化的环境中进行包装和分类。随着机器人移动操纵硬件和基础模型的进步，自动化现在可以应用于更加多变和以人为中心的环境，例如零售商店货架。在这项工作中，我们提出了一种使用大型语言模型（LLM）和视觉语言模型（VLM）的任务规划方法来解决超市等零售场景中的补货问题。我们在定制的全向移动操作平台上演示了该系统，具有用户驱动的提示和基于反馈的迭代重新规划方法以进行错误纠正。该端到端系统在 PyBullet 模拟环境中针对拾放任务进行了验证。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:15:28.142127+00:00"
+      }
+    },
+    {
+      "title": "SEAMLiS: Visibility-Aware Safety for Perception-Limited Multi-Robot Exploration",
+      "authors": [
+        "Taekyung Kim",
+        "Rahul H Kumar",
+        "Aswin D. Menon",
+        "Tzu-Hsiang Lin",
+        "Dimitra Panagou"
+      ],
+      "summary": "Autonomous exploration in unknown environments is typically driven by informative frontiers, viewpoints, or trajectories, while local safety controllers avoid obstacles represented in the current map. Under finite sensing range and limited field of view, this separation can be unsafe: an exploration stack may plan optimistically through unobserved space and steer the sensor toward information gain rather than along the direction of motion, causing hidden obstacles to be detected too late for bounded-actuation avoidance. This paper presents SEAMLiS (Safe Exploration for Autonomous Multi-Robot Systems Under Limited Sensing), a modular execution-layer safety framework for decentralized multi-robot exploration. SEAMLiS preserves the upstream exploration stack, including the goal allocator and local planner, and enforces safety at the execution layer through perception-aware attitude and positional filters. A gatekeeper-based attitude filter switches between a visibility-promoting yaw policy and a velocity-tracking backup policy to preserve visibility of the critical known-free/unknown boundary with sufficient braking margin. A Control Barrier Function (CBF)-based positional filter then avoids known obstacles, newly detected obstacles, and other robots. We provide sufficient collision-avoidance conditions and validate the framework in randomized simulation, Isaac Sim, and Crazyflie hardware experiments. Results show collision-free exploration across tested single- and multi-robot settings while retaining much of the efficiency of visibility-promoting yaw control.",
+      "published": "2026-07-10T20:25:47Z",
+      "updated": "2026-07-10T20:25:47Z",
+      "arxiv_id": "2607.09959v1",
+      "abs_url": "http://arxiv.org/abs/2607.09959v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.09959v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "comment": "Project page: https://www.taekyung.me/seamlis",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 6,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "isaac",
+        "robot"
+      ],
+      "title_zh": "SEAMLiS：感知有限的多机器人探索的可见性感知安全",
+      "summary_zh": "未知环境中的自主探索通常由信息丰富的边界、视点或轨迹驱动，而本地安全控制器则避开当前地图中表示的障碍物。在有限的传感范围和有限的视野下，这种分离可能是不安全的：探索堆栈可能会乐观地计划通过未观察到的空间，并引导传感器走向信息增益而不是沿着运动方向，导致隐藏的障碍物检测得太晚，无法避免有界驱动。本文提出了 SEAMLiS（有限感知下自主多机器人系统的安全探索），这是一种用于分散式多机器人探索的模块化执行层安全框架。 SEAMLiS 保留上游探索堆栈，包括目标分配器和本地规划器，并通过感知感知态度和位置过滤器增强执行层的安全性。基于看门人的姿态过滤器在可见性促进偏航策略和速度跟踪备份策略之间切换，以保持关键已知自由/未知边界的可见性和足够的制动余量。然后，基于控制障碍函数 (CBF) 的位置滤波器会避开已知障碍物、新检测到的障碍物和其他机器人。我们提供了足够的防撞条件，并在随机模拟、Isaac Sim 和 Crazyflie 硬件实验中验证了该框架。结果显示，在测试的单机器人和多机器人设置中进行了无碰撞探索，同时保留了提高可见性的偏航控制的大部分效率。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:15:28.142127+00:00"
+      }
+    },
+    {
+      "title": "Diffusion for Long-Horizon Multi-Robot Path Planning in Human-Shared Environments",
+      "authors": [
+        "Vaibhav Sanjay",
+        "Yorai Shaoul",
+        "Jiaoyang Li"
+      ],
+      "summary": "Multi-robot path planning in human-shared environments requires a delicate balance between robust inter-robot coordination and socially aware behavior. While diffusion models excel at generating predictable, human-like paths, existing generative planners are often restricted to paths of fixed duration and high computational latency, limiting their adaptability to varying goal distances and hindering real-time deployment. We present Multi-Robot Rolling Diffusion (MRRD), a novel framework that enables real-time, long-horizon navigation for large robot teams through dense crowds. MRRD combines a rolling-horizon scheme to accommodate the limited prediction horizon of human motion, parallelized diffusion inference for scalable generation of human-like paths, and a conflict-based-search mechanism for resolving inter-robot collisions. It further incorporates urgency-based temporal conditioning to generate paths with varying speeds and employs differentiated guidance terms to maximize both social awareness around humans and efficient coordination between robots. Experimental results in crowded environments demonstrate that MRRD successfully scales to 15 robots in real-time, significantly outperforming existing baselines in both safety and mission success rates.",
+      "published": "2026-07-10T19:03:10Z",
+      "updated": "2026-07-10T19:03:10Z",
+      "arxiv_id": "2607.09911v1",
+      "abs_url": "http://arxiv.org/abs/2607.09911v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.09911v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "8 pages, 3 figures, to be published in IROS 2026",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 8,
+      "anchor_terms": [
+        "navigation",
+        "robot"
+      ],
+      "matched_terms": [
+        "navigation",
+        "path planning",
+        "robot"
+      ],
+      "title_zh": "人类共享环境中长视野多机器人路径规划的扩散",
+      "summary_zh": "人类共享环境中的多机器人路径规划需要在强大的机器人间协调和社会意识行为之间取得微妙的平衡。虽然扩散模型擅长生成可预测的、类人的路径，但现有的生成规划器通常仅限于固定持续时间和高计算延迟的路径，限制了它们对不同目标距离的适应性并阻碍了实时部署。我们提出了多机器人滚动扩散（MRRD），这是一种新颖的框架，可以让大型机器人团队在密集的人群中进行实时、长视野的导航。 MRRD 结合了滚动范围方案以适应人体运动的有限预测范围、用于可扩展生成类人路径的并行扩散推理以及用于解决机器人间碰撞的基于冲突的搜索机制。它进一步结合了基于紧急程度的时间条件来生成不同速度的路径，并采用差异化的指导术语来最大限度地提高人类的社会意识和机器人之间的有效协调。拥挤环境中的实验结果表明，MRRD 成功地实时扩展到 15 个机器人，在安全性和任务成功率方面均显着优于现有基线。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:15:28.142127+00:00"
+      }
+    },
+    {
+      "title": "Robo-ValueRL: Reliable Value Estimation for Offline-to-Online Reinforcement Learning",
+      "authors": [
+        "Wenke Xia",
+        "Pei Ren",
+        "Wenbo Yu",
+        "Yizhuo Zhang",
+        "Jifan Li",
+        "Yixue Zhang",
+        "Yinuo Zhao",
+        "Qingyang Gao",
+        "Jianlong Fu",
+        "Jian Tang",
+        "Ji-Rong Wen",
+        "Zhengping Che",
+        "Di Hu"
+      ],
+      "summary": "Offline-to-online reinforcement learning is promising for generalizable robotic manipulation, yet its full-stack complexity obscures reproduction and diagnosis. Within such systems, value estimation plays a central role in prioritizing heterogeneous data for policy improvement. Despite its importance, the central question remains underexplored: how value-function reliability shapes policy optimization in offline-to-online reinforcement learning. To answer this question, we propose Robo-ValueRL, a unified framework that enables reliable value estimation and systematically traces its downstream effects on policy pretraining and online improvement. Concretely, Robo-ValueRL learns a history-conditioned value estimator and evaluates its reliability through global-progress and local-preference metrics. These resulting value estimates are propagated into quality-conditioned consistency-policy pretraining and a residual adaptation module on online rollouts, providing a unified testbed for analyzing how value reliability shapes downstream policy performance. Across 240 hours of offline demonstrations and over 3,000 online rollout trajectories, our extensive experiments show that downstream performance is strongly associated with value reliability. Reliable value functions provide better action-quality estimates, allowing value-guided offline RL to scale more effectively than quality-agnostic behavior cloning, and stabilize online improvement by prioritizing high-quality rollout data. Integrating reliable value guidance through offline pretraining with online improvement, our system achieves 86% success on millimeter-level precise chip insertion and 84% on generalizable block disassembly. We hope these findings highlight the importance of value-guided data utilization for effective policy improvement from heterogeneous robotic experience.",
+      "published": "2026-07-10T18:01:05Z",
+      "updated": "2026-07-10T18:01:05Z",
+      "arxiv_id": "2607.09866v1",
+      "abs_url": "http://arxiv.org/abs/2607.09866v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.09866v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "Please refer to our website: https://gewu-lab.github.io/Robo-ValueRL/",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "强化/模仿学习",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 9,
+      "anchor_terms": [
+        "manipulation",
+        "reinforcement learning",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "behavior cloning",
+        "manipulation",
+        "reinforcement learning",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "Robo-ValueRL：离线到在线强化学习的可靠价值估计",
+      "summary_zh": "离线到在线强化学习对于通用机器人操作很有希望，但其全栈复杂性掩盖了再现和诊断。在此类系统中，价值估计在优先考虑异构数据以改进政策方面发挥着核心作用。尽管其重要性，但核心问题仍未得到充分探索：价值函数可靠性如何影响离线到在线强化学习中的策略优化。为了回答这个问题，我们提出了 Robo-ValueRL，这是一个统一的框架，可以实现可靠的价值估计，并系统地追踪其对政策预训练和在线改进的下游影响。具体来说，Robo-ValueRL 学习历史条件价值估计器，并通过全局进度和局部偏好指标评估其可靠性。这些产生的价值估计被传播到质量条件一致性策略预训练和在线部署的剩余适应模块中，为分析价值可靠性如何影响下游策略性能提供了一个统一的测试平台。通过 240 小时的线下演示和 3,000 多个在线推广轨迹，我们的大量实验表明下游性能与价值可靠性密切相关。可靠的价值函数提供更好的行动质量估计，使价值引导的离线强化学习能够比与质量无关的行为克隆更有效地扩展，并通过优先考虑高质量的推出数据来稳定在线改进。通过离线预训练和在线改进来整合可靠的价值引导，我们的系统在毫米级精确芯片插入方面取得了 86% 的成功率，在通用块拆卸方面取得了 84% 的成功率。我们希望这些发现强调了价值引导数据利用对于异构机器人经验有效改进政策的重要性。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:15:28.142127+00:00"
+      }
+    },
     {
       "title": "Revisiting Euler-Angle Regression with Kolmogorov-Arnold Networks",
       "authors": [
@@ -875,6 +1266,65 @@
       }
     },
     {
+      "title": "More Structure, Not More Capacity: Object-Centric Representations for Visuomotor Imitation Learning",
+      "authors": [
+        "Yi Li",
+        "Alexandre Chapin",
+        "Liming Chen",
+        "Jan Peters",
+        "Alap Kshirsagar"
+      ],
+      "summary": "Robotic manipulation policies rely on pre-trained vision models that give either a global scene embedding or a dense patch grid. Both mix task-relevant and task-irrelevant features. Object-centric slot representations are a structured alternative: they group features into a few per-object slots. We test what this structure buys on ManiSkill3 PickCube-v1, with a frozen encoder and a held-out-seed evaluation. Holding the policy, goal token, rendering, and calibration fixed and changing only the encoder, a frozen object-centric SPOT representation (DINO ViT-B/16 + Slot Attention) reaches 55.0$\\pm$2.9% success, 22.4% above a dense DINO global-feature baseline (32.6 $\\pm$ 1.5%), with the same trainable policy and no encoder fine-tuning. More tokens alone do not help: a dense patch grid with 16x the tokens performs no better than the global feature. Adding an explicit 2D spatial goal and native-resolution rendering raises the full system to 68.7$\\pm$4.2%, just below a privileged 3D-oracle upper bound (71.7$\\pm$4.1%). An automated kinematic failure taxonomy then separates spatial-precision (Near-Miss) failures from object-tracking (No-Grasp) failures: spatial grounding reduces Near-Miss while leaving No- Grasp unchanged. The same taxonomy transfers to the harder StackCube-v1 and points to occlusion as the main bottleneck.",
+      "published": "2026-07-10T10:35:24Z",
+      "updated": "2026-07-10T10:35:24Z",
+      "arxiv_id": "2607.09825v1",
+      "abs_url": "http://arxiv.org/abs/2607.09825v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.09825v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "VLA/多模态策略",
+        "强化/模仿学习",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 16,
+      "anchor_terms": [
+        "grasp",
+        "imitation learning",
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "grasp",
+        "imitation learning",
+        "manipulation",
+        "maniskill",
+        "object-centric",
+        "robot",
+        "robotic",
+        "visuomotor"
+      ],
+      "title_zh": "更多结构，而不是更多容量：视觉运动模仿学习的以对象为中心的表示",
+      "summary_zh": "机器人操纵策略依赖于预先训练的视觉模型，该模型提供全局场景嵌入或密集的补丁网格。两者都混合了与任务相关和与任务无关的功能。以对象为中心的槽表示是一种结构化的替代方案：它们将功能分组到几个每个对象的槽中。我们使用冻结编码器和保留种子评估来测试该结构在 ManiSkill3 PickCube-v1 上的购买效果。保持策略、目标标记、渲染和校准固定并仅更改编码器，冻结的以对象为中心的 SPOT 表示（DINO ViT-B/16 + Slot Attention）达到了 55.0$\\pm$2.9% 的成功率，比密集 DINO 全局特征基线（32.6 $\\pm$ 1.5%）高出 22.4%，具有相同的可训练策略且无需编码器微调。单独使用更多令牌并没有帮助：具有 16 倍令牌的密集补丁网格的性能并不比全局特征更好。添加显式 2D 空间目标和原生分辨率渲染可将整个系统提升至 68.7$\\pm$4.2%，略低于特权 3D-oracle 上限 (71.7$\\pm$4.1%)。然后，自动运动学故障分类法将空间精度（未遂事件）故障与对象跟踪（无抓取）故障分开：空间接地减少了未遂事件，同时保持无抓取不变。相同的分类法转移到更难的 StackCube-v1 并指出遮挡是主要瓶颈。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:15:28.142127+00:00"
+      }
+    },
+    {
       "title": "REMIND: RE-Identification with Memory for INDoor Navigation",
       "authors": [
         "Pablo Diaz-Pereda",
@@ -1277,6 +1727,74 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-07-13T01:26:14.713073+00:00"
+      }
+    },
+    {
+      "title": "TS-Mask VLA: 2D Temporal-Spatial Masking for Vision-Language-Action Model with Effective Bridging",
+      "authors": [
+        "Shengzhuo Yang",
+        "Ronghao Yu",
+        "Chuanjie Lv",
+        "Linpeng Peng",
+        "Hang Yu",
+        "Jie Ren",
+        "Jiajun Lv",
+        "Yong Liu"
+      ],
+      "summary": "Vision-language-action (VLA) models aim to understand natural-language instructions and visual observations, and to generate and execute corresponding actions as embodied agents. Recently, autoregressive token-based action generation has driven the development of many representative VLA models. However, this paradigm often reduces action generation to next-token prediction, thereby lacking explicit modeling of the spatiotemporal structure of action sequences and the disentanglement between vision-language representations and actions, which can limit performance in long-horizon and complex scenarios. In this paper, we propose TS-Mask VLA, a vision-language-action framework for robot manipulation. TS-Mask VLA is built upon two key designs: (1) a Discrete Diffusion Action Expert equipped with a Bridge Attention conditioning bridge, which enables multi-layer conditioning from the VLM and facilitates more accurate and stable action generation; and (2) a temporal-spatial 2D masking strategy for discrete action tokens that strengthens the model's understanding of cross-time dependencies and inter-dimensional coupling, leading to more structurally consistent action sequences. We conduct extensive experiments on simulation benchmarks and real-world tasks. On LIBERO, TS-Mask VLA achieves a 95.7 percent average success rate with only 0.5B parameters, outperforming significantly larger models. On CALVIN, it attains the best average sequence length of 4.19 and strong long-horizon performance. Comprehensive analyses and ablations further validate the effectiveness of our design.",
+      "published": "2026-07-10T07:06:02Z",
+      "updated": "2026-07-10T07:06:02Z",
+      "arxiv_id": "2607.09818v1",
+      "abs_url": "http://arxiv.org/abs/2607.09818v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.09818v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "comment": "9 pages, 5 figures, accepted to the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "VLA/多模态策略",
+        "世界模型与仿真",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 29,
+      "anchor_terms": [
+        "embodied",
+        "embodied agent",
+        "embodied agents",
+        "manipulation",
+        "robot",
+        "robot manipulation",
+        "vision-language-action",
+        "vla"
+      ],
+      "matched_terms": [
+        "calvin",
+        "embodied",
+        "embodied agent",
+        "embodied agents",
+        "libero",
+        "manipulation",
+        "robot",
+        "robot manipulation",
+        "vision-language-action",
+        "vla",
+        "vla model"
+      ],
+      "title_zh": "TS-Mask VLA：具有有效桥接的视觉-语言-动作模型的 2D 时空掩蔽",
+      "summary_zh": "视觉-语言-动作（VLA）模型旨在理解自然语言指令和视觉观察，并作为具体代理生成和执行相应的动作。最近，基于代币的自回归动作生成推动了许多代表性 VLA 模型的发展。然而，这种范式通常将动作生成简化为下一个令牌预测，从而缺乏对动作序列的时空结构的明确建模以及视觉语言表示和动作之间的解开，这可能会限制长期和复杂场景中的性能。在本文中，我们提出了 TS-Mask VLA，一种用于机器人操作的视觉-语言-动作框架。 TS-Mask VLA 基于两个关键设计：（1）配备 Bridge Attention 调节桥的 Discrete Diffusion Action Expert，可实现 VLM 的多层调节，促进更准确、稳定的动作生成； (2) 针对离散动作标记的时空 2D 屏蔽策略，增强模型对跨时间依赖性和维度间耦合的理解，从而产生结构上更加一致的动作序列。我们对模拟基准和实际任务进行了广泛的实验。在 LIBERO 上，TS-Mask VLA 仅用 0.5B 参数就实现了 95.7% 的平均成功率，性能明显优于更大的模型。在CALVIN上，它获得了最好的平均序列长度4.19和强大的长视野性能。综合分析和消融进一步验证了我们设计的有效性。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:15:28.142127+00:00"
       }
     },
     {

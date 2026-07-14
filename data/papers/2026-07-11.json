@@ -1,11 +1,960 @@
 {
   "date": "2026-07-11",
-  "generated_at": "2026-07-13T01:24:50.984444+00:00",
+  "generated_at": "2026-07-14T01:14:32.381163+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202607110000 TO 202607112359]",
-  "total_fetched": 0,
-  "total_matched": 0,
-  "papers": []
+  "total_fetched": 180,
+  "total_matched": 17,
+  "papers": [
+    {
+      "title": "SUREFlow: State-space Uncertainty-aware REsidual Flow Matching for Robust Robot Manipulation",
+      "authors": [
+        "Md Tanvir Islam",
+        "Sai Navaneet Peddapalli",
+        "Sangmoon Lee",
+        "Sangtae Ahn"
+      ],
+      "summary": "Generative vision-language-action policies have advanced robot manipulation, but they often exhibit instability under noise, partial observability, and stochastic initial conditions. During extended rollouts, small velocity errors accumulate, degrading execution reliability. Existing diffusion and flow-based policies typically assume homoscedastic residuals and lack explicit uncertainty modeling within action generation, limiting robustness during iterative rollout. We propose SUREFlow, a state-space uncertainty-aware residual flow matching framework built on a Mamba backbone. The method jointly predicts action velocities and input-dependent residual uncertainty, enabling selective refinement of unreliable action dimensions without environment feedback while preserving computational efficiency. On LIBERO, SUREFlow achieves 92.5% average success rate (SR), outperforming the Mamba-based MaIL by 34.2%. On LIBERO-PRO, it attains around 49% SR using only 179M parameters, achieving performance comparable to large VLAs with 3-7B parameters. SUREFlow source code is available on: https://github.com/tanvirnwu/SUREFlow",
+      "published": "2026-07-11T23:25:42Z",
+      "updated": "2026-07-11T23:25:42Z",
+      "arxiv_id": "2607.10504v1",
+      "abs_url": "http://arxiv.org/abs/2607.10504v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10504v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "Accepted at IEEE/RSJ International Conference on Intelligent Robots & Systems (IROS) 2026, Pittsburgh, PA, USA",
+      "code_url": "https://github.com/tanvirnwu/SUREFlow",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "机器人操作",
+        "VLA/多模态策略",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 18,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robot manipulation",
+        "vision-language-action"
+      ],
+      "matched_terms": [
+        "libero",
+        "manipulation",
+        "robot",
+        "robot manipulation",
+        "vision-language-action"
+      ],
+      "title_zh": "SUREFlow：用于鲁棒机器人操作的状态空间不确定性感知剩余流匹配",
+      "summary_zh": "生成视觉-语言-动作策略具有先进的机器人操作能力，但它们通常在噪声、部分可观察性和随机初始条件下表现出不稳定性。在延长部署期间，小的速度误差会累积，从而降低执行可靠性。现有的扩散和基于流量的策略通常假设同方差残差，并且在动作生成中缺乏明确的不确定性建模，从而限制了迭代推出期间的鲁棒性。我们提出了 SUREFlow，这是一种基于 Mamba 主干的状态空间不确定性感知残差流匹配框架。该方法联合预测动作速度和输入相关的残余不确定性，从而能够在没有环境反馈的情况下选择性地细化不可靠的动作维度，同时保持计算效率。在 LIBERO 上，SUREFlow 的平均成功率 (SR) 达到 92.5%，比基于 Mamba 的 MaIL 高出 34.2%。在 LIBERO-PRO 上，它仅使用 179M 参数就获得了约 49% 的 SR，实现了与具有 3-7B 参数的大型 VLA 相当的性能。 SUREFlow 源代码位于：https://github.com/tanvirnwu/SUREFlow",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:16:04.980901+00:00"
+      }
+    },
+    {
+      "title": "ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory",
+      "authors": [
+        "Jiayi Tian",
+        "Shiao Liu",
+        "Yuting Xu",
+        "Jia Lu",
+        "Zihao Guan",
+        "Honglin Han",
+        "Di Yang",
+        "Minqi Gu",
+        "Yifei Qian",
+        "Tianlin Zhang",
+        "Yanqing Zhu",
+        "Zeqian Ye",
+        "Menglin Yang",
+        "Fei Wang",
+        "Xu Hu",
+        "Xiuxian Li",
+        "Wei Zhang",
+        "Shihui Su",
+        "Yiyan Ji",
+        "Jingbo Wang",
+        "Ziteng Feng",
+        "Jiaheng Liu",
+        "Zhaoxiang Zhang",
+        "Xiaolong Wu",
+        "Mingyang Yin",
+        "Zedong Chu",
+        "Mu Xu"
+      ],
+      "summary": "Recent VLM and VLA systems have improved robotic perception and action prediction, yet long-horizon embodied agents still require a general runtime layer for reasoning, memory, tool use, verification, and cross-embodiment execution. We present ABot-AgentOS, a general robotic Agent Operating System that sits above low-level controllers and provides a deliberative agent layer for scene-conditioned planning, context-isolated skill execution, multi-stage verification, multi-modal memory, and edge-cloud collaboration. To evaluate such systems, we introduce EmbodiedWorldBench, an executable benchmark with 16 indoor, outdoor, and hybrid scenes, four difficulty levels, and over 200 tasks involving navigation, object search, NPC dialogue, dynamic events, and trace-grounded scoring. ABot-AgentOS further introduces Universal Multi-modal Graph Memory, a persistent source-grounded substrate that converts dialogue, visual observations, spatial context, temporal relations, and task traces into typed nodes and edges. A failure-driven self-evolution loop converts diagnosed memory failures into gated runtime evo-assets that are promoted only to later evaluation splits, preventing current-split ground-truth leakage while enabling continual improvement. On an initial EmbodiedWorldBench subset, ABot-AgentOS improves over a single-controller baseline in both task success and goal completion. Across memory benchmarks, ABot-AgentOS Static achieves 87.5 on LoCoMo, 59.9 on OpenEQA EM-EQA, 88.6 on Mem-Gallery, and 76.5 Acc@All on NExT-QA; self-evolution further improves LoCoMo to 88.7, OpenEQA to 60.4, and Mem-Gallery to 89.0. These results suggest that a general Agent OS layer can improve long-horizon embodied execution while providing persistent, auditable memory for continual interaction.",
+      "published": "2026-07-11T15:24:43Z",
+      "updated": "2026-07-11T15:24:43Z",
+      "arxiv_id": "2607.10350v1",
+      "abs_url": "http://arxiv.org/abs/2607.10350v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10350v1",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "comment": "Code: https://github.com/amap-cvlab/ABot-AgentOS",
+      "code_url": "https://github.com/amap-cvlab/ABot-AgentOS",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "机器人操作",
+        "导航与移动",
+        "VLA/多模态策略",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 13,
+      "anchor_terms": [
+        "embodied",
+        "embodied agent",
+        "embodied agents",
+        "navigation",
+        "robot",
+        "robotic",
+        "vla"
+      ],
+      "matched_terms": [
+        "embodied",
+        "embodied agent",
+        "embodied agents",
+        "navigation",
+        "robot",
+        "robotic",
+        "vla"
+      ],
+      "title_zh": "ABot-AgentOS：具有终身多模态记忆的通用机器人代理操作系统",
+      "summary_zh": "最近的 VLM 和 VLA 系统改进了机器人感知和动作预测，但长期具体代理仍然需要通用运行时层来进行推理、记忆、工具使用、验证和跨具体执行。我们推出了 ABot-AgentOS，这是一种通用机器人代理操作系统，位于低级控制器之上，并为场景条件规划、上下文隔离技能执行、多阶段验证、多模式内存和边缘云协作提供深思熟虑的代理层。为了评估此类系统，我们引入了 EmbodiedWorldBench，这是一个可执行基准测试，具有 16 个室内、室外和混合场景、四个难度级别以及 200 多个任务，涉及导航、对象搜索、NPC 对话、动态事件和基于轨迹的评分。 ABot-AgentOS 进一步引入了通用多模态图形内存，这是一种持久的基于源的基底，可将对话、视觉观察、空间上下文、时间关系和任务跟踪转换为类型节点和边。故障驱动的自进化循环将诊断出的内存故障转换为门控运行时进化资产，这些资产仅提升到以后的评估分裂，防止当前分裂的地面真相泄漏，同时实现持续改进。在初始 EmbodiedWorldBench 子集上，ABot-AgentOS 在任务成功和目标完成方面均优于单控制器基线。在内存基准测试中，ABot-AgentOS Static 在 LoCoMo 上达到 87.5，在 OpenEQA EM-EQA 上达到 59.9，在 Mem-Gallery 上达到 88.6，在 NExT-QA 上达到 76.5 Acc@All；自我进化进一步将LoCoMo提高到88.7，OpenEQA提高到60.4，Mem-Gallery提高到89.0。这些结果表明，通用代理操作系统层可以改善长期具体执行，同时为持续交互提供持久的、可审计的内存。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:16:04.980901+00:00"
+      }
+    },
+    {
+      "title": "Millimeter Wave Radar: From Synthetic Aperture to Probabilistic Mapping",
+      "authors": [
+        "Jui-Te Huang",
+        "Ruoyang Xu",
+        "Michael Kaess"
+      ],
+      "summary": "Robust probabilistic mapping is essential for autonomous robotic systems operating in challenging environments. While traditional sensors fail in adverse conditions such as smoke and fog, millimeter wave (mmWave) radar sensors offer reliable sensing in such conditions. However, creating accurate probabilistic maps from radar data presents significant challenges due to the inherently sparse and noisy characteristics of radio wave measurements and signal processing steps. In an attempt to address these issues, we establish a complete pipeline from raw radar signals to probabilistic occupancy maps, incorporating Synthetic Aperture Radar processing followed by a probabilistic modeling step. We conduct extensive validation across indoor environments, comparing our approach against different signal processing and probabilistic modeling approaches. We also evaluate mapping quality through downstream path planning performance analysis. Furthermore, we investigate the impact of key parameters and antenna array configuration on mapping performance. The experimental results demonstrate both the effectiveness and limitations of SAR-based probabilistic mapping for real-world robotic deployment. To facilitate future research and broader adoption, we contribute an open-source cascaded mmWave radar dataset with an accompanying GPU-accelerated signal processing pipeline available at https://github.com/rpl-cmu/rpm.",
+      "published": "2026-07-11T06:55:14Z",
+      "updated": "2026-07-11T06:55:14Z",
+      "arxiv_id": "2607.10161v1",
+      "abs_url": "http://arxiv.org/abs/2607.10161v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10161v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "https://github.com/rpl-cmu/rpm",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "导航与移动",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 10,
+      "anchor_terms": [
+        "real-world robot",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "open-source",
+        "path planning",
+        "real-world robot",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "毫米波雷达：从合成孔径到概率测图",
+      "summary_zh": "鲁棒的概率映射对于在充满挑战的环境中运行的自主机器人系统至关重要。虽然传统传感器在烟雾和雾等不利条件下会失效，但毫米波 (mmWave) 雷达传感器可在此类条件下提供可靠的传感。然而，由于无线电波测量和信号处理步骤固有的稀疏和噪声特性，从雷达数据创建准确的概率图提出了重大挑战。为了解决这些问题，我们建立了从原始雷达信号到概率占用图的完整管道，结合了合成孔径雷达处理和概率建模步骤。我们在室内环境中进行了广泛的验证，将我们的方法与不同的信号处理和概率建模方法进行比较。我们还通过下游路径规划性能分析来评估地图质量。此外，我们研究了关键参数和天线阵列配置对测绘性能的影响。实验结果证明了基于 SAR 的概率映射对于现实世界机器人部署的有效性和局限性。为了促进未来的研究和更广泛的采用，我们贡献了一个开源级联毫米波雷达数据集以及随附的 GPU 加速信号处理管道，可在 https://github.com/rpl-cmu/rpm 上获取。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:16:04.980901+00:00"
+      }
+    },
+    {
+      "title": "Tracking Through Decoupling Singularities: A Singularity-Robust Homotopy-Continuation Extension of Feedback Linearization",
+      "authors": [
+        "Alex Borisevich"
+      ],
+      "summary": "Input--output feedback linearization fails at decoupling singularities, where the decoupling matrix loses rank, the relative degree is lost, and the linearizing control becomes unbounded. This paper develops a singularity-robust trajectory-tracking controller for square nonlinear control-affine systems that tracks through isolated decoupling singularities with bounded control. The method recasts tracking as real-time arc-length homotopy continuation, equivalently a continuous-time Newton/Davidenko flow, and replaces the inverse decoupling matrix by the least-norm Moore--Penrose solution of an augmented matrix $A=[Λ\\mid b]$, where $b$ is the homotopy direction. A transversality condition $w^T b \\ne 0$, with $w$ in the left null space of the decoupling matrix, keeps the augmented matrix full row rank through a generic rank-one loss. The resulting flow agrees with feedback linearization away from the singular set, tracks with $O(1/k)$ error, and re-locks after each crossing. The theory also characterizes the reflection-versus-branch-crossing dichotomy at Whitney folds and relates the reflection case to a Filippov sliding mode. Extensions cover dynamic relative-degree-one minimum-phase systems and arbitrary relative degree via filtered-error reduction. Simulations include a redundant 2-DOF manipulator, relative-degree-one and relative-degree-two plants, and a dual-active-bridge series-resonant DC/DC converter, where the method performs bounded inversion across buck/boost and resonance singularities while preserving zero-voltage soft switching.",
+      "published": "2026-07-11T18:41:04Z",
+      "updated": "2026-07-11T18:41:04Z",
+      "arxiv_id": "2607.10436v1",
+      "abs_url": "http://arxiv.org/abs/2607.10436v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10436v1",
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY",
+        "cs.RO",
+        "math.OC"
+      ],
+      "comment": "Python code to reproduce all numerical results is included as ancillary files",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "机械臂"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 3,
+      "anchor_terms": [
+        "manipulator"
+      ],
+      "matched_terms": [
+        "manipulator"
+      ],
+      "title_zh": "通过解耦奇点进行跟踪：反馈线性化的奇点鲁棒同伦延拓",
+      "summary_zh": "输入-输出反馈线性化在解耦奇点处失败，其中解耦矩阵失去秩，失去相对度，并且线性化控制变得无界。本文开发了一种用于方形非线性控制仿射系统的奇点鲁棒轨迹跟踪控制器，该控制器通过有界控制来跟踪孤立的解耦奇点。该方法将跟踪重写为实时弧长同伦延拓，相当于连续时间牛顿/达维登科流，并用增广矩阵 $A=[Λ\\mid b]$ 的最小范数 Moore--Penrose 解代替逆解耦矩阵，其中 $b$ 是同伦方向。横向条件 $w^T b \\ne 0$（其中 $w$ 位于解耦矩阵的左侧零空间）通过通用的秩一损失保持增广矩阵满行秩。生成的流与远离奇异集的反馈线性化一致，跟踪 $O(1/k)$ 误差，并在每次交叉后重新锁定。该理论还描述了 Whitney 褶皱处的反射与分支交叉二分法，并将反射情况与 Filippov 滑模联系起来。扩展涵盖动态相对度一最小相位系统和通过滤波误差减少的任意相对度。仿真包括冗余 2 自由度操纵器、相对一级和相对二级设备以及双有源桥串联谐振 DC/DC 转换器，其中该方法在降压/升压和谐振奇点上执行有界反转，同时保留零电压软开关。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:16:04.980901+00:00"
+      }
+    },
+    {
+      "title": "CSI-Assisted Edge SLAM Testbed Platform for 5G Connected Unmanned Autonomous Vehicles",
+      "authors": [
+        "Boris Radovanovic",
+        "Sasa Talosi",
+        "Srdjan Sobot",
+        "Dejan Vukobratovic"
+      ],
+      "summary": "The evolution from 5G towards 6G reinforces interest in connected robotics, where mobile robots offload compute-intensive tasks to edge servers over ultra-reliable low-latency communication (URLLC) links. Simultaneous localization and mapping (SLAM), a fundamental yet demanding robotics function, is increasingly considered for edge deployment within mobile edge computing (MEC) frameworks. In parallel, integrated sensing and communications (ISAC) enables the use of radio channel information, such as channel state information (CSI), as an additional sensing modality in radio-based SLAM. In this paper, we design and implement a CSI-assisted Edge SLAM testbed integrating a custom unmanned ground vehicle (UGV), a ROS2-based SLAM framework, and a 5G Open Radio Access Network (O-RAN) system. The proposed architecture provides an end-to-end, cross-layer view of ROS2 sensor data streaming over 5G, explicitly enabling CSI exposure and integration into the SLAM pipeline. We analyze ROS2 DDS communication, RTPS packetization, and 5G user-plane transport, and discuss mechanisms for CSI extraction and delivery via O-RAN components. The platform enables realistic experimentation with communication-aware SLAM and reveals key challenges related to latency, data streaming, synchronization, and cross-system integration, providing insights for future 6G-enabled robotic platforms.",
+      "published": "2026-07-11T16:50:54Z",
+      "updated": "2026-07-11T16:50:54Z",
+      "arxiv_id": "2607.10394v1",
+      "abs_url": "http://arxiv.org/abs/2607.10394v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10394v1",
+      "primary_category": "cs.NI",
+      "categories": [
+        "cs.NI",
+        "cs.RO"
+      ],
+      "comment": "BalkanCom 2026, conference paper",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 11,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "autonomous vehicle",
+        "mobile robot",
+        "robot",
+        "robotic",
+        "robotics",
+        "slam"
+      ],
+      "title_zh": "适用于 5G 联网无人驾驶车辆的 CSI 辅助边缘 SLAM 测试平台",
+      "summary_zh": "从 5G 到 6G 的演进增强了人们对互联机器人技术的兴趣，其中移动机器人通过超可靠的低延迟通信 (URLLC) 链路将计算密集型任务卸载到边缘服务器。同步定位和建图 (SLAM) 是一项基本但要求很高的机器人功能，越来越多地考虑用于移动边缘计算 (MEC) 框架内的边缘部署。同时，集成传感和通信 (ISAC) 允许使用无线电信道信息，例如信道状态信息 (CSI)，作为基于无线电的 SLAM 中的附加传感模式。在本文中，我们设计并实现了一个CSI辅助的边缘SLAM测试台，集成了定制的无人地面车辆（UGV）、基于ROS2的SLAM框架和5G开放无线电接入网络（O-RAN）系统。所提出的架构提供了 5G 上 ROS2 传感器数据流的端到端跨层视图，明确支持 CSI 暴露并集成到 SLAM 管道中。我们分析 ROS2 DDS 通信、RTPS 分组和 5G 用户平面传输，并讨论通过 O-RAN 组件提取和传输 CSI 的机制。该平台支持对通信感知 SLAM 进行实际实验，并揭示与延迟、数据流、同步和跨系统集成相关的关键挑战，为未来支持 6G 的机器人平台提供见解。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:16:04.980901+00:00"
+      }
+    },
+    {
+      "title": "ABot-N1: Toward a General Visual Language Navigation Foundation Model",
+      "authors": [
+        "Ruiyan Gong",
+        "Yingnan Guo",
+        "Junjun Hu",
+        "Jintao Kong",
+        "Xiaoxu Leng",
+        "Tianlun Li",
+        "Weize Li",
+        "Fei Liu",
+        "Zhicheng Liu",
+        "Jia Lu",
+        "Minghua Luo",
+        "Chenlin Ming",
+        "Yanfen Shen",
+        "Jiyue Tao",
+        "Zhengbo Wang",
+        "Mingyang Yin",
+        "Minqi Gu",
+        "Zihao Guan",
+        "Wei Guo",
+        "Guoqing Liu",
+        "Huachong Pang",
+        "Menglin Yang",
+        "Zeqian Ye",
+        "Xiaoxiao Geng",
+        "Zhining Gu",
+        "Honglin Han",
+        "Di Jing",
+        "Hongyu Pan",
+        "Mingchao Sun",
+        "Kuan Yang",
+        "Jianfang Zhang",
+        "Yanghong Chen",
+        "Ye He",
+        "Wei Mei",
+        "Jiahao Shi",
+        "Xiangpo Yang",
+        "Yanqing Zhu",
+        "Zedong Chu",
+        "Xiaolong Wu",
+        "Mu Xu"
+      ],
+      "summary": "Visual Language Navigation foundation models aim to unify deep reasoning for grounded spatial decisions with broad versatility for diverse embodied tasks. Current approaches typically achieve this integration via monolithic policies that map observations directly to actions, yet they often suffer from coordinate drift and poor handling of long-tail semantics. Furthermore, these black-box mappings lack interpretability, hindering the simultaneous achievement of generality, robustness, and transparency. We present ABot-N1, a step toward a general Visual Language Navigation foundation model, that addresses these challenges by decoupling cognition from control via a slow-fast architecture guided by dual visual-language signals. More specifically, a slow vision-language reasoner performs explicit Chain-of-Thought reasoning while producing a pixel goal. This compact set of image-space anchor points serves as a universal interface for diverse tasks, including point-goal, object-goal, poi-goal, instruction-following, and person-following. Subsequently, a fast action expert leverages both the textual cues and the pixel guidance to generate continuous waypoints at the native control frequency. By bridging high-level intents and low-level control through pixel-grounded anchors paired with explicit linguistic traces, our approach ensures robust, generalizable, and interpretable navigation across simulation and real-world benchmarks. ABot-N1 establishes new state-of-the-art records, delivering massive gains specifically in urban-scale navigation: boosting POI arrival by 35.0% (to 77.3%) and achieving 95.4%/92.9% SR in complex indoor and outdoor scenes. It also maintains superior robustness across object-reaching, person-following, and instruction-following tasks. New Point-Goal/POI-Goal benchmarks are released as open source to advance the field of urban-scale navigation.",
+      "published": "2026-07-11T16:21:03Z",
+      "updated": "2026-07-11T16:21:03Z",
+      "arxiv_id": "2607.10383v1",
+      "abs_url": "http://arxiv.org/abs/2607.10383v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10383v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "世界模型与仿真",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 8,
+      "anchor_terms": [
+        "embodied",
+        "navigation"
+      ],
+      "matched_terms": [
+        "embodied",
+        "foundation model",
+        "navigation"
+      ],
+      "title_zh": "ABot-N1：走向通用视觉语言导航基础模型",
+      "summary_zh": "视觉语言导航基础模型旨在将基于空间决策的深度推理与针对不同具体任务的广泛多功能性统一起来。当前的方法通常通过将观察结果直接映射到操作的整体策略来实现这种集成，但它们经常遭受坐标漂移和长尾语义处理不当的问题。此外，这些黑盒映射缺乏可解释性，阻碍了通用性、鲁棒性和透明度的同时实现。我们提出了 ABot-N1，这是迈向通用视觉语言导航基础模型的一步，它通过由双视觉语言信号引导的慢速架构将认知与控制解耦来解决这些挑战。更具体地说，慢速视觉语言推理器在产生像素目标的同时执行显式的思想链推理。这组紧凑的图像空间锚点集可作为各种任务的通用接口，包括点目标、对象目标、POI 目标、指令跟踪和人员跟踪。随后，快速行动专家利用文本提示和像素引导以本机控制频率生成连续的航路点。通过基于像素的锚点与显式语言跟踪相结合，桥接高级意图和低级控制，我们的方法确保了跨模拟和现实世界基准的稳健、可概括和可解释的导航。 ABot-N1 创造了新的最先进记录，特别是在城市规模导航方面取得了巨大成果：将 POI 到达率提高 35.0%（达到 77.3%），并在复杂的室内和室外场景中实现 95.4%/92.9% SR。它还在物体到达、人员跟踪和指令跟踪任务中保持卓越的鲁棒性。新的 Point-Goal/POI-Goal 基准以开源方式发布，以推进城市规模导航领域。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:16:04.980901+00:00"
+      }
+    },
+    {
+      "title": "Navigating the Crowd: Non-linear MPC with Social Forces Dynamics for Human-Aware Robot Navigation",
+      "authors": [
+        "Stefano Trepella",
+        "Andrea Ostuni",
+        "Mauro Martini",
+        "Pablo Pueyo",
+        "Noé Pérez-Higueras",
+        "Marcello Chiaberge",
+        "Fernando Caballero",
+        "Luis Merino"
+      ],
+      "summary": "Safe and socially compliant navigation remains a fundamental challenge for autonomous robots operating in human-populated environments. Beyond collision avoidance, robots must anticipate human motion and respect personal space to ensure human comfort. Model Predictive Control (MPC) offers a robust alternative to classical and data-driven methods, although its effectiveness strongly depends on accurate human motion prediction and efficient computation. This paper introduces SFM-NMPC, a Social Force Model-based Non-linear Model Predictive Control framework that embeds human motion prediction directly within the optimization loop. By incorporating the Social Force Model into the dynamic model of surrounding agents, the controller jointly predicts the trajectories of humans and robots over the prediction horizon, thereby enabling socially-aware planning. A tailored set of social cost functions guides the optimization toward human-compliant behaviors. Despite the increased model complexity, the proposed formulation runs in real time at 20 Hz. Extensive simulated testing in crowded environments demonstrates that SFM-NMPC outperforms state-of-the-art baselines in social compliance metrics while maintaining efficient and smooth navigation. Visual trajectory analysis and an ablation study further highlight the contribution of the embedded SFM dynamics and social cost terms, confirming the effectiveness of the proposed approach for real-world social navigation.",
+      "published": "2026-07-11T15:57:33Z",
+      "updated": "2026-07-11T15:57:33Z",
+      "arxiv_id": "2607.10374v1",
+      "abs_url": "http://arxiv.org/abs/2607.10374v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10374v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.HC"
+      ],
+      "comment": "9 pages, 7 figures, accepted at IROS 2026",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 7,
+      "anchor_terms": [
+        "navigation",
+        "robot"
+      ],
+      "matched_terms": [
+        "navigation",
+        "robot"
+      ],
+      "title_zh": "人群导航：具有社会力动力学的非线性 MPC，用于人类感知机器人导航",
+      "summary_zh": "对于在人类居住环境中运行的自主机器人来说，安全且符合社会规范的导航仍然是一个基本挑战。除了避免碰撞之外，机器人还必须预测人类的运动并尊重个人空间，以确保人类的舒适度。模型预测控制 (MPC) 为传统方法和数据驱动方法提供了强大的替代方案，尽管其有效性在很大程度上取决于准确的人体运动预测和高效计算。本文介绍了 SFM-NMPC，这是一种基于社会力模型的非线性模型预测控制框架，它将人体运动预测直接嵌入到优化循环中。通过将社会力模型纳入周围智能体的动态模型中，控制器可以共同预测人类和机器人在预测范围内的轨迹，从而实现社会意识规划。一组量身定制的社会成本函数指导优化人类合规行为。尽管模型复杂性增加，但所提出的公式以 20 Hz 的频率实时运行。在拥挤环境中进行的广泛模拟测试表明，SFM-NMPC 在社会合规指标方面优于最先进的基线，同时保持高效和平稳的导航。视觉轨迹分析和消融研究进一步强调了嵌入式 SFM 动态和社会成本项的贡献，证实了所提出的方法对于现实世界社会导航的有效性。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:16:04.980901+00:00"
+      }
+    },
+    {
+      "title": "Robotic Contextual Awareness for Human-Robot Collaboration and Environmental Understanding",
+      "authors": [
+        "Federico Rollo"
+      ],
+      "summary": "The transition of autonomous mobile robots from controlled industrial settings to dynamic, human-centric environments, such as manufacturing, logistics, and healthcare, has made their safe and autonomous operation a critical area of research. These sophisticated machines must be capable of perceiving, understanding, and interacting with their surroundings to navigate freely and perform complex tasks. A significant obstacle to achieving this is the lack of comprehensive contextual awareness, which requires a robot to recognize its spatial environment and identify the objects and actors within it. Without this perceptual knowledge, robots struggle to plan adaptive behaviors or engage in meaningful interaction with humans. This thesis presents novel solutions to this challenge by exploring two distinct but complementary research directions. The first direction involves human re-identification and tracking to improve Human-Robot Collaboration. Our developed approach enables a mobile robot to recognize a specific person, facilitating targeted collaboration while ignoring other individuals. The second direction focuses on enhancing the robot's overall perceptual capabilities to understand its environment geometrically and semantically. Geometric information is vital for motion planning and collision avoidance, while semantic knowledge provides the robot with a richer understanding for more advanced interaction. Both solutions are driven by the improvement of the semantical understanding of robots that enhance their knowledge of their surroundings, allowing a smoother and more natural interaction between robots, humans, and the environment. The contributions of this work in human re-identification and environmental understanding represent a significant step toward a future where robots are more contextually aware, enabling safer coexistence and more effective collaboration.",
+      "published": "2026-07-11T15:49:27Z",
+      "updated": "2026-07-11T15:49:27Z",
+      "arxiv_id": "2607.10372v1",
+      "abs_url": "http://arxiv.org/abs/2607.10372v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10372v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "comment": "Ph.D. thesis 2026. Officially published in the IRIS institutional repository of the University of Trento (https://hdl.handle.net/11572/482510) and deposited in the Italian National Legal Deposit for Ph.D. theses",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 9,
+      "anchor_terms": [
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "mobile robot",
+        "motion planning",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "用于人机协作和环境理解的机器人情境意识",
+      "summary_zh": "自主移动机器人从受控工业环境过渡到制造、物流和医疗保健等动态、以人为中心的环境，使其安全和自主操作成为研究的关键领域。这些复杂的机器必须能够感知、理解周围环境并与之交互，以自由导航并执行复杂的任务。实现这一目标的一个重大障碍是缺乏全面的情境意识，这需要机器人识别其空间环境并识别其中的物体和参与者。如果没有这种感知知识，机器人就很难规划适应性行为或与人类进行有意义的互动。本文通过探索两个不同但互补的研究方向，提出了应对这一挑战的新颖解决方案。第一个方向涉及人类重新识别和跟踪，以改善人机协作。我们开发的方法使移动机器人能够识别特定的人，促进有针对性的协作，同时忽略其他人。第二个方向侧重于增强机器人的整体感知能力，以从几何和语义上理解其环境。几何信息对于运动规划和避免碰撞至关重要，而语义知识为机器人提供了更丰富的理解，以进行更高级的交互。这两种解决方案都是通过改进机器人的语义理解来推动的，从而增强机器人对周围环境的了解，从而使机器人、人类和环境之间的交互更加顺畅和自然。这项工作在人类重新识别和环境理解方面的贡献代表着朝着机器人更加具有情境意识、实现更安全的共存和更有效的协作的未来迈出了重要的一步。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:16:04.980901+00:00"
+      }
+    },
+    {
+      "title": "VINE: Taming Generative Control Policies for Reinforcement Learning",
+      "authors": [
+        "Rushuai Yang",
+        "Zhuo Han",
+        "Houlin Li",
+        "Hecheng Wang",
+        "Zhichao Wu",
+        "Rui Zhang",
+        "Zhaowei Zhang",
+        "Zihong Chen",
+        "Xiaohan Yan",
+        "Chiming Liu",
+        "Yi Chen",
+        "Wei Shan",
+        "Maoqing Yao"
+      ],
+      "summary": "Flow-matching policies have emerged as an effective policy parameterization for robot learning. They iteratively generate actions from noise, enabling highly expressive modeling of complex and multimodal action distributions. However, prior works observed that scaling these policies with value-gradient reinforcement learning (RL) often leads to training instability. Existing methods attribute this instability to iterative generation and therefore avoid end-to-end value-gradient optimization by sacrificing iterative generation, high expressiveness, or value-gradient optimization. Contrary to prior belief, we show the instability does not stem from iterative generation itself, but from the vanilla sampling strategy originally designed for behavior cloning, which becomes brittle under value-gradient RL. Motivated by this insight, we propose VINE, an RL-oriented sampling method that enables stable end-to-end value-gradient optimization for flow-matching policies. Instead of following a single flow trajectory, VINE reconstructs a new interpolation state at every denoising step, creating a stable differentiable path for value-gradient propagation while remaining compatible with the original flow-matching denoising process. As a result, VINE preserves the expressiveness and iterative generation of flow-matching without sacrificing end-to-end value-gradient optimization. Despite performing end-to-end backpropagation through all ten denoising steps, VINE achieves stable policy improvement and consistently outperforms state-of-the-art RL methods on the OGBench offline RL benchmark and real-world robotic manipulation task. Videos are available on our website: https://agibottech.github.io/vine.",
+      "published": "2026-07-11T15:45:12Z",
+      "updated": "2026-07-11T15:45:12Z",
+      "arxiv_id": "2607.10369v1",
+      "abs_url": "http://arxiv.org/abs/2607.10369v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10369v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "强化/模仿学习",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 15,
+      "anchor_terms": [
+        "manipulation",
+        "real-world robot",
+        "reinforcement learning",
+        "robot",
+        "robot learning",
+        "robotic"
+      ],
+      "matched_terms": [
+        "behavior cloning",
+        "manipulation",
+        "real-world robot",
+        "reinforcement learning",
+        "robot",
+        "robot learning",
+        "robotic"
+      ],
+      "title_zh": "VINE：驯服强化学习的生成控制策略",
+      "summary_zh": "流量匹配策略已成为机器人学习的有效策略参数化。它们迭代地从噪声中生成动作，从而能够对复杂和多模态动作分布进行高度表达的建模。然而，之前的研究发现，使用价值梯度强化学习（RL）来扩展这些策略通常会导致训练不稳定。现有方法将这种不稳定性归因于迭代生成，因此通过牺牲迭代生成、高表达性或值梯度优化来避免端到端值梯度优化。与之前的看法相反，我们证明这种不稳定性并非源于迭代生成本身，而是源于最初为行为克隆设计的普通采样策略，该策略在值梯度强化学习下变得脆弱。受此启发，我们提出了 VINE，一种面向 RL 的采样方法，可为流量匹配策略实现稳定的端到端价值梯度优化。 VINE 不遵循单一流轨迹，而是在每个去噪步骤重建新的插值状态，为值梯度传播创建稳定的可微路径，同时保持与原始流匹配去噪过程兼容。因此，VINE 保留了流匹配的表现力和迭代生成，而不牺牲端到端的值梯度优化。尽管通过所有十个去噪步骤执行端到端反向传播，VINE 仍实现了稳定的策略改进，并在 OGBench 离线 RL 基准和现实世界机器人操作任务上始终优于最先进的 RL 方法。视频可在我们的网站上找到：https://agibottech.github.io/vine。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:16:04.980901+00:00"
+      }
+    },
+    {
+      "title": "Measure the Sim-to-Real Gap: Designing an Affordable Real-World Benchmark Platform for Reinforcement Learning in AIoT Systems",
+      "authors": [
+        "Rongping Zhou",
+        "Omid Tavallaie",
+        "Shuaijun Chen",
+        "Albert Y. Zomaya"
+      ],
+      "summary": "Reinforcement learning (RL) is commonly employed to enhance the performance of autonomous systems, including the Autonomous Internet of Things (AIoT). However, the trial-and-error nature of RL, when conducted in real-world environments, is costly and hazardous in some scenarios. Consequently, the majority of RL research is conducted in simulation. This reliance introduces challenges related to the Sim-to-Real transferability. Evaluating the Sim-to-Real algorithmic robustness and the Sim-to-Real gap is a critical prerequisite for research aimed at improving RL performance in the real world. Therefore, industries such as robotics have developed concurrent simulation and physical platforms to facilitate this research. However, a universal Sim-to-Real benchmark platform for AIoT does not currently exist. To address these concerns, we developed a real-world AIoT platform for studying RL in AIoT. On this platform, an agent deployed on an edge device plays video games on a separate host computer via a hardware-emulated keyboard, guided by vision input. This platform uses commercially available components costing less than USD 400, together with two computers. Because the system's objective is game score maximization, it inherently mitigates safety risks associated with real-world RL deployments. Experimental results show the simulation-trained agent suffers a 1160% performance degradation relative to the human-level performance after real-world deployment, indicating a significant Sim-to-Real gap. Direct real-world training using the deep Q-network (DQN) algorithm achieves approximately 38% of human-level performance after 10 million training steps, demonstrating the feasibility of RL under real-world conditions. These results suggest that the proposed Sim-to-Real benchmark platform provides a substantial foundation for qualitative and quantitative evaluations of RL in real-world AIoT systems.",
+      "published": "2026-07-11T13:28:50Z",
+      "updated": "2026-07-11T13:28:50Z",
+      "arxiv_id": "2607.10309v1",
+      "abs_url": "http://arxiv.org/abs/2607.10309v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10309v1",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 11,
+      "anchor_terms": [
+        "reinforcement learning",
+        "robot",
+        "robotic",
+        "robotics",
+        "sim-to-real"
+      ],
+      "matched_terms": [
+        "reinforcement learning",
+        "robot",
+        "robotic",
+        "robotics",
+        "sim-to-real"
+      ],
+      "title_zh": "衡量模拟与真实的差距：为 AIoT 系统中的强化学习设计一个经济实惠的现实世界基准平台",
+      "summary_zh": "强化学习 (RL) 通常用于增强自主系统的性能，包括自主物联网 (AIoT)。然而，在现实环境中进行强化学习时，其试错性质在某些情况下成本高昂且危险。因此，大多数强化学习研究都是在模拟中进行的。这种依赖带来了与模拟到真实可转移性相关的挑战。评估 Sim-to-Real 算法的鲁棒性和 Sim-to-Real 差距是旨在提高现实世界中 RL 性能的研究的关键先决条件。因此，机器人等行业开发了并发模拟和物理平台来促进这项研究。然而，目前还不存在适用于 AIoT 的通用 Sim-to-Real 基准平台。为了解决这些问题，我们开发了一个现实世界的 AIoT 平台，用于研究 AIoT 中的强化学习。在此平台上，部署在边缘设备上的代理通过视觉输入引导的硬件模拟键盘在单独的主机上玩视频游戏。该平台使用成本低于 400 美元的商用组件以及两台计算机。由于该系统的目标是游戏得分最大化，因此它本质上减轻了与现实世界 RL 部署相关的安全风险。实验结果表明，经过模拟训练的智能体在实际部署后的性能相对于人类水平下降了 1160%，这表明模拟与真实之间存在显着差距。使用深度 Q 网络 (DQN) 算法进行直接现实世界训练，经过 1000 万次训练步骤后，达到了人类水平约 38% 的性能，证明了 RL 在现实世界条件下的可行性。这些结果表明，所提出的 Sim-to-Real 基准平台为现实 AIoT 系统中 RL 的定性和定量评估提供了坚实的基础。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:16:04.980901+00:00"
+      }
+    },
+    {
+      "title": "Soft Eversion Robots for Colonoscopy: Challenges, Open Problems, and Emerging Solutions",
+      "authors": [
+        "Cem Suulker",
+        "Thomas Mack",
+        "Qingzheng Cong",
+        "Neri Niccolò Dei",
+        "Reza Kashef",
+        "Mohammad Sheikh Sofla",
+        "Kaspar Althoefer"
+      ],
+      "summary": "Conventional colonoscopy remains limited by patient discomfort and procedural risks, motivating research into compliant robotic alternatives. Eversion robots, which advance via pressure-driven tip growth, eliminate sliding friction against the colon wall and offer a less intrusive approach to traversal. However, no existing design simultaneously satisfies all clinical requirements. This paper benchmarks four recent eversion robot architectures against the key anatomical and clinical constraints of colonoscopy, including colon length, minimum luminal diameter, bending angle, and working-channel needs. We identify the central trade-offs each design reveals, particularly the difficulty of integrating steering and payload delivery without sacrificing the soft, low-friction behaviour that makes eversion robots attractive. We then provide design guidance across material selection, steering strategy, and payload delivery, and highlight open problems for clinical translation.",
+      "published": "2026-07-11T12:46:05Z",
+      "updated": "2026-07-11T12:46:05Z",
+      "arxiv_id": "2607.10294v1",
+      "abs_url": "http://arxiv.org/abs/2607.10294v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10294v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "2 pages, 1 figure, 1 table, Hamlyn Symposium on Medical Robotics 2026",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "数据集/评测",
+      "score": 7,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "用于结肠镜检查的软外翻机器人：挑战、未决问题和新兴解决方案",
+      "summary_zh": "传统的结肠镜检查仍然受到患者不适和手术风险的限制，这促使人们研究合规的机器人替代方案。外翻机器人通过压力驱动尖端生长前进，消除了结肠壁的滑动摩擦，并提供了一种侵入性较小的遍历方法。然而，现有的设计还没有同时满足所有临床要求。本文针对结肠镜检查的关键解剖和临床限制（包括结肠长度、最小管腔直径、弯曲角度和工作通道需求）对四种最新外翻机器人架构进行了基准测试。我们确定了每种设计所揭示的核心权衡，特别是在不牺牲使外翻机器人具有吸引力的柔软、低摩擦行为的情况下集成转向和有效负载传输的难度。然后，我们提供材料选择、转向策略和有效负载交付的设计指导，并强调临床转化的开放问题。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:16:04.980901+00:00"
+      }
+    },
+    {
+      "title": "PIER-Flow: Physics-Informed Efficient Rectified Flow for Real-Time Mobile Robot Navigation",
+      "authors": [
+        "Shibo Li",
+        "Zhongcheng Wang",
+        "Jiahe Cao",
+        "Jianhua Yang",
+        "Ke Wu"
+      ],
+      "summary": "Autonomous navigation in dense and highly dynamic environments requires both physically feasible control and low-latency replanning. Optimization-based methods such as Model Predictive Control (MPC) explicitly handle robot kinematics and safety constraints, but repeated nonlinear optimization can limit real-time responsiveness. Deterministic behavior-cloning policies enable efficient inference but may fail to represent multimodal avoidance behaviors, whereas diffusion policies capture multimodality at the cost of time-consuming iterative denoising. We propose PIER-Flow (Physics-Informed Efficient Rectified Flow), a lightweight navigation policy for mobile robots. By distilling an MPC expert into a continuous-time Ordinary Differential Equation (ODE), PIER-Flow achieves single-step action generation through parallel latent sampling and lightweight feasibility selection. We introduce a physics-informed training objective to enforce kinematic consistency, paired with an asynchronous action chunking architecture for robust sim-to-real deployment. Extensive simulations demonstrate that PIER-Flow achieves a 98.85\\% success rate and zero collisions, with an average inference of $\\sim$1.29 ms, which accelerates planning by 37.2$\\times$ compared to MPC and over 800$\\times$ against standard diffusion models. Crucially, real-world deployment on a resource-constrained edge computer further achieves an approximately stable inference latency of $\\sim$5.3 ms, avoiding the latency spikes and freezing events observed with planning baselines.",
+      "published": "2026-07-11T12:34:28Z",
+      "updated": "2026-07-11T12:34:28Z",
+      "arxiv_id": "2607.10288v1",
+      "abs_url": "http://arxiv.org/abs/2607.10288v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10288v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "VLA/多模态策略",
+        "世界模型与仿真",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 16,
+      "anchor_terms": [
+        "navigation",
+        "robot",
+        "sim-to-real"
+      ],
+      "matched_terms": [
+        "action chunking",
+        "autonomous navigation",
+        "mobile robot",
+        "navigation",
+        "robot",
+        "sim-to-real"
+      ],
+      "title_zh": "PIER-Flow：用于实时移动机器人导航的基于物理的高效整流流",
+      "summary_zh": "密集且高度动态的环境中的自主导航需要物理上可行的控制和低延迟的重新规划。基于优化的方法，例如模型预测控制（MPC），明确地处理机器人运动学和安全约束，但重复的非线性优化可能会限制实时响应能力。确定性行为克隆策略可以实现有效的推理，但可能无法表示多模态回避行为，而扩散策略以耗时的迭代去噪为代价捕获多模态。我们提出了 PIER-Flow（基于物理的高效整流流），这是一种用于移动机器人的轻量级导航策略。通过将 MPC 专家提炼为连续时间常微分方程 (ODE)，PIER-Flow 通过并行潜在采样和轻量级可行性选择实现单步动作生成。我们引入了基于物理的训练目标来强制运动学一致性，并与异步动作分块架构相结合，以实现稳健的模拟到真实部署。大量模拟表明，PIER-Flow 实现了 98.85% 的成功率和零碰撞，平均推理时间为 $\\sim$1.29 毫秒，与 MPC 相比，规划速度加快了 37.2$\\times$，与标准扩散模型相比，规划速度加快了 800$\\times$。至关重要的是，在资源受限的边缘计算机上的实际部署进一步实现了大约稳定的 5.3 毫秒的推理延迟，避免了在规划基线中观察到的延迟峰值和冻结事件。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:16:04.980901+00:00"
+      }
+    },
+    {
+      "title": "Source-Lifted Flow Matching for Intervenable Multimodal Imitation",
+      "authors": [
+        "He Zhang",
+        "Ying Sun",
+        "Pengteng Li",
+        "Ziyang Chen",
+        "Yiren Zhao",
+        "Ziyang Rao",
+        "Weiyu Guo",
+        "Yandong Guo",
+        "Hui Xiong"
+      ],
+      "summary": "Flow-matching policies are promising for imitation learning because they model complex multimodal action distributions. However, their stochasticity is largely passive: repeated sampling may yield diverse behaviors, but users cannot directly choose among valid continuations from the same state. We propose Source-Lifted Flow Matching (SL-FM), a source-intervenable flow-matching policy that exposes such a handle while keeping the velocity field shared and latent-free. The handle selects only the source endpoint of the conditional flow, not a mode-specific field, preserving the standard formulation while avoiding decomposition into separate mode-conditioned dynamics. The core mechanism is \\textbf{Orthogonal Source Lifting}, designed to prevent path-crossing ambiguity. Instead of partitioning target actions by mode, SL-FM lifts handle-specific sources into auxiliary orthogonal coordinates and keeps targets in the original action subspace. This preserves the demonstrated action distribution while allowing one shared field to carry different branches without merging at crossings. To keep handles usable across states, we learn a state-dependent source mixture end to end and use a responsibility floor, giving each handle weak supervision and mitigating dead modes. Experiments on crossing-flow diagnostics and robot-control benchmarks show that SL-FM converts passive source randomness into an actionable intervention variable. It removes crossing-induced composite trajectories, changes future routes in 91.1\\% of matched-prefix interventions, and achieves strong free-deployment performance, with improvements in several benchmark settings. Overall, source geometry provides actionable multimodal control without conditioning the velocity field on the selected mode.",
+      "published": "2026-07-11T08:33:04Z",
+      "updated": "2026-07-11T08:33:04Z",
+      "arxiv_id": "2607.10206v1",
+      "abs_url": "http://arxiv.org/abs/2607.10206v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10206v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "强化/模仿学习",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "强化/模仿学习",
+      "score": 5,
+      "anchor_terms": [
+        "imitation learning",
+        "robot"
+      ],
+      "matched_terms": [
+        "imitation learning",
+        "robot"
+      ],
+      "title_zh": "用于可干预多模态模拟的源提升流量匹配",
+      "summary_zh": "流量匹配策略对于模仿学习很有前景，因为它们可以模拟复杂的多模式动作分布。然而，它们的随机性在很大程度上是被动的：重复采样可能会产生不同的行为，但用户无法直接在同一状态的有效延续中进行选择。我们提出了源提升流匹配（SL-FM），这是一种源可干预流匹配策略，它公开了这样的句柄，同时保持速度场共享和无潜在。该句柄仅选择条件流的源端点，而不是特定于模式的字段，从而保留标准公式，同时避免分解为单独的模式条件动力学。核心机制是\\textbf{正交源提升}，旨在防止路径交叉歧义。 SL-FM 不是按模式划分目标动作，而是将特定于句柄的源提升到辅助正交坐标中，并将目标保留在原始动作子空间中。这保留了演示的动作分布，同时允许一个共享字段承载不同的分支，而无需在交叉点合并。为了保持句柄在不同状态下可用，我们端到端地学习依赖于状态的源混合，并使用责任层，为每个句柄提供弱监督并减轻死模式。交叉流诊断和机器人控制基准测试表明，SL-FM 将被动源随机性转换为可操作的干预变量。它消除了交叉引起的复合轨迹，改变了 91.1% 的匹配前缀干预的未来路线，并实现了强大的自由部署性能，并在多个基准设置上进行了改进。总体而言，源几何提供了可操作的多模态控制，无需在所选模式上调节速度场。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:16:04.980901+00:00"
+      }
+    },
+    {
+      "title": "ActiveFly-Bench: Aligning Embodied Question Answering with Vision-Language-Action for Aerial Embodied Perception",
+      "authors": [
+        "Weichen Zhang",
+        "Shiquan Yu",
+        "Yinan Zhu",
+        "Peizhi Tang",
+        "Shilong Ji",
+        "Zhiyuan Deng",
+        "Tianyi Lyu",
+        "Haoyang Wang",
+        "Xin Zeng",
+        "Chen Gao",
+        "Yong Li",
+        "Xinlei Chen"
+      ],
+      "summary": "We introduce ActiveFly-Bench, the first benchmark to bridge cyberspace reasoning and physical-world interaction for UAV embodied perception. The benchmark decomposes active perception into three hierarchical tasks: Aerial Embodied Question Answering (Air-EQA), Observation Behavior Planning (OBP), and Fine-grained Language-guided UAV Control (FLUC), explicitly connecting high-level task understanding, behavior planning, and low-level control. The datasets are collected from both real-world and simulated outdoor environments for training and evaluation. We further develop ActiveFly, a closed-loop UAV agent that integrates visual-language reasoning with fine-grained control, and deploy it on a physical UAV platform. Experiments with representative VLMs and VLA models show that current UAV agents still struggle with behavior planning, viewpoint adjustment, and robust task completion in active perception. These results establish ActiveFly-Bench as a new testbed for embodied aerial intelligence.",
+      "published": "2026-07-11T07:58:04Z",
+      "updated": "2026-07-11T07:58:04Z",
+      "arxiv_id": "2607.10180v1",
+      "abs_url": "http://arxiv.org/abs/2607.10180v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10180v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 19,
+      "anchor_terms": [
+        "embodied",
+        "vision-language-action",
+        "vla"
+      ],
+      "matched_terms": [
+        "embodied",
+        "embodied question answering",
+        "uav",
+        "vision-language-action",
+        "vla",
+        "vla model"
+      ],
+      "title_zh": "ActiveFly-Bench：将具体问答与视觉-语言-动作相结合，实现空中具体感知",
+      "summary_zh": "我们推出了 ActiveFly-Bench，这是第一个为无人机具体感知连接网络空间推理和物理世界交互的基准。该基准将主动感知分解为三个层次任务：空中体现问答（Air-EQA）、观察行为规划（OBP）和细粒度语言引导无人机控制（FLUC），明确连接高层任务理解、行为规划和低层控制。数据集是从真实世界和模拟室外环境中收集的，用于训练和评估。我们进一步开发了 ActiveFly，一种将视觉语言推理与细粒度控制相结合的闭环无人机代理，并将其部署在物理无人机平台上。对代表性 VLM 和 VLA 模型的实验表明，当前的无人机代理仍然在主动感知中的行为规划、视点调整和鲁棒任务完成方面遇到困难。这些结果使 ActiveFly-Bench 成为体现航空智能的新测试平台。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:16:04.980901+00:00"
+      }
+    },
+    {
+      "title": "On the Efficiency of LoRA Fine-Tuning for Vision-Language-Action Models in Industrial Robotic Manipulation",
+      "authors": [
+        "Finn Ferchau",
+        "Daniel Pommer",
+        "Cristian Axenie"
+      ],
+      "summary": "Deploying billion-parameter Vision-Language-Action (VLA) models on industrial hardware requires fine-tuning to bridge the embodiment gap. Full Fine-Tuning (FFT) provides maximal plasticity but requires data centre-grade GPUs. We present a systematic study of Low-Rank Adaptation (LoRA) for $π_0$, a flow-matching VLA, evaluated on four precision assembly tasks with a UR5e robotic manipulator. Across a sweep of LoRA ranks (r=8 to 256), allocation strategies, and component-freezing ablations, we find no statistically significant advantage of FFT over certain LoRA configurations. Performance saturates at r=32, and uniform allocation across the Vision-Language-Model (VLM) backbone and action expert proves sufficient. Freezing the VLM or restricting the vision encoder to LoRA significantly degrades performance, indicating that embodiment adaptation requires both semantic and visual plasticity. These results suggest that LoRA at r=32 with full vision encoder fine-tuning is a practical approach, reducing static peak VRAM from 36.2 to 10.8 GiB (parameters and optimizer states, activation memory excluded) without detectable performance loss.",
+      "published": "2026-07-11T07:30:25Z",
+      "updated": "2026-07-11T07:30:25Z",
+      "arxiv_id": "2607.10172v1",
+      "abs_url": "http://arxiv.org/abs/2607.10172v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10172v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "comment": "12 pages, 5 figures, 3 tables. Accepted at the International Conference on Artificial Neural Networks (ICANN 2026); to appear in Springer LNCS",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "VLA/多模态策略",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 15,
+      "anchor_terms": [
+        "manipulation",
+        "manipulator",
+        "robot",
+        "robotic",
+        "vision-language-action",
+        "vla"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "manipulator",
+        "robot",
+        "robotic",
+        "vision-language-action",
+        "vla"
+      ],
+      "title_zh": "工业机器人操作中视觉-语言-动作模型 LoRA 微调的效率",
+      "summary_zh": "在工业硬件上部署十亿参数的视觉-语言-动作 (VLA) 模型需要进行微调以弥补实施差距。完全微调 (FFT) 提供最大的可塑性，但需要数据中心级 GPU。我们提出了针对 $π_0$（一种流量匹配 VLA）的低阶适应 (LoRA) 的系统研究，并使用 UR5e 机器人操纵器对四项精密装配任务进行了评估。在一系列 LoRA 等级（r=8 到 256）、分配策略和组件冻结消融中，我们发现 FFT 相对于某些 LoRA 配置没有统计上显着的优势。性能在 r=32 时饱和，并且跨视觉语言模型 (VLM) 主干和行动专家的统一分配证明足够了。冻结 VLM 或将视觉编码器限制为 LoRA 会显着降低性能，这表明实施例适应需要语义和视觉可塑性。这些结果表明，采用全视觉编码器微调的 LoRA at r=32 是一种实用方法，可将静态峰值 VRAM 从 36.2 GiB 减少到 10.8 GiB（参数和优化器状态，​​不包括激活内存），而不会造成可检测到的性能损失。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:16:04.980901+00:00"
+      }
+    },
+    {
+      "title": "From Non-Rigid to Rigid: Safe Acquisition of Rigid Communication Graphs under Limited Sensing",
+      "authors": [
+        "Saharsh",
+        "Vedhas Talnikar",
+        "Pushpak Jagtap"
+      ],
+      "summary": "Communication graph rigidity is a fundamental requirement in many multi robot formation control approaches. However, ensuring and maintaining a rigid communication topology becomes challenging in practice due to limited sensing ranges and dynamic operating conditions. This paper provides a method for achieving an inter robot collision free, rigid time varying communication graph, where communication links are established or broken according to limited sensing ranges, without assuming an initial rigid graph. In addition, the proposed approach guarantees the realization of a rigid graph for heterogeneous nonlinear multi robot systems. A computationally lean, distributed quadratic optimization-based controller is developed for a leader follower architecture, acquiring rigidity based on hierarchical second-order consensus among robots. Follower agents do not require global absolute positions of any agent, including their own. The proposed method is validated through both simulations and hardware experiments in a motion-capture environment, demonstrating reliable performance under the limited sensing capabilities of individual robots.",
+      "published": "2026-07-11T07:20:20Z",
+      "updated": "2026-07-11T07:20:20Z",
+      "arxiv_id": "2607.10170v1",
+      "abs_url": "http://arxiv.org/abs/2607.10170v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10170v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "comment": "18 pages, 7 Figures, 2 Tables",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 4,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "robot"
+      ],
+      "title_zh": "从非刚性到刚性：有限感知下刚性通信图的安全获取",
+      "summary_zh": "通信图刚性是许多多机器人编队控制方法的基本要求。然而，由于有限的传感范围和动态工作条件，确保和维持严格的通信拓扑在实践中变得具有挑战性。本文提供了一种实现机器人间无碰撞、刚性时变通信图的方法，其中根据有限的传感范围建立或断开通信链路，而不假设初始刚性图。此外，所提出的方法保证了异构非线性多机器人系统刚性图的实现。为领导者跟随者架构开发了一种计算精益、基于分布式二次优化的控制器，基于机器人之间的分层二阶共识获得刚性。追随者代理不需要任何代理的全球绝对位置，包括他们自己的。所提出的方法通过运动捕捉环境中的仿真和硬件实验进行了验证，证明了在单个机器人有限的传感能力下的可靠性能。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:16:04.980901+00:00"
+      }
+    },
+    {
+      "title": "TAC-LOCO: Unified Whole-Body Control for Quadrupedal TACtile-Informed LOCO-Manipulation",
+      "authors": [
+        "Muqun Hu",
+        "Yuhao Zhou",
+        "Kabir Ray Malik",
+        "Chi Lin",
+        "Won Suk Lee",
+        "Yu She",
+        "Yan Gu"
+      ],
+      "summary": "Dynamic loco-manipulation requires legged robots to coordinate whole-body motion while maintaining stable physical interaction with grasped objects under uncertain external forces. While tactile sensing has been widely studied for robotic manipulation, its role in dynamic whole-body control remains largely unexplored. Existing works without tactile feedback commonly grasp firmly rather than regulate the grasp according to the interaction. We propose TAC-LOCO, a tactile-augmented unified reinforcement learning framework that encodes tactile array observations from compliant grippers into a compact latent representation and joins it with proprioception for unified control of the legs, arm, and gripper. With effective grasp stability reward design, the policy learns to simultaneously track body velocity and end-effector trajectories, moderate grasp force, and prevent object slip under both gradual load changes and sudden release events. We deploy the policy zero-shot on a Unitree Go2 with an Interbotix WidowX 250 arm and tactile gripper, demonstrating dynamic tactile-informed loco-manipulation under varying external interactions, achieving a 47% reduction in grasping force and an object drop rate of less than 1%.",
+      "published": "2026-07-11T05:45:24Z",
+      "updated": "2026-07-11T05:45:24Z",
+      "arxiv_id": "2607.10132v1",
+      "abs_url": "http://arxiv.org/abs/2607.10132v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10132v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "强化/模仿学习",
+        "人形与灵巧",
+        "感知与3D理解",
+        "四足机器人",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 20,
+      "anchor_terms": [
+        "grasp",
+        "grasping",
+        "manipulation",
+        "proprioception",
+        "quadruped",
+        "quadrupedal",
+        "reinforcement learning",
+        "robot",
+        "robotic",
+        "tactile"
+      ],
+      "matched_terms": [
+        "end-effector",
+        "grasp",
+        "grasping",
+        "legged",
+        "legged robot",
+        "manipulation",
+        "proprioception",
+        "quadruped",
+        "quadrupedal",
+        "reinforcement learning",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "TAC-LOCO：四足触觉通知 LOCO 操纵的统一全身控制",
+      "summary_zh": "动态局部操纵需要腿式机器人协调全身运动，同时在不确定的外力下保持与抓取物体的稳定物理交互。虽然触觉传感已在机器人操作方面得到了广泛研究，但其在动态全身控制中的作用仍然很大程度上未被探索。现有的没有触觉反馈的作品通常是牢牢地抓握而不是根据交互来调节抓握。我们提出了 TAC-LOCO，一种触觉增强的统一强化学习框架，它将来自顺应抓手的触觉阵列观察编码为紧凑的潜在表示，并将其与本体感觉结合起来，以统一控制腿、手臂和抓手。通过有效的抓取稳定性奖励设计，该策略学会同时跟踪身体速度和末端执行器轨迹，调节抓取力，并防止物体在逐渐负载变化和突然释放事件下滑动。我们在配备 Interbotix WidowX 250 机械臂和触觉夹具的 Unitree Go2 上部署了策略零射击，展示了在不同外部交互下的动态触觉通知局部操纵，实现了抓握力降低 47% 和物体掉落率低于 1%。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-14T01:16:04.980901+00:00"
+      }
+    }
+  ]
 }
