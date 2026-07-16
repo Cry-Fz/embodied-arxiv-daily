@@ -1,6 +1,6 @@
 {
   "date": "2026-07-08",
-  "generated_at": "2026-07-15T01:10:52.396512+00:00",
+  "generated_at": "2026-07-16T01:20:00.371794+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
@@ -1279,10 +1279,10 @@
       ],
       "summary": "Safety for generalist robots is usually discussed in terms of motion or dialogue. We argue a third question is missing: should the robot take its first hard-to-undo social action at all, such as a greeting, an uninvited grasp, or stepping into someone's space? We call this initiation authorization. Current frameworks rarely treat it as a separate safety layer. Today's stacks often skip this step: a high engagement score or a confident VLA rollout is treated as permission to act. But seeing a person is not the same as having their consent to be addressed. We frame initiation authorization within generalist-robot safety and contrast it with post-plan VLA guardrails, implementing PAS (probe-authorize-speak) on a doorway humanoid, comparing it with direct-init on logged traces, and proposing a three-condition user study, with open questions on metrics, governance, and where initiation ends and foundation-model generation begins.",
       "published": "2026-07-08T13:49:06Z",
-      "updated": "2026-07-08T13:49:06Z",
-      "arxiv_id": "2607.07420v1",
-      "abs_url": "http://arxiv.org/abs/2607.07420v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.07420v1",
+      "updated": "2026-07-15T13:02:13Z",
+      "arxiv_id": "2607.07420v2",
+      "abs_url": "http://arxiv.org/abs/2607.07420v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.07420v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -1318,7 +1318,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-07-09T01:33:30.261426+00:00"
+        "generated_at": "2026-07-16T01:20:39.084635+00:00"
       }
     },
     {
@@ -2499,15 +2499,15 @@
       "authors": [
         "Boxuan Zhang",
         "Sheng Liu",
-        "Chenglin Ming",
+        "Chenlin Ming",
         "Ahmed Abdelrahman"
       ],
       "summary": "Robot imitation learning for manipulation should preserve demonstrated task geometry while producing dynamically admissible robot motions. Existing pipelines often learn task-dependent trajectories and impose execution limits afterward through filtering, smoothing, clipping, or time scaling, which may distort task-critical end-effector paths. We propose the Spectral Movement Primitive (SMP), a frequency-domain imitation learning framework that couples task-space skill generation with joint-space execution regulation. Demonstrations are represented by truncated finite-horizon Fourier coefficients. An empirically selected low-frequency task band captures the dominant motion geometry, while higher harmonics contribute disproportionately to derivative growth. A frame-aware context-conditioned GMM/GMR prior predicts the task-band coefficients in a canonical task frame, and the resulting Cartesian trajectory is mapped to joint space through sequential inverse kinematics. A phase-coupled regulator then limits the requested phase progression without modifying the spectral coefficients, thereby enforcing joint velocity and acceleration limits while preserving the represented path. Experiments evaluate task-band reconstruction, robustness to composite demonstration corruption, out-of-distribution cross-board generalization, joint-space dynamic admissibility, end-effector path preservation, and deployment on a Franka Panda robot. Results show compact geometric reconstruction, consistent transfer across unseen task frames, substantial reductions in dynamic violations and jerk, and preservation of the intended end-effector path during phase regulation.",
       "published": "2026-07-08T04:02:19Z",
-      "updated": "2026-07-08T04:02:19Z",
-      "arxiv_id": "2607.06978v1",
-      "abs_url": "http://arxiv.org/abs/2607.06978v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.06978v1",
+      "updated": "2026-07-14T17:44:44Z",
+      "arxiv_id": "2607.06978v2",
+      "abs_url": "http://arxiv.org/abs/2607.06978v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.06978v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -2539,7 +2539,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-07-09T01:33:30.261426+00:00"
+        "generated_at": "2026-07-16T01:20:39.084635+00:00"
       }
     },
     {
@@ -2585,7 +2585,7 @@
       }
     },
     {
-      "title": "Maximizing Human Efficiency in Large-Scale Robot Post-Training via VLAC-Cut Guided Pipeline",
+      "title": "HELP: Human-Efficient Large-Scale Robot Post-Training with Rollout Segmentation",
       "authors": [
         "Shaopeng Zhai",
         "Qi Zhang",
@@ -2593,14 +2593,15 @@
         "Haoran Zhang",
         "Fuxian Huang",
         "Zhanhui Lin",
-        "Zijun Xu"
+        "Zijun Xu",
+        "Weinan Zhang"
       ],
-      "summary": "When adapting Vision Language Action (VLA) models to downstream tasks, multiple rounds of post training are required because a single round of data cannot resolve all issues, making continuous iterations necessary to progressively address the weaknesses exposed in previous rounds. In this report, we aim to maximize human efficiency during post-training, defined as the policy improvement and task throughput achieved per unit of human labor and time. We propose a human-efficient post-training pipeline that enables a small number of human operators to supervise multiple robots. The pipeline is built around a specialized division of labor: a trained Teleoperator focuses on high-value remote interventions and recovery demonstrations, while a Floor Operator monitors multiple robots, triggers takeovers, and performs physical resets. This role specialization reduces task switching, lowers operator training costs, and allows limited human labor to supervise more robot interaction across a larger fleet. To improve data utilization efficiency, we introduce VLAC-CUT as an automatic rollout curation tool. It segments autonomous robot trajectories into progress-making, idle, failure-inducing, and recovery portions, preserving useful segments while filtering harmful or uninformative ones. The curated rollout data are combined with Human-in-the-Loop data for the next post-training round. We validate the proposed pipeline on four real-world manipulation tasks. Across iterative post-training rounds, the final policies achieve 80\\%--95\\% success rates and improve task throughput by 1.7$\\times$--4.2$\\times$ over the base model. Under the same human-intervention budget, VLAC-CUT guided rollout reuse outperforms HITL-only training in both success rate and throughput.",
+      "summary": "When adapting Vision Language Action (VLA) models to downstream tasks, multiple rounds of post-training are often required to progressively address policy weaknesses. In this report, we focus on maximizing human efficiency during this iterative process, measured by policy improvement and task throughput per unit of human labor and time. We propose HELP, a Human-Efficient Large-scale robot Post-training pipeline in which two specialized operators supervise twelve robots concurrently. A trained Teleoperator provides high-value remote interventions and recovery demonstrations, while a Floor Operator monitors the robot fleet, triggers takeovers, and performs physical resets. This role specialization improves human efficiency by reducing task switching, lowering operator training costs, and expanding robot interaction coverage. Beyond increasing rollout volume, concurrent supervision also broadens the range of policy behaviors observed by the human team, making recurring failure modes easier to identify and enabling more targeted takeovers, resets, and recovery demonstrations. To efficiently utilize the large and mixed-quality rollout data, HELP incorporates \\vlac, an automatic rollout segmentation critic specifically designed for this setting. It separates autonomous trajectories into progress-making, idle, failure-inducing, and recovery segments. Useful rollout segments are retained and combined with Human-in-the-Loop data for the next post-training round. Across four real-world manipulation tasks, HELP achieves 80\\%--95\\% success rates and improves task throughput by 1.7$\\times$--4.2$\\times$ over the base model. Under matched HITL recovery budgets, VLAC-CUT further amplifies throughput gains by 1.20$\\times$--3.43$\\times$ and success-rate gains by 1.50$\\times$--3.00$\\times$ over HITL-only updates.",
       "published": "2026-07-08T03:03:38Z",
-      "updated": "2026-07-08T03:03:38Z",
-      "arxiv_id": "2607.09776v1",
-      "abs_url": "http://arxiv.org/abs/2607.09776v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.09776v1",
+      "updated": "2026-07-15T15:49:55Z",
+      "arxiv_id": "2607.09776v2",
+      "abs_url": "http://arxiv.org/abs/2607.09776v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.09776v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -2628,13 +2629,13 @@
         "vision language action",
         "vla"
       ],
-      "title_zh": "通过 VLAC-Cut 引导管道最大限度地提高大型机器人后期培训中的人力效率",
-      "summary_zh": "当视觉语言动作（VLA）模型适应下游任务时，需要进行多轮后训练，因为单轮数据无法解决所有问题，需要不断迭代以逐步解决前几轮中暴露的弱点。在本报告中，我们的目标是在培训后最大限度地提高人员效率，定义为每单位人力和时间实现的政策改进和任务吞吐量。我们提出了一种人性化的培训后流程，使少量的人类操作员能够监督多个机器人。该管道是围绕专门的分工建立的：训练有素的远程操作员专注于高价值的远程干预和恢复演示，而楼层操作员则监视多个机器人，触发接管并执行物理重置。这种角色专业化减少了任务切换，降低了操作员培训成本，并允许有限的人力来监督更大车队中的更多机器人交互。为了提高数据利用效率，我们引入了 VLAC-CUT 作为自动推出管理工具。它将自主机器人轨迹分为进展部分、空闲部分、故障诱发部分和恢复部分，保留有用的部分，同时过滤有害或无信息的部分。精心策划的推出数据与下一轮训练后的人机交互数据相结合。我们在四个现实世界的操作任务上验证了所提出的管道。在迭代后训练轮次中，最终策略实现了 80\\%--95\\% 的成功率，并将任务吞吐量比基本模型提高了 1.7$\\times$--4.2$\\times$。在相同的人工干预预算下，VLAC-CUT 引导的转出重用在成功率和吞吐量方面都优于仅 HITL 训练。",
+      "title_zh": "帮助：具有转出分段功能的人效大型机器人后期培训",
+      "summary_zh": "当将视觉语言动作（VLA）模型应用于下游任务时，通常需要进行多轮后期培训以逐步解决政策弱点。在本报告中，我们重点关注在此迭代过程中最大限度地提高人员效率，通过政策改进和每单位人力和时间的任务吞吐量来衡量。我们提出了 HELP，一种人性化的大型机器人训练后管道，其中两名专业操作员同时监督 12 台机器人。训练有素的远程操作员提供高价值的远程干预和恢复演示，而地面操作员则监视机器人车队、触发接管并执行物理重置。这种角色专业化通过减少任务切换、降低操作员培训成本和扩大机器人交互覆盖范围来提高人类效率。除了增加推出量之外，并发监督还扩大了人类团队观察到的政策行为的范围，使重复出现的故障模式更容易识别，并实现更有针对性的接管、重置和恢复演示。为了有效利用大型且混合质量的推出数据，HELP 结合了 \\vlac，这是专门为此设置设计的自动推出分段批评器。它将自主轨迹分为进展、空闲、引发故障和恢复部分。有用的推出部分将被保留，并与下一轮训练后的人机循环数据相结合。在四个现实世界的操作任务中，HELP 实现了 80\\%--95\\% 的成功率，并将任务吞吐量比基本模型提高了 1.7$\\times$--4.2$\\times$。在匹配的 HITL 恢复预算下，与仅 HITL 更新相比，VLAC-CUT 进一步将吞吐量提高了 1.20$\\times$--3.43$\\times$，成功率提高了 1.50$\\times$--3.00$\\times$。",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-07-14T01:14:57.139616+00:00"
+        "generated_at": "2026-07-16T01:20:39.084635+00:00"
       }
     },
     {
