@@ -1,6 +1,6 @@
 {
   "date": "2026-07-13",
-  "generated_at": "2026-07-19T01:21:37.928035+00:00",
+  "generated_at": "2026-07-20T01:25:12.535913+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
@@ -80,12 +80,12 @@
         "Yuri Ivanov",
         "Wojciech Matusik"
       ],
-      "summary": "Differentiable simulators have advanced policy learning and model-based control, yet actuator dynamics remain an important source of sim-to-real error. This is particularly acute on low-cost platforms, where the linear current-to-torque relation $τ= K_tI$ becomes unreliable during commanded-target tracking because of friction, hysteresis, backlash, and thermal effects. We present NeuralActuator, a neural actuator model that jointly predicts (i) a simulator-equivalent generalized-effort surrogate for trajectory propagation on low-cost servo platforms, (ii) external force with a contact-probability gate for sensorless force perception, and (iii) a motor-condition score for the supervised joint. We also introduce the Neural Actuation Dataset (NAD), collected with a twin-arm teleoperation system that records robot states and actuator telemetry together with external-force labels. The torque-surrogate head is trained through differentiable simulation from pose trajectories without direct generalized-effort labels, while the force, gate, and motor-condition heads receive direct supervision. A Transformer captures temporal dependencies while supporting real-time inference. We evaluate NeuralActuator on a 5-DoF OpenManipulator-X, a 6-DoF SO-101, and a 7-DoF Franka Emika Panda, spanning three actuator families and platforms costing approximately USD 500 to over USD 30,000. The low-cost platforms support dynamics and force evaluation, while the offline Franka experiment provides an additional payload-force-estimation benchmark. Experiments further demonstrate its application for motor condition estimation on OpenManipulator-X and improved behavior-cloning performance when NeuralActuator is used as a pretrained module.",
+      "summary": "Differentiable simulators have advanced policy learning and model-based control across robotic tasks. Yet actuator dynamics remain underexplored and can be a major source of sim-to-real error, particularly on low-cost platforms, where the linear current-to-joint-torque approximation $τ= K_t I$ becomes unreliable because of friction, hysteresis, backlash, and thermal effects. Accurate actuator models can also support force perception and integrated force/position control. We present NeuralActuator, which jointly predicts (i) a torque surrogate for trajectory propagation on low-cost servo platforms, (ii) external forces with a contact-probability gate for sensorless force perception, and (iii) a motor-condition score for a supervised joint, distinguishing normal from mechanically restricted operation. A twin-arm teleoperation system records robot states and actuator telemetry alongside external-force labels, yielding the Neural Actuation Dataset (NAD). The torque-surrogate head is trained through differentiable simulation from pose trajectories without ground-truth joint-torque measurements. A Transformer captures temporal dependencies while enabling real-time inference. We validate NeuralActuator on a 5-DoF OpenManipulator-X, a 6-DoF SO-101 from LeRobot, and a 7-DoF Franka Emika Panda, spanning three actuator families and costs from approximately \\$500 to more than \\$30{,}000. The low-cost platforms support physically plausible dynamics and force evaluation, while the offline Franka experiment provides a payload-force-estimation benchmark. We also demonstrate motor-condition estimation and improved behavior-cloning performance using NeuralActuator as a pretrained module. We release the dataset, code, and hardware configurations on the project page: https://frank-zy-dou.github.io/projects/NeuralActuator/index.html.",
       "published": "2026-07-13T15:58:34Z",
-      "updated": "2026-07-13T15:58:34Z",
-      "arxiv_id": "2607.11734v1",
-      "abs_url": "http://arxiv.org/abs/2607.11734v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.11734v1",
+      "updated": "2026-07-17T07:03:26Z",
+      "arxiv_id": "2607.11734v2",
+      "abs_url": "http://arxiv.org/abs/2607.11734v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.11734v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -93,7 +93,7 @@
         "cs.GR",
         "cs.LG"
       ],
-      "comment": "Project Page: https://people.csail.mit.edu/frankzydou/projects/NeuralActuator/index.html Code: https://github.com/Frank-ZY-Dou/Dynamics-Modeling/tree/main/NeuralActuator",
+      "comment": "RSS 2026. Outstanding Systems Paper Award. Project Page: https://people.csail.mit.edu/frankzydou/projects/NeuralActuator/index.html Code: https://github.com/Frank-ZY-Dou/Dynamics-Modeling/tree/main/NeuralActuator",
       "code_url": "https://github.com/Frank-ZY-Dou/Dynamics-Modeling/tree/main/NeuralActuator",
       "has_code": true,
       "labels": [
@@ -106,10 +106,11 @@
         "机械臂"
       ],
       "topic": "机器人操作",
-      "score": 12,
+      "score": 13,
       "anchor_terms": [
         "manipulator",
         "robot",
+        "robotic",
         "sim-to-real",
         "teleoperation"
       ],
@@ -117,17 +118,18 @@
         "manipulator",
         "policy learning",
         "robot",
+        "robotic",
         "sim-to-real",
         "simulator",
         "teleoperation"
       ],
       "title_zh": "NeuralActuator：机器人动力学和外力感知的神经驱动建模",
-      "summary_zh": "可微分模拟器具有先进的策略学习和基于模型的控制，但执行器动力学仍然是模拟到真实误差的重要来源。这在低成本平台上尤其严重，其中线性电流与扭矩关系 $τ= K_tI$ 在指令目标跟踪期间由于摩擦、迟滞、间隙和热效应而变得不可靠。我们提出了 NeuralActuator，一种神经执行器模型，它联合预测（i）模拟器等效的广义作用代理，用于低成本伺服平台上的轨迹传播，（ii）具有用于无传感器力感知的接触概率门的外力，以及（iii）受监督关节的运动状况得分。我们还介绍了神经驱动数据集（NAD），该数据集是通过双臂远程操作系统收集的，该系统记录机器人状态和执行器遥测以及外力标签。扭矩代理头通过姿势轨迹的可微分模拟进行训练，无需直接广义努力标签，而力、门和运动条件头则接受直接监督。 Transformer 捕获时间依赖性，同时支持实时推理。我们在 5 自由度 OpenManipulator-X、6 自由度 SO-101 和 7 自由度 Franka Emika Panda 上评估 NeuralActuator，涵盖三个执行器系列和平台，成本约为 500 美元至超过 30,000 美元。低成本平台支持动力学和力评估，而离线 Franka 实验提供了额外的有效负载力估计基准。实验进一步证明了其在 OpenManipulator-X 上的运动状态估计中的应用，以及当 NeuralActuator 用作预训练模块时改进的行为克隆性能。",
+      "summary_zh": "可微模拟器具有跨机器人任务的先进策略学习和基于模型的控制。然而，执行器动力学仍未得到充分研究，并且可能是模拟与实际误差的主要来源，特别是在低成本平台上，其中线性电流到关节扭矩近似值 $τ= K_t I$ 由于摩擦、迟滞、间隙和热效应而变得不可靠。精确的执行器模型还可以支持力感知和集成力/位置控制。我们提出了 NeuralActuator，它联合预测（i）低成本伺服平台上轨迹传播的扭矩替代项，（ii）具有用于无传感器力感知的接触概率门的外力，以及（iii）受监督关节的运动状况评分，区分正常操作和机械限制操作。双臂遥操作系统记录机器人状态和执行器遥测以及外力标签，产生神经驱动数据集（NAD）。扭矩代理头通过姿势轨迹的可微分模拟进行训练，无需地面真实关节扭矩测量。 Transformer 捕获时间依赖性，同时实现实时推理。我们在 5-DoF OpenManipulator-X、LeRobot 的 6-DoF SO-101 和 7-DoF Franka Emika Panda 上验证 NeuralActuator，涵盖三个执行器系列，成本从大约 500 美元到超过 30{,}000 美元不等。低成本平台支持物理上合理的动力学和力评估，而离线弗兰卡实验提供了有效负载力估计基准。我们还使用 NeuralActuator 作为预训练模块演示了运动状况估计和改进的行为克隆性能。我们在项目页面上发布了数据集、代码和硬件配置：https://frank-zy-dou.github.io/projects/NeuralActuator/index.html。",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-07-15T01:13:41.969159+00:00"
+        "generated_at": "2026-07-20T01:25:40.141905+00:00"
       }
     },
     {
