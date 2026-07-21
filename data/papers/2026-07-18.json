@@ -1,11 +1,1001 @@
 {
   "date": "2026-07-18",
-  "generated_at": "2026-07-20T01:25:33.243459+00:00",
+  "generated_at": "2026-07-21T01:21:32.758484+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202607180000 TO 202607182359]",
-  "total_fetched": 0,
-  "total_matched": 0,
-  "papers": []
+  "total_fetched": 168,
+  "total_matched": 20,
+  "papers": [
+    {
+      "title": "Splat-based 3D Scene Reconstruction with Extreme Motion-blur",
+      "authors": [
+        "Hyeonjoong Jang",
+        "Dongyoung Choi",
+        "Donggun Kim",
+        "Woohyun Kang",
+        "Min H. Kim"
+      ],
+      "summary": "We propose a splat-based 3D scene reconstruction method from RGB-D input that effectively handles extreme motion blur, a frequent challenge in low-light environments. Under dim illumination, RGB frames often suffer from severe motion blur due to extended exposure times, causing traditional camera pose estimation methods, such as COLMAP, to fail. This results in inaccurate camera pose and blurry color input, compromising the quality of 3D reconstructions. Although recent 3D reconstruction techniques like Neural Radiance Fields and Gaussian Splatting have demonstrated impressive results, they rely on accurate camera trajectory estimation, which becomes challenging under fast motion or poor lighting conditions. Furthermore, rapid camera movement and the limited field of view of depth sensors reduce point cloud overlap, limiting the effectiveness of pose estimation with the ICP algorithm. To address these issues, we introduce a method that combines camera pose estimation and image deblurring using a Gaussian Splatting framework, leveraging both 3D Gaussian splats and depth inputs for enhanced scene representation. Our method first aligns consecutive RGB-D frames through optical flow and ICP, then refines camera poses and 3D geometry by adjusting Gaussian positions for optimal depth alignment. To handle motion blur, we model camera movement during exposure and deblur images by comparing the input with a series of sharp, rendered frames. Experiments on a new RGB-D dataset with extreme motion blur show that our method outperforms existing approaches, enabling high-quality reconstructions even in challenging conditions. This approach has broad implications for 3D mapping applications in robotics, autonomous navigation, and augmented reality. Both code and dataset are publicly available on https://github.com/KAIST-VCLAB/gs-extreme-motion-blur.",
+      "published": "2026-07-18T18:41:02Z",
+      "updated": "2026-07-18T18:41:02Z",
+      "arxiv_id": "2607.16926v1",
+      "abs_url": "http://arxiv.org/abs/2607.16926v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16926v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "comment": "",
+      "code_url": "https://github.com/KAIST-VCLAB/gs-extreme-motion-blur",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "导航与移动",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 6,
+      "anchor_terms": [
+        "navigation",
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "autonomous navigation",
+        "navigation",
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "具有极端运动模糊的基于 Splat 的 3D 场景重建",
+      "summary_zh": "我们提出了一种基于 RGB-D 输入的基于 splat 的 3D 场景重建方法，可有效处理极端运动模糊，这是低光环境中的常见挑战。在昏暗的照明下，RGB 帧通常会因曝光时间延长而遭受严重的运动模糊，导致传统的相机姿态估计方法（例如 COLMAP）失败。这会导致相机姿态不准确和颜色输入模糊，从而影响 3D 重建的质量。尽管最近的 3D 重建技术（例如神经辐射场和高斯分布）已经展示了令人印象深刻的结果，但它们依赖于精确的相机轨迹估计，这在快速运动或不良照明条件下变得具有挑战性。此外，快速的相机移动和深度传感器的有限视场减少了点云重叠，限制了 ICP 算法位姿估计的有效性。为了解决这些问题，我们引入了一种使用高斯 Splatting 框架将相机姿态估计和图像去模糊相结合的方法，利用 3D 高斯 Splatting 和深度输入来增强场景表示。我们的方法首先通过光流和 ICP 对齐连续的 RGB-D 帧，然后通过调整高斯位置以实现最佳深度对齐来细化相机姿势和 3D 几何结构。为了处理运动模糊，我们对曝光期间的相机运动进行建模，并通过将输入与一系列清晰的渲染帧进行比较来对图像进行去模糊。在具有极端运动模糊的新 RGB-D 数据集上进行的实验表明，我们的方法优于现有方法，即使在具有挑战性的条件下也能实现高质量的重建。这种方法对于机器人、自主导航和增强现实中的 3D 地图应用具有广泛的影响。代码和数据集均可在 https://github.com/KAIST-VCLAB/gs-extreme-motion-blur 上公开获取。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "Scene-SAM3D: Multi-View Scene Asset Generation Without Fine-Tuning",
+      "authors": [
+        "Yuqi Zhang",
+        "Yadan Luo",
+        "Xiangyu Sun",
+        "Fengyi Zhang",
+        "Zi Huang",
+        "Xin Tan"
+      ],
+      "summary": "High-quality 3D scene assets are critical for embodied applications such as robotic manipulation, navigation, and simulation. Despite their strong object priors, recent single-image 3D generation models such as SAM3D remain insufficient for real-world scenes, where severe occlusions, redundant observations, and cross-view inconsistencies make reliable scene generation challenging. We introduce Scene-SAM3D, a training-free framework that extends SAM3D from single-view object generation to calibrated multi-view scene asset generation. Scene-SAM3D selects a compact set of complementary views, reducing observation redundancy while providing additional evidence for regions occluded in individual views. Based on the selected views, it performs step-efficient latent velocity fusion to integrate multi-view evidence and suppress cross-view conflicts in canonical space. Finally, a lightweight rigid-object Gaussian optimization refines the scene layout within 200 iterations while preserving the generated object geometry. Experiments on Replica and ScanNet++ demonstrate consistent improvements at both instance and scene levels, with our method reducing scene-level CD by 43.8% on Replica and 30.9% on ScanNet++, while cutting flow-model sampling FLOPs and wall-time latency by nearly 20% under the same multi-view setting. Code will be released at https://github.com/xibi777/Scene-SAM3D.",
+      "published": "2026-07-18T12:51:17Z",
+      "updated": "2026-07-18T12:51:17Z",
+      "arxiv_id": "2607.16805v1",
+      "abs_url": "http://arxiv.org/abs/2607.16805v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16805v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "comment": "18 pages, 9 figures",
+      "code_url": "https://github.com/xibi777/Scene-SAM3D",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "机器人操作",
+        "导航与移动",
+        "世界模型与仿真",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 6,
+      "anchor_terms": [
+        "embodied",
+        "manipulation",
+        "navigation",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "embodied",
+        "manipulation",
+        "navigation",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "Scene-SAM3D：无需微调的多视图场景资产生成",
+      "summary_zh": "高质量 3D 场景资产对于机器人操作、导航和模拟等具体应用至关重要。尽管具有强大的对象先验，但最近的单图像 3D 生成模型（例如 SAM3D）仍然不足以满足现实世界的场景，其中严重的遮挡、冗余观察和跨视图不一致使得可靠的场景生成具有挑战性。我们引入了 Scene-SAM3D，这是一个免训练框架，它将 SAM3D 从单视图对象生成扩展到校准的多视图场景资产生成。 Scene-SAM3D 选择一组紧凑的互补视图，减少观察冗余，同时为各个视图中遮挡的区域提供额外的证据。基于选定的视图，它执行步进有效的潜速度融合，以集成多视图证据并抑制规范空间中的跨视图冲突。最后，轻量级刚性对象高斯优化在 200 次迭代内细化场景布局，同时保留生成的对象几何形状。 Replica 和 ScanNet++ 上的实验证明了实例和场景级别上的一致改进，我们的方法在 Replica 上将场景级 CD 减少了 43.8%，在 ScanNet++ 上减少了 30.9%，同时在相同的多视图设置下将流模型采样 FLOP 和 wall-time 延迟减少了近 20%。代码将在 https://github.com/xibi777/Scene-SAM3D 发布。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "PAVXploreRL: Physical-Action-Visual World Model Reinforcement Learning with Action Exploration",
+      "authors": [
+        "Han Wang",
+        "Zijun Wang",
+        "Shuoshuo Xue",
+        "Rui Cao",
+        "Fenjiao Cheng",
+        "Xiaodang Liang",
+        "Roy Ka-Wei Lee"
+      ],
+      "summary": "Action-conditioned world models are a key component of embodied AI, serving as scalable policy evaluators that reduce reliance on expensive real-world rollouts. To accurately capture diverse action-induced dynamics, such models should satisfy three key objectives-Physical Plausibility (P), Action Adherence (A), and Visual Fidelity (V), collectively referred to as PAV-while remaining robust to both in-distribution (ID) expert demonstrations and out-of-distribution (OOD) actions. However, existing methods primarily rely on ID action-video pairs and pixel-level reconstruction losses, which do not explicitly optimize PAV objectives and generalize poorly beyond expert data. To address this, we propose PAVXploreRL, a reinforcement learning framework built on a pretrained latent world model that explicitly optimizes PAV objectives through reward-driven training. To improve action generalization, our method jointly leverages ID trajectories and noise-driven OOD action exploration, without paired video supervision. Experiments show that PAVXploreRL consistently outperforms pretrained baselines, achieving a 5.6% average gain across benchmarks and producing higher-quality PAV properties. As a policy evaluator, it also yields more reliable performance estimates and reduces the overestimation bias of prior expert-only world models such as Ctrl-World. Code: https://github.com/Social-AI-Studio/PAVXploreRL",
+      "published": "2026-07-18T02:42:27Z",
+      "updated": "2026-07-18T02:42:27Z",
+      "arxiv_id": "2607.16602v1",
+      "abs_url": "http://arxiv.org/abs/2607.16602v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16602v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "comment": "9 pages, 5 figures",
+      "code_url": "https://github.com/Social-AI-Studio/PAVXploreRL",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 9,
+      "anchor_terms": [
+        "embodied",
+        "embodied ai",
+        "reinforcement learning",
+        "world model"
+      ],
+      "matched_terms": [
+        "embodied",
+        "embodied ai",
+        "reinforcement learning",
+        "world model"
+      ],
+      "title_zh": "PAVXploreRL：带有动作探索的物理-动作-视觉世界模型强化学习",
+      "summary_zh": "以行动为条件的世界模型是实体人工智能的关键组成部分，可作为可扩展的政策评估器，减少对昂贵的现实世界部署的依赖。为了准确捕捉不同的动作引起的动态，此类模型应满足三个关键目标——物理合理性 (P)、动作依从性 (A) 和视觉保真度 (V)（统称为 PAV），同时对分布内 (ID) 专家演示和分布外 (OOD) 动作保持鲁棒性。然而，现有方法主要依赖于 ID 动作视频对和像素级重建损失，这些方法没有明确优化 PAV 目标，并且在专家数据之外的泛化能力很差。为了解决这个问题，我们提出了 PAVXploreRL，这是一种基于预训练潜在世界模型的强化学习框架，可通过奖励驱动的训练显式优化 PAV 目标。为了提高动作泛化，我们的方法联合利用 ID 轨迹和噪声驱动的 OOD 动作探索，无需配对视频监督。实验表明，PAVXploreRL 始终优于预训练基线，在基准测试中实现 5.6% 的平均增益，并产生更高质量的 PAV 属性。作为策略评估器，它还可以产生更可靠的性能估计，并减少先前仅专家世界模型（例如 Ctrl-World）的高估偏差。代码：https://github.com/Social-AI-Studio/PAVXploreRL",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "ADMM-Based Safety-Critical Distributed NMPC for Cooperative Transportation by Quadrupedal Robots",
+      "authors": [
+        "Ruturaj S. Sambhus",
+        "Kapi Ketan Mehta",
+        "Yicheng Zeng",
+        "Kaveh Akbari Hamed"
+      ],
+      "summary": "This paper presents a safety-critical distributed nonlinear model predictive control (DNMPC) framework for cooperative payload transportation by teams of quadrupedal robots. The proposed approach models the robotic team and the shared payload as a dynamically coupled networked system with rigid holonomic coupling constraints arising from cooperative transportation. To enable distributed real-time optimization, the centralized finite-horizon optimal control problem is decomposed into parallel local NMPC subproblems coordinated through the alternating direction method of multipliers (ADMM). The resulting distributed framework enforces consensus over both payload-state and interaction-wrench trajectories while explicitly incorporating acceleration-level holonomic coupling constraints within the distributed predictive control formulation. Safety-critical obstacle avoidance constraints for both the robotic agents and payload are enforced using higher-order control barrier functions (HOCBFs). The framework is validated through numerical simulations with teams of two, three, and four quadrupedal robots transporting shared payloads in cluttered environments. Real-time experiments on two- and three-robot teams demonstrate safe and robust transportation under payload uncertainty and external disturbances. Compared with centralized NMPC, the proposed framework achieves up to 23% reduction in average NLP solve time while maintaining comparable closed-loop performance. Ablation studies further demonstrate robustness to communication delays and show that explicit payload-state consensus and holonomic constraints substantially improve payload tracking and distributed coordination over existing wrench-only consensus formulations.",
+      "published": "2026-07-18T23:44:03Z",
+      "updated": "2026-07-18T23:44:03Z",
+      "arxiv_id": "2607.17007v1",
+      "abs_url": "http://arxiv.org/abs/2607.17007v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.17007v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "math.OC"
+      ],
+      "comment": "Supplementary video available at: https://youtu.be/w8hg52T8Luc?si=nzQrGsqP5ZBNFlGp",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "四足机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 10,
+      "anchor_terms": [
+        "quadruped",
+        "quadrupedal",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "quadruped",
+        "quadrupedal",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "基于 ADMM 的安全关键分布式 NMPC 用于四足机器人协作运输",
+      "summary_zh": "本文提出了一种安全关键的分布式非线性模型预测控制（DNMPC）框架，用于四足机器人团队的协作有效负载运输。所提出的方法将机器人团队和共享有效负载建模为动态耦合的网络系统，具有协作运输产生的刚性完整耦合约束。为了实现分布式实时优化，集中式有限范围最优控制问题被分解为通过乘子交替方向法 (ADMM) 协调的并行局部 NMPC 子问题。由此产生的分布式框架强制对有效负载状态和交互扳手轨迹达成共识，同时在分布式预测控制公式中明确纳入加速级完整耦合约束。使用高阶控制障碍函数（HOCBF）强制执行机器人代理和有效负载的安全关键避障约束。该框架通过数值模拟进行了验证，由两个、三个和四个四足机器人组成的团队在杂乱的环境中运输共享的有效负载。两个和三个机器人团队的实时实验证明了在有效载荷不确定和外部干扰下的安全和稳健的运输。与集中式 NMPC 相比，所提出的框架将平均 NLP 求解时间缩短了 23%，同时保持了相当的闭环性能。消融研究进一步证明了对通信延迟的鲁棒性，并表明与现有的仅扳手共识公式相比，明确的有效负载状态共识和完整约束大大改善了有效负载跟踪和分布式协调。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "Scalable Causal Imitation Learning",
+      "authors": [
+        "Eylam Tagor",
+        "Mingxuan Li",
+        "Elias Bareinboim"
+      ],
+      "summary": "Imitation learning enables learning a policy in an unknown environment with a latent reward signal using expert demonstrations, but it struggles when the imitator's and expert's observations are mismatched and unobserved confounders are present in expert demonstrations. By identifying appropriate adjustment sets via the sequential $π$-backdoor criterion, causal imitation learning (CIL) provides a framework for approximating the expert's policy from confounded data. However, existing CIL methods, Causal Behavioral Cloning (Causal BC) and Causal Generative Adversarial Imitation Learning (Causal GAIL), are designed for short-horizon, low-dimensional settings. When applied to continuous control tasks with long horizons and high-dimensional state-action spaces, these methods exhibit poor performance: Causal BC suffers from compounding errors, Causal GAIL is unstable and sample-inefficient, and sequential $π$-backdoor adjustment becomes impractical. We introduce Causal Soft Q Imitation Learning (SQIL) and Causal Inverse soft-Q Learning (IQ-Learn), two off-policy causal imitation learning algorithms that combine the causal adjustment framework with state-of-the-art inverse reinforcement learning objectives. Both algorithms operate on causally-adjusted state representations produced by an efficient approximation of the sequential $π$-backdoor criterion, exploiting the causal structure of continuous control environments to reduce the full-horizon adjustment to a fixed-size sliding window. We evaluate all methods in a suite of confounded environments and find that Causal SQIL and Causal IQ-Learn substantially outperform prior CIL algorithms on long-horizon tasks, sometimes surpassing the expert, whereas all causally unaware imitation methods fail to learn meaningful behavior.",
+      "published": "2026-07-18T23:33:11Z",
+      "updated": "2026-07-18T23:33:11Z",
+      "arxiv_id": "2607.17003v1",
+      "abs_url": "http://arxiv.org/abs/2607.17003v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.17003v1",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "comment": "Reinforcement Learning Journal 2026 (Also RLC 2026)",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "强化/模仿学习",
+        "数据集/评测"
+      ],
+      "topic": "强化/模仿学习",
+      "score": 3,
+      "anchor_terms": [
+        "imitation learning"
+      ],
+      "matched_terms": [
+        "imitation learning",
+        "reinforcement learning"
+      ],
+      "title_zh": "可扩展的因果模仿学习",
+      "summary_zh": "模仿学习可以利用专家演示在具有潜在奖励信号的未知环境中学习策略，但当模仿者和专家的观察不匹配并且专家演示中存在未观察到的混杂因素时，模仿学习就会陷入困境。通过顺序 $π$ 后门标准识别适当的调整集，因果模仿学习 (CIL) 提供了一个框架，用于从混杂数据中逼近专家的策略。然而，现有的 CIL 方法、因果行为克隆 (Causal BC) 和因果生成对抗性模仿学习 (Causal GAIL) 是为短视野、低维度设置而设计的。当应用于具有长视野和高维状态动作空间的连续控制任务时，这些方法表现出较差的性能：因果BC遭受复合误差，因果GAIL不稳定且样本效率低下，顺序$π$后门调整变得不切实际。我们介绍因果软 Q 模仿学习 (SQIL) 和因果逆软 Q 学习 (IQ-Learn)，这两种非策略因果模仿学习算法将因果调整框架与最先进的逆强化学习目标相结合。两种算法都对由顺序 $π$ 后门标准的有效近似产生的因果调整状态表示进行操作，利用连续控制环境的因果结构来减少对固定大小滑动窗口的全范围调整。我们在一系列混杂环境中评估所有方法，发现因果 SQIL 和因果 IQ-Learn 在长期任务上大大优于先前的 CIL 算法，有时甚至超越了专家，而所有因果无意识的模仿方法都无法学习有意义的行为。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "User-Driven Learning from Demonstration: A Trajectory and Impedance Learning Method",
+      "authors": [
+        "Zi-Qi Yang",
+        "Mehrdad R. Kermani"
+      ],
+      "summary": "This paper presents a method for user-driven robot Learning from Demonstration (LfD) that reduces user effort while ensuring compliant and precise reproduction. The method eliminates repeated teaching for the same task and enables real-time learning from a single demonstration. Demonstrated motions are reproduced with high precision, while impedance variations are learned in real time to provide both compliance and robustness against perturbations. This mitigates potential safety issues in Human-Robot Interaction (HRI) that arise from conventional time-indexed trajectories lacking compliance. The proposed approach integrates a three-dimensional (3D) Fast Diffeomorphic Matching (FDM) algorithm with a Dynamical System (DS)-based motion generator to achieve real-time single-shot demonstration learning and reproduction. An Extended Kalman Filter (EKF) framework compensates for reproduction errors and recovers from external interactions. Furthermore, an impedance parameterization function is incorporated to learn impedance variations from demonstrations and maintain surface contact for specific applications. The proposed approach is validated through comprehensive experiments on a 7 Degree-of-Freedom (DOF) KUKA LWR IV+ robot.",
+      "published": "2026-07-18T23:27:17Z",
+      "updated": "2026-07-18T23:27:17Z",
+      "arxiv_id": "2607.16998v1",
+      "abs_url": "http://arxiv.org/abs/2607.16998v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16998v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "Accepted at IEEE International Conference on Automation Science and Engineering (CASE) 2026, 7 pages",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "感知与3D理解",
+      "score": 8,
+      "anchor_terms": [
+        "robot",
+        "robot learning"
+      ],
+      "matched_terms": [
+        "human-robot interaction",
+        "robot",
+        "robot learning"
+      ],
+      "title_zh": "用户驱动的演示学习：轨迹和阻抗学习方法",
+      "summary_zh": "本文提出了一种用户驱动的机器人从演示中学习（LfD）的方法，该方法可以减少用户的工作量，同时确保合规和精确的复制。该方法消除了对同一任务的重复教学，并能够从单个演示中进行实时学习。所演示的运动以高精度再现，同时实时学习阻抗变化，以提供顺应性和抗扰动的鲁棒性。这减轻了人机交互（HRI）中由于传统时间索引轨迹缺乏合规性而引起的潜在安全问题。该方法将三维（3D）快速微分匹配（FDM）算法与基于动力系统（DS）的运动生成器集成，以实现实时单次演示学习和再现。扩展卡尔曼滤波器 (EKF) 框架可补偿再现错误并从外部交互中恢复。此外，还结合了阻抗参数化功能，可以从演示中了解阻抗变化并保持特定应用的表面接触。所提出的方法通过 7 自由度 (DOF) KUKA LWR IV+ 机器人的综合实验得到验证。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "G2-Nav: Grounded and Guarded Vision-Language Costmaps for Robot Social Navigation",
+      "authors": [
+        "Yuwen Liao",
+        "Yihang Lan",
+        "Yizhuo Yang",
+        "Ruimeng Liu",
+        "Xinhang Xu",
+        "Shenghai Yuan",
+        "Lihua Xie"
+      ],
+      "summary": "Social navigation requires the robot to reason and respond in complex real-world environments. While recent works attempt to incorporate human-level intelligence into robot planning using large Vision-Language Models (VLMs), end-to-end frameworks often create an unpredictable black-box, and existing instruction-following methods are not designed for full autonomy. To bridge this gap, we present G2-Nav, a novel framework that grounds abstract social reasoning and guards safe real-world deployment. Instead of asking the VLM for direct planning decisions, G2-Nav translates its semantic reasoning into a vision-language costmap with reliability and interpretability. The VLM evaluates traversable regions and social agents from open-set perception, mapping social context into the costmap. To improve real-world robustness, the VLM performs semantic verification on upstream tracking, and we introduce a high-frequency safety check to guard against system latency prior to trajectory generation. We demonstrate through real-world experiments that G2-Nav delivers safe, efficient, and socially compliant autonomous navigation in unstructured environments. Code will be made publicly available.",
+      "published": "2026-07-18T20:18:20Z",
+      "updated": "2026-07-18T20:18:20Z",
+      "arxiv_id": "2607.16956v1",
+      "abs_url": "http://arxiv.org/abs/2607.16956v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16956v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "submitted",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 8,
+      "anchor_terms": [
+        "navigation",
+        "robot"
+      ],
+      "matched_terms": [
+        "autonomous navigation",
+        "navigation",
+        "robot"
+      ],
+      "title_zh": "G2-Nav：用于机器人社交导航的接地和防护视觉语言成本图",
+      "summary_zh": "社交导航要求机器人在复杂的现实环境中进行推理和响应。虽然最近的工作尝试使用大型视觉语言模型（VLM）将人类水平的智能纳入机器人规划中，但端到端框架通常会创建不可预测的黑匣子，并且现有的指令跟踪方法并不是为完全自主而设计的。为了弥补这一差距，我们提出了 G2-Nav，这是一种新颖的框架，它以抽象的社会推理为基础，并保障现实世界的安全部署。 G2-Nav 没有要求 VLM 做出直接规划决策，而是将其语义推理转化为具有可靠性和可解释性的视觉语言成本图。 VLM 从开放集感知中评估可遍历区域和社会代理，将社会背景映射到成本图中。为了提高现实世界的鲁棒性，VLM 对上游跟踪进行语义验证，并且我们引入了高频安全检查来防止轨迹生成之前的系统延迟。我们通过现实世界的实验证明，G2-Nav 可在非结构化环境中提供安全、高效且符合社会规范的自主导航。代码将公开。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "What Do They See? Interpreting Complex Road Scenarios Through the Eyes of Vision-Language-Action Models for Safe and Trustworthy Autonomous Vehicle Learning",
+      "authors": [
+        "Kalpana Panda",
+        "Wesley Maia",
+        "Vinti Agarwal",
+        "Ross Greer"
+      ],
+      "summary": "End-to-end autonomous driving models are now able to navigate complex road scenarios, mapping raw sensor observations directly to observed paths for open-loop evaluation and often effective driving in closed-loop evaluation. Yet the internal logic of these safety-critical systems remains largely opaque, due to the complexity of traffic scenes. We propose a counterfactual ablation framework called Counterfactual Vision Action Analysis (CVAA) that systematically removes individual detected objects from front-camera images using photorealistic generative inpainting to prepare counterfactual sets to evaluate the difference in the model's response. This isolates the causal effect of each object's presence on the model's planning behaviour. Applied to the Alpamayo 1 trajectory predictor across 210 nuScenes driving scenes, we create a dataset Counter -nuScenes, using which we see that vehicles and pedestrians within the model's 'path' dominate causal influence as expected, while traffic lights, as expected, exert disproportionate effect relative to their image footprint. However, we also find cases where the model responds strongly to objects a human driver would consider irrelevant. This brings forth a deeper question: does the model itself view the scene as a sum of individual objects influencing the outcome, or does it encode an entirely different set of internal features that do not correspond to human-legible scene elements? To further understand this, we compare intermediate representations of original and inpainted image pairs using mechanistic interpretability techniques and examine the effect of the removal through the various model layers. Together, these two stages offer a path from behavioral auditing to representational understanding, creating explainable driving systems and solidifying human-AI trust.",
+      "published": "2026-07-18T19:20:16Z",
+      "updated": "2026-07-18T19:20:16Z",
+      "arxiv_id": "2607.16938v1",
+      "abs_url": "http://arxiv.org/abs/2607.16938v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16938v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 9,
+      "anchor_terms": [
+        "vision-language-action"
+      ],
+      "matched_terms": [
+        "autonomous vehicle",
+        "vision-language-action"
+      ],
+      "title_zh": "他们看到了什么？通过视觉-语言-动作模型解释复杂的道路场景，实现安全可靠的自动驾驶车辆学习",
+      "summary_zh": "端到端自动驾驶模型现在能够导航复杂的道路场景，将原始传感器观察结果直接映射到观察路径以进行开环评估，并且通常可以在闭环评估中进行有效驾驶。然而，由于交通场景的复杂性，这些安全关键系统的内部逻辑在很大程度上仍然不透明。我们提出了一种称为反事实视觉动作分析（CVAA）的反事实消融框架，该框架使用真实感生成修复系统地从前置摄像头图像中删除单个检测到的物体，以准备反事实集来评估模型响应的差异。这隔离了每个对象的存在对模型规划行为的因果影响。将 Alpamayo 1 轨迹预测器应用于 210 个 nuScenes 驾驶场景中，我们创建了一个数据集 Counter -nuScenes，使用它我们可以看到模型“路径”内的车辆和行人如预期的那样在因果影响中占主导地位，而交通信号灯如预期的那样，相对于其图像足迹产生了不成比例的影响。然而，我们也发现模型对人类驾驶员认为不相关的物体做出强烈反应的情况。这就提出了一个更深层次的问题：模型本身是否将场景视为影响结果的各个对象的总和，或者它是否编码了一组完全不同的内部特征，这些特征与人类可读的场景元素不对应？为了进一步理解这一点，我们使用机械可解释性技术比较原始图像对和修复图像对的中间表示，并通过各个模型层检查删除的效果。这两个阶段共同提供了一条从行为审计到代表性理解、创建可解释的驾驶系统和巩固人类与人工智能信任的路径。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "PREFAIL: Identifying Precursors to Failures in Robotic Lift-and-Place Tasks to Improve Task Execution Performance",
+      "authors": [
+        "Zeyu Shangguan",
+        "Rajas Chitale",
+        "Rutvik Patel",
+        "Satyandra K. Gupta",
+        "Daniel Seita"
+      ],
+      "summary": "Non-prehensile manipulation enables flexible material handling with part carriers, but friction-based support makes high-speed motions failure-prone, while slower operation increases cycle time. Proactive failure prediction is therefore essential for efficient and reliable performance, yet existing approaches remain limited by key constraints, including sensitivity to dynamic actions and high dependence on known policy structures. Furthermore, existing methods and datasets lack a precise characterization of the latest intervention time, leaving it unclear whether a detected failure can still be prevented through timely intervention. In this paper, we investigate lift-and-place tasks for non-prehensile material handling manipulation and propose a more effective approach to predicting precursors to failures (PREFAIL) by analyzing the relative motion of target objects with respect to the carrier. We further introduce a dataset that precisely identifies the latest intervention time for risky manipulations, enabling rigorous evaluation of whether a failure prediction is actionable. We validate our approach on both simulation and real-world datasets. Our experimental results demonstrate that PREFAIL substantially improves both the accuracy and timeliness of responses to failure precursors.",
+      "published": "2026-07-18T18:25:58Z",
+      "updated": "2026-07-18T18:25:58Z",
+      "arxiv_id": "2607.16921v1",
+      "abs_url": "http://arxiv.org/abs/2607.16921v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16921v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 8,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "PREFAIL：识别机器人升降放置任务中失败的前兆，以提高任务执行性能",
+      "summary_zh": "非抓握式操纵可以通过零件载体灵活地处理物料，但基于摩擦的支撑使高速运动容易发生故障，而较慢的操作会增加循环时间。因此，主动故障预测对于高效和可靠的性能至关重要，但现有方法仍然受到关键约束的限制，包括对动态行动的敏感性和对已知政策结构的高度依赖。此外，现有的方法和数据集缺乏对最新干预时间的精确表征，因此不清楚是否仍然可以通过及时干预来预防检测到的故障。在本文中，我们研究了非抓取性材料搬运操作的提升和放置任务，并提出了一种通过分析目标物体相对于载体的相对运动来预测故障前兆（PREFAIL）的更有效方法。我们进一步引入了一个数据集，可以精确识别风险操作的最新干预时间，从而能够严格评估故障预测是否可行。我们在模拟和现实数据集上验证了我们的方法。我们的实验结果表明，PREFAIL 显着提高了对故障前兆响应的准确性和及时性。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "A BIM-enabled, Agent-based Discrete-event Simulation Platform for Robotic Studies: A Method based on Graph Theory",
+      "authors": [
+        "Ping Xu",
+        "Xinghua Gao"
+      ],
+      "summary": "Indoor robots are increasingly employed for facility management tasks such as cleaning and inspection. These applications primarily rely on navigation and can be effectively supported by predefined routes or perception-driven Simultaneous Localization and Mapping (SLAM) techniques. However, more complex tasks, such as locating and repairing leaking pipes, require not only navigation but also access to building information, including the location, geometry, material, and operational attributes of components. Existing navigation approaches provide only limited environmental understanding and cannot readily supply such information. In contrast, Building Information Modeling (BIM) contains rich geometric, semantic, and operational information that remains largely underutilized in robotic applications. This study proposes a BIM-enabled, agent-based simulation platform for knowledge-driven indoor robot navigation and operation planning. Within the framework, indoor environments are discretized into grid cells that are mapped to graph nodes and classified as target, obstacle, or regular nodes according to their spatial relationships with building elements. Traversal costs are assigned to edges connecting neighboring nodes, enabling graph-theoretic algorithms to compute efficient and collision-free navigation paths while avoiding obstacles. Simulation results demonstrate that the proposed graph representation enables efficient and collision-free navigation. A key limitation associated with coarse discretization, namely overlap between target-occupied and obstacle-occupied cells, is identified and mitigated through grid refinement, improving spatial accuracy and path feasibility. The proposed platform supports virtual evaluation of robotic operations prior to deployment and provides a foundation for BIM-informed robotic systems in facility management.",
+      "published": "2026-07-18T18:25:56Z",
+      "updated": "2026-07-18T18:25:56Z",
+      "arxiv_id": "2607.16920v1",
+      "abs_url": "http://arxiv.org/abs/2607.16920v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16920v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.SE"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "世界模型与仿真",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 9,
+      "anchor_terms": [
+        "navigation",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "navigation",
+        "robot",
+        "robotic",
+        "slam"
+      ],
+      "title_zh": "基于 BIM 的、基于 Agent 的机器人研究离散事件仿真平台：基于图论的方法",
+      "summary_zh": "室内机器人越来越多地用于清洁和检查等设施管理任务。这些应用程序主要依赖于导航，并且可以得到预定义路线或感知驱动的同步定位与地图构建（SLAM）技术的有效支持。然而，更复杂的任务，例如定位和修复泄漏管道，不仅需要导航，还需要访问建筑信息，包括组件的位置、几何形状、材料和操作属性。现有的导航方法仅提供有限的环境理解并且不能轻易提供此类信息。相比之下，建筑信息模型 (BIM) 包含丰富的几何、语义和操作信息，而这些信息在机器人应用中很大程度上仍未得到充分利用。本研究提出了一个支持 BIM、基于代理的模拟平台，用于知识驱动的室内机器人导航和操作规划。在该框架内，室内环境被离散化为网格单元，这些网格单元被映射到图节点，并根据其与建筑元素的空间关系被分类为目标、障碍物或常规节点。遍历成本分配给连接相邻节点的边，使图论算法能够计算高效且无碰撞的导航路径，同时避开障碍物。仿真结果表明，所提出的图形表示能够实现高效且无碰撞的导航。与粗离散化相关的一个关键限制，即目标占据单元和障碍物占据单元之间的重叠，通过网格细化来识别和减轻，从而提高空间精度和路径可行性。所提出的平台支持在部署之前对机器人操作进行虚拟评估，并为设施管理中基于 BIM 的机器人系统提供基础。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "Environment-free Synthetic Data Generation for API-Calling Agents",
+      "authors": [
+        "Seanie Lee",
+        "Sanjoy Chowdhury",
+        "Chao Jiang",
+        "Cheng-Yu Hsieh",
+        "Ting-Yao Hu",
+        "Alexander T Toshev",
+        "Oncel Tuzel",
+        "Raviteja Vemulapalli"
+      ],
+      "summary": "Training API-calling large language model (LLM) agents demands massive amounts of high-quality trajectories. However, collecting such data at scale typically requires fully implemented environments with executable APIs and realistic, pre-populated backend databases, creating a major bottleneck for scalability. To overcome this, we propose an environment-free synthetic data generation approach that leverages LLMs as on-the-fly digital world models. Given only API specifications, our method generates trajectories mimicking interactions between an agent and a stateful environment. Specifically, an LLM first generates diverse tasks solvable with the provided APIs. A teacher agent then iteratively solves each task while an LLM simulator generates coherent synthetic API responses conditioned on the task context and simulation history. Finally, an LLM judge filters the trajectories to ensure the quality of the resulting dataset. We evaluate our approach on the challenging AppWorld and OfficeBench benchmarks, which include both information-retrieval and state-changing tasks. Fine-tuning models on our synthetic data yields significant performance gains, demonstrating that effective supervision for API-calling agents can be generated without any executable environment. Our results establish LLM-based API simulation as a practical, scalable solution for training agents across diverse API ecosystems.",
+      "published": "2026-07-18T17:36:44Z",
+      "updated": "2026-07-18T17:36:44Z",
+      "arxiv_id": "2607.16900v1",
+      "abs_url": "http://arxiv.org/abs/2607.16900v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16900v1",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "数据集/评测"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 2,
+      "anchor_terms": [
+        "world model"
+      ],
+      "matched_terms": [
+        "simulator",
+        "world model"
+      ],
+      "title_zh": "为 API 调用代理生成无环境的综合数据",
+      "summary_zh": "训练 API 调用大型语言模型 (LLM) 代理需要大量高质量的轨迹。然而，大规模收集此类数据通常需要具有可执行 API 和现实的、预先填充的后端数据库的完全实施的环境，从而造成可扩展性的主要瓶颈。为了克服这个问题，我们提出了一种无环境的合成数据生成方法，利用法学硕士作为动态数字世界模型。仅给定 API 规范，我们的方法就会生成模仿代理和有状态环境之间交互的轨迹。具体来说，法学硕士首先生成可使用提供的 API 解决的各种任务。然后，教师代理迭代地解决每个任务，同时 LLM 模拟器根据任务上下文和模拟历史生成一致的合成 API 响应。最后，法学硕士法官过滤轨迹以确保结果数据集的质量。我们在具有挑战性的 AppWorld 和 OfficeBench 基准上评估我们的方法，其中包括信息检索和状态更改任务。对我们的合成数据进行微调模型可以显着提高性能，这表明可以在没有任何可执行环境的情况下生成对 API 调用代理的有效监督。我们的结果将基于 LLM 的 API 模拟确立为一种实用的、可扩展的解决方案，用于跨不同 API 生态系统培训代理。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "GLidE-SLAM: GL-Accelerated Indirect-Direct Embedded SLAM",
+      "authors": [
+        "Carlos A. Pinheiro de Sousa",
+        "Heiko Hamann",
+        "Oliver Deussen"
+      ],
+      "summary": "With the growing demand for robotics, autonomous drones, and wearable extended reality systems, the deployment of Visual SLAM on embedded devices remains challenging. Tracking must sustain high frame rates while preserving compute resources for map extension and maintenance. This paper presents GLidE-SLAM, a monocular hybrid indirect-direct framework that addresses this by architectural separation: the system performs GPU-accelerated direct tracking on intermediate frames, while reserving the full indirect pipeline for map extension and global consistency. We leverage highly parallel image-alignment operations for pose-only estimation without depth optimization or map point creation, making the workload suitable for GPU offloading and freeing CPU resources for backend tasks. We implement the direct tracker using vendor-agnostic OpenGL ES~3.1 compute shaders, enabling deployment across a broader range of commodity embedded platforms without requiring CUDA support. To our knowledge, this is the first complete direct photometric pose estimator realized via compute shaders for embedded-class devices. Experiments on target platforms demonstrate up to 9$\\times$ higher frame rates than the CPU-only baseline while maintaining trajectory accuracy and improving practical deployment across commodity resource-constrained hardware.",
+      "published": "2026-07-18T17:32:40Z",
+      "updated": "2026-07-18T17:32:40Z",
+      "arxiv_id": "2607.16897v1",
+      "abs_url": "http://arxiv.org/abs/2607.16897v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16897v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "7 pages, 6 figures, 4 tables. Accepted for presentation at the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 9,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "drone",
+        "robot",
+        "robotic",
+        "robotics",
+        "slam"
+      ],
+      "title_zh": "GLidE-SLAM：GL加速间接-直接嵌入式SLAM",
+      "summary_zh": "随着对机器人、自主无人机和可穿戴扩展现实系统的需求不断增长，在嵌入式设备上部署视觉 SLAM 仍然具有挑战性。跟踪必须维持高帧速率，同时保留用于地图扩展和维护的计算资源。本文提出了 GLidE-SLAM，这是一种单目混合间接直接框架，通过架构分离解决了这个问题：系统对中间帧执行 GPU 加速的直接跟踪，同时保留完整的间接管道用于地图扩展和全局一致性。我们利用高度并行的图像对齐操作进行仅姿态估计，无需深度优化或地图点创建，使工作负载适合 GPU 卸载，并为后端任务释放 CPU 资源。我们使用与供应商无关的 OpenGL ES~3.1 计算着色器来实现直接跟踪器，从而可以在更广泛的商用嵌入式平台上进行部署，而无需 CUDA 支持。据我们所知，这是第一个通过嵌入式设备的计算着色器实现的完整的直接光度姿态估计器。目标平台上的实验表明，帧速率比仅使用 CPU 的基准高出 9 倍，同时保持轨迹准确性并改进跨商品资源受限硬件的实际部署。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "InLiER: Learning-Free Heterogeneous LiDAR Place Recognition via Intermediate Mixed-Radix Structural Keypoint Tokenization",
+      "authors": [
+        "Nikolaos Stathoulopoulos",
+        "George Nikolakopoulos"
+      ],
+      "summary": "LiDAR place recognition supports loop closure, relocalization, and multi-agent map management. As robotic platforms increasingly combine LiDARs with different fields of view, resolutions, and scanning patterns, existing descriptors degrade because they are tightly coupled to sensor-specific characteristics. We present InLiER, a learning-free pipeline based on an intermediate tokenization step. Height-sliced keypoints from structural elements receive mixed-radix token IDs encoding height, radial distance, local shape, and azimuth from local 3D geometry, in a compact sub-2KB representation. The same vocabulary is reorganized across three retrieval stages: height-ceiling histogram intersection for fast rotation-invariant shortlisting, binary bitmask alignment for yaw estimation and reranking, and token-guided geometric verification for 6-DoF pose estimation. InLiER achieves state-of-the-art performance on the HeLiPR dataset and in real-world field experiments, among modern handcrafted methods and outperforms the learning-based baseline on most cross-sensor configurations.",
+      "published": "2026-07-18T15:55:36Z",
+      "updated": "2026-07-18T15:55:36Z",
+      "arxiv_id": "2607.16862v1",
+      "abs_url": "http://arxiv.org/abs/2607.16862v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16862v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "comment": "Accepted for publication in IEEE Robotics and Automation Letters (RA-L). 8 pages, 8 figures",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "数据集/评测",
+      "score": 6,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "InLiER：通过中间混合基结构关键点标记化进行免学习异构 LiDAR 位置识别",
+      "summary_zh": "LiDAR 地点识别支持闭环、重定位和多智能体地图管理。随着机器人平台越来越多地将激光雷达与不同视场、分辨率和扫描模式相结合，现有的描述符会退化，因为它们与传感器特定的特性紧密耦合。我们提出了 InLiER，一种基于中间标记化步骤的免学习管道。来自结构元素的高度切片关键点接收混合基数标记 ID，以紧凑的低于 2KB 的表示形式对本地 3D 几何图形的高度、径向距离、局部形状和方位角进行编码。相同的词汇在三个检索阶段进行重新组织：用于快速旋转不变入围的高度-天花板直方图交叉、用于偏航估计和重新排名的二进制位掩码对齐，以及用于 6-DoF 位姿估计的令牌引导几何验证。 InLiER 在 HeLiPR 数据集和现实世界的现场实验中，在现代手工方法中实现了最先进的性能，并且在大多数跨传感器配置上优于基于学习的基线。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "Robust PnP on a Neuromorphic Processor for Object Pose Estimation",
+      "authors": [
+        "Tam Ngoc-Bang Nguyen",
+        "Mohsi Jawaid",
+        "Tat-Jun Chin"
+      ],
+      "summary": "Neuromorphic computing is gaining attention in robotic perception due to its higher energy efficiency. While neural network-based methods can more readily exploit the distributed and parallelized structure of neuromorphic computers, crafting neuromorphic solutions for non-learning tasks is less straightforward. This hampers the usage of neuromorphic computing for perception pipelines that depend on both learning and non-learning components, such as object pose estimation (OPE) where state-of-the-art methods use a deep network to predict 2D landmarks and nonlinear optimization to solve perspective-n-point (PnP). In this paper, we propose a novel neuromorphic-deployable formulation for robust PnP, where given outlier-prone 2D-3D correspondences, the object pose with the largest number of inliers is determined. Underpinning our method is a distributed algorithm for robust least squares estimation of rigid body pose that can be executed on a neuromorphic processor. We also design a spiking neural network (SNN) to predict 2D landmarks from event data, where the main layers of the SNN were designed according to the principles of spiking neurons. Overall, our work enables neuromorphic treatment of the major stages of an OPE pipeline, from event sensing and learned landmark prediction, to geometric optimization for robust PnP. Results on neuromophic hardware (Intel Loihi 2) indicate the higher energy efficiency our neuromorphic robust PnP, while achieving competitive accuracy.",
+      "published": "2026-07-18T14:13:29Z",
+      "updated": "2026-07-18T14:13:29Z",
+      "arxiv_id": "2607.16834v1",
+      "abs_url": "http://arxiv.org/abs/2607.16834v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16834v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.ET"
+      ],
+      "comment": "12 pages",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "感知与3D理解",
+      "score": 3,
+      "anchor_terms": [
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "神经形态处理器上用于物体姿态估计的鲁棒 PnP",
+      "summary_zh": "神经形态计算由于其更高的能源效率而在机器人感知领域受到关注。虽然基于神经网络的方法可以更容易地利用神经形态计算机的分布式和并行结构，但为非学习任务制定神经形态解决方案却不太简单。这阻碍了神经形态计算在依赖于学习和非学习组件的感知管道中的使用，例如对象姿态估计（OPE），其中最先进的方法使用深度网络来预测 2D 地标和非线性优化来解决透视 n 点（PnP）。在本文中，我们提出了一种用于鲁棒 PnP 的新型神经形态可部署公式，其中给定容易出现异常值的 2D-3D 对应关系，确定具有最大数量内点的对象姿势。我们的方法的基础是一种分布式算法，用于对刚体姿态进行稳健的最小二乘估计，该算法可以在神经形态处理器上执行。我们还设计了一个尖峰神经网络（SNN）来根据事件数据预测 2D 地标，其中 SNN 的主要层是根据尖峰神经元的原理设计的。总的来说，我们的工作能够对 OPE 管道的主要阶段进行神经拟态处理，从事件感知和学习的地标预测，到稳健 PnP 的几何优化。神经形态硬件（Intel Loihi 2）的结果表明，我们的神经形态鲁棒 PnP 具有更高的能源效率，同时实现了有竞争力的准确性。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "Token-Wise Latent Streaming from Slow Reasoners to Fast Planners for Dynamic Vision Language Navigation",
+      "authors": [
+        "Tianshuai Hu",
+        "Yangyi Zhong",
+        "Zeying Gong",
+        "Lingdong Kong",
+        "Xiaodong Mei",
+        "Guoyang Zhao",
+        "Xiaolu Liu",
+        "Song Wang",
+        "Rong Li",
+        "Junwei Liang"
+      ],
+      "summary": "Vision-Language Navigation in dynamic, human-centric environments exposes a fundamental tension: linguistic reasoning is slow and deliberative, whereas safe, socially compliant planning should be instant and reactive. The resulting observation staleness is safety-critical: a maneuver chosen during inference can already be unsafe by the time it executes. We observe that, long before a VLM finishes its inference, its intermediate hidden states already encode action-relevant intent. We propose SPARK-VLN, a dual-system framework for dynamic social VLN that streams the slow VLM reasoner's knowledge to a fast flow-matching expert planner throughout token generation, providing fresh and evolving guidance during inference. This design is realized by three modules: a Token-Wise Hidden Streamer that extracts intermediate hidden states along the token generation process, a Sequence-to-Slot Latent Bridge that projects them into fixed-size latent slots, and an Evolving Latent Conditioner that infuses them into the expert planner. We also introduce a human-centric benchmark suite for dynamic social vision-language navigation that keeps pedestrians and the robot active throughout inference and reports navigation success, social compliance, human collisions, and explicit staleness statistics. Across these settings, SPARK-VLN mproves navigation success and social compliance while sustaining inference efficiency. Webpage: https://hutslib.github.io/SPARK-VLN/.",
+      "published": "2026-07-18T12:55:40Z",
+      "updated": "2026-07-18T12:55:40Z",
+      "arxiv_id": "2607.16806v1",
+      "abs_url": "http://arxiv.org/abs/2607.16806v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16806v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 7,
+      "anchor_terms": [
+        "navigation",
+        "robot"
+      ],
+      "matched_terms": [
+        "navigation",
+        "robot",
+        "vln"
+      ],
+      "title_zh": "用于动态视觉语言导航的从缓慢推理器到快速规划器的令牌明智潜在流",
+      "summary_zh": "动态的、以人为中心的环境中的视觉语言导航暴露了一种根本的张力：语言推理是缓慢的、深思熟虑的，而安全的、符合社会要求的规划应该是即时的、反应性的。由此产生的观察陈旧性对于安全至关重要：在推理过程中选择的操作在执行时可能已经不安全了。我们观察到，早在 VLM 完成推理之前，其中间隐藏状态就已经编码了与动作相关的意图。我们提出了 SPARK-VLN，这是一种用于动态社交 VLN 的双系统框架，可在整个代币生成过程中将缓慢的 VLM 推理器的知识传输到快速的流程匹配专家规划器，从而在推理过程中提供新鲜且不断发展的指导。该设计由三个模块实现：一个在令牌生成过程中提取中间隐藏状态的令牌明智隐藏流器（Token-Wise Hidden Streamer），一个将它们投射到固定大小的潜在槽中的序列到槽潜在桥（Sequence-to-Slot Latent Bridge），以及一个将它们注入专家规划器的进化潜在调节器（Evolving Latent Conditioner）。我们还引入了一个以人为中心的基准套件，用于动态社交视觉语言导航，使行人和机器人在整个推理过程中保持活跃，并报告导航成功、社会合规性、人类碰撞和明确的陈旧统计数据。在这些设置中，SPARK-VLN 提高了导航成功率和社会合规性，同时保持推理效率。网页：https://hutslib.github.io/SPARK-VLN/。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution",
+      "authors": [
+        "Yang Liu",
+        "Weixing Chen",
+        "Xinshuai Song",
+        "Tao Pu",
+        "Siwen Mo",
+        "Yongjie Bai",
+        "Zihao Chen",
+        "Qianran Sun",
+        "Liruo Zhong",
+        "Ying Shen",
+        "Liang Lin"
+      ],
+      "summary": "Vision-language-action models, world models, and agentic planners each advance physical intelligence, yet their composition lacks a common execution abstraction, shared state, semantic verification, and persistent experience across heterogeneous embodiments. We present PhyAgentOS, a runtime foundation delivering scheduling, verification, memory, benchmarking, and safety as system-level services. Its Session-Centered Runtime treats a session, not an action, as the minimum unit of scheduling, compatibility preflight, supervised execution, evidence collection, and acceptance. To decouple cognition from physical execution, the cognition-physics boundary is a file system: the State-as-a-File protocol materializes cross-layer state as Markdown with YAML, yielding inspectable, versionable records without code dependencies between Agent and Runtime layers. These views form a unified cognitive state space aligning intent, capabilities, environment, execution, and experience. The SessionVerifier distinguishes execution termination from semantic task completion via evidence-grounded verdicts of success, failure, or replan. Verified outcomes are consolidated through epistemic memory into reusable knowledge and corrective lessons, closing a trial-and-error loop without retraining. Benchmarking reuses the deployment session and verification path, so results trace to real execution. Layered safety constrains both policy-driven and agent-driven execution: preflight, action bridges, SafetyGuard, heartbeat monitoring, and target-local constraints. Validation is progressive: games test cognitive planning, simulation adds dynamics and control, real robots add hardware noise, with the cognitive layer held constant. PhyAgentOS is benchmarked on Optimus-67, StarDojo, and DST-Dojo, validated on 19+ simulated and physical embodiments, and gains on LIBERO, Calvin, and RoboCasa365 across multiple VLA models.",
+      "published": "2026-07-18T04:46:53Z",
+      "updated": "2026-07-18T04:46:53Z",
+      "arxiv_id": "2607.16636v1",
+      "abs_url": "http://arxiv.org/abs/2607.16636v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16636v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "世界模型与仿真",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 32,
+      "anchor_terms": [
+        "embodied",
+        "embodied agent",
+        "embodied agents",
+        "robot",
+        "vision-language-action",
+        "vla",
+        "world model"
+      ],
+      "matched_terms": [
+        "calvin",
+        "embodied",
+        "embodied agent",
+        "embodied agents",
+        "libero",
+        "robocasa",
+        "robot",
+        "vision-language-action",
+        "vla",
+        "vla model",
+        "world model"
+      ],
+      "title_zh": "PhyAgentOS：用于具有解耦认知规划和物理执行的实体代理的自我进化操作系统",
+      "summary_zh": "视觉-语言-动作模型、世界模型和代理规划器各自提高了物理智能，但它们的组合缺乏通用的执行抽象、共享状态、语义验证和跨异构实施例的持久体验。我们推出 PhyAgentOS，这是一个运行时基础，将调度、验证、内存、基准测试和安全性作为系统级服务提供。其以会话为中心的运行时将会话（而不是操作）视为调度、兼容性预检、监督执行、证据收集和验收的最小单位。为了将认知与物理执行分离，认知物理边界是一个文件系统：状态即文件协议将跨层状态具体化为带有 YAML 的 Markdown，从而生成可检查、可版本化的记录，而无需代理层和运行时层之间的代码依赖性。这些视图形成了一个统一的认知状态空间，协调意图、能力、环境、执行和经验。 SessionVerifier 通过基于证据的成功、失败或重新计划判断来区分执行终止和语义任务完成。经过验证的结果通过认知记忆整合为可重复使用的知识和纠正课程，从而无需重新培训即可结束试错循环。基准测试重用部署会话和验证路径，因此结果可以追溯到实际执行。分层安全限制了策略驱动和代理驱动的执行：预检、操作桥、SafetyGuard、心跳监控和目标本地约束。验证是渐进的：游戏测试认知计划，模拟增加动态和控制，真实机器人增加硬件噪音，认知层保持不变。 PhyAgentOS 以 Optimus-67、StarDojo 和 DST-Dojo 为基准，在 19 多个模拟和物理实施例中进行了验证，并在多个 VLA 模型中获得了 LIBERO、Calvin 和 RoboCasa365 的提升。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "AI-Augmented Model Predictive Control for Safe and Adaptive Rendezvous and Proximity Operations",
+      "authors": [
+        "Luca Sportelli",
+        "Tyler Barr",
+        "Cagri Kilic",
+        "Di Wu"
+      ],
+      "summary": "Autonomous rendezvous and proximity operations (RPO) in adversarial orbital environments require guidance architectures balancing target pursuit, safety preservation, and real-time adaptability under dynamically evolving interaction conditions. Although learning-based approaches show promise, their application to safety-critical orbital robotics remains limited by concerns regarding interpretability, robustness, and constraint awareness. This work presents an adaptive Model Predictive Control (MPC) framework for autonomous spacecraft RPO in multi-agent adversarial scenarios. The proposed architecture combines a constrained receding-horizon MPC formulation with a data-driven supervisory tuning layer that adjusts controller parameters from offline closed-loop evaluation and online interaction geometry. Relative motion follows Clohessy-Wiltshire (CW) dynamics, enabling computationally efficient finite-horizon prediction and real-time quadratic optimization. The MPC formulation incorporates actuator limits, predictive keep-out-zone constraints, slack-variable feasibility handling, and optional Control Barrier Function (CBF) safety filtering. Rather than generating thrust commands directly, the adaptive layer modifies interpretable MPC parameters, including tracking weights, safety penalties, minimum-separation objectives, and keep-out-zone objectives. The framework was evaluated in the official Kerbal Space Program Differential Game (KSPDG) Capture-the-Satellite environment through Monte Carlo simulations. Results demonstrate improved closed-loop robustness, adaptive maneuvering behavior, and rendezvous performance compared with fixed-parameter MPC while preserving safety-aware operation and real-time feasibility, providing a modular, interpretable foundation for adaptive spacecraft RPO.",
+      "published": "2026-07-18T04:20:23Z",
+      "updated": "2026-07-18T04:20:23Z",
+      "arxiv_id": "2607.16630v1",
+      "abs_url": "http://arxiv.org/abs/2607.16630v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16630v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "34 pages, 7 figures",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 6,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "用于安全、自适应交会和接近操作的人工智能增强模型预测控制",
+      "summary_zh": "敌对轨道环境中的自主交会和邻近操作（RPO）需要制导架构在动态变化的交互条件下平衡目标追踪、安全保护和实时适应性。尽管基于学习的方法显示出希望，但它们在安全关键型轨道机器人技术中的应用仍然受到可解释性、鲁棒性和约束意识方面的担忧的限制。这项工作提出了一种用于多智能体对抗场景中自主航天器 RPO 的自适应模型预测控制（MPC）框架。所提出的架构将约束后退视野 MPC 公式与数据驱动的监督调整层相结合，该层通过离线闭环评估和在线交互几何来调整控制器参数。相对运动遵循 Clohessy-Wiltshire (CW) 动力学，从而实现计算高效的有限范围预测和实时二次优化。 MPC 公式结合了执行器限制、预测禁入区约束、松弛变量可行性处理和可选的控制屏障功能 (CBF) 安全过滤。自适应层不是直接生成推力命令，而是修改可解释的 MPC 参数，包括跟踪权重、安全惩罚、最小分离目标和禁区目标。该框架通过蒙特卡罗模拟在官方坎巴拉太空计划差分博弈 (KSPDG) 捕获卫星环境中进行了评估。结果表明，与固定参数 MPC 相比，闭环稳健性、自适应机动行为和交会性能得到改善，同时保留安全意识操作和实时可行性，为自适应航天器 RPO 提供模块化、可解释的基础。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "SAGE: A Socially-Aware Generative Engine for Heterogeneous Multi-Agent Navigation",
+      "authors": [
+        "Lan Hu",
+        "Minghui Liwang",
+        "Wenbo Zhu",
+        "Xinlei Yi",
+        "Yiguang Hong",
+        "Xianbin Wang",
+        "Zhenzhen Jiao",
+        "Seyyedali Hosseinalipour"
+      ],
+      "summary": "Safe and socially compliant navigation in open human-robot environments requires robots to reason about heterogeneous participants with different dynamics, autonomy levels, and social roles. Existing trajectory prediction and planning methods often rely on homogeneous interaction assumptions or enforce only geometric collision constraints, making it difficult to jointly model asymmetric interactions, coupled prediction-planning, and soft social norms. This paper proposes SAGE, a socially-aware generative engine for heterogeneous multi-agent navigation. SAGE represents robots and surrounding entities as a directed heterogeneous graph and employs a Heterogeneous Graph Transformer (HGT) to encode type-specific asymmetric interactions. Conditioned on the resulting context, a diffusion-based generative module jointly models future entity trajectories and robot trajectory plans. During inference, a training-free safety-social energy guidance mechanism refines sampled robot trajectories using differentiable collision, kinematic, task-progress, and role-conditioned social-compliance terms. Extensive experiments on real-world (ETH/UCY and SDD) and synthetic datasets verify the effectiveness of SAGE in improving safety and social compliance while maintaining task performance. The proposed guidance mechanism consistently reduces collision and social-violation rates, scales to teams of up to 20 robots, and enables explicit control of the safety-accuracy-task trade-off without retraining. These findings demonstrate the potential of SAGE as a scalable framework for socially-aware multi-agent navigation in complex environments.",
+      "published": "2026-07-18T03:40:59Z",
+      "updated": "2026-07-18T03:40:59Z",
+      "arxiv_id": "2607.16619v1",
+      "abs_url": "http://arxiv.org/abs/2607.16619v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16619v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.MA"
+      ],
+      "comment": "16 pages, 5 figures, and 14 tables. Includes supplementary experimental details",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "世界模型与仿真",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 6,
+      "anchor_terms": [
+        "navigation",
+        "robot"
+      ],
+      "matched_terms": [
+        "navigation",
+        "robot"
+      ],
+      "title_zh": "SAGE：用于异构多​​代理导航的社交感知生成引擎",
+      "summary_zh": "在开放的人类机器人环境中，安全且符合社会规范的导航需要机器人能够推理具有不同动态、自主水平和社会角色的异构参与者。现有的轨迹预测和规划方法通常依赖于同质交互假设或仅强制几何碰撞约束，这使得难以对不对称交互、耦合预测规划和软社会规范进行联合建模。本文提出了 SAGE，一种用于异构多​​智能体导航的社交感知生成引擎。 SAGE 将机器人和周围实体表示为有向异构图，并采用异构图变换器 (HGT) 来编码特定类型的不对称交互。以生成的上下文为条件，基于扩散的生成模块对未来实体轨迹和机器人轨迹计划进行联合建模。在推理过程中，免训练的安全社会能量引导机制使用可微的碰撞、运动学、任务进度和角色条件的社会合规术语来细化采样的机器人轨迹。对现实世界（ETH/UCY 和 SDD）和合成数据集的大量实验验证了 SAGE 在提高安全性和社会责任性同时保持任务绩效方面的有效性。所提出的引导机制持续降低碰撞和社会违规率，可扩展到最多 20 个机器人的团队，并且无需重新训练即可明确控制安全性-准确性-任务权衡。这些发现证明了 SAGE 作为复杂环境中具有社交意识的多智能体导航的可扩展框架的潜力。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "An Indoor Navigation System for the Visually Impaired based on UWB Positioning and D* Lite Path Planning Algorithm",
+      "authors": [
+        "Thanh C. Vo",
+        "Dong LT. Tran",
+        "Huy HM. Le",
+        "Duyen N Ha",
+        "Tuan Anh Pham",
+        "Hai Thanh Dang",
+        "Hoang T. Tran"
+      ],
+      "summary": "This paper proposes an indoor navigation system for the visually impaired, leveraging Ultra-Wideband (UWB) positioning technology and the D*Lite path planning algorithm. The system utilizes UWB sensors to provide precision localization in GPS-denied environments. The D* Lite algorithm is integrated to optimize travel trajectories and ensure rapid route re-planning in the presence of dynamic obstacles. Experimental results demonstrate that the system operates reliably with low latency, providing safety and flexibility for users in complex indoor spaces.",
+      "published": "2026-07-18T03:24:44Z",
+      "updated": "2026-07-18T03:24:44Z",
+      "arxiv_id": "2607.16614v1",
+      "abs_url": "http://arxiv.org/abs/2607.16614v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16614v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "comment": "6 pages, 7 figures, 3 tables",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动"
+      ],
+      "topic": "导航与移动",
+      "score": 6,
+      "anchor_terms": [
+        "navigation"
+      ],
+      "matched_terms": [
+        "navigation",
+        "path planning"
+      ],
+      "title_zh": "基于UWB定位和D* Lite路径规划算法的室内视障导航系统",
+      "summary_zh": "本文提出了一种针对视障人士的室内导航系统，利用超宽带（UWB）定位技术和D*Lite路径规划算法。该系统利用 UWB 传感器在 GPS 无法使用的环境中提供精确定位。集成的 D* Lite 算法可优化行驶轨迹并确保在存在动态障碍物时快速重新规划路线。实验结果表明，系统运行可靠、延迟低，为用户在复杂的室内空间中提供安全性和灵活性。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    },
+    {
+      "title": "Autonomous VR-Based Risk Detection for Situational Awareness in Dangerous Settings",
+      "authors": [
+        "Mohammad Eskandari",
+        "Murali Krishna Varma Indukuri",
+        "Stephanie M. Lukin",
+        "Cynthia Matuszek"
+      ],
+      "summary": "In high-risk environments such as disaster response, situational awareness depends not only on detecting hazards but also on communicating them clearly to human operators. Vision Language Models (VLMs) have shown strong potential for scene understanding in safety-critical settings, yet their value as part of human-facing robotic systems remains underexplored. We present a VR-based Human Robot Interaction framework for studying how VLM-assisted robots can support situational awareness in simulated hazardous environments. In our system, a robot explores a virtual scene and queries a VLM to identify potential hazards and annotate user-facing points of interest. These annotations are presented to a human operator through an immersive VR interface. This framework enables controlled evaluation of both robotic hazard identification and the communication of safety-critical information to users. Results from our study indicate that the annotated VR interface was preferred over the unannotated baseline and that participants reported high clarity, usefulness, and comfort when interacting with the system. These findings suggest that combining VLM-based robotic perception with immersive visualization is a promising approach for supporting situational awareness in hazardous settings.",
+      "published": "2026-07-18T01:48:25Z",
+      "updated": "2026-07-18T01:48:25Z",
+      "arxiv_id": "2607.16582v1",
+      "abs_url": "http://arxiv.org/abs/2607.16582v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16582v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "comment": "7 Pages, Accepted to RO-MAN 2026",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "数据集/评测",
+      "score": 5,
+      "anchor_terms": [
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "基于 VR 的自主风险检测，用于危险环境中的态势感知",
+      "summary_zh": "在灾害响应等高风险环境中，态势感知不仅取决于检测危险，还取决于将危险清楚地传达给操作人员。视觉语言模型 (VLM) 在安全关键环境中显示出强大的场景理解潜力，但其作为面向人的机器人系统一部分的价值仍未得到充分开发。我们提出了一个基于 VR 的人机交互框架，用于研究 VLM 辅助机器人如何支持模拟危险环境中的态势感知。在我们的系统中，机器人探索虚拟场景并查询 VLM 以识别潜在危险并注释面向用户的兴趣点。这些注释通过沉浸式 VR 界面呈现给操作员。该框架能够对机器人危险识别和向用户传达安全关键信息进行受控评估。我们的研究结果表明，带注释的 VR 界面优于未注释的基线，并且参与者在与系统交互时报告了高清晰度、实用性和舒适度。这些发现表明，将基于 VLM 的机器人感知与沉浸式可视化相结合是支持危险环境中态势感知的一种有前途的方法。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-21T01:23:22.176792+00:00"
+      }
+    }
+  ]
 }
