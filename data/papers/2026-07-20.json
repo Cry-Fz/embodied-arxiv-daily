@@ -1,6 +1,6 @@
 {
   "date": "2026-07-20",
-  "generated_at": "2026-07-23T01:55:31.261518+00:00",
+  "generated_at": "2026-07-24T01:23:36.825148+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
@@ -1030,7 +1030,9 @@
       "pdf_url": "https://arxiv.org/pdf/2607.18365v1",
       "primary_category": "cs.RO",
       "categories": [
-        "cs.RO"
+        "cs.RO",
+        "cs.LG",
+        "eess.SY"
       ],
       "comment": "6 pages, 4 figures. Accepted manuscript. Published in the 2026 IEEE/SICE International Symposium on System Integration (SII), pp. 1259-1264",
       "code_url": "",
@@ -1082,7 +1084,8 @@
       "pdf_url": "https://arxiv.org/pdf/2607.18135v1",
       "primary_category": "cs.RO",
       "categories": [
-        "cs.RO"
+        "cs.RO",
+        "cs.LG"
       ],
       "comment": "6 pages, 5 figures. Accepted manuscript. Published in the 2025 IEEE 21st International Conference on Automation Science and Engineering (CASE), pp. 2194-2199",
       "code_url": "",
@@ -1245,18 +1248,18 @@
         "Tongtong Cao",
         "Yingxue Zhang"
       ],
-      "summary": "End-to-end vision-language navigation (VLN) with causal vision-language models can map instructions and egocentric observations directly to actions, but standard behavior cloning supervises only the next action and does not explicitly train the policy state to be predictive of future visual outcomes. We first ask a diagnostic question: if the policy is given an expert-trajectory future image as privileged input at training and testing time, is that additional visual evidence useful for choosing the current action? (These expert-trajectory future images are unavailable at test time in real deployment, so we use this setting only as a privileged-input diagnostic.) The answer is yes; this sanity check shows that future observations can provide rich, actionable cues. We then ask a deployable question: without accessing future images at inference, can we still benefit from future information by using a compressed future visual latent only as training supervision? We propose Future-State-Conditioned VLN (FSC-VLN), which adds a future-query token and aligns its hidden state to a frozen visual embedding $Δ$ steps ahead via a training-only target branch that is removed after training. On R2R val-unseen, FSC-VLN improves SR/OSR/SPL over a StreamVLN-style baseline under two training-data regimes, with larger gains on long-horizon episodes; ablations further support the dual-query design (separating future and action queries).",
+      "summary": "End-to-end vision-language navigation (VLN) with causal vision-language models maps instructions and egocentric observations directly to actions, but standard behavior cloning supervises only the next action and does not explicitly encourage the policy state to be predictive of future visual outcomes, limiting long-horizon decision making. A privileged-input diagnostic shows that access to an expert-trajectory future image can substantially improve navigation, indicating that future observations contain rich, actionable cues, though such inputs are unavailable at deployment. Motivated by this signal, we propose Future-State-Conditioned VLN (FSC-VLN), a deployable model that augments a causal policy with a future-query token and uses training-only future-state supervision to distill information from future observations into the policy state. Concretely, during training we align the future-query representation to a frozen visual embedding $Δ$ steps ahead, while inference requires only past and current observations. This design preserves the baseline inference pattern and adds only two learned prefix tokens, implying minimal overhead. On R2R val-unseen, FSC-VLN improves SR/OSR/SPL over a StreamVLN-style baseline under two training-data regimes, with larger gains on long-horizon episodes; ablations further support the dual-query design that separates future and action queries.",
       "published": "2026-07-20T15:11:46Z",
-      "updated": "2026-07-20T15:11:46Z",
-      "arxiv_id": "2607.18042v1",
-      "abs_url": "http://arxiv.org/abs/2607.18042v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.18042v1",
+      "updated": "2026-07-23T15:59:17Z",
+      "arxiv_id": "2607.18042v2",
+      "abs_url": "http://arxiv.org/abs/2607.18042v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.18042v2",
       "primary_category": "cs.CV",
       "categories": [
         "cs.CV",
         "cs.AI"
       ],
-      "comment": "10 pages, 1 figure, 5 tables",
+      "comment": "9 pages, 1 figure, 4 tables",
       "code_url": "",
       "has_code": false,
       "labels": [
@@ -1276,12 +1279,12 @@
         "vln"
       ],
       "title_zh": "行动前预测：未来状态条件视觉语言导航",
-      "summary_zh": "具有因果视觉语言模型的端到端视觉语言导航（VLN）可以将指令和以自我为中心的观察直接映射到行动，但标准行为克隆仅监督下一个行动，并且不会明确训练策略状态来预测未来的视觉结果。我们首先提出一个诊断问题：如果在训练和测试时为策略提供专家轨迹未来图像作为特权输入，那么额外的视觉证据对于选择当前行动是否有用？ （这些专家轨迹未来图像在实际部署的测试时不可用，因此我们仅使用此设置作为特权输入诊断。）答案是肯定的；这种健全性检查表明，未来的观察可以提供丰富的、可操作的线索。然后，我们提出一个可部署的问题：在推理时不访问未来图像的情况下，我们仍然可以通过仅使用压缩的未来视觉潜伏作为训练监督来从未来信息中受益吗？我们提出了未来状态条件 VLN (FSC-VLN)，它添加了未来查询标记，并将其隐藏状态与冻结视觉嵌入对齐，通过训练后删除的仅训练目标分支向前移动 $Δ$ 步。在 R2R val-unseen 上，FSC-VLN 在两种训练数据制度下比 StreamVLN 式基线提高了 SR/OSR/SPL，并且在长视野事件上有更大的增益；消融进一步支持双查询设计（将未来查询和操作查询分开）。",
+      "summary_zh": "具有因果视觉语言模型的端到端视觉语言导航（VLN）将指令和以自我为中心的观察直接映射到行动，但标准行为克隆仅监督下一个行动，并且不明确鼓励政策状态预测未来的视觉结果，从而限制了长期决策。特权输入诊断表明，访问专家轨迹未来图像可以显着改善导航，表明未来观察包含丰富的、可操作的线索，尽管此类输入在部署时不可用。受此信号的启发，我们提出了未来状态条件 VLN (FSC-VLN)，这是一种可部署的模型，它通过未来查询令牌增强因果策略，并使用仅训练的未来状态监督将未来观察中的信息提取到策略状态中。具体来说，在训练期间，我们将未来查询表示与冻结的视觉嵌入 $Δ$ 提前对齐，而推理只需要过去和当前的观察。这种设计保留了基线推理模式，并且仅添加了两个学习的前缀标记，这意味着最小的开销。在 R2R val-unseen 上，FSC-VLN 在两种训练数据制度下比 StreamVLN 式基线提高了 SR/OSR/SPL，并且在长视野事件上有更大的增益；消融进一步支持将未来查询和操作查询分开的双查询设计。",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-07-22T01:22:16.179099+00:00"
+        "generated_at": "2026-07-24T01:25:20.777395+00:00"
       }
     },
     {

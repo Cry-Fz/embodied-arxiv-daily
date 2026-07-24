@@ -1,0 +1,1037 @@
+{
+  "date": "2026-07-23",
+  "generated_at": "2026-07-24T01:23:49.216708+00:00",
+  "timezone": "Asia/Shanghai",
+  "source": "arXiv",
+  "source_url": "https://arxiv.org/",
+  "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202607230000 TO 202607232359]",
+  "total_fetched": 277,
+  "total_matched": 21,
+  "papers": [
+    {
+      "title": "Future Rendering $\\neq$ Future Surface: A Benchmark and Dataset for Dynamic Surface Reconstruction Beyond the Observed Window",
+      "authors": [
+        "Yukun Shi",
+        "Minglun Gong"
+      ],
+      "summary": "Dynamic-scene reconstruction is almost always evaluated inside the observed time window, yet deployment settings such as AR overlays, robot interaction, and anticipatory planning need the future surface: the geometry at times beyond those captured. No standard benchmark measures this. We introduce FutureSurf, a controlled diagnostic benchmark and dataset for future-time surface reconstruction that trades scene diversity for exact future ground truth and falsification controls. A method trains on the observed first 75% of a sequence; we score its extracted per-frame surface on the held-out future by Chamfer distance, reporting absolute future CD as the primary score and the future/observed gap as a diagnostic. The dataset contains eight analytically defined controlled motions, including three falsification controls, with exact per-frame ground-truth meshes. We also provide a ground-truth-side recoverability oracle. The release includes split files, scoring code, a benchmark card, and Croissant metadata. On the controlled motions, the DG-Mesh backbone leaves a 2.7-4.1$\\times$ gap even for futures predictable in principle (four of five recoverable from observed motion by a fixed rule), while the falsification controls behave as designed (the surface-invariant motion shows no gap). Beyond the contributed dataset, the gap persists across six animated DG-Mesh asset scenes and a second backbone, Deformable-3DGS (2.0-6.6$\\times$; both share a deformation-MLP temporal model). The benchmark also shows that future rendering quality and future-surface accuracy are statistically decoupled, so the novel-view-synthesis metrics the field reports do not track future geometry. The future error is structured, concentrating where the surface moves. The dataset, evaluation toolkit, and scoring code are available on Hugging Face and GitHub (https://github.com/Ricky-S/futuresurf).",
+      "published": "2026-07-23T16:14:59Z",
+      "updated": "2026-07-23T16:14:59Z",
+      "arxiv_id": "2607.21471v1",
+      "abs_url": "http://arxiv.org/abs/2607.21471v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21471v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "comment": "See https://github.com/Ricky-S/futuresurf",
+      "code_url": "https://github.com/Ricky-S/futuresurf",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "数据集/评测",
+      "score": 2,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "robot"
+      ],
+      "title_zh": "未来渲染$\\neq$未来表面：观察窗口之外动态表面重建的基准和数据集",
+      "summary_zh": "动态场景重建几乎总是在观察到的时间窗口内进行评估，但 AR 叠加、机器人交互和预期规划等部署设置需要未来的表面：有时超出捕获的几何形状。没有标准基准来衡量这一点。我们引入了 FutureSurf，这是一种用于未来表面重建的受控诊断基准和数据集，它以场景多样性换取准确的未来地面真相和伪造控制。一种方法对观察到的序列的前 75% 进行训练；我们通过倒角距离在保留的未来上对提取的每帧表面进行评分，报告绝对未来 CD 作为主要分数，并将未来/观察到的间隙作为诊断。该数据集包含八个分析定义的受控运动，包括三个伪造控制，以及精确的每帧地面实况网格。我们还提供了一个真实的可恢复性预言机。该版本包括分割文件、评分代码、基准卡和羊角面包元数据。在受控运动上，即使对于原则上可预测的未来，DG-Mesh 主干也会留下 2.7-4.1$\\times$ 的间隙（五分之四可通过固定规则从观察到的运动中恢复），而伪造控制则按设计运行（表面不变运动显示没有间隙）。除了贡献的数据集之外，六个动画 DG-Mesh 资产场景和第二个主干 Deformable-3DGS（2.0-6.6$\\times$；两者共享变形 MLP 时间模型）之间仍然存在差距。该基准还表明，未来渲染质量和未来表面精度在统计上是解耦的，因此现场报告的新颖视图合成指标不会跟踪未来的几何形状。未来的误差是结构化的，集中在表面移动的地方。数据集、评估工具包和评分代码可在 Hugging Face 和 GitHub (https://github.com/Ricky-S/futuresurf) 上获取。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "DAPM: UAV Monocular Depth Estimation from Any Height, Pitch, Roll and FOV",
+      "authors": [
+        "Tong Ling",
+        "Wenhui Diao",
+        "Yingchao Feng",
+        "Hanbo Bi",
+        "Zhongyan Hou",
+        "Xian Sun"
+      ],
+      "summary": "Monocular depth estimation is a fundamental prerequisite for 3D reconstruction and autonomous navigation in Unmanned Aerial Vehicles (UAVs). In practical deployments, UAVs operate under highly dynamic camera poses characterized by continuous variations in height, pitch, roll, and field of view (FOV). Existing monocular depth estimation methods frequently fail to generalize across such diverse perspectives and the expansive scale of depth distributions inherent in aerial scenes. To address these challenges, we establish a quantitative representation of UAV viewing angles through rigorous theoretical analysis, deriving the geometric correspondence between viewing angles and view distances using the ground plane as a reference for observation. Building upon this, we propose Depth Estimation for Any Perspectives Model (DAPM), representing the first monocular framework specifically designed for UAV aerial imagery to jointly estimate camera pose and depth under continuously varying viewpoints. Specifically, we introduce an Ideal Ground Depth (IGD) module that leverages the derived geometric relationships between UAV perspectives and view distances to implement dense camera-pose supervision and enhance depth features. And we further develop a coarse-to-fine Progressive Quantization Bins (PQB) module. By incorporating progressive supervision and hierarchical quantization bins, the PQB module enables robust estimation in complex UAV aerial imagery. To evaluate the proposed framework, we present the UAV Any Perspectives Depth (UAPD) dataset, featuring comprehensive and continuous distributions of pose parameters. Experimental results on UAPD demonstrate that DAPM achieves state-of-the-art performance across both depth and camera-pose estimation metrics. The source code and datasets are available at: https://github.com/ThisIsLT/DAPM.",
+      "published": "2026-07-23T15:44:18Z",
+      "updated": "2026-07-23T15:44:18Z",
+      "arxiv_id": "2607.21438v1",
+      "abs_url": "http://arxiv.org/abs/2607.21438v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21438v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "comment": "",
+      "code_url": "https://github.com/ThisIsLT/DAPM",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "导航与移动",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 4,
+      "anchor_terms": [
+        "navigation"
+      ],
+      "matched_terms": [
+        "autonomous navigation",
+        "navigation",
+        "uav"
+      ],
+      "title_zh": "DAPM：从任意高度、俯仰、横滚和视场进行无人机单目深度估计",
+      "summary_zh": "单目深度估计是无人机 (UAV) 3D 重建和自主导航的基本先决条件。在实际部署中，无人机在高度动态的摄像机姿态下运行，其特征是高度、俯仰、滚动和视场 (FOV) 的连续变化。现有的单目深度估计方法经常无法概括如此不同的视角和航空场景中固有的深度分布的广泛范围。为了应对这些挑战，我们通过严格的理论分析建立了无人机视角的定量表示，以地平面作为观察参考，推导出视角和观看距离之间的几何对应关系。在此基础上，我们提出了任意视角模型的深度估计（DAPM），这是第一个专为无人机航空图像设计的单目框架，用于在连续变化的视点下联合估计相机姿态和深度。具体来说，我们引入了理想地面深度（IGD）模块，该模块利用无人机视角和视距之间导出的几何关系来实现密集的相机姿态监督并增强深度特征。我们进一步开发了从粗到细的渐进量化箱（PQB）模块。通过结合渐进式监督和分层量化箱，PQB 模块能够在复杂的无人机航空图像中进行稳健的估计。为了评估所提出的框架，我们提出了无人机任意视角深度（UAPD）数据集，该数据集具有姿态参数的全面且连续的分布。 UAPD 的实验结果表明，DAPM 在深度和相机姿态估计指标方面均实现了最先进的性能。源代码和数据集可在以下位置获取：https://github.com/ThisIsLT/DAPM。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "GLAM-SLAM: Real-time Gaussian Large-scale Mapping via Flow Densification and Spatial Decomposition",
+      "authors": [
+        "Panagiotis Mermigkas",
+        "Argyris Manetas",
+        "Petros Maragos"
+      ],
+      "summary": "Existing Gaussian-splatting-based monocular Simultaneous Localization and Mapping (SLAM) systems are either tailored to short sequences, are not real-time, or suffer from prohibitive GPU memory requirements, limiting their applicability in realistic, long-horizon scenarios. To address this, we present GLAM-SLAM, a real-time, decoupled Gaussian-splatting SLAM system designed for large-scale outdoor scenes. We ensure lightweight tracking using a robust, feature-based SLAM frontend, while for mapping, we adopt a structured, sparse anchor grid representation that ensures scalable operation and maintains scene coherence across long-term sequences. To satisfy the dense initialization requirements of 3D Gaussian Splatting (3DGS), we introduce a geometry-based flow-densification anchoring strategy using epipolar constraints. Furthermore, by treating mapping as a multi-scene problem, we propose a scene-partitioning strategy that introduces a strong spatial inductive bias via MLP initializations to generate localized Gaussians. We evaluate our system on the challenging, long-sequence KITTI Odometry, Oxford RobotCar, and M'alaga datasets. Extensive ablations and comparisons demonstrate a 15% improvement in reconstruction quality over the second-best performer, while maintaining real-time performance and the ability to scale to longer sequences. Code is publicly available for the benefit of the community.",
+      "published": "2026-07-23T15:22:42Z",
+      "updated": "2026-07-23T15:22:42Z",
+      "arxiv_id": "2607.21416v1",
+      "abs_url": "http://arxiv.org/abs/2607.21416v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21416v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "comment": "Accepted to IROS 2026. Project page: https://glamslam.github.io/ Code: https://github.com/pmermigkas/GLAM-SLAM/",
+      "code_url": "https://github.com/pmermigkas/GLAM-SLAM/",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "导航与移动",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 6,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "robot",
+        "slam"
+      ],
+      "title_zh": "GLAM-SLAM：通过流致密化和空间分解进行实时高斯大规模建图",
+      "summary_zh": "现有的基于高斯喷射的单目同步定位与建图 (SLAM) 系统要么是针对短序列定制的，不是实时的，要么是受到过高的 GPU 内存需求的影响，限制了它们在现实、长视野场景中的适用性。为了解决这个问题，我们提出了 GLAM-SLAM，这是一种专为大规模室外场景设计的实时、解耦高斯溅射 SLAM 系统。我们使用强大的、基于特征的 SLAM 前端来确保轻量级跟踪，而对于映射，我们采用结构化的稀疏锚网格表示，以确保可扩展的操作并保持长期序列中的场景连贯性。为了满足 3D 高斯分布 (3DGS) 的密集初始化要求，我们引入了一种使用极线约束的基于几何的流致密化锚定策略。此外，通过将映射视为多场景问题，我们提出了一种场景分区策略，该策略通过 MLP 初始化引入强空间归纳偏差以生成局部高斯。我们在具有挑战性的长序列 KITTI Odometry、Oxford RobotCar 和 M'alaga 数据集上评估我们的系统。广泛的消融和比较表明，与第二好的执行者相比，重建质量提高了 15%，同时保持了实时性能和扩展到更长序列的能力。代码是公开可用的，以造福社区。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "Deep Reinforcement Learning for Adaptive Gain Tuning in Control of Teleoperation Manipulators with Joint Flexibility and Time-Varying Delays",
+      "authors": [
+        "Armin Attarzadeh",
+        "Mohammad Ali Ghaemifar",
+        "Alireza Khanzadeh",
+        "Soheil Ganjefar"
+      ],
+      "summary": "Bilateral teleoperation systems that include joint flexibility better reflect real robotic systems used in surgery, space, and rehabilitation. However, joint flexibility together with time-varying communication delays makes it difficult to maintain stable and coordinated motion between the master and slave robots. To address this, we propose a hybrid control method that combines a stable Proportional-plus-Damping (P+d) controller with a model-free deep reinforcement learning agent based on the Twin Delayed Deep Deterministic Policy Gradient (TD3) algorithm. The P+d controller provides basic stability under bounded delays, while the learning agent adjusts and tunes the remote-side proportional and damping gains in real time to reduce vibrations and improve tracking. Stability is guaranteed for bounded time-varying delays using Lyapunov-Krasovskii analysis. The approach provides a practical solution for teleoperation systems facing both joint flexibility and uncertain network delays.",
+      "published": "2026-07-23T10:25:03Z",
+      "updated": "2026-07-23T10:25:03Z",
+      "arxiv_id": "2607.21145v1",
+      "abs_url": "http://arxiv.org/abs/2607.21145v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21145v1",
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY"
+      ],
+      "comment": "7 pages, 6 figures. Source code available at: https://github.com/ArminAttarzadeh/DRL-Controller-Gain-Tuner",
+      "code_url": "https://github.com/ArminAttarzadeh/DRL-Controller-Gain-Tuner",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "机器人操作",
+        "强化/模仿学习",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 9,
+      "anchor_terms": [
+        "manipulator",
+        "reinforcement learning",
+        "robot",
+        "robotic",
+        "teleoperation"
+      ],
+      "matched_terms": [
+        "manipulator",
+        "reinforcement learning",
+        "robot",
+        "robotic",
+        "teleoperation"
+      ],
+      "title_zh": "具有关节灵活性和时变延迟的远程操作机械手控制中自适应增益调节的深度强化学习",
+      "summary_zh": "包括关节灵活性的双边远程操作系统更好地反映了手术、太空和康复中使用的真实机器人系统。然而，关节的灵活性和时变的通信延迟使得主从机器人之间难以保持稳定和协调的运动。为了解决这个问题，我们提出了一种混合控制方法，该方法将稳定的比例加阻尼（P+d）控制器与基于双延迟深度确定性策略梯度（TD3）算法的无模型深度强化学习代理相结合。 P+d 控制器在有界延迟下提供基本稳定性，而学习代理则实时调整和调谐远程侧比例和阻尼增益，以减少振动并改善跟踪。使用 Lyapunov-Krasovskii 分析保证有界时变延迟的稳定性。该方法为面临联合灵活性和不确定网络延迟的远程操作系统提供了实用的解决方案。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "GS-Agent: Creating 4D Physical Worlds With Generative Simulation",
+      "authors": [
+        "Hongxin Zhang",
+        "Chunru Lin",
+        "Junyan Li",
+        "Zhou Xian",
+        "Tsun-Hsuan Wang",
+        "Chuang Gan"
+      ],
+      "summary": "Creating dynamic and physically realistic 4D worlds from natural language descriptions is both fascinating and challenging. Traditional computer graphics methods rely on manual creation, requiring extensive human effort to fine-tune materials, motions, and visual fidelity. Recent advances in generative foundation models have sparked interest in learning to generate such 4D worlds from large-scale data; however, existing methods still struggle to ensure physical plausibility and controllability. In this work, we take a different path by leveraging foundation models to construct an agentic system that emulates how humans traditionally create 4D worlds, yet automates the entire process. We present GS-Agent, an end-to-end multi-agent framework that integrates physics engines in the loop to generate realistic, dynamic, and controllable 4D physical worlds from natural language. Inspired by how humans build 4D worlds, GS-Agent decomposes the task into entity management, covering 3D asset curation, material tuning, placement, and motion control, and rendering configuration, including camera and lighting manipulation. Multiple agents with distinct expertise interact with the physics engine via code, seek multimodal feedback, and collaborate to iteratively construct 4D worlds that align with the given descriptions. Experimental results show that GS-Agent effectively converts natural language into diverse and physically plausible 4D worlds exhibiting rich interactions among liquids, deformable objects, and rigid bodies, while achieving cinematic camera and lighting control. We envision GS-Agent as a foundation for a new paradigm in 4D world generation, empowering creative content creation and physical AI. Project page at https://umass-embodied-agi.github.io/gs-agent/",
+      "published": "2026-07-23T17:04:36Z",
+      "updated": "2026-07-23T17:04:36Z",
+      "arxiv_id": "2607.21522v1",
+      "abs_url": "http://arxiv.org/abs/2607.21522v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21522v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 6,
+      "anchor_terms": [
+        "embodied",
+        "manipulation"
+      ],
+      "matched_terms": [
+        "embodied",
+        "foundation model",
+        "manipulation"
+      ],
+      "title_zh": "GS-Agent：通过生成模拟创建 4D 物理世界",
+      "summary_zh": "根据自然语言描述创建动态且物理逼真的 4D 世界既令人着迷又充满挑战。传统的计算机图形方法依赖于手动创建，需要大量的人力来微调材质、运动和视觉保真度。生成基础模型的最新进展激发了人们对学习从大规模数据生成此类 4D 世界的兴趣；然而，现有方法仍然难以确保物理合理性和可控性。在这项工作中，我们采取了不同的路径，利用基础模型构建一个代理系统，模拟人类传统上如何创建 4D 世界，同时实现整个过程的自动化。我们提出了 GS-Agent，这是一个端到端的多代理框架，它将物理引擎集成到循环中，以从自然语言生成现实、动态且可控的 4D 物理世界。受到人类如何构建 4D 世界的启发，GS-Agent 将任务分解为实体管理，涵盖 3D 资产管理、材质调整、放置和运动控制以及渲染配置（包括相机和照明操作）。具有不同专业知识的多个代理通过代码与物理引擎交互，寻求多模式反馈，并协作迭代构建与给定描述相符的 4D 世界。实验结果表明，GS-Agent 有效地将自然语言转换为多样化且物理上合理的 4D 世界，展示了液体、可变形物体和刚体之间丰富的交互，同时实现了电影摄影和灯光控制。我们设想 GS-Agent 作为 4D 世界生成新范式的基础，赋能创意内容创建和物理人工智能。项目页面：https://umass-embodied-agi.github.io/gs-agent/",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "VoLN: Vision-Only Long-Horizon Navigation---Paradigm, Benchmark, and Method",
+      "authors": [
+        "Jiabin Lou",
+        "Haopeng Wang",
+        "Yuanshuai Wang",
+        "Xinyu Liu",
+        "Xuxin Lv",
+        "Yuxin Guo",
+        "Lei Huang",
+        "Rongye Shi",
+        "Wenjun Wu"
+      ],
+      "summary": "Vision-and-Language Navigation (VLN) enables embodied agents to follow natural-language instructions. However, route-level instructions commonly encode spatial priors, such as orientation, distance, and layout, that are not explicitly available from onboard sensing at deployment in open, GPS-denied environments. Benchmark performance under such interfaces therefore jointly reflects visual navigation ability and the use of route structure explicitly supplied by the task description. As a complementary formulation, we propose Vision-Only Long-Horizon Navigation (VoLN), which shifts route-relevant information from externally supplied instructions and global guidance to locally observable in-scene cues. In VoLN, goal views specify the destination, while route-relevant information is available only through locally observable in-scene cues that the agent must detect, interpret, and select online. We instantiate VoLN for aerial navigation through VoLN-UAV, a 7,210-episode benchmark that combines long-horizon goal-directed flight, continuous 3D motion, large viewpoint changes, and context-dependent beacon selection. We further provide VoLN-MLLM as an initial reference baseline. It aligns self-supervised visual features with a structured semantic space and predicts short-horizon waypoint segments from observation history, goal views, retrieved visual--semantic tokens, and proprioception. On the five-environment Test-Unseen split, it obtains success rates of 7.4%, 4.5%, and 1.8% on Easy, Normal, and Hard episodes, respectively. These results provide an initial evaluation of VoLN and reveal substantial remaining challenges in long-horizon evidence integration, cross-view goal matching, and closed-loop stability. Project page: https://admire-ljb.github.io/VoLN-UAV/",
+      "published": "2026-07-23T15:02:01Z",
+      "updated": "2026-07-23T15:02:01Z",
+      "arxiv_id": "2607.21400v1",
+      "abs_url": "http://arxiv.org/abs/2607.21400v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21400v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "10 pages, 7 figures, 2 tables. Project page: https://admire-ljb.github.io/VoLN-UAV/",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 18,
+      "anchor_terms": [
+        "embodied",
+        "embodied agent",
+        "embodied agents",
+        "navigation"
+      ],
+      "matched_terms": [
+        "embodied",
+        "embodied agent",
+        "embodied agents",
+        "navigation",
+        "proprioception",
+        "uav",
+        "visual navigation",
+        "vln"
+      ],
+      "title_zh": "VoLN：纯视觉长视野导航——范式、基准与方法",
+      "summary_zh": "视觉和语言导航（VLN）使实体代理能够遵循自然语言指令。然而，路线级指令通常对空间先验进行编码，例如方向、距离和布局，而这些先验信息在开放、GPS 拒绝的环境中部署时无法从机载传感中明确获得。因此，此类界面下的基准性能共同反映了视觉导航能力和任务描述明确提供的路线结构的使用。作为补充方案，我们提出了仅视觉长视野导航（VoLN），它将与路线相关的信息从外部提供的指令和全局指导转移到本地可观察的场景内线索。在 VoLN 中，目标视图指定目的地，而路线相关信息只能通过代理必须在线检测、解释和选择的本地可观察的场景内线索来获取。我们通过 VoLN-UAV 实例化用于空中导航的 VoLN，这是一个 7,210 集基准，结合了长视距目标定向飞行、连续 3D 运动、大视点变化和上下文相关的信标选择。我们进一步提供 VoLN-MLLM 作为初始参考基线。它将自我监督的视觉特征与结构化语义空间结合起来，并根据观察历史、目标视图、检索到的视觉语义标记和本体感觉来预测短视野航路点片段。在五种环境的 Test-Unseen 分裂中，它在 Easy、Normal 和 Hard 场景中的成功率分别为 7.4%、4.5% 和 1.8%。这些结果提供了 VoLN 的初步评估，并揭示了长期证据整合、跨视图目标匹配和闭环稳定性方面仍存在的重大挑战。项目页面：https://admire-ljb.github.io/VoLN-UAV/",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "Grasp, Handover, Rotate: Bimanual Object Reorientation via Compositional Diffusion and Energy-Based Optimization",
+      "authors": [
+        "Wun Lam Yeung",
+        "Wenjun Liu",
+        "Yui Cheung Yu",
+        "Zhengyan Lambo Qin",
+        "Qijin She",
+        "Heng Li",
+        "Ziqi Wang",
+        "Ping Tan"
+      ],
+      "summary": "Bimanual object reorientation - picking an object, handing it over between two arms, and placing it in a desired target pose - is valuable when direct placement from the initial grasp is infeasible due to collisions, kinematic constraints, or poor final orientation. However, achieving this under multiple competing objectives remains challenging. We introduce BiCompoDiff, a compositional diffusion and energy-based framework that jointly optimizes grasp selection, handover, regrasp, and motion planning under multiple constraints. By combining a pretrained grasp diffusion model with bimanual planning energy-based models (EBMs), our method injects gradient guidance during reverse diffusion to enforce collision avoidance, trajectory smoothness (via differentiable inverse kinematics), handover feasibility, and regrasp safety. Annealed MCMC sampling further refines grasp poses over the composite energy landscape. Experiments across diverse simulated household reorientation tasks demonstrate that BiCompoDiff achieves over 20% higher success rates and up to 37% smoother trajectories (measured by joint displacement) compared to strong sampling-based baselines. Real-world validation confirms effective sim-to-real transfer and robust performance on challenging scenes.",
+      "published": "2026-07-23T14:11:14Z",
+      "updated": "2026-07-23T14:11:14Z",
+      "arxiv_id": "2607.21341v1",
+      "abs_url": "http://arxiv.org/abs/2607.21341v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21341v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "IROS 2026",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "导航与移动",
+        "世界模型与仿真",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 10,
+      "anchor_terms": [
+        "grasp",
+        "sim-to-real"
+      ],
+      "matched_terms": [
+        "bimanual",
+        "grasp",
+        "motion planning",
+        "sim-to-real"
+      ],
+      "title_zh": "抓取、切换、旋转：通过组合扩散和基于能量的优化进行双手物体重新定向",
+      "summary_zh": "当由于碰撞、运动学限制或最终方向不佳而无法从初始抓握直接放置物体时，双手物体重新定向（拾取物体，将其移交给两只手臂之间，并将其放置在所需的目标姿势）非常有价值。然而，在多个相互竞争的目标下实现这一目标仍然具有挑战性。我们引入了 BiCompoDiff，这是一种基于组合扩散和能量的框架，可在多种约束下联合优化抓取选择、切换、重新抓取和运动规划。通过将预训练的抓取扩散模型与基于能量的双手规划模型（EBM）相结合，我们的方法在反向扩散过程中注入梯度引导，以强制避免碰撞、轨迹平滑（通过可微逆运动学）、切换可行性和重新抓取安全性。退火 MCMC 采样进一步细化了对复合能源景观的掌握。各种模拟家庭重新定位任务的实验表明，与基于采样的强大基线相比，BiCompoDiff 的成功率提高了 20% 以上，轨迹平滑（通过关节位移测量）高达 37%。现实世界的验证证实了模拟到真实的有效传输以及在具有挑战性的场景中的稳健性能。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "Factorized Spatio-Temporal Convolutions for Human Pose Estimation from Planar Lidar",
+      "authors": [
+        "Simone Arreghini",
+        "Mirko Nava",
+        "Nicholas Carlotti",
+        "Antonio Paolillo",
+        "Alessandro Giusti"
+      ],
+      "summary": "Localizing nearby humans and estimating their facing direction are key capabilities for safe navigation and socially aware human-robot interaction. Many pose-estimation pipelines target cameras and 3D LiDAR or assume GPU-class compute, whereas service robots are often equipped only with omnidirectional planar LiDARs and modest onboard processors. We address omnidirectional human detection and relative 2D pose estimation from planar LiDAR sequences with a lightweight network based on Space-Time Blocks, which explicitly separate spatial processing along scan rays from temporal aggregation across scans. Our network processes 360° LiDAR sequences to output per-ray human presence, distance, and relative orientation. We train it via cross-modal self-supervision from a narrow RGB-D body tracker in the sensors' overlap region, removing the need for manual LiDAR labels. Quantitative experiments show that our approach consistently outperforms a parameter-matched baseline model, reducing errors in distance (-38%), position (-28%), and orientation (-15%). We further benchmark on the public FROG dataset, report real-time CPU inference on a service robot, and validate with in-field demonstrations, supporting its suitability for spatial perception on computationally constrained service robots.",
+      "published": "2026-07-23T13:31:54Z",
+      "updated": "2026-07-23T13:31:54Z",
+      "arxiv_id": "2607.21309v1",
+      "abs_url": "http://arxiv.org/abs/2607.21309v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21309v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 6,
+      "anchor_terms": [
+        "navigation",
+        "robot"
+      ],
+      "matched_terms": [
+        "human-robot interaction",
+        "navigation",
+        "robot"
+      ],
+      "title_zh": "用于平面激光雷达人体姿态估计的分解时空卷积",
+      "summary_zh": "定位附近的人类并估计他们的面向是安全导航和具有社交意识的人机交互的关键功能。许多姿态估计管道以摄像头和 3D LiDAR 为目标，或者采用 GPU 级计算，而服务机器人通常只配备全向平面 LiDAR 和适度的板载处理器。我们使用基于时空块的轻量级网络来解决来自平面 LiDAR 序列的全向人体检测和相对 2D 姿态估计，该网络将沿扫描射线的空间处理与跨扫描的时间聚合明确分开。我们的网络处理 360° LiDAR 序列，以输出每条射线的人体存在、距离和相对方向。我们通过传感器重叠区域中的窄 RGB-D 人体跟踪器的跨模式自我监督来训练它，从而无需手动 LiDAR 标签。定量实验表明，我们的方法始终优于参数匹配的基线模型，减少了距离 (-38%)、位置 (-28%) 和方向 (-15%) 的误差。我们进一步对公共 FROG 数据集进行基准测试，报告服务机器人上的实时 CPU 推理，并通过现场演示进行验证，支持其适用于计算受限的服务机器人的空间感知。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "Expert Behavior Prior Reinforcement Learning",
+      "authors": [
+        "Gong Gao",
+        "Weidong Zhao",
+        "Xianhui Liu",
+        "Ning Jia"
+      ],
+      "summary": "Behavior prior reinforcement learning (BPRL) has emerged as a promising paradigm to improve sample efficiency in online reinforcement learning (RL) by leveraging policy priors derived from offline demonstrations. However, most existing BPRL methods rely on static offline datasets, which often suffer from low data diversity and suboptimal trajectory quality. This reliance restricts the effectiveness of policy priors, hindering both policy exploitation and stability during online training. Consequently, agents are prone to inefficient exploration and unstable learning dynamics. To address these limitations, we deviate from existing offline pre-training methods and propose an Expert Behavior Prior (EBP) algorithm. Specifically, we introduce a Q-guided conditional variational autoencoder (Q-CVAE) that learns to generate expert policy priors directly from the online replay buffer. This enables the generation of high-value actions for guiding policy updates without relying on pre-collected expert trajectories. To further enhance policy exploitation, we propose an expert policy guidance (EPG) mechanism that selects expert actions from a generative support set, and we integrate a policy gradient correction (PGC) module to harmonize Q-guidance with expert supervision, promoting stable and consistent policy improvement. Extensive experiments conducted on robotic control (Gym, PyBullet) and industrial control (DMControl) benchmarks demonstrate that EBP significantly outperforms state-of-the-art online RL algorithms, achieving higher sample efficiency and more stable convergence.",
+      "published": "2026-07-23T13:26:57Z",
+      "updated": "2026-07-23T13:26:57Z",
+      "arxiv_id": "2607.21302v1",
+      "abs_url": "http://arxiv.org/abs/2607.21302v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21302v1",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "强化/模仿学习",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "强化/模仿学习",
+      "score": 5,
+      "anchor_terms": [
+        "reinforcement learning",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "reinforcement learning",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "专家行为先验强化学习",
+      "summary_zh": "行为先验强化学习（BPRL）已成为一种有前景的范式，通过利用离线演示中的策略先验来提高在线强化学习（RL）的样本效率。然而，大多数现有的 BPRL 方法依赖于静态离线数据集，这些数据集往往存在数据多样性低和轨迹质量次优的问题。这种依赖限制了策略先验的有效性，阻碍了在线训练期间的策略利用和稳定性。因此，智能体很容易进行低效的探索和不稳定的学习动态。为了解决这些限制，我们偏离了现有的离线预训练方法，提出了专家行为先验（EBP）算法。具体来说，我们引入了一种 Q 引导的条件变分自动编码器（Q-CVAE），它学习直接从在线重播缓冲区生成专家策略先验。这使得能够生成高价值的行动来指导政策更新，而无需依赖预先收集的专家轨迹。为了进一步加强政策开发，我们提出了专家政策指导（EPG）机制，从生成支持集中选择专家行动，并集成政策梯度校正（PGC）模块以协调Q指导与专家监督，促进稳定一致的政策改进。在机器人控制（Gym、PyBullet）和工业控制（DMControl）基准上进行的大量实验表明，EBP 显着优于最先进的在线 RL 算法，实现了更高的样本效率和更稳定的收敛。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "FORGE-plus: Force-Budgeted Recovery for Contact-Rich Assembly with a Frozen LLM Supervisor",
+      "authors": [
+        "Kyupaeck Jeff Rah",
+        "Midum Oh"
+      ],
+      "summary": "Force-conditioned reinforcement learning (RL) enables tight-clearance assembly under a commanded force ceiling, but practical deployment requires determining an appropriate force limit for each object and recovering from insertion failures without exceeding it. We present a two-layer framework in which a frozen, text-only large language model (LLM) assigns a per-object force ceiling before execution and selects recovery maneuvers from a fixed action menu using compact textual force signatures. The LLM never controls force directly: a low-level controller enforces the force ceiling, the recovery policy cannot increase it, and the hidden breaking-force threshold is known only to the evaluator. We evaluate the framework on fragile bottle placement and 0.4 mm diametral-clearance gear insertion using two grippers (Robotiq 2F-140 and Franka Panda hand). A single policy passes 256/256 evaluation episodes on both fragile and robust objects without breakage, correctly predicts release timing, and completes a full table-pick-and-insert pipeline with a mean peak force of 5.4 N. Under injected in-grip slip, the force-signature recovery strategy resolves 40% and 64% of failures on the two grippers, whereas a press-harder baseline is either ineffective or causes frequent breakage. We also report negative results, including the failure of PPO to solve the task under strict force constraints and unsuccessful learned release strategies. All experiments are conducted in rigid-body simulation with hidden force-threshold breakage; no sim-to-real claim is made.",
+      "published": "2026-07-23T11:43:31Z",
+      "updated": "2026-07-23T11:43:31Z",
+      "arxiv_id": "2607.21227v1",
+      "abs_url": "http://arxiv.org/abs/2607.21227v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21227v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 8,
+      "anchor_terms": [
+        "reinforcement learning",
+        "robot",
+        "sim-to-real"
+      ],
+      "matched_terms": [
+        "reinforcement learning",
+        "robot",
+        "sim-to-real"
+      ],
+      "title_zh": "FORGE-plus：与冻结的法学硕士主管一起对接触丰富的装配进行强制预算恢复",
+      "summary_zh": "力调节强化学习 (RL) 可以在受控力上限下实现紧密间隙组装，但实际部署需要为每个对象确定适当的力限制，并在不超过该限制的情况下从插入失败中恢复。我们提出了一个两层框架，其中冻结的纯文本大语言模型（LLM）在执行前分配每个对象的力上限，并使用紧凑的文本力签名从固定动作菜单中选择恢复动作。 LLM 从不直接控制力：低级控制器强制执行力上限，恢复策略无法增加它，并且隐藏的断裂力阈值只有评估者知道。我们使用两个夹具（Robotiq 2F-140 和 Franka Panda 手）评估易碎瓶子放置和 0.4 mm 直径间隙齿轮插入的框架。单个策略在易碎和坚固的物体上通过了 256/256 次评估，没有破损，正确预测了释放时间，并以 5.4 N 的平均峰值力完成了完整的工作台拾取和插入流程。在注入的抓握滑动下，力签名恢复策略解决了两个夹具上 40% 和 64% 的故障，而压力较大的基线要么无效，要么导致频繁破损。我们还报告了负面结果，包括 PPO 在严格的力量约束下未能解决任务以及不成功的学习释放策略。所有实验均在刚体模拟中进行，具有隐藏的力阈值破坏；没有做出模拟真实的声明。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "Safety-oriented sidewalk and road segmentation for smartphone-based assistive navigation",
+      "authors": [
+        "Hakan Calim",
+        "Anamaria Dumitrescu",
+        "Adarsh Bhandary Panambur",
+        "Huzaifa Asif",
+        "Andreas Maier"
+      ],
+      "summary": "Independent sidewalk mobility is essential for blind and visually impaired pedestrians (BVIPs), yet smartphone-based assistive navigation requires perception models that distinguish walkable sidewalks from adjacent unsafe regions. This study presents a safety-oriented semantic segmentation framework for future mobile guidance. We introduce SENSATION-DS, a chest-height pedestrian-view dataset with 2,752 image-mask pairs and nine-class navigation-relevant taxonomy. External urban and sidewalk datasets were harmonized to this label space, and five segmentation architectures were evaluated using staged target-domain adaptation with mask-conditioned synthetic images and Segment Anything Model 2 (SAM2) pseudo-labels. Models were assessed using mean Intersection over Union (mIoU), road- and sidewalk-specific metrics, Road-as-Sidewalk Error Rate as a proxy false-safe measure, and Android Open Neural Network Exchange benchmarking. Synthetic augmentation generally improved segmentation accuracy, whereas SAM2 pseudo-labels more consistently reduced Road-as-Sidewalk errors. UPerNet-MobileNetV3 achieved the highest offline mIoU (0.715 +/- 0.006), while DeepLabV3Plus-MobileNetV3 achieved the lowest Road-as-Sidewalk Error Rate (0.079) and highest Android runtime at 512x384 (7.383 FPS). These results show that assistive sidewalk perception should be evaluated jointly by segmentation accuracy, proxy false-safe behavior, and smartphone deployment feasibility, while real-world benefit requires validation with BVIP users. This evaluation supports selecting models that balance accurate perception, conservative error behavior, and practical runtime.",
+      "published": "2026-07-23T10:16:43Z",
+      "updated": "2026-07-23T10:16:43Z",
+      "arxiv_id": "2607.21137v1",
+      "abs_url": "http://arxiv.org/abs/2607.21137v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21137v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "comment": "17 pages, 4 figures, 3 tables. Submitted to Assistive Technology",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "数据集/评测",
+        "感知与3D理解"
+      ],
+      "topic": "导航与移动",
+      "score": 3,
+      "anchor_terms": [
+        "navigation"
+      ],
+      "matched_terms": [
+        "domain adaptation",
+        "navigation"
+      ],
+      "title_zh": "基于智能手机的辅助导航的安全导向人行道和道路分段",
+      "summary_zh": "独立的人行道移动对于盲人和视障行人 (BVIP) 至关重要，但基于智能手机的辅助导航需要感知模型来区分步行人行道和邻近的不安全区域。本研究提出了一种面向未来移动导航的面向安全的语义分割框架。我们引入了 SENSATION-DS，这是一个齐胸高的行人视图数据集，包含 2,752 个图像掩模对和九类导航相关分类法。外部城市和人行道数据集与该标签空间相协调，并使用分阶段目标域适应、掩模条件合成图像和分段任意模型 2 (SAM2) 伪标签来评估五种分割架构。使用平均交集比 (mIoU)、道路和人行道特定指标、道路作为人行道错误率作为代理虚假安全措施以及 Android 开放神经网络交换基准来评估模型。综合增强通常提高了分割精度，而 SAM2 伪标签更一致地减少了“道路即人行道”错误。 UPerNet-MobileNetV3 实现了最高的离线 mIoU (0.715 +/- 0.006)，而 DeepLabV3Plus-MobileNetV3 实现了最低的道路人行道错误率 (0.079) 和最高的 Android 运行时间（512x384 (7.383 FPS)）。这些结果表明，辅助人行道感知应通过分割准确性、代理虚假安全行为和智能手机部署可行性进行联合评估，而现实世界的好处需要 BVIP 用户的验证。该评估支持选择平衡准确感知、保守错误行为和实际运行时间的模型。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "TOUR: A Trajectory-Level Unlearning Benchmark for Offline Reinforcement Learning",
+      "authors": [
+        "Chaofan Pan",
+        "Lingfei Ren",
+        "Xiangyu Jiang",
+        "Yanhua Li",
+        "Xuemei Cao",
+        "Xiangkun Wang",
+        "Hao Yu",
+        "Wei Wei",
+        "Xin Yang"
+      ],
+      "summary": "Offline Reinforcement Learning (RL) agents are trained on fixed behavioral trajectories, which makes trajectory-level deletion important when selected data must be removed after training. Evaluating such deletion is difficult because a lower membership score can reflect trajectory removal, residual memorization visible to another attack, or policy collapse that destroys useful behavior. We introduce Trajectory-level memOrization and Unlearning in offline RL (TOUR), a benchmark that combines trajectory-level partitioning, matched non-member controls, retraining references, retained-performance anchors, and multi-attack privacy auditing. Across D4RL locomotion experiments and an exploratory AntMaze extension, TOUR shows that common deletion baselines have environment-dependent privacy-utility behavior. Retraining and fine-tuning often provide stronger retained-utility references than uniform GA+Refit, while TrajDeleter remains a useful comparator but is not uniformly stronger under the same audit. Reference-model, threshold, deviation, equivalence, action-error, representation-based, and query-limited attacks further show that a single likelihood-based membership score can overstate deletion quality. In the evaluated settings, conclusions about offline RL unlearning are therefore not stable under single-score auditing. They depend on matched non-member construction, retraining-relative calibration, attack family, retained utility, and explicit scope for diagnostic architecture or component-level evidence.",
+      "published": "2026-07-23T09:40:40Z",
+      "updated": "2026-07-23T09:40:40Z",
+      "arxiv_id": "2607.21111v1",
+      "abs_url": "http://arxiv.org/abs/2607.21111v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21111v1",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "强化/模仿学习",
+        "数据集/评测"
+      ],
+      "topic": "导航与移动",
+      "score": 5,
+      "anchor_terms": [
+        "locomotion",
+        "reinforcement learning"
+      ],
+      "matched_terms": [
+        "locomotion",
+        "offline reinforcement learning",
+        "reinforcement learning"
+      ],
+      "title_zh": "TOUR：离线强化学习的轨迹级忘却基准",
+      "summary_zh": "离线强化学习（RL）代理接受固定行为轨迹的训练，这使得当训练后必须删除选定的数据时，轨迹级删除变得非常重要。评估此类删除很困难，因为较低的成员资格分数可以反映轨迹删除、其他攻击可见的残留记忆或破坏有用行为的策略崩溃。我们在离线 RL (TOUR) 中引入了轨迹级记忆和取消学习，这是一个结合了轨迹级分区、匹配的非成员控制、再训练参考、保留性能锚点和多攻击隐私审计的基准。在 D4RL 运动实验和探索性 AntMaze 扩展中，TOUR 表明常见的删除基线具有依赖于环境的隐私实用程序行为。再训练和微调通常比统一的 GA+Refit 提供更强的保留效用参考，而 TrajDeleter 仍然是一个有用的比较器，但在相同的审计下并不是一致更强。参考模型、阈值、偏差、等价、动作错误、基于表示和查询限制的攻击进一步表明，单个基于可能性的成员评分可能会夸大删除质量。因此，在评估的环境中，关于离线 RL 遗忘的结论在单分审核下并不稳定。它们依赖于匹配的非成员构造、再训练相关校准、攻击族、保留效用以及诊断架构或组件级证据的明确范围。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "TransBiolab: A Real-World Multi-View Dataset of Cluttered Transparent Biomedical Objects",
+      "authors": [
+        "Ke Ma",
+        "Yifei Wang",
+        "Meng Wang",
+        "Tian Xia"
+      ],
+      "summary": "Autonomous biomedical laboratories increasingly rely on visual perception to recognize, localize, and manipulate transparent plasticware, yet high-quality real-world datasets for this setting remain limited. The scarcity of domain-relevant data is particularly restrictive in cluttered multi-object scenes, where mutual occlusion and view-dependent appearance changes remain challenging even for contemporary visual foundation models. Existing transparent-object datasets have advanced segmentation, depth, and pose estimation, but they usually do not evaluate the combined setting of multi-object clutter, occlusion, and calibrated multi-view capture that characterizes real laboratory manipulation scenes. To address this gap, we present TrainsBiolab, a real-world RGB-D dataset of cluttered transparent biomedical objects captured as calibrated multi-view sequences. TrainsBiolab contains 161,315 frames from 98 scenes and 1.03M instance annotations over 15 laboratory object types, including 6D poses, full and visible masks, depth, and per-frame camera calibration. The dataset is organized along three axes that reflect operational difficulty: object category, the total number of objects in a frame, and camera viewpoint. We further define dataset-centric benchmarks for segmentation, depth estimation and completion, and 6D pose estimation, and report a system-level robot manipulation evaluation enabled by the released annotations and calibrations. By focusing on repeated transparent instances, clutter, and multi-view laboratory capture, TrainsBiolab provides a resource for segmentation, depth estimation, 6D pose estimation, and multi-view reasoning in autonomous laboratory manipulation. Project page: https://dualtransparency.github.io/TransBiolab/.",
+      "published": "2026-07-23T09:04:11Z",
+      "updated": "2026-07-23T09:04:11Z",
+      "arxiv_id": "2607.21071v1",
+      "abs_url": "http://arxiv.org/abs/2607.21071v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21071v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.MM",
+        "cs.RO"
+      ],
+      "comment": "9 pages, 10 figures, accepted by ACM Multimedia 2026",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 9,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robot manipulation"
+      ],
+      "matched_terms": [
+        "foundation model",
+        "manipulation",
+        "robot",
+        "robot manipulation"
+      ],
+      "title_zh": "TransBiolab：杂乱的透明生物医学对象的真实世界多视图数据集",
+      "summary_zh": "自主生物医学实验室越来越依赖视觉感知来识别、定位和操作透明塑料制品，但这种环境下的高质量真实数据集仍然有限。领域相关数据的稀缺在杂乱的多对象场景中尤其受到限制，其中相互遮挡和依赖于视图的外观变化即使对于当代视觉基础模型来说仍然具有挑战性。现有的透明对象数据集具有先进的分割、深度和姿态估计，但它们通常不评估表征真实实验室操作场景的多对象杂波、遮挡和校准多视图捕获的组合设置。为了解决这一差距，我们提出了 TrainsBiolab，这是一个真实世界的 RGB-D 数据集，其中包含以校准的多视图序列捕获的杂乱透明生物医学对象。 TrainsBiolab 包含来自 98 个场景的 161,315 帧和超过 15 个实验室对象类型的 103 万个实例注释，包括 6D 姿势、完整和可见蒙版、深度和每帧相机校准。数据集沿反映操作难度的三个轴组织：对象类别、帧中对象的总数和相机视点。我们进一步定义了以数据集为中心的分割、深度估计和完成以及 6D 姿态估计基准，并报告了由已发布的注释和校准实现的系统级机器人操作评估。通过专注于重复的透明实例、杂波和多视图实验室捕获，TrainsBiolab 为自主实验室操作中的分割、深度估计、6D 姿态估计和多视图推理提供了资源。项目页面：https://dualtransparency.github.io/TransBiolab/。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "GuidedAttention: Interpretable and Correctable Visual Attention for OOD-Robust Robot Manipulation via Imitation Learning",
+      "authors": [
+        "Masaki Murooka",
+        "Ryoichi Nakajo",
+        "Keisuke Shirai",
+        "Tomohiro Motoda",
+        "Hanbit Oh",
+        "Ryo Hanai",
+        "Yukiyasu Domae"
+      ],
+      "summary": "End-to-end visuomotor policies provide little opportunity for humans to understand or correct the policy's visual attention. We propose GuidedAttention, a visuomotor imitation learning framework that introduces interpretable and correctable visual attention as an explicit intermediate representation. Task-relevant attention keypoints are predicted from camera images and condition a diffusion-based action policy. Users can inspect and optionally correct selected keypoints once at rollout initialization, after which the corrected attention is automatically propagated throughout execution by a tracking module. Experiments in simulation and the real world demonstrate that GuidedAttention consistently improves robot manipulation performance, particularly under positional and appearance out-of-distribution (OOD) conditions.",
+      "published": "2026-07-23T08:33:40Z",
+      "updated": "2026-07-23T08:33:40Z",
+      "arxiv_id": "2607.21049v1",
+      "abs_url": "http://arxiv.org/abs/2607.21049v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21049v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "VLA/多模态策略",
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 15,
+      "anchor_terms": [
+        "imitation learning",
+        "manipulation",
+        "robot",
+        "robot manipulation"
+      ],
+      "matched_terms": [
+        "imitation learning",
+        "manipulation",
+        "robot",
+        "robot manipulation",
+        "visuomotor"
+      ],
+      "title_zh": "GuidedAttention：通过模仿学习实现 OOD 鲁棒机器人操作的可解释和可纠正的视觉注意力",
+      "summary_zh": "端到端的视觉运动策略几乎没有为人类提供理解或纠正策略的视觉注意力的机会。我们提出了 GuidedAttention，这是一种视觉运动模仿学习框架，它引入了可解释和可纠正的视觉注意力作为明确的中间表示。与任务相关的注意力关键点是根据相机图像预测的，并调节基于扩散的动作策略。用户可以在推出初始化时检查并选择性地纠正选定的关键点，之后纠正的注意力将通过跟踪模块在整个执行过程中自动传播。模拟和现实世界中的实验表明，GuidedAttention 持续提高机器人操作性能，特别是在位置和外观分布外 (OOD) 条件下。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "ZONDA: Zero-shot Object Navigation with Dynamic Avoidance in Multi-floor Environments",
+      "authors": [
+        "Shaomin Liang",
+        "Xuanhong Liao",
+        "Shiyao Zhang"
+      ],
+      "summary": "In Object Goal Navigation task, existing methods are typically restricted to static and single-floor environments, ignoring cross-floor topologies and dynamic pedestrian, which limits their real-world deployment. To address these limitations, we propose ZONDA, a zero-shot object navigation with dynamic avoidance framework. In particular, ZONDA integrates three core components: (i) Heuristic multi-floor planning: from height-difference traversable maps, enables stair traversal and cross-floor exploration without a platform-specific learned controller; (ii) Multi-view target verification: cross-checks multi-scale observations with a vision-language model, significantly reducing false positives; and (iii) Dynamic pedestrian avoidance: explicitly tracks and predicts moving pedestrians to generate anticipatory behaviors. Evaluated on a real Direct Drive Tech TITA biped robot and extensive simulations on HM3D and MP3D, ZONDA achieves significantly improved results. Moreover, ZONDA can maintain robust navigation on the dynamic benchmark HM3D-DYNA compared to the existing baseline.",
+      "published": "2026-07-23T08:07:52Z",
+      "updated": "2026-07-23T08:07:52Z",
+      "arxiv_id": "2607.21025v1",
+      "abs_url": "http://arxiv.org/abs/2607.21025v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21025v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "世界模型与仿真",
+        "数据集/评测",
+        "双足机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 7,
+      "anchor_terms": [
+        "biped",
+        "navigation",
+        "robot"
+      ],
+      "matched_terms": [
+        "biped",
+        "navigation",
+        "robot"
+      ],
+      "title_zh": "ZONDA：多层环境中具有动态回避功能的零样本对象导航",
+      "summary_zh": "在对象目标导航任务中，现有方法通常仅限于静态和单楼层环境，忽略了跨楼层拓扑和动态行人，这限制了它们的实际部署。为了解决这些限制，我们提出了 ZONDA，一种具有动态回避框架的零样本对象导航。特别是，ZONDA 集成了三个核心组件：（i）启发式多层规划：根据高度差可遍历地图，无需特定于平台的学习控制器即可实现楼梯遍历和跨楼层探索； (ii) 多视角目标验证：用视觉语言模型交叉检查多尺度观测结果，显着减少误报； (iii) 动态行人回避：明确跟踪和预测移动的行人以产生预期行为。经过对真实 Direct Drive Tech TITA 双足机器人的评估以及对 HM3D 和 MP3D 的广泛模拟，ZONDA 取得了显着改进的结果。此外，与现有基准相比，ZONDA 可以在动态基准 HM3D-DYNA 上保持稳健的导航。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "TableVerse: A Large-scale Tabletop Dataset with Real-world Grounded Layouts for Generalizable Manipulation",
+      "authors": [
+        "Boyuan Wang",
+        "Yue Zhang",
+        "Xutao Xue",
+        "Xueyu Song",
+        "Yu Sun"
+      ],
+      "summary": "The development of generalizable robotic manipulation policies is inherently bounded by the availability of large-scale, high-fidelity scene data. While recent automated synthesis methods attempt to bridge this gap via text-to-layout hallucination or simplified procedural generation, they frequently suffer from physical implausibility and fail to capture the complex, dense clutter of actual human environments. In this paper, we introduce TableVerse, a fully automated Real2Sim pipeline that shifts the paradigm from imaginative layout generation to deterministic reconstruction from unstructured, in-the-wild image data. Our framework seamlessly processes unscripted internet media into high-fidelity, simulation-ready tabletop environments with accurate metric scales, authentic topologies, and verified mechanical stability. Furthermore, an automated task-conditioned trajectory generation framework is integrated to synthesize high-quality, collision-free pick-and-place demonstrations. Leveraging this complete pipeline, we construct the TableVerse-100K Dataset, a large-scale corpus comprising 100,000 unique, physically consistent environments paired with interactive manipulation trajectories. By capturing diverse asset compositions, realistic spatial distributions, and high-quality demonstrations, TableVerse-100K establishes a highly scalable and high-fidelity data foundation, providing significant value to facilitate future research in generalizable robotic manipulation tasks.",
+      "published": "2026-07-23T08:02:53Z",
+      "updated": "2026-07-23T08:02:53Z",
+      "arxiv_id": "2607.21017v1",
+      "abs_url": "http://arxiv.org/abs/2607.21017v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21017v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "数据集/评测",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 8,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "pick-and-place",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "TableVerse：一个大规模桌面数据集，具有现实世界的接地布局，可进行通用操作",
+      "summary_zh": "通用机器人操作策略的发展本质上受到大规模、高保真场景数据可用性的限制。虽然最近的自动合成方法试图通过文本到布局的幻觉或简化的程序生成来弥补这一差距，但它们经常遭受物理上的难以置信的困扰，并且无法捕捉实际人类环境中复杂、密集的杂乱。在本文中，我们介绍了 TableVerse，这是一种完全自动化的 Real2Sim 流程，它将范式从富有想象力的布局生成转变为从非结构化、野外图像数据进行确定性重建。我们的框架将无脚本的互联网媒体无缝地处理成高保真、可模拟的桌面环境，具有精确的公制尺度、真实的拓扑结构和经过验证的机械稳定性。此外，还集成了自动化任务条件轨迹生成框架，以合成高质量、无碰撞的拾放演示。利用这个完整的管道，我们构建了 TableVerse-100K 数据集，这是一个大型语料库，包含 100,000 个独特的、物理一致的环境以及交互式操作轨迹。通过捕获不同的资产组成、真实的空间分布和高质量的演示，TableVerse-100K 建立了高度可扩展和高保真度的数据基础，为促进通用机器人操作任务的未来研究提供了重要价值。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "Distributed Model-Based Diffusion For Scalable Multi-Robot Trajectory Optimization",
+      "authors": [
+        "Haejoon Lee",
+        "Xinyi Wang",
+        "Taekyung Kim",
+        "Dimitra Panagou"
+      ],
+      "summary": "Trajectory optimization for multi-robot systems remains a critical challenge, particularly when navigating highly non-convex, non-linear, and non-differentiable environments. While Model-Based Diffusion (MBD) has recently emerged as a promising sampling-based optimization paradigm for single-robot trajectory generation, extending it to multi-robot systems results in a centralized, high-dimensional inference problem that (i) suffers from poor sample efficiency due to the curse of dimensionality and (ii) requires global access to all robots' dynamics, constraints, and objectives. To address this, we propose Distributed Model-Based Diffusion (DMBD), a distributed server-robot framework that decomposes the reverse diffusion process into local conditional reverse diffusion processes. This decomposition enables each robot to iteratively perform denoising independently within its own control subspace while conditioning on the current trajectory estimates of the other robots that are aggregated and broadcast by the server. Extensive simulations in goal swapping, multi-floor coverage, parking, and rush-hour scenarios demonstrate that DMBD achieves strong scalability, solving many challenging coordination tasks in sub-seconds and significantly outperforming existing baselines.",
+      "published": "2026-07-23T07:16:59Z",
+      "updated": "2026-07-23T07:16:59Z",
+      "arxiv_id": "2607.20992v1",
+      "abs_url": "http://arxiv.org/abs/2607.20992v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.20992v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "9 pages, 4 figures",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 7,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "robot",
+        "trajectory optimization"
+      ],
+      "title_zh": "基于分布式模型的扩散，用于可扩展的多机器人轨迹优化",
+      "summary_zh": "多机器人系统的轨迹优化仍然是一个严峻的挑战，特别是在高度非凸、非线性和不可微分的环境中。虽然基于模型的扩散 (MBD) 最近已成为一种有前途的基于采样的单机器人轨迹生成优化范例，但将其扩展到多机器人系统会导致集中式高维推理问题，该问题 (i) 由于维数灾难而导致样本效率较差，(ii) 需要全局访问所有机器人的动态、约束和目标。为了解决这个问题，我们提出了基于分布式模型的扩散（DMBD），这是一种分布式服务器机器人框架，它将反向扩散过程分解为局部条件反向扩散过程。这种分解使每个机器人能够在其自己的控制子空间内独立地迭代执行去噪，同时以服务器聚合和广播的其他机器人的当前轨迹估计为条件。对目标交换、多层覆盖、停车和高峰时段场景的广泛模拟表明，DMBD 具有强大的可扩展性，可以在亚秒内解决许多具有挑战性的协调任务，并且显着优于现有基线。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "HyWorldVLA: A Vision-Language-Action Model with Hybrid World Modeling for Autonomous Driving",
+      "authors": [
+        "Quanfu Yu",
+        "Xian Wu",
+        "Hao Xu",
+        "Liulong Ma"
+      ],
+      "summary": "Vision-Language-Action (VLA) models augmented with world modeling represent a promising paradigm for end-to-end autonomous driving. While pixel-level future prediction enables fine-grained spatiotemporal reasoning, it compromises robustness in noisy driving scenarios. Conversely, latent-based world models alleviate this sensitivity but often incur limited interpretability and representational degradation due to absent pixel-level grounding. To reconcile this trade-off, we propose HyWorldVLA, a hybrid world-VLA framework that unifies pixel-level supervision and latent representation learning. In the pre-training stage, HyWorldVLA predicts video latents encoded by a pre-trained video VAE, while simultaneously reconstructing video frames to provide precise pixel-level grounding. During the subsequent co-fine-tuning phase, the model exclusively predicts latent features, which are fed into an action expert to generate trajectories. Extensive experiments on NAVSIM v1 and v2 benchmarks demonstrate that HyWorldVLA significantly outperforms both pixel-based and latent-based world model baselines. Notably, we present the first comprehensive qualitative and quantitative analysis of world model noise robustness in autonomous driving, establishing a new benchmark for evaluating future architectures.",
+      "published": "2026-07-23T07:11:41Z",
+      "updated": "2026-07-23T07:11:41Z",
+      "arxiv_id": "2607.20988v1",
+      "abs_url": "http://arxiv.org/abs/2607.20988v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.20988v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "comment": "20 pages with 13 figures",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "世界模型与仿真",
+        "数据集/评测"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 7,
+      "anchor_terms": [
+        "vision-language-action",
+        "vla"
+      ],
+      "matched_terms": [
+        "vision-language-action",
+        "vla",
+        "world model"
+      ],
+      "title_zh": "HyWorldVLA：用于自动驾驶的具有混合世界建模的视觉-语言-动作模型",
+      "summary_zh": "通过世界建模增强的视觉-语言-动作（VLA）模型代表了端到端自动驾驶的有前途的范例。虽然像素级的未来预测可以实现细粒度的时空推理，但它会损害噪声驾驶场景中的鲁棒性。相反，基于潜在的世界模型减轻了这种敏感性，但由于缺乏像素级基础，通常会导致可解释性有限和表征退化。为了协调这种权衡，我们提出了 HyWorldVLA，这是一种混合世界 VLA 框架，统一了像素级监督和潜在表示学习。在预训练阶段，HyWorldVLA 预测由预训练视频 VAE 编码的视频潜伏，同时重建视频帧以提供精确的像素级基础。在随后的协同微调阶段，该模型专门预测潜在特征，这些特征被输入到动作专家中以生成轨迹。 NAVSIM v1 和 v2 基准的大量实验表明，HyWorldVLA 显着优于基于像素和基于潜在的世界模型基准。值得注意的是，我们首次对自动驾驶中的世界模型噪声稳健性进行了全面的定性和定量分析，为评估未来架构建立了新的基准。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "Deep Reinforcement-Learning-Guided Model Predictive Control for Preventing Overtakes in Autonomous Racing",
+      "authors": [
+        "Yufei Xi",
+        "Yijie Liao",
+        "Tulga Ersal"
+      ],
+      "summary": "This paper addresses defensive blocking in autonomous racing, where a vehicle must prevent a faster opponent from overtaking while operating near its dynamic limits. Different from lap-time minimization, we formulate defense as a spatial occupancy regulation problem via a hierarchical reinforcement-learning guided model predictive control framework. A Soft Actor-Critic strategic layer operates in the Frenet domain to generate geometry-aware defensive references, which are embedded into the nonlinear model predictive control formulation as spatial regularization under friction constraints. Evaluated on the Thunderhill West circuit in simulation, the framework increases average overtake time from 8.8 s to 14.6 s while significantly reducing opponent progress. Meanwhile, it allows the vehicle to utilize 83.4% of available tire force. The framework achieves a 33.3 ms mean solve time (13.9 ms std), supporting real-time high-speed adversarial interaction.",
+      "published": "2026-07-23T06:50:59Z",
+      "updated": "2026-07-23T06:50:59Z",
+      "arxiv_id": "2607.20973v1",
+      "abs_url": "http://arxiv.org/abs/2607.20973v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.20973v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "Accepted to the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026). 8 pages, 7 figures",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 4,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "robot"
+      ],
+      "title_zh": "用于防止自动驾驶超车的深度强化学习引导模型预测控制",
+      "summary_zh": "本文讨论了自动驾驶赛车中的防御性阻挡，其中车辆必须在接近其动态极限的情况下防止更快的对手超车。与单圈时间最小化不同，我们通过分层强化学习引导模型预测控制框架将防御制定为空间占用调节问题。 Soft Actor-Critic 策略层在 Frenet 域中运行，生成几何感知防御参考，这些参考作为摩擦约束下的空间正则化嵌入到非线性模型预测控制公式中。在 Thunderhill West 赛道上进行模拟评估后，该框架将平均超车时间从 8.8 秒增加到 14.6 秒，同时显着减少了对手的进度。同时，它允许车辆利用 83.4% 的可用轮胎力。该框架的平均求解时间为 33.3 毫秒（标准为 13.9 毫秒），支持实时高速对抗交互。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "URF: A Unified Robot Control-Policy Framework for Stable Contact Aware Manipulation",
+      "authors": [
+        "Jiyou Shin",
+        "Youngjin Seo",
+        "Jaeseog Won",
+        "Sungwon Seo",
+        "Hyunjun Kim",
+        "Seokmin Yoon",
+        "Tuan Luong",
+        "Hyungpil Moon"
+      ],
+      "summary": "Learning-based manipulation policies usually predict robot actions from sensory observations and leave their execution to a separate low-level controller. In rigid contact, this separation can be problematic: the same motion to a virtual target or compliant motion command can lead to unstable contact, tracking error, excessive loading, or tool damage, depending on the low-level controller. In this paper, we propose a \\textit{Unified Robot Control-Policy Framework} (URF), which connects compliant action prediction with unified impedance-admittance control. Given multimodal observations, URF predicts a virtual target, a stiffness matrix, and an impedance-admittance switch ratio. The switch ratio determines when the controller should behave more like admittance control for accurate motion tracking and when it should move toward impedance control for safer rigid contact. Because demonstration data do not provide ground-truth environment stiffness, we construct switch-ratio labels from measured contact forces and use them to supervise controller-mode prediction. Across box-flipping and line-pressing tasks, URF achieves higher task success rates while reducing failure modes observed with admittance-only execution, including rapid force buildup, large force oscillations, tool breakage, and robot safety stops. These results suggest that contact-aware policies benefit from predicting not only compliant actions but also the controller behavior used to execute them. Project page: https://jiyou384.github.io/urf_project_page/",
+      "published": "2026-07-23T04:46:19Z",
+      "updated": "2026-07-23T04:46:19Z",
+      "arxiv_id": "2607.20912v1",
+      "abs_url": "http://arxiv.org/abs/2607.20912v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.20912v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "8 pages, 5 figures, 2 tables. Submitted to IEEE Robotics and Automation Letters (RA-L)",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 9,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "URF：用于稳定接触感知操纵的统一机器人控制策略框架",
+      "summary_zh": "基于学习的操纵策略通常根据感官观察来预测机器人的动作，并将其执行交给单独的低级控制器。在刚性接触中，这种分离可能会产生问题：虚拟目标的相同运动或顺应运动命令可能会导致接触不稳定、跟踪错误、负载过大或工具损坏，具体取决于低级控制器。在本文中，我们提出了一个\\textit{统一机器人控制策略框架}（URF），它将顺从动作预测与统一阻抗导纳控制连接起来。给定多模态观测结果，URF 可以预测虚拟目标、刚度矩阵和阻抗导纳切换比。开关比率决定控制器何时应该表现得更像导纳控制以实现精确的运动跟踪，以及何时应该转向阻抗控制以实现更安全的刚性接触。由于演示数据不提供真实环境刚度，因此我们根据测量的接触力构建开关比标签，并使用它们来监督控制器模式预测。在翻箱和压线任务中，URF 实现了更高的任务成功率，同时减少了仅准入执行中观察到的故障模式，包括快速力积聚、大力振荡、工具破损和机器人安全停止。这些结果表明，接触感知策略不仅受益于预测合规操作，还受益于预测用于执行这些操作的控制器行为。项目页面：https://jiyou384.github.io/urf_project_page/",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    },
+    {
+      "title": "Offline RL with Hierarchical Action Chunking",
+      "authors": [
+        "Ahad Jawaid"
+      ],
+      "summary": "Offline goal-conditioned reinforcement learning (RL) holds the promise of learning general-purpose policies from static datasets. However, scaling these methods to long-horizon tasks remains a challenge due to the curse of horizon, where value estimation errors can compound through long chains of bootstrapped Bellman backups. Existing hierarchical approaches mitigate this by decomposing tasks into subgoals, yet they often rely on low-level controllers that suffer from myopic execution and biased value estimates. In this work, we propose Hierarchical Implicit Q-Chunking (HiQC), an offline goal-conditioned RL algorithm that combines high-level latent planning with low-level action chunking. By conditioning the low-level critic on temporally extended action sequences, HiQC enables unbiased k-step value backups, compressing the horizon at both the planning and execution levels. We theoretically demonstrate that this dual decomposition results in a tighter bound on value error under a bounded per-backup error model compared to standard hierarchy or flat chunking alone. Empirically, HiQC achieves the highest aggregate performance among the compared methods on the OGBench suite, with its largest gains on long-horizon navigation tasks such as humanoid-giant.",
+      "published": "2026-07-23T01:48:46Z",
+      "updated": "2026-07-23T01:48:46Z",
+      "arxiv_id": "2607.20834v1",
+      "abs_url": "http://arxiv.org/abs/2607.20834v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.20834v1",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "comment": "RLC/RLJ 2026",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "VLA/多模态策略",
+        "强化/模仿学习",
+        "人形与灵巧",
+        "数据集/评测",
+        "双足机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 8,
+      "anchor_terms": [
+        "humanoid"
+      ],
+      "matched_terms": [
+        "action chunking",
+        "humanoid",
+        "navigation",
+        "reinforcement learning"
+      ],
+      "title_zh": "具有分层动作分块的离线强化学习",
+      "summary_zh": "离线目标条件强化学习（RL）有望从静态数据集中学习通用策略。然而，由于视野诅咒，将这些方法扩展到长期任务仍然是一个挑战，其中价值估计错误可能会通过引导贝尔曼备份的长链而加剧。现有的分层方法通过将任务分解为子目标来缓解这一问题，但它们通常依赖于低级控制器，而这些控制器会受到短视执行和有偏差的价值估计的影响。在这项工作中，我们提出了分层隐式 Q-Chunking (HiQC)，这是一种离线目标条件 RL 算法，它将高级潜在规划与低级动作分块相结合。通过使低级批评家适应临时扩展的动作序列，HiQC 可以实现无偏 k 步值备份，从而压缩规划和执行级别的范围。我们从理论上证明，与标准层次结构或单独的平面分块相比，这种双重分解会在有界每次备份错误模型下导致值错误的界限更紧密。根据经验，HiQC 在 OGBench 套件上的比较方法中实现了最高的总体性能，在长视距导航任务（例如人形巨人）上收益最大。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-24T01:26:58.201536+00:00"
+      }
+    }
+  ]
+}
