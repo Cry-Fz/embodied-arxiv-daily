@@ -1,13 +1,66 @@
 {
   "date": "2026-07-22",
-  "generated_at": "2026-07-26T01:27:17.368134+00:00",
+  "generated_at": "2026-07-27T01:45:03.248799+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202607220000 TO 202607222359]",
-  "total_fetched": 360,
-  "total_matched": 39,
+  "total_fetched": 370,
+  "total_matched": 42,
   "papers": [
+    {
+      "title": "Progress Reward Modeling for Robotic Learning: A Comprehensive Survey",
+      "authors": [
+        "Jianshu Zhang",
+        "Keliang Wu",
+        "Haoran Lu",
+        "Anbang Liu",
+        "Ce Zhang",
+        "Weijie Yin",
+        "Chengxuan Qian",
+        "Xiyuan Yang",
+        "Zhenyu Pan",
+        "Guo Ye",
+        "Han Liu"
+      ],
+      "summary": "Robotic learning takes place in dynamic environments with large behavior spaces. A terminal success signal only tells the robot whether the task is completed. It does not explain whether the current behavior is making progress, remaining unchanged, or undoing earlier progress. For this reason, recent studies have increasingly explored progress rewards that provide feedback during task execution. However, the current literature lacks a shared framework. Existing methods use different observations, goal specifications, output signals, supervision sources, and evaluation protocols. This makes it difficult to compare them and understand what their results actually validate. In this survey, we provide a unified view of progress reward modeling for robotic learning. We organize the field in three connected steps. We first study the interface of a progress model. This defines the problem from the outside by asking what information the model receives and what form of progress signal it produces. We then move inside the model and study the methods used to construct this signal. This reveals the different assumptions and mechanisms behind progress estimation and reward generation. Finally, we examine the data and benchmarks that support these methods. This shows how progress supervision is obtained and what different evaluations actually measure. Together, these three perspectives connect what a progress model is, how it is built, and how its quality is validated. We further summarize the main limitations of current approaches and discuss future research directions.",
+      "published": "2026-07-22T19:29:52Z",
+      "updated": "2026-07-22T19:29:52Z",
+      "arxiv_id": "2607.21655v1",
+      "abs_url": "http://arxiv.org/abs/2607.21655v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21655v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CL"
+      ],
+      "comment": "Project page: https://github.com/sterzhang/Awesome-Progress-Models",
+      "code_url": "https://github.com/sterzhang/Awesome-Progress-Models",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "数据集/评测",
+      "score": 7,
+      "anchor_terms": [
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "机器人学习的进度奖励建模：综合调查",
+      "summary_zh": "机器人学习发生在具有大行为空间的动态环境中。终端成功信号仅告诉机器人任务是否完成。它无法解释当前行为是否正在取得进展、保持不变或撤销先前的进展。因此，最近的研究越来越多地探索在任务执行过程中提供反馈的进度奖励。然而，当前的文献缺乏一个共享的框架。现有方法使用不同的观察、目标规范、输出信号、监督源和评估协议。这使得比较它们并理解它们的结果实际验证了什么变得困难。在这项调查中，我们提供了机器人学习进度奖励模型的统一视图。我们通过三个相互关联的步骤来组织该领域。我们首先研究进度模型的界面。这通过询问模型接收到什么信息以及它产生什么形式的进度信号来从外部定义问题。然后我们进入模型并研究用于构造该信号的方法。这揭示了进度估计和奖励生成背后的不同假设和机制。最后，我们检查支持这些方法的数据和基准。这显示了如何获得进度监督以及不同的评估实际衡量的内容。这三个视角将进度模型的含义、其构建方式以及其质量的验证方式联系起来。我们进一步总结了当前方法的主要局限性并讨论了未来的研究方向。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-27T01:45:36.234847+00:00"
+      }
+    },
     {
       "title": "Evolving Cache Schedules for Fast Diffusion Policy Inference",
       "authors": [
@@ -115,6 +168,53 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-07-23T01:57:29.675675+00:00"
+      }
+    },
+    {
+      "title": "GRACE: Gradient-Free Robot Action Generation via Combined Diffusion-MPPI Posterior Mean Estimation",
+      "authors": [
+        "Leesai Park",
+        "Jiho HOng",
+        "Sanghyun Kim"
+      ],
+      "summary": "Diffusion policies generate multimodal robot action sequences from demonstrations, but steering them toward deployment-time constraints typically relies on differentiable guidance costs. This excludes many practical safety constraints, such as binary collision checks, joint limits, and black-box rollout costs that are nondifferentiable. We propose Gradient-free Robot Action generation via Combined diffusion-MPPI posterior mean Estimation (GRACE), which guides a pretrained diffusion policy with Model Predictive Path Integral (MPPI) control using only forward cost evaluations. Building on the common score-ascent structure of diffusion and MPPI, GRACE constructs a cost-conditioned guidance posterior at each reverse step and estimates its mean with a single MPPI update centered at the diffusion reverse mean. For differentiable costs, GRACE recovers conventional gradient guidance under a first-order, matched-covariance approximation. GRACE attains higher success rates than diffusion-based and sampling-based baselines in simulation. On a real 7-DoF manipulator, GRACE avoids a deployment-time obstacle that the unguided prior collides with in every trial. Code and experiment videos are available at https://anonymous.4open.science/w/grace-70BB/.",
+      "published": "2026-07-22T23:20:03Z",
+      "updated": "2026-07-22T23:20:03Z",
+      "arxiv_id": "2607.21661v1",
+      "abs_url": "http://arxiv.org/abs/2607.21661v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21661v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "数据集/评测",
+        "机械臂"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 9,
+      "anchor_terms": [
+        "manipulator",
+        "robot"
+      ],
+      "matched_terms": [
+        "diffusion policy",
+        "manipulator",
+        "robot"
+      ],
+      "title_zh": "GRACE：通过组合扩散-MPPI 后验均值估计生成无梯度机器人动作",
+      "summary_zh": "扩散策略从演示中生成多模式机器人动作序列，但将它们引导至部署时间限制通常依赖于可微分的引导成本。这排除了许多实际的安全约束，例如二进制碰撞检查、联合限制和不可微分的黑盒部署成本。我们提出通过组合扩散-MPPI 后验均值估计（GRACE）生成无梯度机器人动作，它仅使用前向成本评估来指导具有模型预测路径积分（MPPI）控制的预训练扩散策略。基于扩散和 MPPI 的常见分数上升结构，GRACE 在每个反向步骤构建一个成本条件指导后验，并通过以扩散反向均值为中心的单个 MPPI 更新来估计其均值。对于可微分成本，GRACE 在一阶、匹配协方差近似下恢复传统的梯度引导。 GRACE 在模拟中比基于扩散和基于采样的基线获得了更高的成功率。在真正的 7-DoF 机械臂上，GRACE 避免了无引导先验在每次试验中都会遇到的部署时障碍。代码和实验视频可在 https://anonymous.4open.science/w/grace-70BB/ 获取。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-27T01:45:36.234847+00:00"
       }
     },
     {
@@ -465,10 +565,10 @@
       ],
       "summary": "Estimating traversability in unstructured environments requires conditioning on robot embodiment, as the same terrain can be traversable for one platform and unsafe for another. Existing methods often transfer predictions across morphologies through late-stage trajectory filtering rather than encoding platform constraints in the learned representation. We propose Capability-Aware Traversability (CAT), a framework that embeds physical limits directly into the spatial feature space. CAT grounds dense supervision masks in physical trajectories through an interactive annotation pipeline and modulates semantic terrain maps with robot-specific traversability vectors through Spatially-Adaptive Denormalization (SPADE) blocks. Across human-annotated and trajectory-aligned datasets, CAT leads all ranking-based metrics, improving AUROC by 11.0% on physically executed trajectories and AUPRC by 15.8% on human traces over the strongest baseline. Ablations show that spatial conditioning and per-robot prototypes produce capability sensitivity beyond generic path prediction. Deployments on a legged quadruped and a wheeled skid-steer demonstrate embodiment-aware obstacle avoidance on embedded hardware at 4.8 Hz.",
       "published": "2026-07-22T19:28:57Z",
-      "updated": "2026-07-22T19:28:57Z",
-      "arxiv_id": "2607.20679v1",
-      "abs_url": "http://arxiv.org/abs/2607.20679v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.20679v1",
+      "updated": "2026-07-24T15:27:22Z",
+      "arxiv_id": "2607.20679v2",
+      "abs_url": "http://arxiv.org/abs/2607.20679v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.20679v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -500,7 +600,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-07-24T01:25:57.882448+00:00"
+        "generated_at": "2026-07-27T01:45:36.234847+00:00"
       }
     },
     {
@@ -1645,6 +1745,50 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-07-23T01:57:29.675675+00:00"
+      }
+    },
+    {
+      "title": "Learning Diverse Humanoid Tasks via Synthetic Video Scenarios without Real World Data",
+      "authors": [
+        "Yun-Hao Tsai",
+        "Cong-Thanh Vu",
+        "Yen-Chen Liu"
+      ],
+      "summary": "The human-like morphology of humanoid robots grants them exceptional potential for agile and versatile motor capabilities, but it also introduces significant challenges in acquiring complex skills. Traditional Learning-from-Demonstrations methods are often constrained by the high cost of collecting real-world data, the difficulty of capturing motion-specific behaviors, and the limited diversity of demonstrations across individuals. Moreover, even for the same task, humans may execute the motion in multiple distinct ways. In this paper, we propose a new framework that leverages the power of Generative AI to convert textual prompts into realistic and diverse sequences of human body movements, enabling the robot to observe multiple variations of how a single task can be performed. These synthetic demonstrations are then used as a training resource, allowing the robot to learn a broad range of task-execution styles without requiring direct human intervention. We evaluate the proposed method across four simulation scenarios. Experimental results show that the robot not only completes the tasks successfully but also demonstrates strong adaptability to complex variations in motion.",
+      "published": "2026-07-22T05:36:55Z",
+      "updated": "2026-07-22T05:36:55Z",
+      "arxiv_id": "2607.21648v1",
+      "abs_url": "http://arxiv.org/abs/2607.21648v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21648v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "Accepted to the 2026 IEEE/ASME International Conference on Advanced Intelligent Mechatronics (AIM)",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "人形与灵巧",
+        "双足机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 6,
+      "anchor_terms": [
+        "humanoid",
+        "robot"
+      ],
+      "matched_terms": [
+        "humanoid",
+        "robot"
+      ],
+      "title_zh": "在没有真实世界数据的情况下通过合成视频场景学习各种人形任务",
+      "summary_zh": "人形机器人的类似人类的形态赋予它们敏捷和多功能运动能力的非凡潜力，但它也给获得复杂技能带来了巨大的挑战。传统的从演示中学习的方法通常受到收集现实世界数据的高成本、捕获特定运动行为的困难以及个体演示的多样性有限的限制。此外，即使对于同一任务，人类也可能以多种不同的方式执行动作。在本文中，我们提出了一个新的框架，利用生成式人工智能的力量将文本提示转换为现实且多样化的人体运动序列，使机器人能够观察单个任务执行方式的多种变化。然后，这些综合演示将被用作培训资源，使机器人能够学习各种任务执行方式，而无需直接人工干预。我们在四个模拟场景中评估所提出的方法。实验结果表明，该机器人不仅成功完成了任务，而且对复杂的运动变化表现出很强的适应性。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-07-27T01:45:36.234847+00:00"
       }
     },
     {
