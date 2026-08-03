@@ -1,12 +1,12 @@
 {
   "date": "2026-07-30",
-  "generated_at": "2026-08-02T01:26:20.848510+00:00",
+  "generated_at": "2026-08-03T01:27:08.618298+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202607300000 TO 202607302359]",
-  "total_fetched": 463,
-  "total_matched": 41,
+  "total_fetched": 541,
+  "total_matched": 43,
   "papers": [
     {
       "title": "TEA-AgriVLN: Traversability Estimation Alarm for Agricultural Vision-and-Language Navigation",
@@ -152,50 +152,98 @@
       }
     },
     {
-      "title": "LabEvolver: Training-Free Experience Evolution for Safe and Grounded Wet-Lab Agents",
+      "title": "When Unlearning Fails: Reliable Data Deletion under Post-Training in Agent Networks",
       "authors": [
-        "Jingya Wang",
-        "Yuyang Gao",
-        "Liuzhenghao Lv",
-        "Yonghong Tian",
-        "Yuyang Liu"
+        "Zihao Ding",
+        "Jun Huang",
+        "Liang Dong"
       ],
-      "summary": "We introduce LabEvolver, a training-free framework that equips safe and grounded wet-lab agents with episodic memory from execution experience. LabEvolver couples a state-grounded inner trial loop for adaptive perception, online planning, and safety validation with an outer evolution loop that distills completed trajectories into reusable skill, strategy, and safety experience. On robotic solution-preparation tasks, LabEvolver demonstrates real-world feasibility, reducing pH-regulation completion time and safety-gate intercepts by 48.2% and 60.0%, respectively. On ALFWorld, it further improves cumulative success rate within 20 steps from 76.2% with ReAct to 91.4% over 500 continual tasks, showing generality beyond wet-lab settings. These results support learn-by-doing experience evolution as a feasible path toward closed-loop automated scientific discovery. The project page is available at https://github.com/AndyGao6186/LabEvolver.",
-      "published": "2026-07-30T05:19:33Z",
-      "updated": "2026-07-30T05:19:33Z",
-      "arxiv_id": "2607.27690v1",
-      "abs_url": "http://arxiv.org/abs/2607.27690v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.27690v1",
-      "primary_category": "cs.RO",
+      "summary": "Self-improving federated agent networks keep training after deployment by collecting new trajectories with the current policy and feeding them back into later rounds. This closed loop makes unlearning harder than a one-time model repair. When a data owner requests deletion, the target data may have already shaped later retained trajectories, so retraining or model-side unlearning can leave an influence echo that returns as the network continues to operate. We show that this echo survives retained-data retraining, grows with the amount of forget-shaped retained data, and can be traced from deployment, collection, and aggregation records. To address this problem, we propose MUTE, a Muting Unlearned Trajectories' Echoes method for reliable deletion in self-improving federated agent networks. MUTE estimates downstream influence from a lightweight server ledger, removes the current residue through a forget-retain update, contains high-influence retained trajectories through quarantine or down-weighting, and audits later behavior to schedule additional erasure under an uplink budget. Experiments on LIBERO with two vision-language-action backbones, three deletion granularities, and a physical Jetson-based edge testbed show that MUTE keeps behavioral leakage and influence regeneration low while preserving task utility and using much less communication than full retraining.",
+      "published": "2026-07-30T20:41:53Z",
+      "updated": "2026-07-30T20:41:53Z",
+      "arxiv_id": "2607.28829v1",
+      "abs_url": "http://arxiv.org/abs/2607.28829v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.28829v1",
+      "primary_category": "cs.NI",
       "categories": [
-        "cs.RO",
-        "cs.AI"
+        "cs.NI",
+        "cs.LG"
       ],
       "comment": "",
-      "code_url": "https://github.com/AndyGao6186/LabEvolver",
-      "has_code": true,
+      "code_url": "",
+      "has_code": false,
       "labels": [
-        "开源",
-        "感知与3D理解",
-        "其他机器人"
+        "VLA/多模态策略",
+        "数据集/评测"
       ],
-      "topic": "感知与3D理解",
-      "score": 5,
+      "topic": "VLA/多模态策略",
+      "score": 6,
       "anchor_terms": [
-        "robot",
-        "robotic"
+        "vision-language-action"
       ],
       "matched_terms": [
-        "robot",
-        "robotic"
+        "libero",
+        "vision-language-action"
       ],
-      "title_zh": "LabEvolver：安全可靠的湿实验室代理的免培训体验演进",
-      "summary_zh": "我们推出了 LabEvolver，这是一个无需培训的框架，可为安全且可靠的湿实验室代理提供来自执行经验的情景记忆。 LabEvolver 将基于状态的内部试验循环（用于自适应感知、在线规划和安全验证）与外部进化循环（将完整的轨迹提炼为可重用的技能、策略和安全经验）结合起来。在机器人溶液制备任务中，LabEvolver 展示了现实世界的可行性，将 pH 调节完成时间和安全门拦截时间分别缩短了 48.2% 和 60.0%。在 ALFWorld 上，它在 500 个连续任务中进一步提高了 20 个步骤内的累积成功率，从 ReAct 的 76.2% 提高到 91.4%，显示出超越湿实验室设置的通用性。这些结果支持边做边学的经验进化作为实现闭环自动化科学发现的可行路径。该项目页面位于 https://github.com/AndyGao6186/LabEvolver。",
+      "title_zh": "当遗忘失败时：代理网络中训练后的可靠数据删除",
+      "summary_zh": "自我改进的联邦代理网络在部署后通过收集当前策略的新轨迹并将其反馈到后续轮次中来保持训练。这种闭环使得忘记学习比一次性模型修复更困难。当数据所有者请求删除时，目标数据可能已经形成了后来保留的轨迹，因此重新训练或模型端遗忘可能会留下影响回声，随着网络继续运行而返回。我们表明，这种回声能够在保留数据重新训练中幸存下来，随着遗忘形状的保留数据量的增加而增长，并且可以从部署、收集和聚合记录中进行追踪。为了解决这个问题，我们提出了 MUTE，一种静音未学习轨迹回声方法，用于在自我改进的联邦代理网络中进行可靠删除。 MUTE 估计来自轻量级服务器分类帐的下游影响，通过忘记保留更新删除当前残留物，通过隔离或降低权重包含高影响力的保留轨迹，并审核后续行为以在上行链路预算下安排额外的擦除。在具有两个视觉-语言-动作主干、三个删除粒度和一个基于 Jetson 的物理边缘测试平台的 LIBERO 上进行的实验表明，MUTE 可以保持较低的行为泄漏和影响再生，同时保留任务效用，并且比完全再训练使用更少的通信。",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-07-31T01:29:53.539510+00:00"
+        "generated_at": "2026-08-03T01:27:41.439348+00:00"
+      }
+    },
+    {
+      "title": "Mirror Learning",
+      "authors": [
+        "Yunpeng Liu",
+        "Matthew Niedoba",
+        "Oluwanifemi A. Adekanye",
+        "Jason Yoo",
+        "Yingchen He",
+        "Berend Zwartsenberg",
+        "Frank Wood"
+      ],
+      "summary": "We investigate imitation learning through the lens of third-person observation and propose a framework for mirror learning: acquiring actionable policies from passive observation. While behavior cloning (BC) excels under dense, well-aligned first-person data, it fundamentally fails to leverage the rich observational signals arising from third-person demonstrations that humans and animals routinely exploit. We introduce a method that composes (i) a learned perspective transformation that places learners in demonstrators' shoes using a fine-tuned video diffusion model and (ii) an inverse dynamics model that infers action trajectories in the learners' control space. This enables the synthesis of mirror data, pseudo first-person expert data generated from third-person observations of demonstrator behavior. Empirically, we show that mirror data alone can train effective policies, and that augmenting first-person BC training with mirror data further improves downstream policy performance. Our results suggest that modern generative world models implicitly encode sufficient structure to enable a scalable and safe alternative to teleoperation-heavy data collection.",
+      "published": "2026-07-30T18:00:31Z",
+      "updated": "2026-07-30T18:00:31Z",
+      "arxiv_id": "2607.28737v1",
+      "abs_url": "http://arxiv.org/abs/2607.28737v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.28737v1",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "强化/模仿学习"
+      ],
+      "topic": "机器人操作",
+      "score": 6,
+      "anchor_terms": [
+        "imitation learning",
+        "teleoperation"
+      ],
+      "matched_terms": [
+        "behavior cloning",
+        "imitation learning",
+        "teleoperation",
+        "world model"
+      ],
+      "title_zh": "镜像学习",
+      "summary_zh": "我们通过第三人称观察的视角研究模仿学习，并提出镜像学习的框架：从被动观察中获取可行的政策。虽然行为克隆（BC）在密集、一致的第一人称数据下表现出色，但它从根本上无法利用人类和动物经常利用的第三人称演示所产生的丰富观察信号。我们引入了一种方法，该方法由以下部分组成：（i）学习的透视变换，使用微调的视频扩散模型将学习者置于演示者的位置，以及（ii）逆动力学模型，推断学习者控制空间中的动作轨迹。这使得能够合成镜像数据，即根据对示威者行为的第三人称观察生成的伪第一人称专家数据。根据经验，我们表明仅镜像数据就可以训练有效的策略，并且用镜像数据增强第一人称BC训练可进一步提高下游策略性能。我们的结果表明，现代生成世界模型隐式编码了足够的结构，以实现可扩展且安全的远程操作密集型数据收集替代方案。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-08-03T01:27:41.439348+00:00"
       }
     },
     {
@@ -565,15 +613,15 @@
       "title": "One Future, Every Robot: Label-Efficient Collective-State Prediction with Decentralized JEPA",
       "authors": [
         "Alan-Barsag Gazzaev",
-        "Alexey Garvilov",
+        "Alexey Gavrilov",
         "Sergey Muravyov"
       ],
-      "summary": "Can every robot in a swarm predict the same future collective state from only local observations and bandwidth-limited messages? We formulate this as decentralized shared-state prediction and introduce Collective-State JEPA (CS-JEPA), a recurrent joint-embedding predictive architecture whose output at every robot represents one common future token field. At deployment, each robot uses a 16-frame local history and one 64-float recurrent message per directed edge; there is no global pooling, target encoder, episode clock, or recorded future action. After pretraining without downstream collective labels, frozen representations are evaluated with ridge probes fitted on 6, 12, or 24 globally labeled episodes. Against raw-future reconstruction with the same receiver anchor and deployment capacity but 9,607 additional training-only parameters, a prospectively registered five-seed follow-up improves prediction-error and inter-robot-agreement label-budget AUC on in-distribution, ring, mutual-kNN, and unseen-size families up to 108 robots. Every effect favors CS-JEPA in 5/5 outer seeds. In a separate sealed eight-seed follow-up, matched action-conditioned predictors receive each candidate four-step plan before producing receiver-local predictive representations. CS-JEPA reduces branch-value MSE by 45.5% and improves within-context candidate-score Pearson correlation by 0.1291, with both effects favorable in 8/8 seeds, including at unseen N=32. These results support common-future JEPA targets as a label-efficient primitive for decentralized swarm prediction under topology and size shift, with additional evidence of planning-relevant value estimation.",
+      "summary": "Can every robot in a swarm predict the same future collective state from only local observations and bandwidth-limited messages? We formulate this as decentralized shared-state prediction and introduce Collective-State JEPA (CS-JEPA), a recurrent joint-embedding predictive architecture whose output at every robot represents one common future token field. At deployment, each robot uses a 16-frame local history and one 64-float recurrent message per directed edge; there is no global pooling, target encoder, episode clock, or recorded future action. After pretraining without downstream collective labels, frozen representations are evaluated with ridge probes fitted on 6, 12, or 24 globally labeled episodes. Against raw-future reconstruction with the same receiver anchor and deployment capacity but 9,607 additional training-only parameters, a prospectively registered five-seed follow-up improves prediction-error and inter-robot-agreement label-budget AUC on in-distribution, ring, mutual-kNN, and unseen-size families up to 108 robots. Every effect favors CS-JEPA in 5/5 outer seeds. A sealed eight-seed action-conditioned follow-up reduces branch-value MSE by 45.5% and improves within-context candidate-score correlation by 0.1291. In a separate 16-seed fully decentralized closed-loop study, receiver-local CS-JEPA planning improves utility over nominal control ($Δ= +0.01053$, $p = 0.00070$) and first plan-coefficient agreement over matched reconstruction ($Δ= +0.14472$, $p = 0.000061$). These results support common-future JEPA targets as a label-efficient primitive for decentralized swarm prediction under topology and size shift, with additional evidence of planning-relevant value estimation and closed-loop decision consistency.",
       "published": "2026-07-30T16:16:08Z",
-      "updated": "2026-07-30T16:16:08Z",
-      "arxiv_id": "2607.28443v1",
-      "abs_url": "http://arxiv.org/abs/2607.28443v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.28443v1",
+      "updated": "2026-07-31T10:57:02Z",
+      "arxiv_id": "2607.28443v2",
+      "abs_url": "http://arxiv.org/abs/2607.28443v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.28443v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -593,12 +641,12 @@
         "robot"
       ],
       "title_zh": "每个机器人都有一个未来：使用去中心化 JEPA 进行标签高效的集体状态预测",
-      "summary_zh": "群体中的每个机器人能否仅根据本地观察和带宽有限的消息来预测相同的未来集体状态？我们将其表述为去中心化共享状态预测，并引入集体状态 JEPA (CS-JEPA)，这是一种循环联合嵌入预测架构，其每个机器人的输出代表一个共同的未来令牌字段。在部署时，每个机器人使用 16 帧本地历史记录和每个有向边一条 64 浮点数循环消息；没有全局池、目标编码器、事件时钟或记录的未来动作。在没有下游集体标签的预训练后，使用安装在 6、12 或 24 个全局标记片段上的脊探针评估冻结表示。与使用相同的接收器锚点和部署容量但有 9,607 个额外的仅训练参数的原始未来重建相比，前瞻性注册的五种子后续改进了分布内、环、相互 kNN 和最多 108 个机器人的未知大小系列的预测误差和机器人间协议标签预算 AUC。 5/5 外部种子中的每种效果都有利于 CS-JEPA。在单独的密封八种子后续行动中，匹配的动作条件预测器在生成接收者局部预测表示之前接收每个候选四步计划。 CS-JEPA 将分支值 MSE 降低了 45.5%，并将上下文内候选分数 Pearson 相关性提高了 0.1291，这两种效果在 8/8 种子中都有利，包括在未见过的 N=32 时。这些结果支持共同未来的 JEPA 目标作为拓扑和大小变化下分散群预测的标签高效原语，并提供与规划相关的价值估计的额外证据。",
+      "summary_zh": "群体中的每个机器人能否仅根据本地观察和带宽有限的消息来预测相同的未来集体状态？我们将其表述为去中心化共享状态预测，并引入集体状态 JEPA (CS-JEPA)，这是一种循环联合嵌入预测架构，其每个机器人的输出代表一个共同的未来令牌字段。在部署时，每个机器人使用 16 帧本地历史记录和每个有向边一条 64 浮点数循环消息；没有全局池、目标编码器、事件时钟或记录的未来动作。在没有下游集体标签的预训练后，使用安装在 6、12 或 24 个全局标记片段上的脊探针评估冻结表示。与使用相同的接收器锚点和部署容量但有 9,607 个额外的仅训练参数的原始未来重建相比，前瞻性注册的五种子后续改进了分布内、环、相互 kNN 和最多 108 个机器人的未知大小系列的预测误差和机器人间协议标签预算 AUC。 5/5 外部种子中的每种效果都有利于 CS-JEPA。密封的八种子动作条件跟进将分支值 MSE 降低了 45.5%，并将上下文内候选分数相关性提高了 0.1291。在一项单独的 16 种子完全分散闭环研究中，接收者本地 CS-JEPA 规划提高了名义控制的效用（$Δ= +0.01053$，$p = 0.00070$），并提高了匹配重建的第一个计划系数协议（$Δ= +0.14472$，$p = 0.000061$）。这些结果支持共同未来的 JEPA 目标作为拓扑和规模变化下分散群体预测的标签高效原语，并提供规划相关价值估计和闭环决策一致性的额外证据。",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-08-01T01:29:12.714816+00:00"
+        "generated_at": "2026-08-03T01:27:41.439348+00:00"
       }
     },
     {
@@ -1860,6 +1908,52 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-07-31T01:29:53.539510+00:00"
+      }
+    },
+    {
+      "title": "LabEvolver: Training-Free Experience Evolution for Safe and Grounded Wet-Lab Agents",
+      "authors": [
+        "Jingya Wang",
+        "Yuyang Gao",
+        "Liuzhenghao Lv",
+        "Yonghong Tian",
+        "Yuyang Liu"
+      ],
+      "summary": "We introduce LabEvolver, a training-free framework that equips safe and grounded wet-lab agents with episodic memory from execution experience. LabEvolver couples a state-grounded inner trial loop for adaptive perception, online planning, and safety validation with an outer evolution loop that distills completed trajectories into reusable skill, strategy, and safety experience. On robotic solution-preparation tasks, LabEvolver demonstrates real-world feasibility, reducing pH-regulation completion time and safety-gate intercepts by 48.2% and 60.0%, respectively. On ALFWorld, it further improves cumulative success rate within 20 steps from 76.2% with ReAct to 91.4% over 500 continual tasks, showing generality beyond wet-lab settings. These results support learn-by-doing experience evolution as a feasible path toward closed-loop automated scientific discovery. The project page is available at https://andygao6186.github.io/LabEvolver/.",
+      "published": "2026-07-30T05:19:33Z",
+      "updated": "2026-07-31T02:51:45Z",
+      "arxiv_id": "2607.27690v2",
+      "abs_url": "http://arxiv.org/abs/2607.27690v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.27690v2",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "感知与3D理解",
+      "score": 5,
+      "anchor_terms": [
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "LabEvolver：安全可靠的湿实验室代理的免培训体验演进",
+      "summary_zh": "我们推出了 LabEvolver，这是一个无需培训的框架，可为安全且可靠的湿实验室代理提供来自执行经验的情景记忆。 LabEvolver 将基于状态的内部试验循环（用于自适应感知、在线规划和安全验证）与外部进化循环（将完整的轨迹提炼为可重用的技能、策略和安全经验）结合起来。在机器人溶液制备任务中，LabEvolver 展示了现实世界的可行性，将 pH 调节完成时间和安全门拦截时间分别缩短了 48.2% 和 60.0%。在 ALFWorld 上，它在 500 个连续任务中进一步提高了 20 个步骤内的累积成功率，从 ReAct 的 76.2% 提高到 91.4%，显示出超越湿实验室设置的通用性。这些结果支持边做边学的经验进化作为实现闭环自动化科学发现的可行路径。该项目页面位于 https://andygao6186.github.io/LabEvolver/。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-08-03T01:27:41.439348+00:00"
       }
     },
     {
