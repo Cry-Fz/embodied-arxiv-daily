@@ -1,6 +1,6 @@
 {
   "date": "2026-07-29",
-  "generated_at": "2026-08-04T01:17:02.666174+00:00",
+  "generated_at": "2026-08-05T01:20:20.531991+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
@@ -386,7 +386,7 @@
     {
       "title": "HumanCLAW: Can Vision-Language Models Act Through a Body?",
       "authors": [
-        "Siyao Li",
+        "Li Siyao",
         "Jiawei Gu",
         "Shuai Liu",
         "Kairui Hu",
@@ -407,10 +407,10 @@
       ],
       "summary": "Evaluating whether a vision-language model (VLM) can act through a physical body is challenging. The outcome of an action couples the VLM's decision with motor control. When a task fails, it is hard to tell whether the VLM made a bad choice or the motor controller simply failed to execute it, e.g., losing balance and falling. In this work, we introduce HumanCLAW, an evaluation framework that decouples action decision-making from low-level execution. At every step, a harnessed, off-the-shelf VLM issues an atomic skill command, and the command is translated into a sub-second chunk of continuous full-body motion with real physical consequences, including gravity and collisions. The body can therefore act freely in the physical world, while execution-side disturbances, balance and motor errors, are factored out. What remains measurable is the model's action intelligence: its moment-to-moment choice of what the body should execute next. Based on this framework, we build HumanCLAW-Bench: 1,218 long-horizon, egocentric find-navigate-interact episodes across 41 indoor scenes. We test nine state-of-the-art VLMs and find that none solves the benchmark; the best model reaches only a 16.8% success rate. Recognizing the target is not the bottleneck. What current VLMs lack is embodied self-awareness: they lose track of their own body, failing to tell where it is, whether it has reached the goal, or whether it has hit an obstacle.",
       "published": "2026-07-29T17:51:36Z",
-      "updated": "2026-07-29T17:51:36Z",
-      "arxiv_id": "2607.27180v1",
-      "abs_url": "http://arxiv.org/abs/2607.27180v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.27180v1",
+      "updated": "2026-08-03T21:59:13Z",
+      "arxiv_id": "2607.27180v2",
+      "abs_url": "http://arxiv.org/abs/2607.27180v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.27180v2",
       "primary_category": "cs.CV",
       "categories": [
         "cs.CV",
@@ -439,7 +439,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-07-31T01:28:42.975380+00:00"
+        "generated_at": "2026-08-05T01:21:01.460083+00:00"
       }
     },
     {
@@ -1270,7 +1270,7 @@
       }
     },
     {
-      "title": "Enfold: Folding World-Generator Computation into Predictive Representations for Efficient Embodied Control",
+      "title": "Enfold: Folding World Model Imagination into Predictive Representations for Ultra-Efficient Embodied Control",
       "authors": [
         "Weili Zeng",
         "Yitong Xing",
@@ -1283,43 +1283,48 @@
         "Xin Wang",
         "Xiaomin Wu",
         "Yao Mu",
+        "Xiaokang Yang",
         "Yichao Yan"
       ],
       "summary": "World generative models are typically used through what they produce: a rendered future, a video-conditioned action, or latent context computed by a costly generative branch. We argue that their more reusable asset is the computation that constructs a future. As a generator transforms a corrupted future into a coherent trajectory, its intermediate states organize appearance, spatial layout, and interaction across levels of abstraction. Can this future-generative computation be internalized in a representation inferred from the present alone? We present Enfold, which transfers this computation into a representation predicted from the current visual context and language instruction. During training, multi-level states exposed as the generator processes the observed future supervise a current-only encoder. The learned representation is fed back to condition future generation and is read by task heads without allowing task gradients to reshape the encoder. At deployment, action prediction no longer executes the generator. Across LIBERO, RoboTwin2.0, and real-robot tasks, Enfold supports strong control while reducing action latency by $3.7\\times$ relative to Fast--WAM, Enfold-Flash reaches $10.1\\times$. Representation analyses show that it suppresses nuisance variation and preferentially captures changes that emerge over longer horizons. When the current scene is altered by human intervention, both the generated continuation and the executed actions adapt, which is inconsistent with fixed trajectory replay. These results recast a world generator as a source of predictive control representations: its future need not be materialized at every step if its internal structure can be enfolded into the present.",
       "published": "2026-07-29T09:17:33Z",
-      "updated": "2026-07-29T09:17:33Z",
-      "arxiv_id": "2607.26657v1",
-      "abs_url": "http://arxiv.org/abs/2607.26657v1",
-      "pdf_url": "https://arxiv.org/pdf/2607.26657v1",
+      "updated": "2026-08-03T03:05:35Z",
+      "arxiv_id": "2607.26657v2",
+      "abs_url": "http://arxiv.org/abs/2607.26657v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.26657v2",
       "primary_category": "cs.RO",
       "categories": [
-        "cs.RO"
+        "cs.RO",
+        "cs.CV"
       ],
       "comment": "",
       "code_url": "",
       "has_code": false,
       "labels": [
+        "世界模型与仿真",
         "数据集/评测",
         "其他机器人"
       ],
-      "topic": "数据集/评测",
-      "score": 9,
+      "topic": "世界模型与仿真",
+      "score": 11,
       "anchor_terms": [
         "embodied",
-        "robot"
+        "robot",
+        "world model"
       ],
       "matched_terms": [
         "embodied",
         "libero",
-        "robot"
+        "robot",
+        "world model"
       ],
-      "title_zh": "Enfold：将世界生成器计算折叠为预测表示以实现高效的具体控制",
+      "title_zh": "Enfold: Folding World Model Imagination into Predictive Representations for Ultra-Efficient Embodied Control",
       "summary_zh": "世界生成模型通常通过它们生成的内容来使用：渲染的未来、视频条件动作或由昂贵的生成分支计算的潜在上下文。我们认为，他们更可重用的资产是构建未来的计算。当生成器将腐败的未来转变为连贯的轨迹时，其中间状态会组织外观、空间布局和跨抽象级别的交互。这种未来生成计算能否内化为仅从现在推断出的表示形式？我们提出了 Enfold，它将计算转换为根据当前视觉上下文和语言指令预测的表示。在训练期间，当生成器处理观察到的未来时暴露的多级状态监督仅当前的编码器。学习到的表示被反馈到条件下一代，并由任务头读取，而不允许任务梯度重塑编码器。部署时，动作预测不再执行生成器。在 LIBERO、RoboTwin2.0 和真实机器人任务中，Enfold 支持强大的控制，同时相对于 Fast--WAM 将动作延迟降低了 3.7 美元\\times$，Enfold-Flash 达到 $10.1\\times$。代表性分析表明，它抑制了令人讨厌的变化，并优先捕获较长时间内出现的变化。当当前场景因人为干预而改变时，生成的延续和执行的动作都会适应，这与固定轨迹重放不一致。这些结果将世界生成器重新塑造为预测控制表示的来源：如果它的内部结构可以包含在现在中，那么它的未来不需要在每一步都实现。",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-07-30T01:16:13.598162+00:00"
+        "generated_at": "2026-08-05T01:21:01.460083+00:00"
       }
     },
     {
