@@ -1,12 +1,12 @@
 {
   "date": "2026-08-04",
-  "generated_at": "2026-08-11T00:45:44.295348+00:00",
+  "generated_at": "2026-08-12T00:53:54.127791+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202608040000 TO 202608042359]",
-  "total_fetched": 577,
-  "total_matched": 49,
+  "total_fetched": 588,
+  "total_matched": 52,
   "papers": [
     {
       "title": "PhyAI: Real-Time Physical AI at the Edge, Scalable Rollouts in the Cloud",
@@ -215,6 +215,51 @@
       }
     },
     {
+      "title": "Geometry Beats Estimated Depth: RGB-Only Multi-Camera 3D Tracking under Sim2Real",
+      "authors": [
+        "Abdullah Naeem",
+        "Anav Katwal",
+        "Ayon Dey",
+        "Noman Khan",
+        "Md Tamjidul Hoque"
+      ],
+      "summary": "The AI City Challenge 2026 Track 1 evaluates multi-camera 3D perception in large indoor warehouses under a synthetic-to-real (Sim2Real) setting; depth is available only for training and validation, so inference is RGB-only. We use two RGB-only routes as a controlled test of one hypothesis: that cross-view geometric consistency, not monocular depth accuracy, governs performance under Sim2Real. The first is a geometry-first pipeline: YOLO11x detection, homography lifting to the world frame, class-level 3D size priors, multi-camera fusion, world-coordinate tracking, and offline tracklet stitching. The second is estimated-depth pseudo-LiDAR: monocular depth (D4RT, Metric3D~v2) back-projected into a fused point cloud and passed to a 3D detector (V-DETR), mirroring prior point-cloud winners that used depth. The gap is decisive: geometry-first reaches 13.0 3D HOTA (51.6 LocA), whereas pseudo-LiDAR collapses to 0.12 (9.2 LocA). We trace the collapse to cross-view inconsistency of monocular depth---scale correction is necessary but not sufficient---which domain-adaptation fine-tuning does not repair within budget. Within the geometry pipeline, offline stitching is the only intervention that helps; SAHI detection, appearance Re-ID, learned lifting, RT-DETR ensembling, test-time augmentation, and domain randomization all fail to beat the baseline detector. The bottlenecks are complementary: detection quality bounds the geometry route (DetA), localization consistency bounds pseudo-LiDAR (LocA). We release a complete, reproducible RGB-only pipeline and ablation.",
+      "published": "2026-08-04T21:13:59Z",
+      "updated": "2026-08-04T21:13:59Z",
+      "arxiv_id": "2608.07579v1",
+      "abs_url": "http://arxiv.org/abs/2608.07579v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.07579v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "感知与3D理解"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 6,
+      "anchor_terms": [
+        "sim2real"
+      ],
+      "matched_terms": [
+        "domain randomization",
+        "sim2real"
+      ],
+      "title_zh": "几何形状优于估计深度：Sim2Real 下的纯 RGB 多摄像头 3D 跟踪",
+      "summary_zh": "The AI City Challenge 2026 Track 1 evaluates multi-camera 3D perception in large indoor warehouses under a synthetic-to-real (Sim2Real) setting; depth is available only for training and validation, so inference is RGB-only. We use two RGB-only routes as a controlled test of one hypothesis: that cross-view geometric consistency, not monocular depth accuracy, governs performance under Sim2Real. The first is a geometry-first pipeline: YOLO11x detection, homography lifting to the world frame, class-level 3D size priors, multi-camera fusion, world-coordinate tracking, and offline tracklet stitching. The second is estimated-depth pseudo-LiDAR: monocular depth (D4RT, Metric3D~v2) back-projected into a fused point cloud and passed to a 3D detector (V-DETR), mirroring prior point-cloud winners that used depth. The gap is decisive: geometry-first reaches 13.0 3D HOTA (51.6 LocA), whereas pseudo-LiDAR collapses to 0.12 (9.2 LocA). We trace the collapse to cross-view inconsistency of monocular depth---scale correction is necessary but not sufficient---which domain-adaptation fine-tuning does not repair within budget. Within the geometry pipeline, offline stitching is the only intervention that helps; SAHI detection, appearance Re-ID, learned lifting, RT-DETR ensembling, test-time augmentation, and domain randomization all fail to beat the baseline detector. The bottlenecks are complementary: detection quality bounds the geometry route (DetA), localization consistency bounds pseudo-LiDAR (LocA). We release a complete, reproducible RGB-only pipeline and ablation.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-08-12T00:54:28.930444+00:00"
+      }
+    },
+    {
       "title": "SiMDex: Mining Similar Egocentric Videos for Cross-Embodiment Dexterous Manipulation",
       "authors": [
         "Nie Lin",
@@ -277,6 +322,59 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-08-06T01:18:21.739648+00:00"
+      }
+    },
+    {
+      "title": "Reconfigurable Structural Robotic Assembly: Interlocking 3D Aggregations with Self-Aligning Compound Nested Lattice Modules",
+      "authors": [
+        "Alexander Htet Kyaw",
+        "Miana Smith",
+        "Paul Richard",
+        "Neil Gershenfeld"
+      ],
+      "summary": "Robotic construction systems often treat the material system and the robot as separate design problems, locating intelligence primarily in hardware, sensing, motion planning, and control. This project instead investigates how geometric intelligence can be encoded within architected material systems to simultaneously address requirements for robotic grasping, self-alignment, reversible connection, structural performance, and three-dimensional aggregation. We introduce a self-aligning compound nested lattice module composed of conjoined cuboctahedral-octahedral units. The cuboctahedral features of the modules provide defined surfaces for robotic grasping and alignment, while the octahedral features incorporate screw-releasable snap-fit connectors and corresponding receptors. Additionally, we present a nested arrangement that enables interlocking aggregation along the x, y, and z axes. We demonstrate the system through furniture and architectural scale structures assembled using both a robotic arm and mobile assembler. The resulting configurations include seating, spanning structures, surfaces, and vertical frames. Compression testing of the compound module produced a stiffness of 4,556 N/mm, a maximum load of 3,445 N, and a compressive modulus of 17.5 MPa. The modules can also be disassembled and reused across different configurations, supporting reconfigurable and circular construction.",
+      "published": "2026-08-04T19:12:12Z",
+      "updated": "2026-08-04T19:12:12Z",
+      "arxiv_id": "2608.07576v1",
+      "abs_url": "http://arxiv.org/abs/2608.07576v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.07576v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CG"
+      ],
+      "comment": "Accepted to the 46th Annual Conference for the Association for Computer Aided Design in Architecture (ACADIA), 2026",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "导航与移动",
+        "感知与3D理解",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 11,
+      "anchor_terms": [
+        "grasp",
+        "grasping",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "grasp",
+        "grasping",
+        "motion planning",
+        "robot",
+        "robotic",
+        "robotic arm"
+      ],
+      "title_zh": "Reconfigurable Structural Robotic Assembly: Interlocking 3D Aggregations with Self-Aligning Compound Nested Lattice Modules",
+      "summary_zh": "机器人施工系统通常将材料系统和机器人视为单独的设计问题，将智能主要定位在硬件、传感、运动规划和控制中。相反，该项目研究如何在建筑材料系统中编码几何智能，以同时满足机器人抓取、自对准、可逆连接、结构性能和三维聚合的要求。我们引入了一种由相连的立方八面体单元组成的自对准复合嵌套晶格模块。模块的立方八面体特征为机器人抓取和对准提供了限定的表面，而八面体特征则结合了螺丝可释放的卡扣连接器和相应的接收器。此外，我们提出了一种嵌套排列，可以沿 x、y 和 z 轴进行互锁聚合。我们通过使用机械臂和移动装配机组装的家具和建筑规模结构来演示该系统。由此产生的配置包括座椅、跨越结构、表面和垂直框架。复合模块的压缩测试显示刚度为 4,556 N/mm，最大载荷为 3,445 N，压缩模量为 17.5 MPa。这些模块还可以在不同的配置中拆卸和重复使用，支持可重新配置和循环结构。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-08-12T00:54:28.930444+00:00"
       }
     },
     {
@@ -1028,6 +1126,59 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-08-05T01:24:40.323809+00:00"
+      }
+    },
+    {
+      "title": "Projection-Retraction MPPI: Exact Constraint-Manifold Control for Manipulators",
+      "authors": [
+        "Seulchan Lee",
+        "Leesai Park",
+        "Minhyeong Kang",
+        "Sanghyun Kim"
+      ],
+      "summary": "Model Predictive Path Integral (MPPI) control is widely used in manipulation for its gradient-free, parallel handling of non-convex costs. Manipulation tasks, however, often impose constraints that hold throughout the motion: a closed kinematic chain that two grasping arms keep exactly, or joint limits and obstacle clearances that are never crossed. MPPI handles such constraints only through the cost, as soft penalties that hold approximately and fail under a strong task cost. To address this, we propose Projection-Retraction MPPI (PR-MPPI), which enforces the constraints inside the sampled dynamics. At every rollout step, the sampled velocity is projected to satisfy both constraint types: the equality restricts it to a subspace, and each inequality to a half-space within that subspace, so inequality handling never breaks the equality. This projection, however, satisfies the constraints only to first order, and a finite step leaves a small drift off the equality. Therefore, we retract the returned command back onto the constraint to numerical tolerance and independent of task weighting. We validate PR-MPPI on 14-DoF dual-arm systems. In simulation, the returned commands satisfy the closed-chain equality to numerical tolerance through a joint-limit stress test and randomized obstacle avoidance. On real hardware, the arms of a Unitree H1-2 humanoid reactively avoid a moving obstacle. Code and experiment videos are available at https://rcilab.github.io/prmppi.",
+      "published": "2026-08-04T11:40:10Z",
+      "updated": "2026-08-04T11:40:10Z",
+      "arxiv_id": "2608.07573v1",
+      "abs_url": "http://arxiv.org/abs/2608.07573v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.07573v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "人形与灵巧",
+        "双足机器人",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 8,
+      "anchor_terms": [
+        "grasp",
+        "grasping",
+        "humanoid",
+        "manipulation",
+        "manipulator"
+      ],
+      "matched_terms": [
+        "grasp",
+        "grasping",
+        "humanoid",
+        "manipulation",
+        "manipulator"
+      ],
+      "title_zh": "投影-缩回 MPPI：机械手的精确约束流形控制",
+      "summary_zh": "模型预测路径积分（MPPI）控制因其无梯度、非凸成本的并行处理而广泛应用于操纵中。然而，操纵任务通常会在整个运动过程中施加约束：两个抓臂精确保持的闭合运动链，或者从未跨越的关节限制和障碍物间隙。 MPPI 仅通过成本来处理此类约束，因为软惩罚在强大的任务成本下大约有效并失败。为了解决这个问题，我们提出了投影-回缩 MPPI (PR-MPPI)，它强制采样动态内部的约束。在每个推出步骤中，采样的速度都预计满足两种约束类型：等式将其限制在子空间中，并且每个不等式限制在该子空间内的半空间，因此不等式处理永远不会破坏等式。然而，该投影仅满足一阶约束，并且有限步长会导致等式出现小偏差。因此，我们将返回的命令撤回对数值容差的约束，并且与任务权重无关。我们在 14-DoF 双臂系统上验证 PR-MPPI。在仿真中，返回的命令通过联合极限压力测试和随机避障来满足数值容差的闭链相等性。在真实的硬件上，Unitree H1-2 人形机器人的手臂会反应性地避开移动的障碍物。代码和实验视频可在 https://rcilab.github.io/prmppi 获取。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-08-12T00:54:28.930444+00:00"
       }
     },
     {
