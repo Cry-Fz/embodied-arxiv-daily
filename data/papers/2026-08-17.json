@@ -1,12 +1,12 @@
 {
   "date": "2026-08-17",
-  "generated_at": "2026-08-19T00:30:51.372691+00:00",
+  "generated_at": "2026-08-20T00:30:58.643497+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202608170000 TO 202608172359]",
-  "total_fetched": 386,
-  "total_matched": 48,
+  "total_fetched": 481,
+  "total_matched": 56,
   "papers": [
     {
       "title": "Orbit-Planner: Towards Latent World Models for On-Orbit Obstacle Avoidance of Satellite Agents",
@@ -205,6 +205,395 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-08-19T00:34:22.496770+00:00"
+      }
+    },
+    {
+      "title": "Teach and Grow: An Agent-Centered Architecture for General Robot Learning",
+      "authors": [
+        "Chang Nie",
+        "Zhe Liu",
+        "Hesheng Wang"
+      ],
+      "summary": "End-to-end vision-language-action (VLA) and world-action models offer an elegant route to general-purpose robotics, but their reliability is bounded by validated physical coverage. When an unfamiliar object, sensor, embodiment, or contact falls outside that coverage and no validated fallback exists, correcting the failure requires new robot data, a policy update, and regression testing. This recurring burden is the retraining tax. Unlike text, embodied data must often be created by operating machines. We present Teach-and-Grow Learning (TGL), an agent-centered architecture for general robot learning. In its general form, a multimodal agent turns a few successful demonstrations into reusable Skill Blocks: closed-loop behaviors for meaningful subgoals. In a new scene, the agent grounds and composes these blocks, selects learned or geometric tools, observes the physical outcome, and revises the route when execution departs from intent. A Skill Library stores executable behavior, while structured Experience Memory carries forward success, failure, and repair. New tasks are acquired without task-specific policy retraining. Our LIBERO evaluation attains state-of-the-art performance; controlled studies expose skill induction, persistent reuse, and agent-directed adaptation. Finally, we propose the Teach-and-Grow scaling-law hypothesis: if X denotes effective reusable experience, future-task error and teaching demand should approach irreducible floors as power laws in X. The architecture therefore treats deployment as a period of continued learning, in which one task can make the next easier.",
+      "published": "2026-08-17T23:45:21Z",
+      "updated": "2026-08-17T23:45:21Z",
+      "arxiv_id": "2608.17209v1",
+      "abs_url": "http://arxiv.org/abs/2608.17209v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.17209v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 19,
+      "anchor_terms": [
+        "embodied",
+        "robot",
+        "robot learning",
+        "robotic",
+        "robotics",
+        "vision-language-action",
+        "vla"
+      ],
+      "matched_terms": [
+        "embodied",
+        "libero",
+        "robot",
+        "robot learning",
+        "robotic",
+        "robotics",
+        "vision-language-action",
+        "vla"
+      ],
+      "title_zh": "教学与成长：以代理为中心的通用机器人学习架构",
+      "summary_zh": "端到端视觉语言动作（VLA）和世界动作模型为通用机器人技术提供了一条优雅的途径，但其可靠性受到经过验证的物理覆盖范围的限制。当不熟悉的物体、传感器、实施例或接触超出覆盖范围并且不存在经过验证的回退时，纠正故障需要新的机器人数据、策略更新和回归测试。这种经常性的负担就是再培训税。与文本不同，体现数据通常必须由操作机器创建。我们提出了教学与成长学习（TGL），这是一种以代理为中心的通用机器人学习架构。在其一般形式中，多模式代理将一些成功的演示转化为可重用的技能块：有意义的子目标的闭环行为。在新场景中，智能体根据并组合这些块，选择学习的或几何工具，观察物理结果，并在执行偏离意图时修改路线。技能库存储可执行的行为，而结构化经验记忆则承载成功、失败和修复。获得新任务时无需进行特定于任务的策略再培训。我们的 LIBERO 评估达到了最先进的性能；对照研究揭示了技能诱导、持续重用和代理指导的适应。最后，我们提出“教学与成长”缩放法则假设：如果 X 表示有效的可重用经验，则未来任务错误和教学需求应该接近 X 中幂律的不可约底线。因此，该架构将部署视为一个持续学习的时期，其中一项任务可以使下一项任务变得更容易。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-08-20T00:31:24.897514+00:00"
+      }
+    },
+    {
+      "title": "Q-Learning With World Models",
+      "authors": [
+        "Perry Dong",
+        "Yueru Jia",
+        "Chelsea Finn",
+        "Dorsa Sadigh"
+      ],
+      "summary": "Off-policy reinforcement learning (RL) has become increasingly sample-efficient, enabling applications such as RL fine-tuning of Vision-Language-Action models into reliable, high-performing policies. World models offer a further lever for sample efficiency, as they predict state changes rather than actions alone, but their success has largely been confined to supervised policy learning. Prior model-based RL methods often optimize the policy or value function directly on imagined rollouts, which is prone to compounding bias and struggles to scale to large, high-dimensional problems such as real-world robotics, a problem that worsens with task horizon and visual complexity. In this work, we instead ask whether we can leverage world models directly on top of standard Q-learning to improve performance, while remaining trained and grounded in the real, online setting. We propose QWM, a framework that leverages world models to perform test-time search over imagined trajectories on top of Q-learning to select high-value actions during both online rollouts and evaluation. Since the policy and value function are trained only on real transitions, QWM avoids compounding model bias while still gaining the sample-efficiency benefits of predictive search. On challenging manipulation benchmarks Robomimic and LIBERO, QWM significantly outperforms strong prior state-of-the-art methods on both sample efficiency and performance.",
+      "published": "2026-08-17T22:00:42Z",
+      "updated": "2026-08-17T22:00:42Z",
+      "arxiv_id": "2608.17163v1",
+      "abs_url": "http://arxiv.org/abs/2608.17163v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.17163v1",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "VLA/多模态策略",
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 21,
+      "anchor_terms": [
+        "manipulation",
+        "real-world robot",
+        "reinforcement learning",
+        "robot",
+        "robotic",
+        "robotics",
+        "vision-language-action",
+        "world model"
+      ],
+      "matched_terms": [
+        "libero",
+        "manipulation",
+        "policy learning",
+        "real-world robot",
+        "reinforcement learning",
+        "robomimic",
+        "robot",
+        "robotic",
+        "robotics",
+        "vision-language-action",
+        "world model"
+      ],
+      "title_zh": "使用世界模型进行 Q 学习",
+      "summary_zh": "离策略强化学习 (RL) 的样本效率越来越高，使得 RL 等应用能够将视觉-语言-动作模型微调为可靠、高性能的策略。世界模型为样本效率提供了进一步的杠杆，因为它们预测状态变化而不是单独的行动，但它们的成功在很大程度上仅限于监督政策学习。先前基于模型的强化学习方法通​​常直接在想象的部署上优化策略或价值函数，这很容易产生复合偏差，并且难以扩展到大型、高维问题，例如现实世界的机器人技术，该问题随着任务范围和视觉复杂性而恶化。在这项工作中，我们转而询问是否可以直接利用标准 Q 学习之上的世界模型来提高性能，同时在真实的在线环境中保持训练和基础。我们提出了 QWM，一个框架，利用世界模型在 Q 学习之上对想象的轨迹执行测试时搜索，以在在线推出和评估期间选择高价值的操作。由于策略和价值函数仅在实际转换上进行训练，因此 QWM 避免了复合模型偏差，同时仍然获得预测搜索的样本效率优势。在具有挑战性的操作基准 Robomimic 和 LIBERO 上，QWM 在样本效率和性能方面都显着优于先前最先进的方法。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-08-20T00:31:24.897514+00:00"
+      }
+    },
+    {
+      "title": "PDDL-ART: Autonomous Symbolic Abstraction From Demonstration For Long-Horizon Robotic Manipulation Using Vision-Language Models",
+      "authors": [
+        "Disha Kamale",
+        "Dmitry Berenson"
+      ],
+      "summary": "Symbolic planning with PDDL offers a principled framework for long-horizon robot manipulation, but constructing accurate PDDL domain and problem descriptions remains a significant bottleneck, typically requiring substantial domain expertise. We present a Vision-Language Model (VLM)-based approach called PDDL-ART, a framework that autonomously generates task-specific PDDL domain and problem descriptions from a single expert demonstration, a natural language task description, and a library of available high-level action names. PDDL-ART does not require any domain templates, action signatures, or fine-tuning. To ensure the generated descriptions are not only syntactically valid but semantically aligned with the demonstrated task, PDDL-ART introduces a multi-stage correction pipeline operating at syntactic, semantic, and execution levels. A key component of execution-guided correction is symbolic predicate grounding. Instead of relying solely on visual observations, PDDL-ART leverages the tool-use capabilities of modern VLMs to incorporate geometric and temporal reasoning for evaluating relational predicates that are not directly discernible from images alone. Critically, the model autonomously determines when to invoke these tools and how to interpret their outputs. We evaluate PDDL-ART on challenging manipulation tasks in engine maintenance and household domains, including tasks that require memory, abstract predicate inference, and goal states that are visually indistinguishable from the initial state. PDDL-ART achieves an average success rate of 93.3%, compared to 78.3% for a baseline VLM-based planner.",
+      "published": "2026-08-17T21:29:29Z",
+      "updated": "2026-08-17T21:29:29Z",
+      "arxiv_id": "2608.17146v1",
+      "abs_url": "http://arxiv.org/abs/2608.17146v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.17146v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 12,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robot manipulation",
+        "robotic"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "robot",
+        "robot manipulation",
+        "robotic"
+      ],
+      "title_zh": "PDDL-ART：使用视觉语言模型从长视野机器人操作演示中进行自主符号抽象",
+      "summary_zh": "PDDL 的符号规划为长视野机器人操作提供了原则框架，但构建准确的 PDDL 域和问题描述仍然是一个重大瓶颈，通常需要大量的领域专业知识。我们提出了一种名为 PDDL-ART 的基于视觉语言模型 (VLM) 的方法，该框架可以根据单个专家演示、自然语言任务描述以及可用的高级操作名称库自动生成特定于任务的 PDDL 域和问题描述。 PDDL-ART 不需要任何域模板、操作签名或微调。为了确保生成的描述不仅在语法上有效，而且在语义上与演示的任务保持一致，PDDL-ART 引入了在语法、语义和执行级别上运行的多阶段校正管道。执行引导纠正的一个关键组成部分是符号谓词基础。 PDDL-ART 不是仅仅依赖于视觉观察，而是利用现代 VLM 的工具使用功能来结合几何和时间推理来评估仅从图像中无法直接辨别的关系谓词。至关重要的是，模型自主确定何时调用这些工具以及如何解释其输出。我们评估了 PDDL-ART 在发动机维护和家庭领域中具有挑战性的操作任务，包括需要记忆、抽象谓词推理以及在视觉上与初始状态无法区分的目标状态的任务。 PDDL-ART 的平均成功率为 93.3%，而基于 VLM 的基线规划器的平均成功率为 78.3%。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-08-20T00:31:24.897514+00:00"
+      }
+    },
+    {
+      "title": "PROBE: Manipulation-Grounded Visual Question Answering with VLM Agents",
+      "authors": [
+        "Vineet Bhat",
+        "Siyi Chen",
+        "Alex Zook",
+        "Xuning Yang",
+        "Stan Birchfield",
+        "Valts Blukis",
+        "Jonathan Tremblay"
+      ],
+      "summary": "Vision-language Models (VLMs) excel at 2D grounding, spatial reasoning and agentic tool-based planning in static scenes. However, consider asking a home robot \"Is my medication still in the cabinet?\" The answer may be physically hidden behind a row of containers that must first be moved aside. Answering such questions in real-world cluttered environments requires reasoning in dynamic scenes: distractors must be manipulated to reveal occluded objects, and each action changes the scene the model must reason over. We formalize this setting as Manipulation-Grounded Visual Question Answering (MG-VQA) and introduce PROBE, a framework for benchmarking and finetuning VLM agents on such tasks. We first develop PROBE-Sim, a high-fidelity tabletop simulator with everyday objects and a robot manipulator equipped with grasping and pushing tools. PROBE-Sim is used to create PROBE-Bench: an evaluation suite of 150 tasks across 6 question types on cluttered tabletop scenes, where a VLM perceives, picks up or pushes objects before answering. We observe consistent trend across all frontier VLMs: agentic tool-based methods outperform their perception-only baselines (8.0% on average) across all task types. We further design PROBE-Agent, a finetuning recipe to distill successful trajectories from a powerful teacher foundation model to a smaller open-weight model using a mixed data recipe that encourages manipulation-efficient question answering. PROBE Agent finetuned models outperform their off-the-shelf agent baseline (11.5% on average) and demonstrate positive transfer to unseen objects and a held-out task. We validate sim-to-real transfer by deploying PROBE-Agent finetuned policies in real-world tabletop environments.",
+      "published": "2026-08-17T21:03:31Z",
+      "updated": "2026-08-17T21:03:31Z",
+      "arxiv_id": "2608.17129v1",
+      "abs_url": "http://arxiv.org/abs/2608.17129v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.17129v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "数据集/评测",
+        "感知与3D理解",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 14,
+      "anchor_terms": [
+        "grasp",
+        "grasping",
+        "manipulation",
+        "manipulator",
+        "robot",
+        "sim-to-real"
+      ],
+      "matched_terms": [
+        "foundation model",
+        "grasp",
+        "grasping",
+        "manipulation",
+        "manipulator",
+        "robot",
+        "sim-to-real",
+        "simulator"
+      ],
+      "title_zh": "PROBE：使用 VLM 代理进行基于操作的视觉问答",
+      "summary_zh": "视觉语言模型 (VLM) 擅长静态场景中的 2D 基础、空间推理和基于代理工具的规划。然而，考虑询问家庭机器人“我的药物还在柜子里吗？”答案可能隐藏在一排容器后面，必须先将其移到一边。在现实世界的杂乱环境中回答此类问题需要在动态场景中进行推理：必须操纵干扰物以揭示被遮挡的对象，并且每个动作都会改变模型必须推理的场景。我们将此设置形式化为基于操作的视觉问答 (MG-VQA)，并引入 PROBE，这是一个用于在此类任务上对 VLM 代理进行基准测试和微调的框架。我们首先开发了 PROBE-Sim，这是一款具有日常物体的高保真桌面模拟器，以及配备抓取和推动工具的机器人操纵器。 PROBE-Sim 用于创建 PROBE-Bench：一个评估套件，包含 150 个任务，涵盖杂乱的桌面场景中的 6 种问题类型，其中 VLM 在回答之前感知、拾起或推动物体。我们在所有前沿 VLM 中观察到一致的趋势：在所有任务类型中，基于代理工具的方法都优于仅感知的基线（平均 8.0%）。我们进一步设计了 PROBE-Agent，这是一种微调方法，可以使用混合数据方法将成功的轨迹从强大的教师基础模型提炼为较小的开放权重模型，从而鼓励高效的问答。 PROBE Agent 微调模型的性能优于现成的代理基线（平均 11.5%），并表现出对看不见的物体和保留任务的积极迁移。我们通过在现实桌面环境中部署 PROBE-Agent 微调策略来验证模拟到真实的传输。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-08-20T00:31:24.897514+00:00"
+      }
+    },
+    {
+      "title": "Inference-Time Attention Steering for Vision-Language-Action Driving Models",
+      "authors": [
+        "Darshan Nagendra Prasad",
+        "Lars Ullrich",
+        "Knut Graichen"
+      ],
+      "summary": "Vision-language-action (VLA) driving models couple a reasoning stage with a diffusion-based trajectory decoder, but do not give a direct way to redirect attention toward safety-critical actors at inference time without retraining. We studied a bounded additive pre-softmax attention bias on the visual tokens of detector localized traffic actors on Alpamayo-R1's Qwen3-VL backbone. It is applied as a fail open forward pre-hook with no weight changes. On 50 lane-change scenarios from the Physical AI World Model Synthetic dataset. The trajectory decoder shows a monotonic dose response in the bias magnitude, separate from a paired zero bias control at every tested magnitude. It reaches $\\approx 17$\\,cm mean displacement with lateral shifts up to $\\sim 140$\\ cm at the clamp. A layer ablation places the action-relevant signal in late layers, where the effect increases with the number of hooked layers (2.0cm for the first 8 layers; 67.6cm for all 36). A per call injection audit explains why the Chain-of-Causation text never changes. The mask based bias never reaches the reasoning pathway in this serving stack, so the invariance is verified exposure, not robustness. Steered trajectories tend to shift toward the attended actor, suggesting the bias governs where the model looks rather than encoding a target behavior.",
+      "published": "2026-08-17T20:03:38Z",
+      "updated": "2026-08-17T20:03:38Z",
+      "arxiv_id": "2608.17095v1",
+      "abs_url": "http://arxiv.org/abs/2608.17095v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.17095v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "comment": "Attention Steering, Vision-Language-Action, AutonomousDriving, Inference-Time Intervention",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "世界模型与仿真",
+        "数据集/评测"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 6,
+      "anchor_terms": [
+        "vision-language-action",
+        "vla",
+        "world model"
+      ],
+      "matched_terms": [
+        "vision-language-action",
+        "vla",
+        "world model"
+      ],
+      "title_zh": "视觉-语言-动作驱动模型的推理时间注意力引导",
+      "summary_zh": "视觉-语言-动作（VLA）驾驶模型将推理阶段与基于扩散的轨迹解码器结合起来，但没有提供一种直接方法，可以在推理时将注意力转向安全关键参与者，而无需重新训练。我们研究了 Alpamayo-R1 的 Qwen3-VL 主干上检测器本地化流量参与者的视觉标记的有界加性 pre-softmax 注意力偏差。它用作故障打开前预钩，重量没有变化。基于物理 AI 世界模型综合数据集的 50 个变道场景。轨迹解码器显示偏置幅度的单调剂量响应，与每个测试幅度的配对零偏置控制分开。其平均位移达到 $\\大约 17$\\,cm，夹具处的横向位移高达 $\\sim 140$\\ cm。层消融将与动作相关的信号放置在后面的层中，其中效果随着挂钩层的数量而增加（前 8 层为 2.0 厘米；所有 36 层为 67.6 厘米）。每次调用注入审计解释了为什么因果链文本永远不会改变。基于掩码的偏差永远不会到达该服务堆栈中的推理路径，因此不变性是经过验证的暴露性，而不是鲁棒性。引导轨迹倾向于转向有参与的参与者，这表明偏差控制着模型的外观，而不是编码目标行为。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-08-20T00:31:24.897514+00:00"
+      }
+    },
+    {
+      "title": "Terrain-Aware Local Path Planning with Global DEM Data Integration for Autonomous UGV Navigation",
+      "authors": [
+        "Devender Singh",
+        "Issah Nazif Suleiman",
+        "Paul Mitten",
+        "Glenn Cutler",
+        "Vinicius Prado da Fonseca",
+        "Matthew Hamilton"
+      ],
+      "summary": "Autonomous navigation in complex outdoor terrains presents critical challenges for unmanned ground vehicles (UGVs) due to the inherent disconnect between global mapping and real-time sensor feedback. This work proposes a hybrid framework that integrates low-resolution Digital Elevation Model (DEM) data with real-time LiDAR-based obstacle detection and terrain analysis for efficient path planning. A global path is initially computed using a preprocessed DEM-based A* algorithm. Subsequently, local sensor data drives adaptive path correction, enabling the UGV to negotiate sudden environmental changes while maintaining safety and efficiency. Simulation results in Gazebo demonstrate significant improvements over a baseline approach, achieving a 95\\% obstacle avoidance rate and reducing the average encountered slope from $8^\\circ$ to $2.7^\\circ$ in custom terrain. This integration enhances path efficiency and terrain traversability and supports robust real-time adaptation, paving the way for more reliable autonomous navigation in dynamic outdoor environments.",
+      "published": "2026-08-17T18:38:19Z",
+      "updated": "2026-08-17T18:38:19Z",
+      "arxiv_id": "2608.17038v1",
+      "abs_url": "http://arxiv.org/abs/2608.17038v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.17038v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "世界模型与仿真",
+        "感知与3D理解"
+      ],
+      "topic": "导航与移动",
+      "score": 7,
+      "anchor_terms": [
+        "navigation"
+      ],
+      "matched_terms": [
+        "autonomous navigation",
+        "navigation",
+        "path planning"
+      ],
+      "title_zh": "地形感知局部路径规划与全球 DEM 数据集成，用于自主 UGV 导航",
+      "summary_zh": "由于全球测绘和实时传感器反馈之间固有的脱节，复杂户外地形的自主导航给无人地面车辆 (UGV) 带来了严峻的挑战。这项工作提出了一种混合框架，将低分辨率数字高程模型 (DEM) 数据与基于 LiDAR 的实时障碍物检测和地形分析相集成，以实现高效的路径规划。全局路径最初是使用预处理的基于 DEM 的 A* 算法计算的。随后，本地传感器数据驱动自适应路径校正，使 UGV 能够应对突然的环境变化，同时保持安全和效率。 Gazebo 中的模拟结果表明，与基线方法相比有显着改进，实现了 95% 的避障率，并将自定义地形中遇到的平均坡度从 $8^\\circ$ 降低到 $2.7^\\circ$。这种集成提高了路径效率和地形可穿越性，并支持强大的实时适应，为动态户外环境中更可靠的自主导航铺平了道路。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-08-20T00:31:24.897514+00:00"
+      }
+    },
+    {
+      "title": "FetchMan: Learning Visual Humanoid Loco-Manipulation Policies from Simulated Experiences",
+      "authors": [
+        "Omar Rayyan",
+        "Zhi Li",
+        "Max Argus",
+        "Yuxin Jiang",
+        "Chang Yu",
+        "Chenfanfu Jiang",
+        "Yuchen Cui"
+      ],
+      "summary": "Visual loco-manipulation policies that can generalize to novel scenes and objects have long been a goal of robotics research. However, today's data-hungry algorithms make collecting sufficient demonstrations a struggle for tabletop manipulation, and even more so for humanoids that must also walk and balance. Learning from simulated data and transferring that behavior to the real world, as is commonly done in locomotion, sidesteps this struggle, so we replicate that recipe for loco-manipulation. In doing so, we find that cloning synthetic demonstrations results in a low performance ceiling no matter the amount of training data. Reinforcement learning breaks through it, and refining the cloned policy with Flow-GRPO on a single sparse reward yields performance that synthetic behavior cloning cannot match. Together, these stages form our end-to-end sim-to-real pipeline spanning more than 150,000 scenes, which we use to train FetchMan. We evaluate it on FetchMan-Bench, a simulation benchmark we release, and deploy it zero-shot on a real Unitree G1, where our single-object reach-and-pick policy walks to and grasps a target across unseen scenes at 73.3% success. Finally, we extend this recipe to multi-object training, a first step toward loco-manipulation generalist policies at this data scale.",
+      "published": "2026-08-17T18:24:41Z",
+      "updated": "2026-08-17T18:24:41Z",
+      "arxiv_id": "2608.17027v1",
+      "abs_url": "http://arxiv.org/abs/2608.17027v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.17027v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "Project website: https://orayyan.com/fetchman",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "导航与移动",
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "人形与灵巧",
+        "数据集/评测",
+        "双足机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 17,
+      "anchor_terms": [
+        "grasp",
+        "humanoid",
+        "locomotion",
+        "manipulation",
+        "reinforcement learning",
+        "robot",
+        "robotic",
+        "robotics",
+        "sim-to-real"
+      ],
+      "matched_terms": [
+        "behavior cloning",
+        "grasp",
+        "humanoid",
+        "locomotion",
+        "manipulation",
+        "reinforcement learning",
+        "robot",
+        "robotic",
+        "robotics",
+        "sim-to-real"
+      ],
+      "title_zh": "FetchMan：从模拟体验中学习视觉人形机器人操作策略",
+      "summary_zh": "可以推广到新场景和物体的视觉局部操纵策略长期以来一直是机器人研究的目标。然而，当今的数据密集型算法使得收集足够的演示对于桌面操作来说是一项艰巨的任务，对于还必须行走和平衡的人形机器人来说更是如此。从模拟数据中学习并将该行为转移到现实世界（就像运动中常见的那样）可以避免这种斗争，因此我们复制了运动操纵的方法。在此过程中，我们发现无论训练数据量有多少，克隆合成演示都会导致性能上限较低。强化学习突破了这一点，并在单个稀疏奖励上使用 Flow-GRPO 改进克隆策略，产生了合成行为克隆无法比拟的性能。这些阶段共同构成了我们的端到端模拟到真实管道，涵盖超过 150,000 个场景，我们用它来训练 FetchMan。我们在我们发布的模拟基准 FetchMan-Bench 上对其进行评估，并将其零样本部署在真正的 Unitree G1 上，其中我们的单对象到达和拾取策略以 73.3% 的成功率跨过看不见的场景行走并抓住目标。最后，我们将这个方法扩展到多对象训练，这是在这种数据规模上实现局部操纵通才策略的第一步。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-08-20T00:31:24.897514+00:00"
       }
     },
     {
@@ -451,6 +840,60 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-08-19T00:34:22.496770+00:00"
+      }
+    },
+    {
+      "title": "VLCP: Vision Language Control Policy Closed-Loop Code Replanning for Robot Manipulation",
+      "authors": [
+        "Dhia Naouali",
+        "Minghan Wu",
+        "Claudia Wong",
+        "Abhinav Puthran",
+        "Omar G. Younis"
+      ],
+      "summary": "Turning a frontier vision-language model into a robot policy usually means fine-tuning it to emit an action representation it never saw in pretraining, which throws away much of the reasoning that made the model worth reaching for. We go the other way and keep the VLM frozen. It writes the policy as a short Python control function, with no demonstrations and no fine-tuning. Writing that code once is open-loop, though. Existing closed-loop methods react at the wrong level: they retry a fixed policy or pick a different subtask, but never rewrite the code that failed. VLCP closes the loop where the failure actually lives, on the control code, within a single episode. Every $K$ steps the VLM re-observes the scene from multi-view RGB, proprioceptive state, and a state delta, then rewrites the control function from what it just saw, so a failure is caught before it compounds. We evaluate on a 57-task MuJoCo/RoboVerse sweep. This training-free policy reaches $35.1\\%$ pooled success, against $3.5\\%$ for the identical system queried once per episode. That tenfold gap holds with non-overlapping confidence intervals in every scene family. The gain traces to a $27.3\\%$ within-episode recovery rate on failed grasps: a miss an open-loop controller would carry to the end of the episode gets re-observed and fixed at the next replan. And the loop stays cheap. A median $84\\%$ of input tokens hit cache, an episode needs only about $10$ compact queries, and control blocks written during any replan persist to a cross-episode skill library reused in later prompts.",
+      "published": "2026-08-17T17:28:38Z",
+      "updated": "2026-08-17T17:28:38Z",
+      "arxiv_id": "2608.16978v1",
+      "abs_url": "http://arxiv.org/abs/2608.16978v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.16978v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 17,
+      "anchor_terms": [
+        "grasp",
+        "manipulation",
+        "robot",
+        "robot manipulation",
+        "robot policy"
+      ],
+      "matched_terms": [
+        "grasp",
+        "manipulation",
+        "mujoco",
+        "robot",
+        "robot manipulation",
+        "robot policy"
+      ],
+      "title_zh": "VLCP：机器人操作的视觉语言控制策略闭环代码重新规划",
+      "summary_zh": "将前沿视觉语言模型转变为机器人策略通常意味着对其进行微调，以发出在预训练中从未见过的动作表示，这抛弃了模型值得研究的大部分推理。我们采取相反的方式并保持 VLM 冻结。它将策略编写为一个简短的 Python 控制函数，没有演示，也没有微调。不过，编写一次该代码是开环的。现有的闭环方法在错误的级别上做出反应：它们重试固定策略或选择不同的子任务，但从不重写失败的代码。 VLCP 在单个事件内关闭控制代码上故障实际存在的循环。每 $K$ 步，VLM 都会从多视图 RGB、本体感受状态和状态增量重新观察场景，然后根据刚刚看到的内容重写控制函数，以便在故障复合之前捕获故障。我们对 57 项任务的 MuJoCo/RoboVerse 扫描进行评估。这种免培训策略的总体成功率达到了 35.1\\%$ 美元，而每集查询一次的相同系统的成功率为 3.5\\%$ 美元。这个十倍的差距在每个场景族中都存在不重叠的置信区间。增益追踪到失败抓取时的 27.3\\%$ 情节内恢复率：开环控制器将持续到情节结束的失误将被重新观察并在下一次重新计划时修复。而且环路仍然很便宜。平均 $84\\%$ 的输入令牌命中缓存，一个情节仅需要大约 $10$ 紧凑查询，并且在任何重新计划期间写入的控制块都会保留到在以后的提示中重用的跨情节技能库。",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-08-20T00:31:24.897514+00:00"
       }
     },
     {
