@@ -1,11 +1,11 @@
 {
   "date": "2026-08-17",
-  "generated_at": "2026-08-20T00:30:58.643497+00:00",
+  "generated_at": "2026-08-21T00:33:38.793497+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202608170000 TO 202608172359]",
-  "total_fetched": 481,
+  "total_fetched": 483,
   "total_matched": 56,
   "papers": [
     {
@@ -1062,7 +1062,7 @@
       }
     },
     {
-      "title": "When State Becomes an Attack Surface: State-Semantic Injection in LLM-Driven Embodied Agents",
+      "title": "Breaking Planner Integrity Boundary: Enviroment State-Text Injection Attack on LLM-Driven Embodied Agents",
       "authors": [
         "Jiawei Liu",
         "Jiacheng Guo",
@@ -1075,12 +1075,12 @@
         "Keyan Guo",
         "Hongxin Hu"
       ],
-      "summary": "Large Language Models (LLMs) have demonstrated capabilities in in-context learning, task decomposition, step-by-step reasoning, and code generation, driving their gradual evolution from text generation models into the core of agents capable of perceiving environments, invoking tools, and executing tasks. Traditional LLM Agents typically obtain information through webpages, documents, databases, or external tools and generate corresponding invocation sequences according to user goals; when this technology is further integrated with robotic systems, large language models begin to undertake functions such as task understanding, high-level planning, and behavioral decision-making. SayCan combines the task reasoning capability of language models with the affordances of robotic skills, while Code as Policies and ProgPrompt generate robot task plans through policy code and programmatic prompting, respectively, and VoxPoser uses language models and vision-language models to construct three-dimensional value maps to guide robotic manipulation \\cite{6,7,8,9}. Vision-language-action models such as PaLM-E, RT-2, and GR00T N1 further strengthen the connection among language, visual perception, and robotic actions \\cite{10,11,12}. In such LLM-driven embodied agents, the model not only needs to understand user instructions, but also needs to combine scene states, object attributes, spatial relations, and execution feedback to complete task grounding, and then hand the generated action plan to skill libraries, motion planners, or controllers for execution.",
+      "summary": "Large language model (LLM)-driven embodied agents rely on environment states to interpret scenes, generate high-level plans, and drive physical execution, making planner-visible state representations a critical security boundary. Existing attacks primarily manipulate user instructions, prompt contexts, model behavior, or perceptual inputs, while paying limited attention to whether environment-state text itself can serve as deceptive task evidence and propagate beyond planning to affect execution outcomes. Because embodied tasks are constrained by entity grounding, action preconditions, spatial relations, and environmental constraints, planning deviation alone does not guarantee adversarial execution. To address this gap, we investigate environment-state text as an independent attack surface and present the first closed-loop Environment State-Text Injection (ESTI) attack for LLM-driven embodied agents. Without modifying the original user instruction, model parameters, or executor, ESTI reformulates an adversarial objective as false state evidence compatible with the current environment and influences planning and execution through object properties, spatial relations, affordances, task-stage rules, and execution feedback. We further develop ESTI-Bench to evaluate attack propagation across the planning-to-execution closed loop and compare ESTI with Vanilla IPI, EIRAD, and BADROBOT across ProgPrompt/VirtualHome, VoxPoser/RLBench, and AI2-THOR/iTHOR. ESTI consistently outperforms existing baselines, improving planning-level and execution-level attack success rates by up to 89.32\\% and 43.69\\%, respectively. Further analysis shows that grounding, consistency, and executability jointly determine whether manipulated state evidence can propagate through the embodied closed loop and produce verifiable environmental changes.",
       "published": "2026-08-17T17:02:07Z",
-      "updated": "2026-08-17T17:02:07Z",
-      "arxiv_id": "2608.16806v1",
-      "abs_url": "http://arxiv.org/abs/2608.16806v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.16806v1",
+      "updated": "2026-08-18T16:31:28Z",
+      "arxiv_id": "2608.16806v2",
+      "abs_url": "http://arxiv.org/abs/2608.16806v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.16806v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -1090,40 +1090,34 @@
       "code_url": "",
       "has_code": false,
       "labels": [
-        "机器人操作",
-        "VLA/多模态策略",
+        "数据集/评测",
         "感知与3D理解",
         "其他机器人"
       ],
-      "topic": "机器人操作",
-      "score": 22,
+      "topic": "数据集/评测",
+      "score": 20,
       "anchor_terms": [
         "affordance",
         "embodied",
         "embodied agent",
         "embodied agents",
-        "manipulation",
-        "robot",
-        "robotic",
-        "vision-language-action"
+        "robot"
       ],
       "matched_terms": [
         "affordance",
         "embodied",
         "embodied agent",
         "embodied agents",
-        "manipulation",
-        "robot",
-        "robotic",
-        "vision-language-action"
+        "rlbench",
+        "robot"
       ],
-      "title_zh": "当状态成为攻击面时：LLM驱动的具体代理中的状态语义注入",
-      "summary_zh": "大型语言模型（LLM）已经展示了上下文学习、任务分解、逐步推理和代码生成等能力，推动其从文本生成模型逐渐演变为能够感知环境、调用工具和执行任务的智能体核心。传统LLM Agent通常通过网页、文档、数据库或外部工具获取信息，并根据用户目标生成相应的调用序列；当这项技术进一步与机器人系统集成时，大型语言模型开始承担任务理解、高层规划和行为决策等功能。 SayCan 将语言模型的任务推理能力与机器人技能的可供性相结合，而 Code as Policies 和 ProgPrompt 分别通过策略代码和程序化提示生成机器人任务计划，VoxPoser 使用语言模型和视觉语言模型构建三维价值图来指导机器人操作\\cite{6,7,8,9}。 PaLM-E、RT-2 和 GR00T N1 等视觉-语言-动作模型进一步加强了语言、视觉感知和机器人动作之间的联系\\cite{10,11,12}。在这种LLM驱动的体现智能体中，模型不仅需要理解用户指令，还需要结合场景状态、物体属性、空间关系和执行反馈来完成任务落地，然后将生成的动作计划交给技能库、运动规划器或控制器来执行。",
+      "title_zh": "打破规划器完整性边界：对 LLM 驱动的具体代理的环境状态文本注入攻击",
+      "summary_zh": "大语言模型 (LLM) 驱动的实体代理依靠环境状态来解释场景、生成高级计划并驱动物理执行，从而使规划者可见的状态表示成为关键的安全边界。现有的攻击主要操纵用户指令、提示上下文、模型行为或感知输入，而对环境状态文本本身是否可以充当欺骗性任务证据并传播到计划之外以影响执行结果的关注有限。由于具体任务受到实体基础、行动先决条件、空间关系和环境约束的约束，仅计划偏差并不能保证对抗性执行。为了解决这一差距，我们将环境状态文本作为独立的攻击面进行研究，并提出了针对 LLM 驱动的体现代理的第一个闭环环境状态文本注入（ESTI）攻击。在不修改原始用户指令、模型参数或执行器的情况下，ESTI 将对抗性目标重新表述为与当前环境兼容的虚假状态证据，并通过对象属性、空间关系、可供性、任务阶段规则和执行反馈影响规划和执行。我们进一步开发 ESTI-Bench 来评估从规划到执行闭环的攻击传播，并将 ESTI 与 ProgPrompt/VirtualHome、VoxPoser/RLBench 和 AI2-THOR/iTHOR 上的 Vanilla IPI、EIRAD 和 BADROBOT 进行比较。 ESTI 始终优于现有基准，将计划级和执行级攻击成功率分别提高高达 89.32% 和 43.69%。进一步分析表明，基础性、一致性和可执行性共同决定了被操纵的状态证据是否可以通过体现的闭环传播并产生可验证的环境变化。",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-08-19T00:34:22.496770+00:00"
+        "generated_at": "2026-08-21T00:34:16.253269+00:00"
       }
     },
     {
@@ -1136,10 +1130,10 @@
       ],
       "summary": "Language and vision-language models generate plausible embodied plans but do not guarantee executability, as their outputs can violate environment dynamics or act on incorrectly grounded entities. We present a neurosymbolic agent that factors long-horizon household tasks into task-directed visual exploration and constrained symbolic planning. In the first phase, a vision-language model and exploration harness acquire goal-relevant predicates and instance bindings from egocentric observations and grounded interactions, producing a symbolic initial state. In the second, a PDDL transition model restricts decoding to tokens that extend applicable actions. Monte Carlo tree search then evaluates executable continuations using a domain-independent planning heuristic. The resulting plans are executable by construction under the transition model, with transfer to the environment conditioned on correct visual grounding. On VirtualHome and ALFWorld, open 4B-27B models exceed 90% success in both environments, and our smallest agent substantially outperforms a 27B direct visual policy in each. Constraints and search prove complementary rather than interchangeable: in ALFWorld either alone solves under a third of tasks, whereas their combination solves over 95%. The method also uses several times fewer generated tokens than extended thinking and far fewer model-visible images than direct interaction, and residual failures localize to state acquisition rather than plan generation without any specialized training.",
       "published": "2026-08-17T16:50:59Z",
-      "updated": "2026-08-17T16:50:59Z",
-      "arxiv_id": "2608.16794v1",
-      "abs_url": "http://arxiv.org/abs/2608.16794v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.16794v1",
+      "updated": "2026-08-18T20:46:57Z",
+      "arxiv_id": "2608.16794v2",
+      "abs_url": "http://arxiv.org/abs/2608.16794v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.16794v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -1172,7 +1166,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-08-19T00:34:22.496770+00:00"
+        "generated_at": "2026-08-21T00:34:16.253269+00:00"
       }
     },
     {
@@ -2628,10 +2622,10 @@
       ],
       "summary": "Robot manipulation requires policies that are both accurate and efficient, as robot control must respond to changing observations under tight latency constraints. Recent diffusion and flow policies are promising, but they often treat conditions as auxiliary signals rather than jointly evolving them with action trajectories. We find that this limitation can be effectively mitigated by a \\textbf{simple yet effective unified condition-action modeling design} that represents conditions and actions in a shared token space, allowing a compact model to achieve high performance while improving both inference speed and accuracy. Therefore, we propose UCA-Flow, a unified condition-action modeling framework for accurate one-step action generation. Our method unifies observation conditions, timestep conditions, interval conditions, and action tokens into a single sequence, and processes them with a Unified Condition-Action Transformer for joint condition-action representation learning. As a result, condition representations are dynamically reconstructed according to the current generation stage, highlighting information most relevant for action refinement. Furthermore, we introduce an improved dual-pass supervision scheme over $u$ and $v$ for stronger optimization of unified condition-action modeling. UCA-Flow improves the average success rate by 9.3 percentage points over the strongest baseline, while achieving $45.6\\times$ and $33.4\\times$ speedups over DP3 and Simple DP3, and remaining $4.3\\times$ and $2.3\\times$ faster than one-step FlowPolicy and MP1, respectively.",
       "published": "2026-08-17T06:14:16Z",
-      "updated": "2026-08-17T06:14:16Z",
-      "arxiv_id": "2608.16153v1",
-      "abs_url": "http://arxiv.org/abs/2608.16153v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.16153v1",
+      "updated": "2026-08-19T07:03:19Z",
+      "arxiv_id": "2608.16153v2",
+      "abs_url": "http://arxiv.org/abs/2608.16153v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.16153v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -2656,12 +2650,12 @@
         "robot manipulation"
       ],
       "title_zh": "统一条件动作建模，准确生成一步动作",
-      "summary_zh": "Robot manipulation requires policies that are both accurate and efficient, as robot control must respond to changing observations under tight latency constraints. Recent diffusion and flow policies are promising, but they often treat conditions as auxiliary signals rather than jointly evolving them with action trajectories. We find that this limitation can be effectively mitigated by a \\textbf{simple yet effective unified condition-action modeling design} that represents conditions and actions in a shared token space, allowing a compact model to achieve high performance while improving both inference speed and accuracy. Therefore, we propose UCA-Flow, a unified condition-action modeling framework for accurate one-step action generation. Our method unifies observation conditions, timestep conditions, interval conditions, and action tokens into a single sequence, and processes them with a Unified Condition-Action Transformer for joint condition-action representation learning. As a result, condition representations are dynamically reconstructed according to the current generation stage, highlighting information most relevant for action refinement. Furthermore, we introduce an improved dual-pass supervision scheme over $u$ and $v$ for stronger optimization of unified condition-action modeling. UCA-Flow improves the average success rate by 9.3 percentage points over the strongest baseline, while achieving $45.6\\times$ and $33.4\\times$ speedups over DP3 and Simple DP3, and remaining $4.3\\times$ and $2.3\\times$ faster than one-step FlowPolicy and MP1, respectively.",
+      "summary_zh": "机器人操纵需要准确且高效的策略，因为机器人控制必须在严格的延迟限制下响应不断变化的观察结果。最近的扩散和流动政策很有希望，但它们经常将条件视为辅助信号，而不是与行动轨迹共同发展。我们发现，可以通过表示共享令牌空间中的条件和动作的 \\textbf{简单而有效的统一条件动作建模设计}来有效缓解这一限制，从而允许紧凑的模型实现高性能，同时提高推理速度和准确性。因此，我们提出了 UCA-Flow，一种统一的条件动作建模框架，用于准确的一步动作生成。我们的方法将观察条件、时间步条件、间隔条件和动作标记统一为单个序列，并使用统一条件动作转换器处理它们以进行联合条件动作表示学习。因此，条件表示根据当前生成阶段动态重建，突出显示与动作细化最相关的信息。此外，我们在 $u$ 和 $v$ 上引入了改进的双通道监督方案，以增强统一条件动作建模的优化。 UCA-Flow 的平均成功率比最强基线提高了 9.3 个百分点，同时比 DP3 和 Simple DP3 实现了 45.6\\times$ 和 $33.4\\times$ 加速，并且分别比单步 FlowPolicy 和 MP1 快了 $4.3\\times$ 和 $2.3\\times$。",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-08-19T00:34:22.496770+00:00"
+        "generated_at": "2026-08-21T00:34:16.253269+00:00"
       }
     },
     {
