@@ -1,13 +1,107 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-15T05:45:37.431549+00:00",
+  "generated_at": "2026-09-16T02:00:25.004035+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202609140000 TO 202609142359]",
-  "total_fetched": 416,
-  "total_matched": 51,
+  "total_fetched": 529,
+  "total_matched": 63,
   "papers": [
+    {
+      "title": "Autonomous Droplet Navigation via Model-Based Reinforcement Learning",
+      "authors": [
+        "Rajneesh Anand",
+        "Mayuresh V. Kothare"
+      ],
+      "summary": "Precise manipulation of liquid droplets underpins lab-on-a-chip platforms for diagnostics, chemical synthesis, and biological assays. Yet autonomous droplet transport through confined geometries of varying complexity remains an open challenge. Droplets exhibit contact-angle hysteresis, deformability, and capillary pinning, which make their response to actuation nonlinear and history dependent, that classical controllers and pre-programmed trajectories cannot cope in multi-turn environments. Here we demonstrate autonomous navigation of a liquid droplet through geometries of increasing complexity on a gravity driven (Labyrinth) platform using model-based reinforcement learning. A thin silicone oil film reduces contact-line pinning while two-axis tilt supplies the gravitational driving force, and an overhead camera tracks the droplet in real time. An offline-trained policy discovers effective tilt strategies from limited physical interaction data, without simulation or analytical droplet models. The system operates under partial observability, as oil-film thickness, instantaneous contact angle, and droplet deformation state remain hidden from the controller. Despite these challenges, the learned policy achieves reliable navigation across straight, right-angle, and curved-arc paths, including outside-corner geometries. We further demonstrate that a policy trained on a simpler geometry transfers to complex ones, succeeding zero-shot on right-angle and staircase paths and reaching full success on a curved arc with a fifth of the training data. The findings suggest promising avenues for enabling droplet based microfluidic systems to serve as intelligent chemical laboratories.",
+      "published": "2026-09-14T21:31:28Z",
+      "updated": "2026-09-14T21:31:28Z",
+      "arxiv_id": "2609.16369v1",
+      "abs_url": "http://arxiv.org/abs/2609.16369v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.16369v1",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.RO",
+        "eess.SY",
+        "physics.flu-dyn"
+      ],
+      "comment": "43 pages, 15 figures, 3 tables including supplementary material. The source code is available via GitHub at https://github.com/rajneeshanand/DropletRunner. An archived version of all supplementary movies has also been uploaded to Google Drive: https://drive.google.com/drive/folders/1ewK2dxWxfzjd4kk6Df4cqKE3-3xCbOgf?usp=sharing",
+      "code_url": "https://github.com/rajneeshanand/DropletRunner",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "机器人操作",
+        "导航与移动",
+        "世界模型与仿真",
+        "强化/模仿学习"
+      ],
+      "topic": "机器人操作",
+      "score": 8,
+      "anchor_terms": [
+        "manipulation",
+        "navigation",
+        "reinforcement learning"
+      ],
+      "matched_terms": [
+        "autonomous navigation",
+        "manipulation",
+        "navigation",
+        "reinforcement learning"
+      ],
+      "title_zh": "Autonomous Droplet Navigation via Model-Based Reinforcement Learning",
+      "summary_zh": "Precise manipulation of liquid droplets underpins lab-on-a-chip platforms for diagnostics, chemical synthesis, and biological assays. Yet autonomous droplet transport through confined geometries of varying complexity remains an open challenge. Droplets exhibit contact-angle hysteresis, deformability, and capillary pinning, which make their response to actuation nonlinear and history dependent, that classical controllers and pre-programmed trajectories cannot cope in multi-turn environments. Here we demonstrate autonomous navigation of a liquid droplet through geometries of increasing complexity on a gravity driven (Labyrinth) platform using model-based reinforcement learning. A thin silicone oil film reduces contact-line pinning while two-axis tilt supplies the gravitational driving force, and an overhead camera tracks the droplet in real time. An offline-trained policy discovers effective tilt strategies from limited physical interaction data, without simulation or analytical droplet models. The system operates under partial observability, as oil-film thickness, instantaneous contact angle, and droplet deformation state remain hidden from the controller. Despite these challenges, the learned policy achieves reliable navigation across straight, right-angle, and curved-arc paths, including outside-corner geometries. We further demonstrate that a policy trained on a simpler geometry transfers to complex ones, succeeding zero-shot on right-angle and staircase paths and reaching full success on a curved arc with a fifth of the training data. The findings suggest promising avenues for enabling droplet based microfluidic systems to serve as intelligent chemical laboratories.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-09-16T02:08:53.656349+00:00"
+      }
+    },
+    {
+      "title": "Safe Error Correction for Language Models: Frozen-Base Adjustment with Capability Preservation",
+      "authors": [
+        "Gautam Kishore"
+      ],
+      "summary": "We study a practical question: can a small correction module fix errors in a frozen language model's outputs without degrading its base capabilities? We propose CRN v2, a lightweight logit-level correction module (~34M trainable parameters, 0.73% of the 4.65B text module) that sits atop a fully frozen Gemma 4 E2B model. The base model is never updated; only the correction module learns, via supervised fine-tuning followed by reference-free DPO on 83,400 error-correction pairs. On a 60-question domain exam (CEHRI: Certified Human-Robot Intelligence, covering facts, arithmetic, and implicit-goal reasoning), CRN v2 corrects 53.3% of base-model errors (reworded variant: 43.3%) while showing no degradation on tested capability benchmarks (MMLU/BoolQ N=200; car-wash N=8). A LoRA baseline at the matched CRN v1 budget (6.6M params, rank 19) achieves 83.3% correction but suffers 30-75% capability loss on the same benchmarks -- the correction-capability tradeoff. An ablation shows that the KL preservation term (lambda=0.1) is critical: lowering it to 0.01 degrades correction to 35.0%. A hidden-state injection variant at earlier layers (1.6M params, SFT-only) reaches 50.0%/55.8% but does not exceed logit correction; shallower injection (layer 4) drops to 30.0%/28.3%; multi-depth logit correction (~35M) reaches only 40%; and longer training (5,000 SFT + 2,000 DPO) stays at 53.3% -- none of the alternative configurations we tested exceeded the rank-128 logit result, consistent with a best-achieved result of ~53% rather than a floor. This is a study of a design principle (frozen base + logit correction + KL anchoring), not a claim of architectural novelty. All code, main-result weights, and evaluation scripts are released (deep variant as code only -- no trained deep checkpoints).",
+      "published": "2026-09-14T18:00:15Z",
+      "updated": "2026-09-14T18:00:15Z",
+      "arxiv_id": "2609.16145v1",
+      "abs_url": "http://arxiv.org/abs/2609.16145v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.16145v1",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.NE"
+      ],
+      "comment": "10 pages, 4 tables. Code, weights, and evaluation scripts: https://github.com/eulogik/prajna and https://huggingface.co/eulogik/Prajna-CRNv2",
+      "code_url": "https://github.com/eulogik/prajna",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "数据集/评测",
+      "score": 2,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "robot"
+      ],
+      "title_zh": "Safe Error Correction for Language Models: Frozen-Base Adjustment with Capability Preservation",
+      "summary_zh": "We study a practical question: can a small correction module fix errors in a frozen language model's outputs without degrading its base capabilities? We propose CRN v2, a lightweight logit-level correction module (~34M trainable parameters, 0.73% of the 4.65B text module) that sits atop a fully frozen Gemma 4 E2B model. The base model is never updated; only the correction module learns, via supervised fine-tuning followed by reference-free DPO on 83,400 error-correction pairs. On a 60-question domain exam (CEHRI: Certified Human-Robot Intelligence, covering facts, arithmetic, and implicit-goal reasoning), CRN v2 corrects 53.3% of base-model errors (reworded variant: 43.3%) while showing no degradation on tested capability benchmarks (MMLU/BoolQ N=200; car-wash N=8). A LoRA baseline at the matched CRN v1 budget (6.6M params, rank 19) achieves 83.3% correction but suffers 30-75% capability loss on the same benchmarks -- the correction-capability tradeoff. An ablation shows that the KL preservation term (lambda=0.1) is critical: lowering it to 0.01 degrades correction to 35.0%. A hidden-state injection variant at earlier layers (1.6M params, SFT-only) reaches 50.0%/55.8% but does not exceed logit correction; shallower injection (layer 4) drops to 30.0%/28.3%; multi-depth logit correction (~35M) reaches only 40%; and longer training (5,000 SFT + 2,000 DPO) stays at 53.3% -- none of the alternative configurations we tested exceeded the rank-128 logit result, consistent with a best-achieved result of ~53% rather than a floor. This is a study of a design principle (frozen base + logit correction + KL anchoring), not a claim of architectural novelty. All code, main-result weights, and evaluation scripts are released (deep variant as code only -- no trained deep checkpoints).",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-09-16T02:08:53.656349+00:00"
+      }
+    },
     {
       "title": "Discovery Foundation Models: Toward Open-Ended Discovery Intelligence",
       "authors": [
@@ -207,6 +301,472 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-09-15T05:49:42.834183+00:00"
+      }
+    },
+    {
+      "title": "The Neverwhere Visual Parkour Benchmark Suite",
+      "authors": [
+        "Ziyu Chen",
+        "Henghui Bao",
+        "Haoran Chang",
+        "Alan Yu",
+        "Ran Choi",
+        "Kai McClennen",
+        "Gio Huh",
+        "Kevin Yang",
+        "Ri-Zhao Qiu",
+        "Yajvan Ravan",
+        "John J. Leonard",
+        "Xiaolong Wang",
+        "Phillip Isola",
+        "Ge Yang",
+        "Yue Wang"
+      ],
+      "summary": "State-of-the-art visual locomotion controllers are increasingly capable at handling complex visual environments, making evaluating their real-world performance before deployment increasingly difficult. This work intends to narrow this train/evaluation gap by developing a collection of hyper-photo-realistic, closed-loop evaluation environments - The Neverwhere Benchmark Suite - comprised of over sixty 3D Gaussian Splatting reconstructions of urban indoor and outdoor scenes. Our goal is to encourage large-scale and reproducible robot evaluation by making it easier to create and integrate Gaussian splats-based reconstructions into simulated continuous testing setups. We also underscore the potential pitfalls of relying exclusively on 3D Gaussian-generated data for training, by providing policy checkpoints trained over multiple Neverwhere scenes and their performance when evaluated in novel scenes. Our analysis illustrates the necessity of sourcing diverse data to ensure performance. Code and data are available on the project page: https://ziyc.github.io/neverwhere-bench/.",
+      "published": "2026-09-14T23:50:08Z",
+      "updated": "2026-09-14T23:50:08Z",
+      "arxiv_id": "2609.16443v1",
+      "abs_url": "http://arxiv.org/abs/2609.16443v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.16443v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "comment": "9 pages, 14 figures. Accepted to IROS 2026. Project page: https://ziyc.github.io/neverwhere-bench/",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 5,
+      "anchor_terms": [
+        "locomotion",
+        "robot"
+      ],
+      "matched_terms": [
+        "locomotion",
+        "robot"
+      ],
+      "title_zh": "The Neverwhere Visual Parkour Benchmark Suite",
+      "summary_zh": "State-of-the-art visual locomotion controllers are increasingly capable at handling complex visual environments, making evaluating their real-world performance before deployment increasingly difficult. This work intends to narrow this train/evaluation gap by developing a collection of hyper-photo-realistic, closed-loop evaluation environments - The Neverwhere Benchmark Suite - comprised of over sixty 3D Gaussian Splatting reconstructions of urban indoor and outdoor scenes. Our goal is to encourage large-scale and reproducible robot evaluation by making it easier to create and integrate Gaussian splats-based reconstructions into simulated continuous testing setups. We also underscore the potential pitfalls of relying exclusively on 3D Gaussian-generated data for training, by providing policy checkpoints trained over multiple Neverwhere scenes and their performance when evaluated in novel scenes. Our analysis illustrates the necessity of sourcing diverse data to ensure performance. Code and data are available on the project page: https://ziyc.github.io/neverwhere-bench/.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-09-16T02:08:53.656349+00:00"
+      }
+    },
+    {
+      "title": "XRoboToolKit-T: Teleoperation with High Stability and Precision with Tactile Sensing for Contact-rich Manipulation",
+      "authors": [
+        "Xiwen Dengxiong",
+        "Xueting Wang",
+        "Ke Jing",
+        "Rui Li",
+        "Yunbo Zhang"
+      ],
+      "summary": "Collecting high-quality robot data for contact-rich manipulation tasks is essential for enabling robots to acquire real-world skills. However, existing data collection solutions often lack the capability to obtain stable and high-frequency tactile feedback, limiting their effectiveness in contact-rich manipulation scenarios. In this work, we propose a versatile teleoperation system with tactile-driven assistance to enable high-frequency and stable contact-rich manipulation. The proposed XRoboToolKit-T teleoperation system incorporates a tactile-informed force control architecture, designed to ensure both stable and precise force control in contact-rich manipulation during teleoperation. The stabilizer haptic module rapidly analyzes the normal force distribution and infers pseudo shear force, enabling real-time tactile-based assistance during manipulation. The refiner haptic module integrates a vision-language-action model to predict and refine manipulation actions based on tactile sensing data and task descriptions. We apply the proposed teleoperation system to challenging contact-rich manipulation tasks, including grasping a deformable rubber pipette for liquid transfer and inserting a medical syringe into a vascular training pad, to demonstrate the effectiveness of tactile-informed force control. Furthermore, the system achieves higher data collection efficiency and improved manipulation stability compared to state-of-the-art teleoperation without tactile assistance.",
+      "published": "2026-09-14T23:24:22Z",
+      "updated": "2026-09-14T23:24:22Z",
+      "arxiv_id": "2609.16437v1",
+      "abs_url": "http://arxiv.org/abs/2609.16437v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.16437v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.HC"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "VLA/多模态策略",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 18,
+      "anchor_terms": [
+        "grasp",
+        "grasping",
+        "manipulation",
+        "robot",
+        "tactile",
+        "teleoperation",
+        "vision-language-action"
+      ],
+      "matched_terms": [
+        "force control",
+        "grasp",
+        "grasping",
+        "haptic",
+        "manipulation",
+        "robot",
+        "tactile",
+        "teleoperation",
+        "vision-language-action"
+      ],
+      "title_zh": "XRoboToolKit-T: Teleoperation with High Stability and Precision with Tactile Sensing for Contact-rich Manipulation",
+      "summary_zh": "Collecting high-quality robot data for contact-rich manipulation tasks is essential for enabling robots to acquire real-world skills. However, existing data collection solutions often lack the capability to obtain stable and high-frequency tactile feedback, limiting their effectiveness in contact-rich manipulation scenarios. In this work, we propose a versatile teleoperation system with tactile-driven assistance to enable high-frequency and stable contact-rich manipulation. The proposed XRoboToolKit-T teleoperation system incorporates a tactile-informed force control architecture, designed to ensure both stable and precise force control in contact-rich manipulation during teleoperation. The stabilizer haptic module rapidly analyzes the normal force distribution and infers pseudo shear force, enabling real-time tactile-based assistance during manipulation. The refiner haptic module integrates a vision-language-action model to predict and refine manipulation actions based on tactile sensing data and task descriptions. We apply the proposed teleoperation system to challenging contact-rich manipulation tasks, including grasping a deformable rubber pipette for liquid transfer and inserting a medical syringe into a vascular training pad, to demonstrate the effectiveness of tactile-informed force control. Furthermore, the system achieves higher data collection efficiency and improved manipulation stability compared to state-of-the-art teleoperation without tactile assistance.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-09-16T02:08:53.656349+00:00"
+      }
+    },
+    {
+      "title": "A Programmable Optics Cloud Laboratory",
+      "authors": [
+        "Sachin Vaidya",
+        "Caio Silva",
+        "Seou Choi",
+        "Joshua Chen",
+        "Marin Soljačić"
+      ],
+      "summary": "Laboratory automation can improve experimental throughput, accessibility, and reproducibility, but many robotic laboratory systems remain difficult to reconfigure. This challenge is especially pronounced in free-space optics, where experiments are built from heterogeneous components, require precise alignment, and are frequently rearranged as experimental goals change. In this work, we present the Programmable Infrastructure for Cloud Optics (PICO), a robotic cloud-laboratory architecture designed to make reconfigurable optical experiments easier to program, operate, and reproduce. PICO provides a common domain-specific abstraction and software layer through which experimental configurations and actions can be controlled across different user interfaces. This enables the same physical laboratory to support remote interactive use, scripted experiments, autonomous routines, and features such as version control. We implement PICO on a robotic free-space optics platform and demonstrate it through an experimental case study.",
+      "published": "2026-09-14T22:37:33Z",
+      "updated": "2026-09-14T22:37:33Z",
+      "arxiv_id": "2609.16413v1",
+      "abs_url": "http://arxiv.org/abs/2609.16413v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.16413v1",
+      "primary_category": "physics.optics",
+      "categories": [
+        "physics.optics",
+        "cs.RO"
+      ],
+      "comment": "8 pages, 4 figures",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 5,
+      "anchor_terms": [
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "A Programmable Optics Cloud Laboratory",
+      "summary_zh": "Laboratory automation can improve experimental throughput, accessibility, and reproducibility, but many robotic laboratory systems remain difficult to reconfigure. This challenge is especially pronounced in free-space optics, where experiments are built from heterogeneous components, require precise alignment, and are frequently rearranged as experimental goals change. In this work, we present the Programmable Infrastructure for Cloud Optics (PICO), a robotic cloud-laboratory architecture designed to make reconfigurable optical experiments easier to program, operate, and reproduce. PICO provides a common domain-specific abstraction and software layer through which experimental configurations and actions can be controlled across different user interfaces. This enables the same physical laboratory to support remote interactive use, scripted experiments, autonomous routines, and features such as version control. We implement PICO on a robotic free-space optics platform and demonstrate it through an experimental case study.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-09-16T02:08:53.656349+00:00"
+      }
+    },
+    {
+      "title": "Collision-Aware Humanoid Whole-Body Control under Imperfect Tracking Targets",
+      "authors": [
+        "Mohitvishnu S. Gadde",
+        "Ashish Malik",
+        "Pranay Dugar",
+        "Aayam Kumar Shrestha",
+        "Alan Fern"
+      ],
+      "summary": "Humanoid robots often execute motion commands through whole-body controllers (WBCs) that track targets while maintaining balance and stability. However, most WBCs are blind to scene geometry, which can lead to collisions from imperfect target motions that are geometrically unsafe due to perception, planning, or teleoperation errors. We propose RECAL, a Robot--Environment Cross-Attention Layer that wraps a blind WBC to trade off target tracking against collision avoidance using external scene geometry. RECAL supports collision-aware tracking of floating-base and end-effector commands, including collision avoidance for held objects. It represents the robot, held objects, and environment as point clouds, using cross-attention between robot/object points and the environment to produce geometry-aware control features. In simulation, RECAL improves collision avoidance while preserving target-tracking performance across frozen-arm and adaptive-arm locomotion, object-carrying, and standing-manipulation scenarios relative to alternative geometry-aware WBC architectures. We further demonstrate the controller on a real Digit V3 humanoid robot.",
+      "published": "2026-09-14T22:22:02Z",
+      "updated": "2026-09-14T22:22:02Z",
+      "arxiv_id": "2609.16405v1",
+      "abs_url": "http://arxiv.org/abs/2609.16405v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.16405v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "8 pages, 4 figures, 1 table. Submitted to IEEE-RAS International Conference on Humanoid Robots (Humanoids 2026)",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "导航与移动",
+        "世界模型与仿真",
+        "人形与灵巧",
+        "感知与3D理解",
+        "双足机器人",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 10,
+      "anchor_terms": [
+        "humanoid",
+        "locomotion",
+        "manipulation",
+        "robot",
+        "teleoperation"
+      ],
+      "matched_terms": [
+        "end-effector",
+        "humanoid",
+        "locomotion",
+        "manipulation",
+        "robot",
+        "teleoperation"
+      ],
+      "title_zh": "Collision-Aware Humanoid Whole-Body Control under Imperfect Tracking Targets",
+      "summary_zh": "Humanoid robots often execute motion commands through whole-body controllers (WBCs) that track targets while maintaining balance and stability. However, most WBCs are blind to scene geometry, which can lead to collisions from imperfect target motions that are geometrically unsafe due to perception, planning, or teleoperation errors. We propose RECAL, a Robot--Environment Cross-Attention Layer that wraps a blind WBC to trade off target tracking against collision avoidance using external scene geometry. RECAL supports collision-aware tracking of floating-base and end-effector commands, including collision avoidance for held objects. It represents the robot, held objects, and environment as point clouds, using cross-attention between robot/object points and the environment to produce geometry-aware control features. In simulation, RECAL improves collision avoidance while preserving target-tracking performance across frozen-arm and adaptive-arm locomotion, object-carrying, and standing-manipulation scenarios relative to alternative geometry-aware WBC architectures. We further demonstrate the controller on a real Digit V3 humanoid robot.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-09-16T02:08:53.656349+00:00"
+      }
+    },
+    {
+      "title": "Auto-HSI: Personalized human control of a robot swarm on demand by using LLMs for online automatic code generation",
+      "authors": [
+        "Alessandro Nazzari",
+        "Nathan Cerisara",
+        "Dorian Tonnis",
+        "Raina Zakir",
+        "Lorenzo Labarile",
+        "Weixu Zhu",
+        "Marco Dorigo",
+        "Mary Katherine Heinrich"
+      ],
+      "summary": "This paper presents Auto-HSI, a method for generating personalized human-swarm interaction (HSI) interfaces on demand. The objective is to enable untrained operators to use natural language descriptions and gesture demonstrations to explain how they want the robots to collectively behave in response to their gestures. Based on these inputs, the code should automatically be generated for personalized state machines that will control the robots as desired, in response to the desired gesture inputs. In the developed Auto-HSI prototype, the generated code produces a personalized interface for centralized control using one- and two-handed gestures, enabling a user to teleoperate the robots' motion, formation shape, and shape deformation. We test the gesture tracking and code generation components of Auto-HSI against performance benchmarks. We then test the full Auto-HSI prototype in ``live'' operation experiments, in which real human operators centrally control 50 simulated robots in a physics-based simulator, under nominal and noisy conditions. In these experiments, robots are teleoperated to: score a goal, traverse a maze that requires shape deformation, and score two simultaneous goals by splitting into two groups. We also demonstrate a real human operator making live updates to their personalized Auto-HSI interface during operation (in simulation). Finally, we demonstrate live operation of real robots.",
+      "published": "2026-09-14T21:09:00Z",
+      "updated": "2026-09-14T21:09:00Z",
+      "arxiv_id": "2609.16346v1",
+      "abs_url": "http://arxiv.org/abs/2609.16346v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.16346v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.HC",
+        "cs.MA"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 6,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "robot",
+        "simulator"
+      ],
+      "title_zh": "Auto-HSI: Personalized human control of a robot swarm on demand by using LLMs for online automatic code generation",
+      "summary_zh": "This paper presents Auto-HSI, a method for generating personalized human-swarm interaction (HSI) interfaces on demand. The objective is to enable untrained operators to use natural language descriptions and gesture demonstrations to explain how they want the robots to collectively behave in response to their gestures. Based on these inputs, the code should automatically be generated for personalized state machines that will control the robots as desired, in response to the desired gesture inputs. In the developed Auto-HSI prototype, the generated code produces a personalized interface for centralized control using one- and two-handed gestures, enabling a user to teleoperate the robots' motion, formation shape, and shape deformation. We test the gesture tracking and code generation components of Auto-HSI against performance benchmarks. We then test the full Auto-HSI prototype in ``live'' operation experiments, in which real human operators centrally control 50 simulated robots in a physics-based simulator, under nominal and noisy conditions. In these experiments, robots are teleoperated to: score a goal, traverse a maze that requires shape deformation, and score two simultaneous goals by splitting into two groups. We also demonstrate a real human operator making live updates to their personalized Auto-HSI interface during operation (in simulation). Finally, we demonstrate live operation of real robots.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-09-16T02:08:53.656349+00:00"
+      }
+    },
+    {
+      "title": "ManiSkillFormer: Demonstration-Free Compositional Manipulation via Task-Conditioned Geometric Contracts",
+      "authors": [
+        "Peiqi Yu",
+        "Mosam Dabhi",
+        "Shangtao Li",
+        "Bowei Li",
+        "Laszlo Jeni",
+        "Changliu Liu"
+      ],
+      "summary": "We present ManiSkillFormer, a neuro-symbolic framework for demonstration-free and compositional robotic manipulation. Instead of learning end-to-end visuomotor policies, ManiSkillFormer introduces task-conditioned geometric contracts that explicitly structure the interface between perception and action. Each manipulation skill declares the semantic geometric primitives required for execution, such as object keypoints and surface normals. Building on human-defined skill structures, LLM agents generate these contracts and corresponding motion templates for different objects and task contexts. These contracts guide the perception module to ground task-relevant 3D primitives from observations, which are then used to instantiate reusable motion templates stored in a skill library. We evaluate ManiSkillFormer on Galaxea R1-Lite dual-arm robot across three settings: zero-shot pick-and-place over 8 object categories with 30 different instances, functional manipulation tasks including unscrewing, pouring, pressing, and folding, and 3 long-horizon tasks. ManiSkillFormer achieves higher average success rates than the evaluated baselines and two ablated pipelines: 88.24% for demonstration-free pick-and-place, 75.00% average success on functional manipulation and 50--80% completion rates across the long-horizon tasks. These results show that our design enables composable and reusable manipulation across objects and tasks without per-object policy fine-tuning or additional robot demonstrations.",
+      "published": "2026-09-14T20:45:53Z",
+      "updated": "2026-09-14T20:45:53Z",
+      "arxiv_id": "2609.16331v1",
+      "abs_url": "http://arxiv.org/abs/2609.16331v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.16331v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "VLA/多模态策略",
+        "数据集/评测",
+        "感知与3D理解",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 14,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "maniskill",
+        "pick-and-place",
+        "robot",
+        "robotic",
+        "visuomotor"
+      ],
+      "title_zh": "ManiSkillFormer: Demonstration-Free Compositional Manipulation via Task-Conditioned Geometric Contracts",
+      "summary_zh": "We present ManiSkillFormer, a neuro-symbolic framework for demonstration-free and compositional robotic manipulation. Instead of learning end-to-end visuomotor policies, ManiSkillFormer introduces task-conditioned geometric contracts that explicitly structure the interface between perception and action. Each manipulation skill declares the semantic geometric primitives required for execution, such as object keypoints and surface normals. Building on human-defined skill structures, LLM agents generate these contracts and corresponding motion templates for different objects and task contexts. These contracts guide the perception module to ground task-relevant 3D primitives from observations, which are then used to instantiate reusable motion templates stored in a skill library. We evaluate ManiSkillFormer on Galaxea R1-Lite dual-arm robot across three settings: zero-shot pick-and-place over 8 object categories with 30 different instances, functional manipulation tasks including unscrewing, pouring, pressing, and folding, and 3 long-horizon tasks. ManiSkillFormer achieves higher average success rates than the evaluated baselines and two ablated pipelines: 88.24% for demonstration-free pick-and-place, 75.00% average success on functional manipulation and 50--80% completion rates across the long-horizon tasks. These results show that our design enables composable and reusable manipulation across objects and tasks without per-object policy fine-tuning or additional robot demonstrations.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-09-16T02:08:53.656349+00:00"
+      }
+    },
+    {
+      "title": "ConGraspXL: Controllable Constraint-Conditioned Dexterous Grasping Motion Synthesis",
+      "authors": [
+        "Hui Zhang",
+        "Mirko Meboldt",
+        "Jie Song"
+      ],
+      "summary": "Dexterous grasping is usually conducted for specific tasks, leading to heterogeneous constraints such as specific approach directions, desired contact regions, specified wrist trajectories, and functional hand poses. Our previous work, GraspXL, achieves scalable grasping motion synthesis for diverse objects and hand morphologies, while lacking controllability for synthesis under such various task-driven constraints. In this paper, we propose ConGraspXL, which extends GraspXL with controllable constraint-conditioned grasp motion synthesis that accommodates diverse task-driven constraints and their combinations. We introduce a hierarchical constraint formulation, enable flexible constraint composition with a masked residual interface, and improve control precision with dynamic hand centers and feed-forward wrist guidance. Without losing the strong generalization capabilities of GraspXL, ConGraspXL enables precise and flexible controllability for various individual constraints and their combinations, providing a plug-and-play low-level grasp controller for downstream applications such as whole-body grasp completion, functional grasping, and human-motion imitation.",
+      "published": "2026-09-14T20:35:04Z",
+      "updated": "2026-09-14T20:35:04Z",
+      "arxiv_id": "2609.16319v1",
+      "abs_url": "http://arxiv.org/abs/2609.16319v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.16319v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "comment": "This work has been submitted to the IEEE for possible publication. Copyright may be transferred without notice, after which this version may no longer be accessible",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "人形与灵巧"
+      ],
+      "topic": "机器人操作",
+      "score": 8,
+      "anchor_terms": [
+        "grasp",
+        "grasping"
+      ],
+      "matched_terms": [
+        "dexterous",
+        "grasp",
+        "grasping"
+      ],
+      "title_zh": "ConGraspXL: Controllable Constraint-Conditioned Dexterous Grasping Motion Synthesis",
+      "summary_zh": "Dexterous grasping is usually conducted for specific tasks, leading to heterogeneous constraints such as specific approach directions, desired contact regions, specified wrist trajectories, and functional hand poses. Our previous work, GraspXL, achieves scalable grasping motion synthesis for diverse objects and hand morphologies, while lacking controllability for synthesis under such various task-driven constraints. In this paper, we propose ConGraspXL, which extends GraspXL with controllable constraint-conditioned grasp motion synthesis that accommodates diverse task-driven constraints and their combinations. We introduce a hierarchical constraint formulation, enable flexible constraint composition with a masked residual interface, and improve control precision with dynamic hand centers and feed-forward wrist guidance. Without losing the strong generalization capabilities of GraspXL, ConGraspXL enables precise and flexible controllability for various individual constraints and their combinations, providing a plug-and-play low-level grasp controller for downstream applications such as whole-body grasp completion, functional grasping, and human-motion imitation.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-09-16T02:08:53.656349+00:00"
+      }
+    },
+    {
+      "title": "Policy Gradient over History-Dependent Policy Classes for LQR with Domain Randomization",
+      "authors": [
+        "Tesshu Fujinami",
+        "Bruce D. Lee",
+        "Anastasios Tsiamis",
+        "Nikolai Matni",
+        "George J. Pappas"
+      ],
+      "summary": "Domain Randomization (DR) has been widely used to overcome the sim-to-real gap by training a controller on a distribution of simulated environments via reinforcement learning. While DR can achieve robust performance simply using controllers synthesized via policy gradient (PG) methods, the optimization landscape is not well understood, even in the case of linear quadratic regulator (LQR) objectives. To this end, we first study PG of domain randomized LQR over history-dependent policy classes, such as finite impulse response controllers, as they can extend the possibilities of simultaneous stabilization. Second, to find such a stabilizing controller, we propose a curriculum learning based algorithm which gradually expands the memory of the controller. Finally, we show that PG with the proposed algorithm converges globally to the minimizer of a sample average approximation of the DR objective under suitable bounds on the heterogeneity of environments. Empirical results support our findings and highlight promising directions for future work, including nonlinear domain-randomized control.",
+      "published": "2026-09-14T19:58:47Z",
+      "updated": "2026-09-14T19:58:47Z",
+      "arxiv_id": "2609.16300v1",
+      "abs_url": "http://arxiv.org/abs/2609.16300v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.16300v1",
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "强化/模仿学习"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 6,
+      "anchor_terms": [
+        "reinforcement learning",
+        "sim-to-real"
+      ],
+      "matched_terms": [
+        "domain randomization",
+        "reinforcement learning",
+        "sim-to-real"
+      ],
+      "title_zh": "Policy Gradient over History-Dependent Policy Classes for LQR with Domain Randomization",
+      "summary_zh": "Domain Randomization (DR) has been widely used to overcome the sim-to-real gap by training a controller on a distribution of simulated environments via reinforcement learning. While DR can achieve robust performance simply using controllers synthesized via policy gradient (PG) methods, the optimization landscape is not well understood, even in the case of linear quadratic regulator (LQR) objectives. To this end, we first study PG of domain randomized LQR over history-dependent policy classes, such as finite impulse response controllers, as they can extend the possibilities of simultaneous stabilization. Second, to find such a stabilizing controller, we propose a curriculum learning based algorithm which gradually expands the memory of the controller. Finally, we show that PG with the proposed algorithm converges globally to the minimizer of a sample average approximation of the DR objective under suitable bounds on the heterogeneity of environments. Empirical results support our findings and highlight promising directions for future work, including nonlinear domain-randomized control.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-09-16T02:08:53.656349+00:00"
+      }
+    },
+    {
+      "title": "Tendon-Driven Continuum Robot with Modular Stiffness and In-Situ Self Pose Estimation",
+      "authors": [
+        "Guo Ning",
+        "Sue",
+        "Zheng Cao",
+        "Junzhe Hu",
+        "Xiangyun Bu",
+        "David Quinn",
+        "Tiancheng Wu",
+        "Zackory Erickson",
+        "Carmel Majidi"
+      ],
+      "summary": "Continuum robots enable smooth shape morphing and safe interaction in confined environments. However, most existing systems are task-specific and depend on external sensing infrastructure, limiting their adaptability and real-world deployment. This paper presents a self-contained modular continuum robotic platform that combines mechanical reconfigurability with onboard pose estimation. The robot is constructed from interchangeable continuum joints with analytically precomputed stiffness, allowing rapid assembly and direct programming of the robot shape. Proprioceptive sensing is achieved using magnetic sensors and a modular learning-based framework, where a single model is trained per joint and reused across configurations. The system is experimentally validated in real world, demonstrating self-sensing capabilities and adaptation without external tracking.",
+      "published": "2026-09-14T19:21:09Z",
+      "updated": "2026-09-14T19:21:09Z",
+      "arxiv_id": "2609.16256v1",
+      "abs_url": "http://arxiv.org/abs/2609.16256v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.16256v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 6,
+      "anchor_terms": [
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "Tendon-Driven Continuum Robot with Modular Stiffness and In-Situ Self Pose Estimation",
+      "summary_zh": "Continuum robots enable smooth shape morphing and safe interaction in confined environments. However, most existing systems are task-specific and depend on external sensing infrastructure, limiting their adaptability and real-world deployment. This paper presents a self-contained modular continuum robotic platform that combines mechanical reconfigurability with onboard pose estimation. The robot is constructed from interchangeable continuum joints with analytically precomputed stiffness, allowing rapid assembly and direct programming of the robot shape. Proprioceptive sensing is achieved using magnetic sensors and a modular learning-based framework, where a single model is trained per joint and reused across configurations. The system is experimentally validated in real world, demonstrating self-sensing capabilities and adaptation without external tracking.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-09-16T02:08:53.656349+00:00"
       }
     },
     {
@@ -1036,10 +1596,10 @@
       ],
       "summary": "World Action Models (WAMs) use video generation models to predict future visual dynamics for robotic manipulation, but iterative denoising introduces additional latency for closed-loop control. We empirically find that visual content converges at different rates during denoising. Static background structure forms early, whereas the gripper and manipulated object remain blurry after the first step, with their interaction dynamics emerging only through subsequent denoising. Consequently, naively truncating a multi-step video model to one step preserves scene structure but loses the interaction-centric dynamics most critical for manipulation. To address this issue, we propose DIDO, which distills the converged dynamics of a multi-step video model into a single denoising step. DIDO combines distribution matching distillation with interaction-centric representation guidance. Beyond compressing multi-step generation into one forward pass, DIDO explicitly models the gripper, manipulated object, and their interaction using supervised bounding-box visual reasoning tokens. Additionally, DIDO aligns the target object's representations across multiple model layers with features from a pretrained DINOv3 encoder. This interaction-centric guidance helps the distilled model preserve both the relevant entities and their future dynamics in a single step, while substantially reducing inference latency. DIDO achieves an average success rate of 99.0\\% on LIBERO, 76.6\\% on LIBERO-Plus, and 92.0\\% on RoboTwin, while also demonstrating effective transfer to long-horizon and generalization tasks in real-world robotic manipulation.",
       "published": "2026-09-14T13:46:57Z",
-      "updated": "2026-09-14T13:46:57Z",
-      "arxiv_id": "2609.15570v1",
-      "abs_url": "http://arxiv.org/abs/2609.15570v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.15570v1",
+      "updated": "2026-09-15T05:54:35Z",
+      "arxiv_id": "2609.15570v2",
+      "abs_url": "http://arxiv.org/abs/2609.15570v2",
+      "pdf_url": "https://arxiv.org/pdf/2609.15570v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -1073,7 +1633,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-09-15T05:49:42.834183+00:00"
+        "generated_at": "2026-09-16T02:08:53.656349+00:00"
       }
     },
     {
@@ -1411,6 +1971,53 @@
       }
     },
     {
+      "title": "Structure-Preserving Quantum Circuit Architectures for Robot Kinematics",
+      "authors": [
+        "Andrea Morghen",
+        "Pierluigi Arpenti",
+        "Roberto Schiattarella",
+        "Giovanni Acampora",
+        "Bruno Siciliano"
+      ],
+      "summary": "Structured spatial data require quantum encodings that preserve geometric relations, expose measurable observables, and remain implementable on finite-depth hardware. This work introduces a quantum representation and circuit architecture for rigid-body transformations and specializes it to Denavit--Hartenberg kinematics of serial open-chain manipulators. Each translational contribution is factorized into a classical metric magnitude and a signed unit direction encoded by a single-qubit Bloch vector, while parameterized rotations reproduce the ordered propagation of frame directions. A selector register prepares probabilities proportional to the contribution magnitudes, and the reduced state of a designated readout qubit encodes their normalized weighted sum. The retained classical scale then reconstructs the metric end-effector position. Two additional readout qubits encode terminal-frame axes, providing a compact and geometrically interpretable pose interface. At the ideal expectation-value level, measured Pauli observables reproduce the corresponding classical kinematic quantities. Alternative circuit architectures realize the same representation with different tradeoffs in qubit count, circuit depth, controlled operations, and measurement requirements. Validation on a serial manipulator yields numerically negligible position and orientation reconstruction errors under ideal simulation. Finite-shot simulations, noisy executions, transpilation analysis, and a hardware demonstration further characterize statistical error, noise sensitivity, and implementation overhead without asserting computational advantage.",
+      "published": "2026-09-14T11:20:14Z",
+      "updated": "2026-09-14T11:20:14Z",
+      "arxiv_id": "2609.16089v1",
+      "abs_url": "http://arxiv.org/abs/2609.16089v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.16089v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "quant-ph"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "机械臂"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 7,
+      "anchor_terms": [
+        "manipulator",
+        "robot"
+      ],
+      "matched_terms": [
+        "end-effector",
+        "manipulator",
+        "robot"
+      ],
+      "title_zh": "Structure-Preserving Quantum Circuit Architectures for Robot Kinematics",
+      "summary_zh": "Structured spatial data require quantum encodings that preserve geometric relations, expose measurable observables, and remain implementable on finite-depth hardware. This work introduces a quantum representation and circuit architecture for rigid-body transformations and specializes it to Denavit--Hartenberg kinematics of serial open-chain manipulators. Each translational contribution is factorized into a classical metric magnitude and a signed unit direction encoded by a single-qubit Bloch vector, while parameterized rotations reproduce the ordered propagation of frame directions. A selector register prepares probabilities proportional to the contribution magnitudes, and the reduced state of a designated readout qubit encodes their normalized weighted sum. The retained classical scale then reconstructs the metric end-effector position. Two additional readout qubits encode terminal-frame axes, providing a compact and geometrically interpretable pose interface. At the ideal expectation-value level, measured Pauli observables reproduce the corresponding classical kinematic quantities. Alternative circuit architectures realize the same representation with different tradeoffs in qubit count, circuit depth, controlled operations, and measurement requirements. Validation on a serial manipulator yields numerically negligible position and orientation reconstruction errors under ideal simulation. Finite-shot simulations, noisy executions, transpilation analysis, and a hardware demonstration further characterize statistical error, noise sensitivity, and implementation overhead without asserting computational advantage.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-09-16T02:08:53.656349+00:00"
+      }
+    },
+    {
       "title": "From Prediction to Decision: World-Model-Guided Action Selection for Continuous Pile Excavation",
       "authors": [
         "Ailing Zhang",
@@ -1636,9 +2243,9 @@
       }
     },
     {
-      "title": "A Vision Based Framework Integrating Attention and Action Cues for Interpretable Cognitive Workload Assessment in Human Robot Collaborative Assembly",
+      "title": "A Vision Based Framework Integrating Attention and Action Cues for Interpretable Cognitive Workload Assessment in Human-Robot Collaborative Assembly",
       "authors": [
-        "Junyan Xionga",
+        "Junyan Xiong",
         "Naiyi Feng",
         "Xingke Xia",
         "Qihang Fan",
@@ -1647,10 +2254,10 @@
       ],
       "summary": "The introduction of human-robot collaboration (HRC) in industrial assembly operations is revolutionizing the manufacturing landscape. In this evolving environment, operators are required to seamlessly coordinate their manual tasks with real-time task information and robotic behaviors. These demands fluctuate during operation, yet conventional workload assessments depend on body-worn physiological sensors that complicate practical deployment. Here, we present a vision-based attention--action framework for continuous and interpretable workload-related assessment in HRC assembly. The framework combines RGB-D observations with robot states and calibrated task-related areas to construct a temporally confirmed representation of operator behavior. This representation identifies where task demand is concentrated and explains how it develops when attention and action diverge, the task context changes, or the operator hesitates. We evaluated the framework in a three-level collaborative gearbox assembly experiment with ten participants, using subjective ratings and synchronized physiological signals as independent references. Raw NASA-TLX ratings confirmed increasing perceived workload across conditions, with significant effects on overall workload and its mental and temporal dimensions. The vision-derived HRC-CWL output was significantly associated with ECG-derived features in seven of nine participants with complete correlation data. Synchronized interaction episodes further showed temporal correspondence between detected hesitation and physiological activity. Real-time deployment demonstrated that the framework can operate without requiring operators to wear additional sensors. These findings support HRC-CWL as an interpretable behavioral proxy for cognitive ergonomics analysis and adaptive robot assistance, rather than a direct psychophysiological measure of workload.",
       "published": "2026-09-14T08:52:37Z",
-      "updated": "2026-09-14T08:52:37Z",
-      "arxiv_id": "2609.15232v1",
-      "abs_url": "http://arxiv.org/abs/2609.15232v1",
-      "pdf_url": "https://arxiv.org/pdf/2609.15232v1",
+      "updated": "2026-09-15T04:46:09Z",
+      "arxiv_id": "2609.15232v2",
+      "abs_url": "http://arxiv.org/abs/2609.15232v2",
+      "pdf_url": "https://arxiv.org/pdf/2609.15232v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -1671,13 +2278,13 @@
         "robot",
         "robotic"
       ],
-      "title_zh": "A Vision Based Framework Integrating Attention and Action Cues for Interpretable Cognitive Workload Assessment in Human Robot Collaborative Assembly",
+      "title_zh": "A Vision Based Framework Integrating Attention and Action Cues for Interpretable Cognitive Workload Assessment in Human-Robot Collaborative Assembly",
       "summary_zh": "The introduction of human-robot collaboration (HRC) in industrial assembly operations is revolutionizing the manufacturing landscape. In this evolving environment, operators are required to seamlessly coordinate their manual tasks with real-time task information and robotic behaviors. These demands fluctuate during operation, yet conventional workload assessments depend on body-worn physiological sensors that complicate practical deployment. Here, we present a vision-based attention--action framework for continuous and interpretable workload-related assessment in HRC assembly. The framework combines RGB-D observations with robot states and calibrated task-related areas to construct a temporally confirmed representation of operator behavior. This representation identifies where task demand is concentrated and explains how it develops when attention and action diverge, the task context changes, or the operator hesitates. We evaluated the framework in a three-level collaborative gearbox assembly experiment with ten participants, using subjective ratings and synchronized physiological signals as independent references. Raw NASA-TLX ratings confirmed increasing perceived workload across conditions, with significant effects on overall workload and its mental and temporal dimensions. The vision-derived HRC-CWL output was significantly associated with ECG-derived features in seven of nine participants with complete correlation data. Synchronized interaction episodes further showed temporal correspondence between detected hesitation and physiological activity. Real-time deployment demonstrated that the framework can operate without requiring operators to wear additional sensors. These findings support HRC-CWL as an interpretable behavioral proxy for cognitive ergonomics analysis and adaptive robot assistance, rather than a direct psychophysiological measure of workload.",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-09-15T05:49:42.834183+00:00"
+        "generated_at": "2026-09-16T02:08:53.656349+00:00"
       }
     },
     {
