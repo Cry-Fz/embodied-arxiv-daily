@@ -1,13 +1,104 @@
 {
   "date": "2026-10-02",
-  "generated_at": "2026-10-05T02:41:08.023581+00:00",
+  "generated_at": "2026-10-06T03:33:38.133049+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202610020000 TO 202610022359]",
-  "total_fetched": 513,
-  "total_matched": 63,
+  "total_fetched": 665,
+  "total_matched": 78,
   "papers": [
+    {
+      "title": "Exact Optimal Transport by Matching",
+      "authors": [
+        "Dmitry Kamenetsky"
+      ],
+      "summary": "Balanced discrete optimal transport between n sources and n targets of unit mass is exactly the minimum-cost assignment problem-a bipartite perfect matching-and is therefore solvable exactly by industrial matching engines in milliseconds to seconds. We ask when the exact approach beats the standard approximate alternatives, entropic Sinkhorn and its accelerated variant Greenkhorn, and make the sparse-exact side certified by a textbook LP dual-feasibility clip. Three contributions. (i) Measurement: on dense 2-D instances, exact matching (Jonker-Volgenant) is faster and strictly more accurate than either approximate method throughout the moderate-n regime (0.01 s at n=500 to 11.5 s at n=8000); reaching a 1% quality target on the same hardware requires roughly 10-80 min for Greenkhorn (factors 4e2-6e4 over exact; plain Sinkhorn is 20-650x slower still), a rough power-law projection beyond the measured range. Greenkhorn's measured speedup over plain Sinkhorn is only 1.0-1.5x on most converged cells. (ii) A simple kNN-pool gap certificate: given a pool matching and its Blossom dual, a one-pass O(n^2) clip produces a dense-feasible lower bound; combined with the Sinkhorn dual potential (valid at every iterate, not just at convergence), the bound is valid on all 45 measured configurations and tightens monotonically with k. (iii) A multi-robot task-allocation sanity check where the discrete plan is the deliverable: per-round exact assignment costs 0.1-68 ms, while a Sinkhorn-plus-hardening pipeline costs 0.12-15.9 s and accumulates 6-27% extra travel over 15 rounds. The Sinkhorn family's large-n dense regime is acknowledged and left untouched. Code, data, and results under MIT: https://github.com/dimkadimon/OT-Blossom.",
+      "published": "2026-10-02T21:46:52Z",
+      "updated": "2026-10-02T21:46:52Z",
+      "arxiv_id": "2610.04085v1",
+      "abs_url": "http://arxiv.org/abs/2610.04085v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.04085v1",
+      "primary_category": "cs.DS",
+      "categories": [
+        "cs.DS",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "comment": "21 pages, 3 figures, 8 tables",
+      "code_url": "https://github.com/dimkadimon/OT-Blossom",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 4,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "robot"
+      ],
+      "title_zh": "Exact Optimal Transport by Matching",
+      "summary_zh": "Balanced discrete optimal transport between n sources and n targets of unit mass is exactly the minimum-cost assignment problem-a bipartite perfect matching-and is therefore solvable exactly by industrial matching engines in milliseconds to seconds. We ask when the exact approach beats the standard approximate alternatives, entropic Sinkhorn and its accelerated variant Greenkhorn, and make the sparse-exact side certified by a textbook LP dual-feasibility clip. Three contributions. (i) Measurement: on dense 2-D instances, exact matching (Jonker-Volgenant) is faster and strictly more accurate than either approximate method throughout the moderate-n regime (0.01 s at n=500 to 11.5 s at n=8000); reaching a 1% quality target on the same hardware requires roughly 10-80 min for Greenkhorn (factors 4e2-6e4 over exact; plain Sinkhorn is 20-650x slower still), a rough power-law projection beyond the measured range. Greenkhorn's measured speedup over plain Sinkhorn is only 1.0-1.5x on most converged cells. (ii) A simple kNN-pool gap certificate: given a pool matching and its Blossom dual, a one-pass O(n^2) clip produces a dense-feasible lower bound; combined with the Sinkhorn dual potential (valid at every iterate, not just at convergence), the bound is valid on all 45 measured configurations and tightens monotonically with k. (iii) A multi-robot task-allocation sanity check where the discrete plan is the deliverable: per-round exact assignment costs 0.1-68 ms, while a Sinkhorn-plus-hardening pipeline costs 0.12-15.9 s and accumulates 6-27% extra travel over 15 rounds. The Sinkhorn family's large-n dense regime is acknowledged and left untouched. Code, data, and results under MIT: https://github.com/dimkadimon/OT-Blossom.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-06T03:35:20.696437+00:00"
+      }
+    },
+    {
+      "title": "$Q$ Can Play That Game: Online Fitted $Q$-Iteration for Continuous-Action Zero-Sum Markov Games with Convex-Concave Function Approximation",
+      "authors": [
+        "Kushagra Gupta",
+        "Jingqi Li",
+        "Cade Armstrong",
+        "Lasse Peters",
+        "Ross E. Allen",
+        "Ufuk Topcu",
+        "David Fridovich-Keil"
+      ],
+      "summary": "Zero-sum Markov games arise in a wide variety of sequential decision-making problems such as adversarial learning and planning against modeled uncertainties. However, prior work on finite-sample guarantees on the learned state-action value function ($Q$-function) for zero-sum Markov games is largely restricted to finite-action settings, or to continuous-action games in which agents have linear dynamics and quadratic rewards (i.e. linear-quadratic, or LQ, games). A central challenge in extending such guarantees to more general continuous-action zero-sum Markov games is that the associated Bellman operator involves a minimax problem that need not admit a tractable saddle-point solution. To this end, we first introduce a class of neural network function approximators for the $Q$-function that is convex-concave in the players' actions, which guarantees that this minimax problem admits a pure-strategy saddle point. We then study an online variant of fitted $Q$-iteration employing this function class and establish, to the best of our knowledge, the first finite-sample guarantees for non-LQ zero-sum Markov games with continuous states and actions. Our code can be found at https://github.com/CLeARoboticsLab/QCanPlayThatGame.",
+      "published": "2026-10-02T20:16:44Z",
+      "updated": "2026-10-02T20:16:44Z",
+      "arxiv_id": "2610.04010v1",
+      "abs_url": "http://arxiv.org/abs/2610.04010v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.04010v1",
+      "primary_category": "cs.GT",
+      "categories": [
+        "cs.GT",
+        "cs.MA"
+      ],
+      "comment": "",
+      "code_url": "https://github.com/CLeARoboticsLab/QCanPlayThatGame",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 4,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "$Q$ Can Play That Game: Online Fitted $Q$-Iteration for Continuous-Action Zero-Sum Markov Games with Convex-Concave Function Approximation",
+      "summary_zh": "Zero-sum Markov games arise in a wide variety of sequential decision-making problems such as adversarial learning and planning against modeled uncertainties. However, prior work on finite-sample guarantees on the learned state-action value function ($Q$-function) for zero-sum Markov games is largely restricted to finite-action settings, or to continuous-action games in which agents have linear dynamics and quadratic rewards (i.e. linear-quadratic, or LQ, games). A central challenge in extending such guarantees to more general continuous-action zero-sum Markov games is that the associated Bellman operator involves a minimax problem that need not admit a tractable saddle-point solution. To this end, we first introduce a class of neural network function approximators for the $Q$-function that is convex-concave in the players' actions, which guarantees that this minimax problem admits a pure-strategy saddle point. We then study an online variant of fitted $Q$-iteration employing this function class and establish, to the best of our knowledge, the first finite-sample guarantees for non-LQ zero-sum Markov games with continuous states and actions. Our code can be found at https://github.com/CLeARoboticsLab/QCanPlayThatGame.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-06T03:35:20.696437+00:00"
+      }
+    },
     {
       "title": "Language Models that Play Chess and Explain Their Moves",
       "authors": [
@@ -262,6 +353,520 @@
       }
     },
     {
+      "title": "Terrain-Dependent Intra-Cycle Leg Timing for Effective Locomotion on Granular Slopes",
+      "authors": [
+        "Long Zhao",
+        "Xingjue Liao",
+        "Feifei Qian"
+      ],
+      "summary": "Locomotion on granular slopes such as sand dunes remains a fundamental challenge for legged robots due to reduced shear strength and gravity-induced anisotropic yielding of granular media. Using a hexapedal robot on a tiltable granular bed, we systematically measure locomotion speed together with slope-dependent normal and shear granular resistive forces. While normal penetration resistance remains nearly unchanged with inclination, shear resistance decreases substantially as slope angle increases. Guided by these measurements, we develop a simple robot-terrain interaction model that predicts anchoring timing, step length, and resulting robot speed, as functions of terrain strength and slope angle. The model reveals that slope-induced performance loss is primarily governed by delayed anchoring and increased backward slip rather than excessive sinkage. By extending the model to generalized terrain conditions, we construct failure phase diagrams that identify sinkage- and slippage-induced failure regimes, enabling quantitative risk estimation for locomotion on granular slopes. This physics-informed framework provides predictive insight into terrain-dependent failure mechanisms and offers guidance for safer and more robust robot operation on deformable inclines.",
+      "published": "2026-10-02T23:32:53Z",
+      "updated": "2026-10-02T23:32:53Z",
+      "arxiv_id": "2610.04144v1",
+      "abs_url": "http://arxiv.org/abs/2610.04144v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.04144v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "人形与灵巧",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 8,
+      "anchor_terms": [
+        "locomotion",
+        "robot"
+      ],
+      "matched_terms": [
+        "legged",
+        "legged robot",
+        "locomotion",
+        "robot"
+      ],
+      "title_zh": "Terrain-Dependent Intra-Cycle Leg Timing for Effective Locomotion on Granular Slopes",
+      "summary_zh": "Locomotion on granular slopes such as sand dunes remains a fundamental challenge for legged robots due to reduced shear strength and gravity-induced anisotropic yielding of granular media. Using a hexapedal robot on a tiltable granular bed, we systematically measure locomotion speed together with slope-dependent normal and shear granular resistive forces. While normal penetration resistance remains nearly unchanged with inclination, shear resistance decreases substantially as slope angle increases. Guided by these measurements, we develop a simple robot-terrain interaction model that predicts anchoring timing, step length, and resulting robot speed, as functions of terrain strength and slope angle. The model reveals that slope-induced performance loss is primarily governed by delayed anchoring and increased backward slip rather than excessive sinkage. By extending the model to generalized terrain conditions, we construct failure phase diagrams that identify sinkage- and slippage-induced failure regimes, enabling quantitative risk estimation for locomotion on granular slopes. This physics-informed framework provides predictive insight into terrain-dependent failure mechanisms and offers guidance for safer and more robust robot operation on deformable inclines.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-06T03:35:20.696437+00:00"
+      }
+    },
+    {
+      "title": "Reward-DAgger: Robot-Gated Interactive Imitation Learning with General-Purpose Progress-Based Reward Models",
+      "authors": [
+        "Ryan Li",
+        "Yigit Korkmaz",
+        "Erdem Bıyık"
+      ],
+      "summary": "Recent advances in robot learning have enabled generalist control policies capable of completing a wide range of tasks. However, their performance degrades when deployed in unseen environments, making it critical to detect failures and teach recovery behaviors. Existing runtime monitoring methods often require task- and policy-specific training or hyperparameter tuning, limiting cross-task deployment and introducing additional overhead during iterative policy updates. We present Reward-DAgger, a robot-gated interactive imitation learning framework that uses dense progress signals from a general-purpose reward model to determine when human intervention is needed. Our approach is agnostic to the underlying policy architecture, requires no access to policy internals, and can be applied across tasks without retuning the gating mechanism. Our results show that Reward-DAgger achieves a better failure-detection accuracy-latency tradeoff than existing runtime monitoring baselines. Across eight simulated and real-world tasks, Reward-DAgger consistently improves the downstream policy's autonomous success rate throughout interactive learning and achieves strong return on human effort, outperforming the baselines in most settings. Importantly, the same gating configuration is used across tasks without task-specific hyperparameter tuning, demonstrating transfer across tasks, environments, and policy architectures. Code and videos are available at https://liralab.usc.edu/reward-dagger.",
+      "published": "2026-10-02T21:05:23Z",
+      "updated": "2026-10-02T21:05:23Z",
+      "arxiv_id": "2610.04054v1",
+      "abs_url": "http://arxiv.org/abs/2610.04054v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.04054v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "强化/模仿学习",
+        "其他机器人"
+      ],
+      "topic": "强化/模仿学习",
+      "score": 10,
+      "anchor_terms": [
+        "imitation learning",
+        "robot",
+        "robot learning"
+      ],
+      "matched_terms": [
+        "imitation learning",
+        "robot",
+        "robot learning"
+      ],
+      "title_zh": "Reward-DAgger: Robot-Gated Interactive Imitation Learning with General-Purpose Progress-Based Reward Models",
+      "summary_zh": "Recent advances in robot learning have enabled generalist control policies capable of completing a wide range of tasks. However, their performance degrades when deployed in unseen environments, making it critical to detect failures and teach recovery behaviors. Existing runtime monitoring methods often require task- and policy-specific training or hyperparameter tuning, limiting cross-task deployment and introducing additional overhead during iterative policy updates. We present Reward-DAgger, a robot-gated interactive imitation learning framework that uses dense progress signals from a general-purpose reward model to determine when human intervention is needed. Our approach is agnostic to the underlying policy architecture, requires no access to policy internals, and can be applied across tasks without retuning the gating mechanism. Our results show that Reward-DAgger achieves a better failure-detection accuracy-latency tradeoff than existing runtime monitoring baselines. Across eight simulated and real-world tasks, Reward-DAgger consistently improves the downstream policy's autonomous success rate throughout interactive learning and achieves strong return on human effort, outperforming the baselines in most settings. Importantly, the same gating configuration is used across tasks without task-specific hyperparameter tuning, demonstrating transfer across tasks, environments, and policy architectures. Code and videos are available at https://liralab.usc.edu/reward-dagger.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-06T03:35:20.696437+00:00"
+      }
+    },
+    {
+      "title": "A Biomimetic Gaze Control to Restore Head-Neck Movements",
+      "authors": [
+        "Colin Rubow",
+        "Haohan Zhang"
+      ],
+      "summary": "Powered neck exoskeletons are developed to restore head-neck motions for those with neck muscle weakness. Current methods using hand-held input devices to control these robotic systems are unintuitive or non-viable for these populations. Alternatively, the eyes coordinate with the head to accomplish many daily tasks. Therefore, movements of the eyes can be a useful signal to control the neck exoskeletons without needing to use the hands. However, previous control models lack biobehavioral basis as well as means to personalize the control behavior, causing unnatural head-neck movements. This paper presents a novel eye-tracking controller design leveraging the vestibulo-ocular reflex to emulate natural eyehead coordination. Personalization tools were also designed, consisting of sliders to allow users to adjust the parameters of this controller. Here, we present the technical design and validation of this system in human users. Compared to the previous eye-tracking model, the new controller provides natural head motions personalized to the user through more natural velocity profiles and a 24 percent average increase of accurate motion intent detection. This system provides a powerful platform for studying eye-tracking controllers in the context of personalization and preference, and ultimately restoring the lost head-neck mobility in patient populations.",
+      "published": "2026-10-02T20:28:30Z",
+      "updated": "2026-10-02T20:28:30Z",
+      "arxiv_id": "2610.04022v1",
+      "abs_url": "http://arxiv.org/abs/2610.04022v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.04022v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 5,
+      "anchor_terms": [
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "A Biomimetic Gaze Control to Restore Head-Neck Movements",
+      "summary_zh": "Powered neck exoskeletons are developed to restore head-neck motions for those with neck muscle weakness. Current methods using hand-held input devices to control these robotic systems are unintuitive or non-viable for these populations. Alternatively, the eyes coordinate with the head to accomplish many daily tasks. Therefore, movements of the eyes can be a useful signal to control the neck exoskeletons without needing to use the hands. However, previous control models lack biobehavioral basis as well as means to personalize the control behavior, causing unnatural head-neck movements. This paper presents a novel eye-tracking controller design leveraging the vestibulo-ocular reflex to emulate natural eyehead coordination. Personalization tools were also designed, consisting of sliders to allow users to adjust the parameters of this controller. Here, we present the technical design and validation of this system in human users. Compared to the previous eye-tracking model, the new controller provides natural head motions personalized to the user through more natural velocity profiles and a 24 percent average increase of accurate motion intent detection. This system provides a powerful platform for studying eye-tracking controllers in the context of personalization and preference, and ultimately restoring the lost head-neck mobility in patient populations.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-06T03:35:20.696437+00:00"
+      }
+    },
+    {
+      "title": "Return-to-Home Feasible Micro-Aerial Vehicle Exploration for 3D Gaussian Splatting Reconstruction",
+      "authors": [
+        "Prajit Krisshnakumar",
+        "Fan Yang",
+        "Koichiro Niinuma"
+      ],
+      "summary": "Micro aerial vehicles (MAVs) enable rapid indoor 3D reconstruction for inspection and time-critical situational awareness, but must operate under strict flight-time budgets and safety constraints that require explicit return-to-home (RTH) feasibility with a conservative margin. We present a topology-first active reconstruction framework that decouples high-fidelity rendering from navigation. A dense 3D Gaussian Splatting (3DGS) map is optimized as the reconstruction target, while a lightweight Truncated Signed Distance Field (TSDF)/occupancy scaffold supports conservative collision checking and online construction of a sparse 3D Voronoi skeleton roadmap. Since directly extracting roadmaps from TSDF geometry can be unstable under noisy and incomplete online fusion, we validate nodes and edges using carved free-space consistency and dense visibility checks, which suppress behind-wall phantom structure and stabilize planning. Viewpoints are selected on the roadmap using a flight-time-budget-aware objective and a lightweight receding-horizon lookahead to improve non-myopic exploration behavior. We evaluate on photorealistic indoor simulation benchmarks (ReplicaCAD, Gibson, and HM3D), reporting reconstruction coverage/error, RTH success, and computational cost. Results demonstrate improved or competitive performance relative to recent GS-based baselines under identical flight-time budgets.",
+      "published": "2026-10-02T20:19:29Z",
+      "updated": "2026-10-02T20:19:29Z",
+      "arxiv_id": "2610.04013v1",
+      "abs_url": "http://arxiv.org/abs/2610.04013v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.04013v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "IEEE/RSJ International Conference on INTELLIGENT ROBOTS & SYSTEMS 2026",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "世界模型与仿真",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 5,
+      "anchor_terms": [
+        "navigation",
+        "robot"
+      ],
+      "matched_terms": [
+        "navigation",
+        "robot"
+      ],
+      "title_zh": "Return-to-Home Feasible Micro-Aerial Vehicle Exploration for 3D Gaussian Splatting Reconstruction",
+      "summary_zh": "Micro aerial vehicles (MAVs) enable rapid indoor 3D reconstruction for inspection and time-critical situational awareness, but must operate under strict flight-time budgets and safety constraints that require explicit return-to-home (RTH) feasibility with a conservative margin. We present a topology-first active reconstruction framework that decouples high-fidelity rendering from navigation. A dense 3D Gaussian Splatting (3DGS) map is optimized as the reconstruction target, while a lightweight Truncated Signed Distance Field (TSDF)/occupancy scaffold supports conservative collision checking and online construction of a sparse 3D Voronoi skeleton roadmap. Since directly extracting roadmaps from TSDF geometry can be unstable under noisy and incomplete online fusion, we validate nodes and edges using carved free-space consistency and dense visibility checks, which suppress behind-wall phantom structure and stabilize planning. Viewpoints are selected on the roadmap using a flight-time-budget-aware objective and a lightweight receding-horizon lookahead to improve non-myopic exploration behavior. We evaluate on photorealistic indoor simulation benchmarks (ReplicaCAD, Gibson, and HM3D), reporting reconstruction coverage/error, RTH success, and computational cost. Results demonstrate improved or competitive performance relative to recent GS-based baselines under identical flight-time budgets.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-06T03:35:20.696437+00:00"
+      }
+    },
+    {
+      "title": "SUAVE: Unified Video-Action Models via Masked Diffusion",
+      "authors": [
+        "Rhythm Syed",
+        "Jean Mercat",
+        "Sedrick Keh",
+        "Kushal Arora",
+        "Paarth Shah",
+        "Aykut Onol",
+        "Mengchao Zhang",
+        "Tony Dear"
+      ],
+      "summary": "Vision-language-action models (VLAs) inherit strong semantic grounding from pretrained vision-language backbones but are typically optimized for predicting actions rather than future observations. They can see and act, but they do not imagine the future before acting. World action models (WAMs) built on video diffusion backbones can imagine but treat language as frozen conditioning on a continuous latent space. Unified models bring these modalities into one architecture, but they either decode autoregressively, one token at a time, or keep video continuous with an auxiliary action head. In this work, we present SUAVE, a Single vocabulary Unified Action-Video modEl in which a masked diffusion transformer generates video and actions conditioned on language, with all three modalities represented as discrete tokens in a shared sequence. Choosing which tokens to mask at inference turns the same network into a world model, a robot policy, or a video-action model. For action-free co-training, the action positions of unlabeled video are filled with mask tokens and excluded from the loss. Simulation and real-world experiments demonstrate two findings. First, a single SUAVE model predicts long-horizon video and acts as a policy, competitive with dedicated world models and specialized action policies on static and dynamic manipulation tasks. On a real robot, our model generates subgoal images and an action chunk spanning one second of motion in 1,030 ms on an RTX 5090 GPU, sustaining closed-loop control at 2.5 actions per second. Second, pretraining on robot video and co-training on human video substantially improves policy performance and zero-shot robustness to distribution shift. Together, these results show that masked diffusion is a practical and versatile foundation for unified video-action modeling.",
+      "published": "2026-10-02T20:11:13Z",
+      "updated": "2026-10-02T20:11:13Z",
+      "arxiv_id": "2610.04009v1",
+      "abs_url": "http://arxiv.org/abs/2610.04009v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.04009v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "comment": "Preprint version",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "VLA/多模态策略",
+        "世界模型与仿真",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 12,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robot policy",
+        "vision-language-action",
+        "world model"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "robot",
+        "robot policy",
+        "vision-language-action",
+        "world model"
+      ],
+      "title_zh": "SUAVE: Unified Video-Action Models via Masked Diffusion",
+      "summary_zh": "Vision-language-action models (VLAs) inherit strong semantic grounding from pretrained vision-language backbones but are typically optimized for predicting actions rather than future observations. They can see and act, but they do not imagine the future before acting. World action models (WAMs) built on video diffusion backbones can imagine but treat language as frozen conditioning on a continuous latent space. Unified models bring these modalities into one architecture, but they either decode autoregressively, one token at a time, or keep video continuous with an auxiliary action head. In this work, we present SUAVE, a Single vocabulary Unified Action-Video modEl in which a masked diffusion transformer generates video and actions conditioned on language, with all three modalities represented as discrete tokens in a shared sequence. Choosing which tokens to mask at inference turns the same network into a world model, a robot policy, or a video-action model. For action-free co-training, the action positions of unlabeled video are filled with mask tokens and excluded from the loss. Simulation and real-world experiments demonstrate two findings. First, a single SUAVE model predicts long-horizon video and acts as a policy, competitive with dedicated world models and specialized action policies on static and dynamic manipulation tasks. On a real robot, our model generates subgoal images and an action chunk spanning one second of motion in 1,030 ms on an RTX 5090 GPU, sustaining closed-loop control at 2.5 actions per second. Second, pretraining on robot video and co-training on human video substantially improves policy performance and zero-shot robustness to distribution shift. Together, these results show that masked diffusion is a practical and versatile foundation for unified video-action modeling.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-06T03:35:20.696437+00:00"
+      }
+    },
+    {
+      "title": "REDIRECT: A 1% Fix for Bad Robot Habits",
+      "authors": [
+        "Yu Zhang",
+        "Jiazhuo Li",
+        "Yancong Wei",
+        "Kangkang Dong",
+        "Xiaojun Zhu",
+        "Houde Liu"
+      ],
+      "summary": "Robots can acquire bad habits from a few defective moments in otherwise useful teleoperation. In mixed-quality robot data, normal and problematic demonstrations share most task behavior and differ only at a local action continuation. Full retraining is costly, while fine-tuning on clean data alone offers limited recovery under a small update budget. We ask whether the local difference can instead be fixed with only 1% of the full-training sample-backward budget. Using only episode-level retained/problematic labels, REDIRECT localizes the branch, assigns a coherent retained continuation to the original observations around it, and anchors shared behavior, without frame-level annotations or additional interaction. Across three randomized ManiSkill tasks and three seeds, REDIRECT raises the mean success rate from 68.2% to 90.3%, recovering 88.8% of the clean-retraining gap versus 22.1% for matched-compute fine-tuning. On a PiPER arm, it recovers 86.7-92.9% of the clean-only gap across cup insertion and towel folding. Local robot habits can therefore be repaired by spending the update budget on the behavioral difference rather than relearning shared behavior.",
+      "published": "2026-10-02T20:00:22Z",
+      "updated": "2026-10-02T20:00:22Z",
+      "arxiv_id": "2610.03997v1",
+      "abs_url": "http://arxiv.org/abs/2610.03997v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.03997v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "8 pages, 5 figures, 6 tables",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 9,
+      "anchor_terms": [
+        "robot",
+        "teleoperation"
+      ],
+      "matched_terms": [
+        "maniskill",
+        "robot",
+        "teleoperation"
+      ],
+      "title_zh": "REDIRECT: A 1% Fix for Bad Robot Habits",
+      "summary_zh": "Robots can acquire bad habits from a few defective moments in otherwise useful teleoperation. In mixed-quality robot data, normal and problematic demonstrations share most task behavior and differ only at a local action continuation. Full retraining is costly, while fine-tuning on clean data alone offers limited recovery under a small update budget. We ask whether the local difference can instead be fixed with only 1% of the full-training sample-backward budget. Using only episode-level retained/problematic labels, REDIRECT localizes the branch, assigns a coherent retained continuation to the original observations around it, and anchors shared behavior, without frame-level annotations or additional interaction. Across three randomized ManiSkill tasks and three seeds, REDIRECT raises the mean success rate from 68.2% to 90.3%, recovering 88.8% of the clean-retraining gap versus 22.1% for matched-compute fine-tuning. On a PiPER arm, it recovers 86.7-92.9% of the clean-only gap across cup insertion and towel folding. Local robot habits can therefore be repaired by spending the update budget on the behavioral difference rather than relearning shared behavior.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-06T03:35:20.696437+00:00"
+      }
+    },
+    {
+      "title": "LatentQuant: Preserving the Policy-Facing Latent Contract under NVFP4 VAE Quantization",
+      "authors": [
+        "Ziye Deng",
+        "Lufang Chen",
+        "Shuyu Feng",
+        "Zhenwei Duan",
+        "Zicong Ye",
+        "Yu Sun",
+        "Xiaofan Li",
+        "Ruyi Gan",
+        "Hao Wang",
+        "Hao Zhang"
+      ],
+      "summary": "Recent world action models (WAMs) reuse pretrained video VAEs whose encoder latents directly condition downstream action policies. Quantization must therefore preserve not only reconstruction fidelity but also the policy-facing latent contract expected by the frozen policy. Direct NVFP4 leaves W4A4 quantization error uncompensated, whereas joint quantization-aware training (QAT) can recover reconstruction by moving this representation. On Wan2.1, joint QAT nearly matches FP32 VBench-7 (0.7403 versus 0.7409), yet LIBERO success collapses from 95.5% to 10.5%. Controlled decoder-only experiments show that activation quantize-dequantize operations alter the reconstruction signal and decoder Jacobian, redirecting the gradient returned to the encoder and inducing persistent latent drift. Based on this mechanism, we introduce LatentQuant, a two-stage NVFP4 QAT framework that first aligns the quantized encoder with its high-precision counterpart, then freezes it while adapting the decoder. Across Wan2.1 and Wan2.2, LatentQuant preserves near-baseline control and high reconstruction quality, achieving 95.75% success on LIBERO and 68.8% on RoboTwin. On NVIDIA B300 GPUs, NVFP4 execution achieves 1.17x-1.26x end-to-end VAE speedups over BF16 cuDNN.",
+      "published": "2026-10-02T19:13:40Z",
+      "updated": "2026-10-02T19:13:40Z",
+      "arxiv_id": "2610.03959v1",
+      "abs_url": "http://arxiv.org/abs/2610.03959v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.03959v1",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "数据集/评测",
+      "score": 5,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "libero",
+        "robot"
+      ],
+      "title_zh": "LatentQuant: Preserving the Policy-Facing Latent Contract under NVFP4 VAE Quantization",
+      "summary_zh": "Recent world action models (WAMs) reuse pretrained video VAEs whose encoder latents directly condition downstream action policies. Quantization must therefore preserve not only reconstruction fidelity but also the policy-facing latent contract expected by the frozen policy. Direct NVFP4 leaves W4A4 quantization error uncompensated, whereas joint quantization-aware training (QAT) can recover reconstruction by moving this representation. On Wan2.1, joint QAT nearly matches FP32 VBench-7 (0.7403 versus 0.7409), yet LIBERO success collapses from 95.5% to 10.5%. Controlled decoder-only experiments show that activation quantize-dequantize operations alter the reconstruction signal and decoder Jacobian, redirecting the gradient returned to the encoder and inducing persistent latent drift. Based on this mechanism, we introduce LatentQuant, a two-stage NVFP4 QAT framework that first aligns the quantized encoder with its high-precision counterpart, then freezes it while adapting the decoder. Across Wan2.1 and Wan2.2, LatentQuant preserves near-baseline control and high reconstruction quality, achieving 95.75% success on LIBERO and 68.8% on RoboTwin. On NVIDIA B300 GPUs, NVFP4 execution achieves 1.17x-1.26x end-to-end VAE speedups over BF16 cuDNN.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-06T03:35:20.696437+00:00"
+      }
+    },
+    {
+      "title": "Sparse Calibration-Based Personalization of Kernel-Based Gait Phase and Speed Estimation Using Wearable IMUs",
+      "authors": [
+        "Myeongju Cha",
+        "Pilwon Hur"
+      ],
+      "summary": "This paper presents sparse calibration-based personalization for kernel-based gait phase and walking speed co-estimation from wearable inertial measurement units (IMUs). A 28-speed reference library was constructed from bilateral thigh and shank trajectories in a 20-subject locomotion dataset. Rather than directly applying population-average kernels, the method combines a user-specific baseline estimated from three calibration speeds with a principal-component (PC) model of baseline-centered kinematic deviations. Offline validation showed that personalized kernels reduced phase error relative to the population kernel. In a single-participant online pilot evaluation, the personalized kernels produced numerically lower mean phase and speed errors and ran in real time on embedded hardware. However, the speed effect was not significant, and pairwise phase differences did not remain significant after multiple-comparison correction. The pilot evaluation establishes wearable implementation feasibility while indicating reference-to-online dataset mismatch and the need for larger-cohort validation.",
+      "published": "2026-10-02T18:45:37Z",
+      "updated": "2026-10-02T18:45:37Z",
+      "arxiv_id": "2610.03931v1",
+      "abs_url": "http://arxiv.org/abs/2610.03931v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.03931v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "6 pages, 4 figures, The 26th International Conference on Control, Automation, and Systems (ICCAS 2026)",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "数据集/评测"
+      ],
+      "topic": "导航与移动",
+      "score": 3,
+      "anchor_terms": [
+        "locomotion"
+      ],
+      "matched_terms": [
+        "locomotion"
+      ],
+      "title_zh": "Sparse Calibration-Based Personalization of Kernel-Based Gait Phase and Speed Estimation Using Wearable IMUs",
+      "summary_zh": "This paper presents sparse calibration-based personalization for kernel-based gait phase and walking speed co-estimation from wearable inertial measurement units (IMUs). A 28-speed reference library was constructed from bilateral thigh and shank trajectories in a 20-subject locomotion dataset. Rather than directly applying population-average kernels, the method combines a user-specific baseline estimated from three calibration speeds with a principal-component (PC) model of baseline-centered kinematic deviations. Offline validation showed that personalized kernels reduced phase error relative to the population kernel. In a single-participant online pilot evaluation, the personalized kernels produced numerically lower mean phase and speed errors and ran in real time on embedded hardware. However, the speed effect was not significant, and pairwise phase differences did not remain significant after multiple-comparison correction. The pilot evaluation establishes wearable implementation feasibility while indicating reference-to-online dataset mismatch and the need for larger-cohort validation.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-06T03:35:20.696437+00:00"
+      }
+    },
+    {
+      "title": "Barrier-Shaped Recurrent Reinforcement Learning for Autonomous Landing on a Heaving Ship Deck",
+      "authors": [
+        "Ritwik Shankar",
+        "Chiranjeev Prachand",
+        "Abhishek",
+        "Soumya Ranjan Sahoo"
+      ],
+      "summary": "This paper addresses autonomous landing of unmanned aerial vehicle (UAV) rotorcrafts on a heaving ship deck using a recurrent policy trained via asymmetric actor-critic reinforcement learning: the critic sees 6 s of future deck height during training, while the actor sees only what the onboard sensors provide in flight, a 17-dimensional state made of the vehicle's position, velocity and attitude relative to the deck and outputs world-frame velocity and yaw-rate commands. Training is performed across 4096 parallel simulated environments, followed by fine-tuning in 16 environments with an onboard vision pipeline in the loop. A control-barrier-function (CBF) stopping margin on the deck-relative vertical state is incorporated at two stages: as a reward term during training, where it halves the median simulated contact speed relative to a policy trained without it, and as a runtime safety filter at deployment, evaluated at every control step to abort and retry the descent when the margin is violated. Because the autopilot's disarm logic cannot detect the vehicle resting on a moving deck, proximity-based thrust cutoff at touchdown is commanded directly in the landing pipeline. The proposed approach is validated using a parallel-manipulator-platform-based deck emulator that reproduces the heaving motion of the ship deck (scaled to 0.70 m peak-to-peak, 7.5 s mean period) and a quadcopter UAV with an onboard camera. Across 31 motion-capture and 20 vision-based trials, the UAV landed every time, with median times to contact of 6.5 and 7.3 s; 77% and 50% landed on the first attempt, with mean deck-relative speeds of 0.29 and 0.27 m/s, respectively, at the instant of thrust cutoff, which is the last speed under the policy's control. Supplementary video: https://youtu.be/S5hDkrSZJt4",
+      "published": "2026-10-02T18:36:57Z",
+      "updated": "2026-10-02T18:36:57Z",
+      "arxiv_id": "2610.03924v1",
+      "abs_url": "http://arxiv.org/abs/2610.03924v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.03924v1",
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY",
+        "cs.RO"
+      ],
+      "comment": "8 pages, 8 figures, 1 table. Submitted to the 2027 IEEE International Conference on Robotics and Automation (ICRA). Video: https://youtu.be/S5hDkrSZJt4",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "强化/模仿学习",
+        "机械臂",
+        "其他机器人"
+      ],
+      "topic": "强化/模仿学习",
+      "score": 10,
+      "anchor_terms": [
+        "manipulator",
+        "reinforcement learning",
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "manipulator",
+        "reinforcement learning",
+        "robot",
+        "robotic",
+        "robotics",
+        "uav"
+      ],
+      "title_zh": "Barrier-Shaped Recurrent Reinforcement Learning for Autonomous Landing on a Heaving Ship Deck",
+      "summary_zh": "This paper addresses autonomous landing of unmanned aerial vehicle (UAV) rotorcrafts on a heaving ship deck using a recurrent policy trained via asymmetric actor-critic reinforcement learning: the critic sees 6 s of future deck height during training, while the actor sees only what the onboard sensors provide in flight, a 17-dimensional state made of the vehicle's position, velocity and attitude relative to the deck and outputs world-frame velocity and yaw-rate commands. Training is performed across 4096 parallel simulated environments, followed by fine-tuning in 16 environments with an onboard vision pipeline in the loop. A control-barrier-function (CBF) stopping margin on the deck-relative vertical state is incorporated at two stages: as a reward term during training, where it halves the median simulated contact speed relative to a policy trained without it, and as a runtime safety filter at deployment, evaluated at every control step to abort and retry the descent when the margin is violated. Because the autopilot's disarm logic cannot detect the vehicle resting on a moving deck, proximity-based thrust cutoff at touchdown is commanded directly in the landing pipeline. The proposed approach is validated using a parallel-manipulator-platform-based deck emulator that reproduces the heaving motion of the ship deck (scaled to 0.70 m peak-to-peak, 7.5 s mean period) and a quadcopter UAV with an onboard camera. Across 31 motion-capture and 20 vision-based trials, the UAV landed every time, with median times to contact of 6.5 and 7.3 s; 77% and 50% landed on the first attempt, with mean deck-relative speeds of 0.29 and 0.27 m/s, respectively, at the instant of thrust cutoff, which is the last speed under the policy's control. Supplementary video: https://youtu.be/S5hDkrSZJt4",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-06T03:35:20.696437+00:00"
+      }
+    },
+    {
+      "title": "PDE-Constrained MPC of Motility-Induced Phase Separation in Robotic Swarms: The Role of Model Fidelity and Local Information",
+      "authors": [
+        "Longchen Niu",
+        "Gennaro Notomista"
+      ],
+      "summary": "Motility-induced phase separation enables swarm aggregation to be regulated without prescribing a target spatial distribution. This paper develops a partial differential equation-constrained model predictive control framework for a vibration-driven robotic swarm. Three continuum models retaining progressively less orientation information are considered to study the trade-offs among model fidelity, information requirements, and computational cost. The framework is evaluated under centralized and decentralized settings, with focus on how limited sensing and local-to-global phase-separation estimation affect the performance of predictive control.",
+      "published": "2026-10-02T18:26:44Z",
+      "updated": "2026-10-02T18:26:44Z",
+      "arxiv_id": "2610.03917v1",
+      "abs_url": "http://arxiv.org/abs/2610.03917v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.03917v1",
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 5,
+      "anchor_terms": [
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "PDE-Constrained MPC of Motility-Induced Phase Separation in Robotic Swarms: The Role of Model Fidelity and Local Information",
+      "summary_zh": "Motility-induced phase separation enables swarm aggregation to be regulated without prescribing a target spatial distribution. This paper develops a partial differential equation-constrained model predictive control framework for a vibration-driven robotic swarm. Three continuum models retaining progressively less orientation information are considered to study the trade-offs among model fidelity, information requirements, and computational cost. The framework is evaluated under centralized and decentralized settings, with focus on how limited sensing and local-to-global phase-separation estimation affect the performance of predictive control.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-06T03:35:20.696437+00:00"
+      }
+    },
+    {
+      "title": "MOSAIC-SV: Real-Time Adaptive Identification of Vessel Dynamics for the Control and Deployment of Aquatic Robots",
+      "authors": [
+        "Wensen Liu",
+        "Jerry Peng",
+        "Shravani Vedagiri",
+        "Aaron M. Johnson"
+      ],
+      "summary": "Model-based control of an aquatic robotic platform depends on a hydrodynamic model that is costly to identify and specific to the hull, payload, and conditions it was measured in. Here, we present MOSAIC-SV, a deployable real-time adaptive dynamics identification and control system that identifies a control-sufficient dynamics model from a spec-sheet engineering prior, without dedicated identification trials, and re-estimates it at every control step of a closed-loop mission while the controller plans on it. A physically admissible unscented Kalman filter re-estimates hydrodynamic, disturbance, and actuator parameters at every control step of the closed-loop mission; while a command-dependent consider projection withholds corrections the current command cannot attribute between actuator effectiveness and external force; and a model predictive path integral controller plans on the current estimate. In simulation on a CyberShip II plant, MOSAIC-SV recovers the transit performance of the calibrated model under static mismatch and transient changes, and stays within 20% of its own transit time at the unscaled prior when its inertia or damping prior is wrong by an order of magnitude. In on-water field trials on the Blue Robotics BlueBoat, a twin-thruster catamaran, MOSAIC-SV transits at least 25% faster and predicts its own motion with at least 56% less error than its frozen engineering prior, including under an unmodeled payload. The same MOSAIC-SV system concept was also feasibly deployed on a 6.3-tonne dual outboard monohull.",
+      "published": "2026-10-02T18:10:27Z",
+      "updated": "2026-10-02T18:10:27Z",
+      "arxiv_id": "2610.03898v1",
+      "abs_url": "http://arxiv.org/abs/2610.03898v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.03898v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 7,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "MOSAIC-SV: Real-Time Adaptive Identification of Vessel Dynamics for the Control and Deployment of Aquatic Robots",
+      "summary_zh": "Model-based control of an aquatic robotic platform depends on a hydrodynamic model that is costly to identify and specific to the hull, payload, and conditions it was measured in. Here, we present MOSAIC-SV, a deployable real-time adaptive dynamics identification and control system that identifies a control-sufficient dynamics model from a spec-sheet engineering prior, without dedicated identification trials, and re-estimates it at every control step of a closed-loop mission while the controller plans on it. A physically admissible unscented Kalman filter re-estimates hydrodynamic, disturbance, and actuator parameters at every control step of the closed-loop mission; while a command-dependent consider projection withholds corrections the current command cannot attribute between actuator effectiveness and external force; and a model predictive path integral controller plans on the current estimate. In simulation on a CyberShip II plant, MOSAIC-SV recovers the transit performance of the calibrated model under static mismatch and transient changes, and stays within 20% of its own transit time at the unscaled prior when its inertia or damping prior is wrong by an order of magnitude. In on-water field trials on the Blue Robotics BlueBoat, a twin-thruster catamaran, MOSAIC-SV transits at least 25% faster and predicts its own motion with at least 56% less error than its frozen engineering prior, including under an unmodeled payload. The same MOSAIC-SV system concept was also feasibly deployed on a 6.3-tonne dual outboard monohull.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-06T03:35:20.696437+00:00"
+      }
+    },
+    {
       "title": "Less Decoder is More Encoder: Geometric Representation Learning from Novel View Synthesis",
       "authors": [
         "Keerthi Kaashyap",
@@ -312,6 +917,64 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-10-05T02:44:23.925023+00:00"
+      }
+    },
+    {
+      "title": "GOTT: Object-centric Dexterous Manipulation with a Reusable Cross-Embodiment Primitive",
+      "authors": [
+        "Yulin Liu",
+        "Lai Wei",
+        "Yen-Jen Wang",
+        "Akash Sharma",
+        "Pieter Abbeel",
+        "Henrik I. Christensen",
+        "Haozhi Qi"
+      ],
+      "summary": "Foundation models and large-scale human data provide rich sources of manipulation intent, but translating this intent into multi-fingered robot behavior remains difficult. Dexterous hands still lack a reusable low-level primitive that reliably establishes contact across tasks and embodiments. We propose GOTT, a reach-acquire-move framework built around a single cross-embodiment contact-acquisition primitive. Given a robot-agnostic object trajectory and a reach specification, GOTT first brings the hand near a task-relevant contact region. The shared closed-loop primitive then establishes stable contact from this approximate initialization, and a pose-conditioned controller tracks the desired object motion. Reach specifications may come from future-aware planning, external models, or human demonstrations, while the primitive and tracking backend remain unchanged. Simulation and real-world experiments show that GOTT is able to establish robust contact across diverse objects, arm-hand platforms, and seen and unseen hand morphologies. It also consistently improves end-to-end task success over open-loop grasp execution.",
+      "published": "2026-10-02T17:58:42Z",
+      "updated": "2026-10-02T17:58:42Z",
+      "arxiv_id": "2610.03861v1",
+      "abs_url": "http://arxiv.org/abs/2610.03861v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.03861v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "comment": "Project page: https://dex-gott.github.io/",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "人形与灵巧",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 14,
+      "anchor_terms": [
+        "grasp",
+        "manipulation",
+        "robot"
+      ],
+      "matched_terms": [
+        "dexterous",
+        "dexterous manipulation",
+        "foundation model",
+        "grasp",
+        "manipulation",
+        "object-centric",
+        "robot"
+      ],
+      "title_zh": "GOTT: Object-centric Dexterous Manipulation with a Reusable Cross-Embodiment Primitive",
+      "summary_zh": "Foundation models and large-scale human data provide rich sources of manipulation intent, but translating this intent into multi-fingered robot behavior remains difficult. Dexterous hands still lack a reusable low-level primitive that reliably establishes contact across tasks and embodiments. We propose GOTT, a reach-acquire-move framework built around a single cross-embodiment contact-acquisition primitive. Given a robot-agnostic object trajectory and a reach specification, GOTT first brings the hand near a task-relevant contact region. The shared closed-loop primitive then establishes stable contact from this approximate initialization, and a pose-conditioned controller tracks the desired object motion. Reach specifications may come from future-aware planning, external models, or human demonstrations, while the primitive and tracking backend remain unchanged. Simulation and real-world experiments show that GOTT is able to establish robust contact across diverse objects, arm-hand platforms, and seen and unseen hand morphologies. It also consistently improves end-to-end task success over open-loop grasp execution.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-06T03:35:20.696437+00:00"
       }
     },
     {
@@ -1531,12 +2194,12 @@
         "Yongin Kwon",
         "Jemin Lee"
       ],
-      "summary": "Multi-camera streaming perception is increasingly deployed on heterogeneous edge platforms shared with co-resident workloads, yet accelerator placement is often evaluated using isolated single-stream experiments and mean streaming average precision (sAP). Using two end-to-end pipelines on a single GPU--NPU platform, we show that isolated evaluation can mis-rank deployment-time placement. Although the GPU pipeline is preferred in isolation, GPU-localized contention introduces deadline misses that make detections stale and can reverse the preferred placement before full GPU saturation. The NPU pipeline is less accurate than the GPU pipeline on small and medium objects in isolation, but nearly matches it on large objects. The largest absolute sAP losses in our latency and contention experiments occur for large objects. In our four-stream experiments, the preferred placement depends on which path becomes stale, and increasing GPU-side contention shifts the best placement from All-GPU to All-NPU. Under a GPU-saturating vision--language co-tenant, All-NPU achieves $5.2\\times$ the worst-stream sAP of All-GPU. Because mean sAP can hide severe single-stream degradation, evaluation should report contention sweeps, deadline-miss rates on both paths, and worst-stream sAP alongside mean sAP.",
+      "summary": "Robotic guide dogs should understand their surroundings, objects, and potential risks. Prior research has focused on raw sensor data from cameras and 2D or 3D LiDAR, which precisely measure distance points rather than provide a semantic understanding of the scene. While these physical measurements are effective for robot-centric collision avoidance and robot safety, they are not suitable for human-centric guidance. The system should recognize the type and relevance of obstacles and explain them, clearly and actionably, in terms of their spatial relation to the user. We present complete on-device perception modules that fuse a 360 camera and a 2D LiDAR for reliable collision avoidance, with moving-object detection and tracking for human-centric guidance. Finally, in walking-impossible situations, a vision--language model delivers pathway explanations as a safety mechanism to reduce user anxiety. In experiments, verification of fused 360 camera--LiDAR depth shows reliable near-range perception but inherent mid-range bias, while the system as a whole sustained real-time performance under 55 W. On the real-world egocentric GuideDogQA benchmark, our system achieved 83.8\\% accuracy, compared with 67.1\\% for GPT-4o. These results demonstrate that practical human-centric guidance with real-time on-device inference is feasible even on quadrupeds.",
       "published": "2026-10-02T12:01:55Z",
-      "updated": "2026-10-02T12:01:55Z",
-      "arxiv_id": "2610.03187v1",
-      "abs_url": "http://arxiv.org/abs/2610.03187v1",
-      "pdf_url": "https://arxiv.org/pdf/2610.03187v1",
+      "updated": "2026-10-05T13:20:49Z",
+      "arxiv_id": "2610.03187v2",
+      "abs_url": "http://arxiv.org/abs/2610.03187v2",
+      "pdf_url": "https://arxiv.org/pdf/2610.03187v2",
       "primary_category": "cs.DC",
       "categories": [
         "cs.DC",
@@ -1548,25 +2211,28 @@
       "labels": [
         "数据集/评测",
         "感知与3D理解",
-        "其他机器人"
+        "四足机器人"
       ],
       "topic": "数据集/评测",
-      "score": 5,
+      "score": 7,
       "anchor_terms": [
+        "quadruped",
         "robot",
         "robotic"
       ],
       "matched_terms": [
+        "egocentric",
+        "quadruped",
         "robot",
         "robotic"
       ],
       "title_zh": "Lightweight and Resource-Efficient Perception for Robotic Guide Dogs",
-      "summary_zh": "Multi-camera streaming perception is increasingly deployed on heterogeneous edge platforms shared with co-resident workloads, yet accelerator placement is often evaluated using isolated single-stream experiments and mean streaming average precision (sAP). Using two end-to-end pipelines on a single GPU--NPU platform, we show that isolated evaluation can mis-rank deployment-time placement. Although the GPU pipeline is preferred in isolation, GPU-localized contention introduces deadline misses that make detections stale and can reverse the preferred placement before full GPU saturation. The NPU pipeline is less accurate than the GPU pipeline on small and medium objects in isolation, but nearly matches it on large objects. The largest absolute sAP losses in our latency and contention experiments occur for large objects. In our four-stream experiments, the preferred placement depends on which path becomes stale, and increasing GPU-side contention shifts the best placement from All-GPU to All-NPU. Under a GPU-saturating vision--language co-tenant, All-NPU achieves $5.2\\times$ the worst-stream sAP of All-GPU. Because mean sAP can hide severe single-stream degradation, evaluation should report contention sweeps, deadline-miss rates on both paths, and worst-stream sAP alongside mean sAP.",
+      "summary_zh": "Robotic guide dogs should understand their surroundings, objects, and potential risks. Prior research has focused on raw sensor data from cameras and 2D or 3D LiDAR, which precisely measure distance points rather than provide a semantic understanding of the scene. While these physical measurements are effective for robot-centric collision avoidance and robot safety, they are not suitable for human-centric guidance. The system should recognize the type and relevance of obstacles and explain them, clearly and actionably, in terms of their spatial relation to the user. We present complete on-device perception modules that fuse a 360 camera and a 2D LiDAR for reliable collision avoidance, with moving-object detection and tracking for human-centric guidance. Finally, in walking-impossible situations, a vision--language model delivers pathway explanations as a safety mechanism to reduce user anxiety. In experiments, verification of fused 360 camera--LiDAR depth shows reliable near-range perception but inherent mid-range bias, while the system as a whole sustained real-time performance under 55 W. On the real-world egocentric GuideDogQA benchmark, our system achieved 83.8\\% accuracy, compared with 67.1\\% for GPT-4o. These results demonstrate that practical human-centric guidance with real-time on-device inference is feasible even on quadrupeds.",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-10-05T02:44:23.925023+00:00"
+        "generated_at": "2026-10-06T03:35:20.696437+00:00"
       }
     },
     {
@@ -1707,6 +2373,58 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-10-05T02:44:23.925023+00:00"
+      }
+    },
+    {
+      "title": "TACET: Context-Appropriate Acoustic-Social Navigation for Quadrupeds",
+      "authors": [
+        "Sungsan Park",
+        "Young-Sik Shin",
+        "Sanghyun Kim"
+      ],
+      "summary": "Quadruped robots entering hospitals, care homes, and quiet offices must be context-appropriate not only in where they move but in how loudly they move: a legged robot's locomotion noise, dominated by foot-ground impacts, is itself a social variable. Prior social navigation respects human space but treats the robot as acoustically uniform, while quiet-locomotion methods reduce noise to an operator-specified, context-blind level. We present TACET, a context-appropriate acoustic-social navigation method that infers social context from the robot's egocentric view and decides both where it walks and how loudly, coupling a slow fine-tuned vision-language reasoner to a fast reactive controller through a single compact behavior token, <gait, speed, social_cost>. The same token conditions both a social costmap (where to go) and a quiet locomotion policy (how loudly to move), while a structured out-of-view memory keeps recently seen people in the reasoner's context after they leave the camera view. On a real quadruped, context-conditioned locomotion lowers locomotion noise by up to 9.3 dBA at matched speed, and across our scenarios the full method keeps personal-space compliance at 100% with low acoustic intrusion (<=2.9 dBA), jointly improving spatial and acoustic performance in the evaluated scenarios. The project page is available at https://rcilab.khu.ac.kr/tacet/.",
+      "published": "2026-10-02T10:19:28Z",
+      "updated": "2026-10-02T10:19:28Z",
+      "arxiv_id": "2610.03828v1",
+      "abs_url": "http://arxiv.org/abs/2610.03828v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.03828v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "8 pages",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "人形与灵巧",
+        "感知与3D理解",
+        "四足机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 12,
+      "anchor_terms": [
+        "locomotion",
+        "navigation",
+        "quadruped",
+        "robot"
+      ],
+      "matched_terms": [
+        "egocentric",
+        "legged",
+        "legged robot",
+        "locomotion",
+        "navigation",
+        "quadruped",
+        "robot"
+      ],
+      "title_zh": "TACET: Context-Appropriate Acoustic-Social Navigation for Quadrupeds",
+      "summary_zh": "Quadruped robots entering hospitals, care homes, and quiet offices must be context-appropriate not only in where they move but in how loudly they move: a legged robot's locomotion noise, dominated by foot-ground impacts, is itself a social variable. Prior social navigation respects human space but treats the robot as acoustically uniform, while quiet-locomotion methods reduce noise to an operator-specified, context-blind level. We present TACET, a context-appropriate acoustic-social navigation method that infers social context from the robot's egocentric view and decides both where it walks and how loudly, coupling a slow fine-tuned vision-language reasoner to a fast reactive controller through a single compact behavior token, <gait, speed, social_cost>. The same token conditions both a social costmap (where to go) and a quiet locomotion policy (how loudly to move), while a structured out-of-view memory keeps recently seen people in the reasoner's context after they leave the camera view. On a real quadruped, context-conditioned locomotion lowers locomotion noise by up to 9.3 dBA at matched speed, and across our scenarios the full method keeps personal-space compliance at 100% with low acoustic intrusion (<=2.9 dBA), jointly improving spatial and acoustic performance in the evaluated scenarios. The project page is available at https://rcilab.khu.ac.kr/tacet/.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-06T03:35:20.696437+00:00"
       }
     },
     {
