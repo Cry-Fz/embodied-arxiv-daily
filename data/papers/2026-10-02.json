@@ -1,12 +1,12 @@
 {
   "date": "2026-10-02",
-  "generated_at": "2026-10-06T03:33:38.133049+00:00",
+  "generated_at": "2026-10-07T02:58:58.825240+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202610020000 TO 202610022359]",
-  "total_fetched": 665,
-  "total_matched": 78,
+  "total_fetched": 673,
+  "total_matched": 79,
   "papers": [
     {
       "title": "Exact Optimal Transport by Matching",
@@ -396,6 +396,54 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-10-06T03:35:20.696437+00:00"
+      }
+    },
+    {
+      "title": "Does a Learned Corrector Beat a Simple Retreat? Evidence from a Frozen VLA",
+      "authors": [
+        "Chenchao Sheng",
+        "Zhuang Jiang",
+        "Liuhaichen Yang",
+        "Ningwei Bai",
+        "Zezhi Tang"
+      ],
+      "summary": "Before deploying runtime recovery for a frozen vision-language-action (VLA) policy, one must establish that an intervention improves success beyond ordinary run-to-run variation and that its complexity adds value over a simple action. We evaluate these questions on frozen $π_{0.5}$ across four RoboTwin tasks. For each test seed, we pair rollouts with and without correction and include a same-seed base-policy re-run as a placebo. Seed-cluster intervals and prespecified comparison rules assess net gains against stochastic outcome changes. Across 3,888 paired episodes, the full pipeline raises success on beat_allowbreak block_allowbreak hammer by $+13.5$\\,pp (95\\% interval $[+9.4,+17.7]$), with no detectable gain on the other three tasks at the deployed weight. Among failed base episodes on the responsive task, $43.2\\%$ succeed on a plain re-run, compared with $63.5\\%$ after correction; many nominal rescues therefore reflect the base policy's own variability. A fixed-time trigger and scripted return to an earlier joint configuration produce a net gain with no detected difference from the learned pipeline across two rounds, although our prespecified equivalence criterion is not met consistently. Pausing and a constant-action control do not yield comparable gains. On this benchmark, the decision to intervene depends strongly on the task, and a paired placebo plus a simple retreat baseline are needed to establish what learned correction contributes.",
+      "published": "2026-10-02T21:57:32Z",
+      "updated": "2026-10-02T21:57:32Z",
+      "arxiv_id": "2610.06921v1",
+      "abs_url": "http://arxiv.org/abs/2610.06921v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.06921v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "15 pages, 6 figures",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 7,
+      "anchor_terms": [
+        "robot",
+        "vision-language-action",
+        "vla"
+      ],
+      "matched_terms": [
+        "robot",
+        "vision-language-action",
+        "vla"
+      ],
+      "title_zh": "Does a Learned Corrector Beat a Simple Retreat? Evidence from a Frozen VLA",
+      "summary_zh": "Before deploying runtime recovery for a frozen vision-language-action (VLA) policy, one must establish that an intervention improves success beyond ordinary run-to-run variation and that its complexity adds value over a simple action. We evaluate these questions on frozen $π_{0.5}$ across four RoboTwin tasks. For each test seed, we pair rollouts with and without correction and include a same-seed base-policy re-run as a placebo. Seed-cluster intervals and prespecified comparison rules assess net gains against stochastic outcome changes. Across 3,888 paired episodes, the full pipeline raises success on beat_allowbreak block_allowbreak hammer by $+13.5$\\,pp (95\\% interval $[+9.4,+17.7]$), with no detectable gain on the other three tasks at the deployed weight. Among failed base episodes on the responsive task, $43.2\\%$ succeed on a plain re-run, compared with $63.5\\%$ after correction; many nominal rescues therefore reflect the base policy's own variability. A fixed-time trigger and scripted return to an earlier joint configuration produce a net gain with no detected difference from the learned pipeline across two rounds, although our prespecified equivalence criterion is not met consistently. Pausing and a constant-action control do not yield comparable gains. On this benchmark, the decision to intervene depends strongly on the task, and a paired placebo plus a simple retreat baseline are needed to establish what learned correction contributes.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-07T02:59:31.854808+00:00"
       }
     },
     {
@@ -1750,15 +1798,15 @@
       ],
       "summary": "Video is an abundant, inexpensive source of human motion data that is rich in extreme athletic behaviors. Making it usable for humanoid robots, however, is not a matter of simply retargeting a reconstructed trajectory: video-derived motion is physically inconsistent, devoid of actuation information, and says nothing about failure or recovery. We present KungfuAthleteBot (KAB), a framework that treats learning high-dynamic motion from video as the central problem and resolves each of these three failure modes in turn. (C1) We build the KungfuAthlete dataset from videos of national-level martial artists and introduce a physics-guided parabolic trajectory correction that removes height floating, ground penetration, and high-frequency jitter from reconstructed aerial and landing phases. (C2) Because video carries no force information, strict tracking of a reconstructed trajectory is dynamically infeasible, and error-driven initialization keeps re-launching the policy from infeasible aerial poses. We introduce physics-driven pseudo-low-kinetic-energy (LKE) sampling, our central mechanism for making such references learnable: it biases initialization towards dynamically feasible states, letting the policy discover feasible actuation patterns instead of imitating infeasible ones. (C3) Finally, we introduce a direct training paradigm in which disturbance rejection and fall recovery are learned inside the same policy that tracks the video motion, requiring no recovery reference data and no manual mode switching. On a humanoid robot, KAB learns dynamic skills from video and recovers from arbitrary falls in about 0.7 s, the fastest reported recovery for a unified policy. Ablations on the unified policy confirm the necessity of its components, supporting the view that repairing and compensating video data, rather than only collecting more of it, is what unlocks high-dynamic humanoid skills.",
       "published": "2026-10-02T14:37:35Z",
-      "updated": "2026-10-02T14:37:35Z",
-      "arxiv_id": "2610.03388v1",
-      "abs_url": "http://arxiv.org/abs/2610.03388v1",
-      "pdf_url": "https://arxiv.org/pdf/2610.03388v1",
+      "updated": "2026-10-06T14:20:47Z",
+      "arxiv_id": "2610.03388v2",
+      "abs_url": "http://arxiv.org/abs/2610.03388v2",
+      "pdf_url": "https://arxiv.org/pdf/2610.03388v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
       ],
-      "comment": "",
+      "comment": "I wanted to update my previous paper, but I accidentally submitted a new paper instead",
       "code_url": "",
       "has_code": false,
       "labels": [
@@ -1782,7 +1830,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-10-05T02:44:23.925023+00:00"
+        "generated_at": "2026-10-07T02:59:31.854808+00:00"
       }
     },
     {
