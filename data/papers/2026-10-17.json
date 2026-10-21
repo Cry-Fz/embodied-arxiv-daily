@@ -1,12 +1,12 @@
 {
   "date": "2026-10-17",
-  "generated_at": "2026-10-20T02:22:33.060433+00:00",
+  "generated_at": "2026-10-21T02:15:42.506797+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202610170000 TO 202610172359]",
-  "total_fetched": 267,
-  "total_matched": 33,
+  "total_fetched": 289,
+  "total_matched": 35,
   "papers": [
     {
       "title": "Measuring Empowerment from Offline Data for Intrinsically Motivated Exploration",
@@ -109,6 +109,49 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-10-20T02:24:35.863190+00:00"
+      }
+    },
+    {
+      "title": "GRaSP: Latency-Aware Optimization for Geo-Distributed Retrieval-Augmented Generation",
+      "authors": [
+        "Hardik Ruparel",
+        "Raj Kumar Pandey",
+        "Pramod Kumar"
+      ],
+      "summary": "Retrieval-Augmented Generation (RAG) is increasingly served across geo-distributed cloud and edge infrastructures, where wide-area latency, cross-region egress cost, and data-residency rules compete with retrieval quality. Conventional pipelines rank by semantic similarity alone and ignore where content lives, inflating tail latency and cost. We formalize the Geo-RAG Selection Problem (GRaSP), a drop-in re-scoring layer that decays relevance by latency and adds an optional cost penalty under a cardinality budget and per-region caps, with no retraining. We first settle its complexity: the base formulation is a linear objective over a partition matroid, solved optimally by an O(N log N) greedy algorithm, rather than NP-hard as a knapsack framing suggests, with hardness entering only under an additive egress budget. On a five-node CloudLab testbed emulating a four-region WAN over the Natural Questions corpus (2.68M passages), GRaSP's benefit is placement-dependent: under uniform placement it cuts fetch latency at negligible quality cost; under topical (residency-like) placement it traces a recall-latency Pareto frontier that dominates relevance-only, nearest-k, and a latency-budgeted baseline. At a moderate latency setting, GRaSP lowers P90 fetch latency by 41% while retaining 78% of relevance-only's recall, with sub-millisecond selection overhead, stable to 200 queries/s. Findings generalize across four public BEIR benchmarks. In end-to-end question answering, GRaSP reduces context-fetch latency by 43% while remaining within 0.062 absolute EM of relevance-only retrieval.",
+      "published": "2026-10-17T23:20:16Z",
+      "updated": "2026-10-17T23:20:16Z",
+      "arxiv_id": "2610.26938v1",
+      "abs_url": "http://arxiv.org/abs/2610.26938v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.26938v1",
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "comment": "Accepted at the 4th International ACM SIGIR Conference on Information Retrieval in the Asia Pacific (SIGIR-AP 2026)",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "数据集/评测"
+      ],
+      "topic": "机器人操作",
+      "score": 2,
+      "anchor_terms": [
+        "grasp"
+      ],
+      "matched_terms": [
+        "grasp"
+      ],
+      "title_zh": "GRaSP: Latency-Aware Optimization for Geo-Distributed Retrieval-Augmented Generation",
+      "summary_zh": "Retrieval-Augmented Generation (RAG) is increasingly served across geo-distributed cloud and edge infrastructures, where wide-area latency, cross-region egress cost, and data-residency rules compete with retrieval quality. Conventional pipelines rank by semantic similarity alone and ignore where content lives, inflating tail latency and cost. We formalize the Geo-RAG Selection Problem (GRaSP), a drop-in re-scoring layer that decays relevance by latency and adds an optional cost penalty under a cardinality budget and per-region caps, with no retraining. We first settle its complexity: the base formulation is a linear objective over a partition matroid, solved optimally by an O(N log N) greedy algorithm, rather than NP-hard as a knapsack framing suggests, with hardness entering only under an additive egress budget. On a five-node CloudLab testbed emulating a four-region WAN over the Natural Questions corpus (2.68M passages), GRaSP's benefit is placement-dependent: under uniform placement it cuts fetch latency at negligible quality cost; under topical (residency-like) placement it traces a recall-latency Pareto frontier that dominates relevance-only, nearest-k, and a latency-budgeted baseline. At a moderate latency setting, GRaSP lowers P90 fetch latency by 41% while retaining 78% of relevance-only's recall, with sub-millisecond selection overhead, stable to 200 queries/s. Findings generalize across four public BEIR benchmarks. In end-to-end question answering, GRaSP reduces context-fetch latency by 43% while remaining within 0.062 absolute EM of relevance-only retrieval.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-21T02:16:39.389805+00:00"
       }
     },
     {
@@ -629,10 +672,10 @@
       ],
       "summary": "Learning a single perceptive policy for diverse humanoid loco-manipulation requires unifying high-level task decisions without losing the state-dependent physical responses that make each interaction succeed. This makes the representation between high-level planning and whole-body control critical: kinematic or contact targets provide compact abstractions but do not directly encode interaction-specific control responses, while directly predicting low-level actions requires the planner to model high-frequency closed-loop feedback. We propose FIBER, a framework that uses the executable latent space of a frozen behavioral foundation model (BFM) as a shared planning representation for heterogeneous interaction skills. Our latent policy projection (LPP) maps independently acquired task-specific policies into this representation by identifying latent commands whose induced actions match their local control responses, enabling lower-rate planning while retaining the BFM's high-frequency state feedback. After projection, we aggregate closed-loop latent rollouts from all skills and train a single perceptive flow planner entirely offline. We further introduce AH-BFM, an adaptive-horizon BFM trained with multi-gamma forward-backward (FB) learning to support both precise control and temporally extended whole-body behavior. We evaluate FIBER on box pickup, door opening, and object grasping in simulation and on a real Unitree G1 humanoid. Across 128 diverse variations per task in simulation, FIBER achieves 42.0% mean success, more than tripling projected latent replay (11.6%) and substantially outperforming kinematic planning (3.5%). Real-world experiments further demonstrate sim-to-real transfer, skill chaining, and conditional steering through the same unified planner.",
       "published": "2026-10-17T12:59:06Z",
-      "updated": "2026-10-17T12:59:06Z",
-      "arxiv_id": "2610.24675v1",
-      "abs_url": "http://arxiv.org/abs/2610.24675v1",
-      "pdf_url": "https://arxiv.org/pdf/2610.24675v1",
+      "updated": "2026-10-20T09:46:54Z",
+      "arxiv_id": "2610.24675v2",
+      "abs_url": "http://arxiv.org/abs/2610.24675v2",
+      "pdf_url": "https://arxiv.org/pdf/2610.24675v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -669,7 +712,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-10-20T02:24:35.863190+00:00"
+        "generated_at": "2026-10-21T02:16:39.389805+00:00"
       }
     },
     {
@@ -1451,6 +1494,50 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-10-20T02:24:35.863190+00:00"
+      }
+    },
+    {
+      "title": "Steerable Pluralistic Policy Alignment from Anonymized Crowd Feedback",
+      "authors": [
+        "Akansha Kalra",
+        "Ellen R. Novoseller",
+        "Vernon J. Lawhern",
+        "Daniel S. Brown"
+      ],
+      "summary": "Pluralistic alignment requires AI systems to learn from diverse populations whose preferences may reflect heterogeneous or even conflicting objectives, and to personalize their behavior to individual users. Existing approaches in pluralistic alignment often assume access to annotator identities and rely on powerful pretrained representations to model individual preference variations. We propose Preference-PCA Pluralistic Learning (P3L), a novel framework for pluralistic alignment that jointly learns trajectory embeddings and the shared basis of preference directions via PCA decomposition from heterogeneous crowd feedback without requiring annotator identities. At test time, our approach enables rapid and accurate personalized reward learning and downstream policy optimization. Experiments across multiple embodied control tasks demonstrate that P3L enables steerable personal alignment that generalizes beyond the offline dataset to out-of-distribution new users and attains competitive RL and test performance, while substantially reducing computational cost and supporting variable adaptation query budgets.",
+      "published": "2026-10-17T06:14:59Z",
+      "updated": "2026-10-17T06:14:59Z",
+      "arxiv_id": "2610.26914v1",
+      "abs_url": "http://arxiv.org/abs/2610.26914v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.26914v1",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "数据集/评测",
+      "score": 4,
+      "anchor_terms": [
+        "embodied"
+      ],
+      "matched_terms": [
+        "embodied"
+      ],
+      "title_zh": "Steerable Pluralistic Policy Alignment from Anonymized Crowd Feedback",
+      "summary_zh": "Pluralistic alignment requires AI systems to learn from diverse populations whose preferences may reflect heterogeneous or even conflicting objectives, and to personalize their behavior to individual users. Existing approaches in pluralistic alignment often assume access to annotator identities and rely on powerful pretrained representations to model individual preference variations. We propose Preference-PCA Pluralistic Learning (P3L), a novel framework for pluralistic alignment that jointly learns trajectory embeddings and the shared basis of preference directions via PCA decomposition from heterogeneous crowd feedback without requiring annotator identities. At test time, our approach enables rapid and accurate personalized reward learning and downstream policy optimization. Experiments across multiple embodied control tasks demonstrate that P3L enables steerable personal alignment that generalizes beyond the offline dataset to out-of-distribution new users and attains competitive RL and test performance, while substantially reducing computational cost and supporting variable adaptation query budgets.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-21T02:16:39.389805+00:00"
       }
     },
     {

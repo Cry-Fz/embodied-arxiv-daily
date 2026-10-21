@@ -1,11 +1,11 @@
 {
   "date": "2026-10-13",
-  "generated_at": "2026-10-20T02:22:13.198951+00:00",
+  "generated_at": "2026-10-21T02:15:24.112617+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202610130000 TO 202610132359]",
-  "total_fetched": 830,
+  "total_fetched": 832,
   "total_matched": 120,
   "papers": [
     {
@@ -181,6 +181,68 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-10-15T02:12:49.940001+00:00"
+      }
+    },
+    {
+      "title": "Thinker-WM: A Unified World Model with Shared Multimodal Representations for Embodied Intelligence",
+      "authors": [
+        "Thinker Team",
+        "Peng Gao",
+        "Jichao Jiao",
+        "Chen Liao",
+        "Daqin Luo",
+        "Yiming Ma",
+        "Baiyu Pan",
+        "Hailin Shi",
+        "Jiyuan Wang",
+        "Xiangming Xu",
+        "Xiongwei Zhao"
+      ],
+      "summary": "World models have emerged as a promising paradigm for embodied AI, yet existing systems often remain fragmented in the modalities they model and the functions they support. In particular, visual dynamics, geometric structure, and executable action are commonly coupled through separate interfaces or downstream modules rather than being jointly represented and evolved within a shared dynamics model. In this work, we present Thinker-WM, a unified multimodal world model that jointly models and generates RGB, metric depth, and robot action through a shared intermediate Unified Dynamics Transformer with modality-specific encoders and decoders. The model performs multimodal unification at the representation level: appearance, geometry, and action are transformed into a common dynamic representation and jointly evolved by shared parameters, while their distinct output structures are preserved. The same parameterization supports multiple functions, including joint video-action generation, world prediction, policy inference, action-conditioned generation, video-to-action generation, and inverse dynamics. To examine whether the shared representation captures action-related information, we introduce a lightweight motion probe that shows the frozen visual representation contains recoverable motion information. Thinker-WM is trained on a heterogeneous corpus comprising approximately 20K hours of egocentric video, 10K hours of real-robot data, and 1K hours of simulation data, including approximately 4K hours of real-robot data with aligned depth supervision. Extensive experiments demonstrate strong performance across embodied world-model evaluations. Thinker-WM ranks first on EWMBench, WorldOlympiad and WorldArena, while controlled studies further demonstrate the benefits of action conditioning, geometric interaction, and multi-function training within the shared representation.",
+      "published": "2026-10-13T14:18:47Z",
+      "updated": "2026-10-19T06:56:41Z",
+      "arxiv_id": "2610.18447v3",
+      "abs_url": "http://arxiv.org/abs/2610.18447v3",
+      "pdf_url": "https://arxiv.org/pdf/2610.18447v3",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "comment": "Project page: https://thinkercosmos.ubtrobot.com/thinker-wm , GitHub: https://github.com/UBTECH-Robot/Thinker-WM",
+      "code_url": "https://github.com/UBTECH-Robot/Thinker-WM",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "世界模型与仿真",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 17,
+      "anchor_terms": [
+        "embodied",
+        "embodied ai",
+        "robot",
+        "world model"
+      ],
+      "matched_terms": [
+        "egocentric",
+        "embodied",
+        "embodied ai",
+        "embodied intelligence",
+        "robot",
+        "world model"
+      ],
+      "title_zh": "Thinker-WM: A Unified World Model with Shared Multimodal Representations for Embodied Intelligence",
+      "summary_zh": "World models have emerged as a promising paradigm for embodied AI, yet existing systems often remain fragmented in the modalities they model and the functions they support. In particular, visual dynamics, geometric structure, and executable action are commonly coupled through separate interfaces or downstream modules rather than being jointly represented and evolved within a shared dynamics model. In this work, we present Thinker-WM, a unified multimodal world model that jointly models and generates RGB, metric depth, and robot action through a shared intermediate Unified Dynamics Transformer with modality-specific encoders and decoders. The model performs multimodal unification at the representation level: appearance, geometry, and action are transformed into a common dynamic representation and jointly evolved by shared parameters, while their distinct output structures are preserved. The same parameterization supports multiple functions, including joint video-action generation, world prediction, policy inference, action-conditioned generation, video-to-action generation, and inverse dynamics. To examine whether the shared representation captures action-related information, we introduce a lightweight motion probe that shows the frozen visual representation contains recoverable motion information. Thinker-WM is trained on a heterogeneous corpus comprising approximately 20K hours of egocentric video, 10K hours of real-robot data, and 1K hours of simulation data, including approximately 4K hours of real-robot data with aligned depth supervision. Extensive experiments demonstrate strong performance across embodied world-model evaluations. Thinker-WM ranks first on EWMBench, WorldOlympiad and WorldArena, while controlled studies further demonstrate the benefits of action conditioning, geometric interaction, and multi-function training within the shared representation.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-21T02:16:08.457091+00:00"
       }
     },
     {
@@ -2627,10 +2689,10 @@
       ],
       "summary": "World models (WMs) and world-action models (WAMs) focus on future world prediction and executable action generation, respectively. Although these models learn shared physical dynamics and interaction semantics from embodied trajectories, they are typically trained in isolation, which restricts knowledge reuse between prediction and control. The central challenge is therefore to develop a unified learning framework that shares these dynamics while preserving the distinct modeling capabilities required by each paradigm. We propose UniW(A)M, a mixture-of-experts world-(action) model built upon diffusion Transformers that unifies action-conditioned world modeling and diverse WAM variants. Shared experts capture common dynamics, while atomic capability experts are reused across interfaces so that each interface keeps its own conditional pathway. At deployment, a plug-in adaptive interface router (PAIR) learns from a small subset of target-task chunk scenarios to select a suitable WAM interface for each execution chunk, balancing task success and execution efficiency while keeping the backbone frozen. We evaluate UniW(A)M on LIBERO, RoboTwin 2.0, and three real-world manipulation tasks, where it achieves 88.3% average real-world success versus 76.7% for the strongest baseline. On WorldArena, it leads action-conditioned world modeling on all three tasks. AC-WM co-training contributes to action generation on every action interface and PAIR raises OOD success from 63.3% to 76.7%.",
       "published": "2026-10-13T16:47:16Z",
-      "updated": "2026-10-13T16:47:16Z",
-      "arxiv_id": "2610.18697v1",
-      "abs_url": "http://arxiv.org/abs/2610.18697v1",
-      "pdf_url": "https://arxiv.org/pdf/2610.18697v1",
+      "updated": "2026-10-19T13:35:39Z",
+      "arxiv_id": "2610.18697v2",
+      "abs_url": "http://arxiv.org/abs/2610.18697v2",
+      "pdf_url": "https://arxiv.org/pdf/2610.18697v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -2638,7 +2700,7 @@
         "cs.CV",
         "cs.LG"
       ],
-      "comment": "Under review at ICLR 2027. 34 pages, 19 figures, 15 tables",
+      "comment": "34 pages, 19 figures, 15 tables",
       "code_url": "",
       "has_code": false,
       "labels": [
@@ -2668,7 +2730,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-10-15T02:12:49.940001+00:00"
+        "generated_at": "2026-10-21T02:16:08.457091+00:00"
       }
     },
     {
@@ -3231,67 +3293,6 @@
       ],
       "title_zh": "MemoryVLN: From Ego-Aware Memory Representation to Cross-Context Memory Reuse in Vision-Language Navigation",
       "summary_zh": "Large vision-language models (LVLMs) have shown strong potential for embodied vision-language navigation (VLN), yet their performance degrades on long-horizon trajectories due to context-length limits, redundant historical observations, and unstable spatial alignment across time. These issues make it difficult to both compress long navigation histories and reliably reuse past spatial experience. To address these limitations, we propose \\textbf{MemoryVLN}, a unified memory-driven navigation system built around memory construction and management. During memory construction, \\emph{Long Sequence Compression} employs forgetting-curve-inspired temporal sampling to preserve dense recent evidence and sparse yet representative distant observations under a limited token budget. \\emph{Ego-Aware Memory Representation} further integrates 2D semantic tokens, 3D geometric tokens, and 6D agent poses, allowing each memory to encode both what was observed and where it was observed. During memory management, \\emph{Hierarchical Memory Bank} maintains in-episode and context-level memories through cross-context warm-start and confidence-controlled write-back. \\emph{Memory Enhancement} then retrieves the Top-$K$ relevant memories according to the current navigation state and fuses them with the current visual tokens. Together, these mechanisms transform raw navigation history into compact, spatially grounded, selectively retrievable, and reusable navigation experience. Extensive experiments on R2R-CE and RxR-CE demonstrate consistent improvements over the state-of-the-art baselines by a substantial margin (i.e., 2\\% and 6.5\\% in successful rate).",
-      "translation": {
-        "language": "zh-CN",
-        "provider": "google",
-        "model": "deep-translator/google",
-        "generated_at": "2026-10-15T02:12:49.940001+00:00"
-      }
-    },
-    {
-      "title": "Thinker-WM: A Unified World Model with Shared Multimodal Representations for Embodied Intelligence",
-      "authors": [
-        "Thinker Team",
-        "Peng Gao",
-        "Jichao Jiao",
-        "Chen Liao",
-        "Daqin Luo",
-        "Yiming Ma",
-        "Baiyu Pan",
-        "Hailin Shi",
-        "Jiyuan Wang",
-        "Xiangming Xu",
-        "Xiongwei Zhao"
-      ],
-      "summary": "World models have emerged as a promising paradigm for embodied AI, yet existing systems often remain fragmented in the modalities they model and the functions they support. In particular, visual dynamics, geometric structure, and executable action are commonly coupled through separate interfaces or downstream modules rather than being jointly represented and evolved within a shared dynamics model. In this work, we present Thinker-WM, a unified multimodal world model that jointly models and generates RGB, metric depth, and robot action through a shared intermediate Unified Dynamics Transformer with modality-specific encoders and decoders. The model performs multimodal unification at the representation level: appearance, geometry, and action are transformed into a common dynamic representation and jointly evolved by shared parameters, while their distinct output structures are preserved. The same parameterization supports multiple functions, including joint video-action generation, world prediction, policy inference, action-conditioned generation, video-to-action generation, and inverse dynamics. To examine whether the shared representation captures action-related information, we introduce a lightweight motion probe that shows the frozen visual representation contains recoverable motion information. Thinker-WM is trained on a heterogeneous corpus comprising approximately 20K hours of egocentric video, 10K hours of real-robot data, and 1K hours of simulation data, including approximately 4K hours of real-robot data with aligned depth supervision. Extensive experiments demonstrate strong performance across embodied world-model evaluations. Thinker-WM ranks first on EWMBench, WorldOlympiad and WorldArena, while controlled studies further demonstrate the benefits of action conditioning, geometric interaction, and multi-function training within the shared representation.",
-      "published": "2026-10-13T14:18:47Z",
-      "updated": "2026-10-14T05:41:05Z",
-      "arxiv_id": "2610.18447v2",
-      "abs_url": "http://arxiv.org/abs/2610.18447v2",
-      "pdf_url": "https://arxiv.org/pdf/2610.18447v2",
-      "primary_category": "cs.AI",
-      "categories": [
-        "cs.AI",
-        "cs.CV",
-        "cs.RO"
-      ],
-      "comment": "Project page: https://thinkercosmos.ubtrobot.com/thinker-wm",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "世界模型与仿真",
-        "数据集/评测",
-        "感知与3D理解",
-        "其他机器人"
-      ],
-      "topic": "世界模型与仿真",
-      "score": 17,
-      "anchor_terms": [
-        "embodied",
-        "embodied ai",
-        "robot",
-        "world model"
-      ],
-      "matched_terms": [
-        "egocentric",
-        "embodied",
-        "embodied ai",
-        "embodied intelligence",
-        "robot",
-        "world model"
-      ],
-      "title_zh": "Thinker-WM: A Unified World Model with Shared Multimodal Representations for Embodied Intelligence",
-      "summary_zh": "World models have emerged as a promising paradigm for embodied AI, yet existing systems often remain fragmented in the modalities they model and the functions they support. In particular, visual dynamics, geometric structure, and executable action are commonly coupled through separate interfaces or downstream modules rather than being jointly represented and evolved within a shared dynamics model. In this work, we present Thinker-WM, a unified multimodal world model that jointly models and generates RGB, metric depth, and robot action through a shared intermediate Unified Dynamics Transformer with modality-specific encoders and decoders. The model performs multimodal unification at the representation level: appearance, geometry, and action are transformed into a common dynamic representation and jointly evolved by shared parameters, while their distinct output structures are preserved. The same parameterization supports multiple functions, including joint video-action generation, world prediction, policy inference, action-conditioned generation, video-to-action generation, and inverse dynamics. To examine whether the shared representation captures action-related information, we introduce a lightweight motion probe that shows the frozen visual representation contains recoverable motion information. Thinker-WM is trained on a heterogeneous corpus comprising approximately 20K hours of egocentric video, 10K hours of real-robot data, and 1K hours of simulation data, including approximately 4K hours of real-robot data with aligned depth supervision. Extensive experiments demonstrate strong performance across embodied world-model evaluations. Thinker-WM ranks first on EWMBench, WorldOlympiad and WorldArena, while controlled studies further demonstrate the benefits of action conditioning, geometric interaction, and multi-function training within the shared representation.",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
@@ -4254,12 +4255,12 @@
         "Diyun Xiang",
         "Yangwei You"
       ],
-      "summary": "Visually similar actions can produce contact loss, jamming, slippage, or irreversible damage, while tactile feedback may arrive after a critical transition. Contact-rich manipulation therefore requires generative policies to anticipate and evaluate whether candidate actions will produce desirable contact outcomes, then adjust action generation before execution. We present ForeTac, a predictive contact-guidance framework organized as a represent-predict-evaluate-guide loop. ForeTac encodes the current tactile state, predicts the tactile consequences of a candidate action sequence, and evaluates the predicted trajectory using a contact-quality objective learned from successful and failed physical interactions. At deployment, its gradient propagates through the tactile predictor to guide action generation while the pretrained model parameters remain frozen. We evaluate ForeTac on four real-robot tasks (planar and curved-surface wiping, card swiping, and fragile-object grasping) with diffusion and flow-matching policies. Across these tasks, ForeTac raises the average task success rate from 36.3% to 71.3% and the average contact success rate (CSR) from 20.0% to 66.3% compared with vision-only Diffusion Policy. Component analyses support the tactile representation and action-conditioned foresight, and show that predicted touch preserves contact-quality ordering. Project page: https://foretac.github.io/.",
+      "summary": "In contact-rich manipulation, actions that appear equally plausible from vision can produce different contact outcomes, while reactive control based on current tactile feedback may respond too late to prevent failure. We present ForeTac, a predictive contact-guidance framework organized as a represent-predict-evaluate-guide loop. ForeTac encodes the current tactile state, predicts future tactile latent trajectories conditioned on candidate action sequences, and evaluates each predicted trajectory with a contact-quality objective learned from successful and failed physical interactions. At inference, gradients of this objective are backpropagated through the tactile predictor to guide action generation before execution while keeping all model parameters frozen. We evaluate ForeTac on four real-robot tasks (planar and curved-surface wiping, card swiping, and fragile-object grasping) with diffusion and flow-matching policies. Compared with vision-only Diffusion Policy, ForeTac improves the average task success rate (SR) from 36.3% to 71.3% and the average contact success rate (CSR) from 20.0% to 66.3% across these tasks, and yields gains in both metrics with a flow-matching policy. Component analyses support the learned tactile representation, action-conditioned foresight, and generation-time gradient guidance, while predicted tactile latent trajectories preserve contact-quality ordering. Project page: https://foretac.github.io/.",
       "published": "2026-10-13T10:28:49Z",
-      "updated": "2026-10-13T10:28:49Z",
-      "arxiv_id": "2610.18118v1",
-      "abs_url": "http://arxiv.org/abs/2610.18118v1",
-      "pdf_url": "https://arxiv.org/pdf/2610.18118v1",
+      "updated": "2026-10-20T10:22:41Z",
+      "arxiv_id": "2610.18118v2",
+      "abs_url": "http://arxiv.org/abs/2610.18118v2",
+      "pdf_url": "https://arxiv.org/pdf/2610.18118v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -4291,12 +4292,12 @@
         "tactile"
       ],
       "title_zh": "ForeTac: Predictive Contact Guidance for Generative Robot Policies",
-      "summary_zh": "Visually similar actions can produce contact loss, jamming, slippage, or irreversible damage, while tactile feedback may arrive after a critical transition. Contact-rich manipulation therefore requires generative policies to anticipate and evaluate whether candidate actions will produce desirable contact outcomes, then adjust action generation before execution. We present ForeTac, a predictive contact-guidance framework organized as a represent-predict-evaluate-guide loop. ForeTac encodes the current tactile state, predicts the tactile consequences of a candidate action sequence, and evaluates the predicted trajectory using a contact-quality objective learned from successful and failed physical interactions. At deployment, its gradient propagates through the tactile predictor to guide action generation while the pretrained model parameters remain frozen. We evaluate ForeTac on four real-robot tasks (planar and curved-surface wiping, card swiping, and fragile-object grasping) with diffusion and flow-matching policies. Across these tasks, ForeTac raises the average task success rate from 36.3% to 71.3% and the average contact success rate (CSR) from 20.0% to 66.3% compared with vision-only Diffusion Policy. Component analyses support the tactile representation and action-conditioned foresight, and show that predicted touch preserves contact-quality ordering. Project page: https://foretac.github.io/.",
+      "summary_zh": "In contact-rich manipulation, actions that appear equally plausible from vision can produce different contact outcomes, while reactive control based on current tactile feedback may respond too late to prevent failure. We present ForeTac, a predictive contact-guidance framework organized as a represent-predict-evaluate-guide loop. ForeTac encodes the current tactile state, predicts future tactile latent trajectories conditioned on candidate action sequences, and evaluates each predicted trajectory with a contact-quality objective learned from successful and failed physical interactions. At inference, gradients of this objective are backpropagated through the tactile predictor to guide action generation before execution while keeping all model parameters frozen. We evaluate ForeTac on four real-robot tasks (planar and curved-surface wiping, card swiping, and fragile-object grasping) with diffusion and flow-matching policies. Compared with vision-only Diffusion Policy, ForeTac improves the average task success rate (SR) from 36.3% to 71.3% and the average contact success rate (CSR) from 20.0% to 66.3% across these tasks, and yields gains in both metrics with a flow-matching policy. Component analyses support the learned tactile representation, action-conditioned foresight, and generation-time gradient guidance, while predicted tactile latent trajectories preserve contact-quality ordering. Project page: https://foretac.github.io/.",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-10-15T02:12:49.940001+00:00"
+        "generated_at": "2026-10-21T02:16:08.457091+00:00"
       }
     },
     {
@@ -5018,10 +5019,10 @@
       ],
       "summary": "Time-series analysis is increasingly studied in multimodal settings, yet most benchmarks pair temporal signals with text or with visualizations derived from the same signal. This leaves open whether multimodal large language models (MLLMs) can integrate time series with real-world visual evidence. We introduce MMTA (multimodal temporal analysis), a benchmark of tri-modal tasks with diverse cross-modal complementarity patterns among time series, text, and vision. MMTA spans nine domains -- robotics, autonomous driving, human action, manufacturing, AR assistance, healthcare, recommendation, finance, and climate -- under video+TS and image+TS layouts, with a 3,524-sample test split covering classification and forecasting. The benchmark standardizes heterogeneous real-world sources into a shared schema with domain-specific prompts, provenance documentation, and success-weighted metrics that penalize both wrong answers and failed generations. Evaluating eight open-source and proprietary MLLMs reveals a shared bottleneck: representing time series as text creates very long token sequences and weakens fine-grained alignment with visual evidence, especially in long-video settings. We then introduce TimeOmni-v, a multimodal LLM extension with a dedicated time-series encoder, temporal positional alignment, modality-aware token layout, and a forecasting head. TimeOmni-v improves long-video classification and time-series inference efficiency, showing that MMTA not only exposes representation and grounding failures but also motivates targeted model design.",
       "published": "2026-10-13T07:20:58Z",
-      "updated": "2026-10-14T05:39:34Z",
-      "arxiv_id": "2610.17856v2",
-      "abs_url": "http://arxiv.org/abs/2610.17856v2",
-      "pdf_url": "https://arxiv.org/pdf/2610.17856v2",
+      "updated": "2026-10-19T08:33:03Z",
+      "arxiv_id": "2610.17856v3",
+      "abs_url": "http://arxiv.org/abs/2610.17856v3",
+      "pdf_url": "https://arxiv.org/pdf/2610.17856v3",
       "primary_category": "cs.LG",
       "categories": [
         "cs.LG",
@@ -5053,7 +5054,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-10-15T02:12:49.940001+00:00"
+        "generated_at": "2026-10-21T02:16:08.457091+00:00"
       }
     },
     {

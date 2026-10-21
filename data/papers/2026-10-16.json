@@ -1,12 +1,12 @@
 {
   "date": "2026-10-16",
-  "generated_at": "2026-10-20T02:22:29.385548+00:00",
+  "generated_at": "2026-10-21T02:15:38.187200+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202610160000 TO 202610162359]",
-  "total_fetched": 600,
-  "total_matched": 67,
+  "total_fetched": 606,
+  "total_matched": 68,
   "papers": [
     {
       "title": "HAVANA: A Hierarchical Video-Action Model for Vision-Language Navigation",
@@ -77,12 +77,12 @@
         "Sihang Wu",
         "Xiao He"
       ],
-      "summary": "Agents built on vision language models (VLMs) now compete with learned policies on robot manipulation leaderboards. We ask how far a coding agent can go when it controls a robot instead of a computer, and where it stops. Our system, HexaShell, keeps the harness thin: it only turns the agent's commands into robot motion. The agent drives a robot with two arms through one command line. It sees three RGB cameras and knows their calibration. After each failed attempt, the agent reads the log, finds the cause, and writes or fixes small programs called tools. In this way it keeps what it learns as code, as a coding agent does when it fixes a failing test. The tools may use only what the robot observes. They use triangulation to find where objects are, relative to each other and to the gripper. If two cameras see the same point, the point lies where the two camera rays meet. If a point lies on a known plane, such as the table or the top of a block, it lies where its ray meets that plane. When the head camera is not enough, the robot moves a wrist camera to get a second view. We build the tools on only ten layouts of one seed per task, then freeze them and test them on ten new layouts of the same seed. We use Codex with GPT-6-Astra at medium reasoning effort. On all 42 RoboDojo tasks, HexaShell reaches a success rate of 39.7% and a progress score of 48.0, averaged in the same way as the leaderboard. This is a new state of the art on RoboDojo. The limit is contact, not reasoning: pushing reaches 92.5% and memory tasks 65.0%, but tight insertion only 8.3%. When the agent fails, it usually sees the failure but cannot make the motion work. We open source the tools evolved so far at https://github.com/HexaFuture/HexaShell.",
+      "summary": "Agents built on vision language models (VLMs) now compete with learned policies on robot manipulation leaderboards. We ask how far a coding agent can go when it controls a robot instead of a computer, and where it stops. Our system, HexaShell, gives the agent a thin harness: one command line that turns its commands into robot motion and makes no decisions of its own. On the robot, the agent keeps doing what it does best: it reads output, writes code and runs tests. Two agents of the same model share the work. An acting agent runs each episode. After a failure, an optimizer agent reads the full record of the episode, with every command, image and message, finds the cause, and writes or fixes small programs called tools, each with its own tests. What the agents learn stays as code, and no demonstrations or training are needed. At run time, the tools use only what a real robot also has: RGB images, camera calibration and the state of the arms. They find objects by triangulation between camera views. Because these inputs are the same in simulation and on hardware, the tools move to a real robot with a different arm after only a small change for the arm. We build the tools on ten layouts of one seed per task with Codex and GPT-6-Astra and freeze them; the eight Open tasks share one set of tools. In RoboDojo's official evaluation on a hidden seed, 50 episodes for each of the 42 tasks, HexaShell reaches 46.9% success and a progress score of 53.2, the state of the art on the official RoboDojo leaderboard. The limit is contact, not reasoning: memory tasks reach 81.0%, but precision tasks only 32.0%. We open source the tools evolved so far at https://github.com/HexaFuture/HexaShell.",
       "published": "2026-10-16T13:56:16Z",
-      "updated": "2026-10-16T13:56:16Z",
-      "arxiv_id": "2610.23479v1",
-      "abs_url": "http://arxiv.org/abs/2610.23479v1",
-      "pdf_url": "https://arxiv.org/pdf/2610.23479v1",
+      "updated": "2026-10-20T15:47:35Z",
+      "arxiv_id": "2610.23479v2",
+      "abs_url": "http://arxiv.org/abs/2610.23479v2",
+      "pdf_url": "https://arxiv.org/pdf/2610.23479v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -93,6 +93,8 @@
       "labels": [
         "开源",
         "机器人操作",
+        "世界模型与仿真",
+        "数据集/评测",
         "其他机器人"
       ],
       "topic": "机器人操作",
@@ -108,12 +110,12 @@
         "robot manipulation"
       ],
       "title_zh": "HexaShell: A Thin Harness for Exploring the Limits of VLM Agents as Robot Coding Agents",
-      "summary_zh": "Agents built on vision language models (VLMs) now compete with learned policies on robot manipulation leaderboards. We ask how far a coding agent can go when it controls a robot instead of a computer, and where it stops. Our system, HexaShell, keeps the harness thin: it only turns the agent's commands into robot motion. The agent drives a robot with two arms through one command line. It sees three RGB cameras and knows their calibration. After each failed attempt, the agent reads the log, finds the cause, and writes or fixes small programs called tools. In this way it keeps what it learns as code, as a coding agent does when it fixes a failing test. The tools may use only what the robot observes. They use triangulation to find where objects are, relative to each other and to the gripper. If two cameras see the same point, the point lies where the two camera rays meet. If a point lies on a known plane, such as the table or the top of a block, it lies where its ray meets that plane. When the head camera is not enough, the robot moves a wrist camera to get a second view. We build the tools on only ten layouts of one seed per task, then freeze them and test them on ten new layouts of the same seed. We use Codex with GPT-6-Astra at medium reasoning effort. On all 42 RoboDojo tasks, HexaShell reaches a success rate of 39.7% and a progress score of 48.0, averaged in the same way as the leaderboard. This is a new state of the art on RoboDojo. The limit is contact, not reasoning: pushing reaches 92.5% and memory tasks 65.0%, but tight insertion only 8.3%. When the agent fails, it usually sees the failure but cannot make the motion work. We open source the tools evolved so far at https://github.com/HexaFuture/HexaShell.",
+      "summary_zh": "Agents built on vision language models (VLMs) now compete with learned policies on robot manipulation leaderboards. We ask how far a coding agent can go when it controls a robot instead of a computer, and where it stops. Our system, HexaShell, gives the agent a thin harness: one command line that turns its commands into robot motion and makes no decisions of its own. On the robot, the agent keeps doing what it does best: it reads output, writes code and runs tests. Two agents of the same model share the work. An acting agent runs each episode. After a failure, an optimizer agent reads the full record of the episode, with every command, image and message, finds the cause, and writes or fixes small programs called tools, each with its own tests. What the agents learn stays as code, and no demonstrations or training are needed. At run time, the tools use only what a real robot also has: RGB images, camera calibration and the state of the arms. They find objects by triangulation between camera views. Because these inputs are the same in simulation and on hardware, the tools move to a real robot with a different arm after only a small change for the arm. We build the tools on ten layouts of one seed per task with Codex and GPT-6-Astra and freeze them; the eight Open tasks share one set of tools. In RoboDojo's official evaluation on a hidden seed, 50 episodes for each of the 42 tasks, HexaShell reaches 46.9% success and a progress score of 53.2, the state of the art on the official RoboDojo leaderboard. The limit is contact, not reasoning: memory tasks reach 81.0%, but precision tasks only 32.0%. We open source the tools evolved so far at https://github.com/HexaFuture/HexaShell.",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-10-19T02:21:25.820124+00:00"
+        "generated_at": "2026-10-21T02:16:33.371277+00:00"
       }
     },
     {
@@ -165,12 +167,12 @@
         "Guodong Du",
         "Wanyu Lin"
       ],
-      "summary": "Vision--Language--Action (VLA) models promise generalist robotic agents, yet consolidating skills learned across heterogeneous tasks and environments remains difficult: training data is fragmented across platforms, joint multi-task training suffers from interference, and model merging tends to introduce parameter conflicts or require architectural changes. We instead advocate a paradigm in which skills are first learned independently and then consolidated post hoc. To this end, we propose NestedVLA, which replaces parameter aggregation with parameter generation: a nested hypernetwork, conditioned on the target task, synthesizes task-adaptive action-expert parameters that compose with a frozen base VLA. Task-specific compressed VLM residuals are retained separately. This formulation enables flexible task-conditioned skill reuse while mitigating interference. Across three RL benchmarks (MetaWorld, ManiSkill, CALVIN), NestedVLA outperforms the strongest model-merging baseline by 41 pp on average, matches per-task fine-tuning within 1 pp on ManiSkill, and substantially closes the gap on CALVIN, pointing toward a storage-efficient route to skill consolidation. Code is available at https://github.com/WanyuGroup/NeurIPS2026-NestedVLA.",
+      "summary": "Vision-language-action (VLA) models can learn a wide range of robotic skills, but combining separately trained skills remains challenging. The original training data may be unavailable for joint retraining, while directly merging model weights can cause interference. We propose NestedVLA, which consolidates independently fine-tuned VLA policies without access to their original training data. Instead of merging all updates into one checkpoint, a hypernetwork embedded in the VLA generates action-expert weight updates for a selected task. Each task's compressed vision-language model update is stored separately, and both updates are added to a frozen base VLA to instantiate the corresponding policy. We evaluate NestedVLA by consolidating three policies fine-tuned with reinforcement learning on MetaWorld, ManiSkill, and CALVIN. It achieves 66.7% average success, improving on the strongest model-merging baseline by 41.1 percentage points. It performs within 1 percentage point of per-task fine-tuning on ManiSkill and substantially narrows the gap on CALVIN. In this three-policy setting, total storage is 1.5x that of a single full checkpoint. Code is available at https://github.com/WanyuGroup/NeurIPS2026-NestedVLA.",
       "published": "2026-10-16T10:42:29Z",
-      "updated": "2026-10-19T03:17:11Z",
-      "arxiv_id": "2610.23271v2",
-      "abs_url": "http://arxiv.org/abs/2610.23271v2",
-      "pdf_url": "https://arxiv.org/pdf/2610.23271v2",
+      "updated": "2026-10-20T12:11:31Z",
+      "arxiv_id": "2610.23271v3",
+      "abs_url": "http://arxiv.org/abs/2610.23271v3",
+      "pdf_url": "https://arxiv.org/pdf/2610.23271v3",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -182,12 +184,14 @@
       "labels": [
         "开源",
         "VLA/多模态策略",
+        "强化/模仿学习",
         "数据集/评测",
         "其他机器人"
       ],
       "topic": "VLA/多模态策略",
-      "score": 19,
+      "score": 17,
       "anchor_terms": [
+        "reinforcement learning",
         "robot",
         "robotic",
         "vision-language-action",
@@ -195,20 +199,20 @@
       ],
       "matched_terms": [
         "calvin",
-        "generalist robot",
         "maniskill",
+        "reinforcement learning",
         "robot",
         "robotic",
         "vision-language-action",
         "vla"
       ],
       "title_zh": "NestedVLA: Learning to Consolidate and Generate Skills for Vision-Language-Action Models",
-      "summary_zh": "Vision--Language--Action (VLA) models promise generalist robotic agents, yet consolidating skills learned across heterogeneous tasks and environments remains difficult: training data is fragmented across platforms, joint multi-task training suffers from interference, and model merging tends to introduce parameter conflicts or require architectural changes. We instead advocate a paradigm in which skills are first learned independently and then consolidated post hoc. To this end, we propose NestedVLA, which replaces parameter aggregation with parameter generation: a nested hypernetwork, conditioned on the target task, synthesizes task-adaptive action-expert parameters that compose with a frozen base VLA. Task-specific compressed VLM residuals are retained separately. This formulation enables flexible task-conditioned skill reuse while mitigating interference. Across three RL benchmarks (MetaWorld, ManiSkill, CALVIN), NestedVLA outperforms the strongest model-merging baseline by 41 pp on average, matches per-task fine-tuning within 1 pp on ManiSkill, and substantially closes the gap on CALVIN, pointing toward a storage-efficient route to skill consolidation. Code is available at https://github.com/WanyuGroup/NeurIPS2026-NestedVLA.",
+      "summary_zh": "Vision-language-action (VLA) models can learn a wide range of robotic skills, but combining separately trained skills remains challenging. The original training data may be unavailable for joint retraining, while directly merging model weights can cause interference. We propose NestedVLA, which consolidates independently fine-tuned VLA policies without access to their original training data. Instead of merging all updates into one checkpoint, a hypernetwork embedded in the VLA generates action-expert weight updates for a selected task. Each task's compressed vision-language model update is stored separately, and both updates are added to a frozen base VLA to instantiate the corresponding policy. We evaluate NestedVLA by consolidating three policies fine-tuned with reinforcement learning on MetaWorld, ManiSkill, and CALVIN. It achieves 66.7% average success, improving on the strongest model-merging baseline by 41.1 percentage points. It performs within 1 percentage point of per-task fine-tuning on ManiSkill and substantially narrows the gap on CALVIN. In this three-policy setting, total storage is 1.5x that of a single full checkpoint. Code is available at https://github.com/WanyuGroup/NeurIPS2026-NestedVLA.",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-10-20T02:23:32.167832+00:00"
+        "generated_at": "2026-10-21T02:16:33.371277+00:00"
       }
     },
     {
@@ -738,6 +742,49 @@
       }
     },
     {
+      "title": "Large language model and reinforcement learning based autonomous construction and progress updates",
+      "authors": [
+        "Yifei Xiao",
+        "Huasheng Lin",
+        "T. Y. Yang"
+      ],
+      "summary": "Due to the rapid growth of the global population, traditional construction methods are gradually unable to meet the current housing demand. The advancement of machine learning algorithms has encouraged researchers to explore their applications in the construction industry, leading to more intelligent and efficient building processes. In particular, the rise of large language models in recent years has provided more possibilities for the transformation from traditional construction to smart construction. In this study, a large language model and reinforcement learning based autonomous construction method is proposed. An enhanced soft actor-critic reinforcement learning algorithm is developed to plan actions for a mobile crane according to construction tasks. Robot kinematics and control algorithms are used to ensure that the actions generated by the reinforcement learning algorithm can be executed by the crane. In addition, a customized embedding model is developed to extract information from the construction environment according to user interests. Then, a large language model, ChatGPT 5, is used to update construction progress, provide safety information to control system, and generate construction progress reports. The feasibility of proposed method is verified through several full-scall retaining wall construction experiments.",
+      "published": "2026-10-16T19:57:20Z",
+      "updated": "2026-10-16T19:57:20Z",
+      "arxiv_id": "2610.26899v1",
+      "abs_url": "http://arxiv.org/abs/2610.26899v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.26899v1",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "强化/模仿学习",
+        "其他机器人"
+      ],
+      "topic": "强化/模仿学习",
+      "score": 4,
+      "anchor_terms": [
+        "reinforcement learning",
+        "robot"
+      ],
+      "matched_terms": [
+        "reinforcement learning",
+        "robot"
+      ],
+      "title_zh": "Large language model and reinforcement learning based autonomous construction and progress updates",
+      "summary_zh": "Due to the rapid growth of the global population, traditional construction methods are gradually unable to meet the current housing demand. The advancement of machine learning algorithms has encouraged researchers to explore their applications in the construction industry, leading to more intelligent and efficient building processes. In particular, the rise of large language models in recent years has provided more possibilities for the transformation from traditional construction to smart construction. In this study, a large language model and reinforcement learning based autonomous construction method is proposed. An enhanced soft actor-critic reinforcement learning algorithm is developed to plan actions for a mobile crane according to construction tasks. Robot kinematics and control algorithms are used to ensure that the actions generated by the reinforcement learning algorithm can be executed by the crane. In addition, a customized embedding model is developed to extract information from the construction environment according to user interests. Then, a large language model, ChatGPT 5, is used to update construction progress, provide safety information to control system, and generate construction progress reports. The feasibility of proposed method is verified through several full-scall retaining wall construction experiments.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-21T02:16:33.371277+00:00"
+      }
+    },
+    {
       "title": "Self-Improving Video-to-Action Models",
       "authors": [
         "Hyunwoo Ryu",
@@ -1081,18 +1128,18 @@
     {
       "title": "MOSS: Multimodal Origami Swamp Robot System",
       "authors": [
-        "T. Lan",
-        "A. Babgei",
-        "L. Romanello",
-        "M. Kovac",
-        "S. F. Armanini"
+        "Tian Lan",
+        "Atar Babgei",
+        "Luca Romanello",
+        "Mirko Kovac",
+        "Sophie F. Armanini"
       ],
       "summary": "Robotic systems for environmental monitoring and ecological surveying in wetlands and swamps must operate across diverse terrestrial and aquatic conditions. Conventional fixed-geometry wheels cannot adapt their contact geometry to these varying conditions. This work presents MOSS (Multimodal Origami Swamp Robot System), a compact amphibious robotic platform with 3D-printed origami wheels. The compact crank mechanism switches the wheel between contracted and expanded configurations, changing its width, body diameter, and fin orientation simultaneously. The contracted configuration is better suited to efficient rolling on firmer ground, whereas the expanded configuration provides greater contact and terrain engagement on softer surfaces. MOSS was evaluated on soil, sand, mud with varying water content, and water, in addition to in-motion morphing and terrestrial-aquatic transition tests. The more energy-efficient wheel configuration depended on terrain. The contracted configuration achieved a lower cost of transport on firmer soil and mud, whereas the expanded configuration performed better on wetter mud, sand, and water, reducing the cost of transport by up to 29%. Expanded wheels also reduced slip in wet mud and reduced both slip and hub sinkage in sand. MOSS successfully completed configuration changes in $1.95 \\pm 0.11$ s and demonstrated continuous locomotion across soil-mud-water transitions. Outdoor trials further demonstrated operation across natural deformable terrain and water. These results show that adaptive wheel geometry provides terrain-dependent locomotion benefits and enables a single compact platform to traverse substantially different terrestrial and aquatic conditions.",
       "published": "2026-10-16T17:35:24Z",
-      "updated": "2026-10-16T17:35:24Z",
-      "arxiv_id": "2610.23813v1",
-      "abs_url": "http://arxiv.org/abs/2610.23813v1",
-      "pdf_url": "https://arxiv.org/pdf/2610.23813v1",
+      "updated": "2026-10-19T14:04:45Z",
+      "arxiv_id": "2610.23813v2",
+      "abs_url": "http://arxiv.org/abs/2610.23813v2",
+      "pdf_url": "https://arxiv.org/pdf/2610.23813v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -1124,7 +1171,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-10-19T02:21:25.820124+00:00"
+        "generated_at": "2026-10-21T02:16:33.371277+00:00"
       }
     },
     {
