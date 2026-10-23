@@ -1,13 +1,96 @@
 {
   "date": "2026-10-21",
-  "generated_at": "2026-10-22T02:10:43.374469+00:00",
+  "generated_at": "2026-10-23T02:29:49.031895+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202610210000 TO 202610212359]",
-  "total_fetched": 460,
-  "total_matched": 68,
+  "total_fetched": 566,
+  "total_matched": 79,
   "papers": [
+    {
+      "title": "Externalise the Memory: A Pre-Registered Study of Where an Embodied Agent's Experience Should Live",
+      "authors": [
+        "Cheng-Yin Tu"
+      ],
+      "summary": "Should an embodied agent's experience be baked into its policy weights, or kept external and retrieved at inference? A memory-augmented teacher (a VLM that retrieves lessons, with their episode images, from its own past attempts) produces trajectories on a vision-conditioned reach task; from the same trajectories we distil LoRA student policies and evaluate them under matched protocols, including one that re-attaches the teacher's frozen retrieval buffer to a fixed set of student weights. We pre-registered the hypotheses, arms, tests, and analysis rules before training and before any p-value. Distilling the memory-augmented behaviour into weights beat an action-only control by +1 pp (n.s.); the registered test proves underpowered for its own minimum effect, so we withdraw - rather than refute - the memory-in-weights claim. Attaching retrieval to a fixed set of student weights added +34 pp (z=5.15), reaching the pooled memory-augmented teacher reference (49.3%); the pre-registered protocol contrast agrees (+23 pp, z=3.36); under a pre-registered auto-reset sensitivity count the two are +36 and +29 pp. An exploratory behavioural probe with pre-registered per-arm predictions is consistent with behavioural distillation transferring the marginal correction but not the conditional, situation-specific correction that retrieval supplies. The recipe that follows is to externalise the memory: in follow-up controls registered before they ran, the same frozen buffer lifts the base model with no adapter to 48% (sensitivity 48%) and the other three adapters from 19-26% to 53-55% (sensitivity 17-21% to 50-55%), and the adapter adds nothing detectable once the buffer is attached. On a second, harder task, the retrieval advantage points the same direction but falls short of significance (+6 pp, 95% CI [-4.5, +16.4]); exploratory diagnostics tie the attenuation to memory coverage.",
+      "published": "2026-10-21T21:54:57Z",
+      "updated": "2026-10-21T21:54:57Z",
+      "arxiv_id": "2610.30478v1",
+      "abs_url": "http://arxiv.org/abs/2610.30478v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.30478v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "28 pages. A 5-page version appears at the CL4FMAgents workshop, NeurIPS 2026 (non-archival). Code and pre-registration: https://github.com/TPEmist/AionGenos",
+      "code_url": "https://github.com/TPEmist/AionGenos",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 10,
+      "anchor_terms": [
+        "embodied",
+        "embodied agent"
+      ],
+      "matched_terms": [
+        "embodied",
+        "embodied agent"
+      ],
+      "title_zh": "Externalise the Memory: A Pre-Registered Study of Where an Embodied Agent's Experience Should Live",
+      "summary_zh": "Should an embodied agent's experience be baked into its policy weights, or kept external and retrieved at inference? A memory-augmented teacher (a VLM that retrieves lessons, with their episode images, from its own past attempts) produces trajectories on a vision-conditioned reach task; from the same trajectories we distil LoRA student policies and evaluate them under matched protocols, including one that re-attaches the teacher's frozen retrieval buffer to a fixed set of student weights. We pre-registered the hypotheses, arms, tests, and analysis rules before training and before any p-value. Distilling the memory-augmented behaviour into weights beat an action-only control by +1 pp (n.s.); the registered test proves underpowered for its own minimum effect, so we withdraw - rather than refute - the memory-in-weights claim. Attaching retrieval to a fixed set of student weights added +34 pp (z=5.15), reaching the pooled memory-augmented teacher reference (49.3%); the pre-registered protocol contrast agrees (+23 pp, z=3.36); under a pre-registered auto-reset sensitivity count the two are +36 and +29 pp. An exploratory behavioural probe with pre-registered per-arm predictions is consistent with behavioural distillation transferring the marginal correction but not the conditional, situation-specific correction that retrieval supplies. The recipe that follows is to externalise the memory: in follow-up controls registered before they ran, the same frozen buffer lifts the base model with no adapter to 48% (sensitivity 48%) and the other three adapters from 19-26% to 53-55% (sensitivity 17-21% to 50-55%), and the adapter adds nothing detectable once the buffer is attached. On a second, harder task, the retrieval advantage points the same direction but falls short of significance (+6 pp, 95% CI [-4.5, +16.4]); exploratory diagnostics tie the attenuation to memory coverage.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-23T02:30:36.046575+00:00"
+      }
+    },
+    {
+      "title": "MemPlan: Memory-Conditioned PDDL Planning for Partially Observable Text Environments",
+      "authors": [
+        "Tengwei Song",
+        "Robert Hoehndorf"
+      ],
+      "summary": "LLM agents are flexible in language interaction, but using them as long-horizon planners is costly and prone to hallucinated or invalid actions. This paper targets a different role for LLMs: constrained bridges between language and symbolic planning. We propose MemPlan, a memory-conditioned PDDL planning framework for partially observable interactive text environments. MemPlan keeps the PDDL domain fixed and reconstructs the PDDL problem at each step from parsed observations, candidate hypotheses, and interaction memory. Positive graph memory assigns relevance-based action costs to candidate hypotheses for missing objects, locations, or conditions, guiding the planner toward more plausible checks. Negative memory records execution-refuted assumptions and compiles them into exclusion constraints, preventing repeated attempts at candidates already contradicted by feedback. A unified schema-conditioned language--symbol interface, trained offline with supervised fine-tuning, connects text environments to the planning loop through observation-to-fact parsing and symbolic-action-to-command grounding. Experiments on TextWorld, ALFWorld, and Robotouille show that MemPlan improves task completion and step efficiency over language-only and PDDL-aware baselines, while substantially reducing online token cost compared with LLM-planning baselines such as ReAct. The same fine-tuned interface is also reused across TextWorld task types without task-specific fine-tuning. Our code and data are available at: https://github.com/tewiSong/MemPlan.",
+      "published": "2026-10-21T19:40:12Z",
+      "updated": "2026-10-21T19:40:12Z",
+      "arxiv_id": "2610.30379v1",
+      "abs_url": "http://arxiv.org/abs/2610.30379v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.30379v1",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "comment": "NeurIPS 2026",
+      "code_url": "https://github.com/tewiSong/MemPlan",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 2,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "robot"
+      ],
+      "title_zh": "MemPlan: Memory-Conditioned PDDL Planning for Partially Observable Text Environments",
+      "summary_zh": "LLM agents are flexible in language interaction, but using them as long-horizon planners is costly and prone to hallucinated or invalid actions. This paper targets a different role for LLMs: constrained bridges between language and symbolic planning. We propose MemPlan, a memory-conditioned PDDL planning framework for partially observable interactive text environments. MemPlan keeps the PDDL domain fixed and reconstructs the PDDL problem at each step from parsed observations, candidate hypotheses, and interaction memory. Positive graph memory assigns relevance-based action costs to candidate hypotheses for missing objects, locations, or conditions, guiding the planner toward more plausible checks. Negative memory records execution-refuted assumptions and compiles them into exclusion constraints, preventing repeated attempts at candidates already contradicted by feedback. A unified schema-conditioned language--symbol interface, trained offline with supervised fine-tuning, connects text environments to the planning loop through observation-to-fact parsing and symbolic-action-to-command grounding. Experiments on TextWorld, ALFWorld, and Robotouille show that MemPlan improves task completion and step efficiency over language-only and PDDL-aware baselines, while substantially reducing online token cost compared with LLM-planning baselines such as ReAct. The same fine-tuned interface is also reused across TextWorld task types without task-specific fine-tuning. Our code and data are available at: https://github.com/tewiSong/MemPlan.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-23T02:30:36.046575+00:00"
+      }
+    },
     {
       "title": "ALPS: Visual State Encoders for World Models",
       "authors": [
@@ -433,6 +516,55 @@
       }
     },
     {
+      "title": "Alpha: Systematic Fault Injection and Robustness Evaluation for LLM-Driven Embodied Manipulation",
+      "authors": [
+        "Jona Joy"
+      ],
+      "summary": "Large language models (LLMs) are increasingly integrated into embodied robotic planning, yet standard benchmarks primarily evaluate end-to-end task completion in nominal environments, obscuring failure origins across the execution stack. We present Alpha, a systematic fault-injection and robustness-evaluation framework for LLM-driven manipulation in simulation. Alpha injects calibrated faults across perception (sensor lag), actuation (grip slip), kinematics (unreachable targets), and planning (planner-output corruption), alongside concurrent conditions. To separate physical vulnerabilities from planner sensitivities, we introduce a matched methodology pairing an LLM agent (Llama-3 via Ollama) against a deterministic Scripted Oracle planner across a balanced 150-episode matrix under identical seeds, geometries, and safety criteria. Across the matrix, the Oracle achieves 64.0% (48/75) success while the LLM achieves 44.0% (33/75) (paired McNemar p = 3.01 x 10^-4). Crucially, excluding planner-output corruption, performance across all physical and kinematic conditions is identical: 55.0% (33/60) for both planners with zero discordant pairs (McNemar p = 1.00). This demonstrates that physical actuator slip, kinematic reach boundaries, and perceptual staleness affect deterministic controllers and LLM planners equivalently. The performance gap is driven entirely by planner-output corruption (100% Oracle vs. 0% LLM), isolating the prompt-to-JSON serialization and validation interface rather than a cognitive reasoning deficit. We also audit 169 historical pilot attempts for transparency.",
+      "published": "2026-10-21T07:06:59Z",
+      "updated": "2026-10-21T07:06:59Z",
+      "arxiv_id": "2610.30197v1",
+      "abs_url": "http://arxiv.org/abs/2610.30197v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.30197v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "9 pages, 7 figures, 6 tables. Code and reproduction artifacts: https://github.com/jonajoy142/embodied-agent-chaos",
+      "code_url": "https://github.com/jonajoy142/embodied-agent-chaos",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "机器人操作",
+        "世界模型与仿真",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 9,
+      "anchor_terms": [
+        "embodied",
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "embodied",
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "Alpha: Systematic Fault Injection and Robustness Evaluation for LLM-Driven Embodied Manipulation",
+      "summary_zh": "Large language models (LLMs) are increasingly integrated into embodied robotic planning, yet standard benchmarks primarily evaluate end-to-end task completion in nominal environments, obscuring failure origins across the execution stack. We present Alpha, a systematic fault-injection and robustness-evaluation framework for LLM-driven manipulation in simulation. Alpha injects calibrated faults across perception (sensor lag), actuation (grip slip), kinematics (unreachable targets), and planning (planner-output corruption), alongside concurrent conditions. To separate physical vulnerabilities from planner sensitivities, we introduce a matched methodology pairing an LLM agent (Llama-3 via Ollama) against a deterministic Scripted Oracle planner across a balanced 150-episode matrix under identical seeds, geometries, and safety criteria. Across the matrix, the Oracle achieves 64.0% (48/75) success while the LLM achieves 44.0% (33/75) (paired McNemar p = 3.01 x 10^-4). Crucially, excluding planner-output corruption, performance across all physical and kinematic conditions is identical: 55.0% (33/60) for both planners with zero discordant pairs (McNemar p = 1.00). This demonstrates that physical actuator slip, kinematic reach boundaries, and perceptual staleness affect deterministic controllers and LLM planners equivalently. The performance gap is driven entirely by planner-output corruption (100% Oracle vs. 0% LLM), isolating the prompt-to-JSON serialization and validation interface rather than a cognitive reasoning deficit. We also audit 169 historical pilot attempts for transparency.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-23T02:30:36.046575+00:00"
+      }
+    },
+    {
       "title": "NeuralSRender: G-Buffer Guided Video Diffusion for Sim-to-Real Rendering",
       "authors": [
         "Yipeng Lu",
@@ -534,6 +666,425 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-10-22T02:14:20.658030+00:00"
+      }
+    },
+    {
+      "title": "Motion Retargeting with Spatiotemporal Preferences for Humanoid Loco-Manipulation",
+      "authors": [
+        "Xiongbo Shi",
+        "Shihang Du",
+        "Zongyou Yu",
+        "Ao Zhou",
+        "Xudong Zhang",
+        "Ziyu Lin",
+        "Haodong Zhang",
+        "Junqiao Zhao",
+        "Guang Chen"
+      ],
+      "summary": "Human motion retargeting bridges the embodiment gap between humans and humanoid robots by converting human demonstrations into reference trajectories for whole-body control and loco-manipulation. For object-interaction tasks, successful execution depends on accurately preserving body--object relations at critical stages. However, uniform per-frame iteration budgets do not account for these localized accuracy requirements, limiting the computational efficiency of retargeting. To address this limitation, we present Spatiotemporal Retargeting (STR), which uses keyframes and key body parts to allocate optimization effort. Specifically, a vision-language model selects relevant motion signals and body parts, and keyframes are identified from changes in the selected signals. Based on these selections, STR assigns additional solver iterations to keyframes and higher interaction weights to the selected parts. To further improve contact fidelity, we introduce Mechanics-Aware Contact Anchoring (MCA) to refine object-surface contact positions using an approximate object-wrench model while retaining the selected surface directions. Building on the resulting references, we develop Spatiotemporal Reinforcement Learning (STRL), which combines adaptive key-stage sampling with a contact reward based on target proximity and object contact forces for downstream control. Simulation experiments on a Unitree G1 and real-world experiments on a Unitree R1 demonstrate that STR improves geometric contact coverage and continuity at lower computational cost, while the resulting references improve downstream task completion across diverse object-interaction motions.",
+      "published": "2026-10-21T23:54:17Z",
+      "updated": "2026-10-21T23:54:17Z",
+      "arxiv_id": "2610.30540v1",
+      "abs_url": "http://arxiv.org/abs/2610.30540v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.30540v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "人形与灵巧",
+        "双足机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 9,
+      "anchor_terms": [
+        "humanoid",
+        "manipulation",
+        "reinforcement learning",
+        "robot"
+      ],
+      "matched_terms": [
+        "humanoid",
+        "manipulation",
+        "reinforcement learning",
+        "robot"
+      ],
+      "title_zh": "Motion Retargeting with Spatiotemporal Preferences for Humanoid Loco-Manipulation",
+      "summary_zh": "Human motion retargeting bridges the embodiment gap between humans and humanoid robots by converting human demonstrations into reference trajectories for whole-body control and loco-manipulation. For object-interaction tasks, successful execution depends on accurately preserving body--object relations at critical stages. However, uniform per-frame iteration budgets do not account for these localized accuracy requirements, limiting the computational efficiency of retargeting. To address this limitation, we present Spatiotemporal Retargeting (STR), which uses keyframes and key body parts to allocate optimization effort. Specifically, a vision-language model selects relevant motion signals and body parts, and keyframes are identified from changes in the selected signals. Based on these selections, STR assigns additional solver iterations to keyframes and higher interaction weights to the selected parts. To further improve contact fidelity, we introduce Mechanics-Aware Contact Anchoring (MCA) to refine object-surface contact positions using an approximate object-wrench model while retaining the selected surface directions. Building on the resulting references, we develop Spatiotemporal Reinforcement Learning (STRL), which combines adaptive key-stage sampling with a contact reward based on target proximity and object contact forces for downstream control. Simulation experiments on a Unitree G1 and real-world experiments on a Unitree R1 demonstrate that STR improves geometric contact coverage and continuity at lower computational cost, while the resulting references improve downstream task completion across diverse object-interaction motions.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-23T02:30:36.046575+00:00"
+      }
+    },
+    {
+      "title": "PhysibleMDM: Enforcing Inference-Time Physical Feasibility Constraints on Motion Diffusion Models via Noise Optimization",
+      "authors": [
+        "Maximilian Stölzle",
+        "David Müller",
+        "Agon Serifi",
+        "Ruben Grandia",
+        "Espen Knoop",
+        "Moritz Bächer"
+      ],
+      "summary": "Motion Diffusion Models (MDMs) can generate diverse and visually appealing human motion; yet, the resulting trajectories frequently violate physical constraints, limiting their downstream use in simulation and control. We present PhysibleMDM, a framework that promotes physical feasibility of MDM output by optimizing at inference time the diffusion noise without retraining the generative model. We introduce a set of surrogate feasibility constraints that can be evaluated without full trajectory simulation. These constraints combine kinematic checks (e.g., ground penetration, slip, and self-collision) with dynamic feasibility tests computed via an inverse-dynamics inner loop formulated as a cone program. We solve the resulting black-box noise optimization problem using the Separable Covariance Matrix Adaptation Evolution Strategy (Sep-CMA-ES), thereby avoiding reliance on computationally expensive and discontinuous gradients. An autoregressive scheme then chains optimized segments to synthesize long motion sequences. Across 100 motion styles on an SMPL humanoid, PhysibleMDM reduces mean ground penetration, self-collision penetration, and ground slip by 75%, 92%, and 74%, respectively, relative to unoptimized diffusion output. Across 11 sequences for a custom bipedal robot, it achieves median reductions of 89.5% in per-sequence mean acceleration-reconstruction error and 79.5% in the mean inverse-dynamics residual.",
+      "published": "2026-10-21T22:31:27Z",
+      "updated": "2026-10-21T22:31:27Z",
+      "arxiv_id": "2610.30500v1",
+      "abs_url": "http://arxiv.org/abs/2610.30500v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.30500v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "人形与灵巧",
+        "双足机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 7,
+      "anchor_terms": [
+        "biped",
+        "bipedal",
+        "humanoid",
+        "robot"
+      ],
+      "matched_terms": [
+        "biped",
+        "bipedal",
+        "humanoid",
+        "robot"
+      ],
+      "title_zh": "PhysibleMDM: Enforcing Inference-Time Physical Feasibility Constraints on Motion Diffusion Models via Noise Optimization",
+      "summary_zh": "Motion Diffusion Models (MDMs) can generate diverse and visually appealing human motion; yet, the resulting trajectories frequently violate physical constraints, limiting their downstream use in simulation and control. We present PhysibleMDM, a framework that promotes physical feasibility of MDM output by optimizing at inference time the diffusion noise without retraining the generative model. We introduce a set of surrogate feasibility constraints that can be evaluated without full trajectory simulation. These constraints combine kinematic checks (e.g., ground penetration, slip, and self-collision) with dynamic feasibility tests computed via an inverse-dynamics inner loop formulated as a cone program. We solve the resulting black-box noise optimization problem using the Separable Covariance Matrix Adaptation Evolution Strategy (Sep-CMA-ES), thereby avoiding reliance on computationally expensive and discontinuous gradients. An autoregressive scheme then chains optimized segments to synthesize long motion sequences. Across 100 motion styles on an SMPL humanoid, PhysibleMDM reduces mean ground penetration, self-collision penetration, and ground slip by 75%, 92%, and 74%, respectively, relative to unoptimized diffusion output. Across 11 sequences for a custom bipedal robot, it achieves median reductions of 89.5% in per-sequence mean acceleration-reconstruction error and 79.5% in the mean inverse-dynamics residual.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-23T02:30:36.046575+00:00"
+      }
+    },
+    {
+      "title": "Integrated Respiratory Sensing and Gated Control for Autonomous Needle Insertion Via CT Bore Robotic Arm",
+      "authors": [
+        "Emma Huang",
+        "Moira Bohley",
+        "Krishna Jamakhandi",
+        "Rebecca Fellbaum",
+        "Sophia Tang",
+        "Sean Tutton",
+        "Albert Hsiao",
+        "Alexander Norbash",
+        "Changwei Chen",
+        "Derek Chen",
+        "Ananya Rao",
+        "Lizzie Peiros",
+        "Michael C. Yip"
+      ],
+      "summary": "Currently, CT-guided lung biopsy is a highly manual procedure requiring patient breath-holding, iterative manual needle insertions, and repeated CT confirmation scans to accurately target a tumor. Automating this process within the CT bore--without relying on manual needle placement or patient breath-holding--has the potential to reduce procedure time, patient discomfort, and radiation exposure. In this work, we present an integrated sensing and control system capable of performing a gated needle insertion within the CT bore. The experiments demonstrate the system's ability to track and predict patient breath cycles, perform autonomous respiratory-gated needle insertion, and detect breath cycle anomalies.",
+      "published": "2026-10-21T21:08:43Z",
+      "updated": "2026-10-21T21:08:43Z",
+      "arxiv_id": "2610.30452v1",
+      "abs_url": "http://arxiv.org/abs/2610.30452v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.30452v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机械臂"
+      ],
+      "topic": "机械臂",
+      "score": 9,
+      "anchor_terms": [
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic",
+        "robotic arm"
+      ],
+      "title_zh": "Integrated Respiratory Sensing and Gated Control for Autonomous Needle Insertion Via CT Bore Robotic Arm",
+      "summary_zh": "Currently, CT-guided lung biopsy is a highly manual procedure requiring patient breath-holding, iterative manual needle insertions, and repeated CT confirmation scans to accurately target a tumor. Automating this process within the CT bore--without relying on manual needle placement or patient breath-holding--has the potential to reduce procedure time, patient discomfort, and radiation exposure. In this work, we present an integrated sensing and control system capable of performing a gated needle insertion within the CT bore. The experiments demonstrate the system's ability to track and predict patient breath cycles, perform autonomous respiratory-gated needle insertion, and detect breath cycle anomalies.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-23T02:30:36.046575+00:00"
+      }
+    },
+    {
+      "title": "Tactile-Based Robotic Manipulation: From Mechanics-Driven to Data-Driven Perspectives",
+      "authors": [
+        "Jingyi Xiang",
+        "Yixuan Wang",
+        "Wenzhen Yuan"
+      ],
+      "summary": "Tactile sensing provides robots with direct access to physical interactions at the contact interface, making it a critical modality for robust and dexterous manipulation. Over the past several decades, tactile-based manipulation research has evolved from mechanics-driven approaches, which explicitly interpret tactile signals through contact mechanics and task-specific reasoning, to data-driven approaches that learn tactile representations and manipulation policies directly from data. This paper reviews the development of tactile-based manipulation from these two complementary perspectives. We first introduce the fundamentals of tactile sensing, and then review, from a mechanics-driven perspective, how those signals form manipulation-relevant state representations and subsequently influence the robot action. We then examine the recent advances in data-driven tactile manipulation, covering imitation learning, reinforcement learning, vision-language-action models, and predictive models. Finally, we discuss open challenges and future opportunities toward scalable, generalizable, and robust tactile-enabled robotic systems.",
+      "published": "2026-10-21T20:49:25Z",
+      "updated": "2026-10-21T20:49:25Z",
+      "arxiv_id": "2610.30438v1",
+      "abs_url": "http://arxiv.org/abs/2610.30438v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.30438v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "30 pages. Author accepted manuscript. Posted with permission from the Annual Review of Control, Robotics, and Autonomous Systems, Volume 10; copyright 2027 the author(s), https://www.annualreviews.org. Published version: https://doi.org/10.1146/annurev-control-032125-030330",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "VLA/多模态策略",
+        "强化/模仿学习",
+        "人形与灵巧",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 19,
+      "anchor_terms": [
+        "imitation learning",
+        "manipulation",
+        "reinforcement learning",
+        "robot",
+        "robotic",
+        "robotics",
+        "tactile",
+        "vision-language-action"
+      ],
+      "matched_terms": [
+        "dexterous",
+        "dexterous manipulation",
+        "imitation learning",
+        "manipulation",
+        "reinforcement learning",
+        "robot",
+        "robotic",
+        "robotics",
+        "tactile",
+        "vision-language-action"
+      ],
+      "title_zh": "Tactile-Based Robotic Manipulation: From Mechanics-Driven to Data-Driven Perspectives",
+      "summary_zh": "Tactile sensing provides robots with direct access to physical interactions at the contact interface, making it a critical modality for robust and dexterous manipulation. Over the past several decades, tactile-based manipulation research has evolved from mechanics-driven approaches, which explicitly interpret tactile signals through contact mechanics and task-specific reasoning, to data-driven approaches that learn tactile representations and manipulation policies directly from data. This paper reviews the development of tactile-based manipulation from these two complementary perspectives. We first introduce the fundamentals of tactile sensing, and then review, from a mechanics-driven perspective, how those signals form manipulation-relevant state representations and subsequently influence the robot action. We then examine the recent advances in data-driven tactile manipulation, covering imitation learning, reinforcement learning, vision-language-action models, and predictive models. Finally, we discuss open challenges and future opportunities toward scalable, generalizable, and robust tactile-enabled robotic systems.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-23T02:30:36.046575+00:00"
+      }
+    },
+    {
+      "title": "A Transformer-based Approach for Real-time Multi-agent Path Planning with Varying Initial/Final Conditions",
+      "authors": [
+        "Qian Zhang",
+        "Shanqing Liu",
+        "Jerome Darbon",
+        "George Karniadakis"
+      ],
+      "summary": "We address the problem of real-time multi-agent path planning under prescribed initial and final configurations, formulated as a high-dimensional optimal control problem subject to inter-agent collision avoidance and obstacle constraints. Classical solvers based on the Hamilton--Jacobi--Bellman equation or Pontryagin's maximum principle (PMP) become computationally intractable as the number of agents grows, due to the curse of dimensionality and the non-convexity introduced by interaction constraints. We propose OCFormer, a transformer-based neural network that parameterizes the inverse of a coordinate transformation mapping a simple, analytically tractable latent space, in which agents evolve independently under a decoupled Hamiltonian, to the physical space of the coupled, interacting system. The model is trained by minimizing a physics-informed loss comprising the Hamiltonian ODE residual from the PMP and a boundary matching term, without requiring pre-computed trajectory data. The self-attention mechanism endows OCFormer with permutation equivariance over agents, a structural symmetry that prior symplectic network approaches do not natively enforce. When trained on a distribution of boundary conditions, the amortized OCFormer produces near-optimal trajectories for unseen initial and final configurations in a single forward pass ($\\sim$220ms), enabling real-time inference without retraining. We further introduce a lightweight transfer learning framework that adapts a pretrained OCFormer to out-of-distribution perturbations in seconds via L-BFGS fine-tuning. Numerical experiments on two- and three-dimensional multi-agent navigation with up to 128 agents demonstrate the scalability and efficiency of the proposed approach.",
+      "published": "2026-10-21T19:48:21Z",
+      "updated": "2026-10-21T19:48:21Z",
+      "arxiv_id": "2610.30388v1",
+      "abs_url": "http://arxiv.org/abs/2610.30388v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.30388v1",
+      "primary_category": "math.OC",
+      "categories": [
+        "math.OC",
+        "cs.LG",
+        "math.NA"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "感知与3D理解"
+      ],
+      "topic": "导航与移动",
+      "score": 3,
+      "anchor_terms": [
+        "navigation"
+      ],
+      "matched_terms": [
+        "navigation",
+        "path planning"
+      ],
+      "title_zh": "A Transformer-based Approach for Real-time Multi-agent Path Planning with Varying Initial/Final Conditions",
+      "summary_zh": "We address the problem of real-time multi-agent path planning under prescribed initial and final configurations, formulated as a high-dimensional optimal control problem subject to inter-agent collision avoidance and obstacle constraints. Classical solvers based on the Hamilton--Jacobi--Bellman equation or Pontryagin's maximum principle (PMP) become computationally intractable as the number of agents grows, due to the curse of dimensionality and the non-convexity introduced by interaction constraints. We propose OCFormer, a transformer-based neural network that parameterizes the inverse of a coordinate transformation mapping a simple, analytically tractable latent space, in which agents evolve independently under a decoupled Hamiltonian, to the physical space of the coupled, interacting system. The model is trained by minimizing a physics-informed loss comprising the Hamiltonian ODE residual from the PMP and a boundary matching term, without requiring pre-computed trajectory data. The self-attention mechanism endows OCFormer with permutation equivariance over agents, a structural symmetry that prior symplectic network approaches do not natively enforce. When trained on a distribution of boundary conditions, the amortized OCFormer produces near-optimal trajectories for unseen initial and final configurations in a single forward pass ($\\sim$220ms), enabling real-time inference without retraining. We further introduce a lightweight transfer learning framework that adapts a pretrained OCFormer to out-of-distribution perturbations in seconds via L-BFGS fine-tuning. Numerical experiments on two- and three-dimensional multi-agent navigation with up to 128 agents demonstrate the scalability and efficiency of the proposed approach.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-23T02:30:36.046575+00:00"
+      }
+    },
+    {
+      "title": "MPBRS: Multi-Potential-Based Reward Shaping for Unified Reward Configuration in Humanoid Locomotion",
+      "authors": [
+        "Van Chung Nguyen",
+        "Hung Manh La"
+      ],
+      "summary": "Designing and tuning reward functions remains one of the main challenges in building effective reinforcement learning (RL) pipelines for humanoid locomotion. While shaping rewards can accelerate learning, naively formulated terms often conflict with the desired behavior, overfit to a specific robot, or become unstable under small weight changes. Potential-Based Reward Shaping (PBRS) offers an alternative solution: shaping the reward via differences of a potential function to guide exploration without changing the optimal policy. In this paper, we study Multi-PBRS for humanoid locomotion and propose a unified reward configuration. We then evaluate the same reward structure and weights across nine humanoid robots, requiring only robot-specific metadata (joint/link mappings and default poses) rather than per-robot reward redesign. Our experiments show that, compared to standard shaping, MPBRS provides more consistent scaling behavior and reduced tuning sensitivity across robots, making it easier to tune without altering the optimal policy.",
+      "published": "2026-10-21T18:52:28Z",
+      "updated": "2026-10-21T18:52:28Z",
+      "arxiv_id": "2610.30334v1",
+      "abs_url": "http://arxiv.org/abs/2610.30334v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.30334v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "强化/模仿学习",
+        "人形与灵巧",
+        "感知与3D理解",
+        "双足机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 9,
+      "anchor_terms": [
+        "humanoid",
+        "locomotion",
+        "reinforcement learning",
+        "robot"
+      ],
+      "matched_terms": [
+        "humanoid",
+        "locomotion",
+        "reinforcement learning",
+        "robot"
+      ],
+      "title_zh": "MPBRS: Multi-Potential-Based Reward Shaping for Unified Reward Configuration in Humanoid Locomotion",
+      "summary_zh": "Designing and tuning reward functions remains one of the main challenges in building effective reinforcement learning (RL) pipelines for humanoid locomotion. While shaping rewards can accelerate learning, naively formulated terms often conflict with the desired behavior, overfit to a specific robot, or become unstable under small weight changes. Potential-Based Reward Shaping (PBRS) offers an alternative solution: shaping the reward via differences of a potential function to guide exploration without changing the optimal policy. In this paper, we study Multi-PBRS for humanoid locomotion and propose a unified reward configuration. We then evaluate the same reward structure and weights across nine humanoid robots, requiring only robot-specific metadata (joint/link mappings and default poses) rather than per-robot reward redesign. Our experiments show that, compared to standard shaping, MPBRS provides more consistent scaling behavior and reduced tuning sensitivity across robots, making it easier to tune without altering the optimal policy.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-23T02:30:36.046575+00:00"
+      }
+    },
+    {
+      "title": "Self-Distilling Future Video Representations for World Action Models",
+      "authors": [
+        "Huiwon Jang",
+        "Suhyeok Jang",
+        "Hyeonmo Kang",
+        "Seungku Kim",
+        "Jinwoo Shin",
+        "Sihyun Yu"
+      ],
+      "summary": "World Action Models (WAMs) have emerged as a promising approach to learning generalist robot policies using rich spatiotemporal priors from pre-trained video diffusion models. A recent line of WAMs improves inference efficiency by conditioning a separate action decoder on intermediate future video representations extracted from a single denoising step, avoiding costly iterative denoising required for video generation. This design makes action prediction depend directly on the quality of these future representations. In this paper, we introduce Future REpresentation learning via self-Distillation with temporal context (FRED), a framework that trains WAMs to improve the quality of future video representations from noise in a single denoising step. Specifically, FRED uses self-distillation to predict future representations from noise, using representations extracted from ground-truth future observations as targets. We further condition the video model on historical observations, providing temporal context for predicting future representations better. Across diverse real-world manipulation scenarios, FRED consistently outperforms competing WAMs. It achieves particularly large gains on long-horizon and out-of-domain tasks under zero-shot environment generalization, and substantially improves human-to-robot skill transfer, reaching 50.0% task success on tasks absent from robot training data and demonstrated only in human videos, compared with 19.4% for the best competing WAM.",
+      "published": "2026-10-21T18:33:13Z",
+      "updated": "2026-10-21T18:33:13Z",
+      "arxiv_id": "2610.30320v1",
+      "abs_url": "http://arxiv.org/abs/2610.30320v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.30320v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "comment": "27 pages; Project page: https://huiwon-jang.github.io/FRED/",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 8,
+      "anchor_terms": [
+        "manipulation",
+        "robot"
+      ],
+      "matched_terms": [
+        "generalist robot",
+        "manipulation",
+        "robot"
+      ],
+      "title_zh": "Self-Distilling Future Video Representations for World Action Models",
+      "summary_zh": "World Action Models (WAMs) have emerged as a promising approach to learning generalist robot policies using rich spatiotemporal priors from pre-trained video diffusion models. A recent line of WAMs improves inference efficiency by conditioning a separate action decoder on intermediate future video representations extracted from a single denoising step, avoiding costly iterative denoising required for video generation. This design makes action prediction depend directly on the quality of these future representations. In this paper, we introduce Future REpresentation learning via self-Distillation with temporal context (FRED), a framework that trains WAMs to improve the quality of future video representations from noise in a single denoising step. Specifically, FRED uses self-distillation to predict future representations from noise, using representations extracted from ground-truth future observations as targets. We further condition the video model on historical observations, providing temporal context for predicting future representations better. Across diverse real-world manipulation scenarios, FRED consistently outperforms competing WAMs. It achieves particularly large gains on long-horizon and out-of-domain tasks under zero-shot environment generalization, and substantially improves human-to-robot skill transfer, reaching 50.0% task success on tasks absent from robot training data and demonstrated only in human videos, compared with 19.4% for the best competing WAM.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-23T02:30:36.046575+00:00"
+      }
+    },
+    {
+      "title": "TerraTransfer++: Demonstration-Free End-to-End Planner",
+      "authors": [
+        "Zikang Xiong",
+        "Weixin Li",
+        "Zhouchonghao Wu",
+        "Akshay Rangesh",
+        "Saarth Bonde",
+        "Grantland Hall",
+        "Chen Tang",
+        "Yihan Hu",
+        "Wei Zhan"
+      ],
+      "summary": "End-to-end autonomous driving has achieved state-of-the-art performance on benchmarks and real-world deployments. Its standard training recipe, however, is expensive across all existing paradigms: imitation learning requires fleet-scale driving logs whose behavior distribution only thinly covers the safety-critical tail; closed-loop reinforcement learning in a photorealistic simulator, while offering diverse behaviors, is bottlenecked by sample-efficiency, per-step cost of rendering, and a forward pass through a large vision backbone. Self-play in vectorized simulators changes the economics: at millions of rollout steps per second, one can obtain a state distribution with natural diversity in collisions, near-misses, and recoveries that no driving log contains, and a highly reactive policy emerges from a basic driving-quality reward. Our approach exploits this asymmetry. We pretrain a single policy by self-play, distill its rollouts into a flow-matching trajectory teacher that also plans, and train lightweight adapters on a frozen pretrained vision backbone to reproduce the latent space of either teacher through the action KL divergence, a batch-relational low-rank structural loss, and, for the planner, a trajectory-matching loss. Every target traces back to the self-play policy, so alignment never supervises against a logged trajectory: a paired dataset of (image, scene-state) frames suffices, with no need for the curated expert demonstrations that imitation pretraining is built on. From this one self-play teacher we obtain two end-to-end students: a closed-loop policy that outperforms every published imitation-based end-to-end method on the photorealistic 3D Gaussian splatting closed-loop benchmark HUGSim, and a planner that reaches 59.4 EPDMS on NAVSIM navhard, above every published method including DriveZero-Scale (57.1), and 95.5 PDMS on navtest, without human demonstrations.",
+      "published": "2026-10-21T18:31:28Z",
+      "updated": "2026-10-21T18:31:28Z",
+      "arxiv_id": "2610.30319v1",
+      "abs_url": "http://arxiv.org/abs/2610.30319v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.30319v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "数据集/评测",
+        "感知与3D理解"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 5,
+      "anchor_terms": [
+        "imitation learning"
+      ],
+      "matched_terms": [
+        "imitation learning",
+        "reinforcement learning",
+        "simulator"
+      ],
+      "title_zh": "TerraTransfer++: Demonstration-Free End-to-End Planner",
+      "summary_zh": "End-to-end autonomous driving has achieved state-of-the-art performance on benchmarks and real-world deployments. Its standard training recipe, however, is expensive across all existing paradigms: imitation learning requires fleet-scale driving logs whose behavior distribution only thinly covers the safety-critical tail; closed-loop reinforcement learning in a photorealistic simulator, while offering diverse behaviors, is bottlenecked by sample-efficiency, per-step cost of rendering, and a forward pass through a large vision backbone. Self-play in vectorized simulators changes the economics: at millions of rollout steps per second, one can obtain a state distribution with natural diversity in collisions, near-misses, and recoveries that no driving log contains, and a highly reactive policy emerges from a basic driving-quality reward. Our approach exploits this asymmetry. We pretrain a single policy by self-play, distill its rollouts into a flow-matching trajectory teacher that also plans, and train lightweight adapters on a frozen pretrained vision backbone to reproduce the latent space of either teacher through the action KL divergence, a batch-relational low-rank structural loss, and, for the planner, a trajectory-matching loss. Every target traces back to the self-play policy, so alignment never supervises against a logged trajectory: a paired dataset of (image, scene-state) frames suffices, with no need for the curated expert demonstrations that imitation pretraining is built on. From this one self-play teacher we obtain two end-to-end students: a closed-loop policy that outperforms every published imitation-based end-to-end method on the photorealistic 3D Gaussian splatting closed-loop benchmark HUGSim, and a planner that reaches 59.4 EPDMS on NAVSIM navhard, above every published method including DriveZero-Scale (57.1), and 95.5 PDMS on navtest, without human demonstrations.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-10-23T02:30:36.046575+00:00"
       }
     },
     {
@@ -1441,18 +1992,18 @@
         "Marco Hutter",
         "Cesar Cadena"
       ],
-      "summary": "Autonomous mobile robots operating in dense crowds and cluttered sites require $360^\\circ$ perception to react to surrounding hazards. While panoramic LiDAR offers full-surround coverage, learning representations within reinforcement learning (RL) is sample-inefficient under sparse rewards, and existing 3D pretrained point-cloud encoders are too memory-heavy for massively parallel RL simulation. We present RangeNav, a compact (183k parameters) LiDAR range-image encoder pretrained entirely on synthetic data. RangeNav uses anisotropic convolutions and circular padding to handle the extreme aspect ratio and azimuthal seam of range images. We pretrain the network using a navigation-aligned objective combining range reconstruction, semantic segmentation, and bird's-eye-view (BEV) prediction, then freeze it for policy learning. In simulation, adding semantic and BEV supervision increases success rates over a reconstruction-only baseline by an average of 32.03 and 23.73 percentage points (pp) in procedurally generated training and out-of-distribution realistic test environments, respectively. Zero-shot real-world deployments on a Unitree B2-W quadruped demonstrate robust navigation through dense crowds, low-light settings, and construction zones where limited-field-of-view depth policies struggle. Code and models will be open-sourced.",
+      "summary": "Autonomous mobile robots operating in dense crowds and cluttered sites require $360^\\circ$ perception to react to surrounding hazards. While panoramic LiDAR offers full-surround coverage, learning representations within reinforcement learning (RL) is sample-inefficient under sparse rewards, and existing 3D pretrained point-cloud encoders are too memory-heavy for massively parallel RL simulation. We present RangeNav, a compact (183k parameters) LiDAR range-image encoder pretrained entirely on synthetic data. RangeNav uses anisotropic convolutions and circular padding to handle the extreme aspect ratio and azimuthal seam of range images. We pretrain the network using a navigation-aligned objective combining range reconstruction, semantic segmentation, and bird's-eye-view (BEV) prediction, then freeze it for policy learning. In simulation, adding semantic and BEV supervision increases success rates over a reconstruction-only baseline by an average of 32.03 and 23.73 percentage points (pp) in procedurally generated training and out-of-distribution realistic test environments, respectively. Zero-shot real-world deployments on a Unitree B2-W quadruped demonstrate robust navigation through dense crowds, low-light settings, and construction zones where limited-field-of-view depth policies struggle. Code and models will be open-sourced. Project website: https://rangenav.github.io/.",
       "published": "2026-10-21T15:06:08Z",
-      "updated": "2026-10-21T15:06:08Z",
-      "arxiv_id": "2610.29845v1",
-      "abs_url": "http://arxiv.org/abs/2610.29845v1",
-      "pdf_url": "https://arxiv.org/pdf/2610.29845v1",
+      "updated": "2026-10-22T07:24:01Z",
+      "arxiv_id": "2610.29845v2",
+      "abs_url": "http://arxiv.org/abs/2610.29845v2",
+      "pdf_url": "https://arxiv.org/pdf/2610.29845v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
         "cs.LG"
       ],
-      "comment": "9 pages, 6 figures, 5 tables. Submitted to ICRA 2027; under review",
+      "comment": "9 pages, 6 figures, 5 tables. Added project website to abstract and updated author affiliation; research content unchanged",
       "code_url": "",
       "has_code": false,
       "labels": [
@@ -1481,12 +2032,12 @@
         "robot"
       ],
       "title_zh": "RangeNav: Task-Aligned LiDAR Range-Image Pretraining for Robot Navigation",
-      "summary_zh": "Autonomous mobile robots operating in dense crowds and cluttered sites require $360^\\circ$ perception to react to surrounding hazards. While panoramic LiDAR offers full-surround coverage, learning representations within reinforcement learning (RL) is sample-inefficient under sparse rewards, and existing 3D pretrained point-cloud encoders are too memory-heavy for massively parallel RL simulation. We present RangeNav, a compact (183k parameters) LiDAR range-image encoder pretrained entirely on synthetic data. RangeNav uses anisotropic convolutions and circular padding to handle the extreme aspect ratio and azimuthal seam of range images. We pretrain the network using a navigation-aligned objective combining range reconstruction, semantic segmentation, and bird's-eye-view (BEV) prediction, then freeze it for policy learning. In simulation, adding semantic and BEV supervision increases success rates over a reconstruction-only baseline by an average of 32.03 and 23.73 percentage points (pp) in procedurally generated training and out-of-distribution realistic test environments, respectively. Zero-shot real-world deployments on a Unitree B2-W quadruped demonstrate robust navigation through dense crowds, low-light settings, and construction zones where limited-field-of-view depth policies struggle. Code and models will be open-sourced.",
+      "summary_zh": "Autonomous mobile robots operating in dense crowds and cluttered sites require $360^\\circ$ perception to react to surrounding hazards. While panoramic LiDAR offers full-surround coverage, learning representations within reinforcement learning (RL) is sample-inefficient under sparse rewards, and existing 3D pretrained point-cloud encoders are too memory-heavy for massively parallel RL simulation. We present RangeNav, a compact (183k parameters) LiDAR range-image encoder pretrained entirely on synthetic data. RangeNav uses anisotropic convolutions and circular padding to handle the extreme aspect ratio and azimuthal seam of range images. We pretrain the network using a navigation-aligned objective combining range reconstruction, semantic segmentation, and bird's-eye-view (BEV) prediction, then freeze it for policy learning. In simulation, adding semantic and BEV supervision increases success rates over a reconstruction-only baseline by an average of 32.03 and 23.73 percentage points (pp) in procedurally generated training and out-of-distribution realistic test environments, respectively. Zero-shot real-world deployments on a Unitree B2-W quadruped demonstrate robust navigation through dense crowds, low-light settings, and construction zones where limited-field-of-view depth policies struggle. Code and models will be open-sourced. Project website: https://rangenav.github.io/.",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-10-22T02:14:20.658030+00:00"
+        "generated_at": "2026-10-23T02:30:36.046575+00:00"
       }
     },
     {
@@ -1533,14 +2084,15 @@
     {
       "title": "Robot Generalization Beyond Volume: The Diversity Path via Zero-Shot Capabilities",
       "authors": [
-        "Rafael Felix"
+        "Rafael Felix",
+        "Flavia Yanase"
       ],
       "summary": "General-purpose robots must handle tasks, objects and environments they were never trained on, yet zero-shot generalization remains one of the least solved problems in physical AI. In digital AI, zero-shot capability grew with the volume and, above all, the diversity of training data, much of it sourced from the crowd. Robotics instead relies on paid collection by a few well-funded teams, which yields volume without diversity. We formulate zero-shot generalization in physical AI as coverage of the deployment distribution, and show that more samples from the same collectors shrink the unseen region only slowly, while each new contributor can extend it. Building on this and on zero-shot learning, we propose a shared latent space for robot actions that combines multi-modal alignment, generative augmentation, and noisy-label learning. As a scalable source of diverse data, we propose a community of developers building applications on one standard, approachable robot, Origami. We close with a testable hypothesis and an evaluation protocol relating real-robot zero-shot success to the diversity of contributed data.",
       "published": "2026-10-21T14:51:08Z",
-      "updated": "2026-10-21T14:51:08Z",
-      "arxiv_id": "2610.29829v1",
-      "abs_url": "http://arxiv.org/abs/2610.29829v1",
-      "pdf_url": "https://arxiv.org/pdf/2610.29829v1",
+      "updated": "2026-10-22T03:22:58Z",
+      "arxiv_id": "2610.29829v2",
+      "abs_url": "http://arxiv.org/abs/2610.29829v2",
+      "pdf_url": "https://arxiv.org/pdf/2610.29829v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -1571,7 +2123,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-10-22T02:14:20.658030+00:00"
+        "generated_at": "2026-10-23T02:30:36.046575+00:00"
       }
     },
     {
@@ -3272,10 +3824,10 @@
       ],
       "summary": "Vision-language-action (VLA) navigation models translate visual observations and instructions into actions. Navigation success assesses whether an agent reaches the goal. However, reaching the goal successfully does not establish whether the model genuinely follows the instructions or relies on visual cues or navigation history. We introduce NavBind to diagnose instruction-action binding: whether changing the instruction influences the probabilistic distribution of the actions, with the navigation context fixed. We construct 3,252 route-fork contexts by recombining route-aligned instruction segments from R2R-CE and RxR-CE. Each context pairs full instructions that share the description of the route already traveled but specify different branches. Both are evaluated under the same agent state and navigation history. We compare generated local action sequences, the likelihoods of fixed reference action sequences under both instructions, and changes in visual attention and attribution. Across the evaluated models, higher reported navigation success does not imply that the model more faithfully follows the instructions.",
       "published": "2026-10-21T04:50:26Z",
-      "updated": "2026-10-21T04:50:26Z",
-      "arxiv_id": "2610.29203v1",
-      "abs_url": "http://arxiv.org/abs/2610.29203v1",
-      "pdf_url": "https://arxiv.org/pdf/2610.29203v1",
+      "updated": "2026-10-22T03:05:14Z",
+      "arxiv_id": "2610.29203v2",
+      "abs_url": "http://arxiv.org/abs/2610.29203v2",
+      "pdf_url": "https://arxiv.org/pdf/2610.29203v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -3305,7 +3857,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-10-22T02:14:20.658030+00:00"
+        "generated_at": "2026-10-23T02:30:36.046575+00:00"
       }
     },
     {
