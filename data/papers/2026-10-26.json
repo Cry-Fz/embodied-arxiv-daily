@@ -1,6 +1,6 @@
 {
   "date": "2026-10-26",
-  "generated_at": "2026-10-30T03:13:02.957275+00:00",
+  "generated_at": "2026-10-31T02:57:48.376125+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
@@ -2329,23 +2329,22 @@
         "Juan David Hernández",
         "Gualtiero Colombo"
       ],
-      "summary": "Training robotic manipulation policies in simulation is widely adopted due to safety and cost efficiency; however, tasks involving obstacles remain under-performing and often converge slowly under Deep Reinforcement Learning (DRL). To address this challenge, we propose a task decomposition framework for DRL that integrates Transfer Learning (TL) with Reward Redesign (RR) to improve learning efficiency and robustness in obstacle environments. The TL strategy selectively transfers only the first-layer critic parameters across structurally related tasks, since that layer captures general state--action representations while deeper layers encode reward- and obstacle-specific value geometry; RR decomposes tasks into staged sub-objectives to provide denser optimization signals. Experiments on the PyBullet Panda platform show consistent gains in obstacle settings. On Push with obstacle, our method achieves $0.83 \\pm 0.05$, outperforming the strongest baseline (Truncated Quantile Critics (TQC), $0.77 \\pm 0.06$) by approximately $7.8\\%$. On Slide with obstacle, performance reaches $0.95 \\pm 0.02$, exceeding Soft Actor-Critic (SAC) ($0.84 \\pm 0.06$) by about $11\\%$ success rates. In addition to higher final performance, forward transfer reduces convergence time by up to $70\\%$ in obstacle tasks, and RR shortens sparse-reward Pick-and-Place training from roughly $0.75$M to $0.20$M steps ($\\approx73\\%$ reduction). The best policy is deployed on a real Franka Emika FR3 robot as a qualitative feasibility demonstration.",
+      "summary": "Obstacle-aware robotic manipulation can require substantial interaction data when deep reinforcement learning policies are trained from scratch. We study a task decomposition framework combining first-layer critic transfer with staged reward redesign (RR) on a Truncated Quantile Critics (TQC) backbone. Transfer reuses an input representation across tasks, while RR supplies intermediate feedback for Pick-and-Place. Experiments cover Push, Pick-and-Place, and Slide in obstacle-free and single-obstacle PyBullet environments, with three random seeds per setting. On obstacle-aware Push, transfer achieves $0.83\\pm0.05$ success against $0.77\\pm0.06$ for TQC. On obstacle-aware Slide, it achieves $0.95\\pm0.02$ against $0.84\\pm0.06$ for SAC, the strongest baseline in that setting. These are gains of $6$ and $11$ percentage points, respectively. RR reduces the target-training steps needed for obstacle-free Pick-and-Place from roughly $0.75$M to $0.20$M. Transfer benefits depend on the route: obstacle-aware Pick-and-Place shows a lower mean than training from scratch. A selected simulated trajectory is executed open-loop on a Franka Emika FR3 as a feasibility demonstration. The study characterizes when a lightweight combination of established transfer and reward-design components helps learning.",
       "published": "2026-10-26T14:23:40Z",
-      "updated": "2026-10-26T14:23:40Z",
-      "arxiv_id": "2610.35494v1",
-      "abs_url": "http://arxiv.org/abs/2610.35494v1",
-      "pdf_url": "https://arxiv.org/pdf/2610.35494v1",
+      "updated": "2026-10-29T12:40:09Z",
+      "arxiv_id": "2610.35494v2",
+      "abs_url": "http://arxiv.org/abs/2610.35494v2",
+      "pdf_url": "https://arxiv.org/pdf/2610.35494v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
       ],
-      "comment": "Accepted to IEEE MSN 2026. 9 pages",
+      "comment": "Accepted to IEEE MSN 2026. 8 pages",
       "code_url": "",
       "has_code": false,
       "labels": [
         "机器人操作",
         "导航与移动",
-        "世界模型与仿真",
         "强化/模仿学习",
         "机械臂"
       ],
@@ -2366,12 +2365,12 @@
         "robotic"
       ],
       "title_zh": "Enhancing Deep Reinforcement Learning for Robotic Motion Planning via Task Decomposition",
-      "summary_zh": "Training robotic manipulation policies in simulation is widely adopted due to safety and cost efficiency; however, tasks involving obstacles remain under-performing and often converge slowly under Deep Reinforcement Learning (DRL). To address this challenge, we propose a task decomposition framework for DRL that integrates Transfer Learning (TL) with Reward Redesign (RR) to improve learning efficiency and robustness in obstacle environments. The TL strategy selectively transfers only the first-layer critic parameters across structurally related tasks, since that layer captures general state--action representations while deeper layers encode reward- and obstacle-specific value geometry; RR decomposes tasks into staged sub-objectives to provide denser optimization signals. Experiments on the PyBullet Panda platform show consistent gains in obstacle settings. On Push with obstacle, our method achieves $0.83 \\pm 0.05$, outperforming the strongest baseline (Truncated Quantile Critics (TQC), $0.77 \\pm 0.06$) by approximately $7.8\\%$. On Slide with obstacle, performance reaches $0.95 \\pm 0.02$, exceeding Soft Actor-Critic (SAC) ($0.84 \\pm 0.06$) by about $11\\%$ success rates. In addition to higher final performance, forward transfer reduces convergence time by up to $70\\%$ in obstacle tasks, and RR shortens sparse-reward Pick-and-Place training from roughly $0.75$M to $0.20$M steps ($\\approx73\\%$ reduction). The best policy is deployed on a real Franka Emika FR3 robot as a qualitative feasibility demonstration.",
+      "summary_zh": "Obstacle-aware robotic manipulation can require substantial interaction data when deep reinforcement learning policies are trained from scratch. We study a task decomposition framework combining first-layer critic transfer with staged reward redesign (RR) on a Truncated Quantile Critics (TQC) backbone. Transfer reuses an input representation across tasks, while RR supplies intermediate feedback for Pick-and-Place. Experiments cover Push, Pick-and-Place, and Slide in obstacle-free and single-obstacle PyBullet environments, with three random seeds per setting. On obstacle-aware Push, transfer achieves $0.83\\pm0.05$ success against $0.77\\pm0.06$ for TQC. On obstacle-aware Slide, it achieves $0.95\\pm0.02$ against $0.84\\pm0.06$ for SAC, the strongest baseline in that setting. These are gains of $6$ and $11$ percentage points, respectively. RR reduces the target-training steps needed for obstacle-free Pick-and-Place from roughly $0.75$M to $0.20$M. Transfer benefits depend on the route: obstacle-aware Pick-and-Place shows a lower mean than training from scratch. A selected simulated trajectory is executed open-loop on a Franka Emika FR3 as a feasibility demonstration. The study characterizes when a lightweight combination of established transfer and reward-design components helps learning.",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-10-28T02:50:12.043126+00:00"
+        "generated_at": "2026-10-31T02:58:10.971880+00:00"
       }
     },
     {
