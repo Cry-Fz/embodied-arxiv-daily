@@ -1,11 +1,868 @@
 {
   "date": "2026-11-08",
-  "generated_at": "2026-11-09T03:20:01.820708+00:00",
+  "generated_at": "2026-11-10T04:57:59.535228+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202611080000 TO 202611082359]",
-  "total_fetched": 0,
-  "total_matched": 0,
-  "papers": []
+  "total_fetched": 192,
+  "total_matched": 17,
+  "papers": [
+    {
+      "title": "HARP-Bench: Benchmarking Robot Manipulation Around Active Humans",
+      "authors": [
+        "Qinhong Zhou",
+        "Riley Zong",
+        "Chunru Lin",
+        "Diyi Hu",
+        "Shivraj Singh Bhatti",
+        "Hongxin Zhang",
+        "Lin Qiu",
+        "Hanqing Zeng",
+        "Chuang Gan"
+      ],
+      "summary": "Recent robot manipulation benchmarks have enabled systematic evaluation of general-purpose robot policies across diverse objects, scenes, instructions, and embodiments. However, most existing benchmarks still assume that the robot is the only active agent and that task semantics are determined primarily by the instruction and object state. This assumption overlooks a common source of real-world variation: humans actively sharing the workspace. In such settings, humans may reveal an implicit goal, complete part of the task, temporarily change object availability, or constrain safe robot motion while working nearby. We introduce HARP-Bench, a benchmark for evaluating robot manipulation policies in workspaces shared with active humans. HARP-Bench treats human activity as part of the manipulation problem, rather than as background scene variation. It organizes human-present manipulation into four conditions: Cueing, Contribution, Interruption, and Co-presence. These conditions are instantiated through everyday manipulation tasks, including paired human-present variants for controlled comparison with standard manipulation. HARP-Bench also provides a demonstration-generation pipeline for dynamic human-present settings. We evaluate VLA models, imitation-learning methods, and heuristic policies on HARP-Bench. Human-present variations challenge current policies, and higher task success does not consistently improve safety. Quantitative failure analysis identifies manipulation and recovery as the dominant remaining challenges. Training with HARP-Bench demonstrations improves human-present performance in simulation. A real-world study on one task family shows improved performance under human contribution, but not interruption, providing initial evidence of the data's utility and identifying limits of transfer. Code is available at https://github.com/UMass-Embodied-AGI/harp.",
+      "published": "2026-11-08T04:16:15Z",
+      "updated": "2026-11-08T04:16:15Z",
+      "arxiv_id": "2611.11123v1",
+      "abs_url": "http://arxiv.org/abs/2611.11123v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11123v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "comment": "Accepted at CoRL 2026",
+      "code_url": "https://github.com/UMass-Embodied-AGI/harp",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "机器人操作",
+        "VLA/多模态策略",
+        "世界模型与仿真",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 16,
+      "anchor_terms": [
+        "embodied",
+        "manipulation",
+        "robot",
+        "robot manipulation",
+        "vla"
+      ],
+      "matched_terms": [
+        "embodied",
+        "manipulation",
+        "robot",
+        "robot manipulation",
+        "vla",
+        "vla model"
+      ],
+      "title_zh": "HARP-Bench: Benchmarking Robot Manipulation Around Active Humans",
+      "summary_zh": "Recent robot manipulation benchmarks have enabled systematic evaluation of general-purpose robot policies across diverse objects, scenes, instructions, and embodiments. However, most existing benchmarks still assume that the robot is the only active agent and that task semantics are determined primarily by the instruction and object state. This assumption overlooks a common source of real-world variation: humans actively sharing the workspace. In such settings, humans may reveal an implicit goal, complete part of the task, temporarily change object availability, or constrain safe robot motion while working nearby. We introduce HARP-Bench, a benchmark for evaluating robot manipulation policies in workspaces shared with active humans. HARP-Bench treats human activity as part of the manipulation problem, rather than as background scene variation. It organizes human-present manipulation into four conditions: Cueing, Contribution, Interruption, and Co-presence. These conditions are instantiated through everyday manipulation tasks, including paired human-present variants for controlled comparison with standard manipulation. HARP-Bench also provides a demonstration-generation pipeline for dynamic human-present settings. We evaluate VLA models, imitation-learning methods, and heuristic policies on HARP-Bench. Human-present variations challenge current policies, and higher task success does not consistently improve safety. Quantitative failure analysis identifies manipulation and recovery as the dominant remaining challenges. Training with HARP-Bench demonstrations improves human-present performance in simulation. A real-world study on one task family shows improved performance under human contribution, but not interruption, providing initial evidence of the data's utility and identifying limits of transfer. Code is available at https://github.com/UMass-Embodied-AGI/harp.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    },
+    {
+      "title": "Beyond Memory Limits: A Hierarchical Spatio-Temporal Map Representation for Large-Scale 3D Autonomous Exploration",
+      "authors": [
+        "Yizhe Zhang",
+        "Jianping Li",
+        "Yilun Gao",
+        "Liangliang Yin",
+        "Pengfei Wan",
+        "Bisheng Yang"
+      ],
+      "summary": "Autonomous UAV exploration is increasingly used for large-scale surveying and inspection in inaccessible or disaster-affected environments, where onboard memory and computational resources are often severely constrained. Most existing UAV exploration systems maintain globally queryable geometric map representations for motion planning and exploration decision-making, causing memory consumption and spatial-query costs to increase with the explored area. Robot-centric local mapping bounds dense-map memory and computation but discards global task context needed for long-horizon exploration.We present FLAVOR, a hierarchical spatio-temporal framework that confines dense metric geometry to a robot-centric local map while retaining compact global observation and task context. At the observation level, lightweight LiDAR-keyframe visibility records preserve ray-wise evidence for frontier reasoning. At the task level, unresolved frontiers beyond the local-map extent are retained as compact pending tasks associated with odometry anchors. A sparse topological graph connects these anchors through retained routes for future revisits.Upon returning to a task region, FLAVOR reconstructs the frontier and exploration viewpoint from observations, while the topological route is instantiated and validated against the current local map before execution. Dense-map capacity remains fixed as exploration expands, with exploration-dependent memory growth confined to compact observation and task context.FLAVOR achieves 31.98--41.88% shorter exploration time and a 94--99% smaller map memory footprint than the best baseline that completes all three simulated scenes. In real-world deployments, it reduces this footprint by 92.67% in the forest and 62.42% at the construction site relative to an explicit point-cloud ikd-tree while preserving long-term task continuity under constrained onboard resources.",
+      "published": "2026-11-08T16:31:02Z",
+      "updated": "2026-11-08T16:31:02Z",
+      "arxiv_id": "2611.11489v1",
+      "abs_url": "http://arxiv.org/abs/2611.11489v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11489v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "16 pages, 12 figures, preprint submitted to Elsevier",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 6,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "motion planning",
+        "robot",
+        "uav"
+      ],
+      "title_zh": "Beyond Memory Limits: A Hierarchical Spatio-Temporal Map Representation for Large-Scale 3D Autonomous Exploration",
+      "summary_zh": "Autonomous UAV exploration is increasingly used for large-scale surveying and inspection in inaccessible or disaster-affected environments, where onboard memory and computational resources are often severely constrained. Most existing UAV exploration systems maintain globally queryable geometric map representations for motion planning and exploration decision-making, causing memory consumption and spatial-query costs to increase with the explored area. Robot-centric local mapping bounds dense-map memory and computation but discards global task context needed for long-horizon exploration.We present FLAVOR, a hierarchical spatio-temporal framework that confines dense metric geometry to a robot-centric local map while retaining compact global observation and task context. At the observation level, lightweight LiDAR-keyframe visibility records preserve ray-wise evidence for frontier reasoning. At the task level, unresolved frontiers beyond the local-map extent are retained as compact pending tasks associated with odometry anchors. A sparse topological graph connects these anchors through retained routes for future revisits.Upon returning to a task region, FLAVOR reconstructs the frontier and exploration viewpoint from observations, while the topological route is instantiated and validated against the current local map before execution. Dense-map capacity remains fixed as exploration expands, with exploration-dependent memory growth confined to compact observation and task context.FLAVOR achieves 31.98--41.88% shorter exploration time and a 94--99% smaller map memory footprint than the best baseline that completes all three simulated scenes. In real-world deployments, it reduces this footprint by 92.67% in the forest and 62.42% at the construction site relative to an explicit point-cloud ikd-tree while preserving long-term task continuity under constrained onboard resources.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    },
+    {
+      "title": "When Coding Agents Get Arms: Safety Risks Across the Digital-Physical Boundary",
+      "authors": [
+        "Yiming Sun",
+        "Mi Zhang"
+      ],
+      "summary": "Advances in spatial understanding have enabled frontier models to power coding agents that control a real robot arm zero-shot and end-to-end, without task-specific demonstrations or retraining. This brings two new safety challenges. First, the extensive knowledge of frontier models lets these agents perform tasks that earlier VLA and WAM paradigms could not, opening the door to new forms of capability misuse. Second, coding agents can access digital resources such as web pages and emails. Threats in these resources, such as indirect prompt injection, can carry over into the physical world when the agent controls a robot. We therefore introduce ArmedAgent, the first systematic benchmark to evaluate both risks for coding agents performing zero-shot robot control. It covers robustness, malicious use, and indirect injection across 36 tasks in 5 scenarios, evaluated in simulation and validated on a physical robot arm. A distinctive portion of the tasks target harmful behaviors that earlier VLA paradigms could not perform. Testing several frontier models, including GPT-6-Astra, under widely used agent frameworks, we find substantial safety risks in current systems.",
+      "published": "2026-11-08T15:02:47Z",
+      "updated": "2026-11-08T15:02:47Z",
+      "arxiv_id": "2611.11438v1",
+      "abs_url": "http://arxiv.org/abs/2611.11438v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11438v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CR",
+        "cs.MM"
+      ],
+      "comment": "Technical report, work in progress",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "世界模型与仿真",
+        "数据集/评测",
+        "机械臂"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 5,
+      "anchor_terms": [
+        "robot",
+        "vla"
+      ],
+      "matched_terms": [
+        "robot",
+        "robot arm",
+        "vla"
+      ],
+      "title_zh": "When Coding Agents Get Arms: Safety Risks Across the Digital-Physical Boundary",
+      "summary_zh": "Advances in spatial understanding have enabled frontier models to power coding agents that control a real robot arm zero-shot and end-to-end, without task-specific demonstrations or retraining. This brings two new safety challenges. First, the extensive knowledge of frontier models lets these agents perform tasks that earlier VLA and WAM paradigms could not, opening the door to new forms of capability misuse. Second, coding agents can access digital resources such as web pages and emails. Threats in these resources, such as indirect prompt injection, can carry over into the physical world when the agent controls a robot. We therefore introduce ArmedAgent, the first systematic benchmark to evaluate both risks for coding agents performing zero-shot robot control. It covers robustness, malicious use, and indirect injection across 36 tasks in 5 scenarios, evaluated in simulation and validated on a physical robot arm. A distinctive portion of the tasks target harmful behaviors that earlier VLA paradigms could not perform. Testing several frontier models, including GPT-6-Astra, under widely used agent frameworks, we find substantial safety risks in current systems.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    },
+    {
+      "title": "ScrapeBench: Evaluating Legal Compliance of AI Agents in Website Scraping",
+      "authors": [
+        "Joseph Marvin Imperial",
+        "Daniel Slate",
+        "Noam Kolt"
+      ],
+      "summary": "AI agents deployed on the open web are becoming more capable of performing actions that may breach contractual provisions and violate computer security laws. In this paper, we introduce ScrapeBench, the first agentic benchmark for empirically evaluating the legal compliance of AI agents with website scraping policies, namely terms of service (ToS) and robots.txt directives. Across widely used closed-weight and open-weight AI agents, we find that most agents exhibit low compliance rates (< 5%) when instructed to scrape websites in our sample of 1,626 popular websites that explicitly prohibit scraping. In addition, we observe that even where AI agents actively check the applicable ToS and robots.txt, they continue to exhibit low compliance rates. Conversely, in our sample of 269 websites that do not prohibit scraping, we observe that agents sometimes refuse to scrape despite it being lawful, such as Claude Opus 4.6 exhibiting an over-refusal rate of 98.5%. Our human baseline experiments (n = 180 participants) suggest that humans exhibit compliance rates comparable to AI agents but over-refuse at much higher rates.",
+      "published": "2026-11-08T11:19:18Z",
+      "updated": "2026-11-08T11:19:18Z",
+      "arxiv_id": "2611.11306v1",
+      "abs_url": "http://arxiv.org/abs/2611.11306v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11306v1",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "comment": "Accepted to NeurIPS 2026 (Evaluations and Datasets Track)",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "数据集/评测",
+      "score": 2,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "robot"
+      ],
+      "title_zh": "ScrapeBench: Evaluating Legal Compliance of AI Agents in Website Scraping",
+      "summary_zh": "AI agents deployed on the open web are becoming more capable of performing actions that may breach contractual provisions and violate computer security laws. In this paper, we introduce ScrapeBench, the first agentic benchmark for empirically evaluating the legal compliance of AI agents with website scraping policies, namely terms of service (ToS) and robots.txt directives. Across widely used closed-weight and open-weight AI agents, we find that most agents exhibit low compliance rates (< 5%) when instructed to scrape websites in our sample of 1,626 popular websites that explicitly prohibit scraping. In addition, we observe that even where AI agents actively check the applicable ToS and robots.txt, they continue to exhibit low compliance rates. Conversely, in our sample of 269 websites that do not prohibit scraping, we observe that agents sometimes refuse to scrape despite it being lawful, such as Claude Opus 4.6 exhibiting an over-refusal rate of 98.5%. Our human baseline experiments (n = 180 participants) suggest that humans exhibit compliance rates comparable to AI agents but over-refuse at much higher rates.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    },
+    {
+      "title": "TransArt3D: From Two States to Articulated 3D Reconstruction with Video Transition Priors",
+      "authors": [
+        "Chenhao Guan",
+        "Liying Yang",
+        "Xinxing Yu",
+        "Hao Mo",
+        "Tianshun Han",
+        "Renjun Gao",
+        "Yanyan Liang"
+      ],
+      "summary": "Reconstructing interactable articulated assets from a few images is key to robotics and simulation, yet highly underconstrained. Existing optimization-based methods fit an articulated asset under a static 3D prior that scores each state independently, so per-state reconstruction errors leak into the estimated moving part and joint as false motion. Video diffusion models capture how objects move between states, but only implicitly in 2D. To this end, we present TransArt3D, an optimization-based framework that reconstructs an articulated 3D asset from two endpoint images by translating this video transition prior into explicit part structure and joint kinematics. It first lifts frames generated between the endpoints with a transition-coupled 3D consensus that applies the static 3D prior jointly across frames, stabilizing unchanging regions and initializing the parts and joint. A rectified-flow kinematic refinement then lets the video prior supervise a 3D motion field over the whole transition, while part assignment and a shared joint constrain the field throughout optimization, keeping per-state errors out of the articulation. Finally, a motion-aware canonical appearance fusion uses the recovered articulation to map both endpoint images onto one canonical surface, texturing regions that only one state reveals. On PartNet-Mobility, TransArt3D outperforms methods given the same two endpoints in geometry and joint accuracy, and surpasses methods given six observed states in articulated-state geometry, joint localization and appearance.",
+      "published": "2026-11-08T11:03:36Z",
+      "updated": "2026-11-08T11:03:36Z",
+      "arxiv_id": "2611.11304v1",
+      "abs_url": "http://arxiv.org/abs/2611.11304v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11304v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 4,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "TransArt3D: From Two States to Articulated 3D Reconstruction with Video Transition Priors",
+      "summary_zh": "Reconstructing interactable articulated assets from a few images is key to robotics and simulation, yet highly underconstrained. Existing optimization-based methods fit an articulated asset under a static 3D prior that scores each state independently, so per-state reconstruction errors leak into the estimated moving part and joint as false motion. Video diffusion models capture how objects move between states, but only implicitly in 2D. To this end, we present TransArt3D, an optimization-based framework that reconstructs an articulated 3D asset from two endpoint images by translating this video transition prior into explicit part structure and joint kinematics. It first lifts frames generated between the endpoints with a transition-coupled 3D consensus that applies the static 3D prior jointly across frames, stabilizing unchanging regions and initializing the parts and joint. A rectified-flow kinematic refinement then lets the video prior supervise a 3D motion field over the whole transition, while part assignment and a shared joint constrain the field throughout optimization, keeping per-state errors out of the articulation. Finally, a motion-aware canonical appearance fusion uses the recovered articulation to map both endpoint images onto one canonical surface, texturing regions that only one state reveals. On PartNet-Mobility, TransArt3D outperforms methods given the same two endpoints in geometry and joint accuracy, and surpasses methods given six observed states in articulated-state geometry, joint localization and appearance.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    },
+    {
+      "title": "Single-Radar Bilateral 3D Near-Field Imaging for Mobile Robots",
+      "authors": [
+        "Yingqi Wang",
+        "Tingwei Chen",
+        "Zhongqin Wang",
+        "Min Xu"
+      ],
+      "summary": "Mobile robots operating in homes need reliable 3D perception of nearby furniture and surrounding structures, yet recovering this information on both sides of the robot's path with a single forward-mounted millimeter-wave radar remains challenging because of near-field wavefront curvature, viewpoint-dependent target visibility, and limited elevation diversity. This paper presents a motion-assisted framework for reconstructing structures on both sides of a robot's trajectory. Our near-field model relates scene reflectivity to stepped-frequency multiple-input multiple-output (MIMO) observations across frequencies and robot positions using spherical paths from transmitter (Tx) to scatterer to receiver (Rx). Bilateral Tx combining provides wideband directional weighting, while sliding-aperture back-projection coherently focuses the measurements using near-field propagation distances. Top-K power fusion combines local images with different visibility. The reconstruction provides lateral-forward support for multi-layer height extraction, followed by guarded adaptive height refinement using the original MIMO channels. Experiments in controlled, office/study, and corridor environments produce mean lateral-forward localization errors of 4.65, 5.63, and 5.98 cm, respectively, with peak-to-background ratios (PBRs) exceeding 13 dB. The framework recovers bilateral 3D scattering structure from one forward pass using a single radar, without relying on learned representations of the scene.",
+      "published": "2026-11-08T10:42:59Z",
+      "updated": "2026-11-08T10:42:59Z",
+      "arxiv_id": "2611.11296v1",
+      "abs_url": "http://arxiv.org/abs/2611.11296v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11296v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 7,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "mobile robot",
+        "robot"
+      ],
+      "title_zh": "Single-Radar Bilateral 3D Near-Field Imaging for Mobile Robots",
+      "summary_zh": "Mobile robots operating in homes need reliable 3D perception of nearby furniture and surrounding structures, yet recovering this information on both sides of the robot's path with a single forward-mounted millimeter-wave radar remains challenging because of near-field wavefront curvature, viewpoint-dependent target visibility, and limited elevation diversity. This paper presents a motion-assisted framework for reconstructing structures on both sides of a robot's trajectory. Our near-field model relates scene reflectivity to stepped-frequency multiple-input multiple-output (MIMO) observations across frequencies and robot positions using spherical paths from transmitter (Tx) to scatterer to receiver (Rx). Bilateral Tx combining provides wideband directional weighting, while sliding-aperture back-projection coherently focuses the measurements using near-field propagation distances. Top-K power fusion combines local images with different visibility. The reconstruction provides lateral-forward support for multi-layer height extraction, followed by guarded adaptive height refinement using the original MIMO channels. Experiments in controlled, office/study, and corridor environments produce mean lateral-forward localization errors of 4.65, 5.63, and 5.98 cm, respectively, with peak-to-background ratios (PBRs) exceeding 13 dB. The framework recovers bilateral 3D scattering structure from one forward pass using a single radar, without relying on learned representations of the scene.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    },
+    {
+      "title": "DeepSoMo: Deformable Object Motion Estimation under Proprioceptive Partial Observability via Predictive Latent Dynamics",
+      "authors": [
+        "Hanwen Zhao",
+        "Weicheng Dai",
+        "Luoyao Chen",
+        "Chen Feng"
+      ],
+      "summary": "Estimating the motion of deformable bodies in soft robotics from proprioceptive sensing is challenging due to partial observability, as internal observations provide only indirect access to global motion, contact, and shape evolution. In such settings, instantaneous observations are insufficient, and accurate estimation requires temporally consistent latent representations. This paper studies deformable motion estimation under proprioceptive partial observability from a latent dynamics perspective. We argue that a key requirement for long-horizon estimation is latent temporal consistency, where latent states remain predictive of future observations. To this end, we present DeepSoMo, a learning-based framework that enforces predictive structure in latent dynamics through a self-supervised latent prediction constraint. We evaluate the approach in a canonical deformable dynamics setting using high-fidelity finite-element simulation as a controlled source of ground truth. Results demonstrate consistent improvements in trajectory estimation, orientation recovery, shape reconstruction, and contact inference over architecture-matched recurrent baselines.",
+      "published": "2026-11-08T08:59:12Z",
+      "updated": "2026-11-08T08:59:12Z",
+      "arxiv_id": "2611.11242v1",
+      "abs_url": "http://arxiv.org/abs/2611.11242v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11242v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 6,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "DeepSoMo: Deformable Object Motion Estimation under Proprioceptive Partial Observability via Predictive Latent Dynamics",
+      "summary_zh": "Estimating the motion of deformable bodies in soft robotics from proprioceptive sensing is challenging due to partial observability, as internal observations provide only indirect access to global motion, contact, and shape evolution. In such settings, instantaneous observations are insufficient, and accurate estimation requires temporally consistent latent representations. This paper studies deformable motion estimation under proprioceptive partial observability from a latent dynamics perspective. We argue that a key requirement for long-horizon estimation is latent temporal consistency, where latent states remain predictive of future observations. To this end, we present DeepSoMo, a learning-based framework that enforces predictive structure in latent dynamics through a self-supervised latent prediction constraint. We evaluate the approach in a canonical deformable dynamics setting using high-fidelity finite-element simulation as a controlled source of ground truth. Results demonstrate consistent improvements in trajectory estimation, orientation recovery, shape reconstruction, and contact inference over architecture-matched recurrent baselines.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    },
+    {
+      "title": "DexForesight: Grounding Dexterous Policies with Implicit Spatial Foresight",
+      "authors": [
+        "Zhongxi Chen",
+        "Yi Yang",
+        "Xinyi Chen",
+        "Mingzhe Ye",
+        "Yaping Li",
+        "Zhihong Liu",
+        "Congsheng Xu",
+        "Haonan Wang",
+        "Zhijie Deng"
+      ],
+      "summary": "Dexterous manipulation requires rich spatial foresight over both the surrounding scene and the robot hand. Existing world-action models often acquire such predictive knowledge through explicit future prediction. We introduce DexForesight, a framework that learns spatial foresight implicitly by injecting dynamics-aware world representations into the latent space of a dexterous policy. During training, DexForesight learns an action-conditioned spatial world model from offline scene depth, kinematic hand geometry, and demonstration trajectories. The world model predicts 3D hand-point motion and visual feature changes, capturing both articulated hand dynamics and scene changes under demonstrated actions, including the motion of fingers occluded from the cameras. We then freeze the world model and align policy queries with its predictive world queries, transferring the learned spatial dynamics into policy latents and using them to condition action generation. At deployment, only the policy is retained, operating on RGB observations, language, and robot state without depth input or explicit future prediction. On 11 DexJoCo simulation tasks, DexForesight improves the overall success rate of the base policy from 49.4% to 60.5%. On three real-robot dexterous manipulation tasks, DexForesight achieves 58.3% success, compared with 50.0% for the strongest baseline.Project page https://dexforesight.github.io/",
+      "published": "2026-11-08T06:14:36Z",
+      "updated": "2026-11-08T06:14:36Z",
+      "arxiv_id": "2611.11166v1",
+      "abs_url": "http://arxiv.org/abs/2611.11166v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11166v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "13 pages, 4 figures",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "人形与灵巧",
+        "感知与3D理解",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 10,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "world model"
+      ],
+      "matched_terms": [
+        "dexterous",
+        "dexterous manipulation",
+        "manipulation",
+        "robot",
+        "robot hand",
+        "world model"
+      ],
+      "title_zh": "DexForesight: Grounding Dexterous Policies with Implicit Spatial Foresight",
+      "summary_zh": "Dexterous manipulation requires rich spatial foresight over both the surrounding scene and the robot hand. Existing world-action models often acquire such predictive knowledge through explicit future prediction. We introduce DexForesight, a framework that learns spatial foresight implicitly by injecting dynamics-aware world representations into the latent space of a dexterous policy. During training, DexForesight learns an action-conditioned spatial world model from offline scene depth, kinematic hand geometry, and demonstration trajectories. The world model predicts 3D hand-point motion and visual feature changes, capturing both articulated hand dynamics and scene changes under demonstrated actions, including the motion of fingers occluded from the cameras. We then freeze the world model and align policy queries with its predictive world queries, transferring the learned spatial dynamics into policy latents and using them to condition action generation. At deployment, only the policy is retained, operating on RGB observations, language, and robot state without depth input or explicit future prediction. On 11 DexJoCo simulation tasks, DexForesight improves the overall success rate of the base policy from 49.4% to 60.5%. On three real-robot dexterous manipulation tasks, DexForesight achieves 58.3% success, compared with 50.0% for the strongest baseline.Project page https://dexforesight.github.io/",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    },
+    {
+      "title": "Tutorial: Vision-Based Formation Control with Differential-Drive Robots",
+      "authors": [
+        "Christian Marowski",
+        "Byung-Cheol Min"
+      ],
+      "summary": "This tutorial presents a step-by-step introduction to multi-robot formation control using differential- drive robots, an overhead camera, and Python. ArUco markers are used to estimate robot positions and orientations, while desired pairwise displacement vectors define a circular formation. By comparing measured and desired relative positions, the controller computes movement vectors that are converted into differential-drive wheel commands, with basic proximity-sensor-based obstacle avoidance. The tutorial guides readers through hardware and software setup, robot pose estimation, formation geometry, feedback control, system integration, and formation-error evaluation. Motivated by the need to bridge the gap between theoretical understanding and practical implementation in robotics education, we emphasize how mathematical concepts are translated into coordinated behaviors on physical robots. Although the implementation uses a specific robotic platform, the underlying perception and formation-control principles can be adapted to other differential-drive robots and simulation environments. The accompanying open-source GitHub repository provides the Python implementation, setup instructions, and demonstrations to support hands-on learning and further exploration of multi-robot systems.",
+      "published": "2026-11-08T06:11:34Z",
+      "updated": "2026-11-08T06:11:34Z",
+      "arxiv_id": "2611.11164v1",
+      "abs_url": "http://arxiv.org/abs/2611.11164v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11164v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 8,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "open-source",
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "Tutorial: Vision-Based Formation Control with Differential-Drive Robots",
+      "summary_zh": "This tutorial presents a step-by-step introduction to multi-robot formation control using differential- drive robots, an overhead camera, and Python. ArUco markers are used to estimate robot positions and orientations, while desired pairwise displacement vectors define a circular formation. By comparing measured and desired relative positions, the controller computes movement vectors that are converted into differential-drive wheel commands, with basic proximity-sensor-based obstacle avoidance. The tutorial guides readers through hardware and software setup, robot pose estimation, formation geometry, feedback control, system integration, and formation-error evaluation. Motivated by the need to bridge the gap between theoretical understanding and practical implementation in robotics education, we emphasize how mathematical concepts are translated into coordinated behaviors on physical robots. Although the implementation uses a specific robotic platform, the underlying perception and formation-control principles can be adapted to other differential-drive robots and simulation environments. The accompanying open-source GitHub repository provides the Python implementation, setup instructions, and demonstrations to support hands-on learning and further exploration of multi-robot systems.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    },
+    {
+      "title": "MOSU2: Long-range Navigation System with Multi-modal Scene Understanding",
+      "authors": [
+        "Jing Liang",
+        "Zhenyu Hou",
+        "Senthurbavan Kirubaharan",
+        "Md Safwan Mondal",
+        "Ashok Gudivada",
+        "Xuesu Xiao",
+        "Dinesh Manocha"
+      ],
+      "summary": "Robots that travel long distances through public outdoor spaces must do more than avoid obstacles: they must remain on terrain suited to their mobility and decide when to proceed, yield, or detour around pedestrians, cyclists, vehicles, traffic signals, and temporary restrictions. These decisions are difficult because their correctness often depends on how a scene evolves, such as whether an approaching car is slowing or a cyclist will cross the robot's path. Vision-language models (VLMs) can interpret such cues, but they reason over images that lack metric geometry and motion. Supplying this evidence at every step is too slow for real-time navigation, and hand-crafted triggers cannot anticipate the open-ended variety of outdoor situations. We present MOSU2, a long-range navigation system with two-stage trajectory selection, in which first-stage contextual reasoning determines when additional evidence is needed and what to retrieve. Only when an interaction remains unresolved does the first stage trigger the second stage to retrieve geometric and dynamic information and align it with scene context to make navigation decisions. Building on MOSU, MOSU2 follows routes from GPS-based route planning and filters candidate trajectories through multi-modal traversability analysis before selecting a trajectory to move the robot. In real-world experiments spanning stop gestures, construction sites, crosswalks, and roads shared with vehicles, cyclists, and pedestrians, MOSU2 raises mean navigation success from 61.8% to 94.2% and condition-detection accuracy from 72.2% to 91.4% over its single-image predecessor, at about 2.2 times its mean decision latency. Project website: https://jinggm.github.io/mosu2/",
+      "published": "2026-11-08T05:41:39Z",
+      "updated": "2026-11-08T05:41:39Z",
+      "arxiv_id": "2611.11148v1",
+      "abs_url": "http://arxiv.org/abs/2611.11148v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11148v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 6,
+      "anchor_terms": [
+        "navigation",
+        "robot"
+      ],
+      "matched_terms": [
+        "navigation",
+        "robot"
+      ],
+      "title_zh": "MOSU2: Long-range Navigation System with Multi-modal Scene Understanding",
+      "summary_zh": "Robots that travel long distances through public outdoor spaces must do more than avoid obstacles: they must remain on terrain suited to their mobility and decide when to proceed, yield, or detour around pedestrians, cyclists, vehicles, traffic signals, and temporary restrictions. These decisions are difficult because their correctness often depends on how a scene evolves, such as whether an approaching car is slowing or a cyclist will cross the robot's path. Vision-language models (VLMs) can interpret such cues, but they reason over images that lack metric geometry and motion. Supplying this evidence at every step is too slow for real-time navigation, and hand-crafted triggers cannot anticipate the open-ended variety of outdoor situations. We present MOSU2, a long-range navigation system with two-stage trajectory selection, in which first-stage contextual reasoning determines when additional evidence is needed and what to retrieve. Only when an interaction remains unresolved does the first stage trigger the second stage to retrieve geometric and dynamic information and align it with scene context to make navigation decisions. Building on MOSU, MOSU2 follows routes from GPS-based route planning and filters candidate trajectories through multi-modal traversability analysis before selecting a trajectory to move the robot. In real-world experiments spanning stop gestures, construction sites, crosswalks, and roads shared with vehicles, cyclists, and pedestrians, MOSU2 raises mean navigation success from 61.8% to 94.2% and condition-detection accuracy from 72.2% to 91.4% over its single-image predecessor, at about 2.2 times its mean decision latency. Project website: https://jinggm.github.io/mosu2/",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    },
+    {
+      "title": "From Game Generation to Game Playing: Fully Automated Ability Training for Vision-Language-Action Models",
+      "authors": [
+        "Changran Liu",
+        "Qi Wu",
+        "Wenchao Ma",
+        "Sharon X. Huang",
+        "Haomiao Jiang"
+      ],
+      "summary": "Training vision-language-action (VLA) models to follow gameplay instructions across diverse games is limited by the cost of collecting demonstrations. We introduce a framework that automatically generates game environments and expert demonstrations. An LLM-powered agent uses game-building tools to construct executable environments and tasks targeting specified skills. Programmatic experts then use privileged simulator state to generate aligned instructions, rendered observations, and keyboard and mouse actions. We train our game policy, Script2Play, by post-training a 4B vision-language model with behavior cloning on 150.3 hours of synthetic Minecraft and Roblox gameplay, without human gameplay demonstrations or reinforcement learning. Evaluation on multiple public game benchmarks demonstrates that Script2Play follows gameplay instructions effectively and generalizes across game engines, highlighting the effectiveness of targeted synthetic supervision.",
+      "published": "2026-11-08T05:06:33Z",
+      "updated": "2026-11-08T05:06:33Z",
+      "arxiv_id": "2611.11136v1",
+      "abs_url": "http://arxiv.org/abs/2611.11136v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11136v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "数据集/评测"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 8,
+      "anchor_terms": [
+        "vision-language-action",
+        "vla"
+      ],
+      "matched_terms": [
+        "behavior cloning",
+        "reinforcement learning",
+        "simulator",
+        "vision-language-action",
+        "vla"
+      ],
+      "title_zh": "From Game Generation to Game Playing: Fully Automated Ability Training for Vision-Language-Action Models",
+      "summary_zh": "Training vision-language-action (VLA) models to follow gameplay instructions across diverse games is limited by the cost of collecting demonstrations. We introduce a framework that automatically generates game environments and expert demonstrations. An LLM-powered agent uses game-building tools to construct executable environments and tasks targeting specified skills. Programmatic experts then use privileged simulator state to generate aligned instructions, rendered observations, and keyboard and mouse actions. We train our game policy, Script2Play, by post-training a 4B vision-language model with behavior cloning on 150.3 hours of synthetic Minecraft and Roblox gameplay, without human gameplay demonstrations or reinforcement learning. Evaluation on multiple public game benchmarks demonstrates that Script2Play follows gameplay instructions effectively and generalizes across game engines, highlighting the effectiveness of targeted synthetic supervision.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    },
+    {
+      "title": "From Festival Video to the Stage: A Sim-to-Real Ladder for Long-Horizon Expressive Whole-Body Dance on a Commercial Humanoid",
+      "authors": [
+        "Hesham Shehata"
+      ],
+      "summary": "We present a pipeline for transferring Awa Odori, a traditional Japanese festival dance, from monocular video to a commercial Unitree G1 EDU humanoid. The pipeline combines human mesh recovery, kinematic retargeting, reinforcement learning for motion tracking in simulation, and onboard deployment via ONNX. Training ran on a single RTX 5070 GPU. An eleven-version deployment ladder evaluated on hardware examines three interventions. We detect and repair silent corruption of deployment artifacts, model state-estimator drift during training, and edit the reference motion to support stable execution and a controlled ending. The final policies achieved three consecutive rope-free completions of a 43-second routine, a 46-second performance with automatic handoff, and a continuous 9.7-minute rope-free performance composed from the captured motion. In a live handover, a single remote request let the robot start from and return to the manufacturer's walking controller on stage, with a measured torque-free window of 45-140 ms. We report the training dynamics and hardware outcomes and discuss failure boundaries involving compliant flooring and occlusion in monocular capture.",
+      "published": "2026-11-08T04:30:08Z",
+      "updated": "2026-11-08T04:30:08Z",
+      "arxiv_id": "2611.11127v1",
+      "abs_url": "http://arxiv.org/abs/2611.11127v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11127v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "19 pages, 12 figures. Four supplementary videos are linked in the manuscript",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "人形与灵巧",
+        "双足机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 12,
+      "anchor_terms": [
+        "humanoid",
+        "reinforcement learning",
+        "robot",
+        "sim-to-real"
+      ],
+      "matched_terms": [
+        "humanoid",
+        "reinforcement learning",
+        "robot",
+        "sim-to-real"
+      ],
+      "title_zh": "From Festival Video to the Stage: A Sim-to-Real Ladder for Long-Horizon Expressive Whole-Body Dance on a Commercial Humanoid",
+      "summary_zh": "We present a pipeline for transferring Awa Odori, a traditional Japanese festival dance, from monocular video to a commercial Unitree G1 EDU humanoid. The pipeline combines human mesh recovery, kinematic retargeting, reinforcement learning for motion tracking in simulation, and onboard deployment via ONNX. Training ran on a single RTX 5070 GPU. An eleven-version deployment ladder evaluated on hardware examines three interventions. We detect and repair silent corruption of deployment artifacts, model state-estimator drift during training, and edit the reference motion to support stable execution and a controlled ending. The final policies achieved three consecutive rope-free completions of a 43-second routine, a 46-second performance with automatic handoff, and a continuous 9.7-minute rope-free performance composed from the captured motion. In a live handover, a single remote request let the robot start from and return to the manufacturer's walking controller on stage, with a measured torque-free window of 45-140 ms. We report the training dynamics and hardware outcomes and discuss failure boundaries involving compliant flooring and occlusion in monocular capture.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    },
+    {
+      "title": "Efficient VLA Inference via Retrieval-Based Speculation and Hardware Acceleration",
+      "authors": [
+        "Zhengyang Cheng",
+        "He Zhu",
+        "Zeyu Guo",
+        "Zihan Liu",
+        "Anbang Wu",
+        "Yiming Gan",
+        "Jingwen Leng",
+        "Yu Feng",
+        "Minyi Guo"
+      ],
+      "summary": "Vision-language-action (VLA) models enable robots to understand and execute complex instructions, but their autoregressive (AR) action generation introduces significant latency on resource-constrained robotic platforms. Speculative decoding can accelerate AR-based inference by parallelizing action generation and verification; however, existing approaches rely on costly draft models, which are inefficient on edge platforms. In this paper, we propose Zora, a hardware-software co-design framework for accelerating AR-based VLA inference. Specifically, Zora introduces a lightweight retrieval-augmented generation (RAG)-based draft model that exploits robotic dynamics without additional neural draft models. We further reduce batch verification overhead through a kinematics-guided action-acceptance strategy and a KV-cache-sharing attention mechanism. To address the retrieval overhead introduced by RAG-based drafting, we co-design dedicated hardware support, Zora core, to address the memory irregularity in RAG-based drafting. We evaluate Zora on four VLA models with the LIBERO benchmark. Zora retains comparable accuracy while achieving up to 3.4$\\times$ speedup with software-only optimization and up to 7.6$\\times$ speedup with hardware support over GPUs.",
+      "published": "2026-11-08T03:28:09Z",
+      "updated": "2026-11-08T03:28:09Z",
+      "arxiv_id": "2611.11098v1",
+      "abs_url": "http://arxiv.org/abs/2611.11098v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11098v1",
+      "primary_category": "cs.AR",
+      "categories": [
+        "cs.AR",
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 14,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "vision-language-action",
+        "vla"
+      ],
+      "matched_terms": [
+        "libero",
+        "robot",
+        "robotic",
+        "vision-language-action",
+        "vla",
+        "vla model"
+      ],
+      "title_zh": "Efficient VLA Inference via Retrieval-Based Speculation and Hardware Acceleration",
+      "summary_zh": "Vision-language-action (VLA) models enable robots to understand and execute complex instructions, but their autoregressive (AR) action generation introduces significant latency on resource-constrained robotic platforms. Speculative decoding can accelerate AR-based inference by parallelizing action generation and verification; however, existing approaches rely on costly draft models, which are inefficient on edge platforms. In this paper, we propose Zora, a hardware-software co-design framework for accelerating AR-based VLA inference. Specifically, Zora introduces a lightweight retrieval-augmented generation (RAG)-based draft model that exploits robotic dynamics without additional neural draft models. We further reduce batch verification overhead through a kinematics-guided action-acceptance strategy and a KV-cache-sharing attention mechanism. To address the retrieval overhead introduced by RAG-based drafting, we co-design dedicated hardware support, Zora core, to address the memory irregularity in RAG-based drafting. We evaluate Zora on four VLA models with the LIBERO benchmark. Zora retains comparable accuracy while achieving up to 3.4$\\times$ speedup with software-only optimization and up to 7.6$\\times$ speedup with hardware support over GPUs.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    },
+    {
+      "title": "Large-Scale Hierarchical Decision-Making in Robot Control via ADMM",
+      "authors": [
+        "Kai Pfeiffer",
+        "Jia Wang",
+        "Gordon Owusu Boateng",
+        "Yuquan Wang",
+        "Vincent Bonnet",
+        "Abderrahmane Kheddar"
+      ],
+      "summary": "Sparse hierarchical nonlinear programming (SH-NLP) based on the $\\ell_0$-norm provides a powerful framework for integrated, efficient hierarchical decision-making in robot kinematic control, for example in the presence of a large set of possible end-effector candidate locations. While Sequential Sparse Hierarchical Quadratic Programming (S-SHQP) with interior-point method based SHQP sub-problem solvers exploit the hierarchical, sparse structure of such problems, they are less amenable to effective warm-starting between subsequent, coherent control steps. In this work, we formulate an Alternating Direction Method of Multipliers (ADMM) to efficiently solve related SHQP sub-problems. We introduce efficient substitutions for auxiliary variables representing $\\ell_0$-norm surrogates. The solver efficiently handles separable decision functions by evaluating linear algebra expressions in the appropriate order. Results in large-scale kinematic and dynamic control show reduced computation times of up to 23.5% compared with a structure-exploiting interior-point method in low- to moderate-accuracy regimes. Furthermore, hierarchical decision-making is extended to whole-body dynamic control for humanoid walking, where the need for high-accuracy solutions is highlighted.",
+      "published": "2026-11-08T03:11:55Z",
+      "updated": "2026-11-08T03:11:55Z",
+      "arxiv_id": "2611.11090v1",
+      "abs_url": "http://arxiv.org/abs/2611.11090v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11090v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "math.OC"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "人形与灵巧",
+        "双足机器人",
+        "机械臂"
+      ],
+      "topic": "人形与灵巧",
+      "score": 7,
+      "anchor_terms": [
+        "humanoid",
+        "robot"
+      ],
+      "matched_terms": [
+        "end-effector",
+        "humanoid",
+        "robot"
+      ],
+      "title_zh": "Large-Scale Hierarchical Decision-Making in Robot Control via ADMM",
+      "summary_zh": "Sparse hierarchical nonlinear programming (SH-NLP) based on the $\\ell_0$-norm provides a powerful framework for integrated, efficient hierarchical decision-making in robot kinematic control, for example in the presence of a large set of possible end-effector candidate locations. While Sequential Sparse Hierarchical Quadratic Programming (S-SHQP) with interior-point method based SHQP sub-problem solvers exploit the hierarchical, sparse structure of such problems, they are less amenable to effective warm-starting between subsequent, coherent control steps. In this work, we formulate an Alternating Direction Method of Multipliers (ADMM) to efficiently solve related SHQP sub-problems. We introduce efficient substitutions for auxiliary variables representing $\\ell_0$-norm surrogates. The solver efficiently handles separable decision functions by evaluating linear algebra expressions in the appropriate order. Results in large-scale kinematic and dynamic control show reduced computation times of up to 23.5% compared with a structure-exploiting interior-point method in low- to moderate-accuracy regimes. Furthermore, hierarchical decision-making is extended to whole-body dynamic control for humanoid walking, where the need for high-accuracy solutions is highlighted.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    },
+    {
+      "title": "Control-Aware Command Generation for Asynchronous Control and Action Inference with Vision-Based Policies towards Fast Execution",
+      "authors": [
+        "Takayuki Osa",
+        "Kazuki Ota"
+      ],
+      "summary": "Vision-based control policies, including vision-language-action models, have enabled robots to perform increasingly complex tasks. However, their execution speed is often limited by the high computational cost of action inference. In this work, we investigate what can be achieved at the control level without modifying the underlying policy learning process. We introduce an asynchronous inference and control framework that enables fast task execution while maintaining smooth and stable robot motions. By formulating the generation of continuous target positions from discontinuous model predictions as a tracking control problem, our method makes asynchronous inference practical for real robots. We further accelerate execution through adaptive action skipping based on the variance of predicted positions. Experiments with Action Chunking Transformer and OpenVLA-OFT on a bimanual robot demonstrate substantial speedups while preserving high task success rates.",
+      "published": "2026-11-08T03:09:07Z",
+      "updated": "2026-11-08T03:09:07Z",
+      "arxiv_id": "2611.11089v1",
+      "abs_url": "http://arxiv.org/abs/2611.11089v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11089v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "8th Robot Learning Workshop: Is Physical AI Going Zero-Shot? at NeurIPS 2026",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "VLA/多模态策略",
+        "强化/模仿学习",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 18,
+      "anchor_terms": [
+        "openvla",
+        "robot",
+        "robot learning",
+        "vision-language-action"
+      ],
+      "matched_terms": [
+        "action chunking",
+        "bimanual",
+        "openvla",
+        "policy learning",
+        "robot",
+        "robot learning",
+        "vision-language-action"
+      ],
+      "title_zh": "Control-Aware Command Generation for Asynchronous Control and Action Inference with Vision-Based Policies towards Fast Execution",
+      "summary_zh": "Vision-based control policies, including vision-language-action models, have enabled robots to perform increasingly complex tasks. However, their execution speed is often limited by the high computational cost of action inference. In this work, we investigate what can be achieved at the control level without modifying the underlying policy learning process. We introduce an asynchronous inference and control framework that enables fast task execution while maintaining smooth and stable robot motions. By formulating the generation of continuous target positions from discontinuous model predictions as a tracking control problem, our method makes asynchronous inference practical for real robots. We further accelerate execution through adaptive action skipping based on the variance of predicted positions. Experiments with Action Chunking Transformer and OpenVLA-OFT on a bimanual robot demonstrate substantial speedups while preserving high task success rates.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    },
+    {
+      "title": "SoftPAT3D: Physics-Augmented Text-to-3D Scene Generation with Deformables",
+      "authors": [
+        "Lei Shu",
+        "Alberta Longhini",
+        "Leonidas Guibas",
+        "Gordon Wetzstein",
+        "Jeannette Bohg"
+      ],
+      "summary": "We present SoftPAT3D, a physics-augmented framework for text-to-3D scene generation in which deformable objects, such as cloth, stuffed toys and ropes, are generated as physically valid, simulation-ready bodies and placed in intersection-free contact with the furniture that supports them, with one another and with themselves. Existing physics-augmented pipelines simulate rigid bodies only and cannot accommodate a generated deformable object, which text-to-3D generation returns as a geometrically invalid mesh, sometimes self-intersecting, that has no rest shape, no material model and no admissible initial state. These are the inputs a deformable simulation requires, and we construct each from information already in the pipeline. The rest shape comes from how the object is manufactured rather than from the generated physically inconsistent deformed configuration, and a material library assigns each deformable object its initial elastic parameters, which can then be optimized. The occluded support is regenerated and converted into a watertight collision mesh, each object is released from an optimizable placement above the supporting part that the prompt specifies, and the complete scene is driven to static equilibrium under one unified contact model, with completion verified by geometric checks and a vision-language model. When a scene fails the prompt, a grid search over placements corrects it, and the adjoint of a differentiable simulation of the same contact energy reaches the targets the grid does not, places several bodies jointly and recovers and optimizes material parameters. Multi-body scenes equilibrate in a single simulation, and the pipeline also runs from the text prompt alone. On all sixty-five prompts, SoftPAT3D produces no undesired interpenetration of any kind, whereas every other system does, and its scenes directly support scene editing and robotic manipulation.",
+      "published": "2026-11-08T02:55:57Z",
+      "updated": "2026-11-08T02:55:57Z",
+      "arxiv_id": "2611.11087v1",
+      "abs_url": "http://arxiv.org/abs/2611.11087v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11087v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.GR",
+        "cs.RO"
+      ],
+      "comment": "33 pages, 13 figures",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 6,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "SoftPAT3D: Physics-Augmented Text-to-3D Scene Generation with Deformables",
+      "summary_zh": "We present SoftPAT3D, a physics-augmented framework for text-to-3D scene generation in which deformable objects, such as cloth, stuffed toys and ropes, are generated as physically valid, simulation-ready bodies and placed in intersection-free contact with the furniture that supports them, with one another and with themselves. Existing physics-augmented pipelines simulate rigid bodies only and cannot accommodate a generated deformable object, which text-to-3D generation returns as a geometrically invalid mesh, sometimes self-intersecting, that has no rest shape, no material model and no admissible initial state. These are the inputs a deformable simulation requires, and we construct each from information already in the pipeline. The rest shape comes from how the object is manufactured rather than from the generated physically inconsistent deformed configuration, and a material library assigns each deformable object its initial elastic parameters, which can then be optimized. The occluded support is regenerated and converted into a watertight collision mesh, each object is released from an optimizable placement above the supporting part that the prompt specifies, and the complete scene is driven to static equilibrium under one unified contact model, with completion verified by geometric checks and a vision-language model. When a scene fails the prompt, a grid search over placements corrects it, and the adjoint of a differentiable simulation of the same contact energy reaches the targets the grid does not, places several bodies jointly and recovers and optimizes material parameters. Multi-body scenes equilibrate in a single simulation, and the pipeline also runs from the text prompt alone. On all sixty-five prompts, SoftPAT3D produces no undesired interpenetration of any kind, whereas every other system does, and its scenes directly support scene editing and robotic manipulation.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    },
+    {
+      "title": "ObjectWorld: Scaling Object-Centric World Models with A Large-Scale 3D Full-Object Flow Dataset",
+      "authors": [
+        "Haonan Chen",
+        "Sicheng Isabella Lu",
+        "Haitian Li",
+        "Jiajin Wu",
+        "Hexiang Wei",
+        "Jiawei Zhang",
+        "Xin Fei",
+        "Yiwen Hou",
+        "Chenrui Tie",
+        "Chongkai Gao",
+        "Sheng Wang",
+        "Lin Shao"
+      ],
+      "summary": "Generative world modeling from large-scale visual data offers a promising path toward scalable robot manipulation. This calls for an intermediate representation that can be supervised at scale and remains actionable for downstream control. We propose 3D full-object flow, an object-centric motion representation that assigns dense 3D trajectories to points across the complete surface of a target object, including its occluded regions. By extending visible-surface object flow to the full object geometry, this representation makes complete object motion explicit and applies uniformly to both rigid and deformable objects. To realize the potential of this representation at scale, we introduce a 1210-hour full-object flow dataset that addresses the scarcity of large-scale supervision for complete 3D object motion. The dataset integrates diverse real-world videos and physical simulations, with a scalable annotation pipeline for recovering full-object motion from real-world observations and quality metrics for systematically assessing annotation quality. We then train a world model that takes an image and a task description as input and predicts dense full-object flow over the reconstructed object geometry. Experiments show reliable annotation quality, data-scalable flow prediction, and effective downstream manipulation across novel scenes and robot embodiments. Project website with additional results and videos: https://nus-lins-lab.github.io/ObjectWorld/.",
+      "published": "2026-11-08T02:55:15Z",
+      "updated": "2026-11-08T02:55:15Z",
+      "arxiv_id": "2611.11085v1",
+      "abs_url": "http://arxiv.org/abs/2611.11085v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11085v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 12,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robot manipulation",
+        "world model"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "object-centric",
+        "robot",
+        "robot manipulation",
+        "world model"
+      ],
+      "title_zh": "ObjectWorld: Scaling Object-Centric World Models with A Large-Scale 3D Full-Object Flow Dataset",
+      "summary_zh": "Generative world modeling from large-scale visual data offers a promising path toward scalable robot manipulation. This calls for an intermediate representation that can be supervised at scale and remains actionable for downstream control. We propose 3D full-object flow, an object-centric motion representation that assigns dense 3D trajectories to points across the complete surface of a target object, including its occluded regions. By extending visible-surface object flow to the full object geometry, this representation makes complete object motion explicit and applies uniformly to both rigid and deformable objects. To realize the potential of this representation at scale, we introduce a 1210-hour full-object flow dataset that addresses the scarcity of large-scale supervision for complete 3D object motion. The dataset integrates diverse real-world videos and physical simulations, with a scalable annotation pipeline for recovering full-object motion from real-world observations and quality metrics for systematically assessing annotation quality. We then train a world model that takes an image and a task description as input and predicts dense full-object flow over the reconstructed object geometry. Experiments show reliable annotation quality, data-scalable flow prediction, and effective downstream manipulation across novel scenes and robot embodiments. Project website with additional results and videos: https://nus-lins-lab.github.io/ObjectWorld/.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    }
+  ]
 }
