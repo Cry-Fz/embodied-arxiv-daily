@@ -1,13 +1,108 @@
 {
   "date": "2026-11-08",
-  "generated_at": "2026-11-10T04:57:59.535228+00:00",
+  "generated_at": "2026-11-11T03:27:48.188357+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202611080000 TO 202611082359]",
-  "total_fetched": 192,
-  "total_matched": 17,
+  "total_fetched": 312,
+  "total_matched": 37,
   "papers": [
+    {
+      "title": "ScanDreamer: A Map-Grounded World Model for Quadrotor Navigation",
+      "authors": [
+        "Yunyi Gao",
+        "Yixing Shi",
+        "Yize Liu",
+        "Hai-Duong Tran",
+        "Nhat-Hoang P. Nguyen",
+        "Shuai Wang",
+        "Yi Deng",
+        "Shengming Liu",
+        "Sim Kuan Goh",
+        "Duc-Thinh Pham",
+        "Sameer Alam"
+      ],
+      "summary": "Quadrotors inspecting buildings and tunnels must navigate unknown clutter with a forward-facing depth camera whose limited field of view constrains scene understanding and collision-avoiding navigation. Recent world-model agents learn navigation through imagined experience (e.g., AirDreamer), but remain data-intensive and often lack explicit geometric memory and awareness of what the camera can observe. We propose ScanDreamer, a map-grounded world model that constructs an online 2D scan-memory map from depth images and vehicle pose. Our world model, actor, and critic are conditioned on this map, which also defines a geodesic progress reward. Moreover, a forward-cone penalty discourages horizontal motion outside the camera's viewing direction. During imagination, ScanDreamer propagates the quadrotor pose over a frozen map and derives progress and wall-contact signals from the mapped geometry. We train ScanDreamer for 0.8 million environment steps (5.5 h on one GPU) and evaluate it in NVIDIA Isaac Sim over 1560 episodes spanning unseen layouts and parameter ranges. Across three seeds (mean $\\pm$ SD), ScanDreamer achieves 96.3 $\\pm$ 0.3% success with 3.6 $\\pm$ 0.3% collision, compared with 59.6 $\\pm$ 3.0% success and 28.8 $\\pm$ 2.8% collision for AirDreamer at the same online-interaction budget. Removing the forward-cone penalty increases collisions to 9.9 $\\pm$ 3.1%. These results show that combining explicit map memory, map-grounded imagination, and perception-aware motion substantially improves navigation performance and data efficiency. The source code is available at https://github.com/WANGSHUAIzzzz/ScanDreamer.",
+      "published": "2026-11-08T20:33:43Z",
+      "updated": "2026-11-08T20:33:43Z",
+      "arxiv_id": "2611.11605v1",
+      "abs_url": "http://arxiv.org/abs/2611.11605v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11605v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "8 pages, 6 figures, 3 tables. Submitted to AICAP 2027; decision pending",
+      "code_url": "https://github.com/WANGSHUAIzzzz/ScanDreamer",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "导航与移动",
+        "世界模型与仿真",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 7,
+      "anchor_terms": [
+        "navigation",
+        "world model"
+      ],
+      "matched_terms": [
+        "isaac",
+        "navigation",
+        "world model"
+      ],
+      "title_zh": "ScanDreamer: A Map-Grounded World Model for Quadrotor Navigation",
+      "summary_zh": "Quadrotors inspecting buildings and tunnels must navigate unknown clutter with a forward-facing depth camera whose limited field of view constrains scene understanding and collision-avoiding navigation. Recent world-model agents learn navigation through imagined experience (e.g., AirDreamer), but remain data-intensive and often lack explicit geometric memory and awareness of what the camera can observe. We propose ScanDreamer, a map-grounded world model that constructs an online 2D scan-memory map from depth images and vehicle pose. Our world model, actor, and critic are conditioned on this map, which also defines a geodesic progress reward. Moreover, a forward-cone penalty discourages horizontal motion outside the camera's viewing direction. During imagination, ScanDreamer propagates the quadrotor pose over a frozen map and derives progress and wall-contact signals from the mapped geometry. We train ScanDreamer for 0.8 million environment steps (5.5 h on one GPU) and evaluate it in NVIDIA Isaac Sim over 1560 episodes spanning unseen layouts and parameter ranges. Across three seeds (mean $\\pm$ SD), ScanDreamer achieves 96.3 $\\pm$ 0.3% success with 3.6 $\\pm$ 0.3% collision, compared with 59.6 $\\pm$ 3.0% success and 28.8 $\\pm$ 2.8% collision for AirDreamer at the same online-interaction budget. Removing the forward-cone penalty increases collisions to 9.9 $\\pm$ 3.1%. These results show that combining explicit map memory, map-grounded imagination, and perception-aware motion substantially improves navigation performance and data efficiency. The source code is available at https://github.com/WANGSHUAIzzzz/ScanDreamer.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
+      "title": "Kinora: A Versioned Workflow for Text-to-Motion Generation, Robot Retargeting, and Interactive Validation",
+      "authors": [
+        "Fangcheng Jin"
+      ],
+      "summary": "Motion generation tools produce candidate trajectories, but interactive robot authoring also requires recoverable execution, traceable edits, explicit geometry, and model-specific validation. We present Kinora, a system that connects text-to-motion generation, a motion library, local agent tools, robot retargeting, and trajectory refinement through versioned artifacts. The current release uses an independently specified 52-joint authoring rig and procedural skeleton previews, separating the distributed human geometry from externally installed generation models and robot assets. Human-motion edits preserve frames outside a selected interval, while robot edits create immutable candidates whose reports govern acceptance and export. We evaluate server 0.5.1 and Gadget 0.15.2 with 156 core regression test executions, 49 Gadget executions, four CUDA generation/editing cases, a 30-frame G1 retargeting check, and a 3,600-frame synthetic G1 fixture paired with a suspended negative control. All four CUDA cases passed their numerical gates; the turning splice nevertheless retained a 14.3 cm support-foot drift proxy warning. The G1 positive fixture completed bounded simulation replay, whereas the suspended control was quarantined before replay. These results support selected integration and preservation contracts. They do not establish semantic-quality improvements, population-level feasibility, or hardware safety.",
+      "published": "2026-11-08T20:30:38Z",
+      "updated": "2026-11-08T20:30:38Z",
+      "arxiv_id": "2611.11601v1",
+      "abs_url": "http://arxiv.org/abs/2611.11601v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11601v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "10 pages, 1 figure, 3 tables. Technical report on Kinora server 0.5.1 and Gadget 0.15.2. Code and release artifacts: https://github.com/PoirotJin/kinora",
+      "code_url": "https://github.com/PoirotJin/kinora",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "世界模型与仿真",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 5,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "robot"
+      ],
+      "title_zh": "Kinora: A Versioned Workflow for Text-to-Motion Generation, Robot Retargeting, and Interactive Validation",
+      "summary_zh": "Motion generation tools produce candidate trajectories, but interactive robot authoring also requires recoverable execution, traceable edits, explicit geometry, and model-specific validation. We present Kinora, a system that connects text-to-motion generation, a motion library, local agent tools, robot retargeting, and trajectory refinement through versioned artifacts. The current release uses an independently specified 52-joint authoring rig and procedural skeleton previews, separating the distributed human geometry from externally installed generation models and robot assets. Human-motion edits preserve frames outside a selected interval, while robot edits create immutable candidates whose reports govern acceptance and export. We evaluate server 0.5.1 and Gadget 0.15.2 with 156 core regression test executions, 49 Gadget executions, four CUDA generation/editing cases, a 30-frame G1 retargeting check, and a 3,600-frame synthetic G1 fixture paired with a suspended negative control. All four CUDA cases passed their numerical gates; the turning splice nevertheless retained a 14.3 cm support-foot drift proxy warning. The G1 positive fixture completed bounded simulation replay, whereas the suspended control was quarantined before replay. These results support selected integration and preservation contracts. They do not establish semantic-quality improvements, population-level feasibility, or hardware safety.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
     {
       "title": "HARP-Bench: Benchmarking Robot Manipulation Around Active Humans",
       "authors": [
@@ -70,6 +165,794 @@
       }
     },
     {
+      "title": "Compute Regeneration through Re-Productization: Reorganizing Retired Edge AI Silicon into a Delivered Multilingual Service Robot",
+      "authors": [
+        "Hongyu Luo",
+        "Sun Tie",
+        "John Wang"
+      ],
+      "summary": "Useful edge hardware can lose product support while retaining substantial computation. We treat this as systems design: compute regeneration here means re-productization, retaining the compute module while redesigning the surrounding product organization. Our case is GEdgeBot, a multilingual service robot built around a retired 32 GB Jetson AGX Xavier. A source-grounded inventory shows the box alone supplies inference, while the combined system exposes five on-device AI services, a seven-language speech chain, three sensing domains, and one deterministic seven-byte control boundary. AI and orchestration stay on the Xavier; finite motor-pulse generation on an STM32F407. Audits cover the six-mode control state machine, readiness barriers and sound orientation. Historical single-prototype measurements report 1,782 MB GPU memory with YOLO, Whisper-small, and NLLB-200 resident, a direct-control p99 deviation rising from 0.24 to 49.93 ms under concurrent AI load, and six of six trigger-to-follow demonstrations at 4.35 s mean latency, with conversational voice unavailable. A November campaign restores an isolated inference stack, re-measures AI workloads, and repeats control-frame runs. Driving two execution organisations with the same 6,000 measured 50 ms frame intervals shows the finite-pulse boundary removes host jitter from the pulse train but not the command start phase; its stopping bound is host-enforced, while the MCU 16-bit pulse field is unclamped. A six-check static audit exposes a host--MCU queue mismatch, and a 14-scenario replay executes the audited main() dispatcher across six modes with zero physical device opens and 54 contract-checked frames. Results support an existence claim and a reproducible architectural hypothesis, not fleet-level reliability. The 208 direct-control ratio remains unreplicated; MCU waveform capture and on-site fault injection remain open.",
+      "published": "2026-11-08T23:40:37Z",
+      "updated": "2026-11-08T23:40:37Z",
+      "arxiv_id": "2611.11698v1",
+      "abs_url": "http://arxiv.org/abs/2611.11698v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11698v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AR"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 5,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "robot"
+      ],
+      "title_zh": "Compute Regeneration through Re-Productization: Reorganizing Retired Edge AI Silicon into a Delivered Multilingual Service Robot",
+      "summary_zh": "Useful edge hardware can lose product support while retaining substantial computation. We treat this as systems design: compute regeneration here means re-productization, retaining the compute module while redesigning the surrounding product organization. Our case is GEdgeBot, a multilingual service robot built around a retired 32 GB Jetson AGX Xavier. A source-grounded inventory shows the box alone supplies inference, while the combined system exposes five on-device AI services, a seven-language speech chain, three sensing domains, and one deterministic seven-byte control boundary. AI and orchestration stay on the Xavier; finite motor-pulse generation on an STM32F407. Audits cover the six-mode control state machine, readiness barriers and sound orientation. Historical single-prototype measurements report 1,782 MB GPU memory with YOLO, Whisper-small, and NLLB-200 resident, a direct-control p99 deviation rising from 0.24 to 49.93 ms under concurrent AI load, and six of six trigger-to-follow demonstrations at 4.35 s mean latency, with conversational voice unavailable. A November campaign restores an isolated inference stack, re-measures AI workloads, and repeats control-frame runs. Driving two execution organisations with the same 6,000 measured 50 ms frame intervals shows the finite-pulse boundary removes host jitter from the pulse train but not the command start phase; its stopping bound is host-enforced, while the MCU 16-bit pulse field is unclamped. A six-check static audit exposes a host--MCU queue mismatch, and a 14-scenario replay executes the audited main() dispatcher across six modes with zero physical device opens and 54 contract-checked frames. Results support an existence claim and a reproducible architectural hypothesis, not fleet-level reliability. The 208 direct-control ratio remains unreplicated; MCU waveform capture and on-site fault injection remain open.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
+      "title": "A Physical Testbed for Self-Driving Laboratories: Comparing Bayesian and Agentic Optimization in a Minimal Closed-Loop Color Formulation Task",
+      "authors": [
+        "Tony Qin",
+        "Ziheng Wu",
+        "Maximilian Schommer",
+        "Roya Amini-Naieni",
+        "Aldair Gongora"
+      ],
+      "summary": "Self-driving laboratories (SDLs) integrate laboratory robotics and automation with AI-driven decision-making to close the design-build-test-learn (DBTL) cycle. However, physical testbeds that combine off-the-shelf hardware and AI into a functioning closed-loop workflow remain in early stages of development, and their integration with commercial laboratory automation is comparatively less developed. In this work, we develop a physical testbed that assembles and integrates commercially available laboratory automation instruments and demonstrate continuous, closed-loop, autonomous operation over 24 cumulative hours of unattended experimentation. We validate this platform on a minimal closed-loop discovery task in which the system autonomously formulates aqueous dye mixtures to match a target absorbance spectrum. The system completed six independent campaigns, each consisting of 48 closed-loop iterations over approximately four hours. In every campaign, the system autonomously selected, dispensed, and measured each mixture, with an AI-driven decision-making algorithm determining subsequent formulations without human intervention. Using this testbed, we compared the performance of two AI-driven decision-making algorithms, traditional Bayesian optimization (BO) and an agentic approach, in selecting mixtures under a fixed total-volume constraint. The agentic optimizer matched target absorbance spectra using fewer iterations than BO, with reductions up to 52%, and converged on a solution for one target that BO failed to match within 48 iterations. These results demonstrate a reference physical platform for SDLs that can evaluate both established and emerging AI strategies, including large language model (LLM)-directed optimization, before their deployment in real-world applications where experiments may be costly and time-consuming to prepare.",
+      "published": "2026-11-08T23:19:03Z",
+      "updated": "2026-11-08T23:19:03Z",
+      "arxiv_id": "2611.11690v1",
+      "abs_url": "http://arxiv.org/abs/2611.11690v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11690v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 6,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "A Physical Testbed for Self-Driving Laboratories: Comparing Bayesian and Agentic Optimization in a Minimal Closed-Loop Color Formulation Task",
+      "summary_zh": "Self-driving laboratories (SDLs) integrate laboratory robotics and automation with AI-driven decision-making to close the design-build-test-learn (DBTL) cycle. However, physical testbeds that combine off-the-shelf hardware and AI into a functioning closed-loop workflow remain in early stages of development, and their integration with commercial laboratory automation is comparatively less developed. In this work, we develop a physical testbed that assembles and integrates commercially available laboratory automation instruments and demonstrate continuous, closed-loop, autonomous operation over 24 cumulative hours of unattended experimentation. We validate this platform on a minimal closed-loop discovery task in which the system autonomously formulates aqueous dye mixtures to match a target absorbance spectrum. The system completed six independent campaigns, each consisting of 48 closed-loop iterations over approximately four hours. In every campaign, the system autonomously selected, dispensed, and measured each mixture, with an AI-driven decision-making algorithm determining subsequent formulations without human intervention. Using this testbed, we compared the performance of two AI-driven decision-making algorithms, traditional Bayesian optimization (BO) and an agentic approach, in selecting mixtures under a fixed total-volume constraint. The agentic optimizer matched target absorbance spectra using fewer iterations than BO, with reductions up to 52%, and converged on a solution for one target that BO failed to match within 48 iterations. These results demonstrate a reference physical platform for SDLs that can evaluate both established and emerging AI strategies, including large language model (LLM)-directed optimization, before their deployment in real-world applications where experiments may be costly and time-consuming to prepare.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
+      "title": "Streaming Failure Forecasting: VLA Failure Monitors That Keep Learning After Deployment",
+      "authors": [
+        "Amit Jadhav",
+        "Shaurya Beriwala",
+        "David Q. Liu",
+        "Yanfei Liu"
+      ],
+      "summary": "Failure monitors for vision-language-action (VLA) policies are trained offline and then frozen. After deployment, lighting, objects and cameras drift, and the policy itself is updated or moved to new tasks. On recorded real-robot runs, after a switch of task or policy version, a frozen monitor fit on the old task ranks failures little better than chance. We present Streaming Failure Forecasting (SFF), a monitor that keeps learning from the one label every episode provides: whether it succeeded. SFF keeps the offline monitor's network fixed and refits only its last linear layer after each episode, at 2.18 ms per policy call on a Jetson CPU core. Its alarm threshold moves only after successes, which in simulation kept false alarms near target except when two drifts came at once. With every setting locked before testing, SFF ranks failures better than the same monitor kept frozen on 4 of 5 simulated test suites under unannounced drift, and above resetting on detected drift on every suite. Carried with its locked learner settings to 434 recorded runs of four VLAs on real SO-101 arms, replayed across unannounced switches of task or policy version, it ranks failures better than the frozen monitor for every VLA and, in an exploratory comparison, above a full reset at the true switch. A deployed failure monitor need not stay frozen: refitting its readout from outcomes is cheap and helps after the changes we tested.",
+      "published": "2026-11-08T23:17:09Z",
+      "updated": "2026-11-08T23:17:09Z",
+      "arxiv_id": "2611.11688v1",
+      "abs_url": "http://arxiv.org/abs/2611.11688v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11688v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "comment": "25 pages, 13 figures, 9 tables. A short version was accepted at the Sim2Real2Field and EEAI workshops at CoRL 2026. Project page: https://sff-research.org",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "世界模型与仿真",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 10,
+      "anchor_terms": [
+        "robot",
+        "sim2real",
+        "vision-language-action",
+        "vla"
+      ],
+      "matched_terms": [
+        "robot",
+        "sim2real",
+        "vision-language-action",
+        "vla"
+      ],
+      "title_zh": "Streaming Failure Forecasting: VLA Failure Monitors That Keep Learning After Deployment",
+      "summary_zh": "Failure monitors for vision-language-action (VLA) policies are trained offline and then frozen. After deployment, lighting, objects and cameras drift, and the policy itself is updated or moved to new tasks. On recorded real-robot runs, after a switch of task or policy version, a frozen monitor fit on the old task ranks failures little better than chance. We present Streaming Failure Forecasting (SFF), a monitor that keeps learning from the one label every episode provides: whether it succeeded. SFF keeps the offline monitor's network fixed and refits only its last linear layer after each episode, at 2.18 ms per policy call on a Jetson CPU core. Its alarm threshold moves only after successes, which in simulation kept false alarms near target except when two drifts came at once. With every setting locked before testing, SFF ranks failures better than the same monitor kept frozen on 4 of 5 simulated test suites under unannounced drift, and above resetting on detected drift on every suite. Carried with its locked learner settings to 434 recorded runs of four VLAs on real SO-101 arms, replayed across unannounced switches of task or policy version, it ranks failures better than the frozen monitor for every VLA and, in an exploratory comparison, above a full reset at the true switch. A deployed failure monitor need not stay frozen: refitting its readout from outcomes is cheap and helps after the changes we tested.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
+      "title": "Brain-Aligned Latent Actions: Imposing Premotor Cortex Geometry on a Robot's Action Vocabulary",
+      "authors": [
+        "Amit Jadhav"
+      ],
+      "summary": "Robot policies increasingly act through a small vocabulary of discrete latent actions learned from unlabeled video, yet training leaves open which motion receives which code. We find this choice highly unstable: two independently trained runs of Moto's latent motion tokenizer assign the same robot clips to nearly unrelated codes (adjusted Rand index 0.001), and evaluating one tokenizer in bf16 instead of fp32 reassigns 74% of its tokens. We use this freedom to impose the representational geometry of macaque ventral premotor cortex (PMv), recorded while a monkey drew shapes, on the tokenizer's code assignment, with a straight-through similarity loss trained alongside its reconstruction objective on robot video. In one training run per target, on five shape categories the loss never saw, the PMv-trained tokenizer reaches a representational similarity of 0.52 with PMv, against 0.20-0.26 for released and no-prior tokenizers and 0.42 for the 95th percentile of random kinematic encoders. Kinematic, language, and random targets do not transfer (-0.17 to -0.03). Two results limit the claim: a hand-picked kinematic descriptor, the stroke's initial direction, matches PMv better (0.65), and a label-shuffled PMv control scores 0.41. We specify the downstream manipulation test, on a CALVIN pipeline that reproduces Moto's published results, before running it.",
+      "published": "2026-11-08T22:59:22Z",
+      "updated": "2026-11-08T22:59:22Z",
+      "arxiv_id": "2611.11674v1",
+      "abs_url": "http://arxiv.org/abs/2611.11674v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11674v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "comment": "16 pages, 3 figures, 6 tables. Robot manipulation results (CALVIN) will be added in a later version",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 12,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robot manipulation"
+      ],
+      "matched_terms": [
+        "calvin",
+        "manipulation",
+        "robot",
+        "robot manipulation"
+      ],
+      "title_zh": "Brain-Aligned Latent Actions: Imposing Premotor Cortex Geometry on a Robot's Action Vocabulary",
+      "summary_zh": "Robot policies increasingly act through a small vocabulary of discrete latent actions learned from unlabeled video, yet training leaves open which motion receives which code. We find this choice highly unstable: two independently trained runs of Moto's latent motion tokenizer assign the same robot clips to nearly unrelated codes (adjusted Rand index 0.001), and evaluating one tokenizer in bf16 instead of fp32 reassigns 74% of its tokens. We use this freedom to impose the representational geometry of macaque ventral premotor cortex (PMv), recorded while a monkey drew shapes, on the tokenizer's code assignment, with a straight-through similarity loss trained alongside its reconstruction objective on robot video. In one training run per target, on five shape categories the loss never saw, the PMv-trained tokenizer reaches a representational similarity of 0.52 with PMv, against 0.20-0.26 for released and no-prior tokenizers and 0.42 for the 95th percentile of random kinematic encoders. Kinematic, language, and random targets do not transfer (-0.17 to -0.03). Two results limit the claim: a hand-picked kinematic descriptor, the stroke's initial direction, matches PMv better (0.65), and a label-shuffled PMv control scores 0.41. We specify the downstream manipulation test, on a CALVIN pipeline that reproduces Moto's published results, before running it.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
+      "title": "HINT-VLM: Humanoid Interactive Navigation over Rough Terrain with Embodiment-Grounded Vision-Language Model",
+      "authors": [
+        "Ziwon Yoon",
+        "Seok Hwan Kim",
+        "Yiyu Chen",
+        "Quan Nguyen",
+        "Lu Gan",
+        "Ye Zhao"
+      ],
+      "summary": "Humanoid robots have achieved significant progress in locomotion and manipulation, enabling traversal over rough terrain and richer interaction with the environment, such as moving obstacles. However, most traditional navigation methods assume non-interactive environments and focus only on traversal. While Navigation Among Movable Obstacles (NAMO) approaches relax this assumption, prior efforts have largely focused on flat environments and reactive interaction, rather than predicting object movability and planning ahead. These limitations become critical in outdoor rough-terrain scenarios, where robots must jointly reason about terrain traversability and object movability. In this work, we address NAMO for humanoid robots in cluttered outdoor rough terrain by proposing a hybrid planning framework that combines semantic priors from a Vision-Language Model (VLM) with embodied robot interaction data through a Gaussian process (GP) residual model. The GP corrects the VLM-derived movability prior to produce embodiment-grounded probabilistic movability estimates, which are then incorporated into hierarchical uncertainty-aware planning. The proposed approach allows humanoids to jointly leverage locomotion and manipulation for efficient and safe navigation, representing the first solution to NAMO in rough terrain through predictive movability reasoning and probabilistic VLM integration.",
+      "published": "2026-11-08T22:46:20Z",
+      "updated": "2026-11-08T22:46:20Z",
+      "arxiv_id": "2611.11665v1",
+      "abs_url": "http://arxiv.org/abs/2611.11665v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11665v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "导航与移动",
+        "人形与灵巧",
+        "双足机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 11,
+      "anchor_terms": [
+        "embodied",
+        "humanoid",
+        "locomotion",
+        "manipulation",
+        "navigation",
+        "robot"
+      ],
+      "matched_terms": [
+        "embodied",
+        "humanoid",
+        "locomotion",
+        "manipulation",
+        "navigation",
+        "robot"
+      ],
+      "title_zh": "HINT-VLM: Humanoid Interactive Navigation over Rough Terrain with Embodiment-Grounded Vision-Language Model",
+      "summary_zh": "Humanoid robots have achieved significant progress in locomotion and manipulation, enabling traversal over rough terrain and richer interaction with the environment, such as moving obstacles. However, most traditional navigation methods assume non-interactive environments and focus only on traversal. While Navigation Among Movable Obstacles (NAMO) approaches relax this assumption, prior efforts have largely focused on flat environments and reactive interaction, rather than predicting object movability and planning ahead. These limitations become critical in outdoor rough-terrain scenarios, where robots must jointly reason about terrain traversability and object movability. In this work, we address NAMO for humanoid robots in cluttered outdoor rough terrain by proposing a hybrid planning framework that combines semantic priors from a Vision-Language Model (VLM) with embodied robot interaction data through a Gaussian process (GP) residual model. The GP corrects the VLM-derived movability prior to produce embodiment-grounded probabilistic movability estimates, which are then incorporated into hierarchical uncertainty-aware planning. The proposed approach allows humanoids to jointly leverage locomotion and manipulation for efficient and safe navigation, representing the first solution to NAMO in rough terrain through predictive movability reasoning and probabilistic VLM integration.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
+      "title": "Enhancing Balance and Posture in Material Handling Tasks with a Wearable Robotic Tail",
+      "authors": [
+        "Eisa Anwar",
+        "Sajeeva Abeywardena",
+        "Stuart C. Miller",
+        "Ildar Farkhatdinov"
+      ],
+      "summary": "Frequent heavy lifting is linked to musculoskeletal strain, with lower back pain affecting up to 40% of manual labourers. Inspired by animals using tails for balance, we developed a wearable robotic tail as a dynamic counterbalance. Ten participants performed an imitated shelf loading/unloading task across three conditions: active tail, passive tail, and no tail. Kinematics, centre of pressure, and muscle activation (gastrocnemius, erector spinae, tibialis anterior, biceps brachii) were measured. Compared with no tail, the active tail achieved >20 mm reduction in centre of pressure peak displacement, 4.3 degree reduction in trunk motion, and >9% and >20% reductions in erector spinae and gastrocnemius activity, respectively. The passive tail produced smaller reductions, suggesting passive counterbalancing helps while active movement augments it further. Biceps brachii activation increased with the active versus passive tail. The ankle kinematics and tibialis anterior activation were unchanged. These findings support wearable robotic tails for improving balance during material handling.",
+      "published": "2026-11-08T22:37:38Z",
+      "updated": "2026-11-08T22:37:38Z",
+      "arxiv_id": "2611.11662v1",
+      "abs_url": "http://arxiv.org/abs/2611.11662v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11662v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "16 Pages, 5 Figures",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 7,
+      "anchor_terms": [
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "Enhancing Balance and Posture in Material Handling Tasks with a Wearable Robotic Tail",
+      "summary_zh": "Frequent heavy lifting is linked to musculoskeletal strain, with lower back pain affecting up to 40% of manual labourers. Inspired by animals using tails for balance, we developed a wearable robotic tail as a dynamic counterbalance. Ten participants performed an imitated shelf loading/unloading task across three conditions: active tail, passive tail, and no tail. Kinematics, centre of pressure, and muscle activation (gastrocnemius, erector spinae, tibialis anterior, biceps brachii) were measured. Compared with no tail, the active tail achieved >20 mm reduction in centre of pressure peak displacement, 4.3 degree reduction in trunk motion, and >9% and >20% reductions in erector spinae and gastrocnemius activity, respectively. The passive tail produced smaller reductions, suggesting passive counterbalancing helps while active movement augments it further. Biceps brachii activation increased with the active versus passive tail. The ankle kinematics and tibialis anterior activation were unchanged. These findings support wearable robotic tails for improving balance during material handling.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
+      "title": "FlowEval: How Much Adaptation Does an Embodied Foundation Model Need at Deployment?",
+      "authors": [
+        "Zhang Xi-Jia",
+        "Roman Yakunin",
+        "Shivang Chopra",
+        "Chengyue Huang",
+        "Che Chen",
+        "Siddharth Karamcheti",
+        "Zsolt Kira"
+      ],
+      "summary": "Large-scale pretraining is reducing the amount of adaptation required to deploy embodied foundation models, but it is not guaranteed that a pretrained model already provide the level of performance required in every deployment. Practitioners therefore need to understand how well a pretrained model matches a target deployment and how much adaptation data is left to be collected. We study whether a small set of successful target-domain demonstrations can reveal whether and how much target-domain data will be required before any adaptation. We introduce FlowEval, a set of training-free metrics that use the flow-matching objective to probe an embodied foundation model with a set of demonstrations. FlowEval quantifies predictive disagreement on successful target demonstrations to assess how well a pretrained model fits a target deployment. Across four embodied foundation model families: Pi-0.5, MolmoAct2, GR00T, and DreamZero, FlowEval distinguishes seen from unseen deployments across real-world and simulated manipulation. Further, by finetuning Pi-0.5 and GR00T on 17 RoboCasa365 manipulation tasks, we showed that FlowEval correlates with how success rate improves as additional adaptation data is provided. Together, these results suggest that FlowEval can serve as a lightweight, training-free diagnostic of how much model--deployment adaptation may be required.",
+      "published": "2026-11-08T22:15:51Z",
+      "updated": "2026-11-08T22:15:51Z",
+      "arxiv_id": "2611.11650v1",
+      "abs_url": "http://arxiv.org/abs/2611.11650v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11650v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 11,
+      "anchor_terms": [
+        "manipulation"
+      ],
+      "matched_terms": [
+        "embodied",
+        "foundation model",
+        "manipulation",
+        "robocasa"
+      ],
+      "title_zh": "FlowEval: How Much Adaptation Does an Embodied Foundation Model Need at Deployment?",
+      "summary_zh": "Large-scale pretraining is reducing the amount of adaptation required to deploy embodied foundation models, but it is not guaranteed that a pretrained model already provide the level of performance required in every deployment. Practitioners therefore need to understand how well a pretrained model matches a target deployment and how much adaptation data is left to be collected. We study whether a small set of successful target-domain demonstrations can reveal whether and how much target-domain data will be required before any adaptation. We introduce FlowEval, a set of training-free metrics that use the flow-matching objective to probe an embodied foundation model with a set of demonstrations. FlowEval quantifies predictive disagreement on successful target demonstrations to assess how well a pretrained model fits a target deployment. Across four embodied foundation model families: Pi-0.5, MolmoAct2, GR00T, and DreamZero, FlowEval distinguishes seen from unseen deployments across real-world and simulated manipulation. Further, by finetuning Pi-0.5 and GR00T on 17 RoboCasa365 manipulation tasks, we showed that FlowEval correlates with how success rate improves as additional adaptation data is provided. Together, these results suggest that FlowEval can serve as a lightweight, training-free diagnostic of how much model--deployment adaptation may be required.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
+      "title": "PA-SaR: Perception-Aware Learning, Control, and Coordination for Multi-Robot Search and Rescue",
+      "authors": [
+        "Jocubas Dimsa",
+        "Maria Grouev",
+        "Filip Keerberg",
+        "Nicolas Laplagne",
+        "Tigo Schutgens",
+        "Sven Schoonebeek",
+        "Anahita Jamshidnejad"
+      ],
+      "summary": "Autonomous SaR requires robots to explore unknown or partially known environments, avoid hazards, coordinate team activities, and guide discovered victims to safety. Improving individual capabilities of robots does not necessarily improve mission outcomes: safer motion can restrict the exploration behavior, faster discovery can increase the rescue demand, and effective guidance depends on victim responses. We introduce PA-SaR, a mathematical and architectural framework for coordinating heterogeneous local control, learning-based exploration, supervisory task allocation, and adaptive approach-lead victim guidance around mission-level objectives. PA- SaR distinguishes environmental ground-truth, robot-specific perceptions, and simulated victim behavior. This provides a common basis for integrating complementary mechanisms and analyzing their interactions across mission stages. We demonstrate the framework through single- and multi-robot simulation studies incorporating model-predictive and learning-based exploration, perception-based safety shielding, event-driven task allocation, and adaptive victim guidance. The results show trade-offs between collision avoidance and search completion, indicate that supervisory allocation improves search completion beyond information sharing alone, and demonstrate that increased exploration does not necessarily yield more rescues. Adaptive guidance increases rescues relative to continuous leading, without a detected improvement in mean or final victim trust or a reduction in mortality. These findings support evaluating local control, team coordination, and evacuation as related but distinct aspects of autonomous SaR within the considered simulation environments.",
+      "published": "2026-11-08T22:09:54Z",
+      "updated": "2026-11-08T22:09:54Z",
+      "arxiv_id": "2611.11648v1",
+      "abs_url": "http://arxiv.org/abs/2611.11648v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11648v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.MA",
+        "eess.SY"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 5,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "robot"
+      ],
+      "title_zh": "PA-SaR: Perception-Aware Learning, Control, and Coordination for Multi-Robot Search and Rescue",
+      "summary_zh": "Autonomous SaR requires robots to explore unknown or partially known environments, avoid hazards, coordinate team activities, and guide discovered victims to safety. Improving individual capabilities of robots does not necessarily improve mission outcomes: safer motion can restrict the exploration behavior, faster discovery can increase the rescue demand, and effective guidance depends on victim responses. We introduce PA-SaR, a mathematical and architectural framework for coordinating heterogeneous local control, learning-based exploration, supervisory task allocation, and adaptive approach-lead victim guidance around mission-level objectives. PA- SaR distinguishes environmental ground-truth, robot-specific perceptions, and simulated victim behavior. This provides a common basis for integrating complementary mechanisms and analyzing their interactions across mission stages. We demonstrate the framework through single- and multi-robot simulation studies incorporating model-predictive and learning-based exploration, perception-based safety shielding, event-driven task allocation, and adaptive victim guidance. The results show trade-offs between collision avoidance and search completion, indicate that supervisory allocation improves search completion beyond information sharing alone, and demonstrate that increased exploration does not necessarily yield more rescues. Adaptive guidance increases rescues relative to continuous leading, without a detected improvement in mean or final victim trust or a reduction in mortality. These findings support evaluating local control, team coordination, and evacuation as related but distinct aspects of autonomous SaR within the considered simulation environments.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
+      "title": "ColNav: Uncertainty-Aware Spacetime Collision Checking with Bounding Volume Hierarchies",
+      "authors": [
+        "Sanjeev Ramkumar Sudha",
+        "Lars Ivar Hatledal",
+        "Erlend M. Coates"
+      ],
+      "summary": "Safe navigation for mobile robots in dynamic and uncertain environments requires planning paths that avoid collisions with other moving targets. Typically this involves forward propagating the robot motion and checking for collisions at sampled points in space and time. Such methods can miss collisions between sampled points and are not robust to uncertainty in the state estimates. We propose ColNav, a robust collision check formulation with geometric volumes. The key aspect of our approach is encoding the uncertainty in the targets' and the ego robot's positions and velocities into spacetime tubes, in two variants that consume bounded-set and Gaussian uncertainty descriptions, respectively. The tubes are organised in bounding volume hierarchies, so that a single tree traversal covers the entire horizon, rather than testing sampled time instants, and returns a robust geometric certificate together with an estimate of the time to collision. Static and dynamic obstacles share the same representation. Our approach reaches the goal with a 100% success rate under prediction model mismatch, where the best baseline reaches 65%, and maintains up to three times the clearance in dense traffic. We also validate real-time operation on a physical robot.",
+      "published": "2026-11-08T22:07:03Z",
+      "updated": "2026-11-08T22:07:03Z",
+      "arxiv_id": "2611.11646v1",
+      "abs_url": "http://arxiv.org/abs/2611.11646v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11646v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 6,
+      "anchor_terms": [
+        "navigation",
+        "robot"
+      ],
+      "matched_terms": [
+        "mobile robot",
+        "navigation",
+        "robot"
+      ],
+      "title_zh": "ColNav: Uncertainty-Aware Spacetime Collision Checking with Bounding Volume Hierarchies",
+      "summary_zh": "Safe navigation for mobile robots in dynamic and uncertain environments requires planning paths that avoid collisions with other moving targets. Typically this involves forward propagating the robot motion and checking for collisions at sampled points in space and time. Such methods can miss collisions between sampled points and are not robust to uncertainty in the state estimates. We propose ColNav, a robust collision check formulation with geometric volumes. The key aspect of our approach is encoding the uncertainty in the targets' and the ego robot's positions and velocities into spacetime tubes, in two variants that consume bounded-set and Gaussian uncertainty descriptions, respectively. The tubes are organised in bounding volume hierarchies, so that a single tree traversal covers the entire horizon, rather than testing sampled time instants, and returns a robust geometric certificate together with an estimate of the time to collision. Static and dynamic obstacles share the same representation. Our approach reaches the goal with a 100% success rate under prediction model mismatch, where the best baseline reaches 65%, and maintains up to three times the clearance in dense traffic. We also validate real-time operation on a physical robot.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
+      "title": "Qubit-to-Motion: Traceable Action Provenance in Hybrid QRL for Robotic Bin-Packing Sequencing",
+      "authors": [
+        "Hassen Nigatu",
+        "Howard Li"
+      ],
+      "summary": "Hybrid quantum reinforcement learning has been explored for robotic decision-making, but evaluations often emphasize task success, return, or convergence, leaving unresolved whether quantum circuit outputs influence constrained actions and remain traceable through robot execution. We present \\texttt{Qubit-to-Motion}, an evidence-centered framework for support-constrained sequencing and simulated robotic placement. Four Pauli-$Z$ readouts provide the sole learned input to the actor and critic, while a support mask enforces admissible object selection. Each decision is recorded and linked via step indices and SHA-256 fingerprints to a sealed route, deterministic Cartesian and inverse-kinematics waypoints, prescribed joint motion, and MuJoCo contact replay. A frozen checkpoint is evaluated across five deterministic 30-object scene variants. All 150 placements satisfy support, containment, and settling criteria. A fixed-state zero-readout intervention changes $90.0\\pm0.0\\%$ of decisions, demonstrating dependence on the joint circuit representation. Mean macro travel is $34.537\\pm0.206$~m, inference requires $8.60\\pm1.27$~ms per route, and replay achieves $8.764\\pm0.220~μ$m mean final position error with 0.356~mm maximum interpenetration. These results establish reproducible decision-to-contact traceability. The implementation is available at \\href{https://anonymous.4open.science/r/Qubit-to-Motion-Quantum-Reinforcement-Learning-F7DC}{\\textcolor{linkpink}{the anonymous repository}}.",
+      "published": "2026-11-08T19:52:00Z",
+      "updated": "2026-11-08T19:52:00Z",
+      "arxiv_id": "2611.11580v1",
+      "abs_url": "http://arxiv.org/abs/2611.11580v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11580v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 9,
+      "anchor_terms": [
+        "reinforcement learning",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "mujoco",
+        "reinforcement learning",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "Qubit-to-Motion: Traceable Action Provenance in Hybrid QRL for Robotic Bin-Packing Sequencing",
+      "summary_zh": "Hybrid quantum reinforcement learning has been explored for robotic decision-making, but evaluations often emphasize task success, return, or convergence, leaving unresolved whether quantum circuit outputs influence constrained actions and remain traceable through robot execution. We present \\texttt{Qubit-to-Motion}, an evidence-centered framework for support-constrained sequencing and simulated robotic placement. Four Pauli-$Z$ readouts provide the sole learned input to the actor and critic, while a support mask enforces admissible object selection. Each decision is recorded and linked via step indices and SHA-256 fingerprints to a sealed route, deterministic Cartesian and inverse-kinematics waypoints, prescribed joint motion, and MuJoCo contact replay. A frozen checkpoint is evaluated across five deterministic 30-object scene variants. All 150 placements satisfy support, containment, and settling criteria. A fixed-state zero-readout intervention changes $90.0\\pm0.0\\%$ of decisions, demonstrating dependence on the joint circuit representation. Mean macro travel is $34.537\\pm0.206$~m, inference requires $8.60\\pm1.27$~ms per route, and replay achieves $8.764\\pm0.220~μ$m mean final position error with 0.356~mm maximum interpenetration. These results establish reproducible decision-to-contact traceability. The implementation is available at \\href{https://anonymous.4open.science/r/Qubit-to-Motion-Quantum-Reinforcement-Learning-F7DC}{\\textcolor{linkpink}{the anonymous repository}}.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
+      "title": "Kimodo-Policy: Learning Kinematic Action Models for Humanoid Loco-Manipulation",
+      "authors": [
+        "Yunheng Wang",
+        "Jiaxi Zhang",
+        "Wei Lu",
+        "Yuetong Fang",
+        "Taowen Wang",
+        "Yixiao Feng",
+        "Shuning Zhang",
+        "Junzhe Xu",
+        "Yichi Wang",
+        "Zizhao Yuan",
+        "Kailun Huang",
+        "Lusong Li",
+        "Mingqian Zhou",
+        "Zecui Zeng",
+        "Renjing Xu"
+      ],
+      "summary": "Humanoid loco-manipulation requires continuous coordination of high-dimensional whole-body motion to realize task objectives. While vision-language-action models and world action models transfer semantic and visual-dynamics priors to robot control, these priors do not necessarily capture the structure of robot motion. We introduce Kinematic Action Models (KAMs), a paradigm that treats whole-body motion as a direct pretraining target and uses a pretrained motion generator as the primary action-generation backbone. KAMs ground learned temporal and cross-body coordination priors through task conditioning, visual observations, and execution feedback. We present Kimodo-Policy as an initial instantiation, combining a frozen Kimodo text-to-motion backbone with lightweight ControlNet-based visual conditioning. A root-body-hand hierarchy coordinates locomotion and manipulation, while motion-history conditioning and repeated action-chunk prediction bridge motion synthesis and closed-loop control. Following large-scale loco-manipulation pretraining, the policy achieves the highest overall success among compared policies on multi-task HumanoidArena (72.14%), competitive performance on SIMPLE, and 60% mean success across eight real-world tasks, with 678M parameters (92M trainable). Ablations support the contribution of the pretrained motion backbone. Together, these results provide initial evidence for motion generation as a complementary foundation for humanoid action learning.",
+      "published": "2026-11-08T18:55:10Z",
+      "updated": "2026-11-08T18:55:10Z",
+      "arxiv_id": "2611.11554v1",
+      "abs_url": "http://arxiv.org/abs/2611.11554v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11554v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "comment": "23 pages, 14 figures, 4 tables. Project page: https://kimodo-policy.github.io/",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "导航与移动",
+        "VLA/多模态策略",
+        "人形与灵巧",
+        "双足机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 12,
+      "anchor_terms": [
+        "humanoid",
+        "locomotion",
+        "manipulation",
+        "robot",
+        "vision-language-action"
+      ],
+      "matched_terms": [
+        "humanoid",
+        "locomotion",
+        "manipulation",
+        "robot",
+        "vision-language-action"
+      ],
+      "title_zh": "Kimodo-Policy: Learning Kinematic Action Models for Humanoid Loco-Manipulation",
+      "summary_zh": "Humanoid loco-manipulation requires continuous coordination of high-dimensional whole-body motion to realize task objectives. While vision-language-action models and world action models transfer semantic and visual-dynamics priors to robot control, these priors do not necessarily capture the structure of robot motion. We introduce Kinematic Action Models (KAMs), a paradigm that treats whole-body motion as a direct pretraining target and uses a pretrained motion generator as the primary action-generation backbone. KAMs ground learned temporal and cross-body coordination priors through task conditioning, visual observations, and execution feedback. We present Kimodo-Policy as an initial instantiation, combining a frozen Kimodo text-to-motion backbone with lightweight ControlNet-based visual conditioning. A root-body-hand hierarchy coordinates locomotion and manipulation, while motion-history conditioning and repeated action-chunk prediction bridge motion synthesis and closed-loop control. Following large-scale loco-manipulation pretraining, the policy achieves the highest overall success among compared policies on multi-task HumanoidArena (72.14%), competitive performance on SIMPLE, and 60% mean success across eight real-world tasks, with 678M parameters (92M trainable). Ablations support the contribution of the pretrained motion backbone. Together, these results provide initial evidence for motion generation as a complementary foundation for humanoid action learning.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
+      "title": "Data Manipulation Attacks Against Machine Learning Integrated Cyber-Physical Systems",
+      "authors": [
+        "Soyon Choi",
+        "Scott Alfeld",
+        "Meiyi Ma"
+      ],
+      "summary": "There is a well-established body of work demonstrating that individual machine learning (ML) algorithms can be manipulated or deceived. However, in many real-world systems, multiple ML algorithms are composed to enable automated decision-making, particularly in Cyber-Physical Systems (CPS). Often such systems use a composition of vision, planning, and other ML models to affect their internal state and ultimate take actions in the physical world. While there is a huge literature on the (in)security of ML algorithms, it is not immediately clear how an attacker might leverage their ability to trick individual learners when attacking the composition as a whole. We develop methods for creating an attack policy (a mapping from state to attack) for a data-manipulating attacker affecting a CPS or other state-machine-based AI compositions. We describe our framework, a basic threat model and corresponding methods for computing an optimal attack policy, as well as planned extensions. The goal of this work-in-progress paper is to stimulate conversation and forge new collaborations regarding the security of compositional learning.",
+      "published": "2026-11-08T18:10:49Z",
+      "updated": "2026-11-08T18:10:49Z",
+      "arxiv_id": "2611.11529v1",
+      "abs_url": "http://arxiv.org/abs/2611.11529v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11529v1",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "感知与3D理解"
+      ],
+      "topic": "机器人操作",
+      "score": 2,
+      "anchor_terms": [
+        "manipulation"
+      ],
+      "matched_terms": [
+        "manipulation"
+      ],
+      "title_zh": "Data Manipulation Attacks Against Machine Learning Integrated Cyber-Physical Systems",
+      "summary_zh": "There is a well-established body of work demonstrating that individual machine learning (ML) algorithms can be manipulated or deceived. However, in many real-world systems, multiple ML algorithms are composed to enable automated decision-making, particularly in Cyber-Physical Systems (CPS). Often such systems use a composition of vision, planning, and other ML models to affect their internal state and ultimate take actions in the physical world. While there is a huge literature on the (in)security of ML algorithms, it is not immediately clear how an attacker might leverage their ability to trick individual learners when attacking the composition as a whole. We develop methods for creating an attack policy (a mapping from state to attack) for a data-manipulating attacker affecting a CPS or other state-machine-based AI compositions. We describe our framework, a basic threat model and corresponding methods for computing an optimal attack policy, as well as planned extensions. The goal of this work-in-progress paper is to stimulate conversation and forge new collaborations regarding the security of compositional learning.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
+      "title": "K-PWM: Control-Oriented Structured Bilinear World Models under Partial Observation",
+      "authors": [
+        "Santosh Mohan Rajkumar",
+        "Sriram Narayanan",
+        "Samuel E. Otto",
+        "Debdipta Goswami"
+      ],
+      "summary": "World models learn internal simulators of environment dynamics for prediction, planning, and control, yet learning them from limited, noisy, and partial observations remains challenging. While much progress has focused on pixel-based observations, many physical systems instead provide vector-valued measurements that reveal only part of the underlying state. We introduce K-PWM, a probabilistic world model for prediction and control under partial observation. K-PWM couples Koopman-bilinear latent dynamics with a nonlinear observation decoder and performs probabilistic latent-state inference through the learned model via extended Kalman filtering and smoothing, without a separately trained inference network. Its bilinear structure enables exact propagation of the maintained Gaussian belief through the latent transition and efficient rollouts for uncertainty-aware model predictive path integral (MPPI) control. For training K-PWM, we present a generalized expectation conditional maximization (GECM) procedure with closed-form updates for the generators, noise covariances, and latent prior, complemented by gradient-based decoder learning. A Koopman-consistent initialization selects the latent dimension from data and initializes the action-dependent dynamics. With limited training data, K-PWM achieves lower long-horizon prediction error than the evaluated baselines on partially observed Gymnasium MuJoCo systems, while substantially reducing training time relative to the strongest prediction baseline. On high-dimensional MuJoCo Menagerie robots, it achieves competitive tracking accuracy with low per-step computation times, demonstrating potential for real-time deployment. These results support structured probabilistic dynamics as a data- and compute-efficient approach to world modeling and control under partial observation.",
+      "published": "2026-11-08T17:51:31Z",
+      "updated": "2026-11-08T17:51:31Z",
+      "arxiv_id": "2611.11521v1",
+      "abs_url": "http://arxiv.org/abs/2611.11521v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11521v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG",
+        "eess.SY",
+        "math.DS"
+      ],
+      "comment": "Accepted at NeurIPS 2026",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 8,
+      "anchor_terms": [
+        "robot",
+        "world model"
+      ],
+      "matched_terms": [
+        "mujoco",
+        "robot",
+        "simulator",
+        "world model"
+      ],
+      "title_zh": "K-PWM: Control-Oriented Structured Bilinear World Models under Partial Observation",
+      "summary_zh": "World models learn internal simulators of environment dynamics for prediction, planning, and control, yet learning them from limited, noisy, and partial observations remains challenging. While much progress has focused on pixel-based observations, many physical systems instead provide vector-valued measurements that reveal only part of the underlying state. We introduce K-PWM, a probabilistic world model for prediction and control under partial observation. K-PWM couples Koopman-bilinear latent dynamics with a nonlinear observation decoder and performs probabilistic latent-state inference through the learned model via extended Kalman filtering and smoothing, without a separately trained inference network. Its bilinear structure enables exact propagation of the maintained Gaussian belief through the latent transition and efficient rollouts for uncertainty-aware model predictive path integral (MPPI) control. For training K-PWM, we present a generalized expectation conditional maximization (GECM) procedure with closed-form updates for the generators, noise covariances, and latent prior, complemented by gradient-based decoder learning. A Koopman-consistent initialization selects the latent dimension from data and initializes the action-dependent dynamics. With limited training data, K-PWM achieves lower long-horizon prediction error than the evaluated baselines on partially observed Gymnasium MuJoCo systems, while substantially reducing training time relative to the strongest prediction baseline. On high-dimensional MuJoCo Menagerie robots, it achieves competitive tracking accuracy with low per-step computation times, demonstrating potential for real-time deployment. These results support structured probabilistic dynamics as a data- and compute-efficient approach to world modeling and control under partial observation.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
+      "title": "Reaching Is Not Finding: Map-Anchored Visual Prompting for the Last Mile of Aerial Vision-Language Navigation",
+      "authors": [
+        "Ningbo Li",
+        "Kebin Liu",
+        "Jingcan Chen",
+        "Weichen Zhang",
+        "Rong Ding",
+        "Yunhao Liu",
+        "Mo Li"
+      ],
+      "summary": "Aerial vision-language navigation (VLN) asks a drone to find an object described in natural language. The description usually locates the object relative to named landmarks, such as streets and buildings. We observe that current navigators often bring the drone close to the target and then stop at the wrong place: they reach the target without finding it. This gap is shared by navigators of very different designs, from imitation learners to a fine-tuned 7B vision-language model. A simple test reveals the cause. When we replace the target object in the instruction with another one next to the same landmarks, no navigator goes to it, and most stop where they did before. Navigators learn to reach the landmarks, not to identify the described object. We therefore propose MAP-VP, a plug-and-play module for the last step. After any navigator stops, MAP-VP draws the landmarks named in the instruction onto the drone's current view, using the landmark outlines that the benchmark provides on a map. A fine-tuned 4B vision-language model then locates the target relative to these landmarks. The training data are generated automatically from the benchmark annotations. Neither drawing the landmarks nor fine-tuning helps much alone, but together they are highly effective. Without retraining any navigator, MAP-VP significantly improves all six navigators we test on CityNav. It roughly doubles the success rate of the two strongest trained navigators, raising HETT from 25.9% to 54.6% and FlightGPT from 24.2% to 48.9%, whereas CityNav's official detector-based last step adds less than two points to HETT.",
+      "published": "2026-11-08T17:33:37Z",
+      "updated": "2026-11-08T17:33:37Z",
+      "arxiv_id": "2611.11510v1",
+      "abs_url": "http://arxiv.org/abs/2611.11510v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11510v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 4,
+      "anchor_terms": [
+        "navigation"
+      ],
+      "matched_terms": [
+        "drone",
+        "navigation",
+        "vln"
+      ],
+      "title_zh": "Reaching Is Not Finding: Map-Anchored Visual Prompting for the Last Mile of Aerial Vision-Language Navigation",
+      "summary_zh": "Aerial vision-language navigation (VLN) asks a drone to find an object described in natural language. The description usually locates the object relative to named landmarks, such as streets and buildings. We observe that current navigators often bring the drone close to the target and then stop at the wrong place: they reach the target without finding it. This gap is shared by navigators of very different designs, from imitation learners to a fine-tuned 7B vision-language model. A simple test reveals the cause. When we replace the target object in the instruction with another one next to the same landmarks, no navigator goes to it, and most stop where they did before. Navigators learn to reach the landmarks, not to identify the described object. We therefore propose MAP-VP, a plug-and-play module for the last step. After any navigator stops, MAP-VP draws the landmarks named in the instruction onto the drone's current view, using the landmark outlines that the benchmark provides on a map. A fine-tuned 4B vision-language model then locates the target relative to these landmarks. The training data are generated automatically from the benchmark annotations. Neither drawing the landmarks nor fine-tuning helps much alone, but together they are highly effective. Without retraining any navigator, MAP-VP significantly improves all six navigators we test on CityNav. It roughly doubles the success rate of the two strongest trained navigators, raising HETT from 25.9% to 54.6% and FlightGPT from 24.2% to 48.9%, whereas CityNav's official detector-based last step adds less than two points to HETT.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
+      "title": "Review the Episodes, Refine the Lessons: Simple Memory Evolution for Embodied Agents",
+      "authors": [
+        "Yifei Yao",
+        "Yude Zou",
+        "Xing Gao",
+        "Guanbo Jiao",
+        "Yukai Wang",
+        "Jianming Ma",
+        "Weinan Zhang",
+        "Chunhua Shen"
+      ],
+      "summary": "Recent studies of embodied agents based on frontier multimodal large language models (MLLMs) develop harness engineering around the MLLM, such as harnesses with post-trained policies and recursive self-improvement loops. Yet whether these additions exceed the native capability of the MLLM remains unexplored. We introduce SimplEvo to explore how far an MLLM can improve under direct control when it retains its execution experience in self-written text memories. It requires no weight updates, post-trained policies, or privileged information. The MLLM writes a coordinate-free task memory once from a single demonstration. Under a strict train-test protocol, it then creates a bounded working memory on training episodes only and refines it after each episode with lessons on procedure, completion, and recovery. Both memories stay fixed at test time. On EBench, SimplEvo lifts the success rate (SR) of GPT-6-Astra under direct control from 46.7% to 81.7%, and tops the RoboDojo leaderboard with 69.63% SR and a score of 75.32. Compared with memories that also store past visual frames, SimplEvo reaches a similar SR with text memory alone while using fewer tokens. With its memories fixed, SimplEvo also generalizes to unseen layouts and randomized scene configurations. Moreover, the working memory transfers across models: written by GPT-6-Astra, it can be reused as is by weaker MLLMs and improve their performance without any adaptation of their own.",
+      "published": "2026-11-08T17:33:29Z",
+      "updated": "2026-11-08T17:33:29Z",
+      "arxiv_id": "2611.11509v1",
+      "abs_url": "http://arxiv.org/abs/2611.11509v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11509v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 15,
+      "anchor_terms": [
+        "embodied",
+        "embodied agent",
+        "embodied agents"
+      ],
+      "matched_terms": [
+        "embodied",
+        "embodied agent",
+        "embodied agents"
+      ],
+      "title_zh": "Review the Episodes, Refine the Lessons: Simple Memory Evolution for Embodied Agents",
+      "summary_zh": "Recent studies of embodied agents based on frontier multimodal large language models (MLLMs) develop harness engineering around the MLLM, such as harnesses with post-trained policies and recursive self-improvement loops. Yet whether these additions exceed the native capability of the MLLM remains unexplored. We introduce SimplEvo to explore how far an MLLM can improve under direct control when it retains its execution experience in self-written text memories. It requires no weight updates, post-trained policies, or privileged information. The MLLM writes a coordinate-free task memory once from a single demonstration. Under a strict train-test protocol, it then creates a bounded working memory on training episodes only and refines it after each episode with lessons on procedure, completion, and recovery. Both memories stay fixed at test time. On EBench, SimplEvo lifts the success rate (SR) of GPT-6-Astra under direct control from 46.7% to 81.7%, and tops the RoboDojo leaderboard with 69.63% SR and a score of 75.32. Compared with memories that also store past visual frames, SimplEvo reaches a similar SR with text memory alone while using fewer tokens. With its memories fixed, SimplEvo also generalizes to unseen layouts and randomized scene configurations. Moreover, the working memory transfers across models: written by GPT-6-Astra, it can be reused as is by weaker MLLMs and improve their performance without any adaptation of their own.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
+      "title": "ForeAct: Geometry-Guided Action Learning from World Representations",
+      "authors": [
+        "Wei Lu",
+        "Jiaxi Zhang",
+        "Yunheng Wang",
+        "Taowen Wang",
+        "Yuetong Fang",
+        "Zhenhui Zhang",
+        "Shuning Zhang",
+        "Zizhao Yuan",
+        "Yixiao Feng",
+        "Zecui Zeng",
+        "Renjing Xu"
+      ],
+      "summary": "Robotic manipulation requires representations that capture both scene geometry and its evolution during interaction. Existing approaches have largely treated these two aspects separately. World action models capture such dynamics by coupling action prediction with future video generation, but their reliance on iterative diffusion or rectified-flow inference leads to high computational cost, while their representations lack explicit spatial structure. Explicitly modeling scene geometry typically requires auxiliary modules that increase both parameter count and computational cost. Conversely, geometry-centric policies primarily recover observed spatial structure and often lack explicit supervision for anticipating future geometric changes during interaction. To address these limitations, we introduce ForeAct, which repurposes a pretrained video world model as a single-pass representation backbone for low-latency control. ForeAct directly processes the clean latent of the current observation in one forward pass, eliminating future-frame synthesis and iterative denoising while retaining the backbone's pretrained spatiotemporal priors. Rather than introducing a separate geometry backbone, ForeAct uses learnable tokens supervised by next-frame relative depth to shape the shared video representation through bidirectional self-attention. This compact interface turns the spatial knowledge already encoded in the backbone into a future-aware representation for action generation, with little parameter overhead. The lightweight geometry readout is used only during training and removed at deployment, enabling low-latency, geometry-aware control without depth input or an external geometry backbone. Without additional large-scale pretraining, ForeAct achieves 96.6% average success on LIBERO, 63.5% on SimplerEnv-Bridge, and a 74.4% success rate across 90 real-world rollouts.",
+      "published": "2026-11-08T16:59:50Z",
+      "updated": "2026-11-08T16:59:50Z",
+      "arxiv_id": "2611.11500v1",
+      "abs_url": "http://arxiv.org/abs/2611.11500v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11500v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 10,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robotic",
+        "world model"
+      ],
+      "matched_terms": [
+        "libero",
+        "manipulation",
+        "robot",
+        "robotic",
+        "world model"
+      ],
+      "title_zh": "ForeAct: Geometry-Guided Action Learning from World Representations",
+      "summary_zh": "Robotic manipulation requires representations that capture both scene geometry and its evolution during interaction. Existing approaches have largely treated these two aspects separately. World action models capture such dynamics by coupling action prediction with future video generation, but their reliance on iterative diffusion or rectified-flow inference leads to high computational cost, while their representations lack explicit spatial structure. Explicitly modeling scene geometry typically requires auxiliary modules that increase both parameter count and computational cost. Conversely, geometry-centric policies primarily recover observed spatial structure and often lack explicit supervision for anticipating future geometric changes during interaction. To address these limitations, we introduce ForeAct, which repurposes a pretrained video world model as a single-pass representation backbone for low-latency control. ForeAct directly processes the clean latent of the current observation in one forward pass, eliminating future-frame synthesis and iterative denoising while retaining the backbone's pretrained spatiotemporal priors. Rather than introducing a separate geometry backbone, ForeAct uses learnable tokens supervised by next-frame relative depth to shape the shared video representation through bidirectional self-attention. This compact interface turns the spatial knowledge already encoded in the backbone into a future-aware representation for action generation, with little parameter overhead. The lightweight geometry readout is used only during training and removed at deployment, enabling low-latency, geometry-aware control without depth input or an external geometry backbone. Without additional large-scale pretraining, ForeAct achieves 96.6% average success on LIBERO, 63.5% on SimplerEnv-Bridge, and a 74.4% success rate across 90 real-world rollouts.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
       "title": "Beyond Memory Limits: A Hierarchical Spatio-Temporal Map Representation for Large-Scale 3D Autonomous Exploration",
       "authors": [
         "Yizhe Zhang",
@@ -114,6 +997,63 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-11-10T05:00:51.886041+00:00"
+      }
+    },
+    {
+      "title": "PhysMoE: Fast Spatial Grounding with Single-Token Coordinate Representation in Modality-Decoupled VLMs",
+      "authors": [
+        "Ruimeng Liu",
+        "Denan Liang",
+        "Ruofei Bai",
+        "Fuming Zhang",
+        "Kuan Xu",
+        "Shenghai Yuan",
+        "Lihua Xie"
+      ],
+      "summary": "Embodied Vision-Language Models (VLMs) are backbones for robotic planning and manipulation. However, for coordinate prediction in grounding tasks, existing architectures suffer from two distinct bottlenecks: discrete tokenization disrupts spatial continuity with high decoding latency, while standard point regression fails on multi-contact affordances and irregularly shaped targets. To resolve these challenges, we propose PhysMoE, introducing three core contributions: (1) sharing lower layers for multimodal context while routing upper layers to specialized spatial (pixel) and linguistic (text) experts by physical modality, eliminating gradient interference; (2) encoding each coordinate as a single token by reusing the visual encoder's learned positional embeddings, injecting 2D spatial priors to natively align coordinates with visual features and ease training; and (3) differentiable Signed Distance Field (SDF) supervision on pointing, accommodating affordances and irregular geometries without costly mask decoders. Compared to the base model, PhysMoE achieves a 15.7% average gain and an 8.31x throughput speedup across 9 coordinate-based grounding benchmarks (trajectory, affordance, and localization), while preserving multimodal understanding and reasoning across 11 text-based embodied benchmarks.",
+      "published": "2026-11-08T16:00:02Z",
+      "updated": "2026-11-08T16:00:02Z",
+      "arxiv_id": "2611.13000v1",
+      "abs_url": "http://arxiv.org/abs/2611.13000v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.13000v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 8,
+      "anchor_terms": [
+        "affordance",
+        "embodied",
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "affordance",
+        "embodied",
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "PhysMoE: Fast Spatial Grounding with Single-Token Coordinate Representation in Modality-Decoupled VLMs",
+      "summary_zh": "Embodied Vision-Language Models (VLMs) are backbones for robotic planning and manipulation. However, for coordinate prediction in grounding tasks, existing architectures suffer from two distinct bottlenecks: discrete tokenization disrupts spatial continuity with high decoding latency, while standard point regression fails on multi-contact affordances and irregularly shaped targets. To resolve these challenges, we propose PhysMoE, introducing three core contributions: (1) sharing lower layers for multimodal context while routing upper layers to specialized spatial (pixel) and linguistic (text) experts by physical modality, eliminating gradient interference; (2) encoding each coordinate as a single token by reusing the visual encoder's learned positional embeddings, injecting 2D spatial priors to natively align coordinates with visual features and ease training; and (3) differentiable Signed Distance Field (SDF) supervision on pointing, accommodating affordances and irregular geometries without costly mask decoders. Compared to the base model, PhysMoE achieves a 15.7% average gain and an 8.31x throughput speedup across 9 coordinate-based grounding benchmarks (trajectory, affordance, and localization), while preserving multimodal understanding and reasoning across 11 text-based embodied benchmarks.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
       }
     },
     {
@@ -170,18 +1110,18 @@
         "Daniel Slate",
         "Noam Kolt"
       ],
-      "summary": "AI agents deployed on the open web are becoming more capable of performing actions that may breach contractual provisions and violate computer security laws. In this paper, we introduce ScrapeBench, the first agentic benchmark for empirically evaluating the legal compliance of AI agents with website scraping policies, namely terms of service (ToS) and robots.txt directives. Across widely used closed-weight and open-weight AI agents, we find that most agents exhibit low compliance rates (< 5%) when instructed to scrape websites in our sample of 1,626 popular websites that explicitly prohibit scraping. In addition, we observe that even where AI agents actively check the applicable ToS and robots.txt, they continue to exhibit low compliance rates. Conversely, in our sample of 269 websites that do not prohibit scraping, we observe that agents sometimes refuse to scrape despite it being lawful, such as Claude Opus 4.6 exhibiting an over-refusal rate of 98.5%. Our human baseline experiments (n = 180 participants) suggest that humans exhibit compliance rates comparable to AI agents but over-refuse at much higher rates.",
+      "summary": "AI agents deployed on the open web are becoming more capable of performing actions that may breach contractual provisions and violate computer security laws. In this paper, we introduce ScrapeBench, the first agentic benchmark for empirically evaluating the legal compliance of AI agents with website scraping policies, namely terms of service (ToS) and $\\texttt{robots.txt}$ directives. Across widely used closed-weight and open-weight AI agents, we find that most agents exhibit low compliance rates (< 5%) when instructed to scrape websites in our sample of 1,626 popular websites that explicitly prohibit scraping. In addition, we observe that even where AI agents actively check the applicable ToS and $\\texttt{robots.txt}$, they continue to exhibit low compliance rates. Conversely, in our sample of 269 websites that do not prohibit scraping, we observe that agents sometimes refuse to scrape despite it being lawful, such as Claude Opus 4.6 exhibiting an over-refusal rate of 98.5%. Our human baseline experiments (n = 180 participants) suggest that humans exhibit compliance rates comparable to AI agents but over-refuse at much higher rates.",
       "published": "2026-11-08T11:19:18Z",
-      "updated": "2026-11-08T11:19:18Z",
-      "arxiv_id": "2611.11306v1",
-      "abs_url": "http://arxiv.org/abs/2611.11306v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.11306v1",
+      "updated": "2026-11-10T11:23:10Z",
+      "arxiv_id": "2611.11306v2",
+      "abs_url": "http://arxiv.org/abs/2611.11306v2",
+      "pdf_url": "https://arxiv.org/pdf/2611.11306v2",
       "primary_category": "cs.CL",
       "categories": [
         "cs.CL",
         "cs.AI"
       ],
-      "comment": "Accepted to NeurIPS 2026 (Evaluations and Datasets Track)",
+      "comment": "Camera-Ready for NeurIPS 2026 (Evaluations and Datasets Track)",
       "code_url": "",
       "has_code": false,
       "labels": [
@@ -197,12 +1137,12 @@
         "robot"
       ],
       "title_zh": "ScrapeBench: Evaluating Legal Compliance of AI Agents in Website Scraping",
-      "summary_zh": "AI agents deployed on the open web are becoming more capable of performing actions that may breach contractual provisions and violate computer security laws. In this paper, we introduce ScrapeBench, the first agentic benchmark for empirically evaluating the legal compliance of AI agents with website scraping policies, namely terms of service (ToS) and robots.txt directives. Across widely used closed-weight and open-weight AI agents, we find that most agents exhibit low compliance rates (< 5%) when instructed to scrape websites in our sample of 1,626 popular websites that explicitly prohibit scraping. In addition, we observe that even where AI agents actively check the applicable ToS and robots.txt, they continue to exhibit low compliance rates. Conversely, in our sample of 269 websites that do not prohibit scraping, we observe that agents sometimes refuse to scrape despite it being lawful, such as Claude Opus 4.6 exhibiting an over-refusal rate of 98.5%. Our human baseline experiments (n = 180 participants) suggest that humans exhibit compliance rates comparable to AI agents but over-refuse at much higher rates.",
+      "summary_zh": "AI agents deployed on the open web are becoming more capable of performing actions that may breach contractual provisions and violate computer security laws. In this paper, we introduce ScrapeBench, the first agentic benchmark for empirically evaluating the legal compliance of AI agents with website scraping policies, namely terms of service (ToS) and $\\texttt{robots.txt}$ directives. Across widely used closed-weight and open-weight AI agents, we find that most agents exhibit low compliance rates (< 5%) when instructed to scrape websites in our sample of 1,626 popular websites that explicitly prohibit scraping. In addition, we observe that even where AI agents actively check the applicable ToS and $\\texttt{robots.txt}$, they continue to exhibit low compliance rates. Conversely, in our sample of 269 websites that do not prohibit scraping, we observe that agents sometimes refuse to scrape despite it being lawful, such as Claude Opus 4.6 exhibiting an over-refusal rate of 98.5%. Our human baseline experiments (n = 180 participants) suggest that humans exhibit compliance rates comparable to AI agents but over-refuse at much higher rates.",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
       }
     },
     {
@@ -347,6 +1287,53 @@
       }
     },
     {
+      "title": "CAFE: Closed-Loop Autonomous Task Formulation and Execution without Instance-Specific Instructions",
+      "authors": [
+        "Mingjia Chen",
+        "Xuewen Zhao",
+        "Philip Dames",
+        "Qi Mao",
+        "Fei Xie",
+        "Jun Chen"
+      ],
+      "summary": "Scene-driven robot autonomy requires selecting tasks from observations as well as executing them. We study scene-driven task formulation and execution under predefined cleaning, safety, and storage/organization categories, without instance-specific goals or action sequences. CAFE maintains online memory of objects, functional zones, and execution states. A rule-guided Trigger-LLM admits formulation from accumulated evidence; Draft, Complete, and Audit propose goals, resolve execution details, and check dependencies. Outcomes update memory for correction and subsequent discovery. Evaluation in 12 AI2-THOR scenes compares three backbones and task-complexity tiers using coverage, constraint, and execution metrics. Tri-LLM records higher GCR scores than the evaluated baselines across three backbones and task-complexity tiers. Controls examine completion, auditing, zones, feedback, triggering, and prompt examples. LimoCobot traces illustrate storage, cleanup, and recovery from a failed grasp. The study examines how shared scene state connects task discovery to execution and outcome-driven revision.",
+      "published": "2026-11-08T08:08:15Z",
+      "updated": "2026-11-08T08:08:15Z",
+      "arxiv_id": "2611.12983v1",
+      "abs_url": "http://arxiv.org/abs/2611.12983v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.12983v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 5,
+      "anchor_terms": [
+        "grasp",
+        "robot"
+      ],
+      "matched_terms": [
+        "grasp",
+        "robot"
+      ],
+      "title_zh": "CAFE: Closed-Loop Autonomous Task Formulation and Execution without Instance-Specific Instructions",
+      "summary_zh": "Scene-driven robot autonomy requires selecting tasks from observations as well as executing them. We study scene-driven task formulation and execution under predefined cleaning, safety, and storage/organization categories, without instance-specific goals or action sequences. CAFE maintains online memory of objects, functional zones, and execution states. A rule-guided Trigger-LLM admits formulation from accumulated evidence; Draft, Complete, and Audit propose goals, resolve execution details, and check dependencies. Outcomes update memory for correction and subsequent discovery. Evaluation in 12 AI2-THOR scenes compares three backbones and task-complexity tiers using coverage, constraint, and execution metrics. Tri-LLM records higher GCR scores than the evaluated baselines across three backbones and task-complexity tiers. Controls examine completion, auditing, zones, feedback, triggering, and prompt examples. LimoCobot traces illustrate storage, cleanup, and recovery from a failed grasp. The study examines how shared scene state connects task discovery to execution and outcome-driven revision.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
+      }
+    },
+    {
       "title": "DexForesight: Grounding Dexterous Policies with Implicit Spatial Foresight",
       "authors": [
         "Zhongxi Chen",
@@ -359,12 +1346,12 @@
         "Haonan Wang",
         "Zhijie Deng"
       ],
-      "summary": "Dexterous manipulation requires rich spatial foresight over both the surrounding scene and the robot hand. Existing world-action models often acquire such predictive knowledge through explicit future prediction. We introduce DexForesight, a framework that learns spatial foresight implicitly by injecting dynamics-aware world representations into the latent space of a dexterous policy. During training, DexForesight learns an action-conditioned spatial world model from offline scene depth, kinematic hand geometry, and demonstration trajectories. The world model predicts 3D hand-point motion and visual feature changes, capturing both articulated hand dynamics and scene changes under demonstrated actions, including the motion of fingers occluded from the cameras. We then freeze the world model and align policy queries with its predictive world queries, transferring the learned spatial dynamics into policy latents and using them to condition action generation. At deployment, only the policy is retained, operating on RGB observations, language, and robot state without depth input or explicit future prediction. On 11 DexJoCo simulation tasks, DexForesight improves the overall success rate of the base policy from 49.4% to 60.5%. On three real-robot dexterous manipulation tasks, DexForesight achieves 58.3% success, compared with 50.0% for the strongest baseline.Project page https://dexforesight.github.io/",
+      "summary": "Dexterous manipulation requires rich spatial foresight over both the surrounding scene and the robot hand. Existing world-action models often acquire such predictive knowledge through explicit future prediction. We introduce DexForesight, a framework that learns spatial foresight implicitly by injecting dynamics-aware world representations into the latent space of a dexterous policy. During training, DexForesight learns an action-conditioned spatial world model from offline scene depth, kinematic hand geometry, and demonstration trajectories. The world model predicts 3D hand-point motion and visual feature changes, capturing both articulated hand dynamics and scene changes under demonstrated actions, including the motion of fingers occluded from the cameras. We then freeze the world model and align policy queries with its predictive world queries, transferring the learned spatial dynamics into policy latents and using them to condition action generation. At deployment, only the policy is retained, operating on RGB observations, language, and robot state without depth input or explicit future prediction. On 11 DexJoCo simulation tasks, DexForesight improves the overall success rate of the base policy from 49.4% to 60.5%. On three real-robot dexterous manipulation tasks, DexForesight achieves 58.3% success, compared with 50.0% for the strongest baseline. Project page https://dexforesight.github.io/",
       "published": "2026-11-08T06:14:36Z",
-      "updated": "2026-11-08T06:14:36Z",
-      "arxiv_id": "2611.11166v1",
-      "abs_url": "http://arxiv.org/abs/2611.11166v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.11166v1",
+      "updated": "2026-11-10T07:28:24Z",
+      "arxiv_id": "2611.11166v2",
+      "abs_url": "http://arxiv.org/abs/2611.11166v2",
+      "pdf_url": "https://arxiv.org/pdf/2611.11166v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -395,12 +1382,12 @@
         "world model"
       ],
       "title_zh": "DexForesight: Grounding Dexterous Policies with Implicit Spatial Foresight",
-      "summary_zh": "Dexterous manipulation requires rich spatial foresight over both the surrounding scene and the robot hand. Existing world-action models often acquire such predictive knowledge through explicit future prediction. We introduce DexForesight, a framework that learns spatial foresight implicitly by injecting dynamics-aware world representations into the latent space of a dexterous policy. During training, DexForesight learns an action-conditioned spatial world model from offline scene depth, kinematic hand geometry, and demonstration trajectories. The world model predicts 3D hand-point motion and visual feature changes, capturing both articulated hand dynamics and scene changes under demonstrated actions, including the motion of fingers occluded from the cameras. We then freeze the world model and align policy queries with its predictive world queries, transferring the learned spatial dynamics into policy latents and using them to condition action generation. At deployment, only the policy is retained, operating on RGB observations, language, and robot state without depth input or explicit future prediction. On 11 DexJoCo simulation tasks, DexForesight improves the overall success rate of the base policy from 49.4% to 60.5%. On three real-robot dexterous manipulation tasks, DexForesight achieves 58.3% success, compared with 50.0% for the strongest baseline.Project page https://dexforesight.github.io/",
+      "summary_zh": "Dexterous manipulation requires rich spatial foresight over both the surrounding scene and the robot hand. Existing world-action models often acquire such predictive knowledge through explicit future prediction. We introduce DexForesight, a framework that learns spatial foresight implicitly by injecting dynamics-aware world representations into the latent space of a dexterous policy. During training, DexForesight learns an action-conditioned spatial world model from offline scene depth, kinematic hand geometry, and demonstration trajectories. The world model predicts 3D hand-point motion and visual feature changes, capturing both articulated hand dynamics and scene changes under demonstrated actions, including the motion of fingers occluded from the cameras. We then freeze the world model and align policy queries with its predictive world queries, transferring the learned spatial dynamics into policy latents and using them to condition action generation. At deployment, only the policy is retained, operating on RGB observations, language, and robot state without depth input or explicit future prediction. On 11 DexJoCo simulation tasks, DexForesight improves the overall success rate of the base policy from 49.4% to 60.5%. On three real-robot dexterous manipulation tasks, DexForesight achieves 58.3% success, compared with 50.0% for the strongest baseline. Project page https://dexforesight.github.io/",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
       }
     },
     {
@@ -710,10 +1697,10 @@
       ],
       "summary": "Vision-based control policies, including vision-language-action models, have enabled robots to perform increasingly complex tasks. However, their execution speed is often limited by the high computational cost of action inference. In this work, we investigate what can be achieved at the control level without modifying the underlying policy learning process. We introduce an asynchronous inference and control framework that enables fast task execution while maintaining smooth and stable robot motions. By formulating the generation of continuous target positions from discontinuous model predictions as a tracking control problem, our method makes asynchronous inference practical for real robots. We further accelerate execution through adaptive action skipping based on the variance of predicted positions. Experiments with Action Chunking Transformer and OpenVLA-OFT on a bimanual robot demonstrate substantial speedups while preserving high task success rates.",
       "published": "2026-11-08T03:09:07Z",
-      "updated": "2026-11-08T03:09:07Z",
-      "arxiv_id": "2611.11089v1",
-      "abs_url": "http://arxiv.org/abs/2611.11089v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.11089v1",
+      "updated": "2026-11-10T04:14:23Z",
+      "arxiv_id": "2611.11089v2",
+      "abs_url": "http://arxiv.org/abs/2611.11089v2",
+      "pdf_url": "https://arxiv.org/pdf/2611.11089v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -750,7 +1737,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-11-10T05:00:51.886041+00:00"
+        "generated_at": "2026-11-11T03:29:12.094726+00:00"
       }
     },
     {

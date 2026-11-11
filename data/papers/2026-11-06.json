@@ -1,13 +1,61 @@
 {
   "date": "2026-11-06",
-  "generated_at": "2026-11-10T04:57:47.640942+00:00",
+  "generated_at": "2026-11-11T03:27:40.443268+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202611060000 TO 202611062359]",
-  "total_fetched": 547,
-  "total_matched": 65,
+  "total_fetched": 560,
+  "total_matched": 66,
   "papers": [
+    {
+      "title": "Maze Runner: Autonomous Maze Navigation with Line-Based Localization and Control Barrier Functions",
+      "authors": [
+        "Alvaro J. Gaona",
+        "Lucas Gómez-Velayos",
+        "Peter Pasuy-Quevedo"
+      ],
+      "summary": "Maze navigation requires localization from sparse, repetitive geometry, planning through narrow corridors, and control that stays safe when the estimate or the map is wrong. We present Maze Runner, an open autonomy stack in C++ and ROS 2 that addresses these needs end to end on a simulated Husarion ROSbot XL with a 2D LiDAR in Gazebo. Perception extracts wall lines from each scan with RANSAC and total least squares, with per-line uncertainty. The same line front end feeds two estimators: an Extended Kalman Filter (EKF) that localizes against a line map built from the maze mesh, and an EKF SLAM variant that builds the line map online. Planning runs online on an inflated occupancy grid with A* plus line-of-sight shortcutting, or with a forward-only Hybrid A*. A nonlinear Model Predictive Controller (NMPC) tracks the plan while discrete-time Control Barrier Functions (CBFs) on world-frame LiDAR points keep the robot clear of walls and unmapped obstacles. The algorithms live in a ROS-free, unit-tested core library, and the whole stack builds and runs from a single reproducible environment. In simulation, the robot drives a 135 m route through the maze with 1.0 cm localization RMSE against the known map and 24 cm in SLAM mode, the planner returns a path in 6 ms, and the NMPC solves in 11.7 ms on average, never exceeding its 80 ms budget.",
+      "published": "2026-11-06T22:32:59Z",
+      "updated": "2026-11-06T22:32:59Z",
+      "arxiv_id": "2611.12949v1",
+      "abs_url": "http://arxiv.org/abs/2611.12949v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.12949v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "comment": "10 pages, 8 figures, 1 table. Code: https://github.com/alvgaona/maze-runner",
+      "code_url": "https://github.com/alvgaona/maze-runner",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "导航与移动",
+        "世界模型与仿真",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 7,
+      "anchor_terms": [
+        "navigation",
+        "robot"
+      ],
+      "matched_terms": [
+        "navigation",
+        "robot",
+        "slam"
+      ],
+      "title_zh": "Maze Runner: Autonomous Maze Navigation with Line-Based Localization and Control Barrier Functions",
+      "summary_zh": "Maze navigation requires localization from sparse, repetitive geometry, planning through narrow corridors, and control that stays safe when the estimate or the map is wrong. We present Maze Runner, an open autonomy stack in C++ and ROS 2 that addresses these needs end to end on a simulated Husarion ROSbot XL with a 2D LiDAR in Gazebo. Perception extracts wall lines from each scan with RANSAC and total least squares, with per-line uncertainty. The same line front end feeds two estimators: an Extended Kalman Filter (EKF) that localizes against a line map built from the maze mesh, and an EKF SLAM variant that builds the line map online. Planning runs online on an inflated occupancy grid with A* plus line-of-sight shortcutting, or with a forward-only Hybrid A*. A nonlinear Model Predictive Controller (NMPC) tracks the plan while discrete-time Control Barrier Functions (CBFs) on world-frame LiDAR points keep the robot clear of walls and unmapped obstacles. The algorithms live in a ROS-free, unit-tested core library, and the whole stack builds and runs from a single reproducible environment. In simulation, the robot drives a 135 m route through the maze with 1.0 cm localization RMSE against the known map and 24 cm in SLAM mode, the planner returns a path in 6 ms, and the NMPC solves in 11.7 ms on average, never exceeding its 80 ms budget.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-11T03:28:21.155764+00:00"
+      }
+    },
     {
       "title": "DexDICE: Reconciling Safety and Performance via Dual-Expert Offline Imitation Learning",
       "authors": [
@@ -1056,23 +1104,23 @@
       }
     },
     {
-      "title": "Seeing What Matters: Benchmarking Task-Conditioned Actionable Spatial Belief for Manipulation",
+      "title": "Seeing What Execution Needs: Benchmarking Task-Conditioned Actionable Spatial Belief for Manipulation",
       "authors": [
         "Yina Jian",
         "Mingkun Xu"
       ],
-      "summary": "When should a robot look at the cup, and when at the portafilter? Spatial-reasoning benchmarks evaluate whether a model can describe a scene, but manipulation needs something more specific: the ability to acquire the particular evidence that makes the current command executable. A view that is informative for one task can be useless for another, even at the same workstation. We introduce Seeing What Matters, a benchmark for task-conditioned actionable spatial belief in simulated tabletop manipulation. Across three domains--coffee workstation, drawer/cabinet, and microwave/appliance--the benchmark provides 860 frozen evaluation cases; expanding across methods, budgets, and inference repeats yields more than 115,000 evaluator episodes under two protocols: closed-loop actionability and same-object functional out-of-distribution generalization. Each case pairs a set of candidate RGB views with a manipulation command, shared scripted skills, and hidden postconditions, so the benchmark directly measures whether a view-selection policy acquires the observations its command actually needs. We also provide a diagnostic reference pipeline that maintains a spatial-functional belief state and ranks views by missing evidence. At primary budget settings, this pipeline reaches 98.8% closed-loop and 98.9% functional-OOD success; ablating the functional or command-binding components collapses performance to near zero. Seven vision-language models, evaluated on the same cases, reach only 26-43%. Replacing the reference pipeline's coverage metadata with frozen RGB-derived scores preserves 98.5%/98.9% success; shuffling the visual scores collapses it to 15%/11%, confirming that the result depends on image content. These gaps suggest that spatial belief for manipulation should be evaluated not by scene-level completeness, but by whether it acquires the evidence the current command requires.",
+      "summary": "When should a robot look at the cup, and when at the portafilter? A view that is informative for one task can be useless for another, even at the same workstation. We introduce Seeing What Execution Needs, a benchmark for task-conditioned actionable spatial belief in simulated tabletop manipulation. Its aligned three-domain track contains 1,080 frozen cases (360 each for coffee workstation, drawer/cabinet, and microwave/appliance). The primary coffee protocols -- closed-loop actionability and same-object functional out-of-distribution generalization -- produce over 115,000 evaluator episodes across evaluated methods, budgets, and inference repeats. Each case pairs candidate RGB views with a manipulation command, shared scripted skills, and hidden postconditions, directly measuring whether selected observations support execution. A metadata-assisted diagnostic reference pipeline maintains spatial-functional beliefs and ranks views by missing evidence. At primary budget settings, it reaches 98.8% closed-loop and 98.9% functional-OOD success; removing functional fields or command binding reduces functional-OOD success to 0.0% and 19.7%, respectively. Under a separate full-preview contract, seven vision-language models reach 26-43%. Replacing coverage metadata with frozen RGB-derived scores retains 98.5%/98.9% success; shuffling these scores reduces success to 15%/11%, supporting dependence on image content. Separately, the aligned three-domain evaluation at H=3 supports portability of the benchmark interface under frozen domain-specific schemas. These results suggest that spatial belief for manipulation should be evaluated by whether acquired evidence meets the current command's execution requirements.",
       "published": "2026-11-06T17:49:56Z",
-      "updated": "2026-11-06T17:49:56Z",
-      "arxiv_id": "2611.09794v1",
-      "abs_url": "http://arxiv.org/abs/2611.09794v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.09794v1",
+      "updated": "2026-11-09T21:29:25Z",
+      "arxiv_id": "2611.09794v2",
+      "abs_url": "http://arxiv.org/abs/2611.09794v2",
+      "pdf_url": "https://arxiv.org/pdf/2611.09794v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
         "cs.CV"
       ],
-      "comment": "22 pages (8 main + 14 supplement). Extended cross-domain evaluation and physical robot validation in progress",
+      "comment": "22 pages (11 main + 11 supplement). Extended cross-domain evaluation and physical robot validation in progress",
       "code_url": "",
       "has_code": false,
       "labels": [
@@ -1090,13 +1138,13 @@
         "manipulation",
         "robot"
       ],
-      "title_zh": "Seeing What Matters: Benchmarking Task-Conditioned Actionable Spatial Belief for Manipulation",
-      "summary_zh": "When should a robot look at the cup, and when at the portafilter? Spatial-reasoning benchmarks evaluate whether a model can describe a scene, but manipulation needs something more specific: the ability to acquire the particular evidence that makes the current command executable. A view that is informative for one task can be useless for another, even at the same workstation. We introduce Seeing What Matters, a benchmark for task-conditioned actionable spatial belief in simulated tabletop manipulation. Across three domains--coffee workstation, drawer/cabinet, and microwave/appliance--the benchmark provides 860 frozen evaluation cases; expanding across methods, budgets, and inference repeats yields more than 115,000 evaluator episodes under two protocols: closed-loop actionability and same-object functional out-of-distribution generalization. Each case pairs a set of candidate RGB views with a manipulation command, shared scripted skills, and hidden postconditions, so the benchmark directly measures whether a view-selection policy acquires the observations its command actually needs. We also provide a diagnostic reference pipeline that maintains a spatial-functional belief state and ranks views by missing evidence. At primary budget settings, this pipeline reaches 98.8% closed-loop and 98.9% functional-OOD success; ablating the functional or command-binding components collapses performance to near zero. Seven vision-language models, evaluated on the same cases, reach only 26-43%. Replacing the reference pipeline's coverage metadata with frozen RGB-derived scores preserves 98.5%/98.9% success; shuffling the visual scores collapses it to 15%/11%, confirming that the result depends on image content. These gaps suggest that spatial belief for manipulation should be evaluated not by scene-level completeness, but by whether it acquires the evidence the current command requires.",
+      "title_zh": "Seeing What Execution Needs: Benchmarking Task-Conditioned Actionable Spatial Belief for Manipulation",
+      "summary_zh": "When should a robot look at the cup, and when at the portafilter? A view that is informative for one task can be useless for another, even at the same workstation. We introduce Seeing What Execution Needs, a benchmark for task-conditioned actionable spatial belief in simulated tabletop manipulation. Its aligned three-domain track contains 1,080 frozen cases (360 each for coffee workstation, drawer/cabinet, and microwave/appliance). The primary coffee protocols -- closed-loop actionability and same-object functional out-of-distribution generalization -- produce over 115,000 evaluator episodes across evaluated methods, budgets, and inference repeats. Each case pairs candidate RGB views with a manipulation command, shared scripted skills, and hidden postconditions, directly measuring whether selected observations support execution. A metadata-assisted diagnostic reference pipeline maintains spatial-functional beliefs and ranks views by missing evidence. At primary budget settings, it reaches 98.8% closed-loop and 98.9% functional-OOD success; removing functional fields or command binding reduces functional-OOD success to 0.0% and 19.7%, respectively. Under a separate full-preview contract, seven vision-language models reach 26-43%. Replacing coverage metadata with frozen RGB-derived scores retains 98.5%/98.9% success; shuffling these scores reduces success to 15%/11%, supporting dependence on image content. Separately, the aligned three-domain evaluation at H=3 supports portability of the benchmark interface under frozen domain-specific schemas. These results suggest that spatial belief for manipulation should be evaluated by whether acquired evidence meets the current command's execution requirements.",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-11-10T04:59:01.879951+00:00"
+        "generated_at": "2026-11-11T03:28:21.155764+00:00"
       }
     },
     {
@@ -1473,10 +1521,10 @@
       ],
       "summary": "Humanoid whole-body control requires a robot to track diverse reference motions while maintaining balance under gravity, torque limits, contact switching, and external disturbances. Existing reinforcement-learning-based trackers typically learn control outputs that jointly address motion tracking and balance. However, similar reference poses can correspond to substantially different dynamic demands, requiring a unified policy to learn motion-dependent control requirements alongside balance corrections. This can complicate learning and lead to high-frequency fluctuations in control outputs. We propose DKWBC, a dynamics-informed whole-body control framework that combines explicit model-based tracking with a learned balancing residual. Inspired by the model-based and environmental-wrench contributions to joint torques in floating-base dynamics, DKWBC uses inverse-dynamics feedforward and joint PD feedback to supply tracking torques, while a residual policy learns additional joint-torque corrections for balanced execution. By explicitly accounting for motion-dependent torque demands, this structure simplifies the policy's learning task. Experiments in simulation and on real hardware demonstrate that a single learned balancing policy generalizes across motion datasets while maintaining accurate motion tracking and balance across ground support, attached payloads, and physical interaction. Project page: https://robbyant-research.github.io/DKWBC/.",
       "published": "2026-11-06T15:31:19Z",
-      "updated": "2026-11-06T15:31:19Z",
-      "arxiv_id": "2611.09605v1",
-      "abs_url": "http://arxiv.org/abs/2611.09605v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.09605v1",
+      "updated": "2026-11-10T05:35:32Z",
+      "arxiv_id": "2611.09605v2",
+      "abs_url": "http://arxiv.org/abs/2611.09605v2",
+      "pdf_url": "https://arxiv.org/pdf/2611.09605v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -1506,7 +1554,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-11-10T04:59:01.879951+00:00"
+        "generated_at": "2026-11-11T03:28:21.155764+00:00"
       }
     },
     {
