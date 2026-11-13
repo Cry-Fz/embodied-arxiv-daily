@@ -1,11 +1,11 @@
 {
   "date": "2026-11-09",
-  "generated_at": "2026-11-12T04:37:57.129345+00:00",
+  "generated_at": "2026-11-13T03:50:58.142981+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202611090000 TO 202611092359]",
-  "total_fetched": 618,
+  "total_fetched": 622,
   "total_matched": 85,
   "papers": [
     {
@@ -110,6 +110,58 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-11-11T03:32:04.810515+00:00"
+      }
+    },
+    {
+      "title": "SWAM: Scaling World Action Models with Cross-Modal Alignment",
+      "authors": [
+        "Yu Zhou",
+        "Xinyuan Xia",
+        "Xuankun Yang",
+        "Yinghao Yang",
+        "Wendi Chen",
+        "Bowen Liu",
+        "Jianhan Ma",
+        "Weicheng Duan",
+        "Jun Lv",
+        "Cewu Lu",
+        "Yanwei Li"
+      ],
+      "summary": "World action models jointly predict video and actions conditioned on language. Existing studies focus primarily on architectures and training mechanisms, typically treating language-video alignment acquired through video pretraining as an established foundation. However, introducing action learning may impair this alignment. Principled guidance on data and supervision design for maintaining language-video alignment during action learning remains limited. To investigate this, we curate a pool of approximately 47,000 hours of general videos, egocentric videos, UMI demonstrations, and robot demonstrations. Building on this, we systematically study how language-video supervision, language-video-action supervision, and the joint use of these two forms affect WAM performance. In particular, we examine how language annotation quality affects pretrained language-video capabilities, and how action supervision from UMI and robot demonstrations extends these capabilities to language-video-action modeling. To better scale the model, we further conduct detailed studies on joint training recipe and model architecture. Under a fixed training budget, mixing egocentric videos and UMI demonstrations improves control generalization. Model architecture affects how effectively these experiences are used, while scaling pretraining under the selected configuration brings further gains. The resulting recipe, post-trained on RoboTwin Clean demonstrations only, achieves success rates of 88.10% and 61.56% under Easy (Clean-to-Clean) and Hard (Clean-to-Random) conditions, respectively. Our model achieves 40.00% SR across three real-world tasks, compared with 23.33% for the strongest baseline, indicating better generalization under unseen conditions. We release the curated data, training code, and model weights.",
+      "published": "2026-11-09T18:55:04Z",
+      "updated": "2026-11-11T05:53:06Z",
+      "arxiv_id": "2611.12870v2",
+      "abs_url": "http://arxiv.org/abs/2611.12870v2",
+      "pdf_url": "https://arxiv.org/pdf/2611.12870v2",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "comment": "Project page (https://char-lotte-xia.github.io/swam-official/). Paper (https://arxiv.org/abs/2611.12870). Code (https://github.com/shaaaaron/SWAM). Hugging Face paper page and discussion (https://huggingface.co/papers/2611.12870)",
+      "code_url": "https://github.com/shaaaaron/SWAM",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "感知与3D理解",
+      "score": 5,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "egocentric",
+        "robot"
+      ],
+      "title_zh": "SWAM: Scaling World Action Models with Cross-Modal Alignment",
+      "summary_zh": "World action models jointly predict video and actions conditioned on language. Existing studies focus primarily on architectures and training mechanisms, typically treating language-video alignment acquired through video pretraining as an established foundation. However, introducing action learning may impair this alignment. Principled guidance on data and supervision design for maintaining language-video alignment during action learning remains limited. To investigate this, we curate a pool of approximately 47,000 hours of general videos, egocentric videos, UMI demonstrations, and robot demonstrations. Building on this, we systematically study how language-video supervision, language-video-action supervision, and the joint use of these two forms affect WAM performance. In particular, we examine how language annotation quality affects pretrained language-video capabilities, and how action supervision from UMI and robot demonstrations extends these capabilities to language-video-action modeling. To better scale the model, we further conduct detailed studies on joint training recipe and model architecture. Under a fixed training budget, mixing egocentric videos and UMI demonstrations improves control generalization. Model architecture affects how effectively these experiences are used, while scaling pretraining under the selected configuration brings further gains. The resulting recipe, post-trained on RoboTwin Clean demonstrations only, achieves success rates of 88.10% and 61.56% under Easy (Clean-to-Clean) and Hard (Clean-to-Random) conditions, respectively. Our model achieves 40.00% SR across three real-world tasks, compared with 23.33% for the strongest baseline, indicating better generalization under unseen conditions. We release the curated data, training code, and model weights.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-13T03:51:29.265175+00:00"
       }
     },
     {
@@ -1105,57 +1157,6 @@
       ],
       "title_zh": "Grasping the Future: Joint 3D Hand-Object Forecasting From Internet Videos",
       "summary_zh": "To interact with an object, we need to anticipate both how it will move and how our hands should move with it. Human videos capture these relationships across everyday activities, offering a natural source for learning to predict future interactions. Learning from them requires recovering motion from completed interactions and using it to anticipate what could happen next. We present $\\textit{Grasping-the-Future}$, a unified generative model of joint 3D hand-object motion, including wrist motion, finger articulation, and object position and orientation. Through masked spatiotemporal completion and flow matching, we train a single model for several prediction tasks: forecasting future interactions, predicting hand motion given object motion or vice versa, generating both trajectories toward a desired final object pose, and completing partially observed interactions. We explicitly model hand-object relations and incorporate contact constraints to help preserve grasp relationships during motion. To obtain 3D supervision from internet videos, we develop a scalable pipeline that combines pretrained perception models with joint geometric optimization to reconstruct completed interactions. We combine these recovered trajectories with annotated interaction datasets as training data for all tasks. We demonstrate strong performance across all tasks, outperforming released forecasters on datasets with 3D annotations. Moreover, we show geometric and physical plausibility of the predicted trajectories by retargeting them to a robotic embodiment. Videos are available at https://grasping-the-future.github.io.",
-      "translation": {
-        "language": "zh-CN",
-        "provider": "google",
-        "model": "deep-translator/google",
-        "generated_at": "2026-11-11T03:32:04.810515+00:00"
-      }
-    },
-    {
-      "title": "SWAM: Scaling World Action Models with Cross-Modal Alignment",
-      "authors": [
-        "Yu Zhou",
-        "Xinyuan Xia",
-        "Xuankun Yang",
-        "Yinghao Yang",
-        "Wendi Chen",
-        "Bowen Liu",
-        "Jianhan Ma",
-        "Weicheng Duan",
-        "Jun Lv",
-        "Cewu Lu",
-        "Yanwei Li"
-      ],
-      "summary": "World action models jointly predict video and actions conditioned on language. Existing studies focus primarily on architectures and training mechanisms, typically treating language-video alignment acquired through video pretraining as an established foundation. However, introducing action learning may impair this alignment. Principled guidance on data and supervision design for maintaining language-video alignment during action learning remains limited. To investigate this, we curate a pool of approximately 47,000 hours of general videos, egocentric videos, UMI demonstrations, and robot demonstrations. Building on this, we systematically study how language-video supervision, language-video-action supervision, and the joint use of these two forms affect WAM performance. In particular, we examine how language annotation quality affects pretrained language-video capabilities, and how action supervision from UMI and robot demonstrations extends these capabilities to language-video-action modeling. To better scale the model, we further conduct detailed studies on joint training recipe and model architecture. Under a fixed training budget, mixing egocentric videos and UMI demonstrations improves control generalization. Model architecture affects how effectively these experiences are used, while scaling pretraining under the selected configuration brings further gains. The resulting recipe, post-trained on RoboTwin Clean demonstrations only, achieves success rates of 88.10% and 61.56% under Easy (Clean-to-Clean) and Hard (Clean-to-Random) conditions, respectively. Our model achieves 40.00% SR across three real-world tasks, compared with 23.33% for the strongest baseline, indicating better generalization under unseen conditions. We release the curated data, training code, and model weights.",
-      "published": "2026-11-09T18:55:04Z",
-      "updated": "2026-11-09T18:55:04Z",
-      "arxiv_id": "2611.12870v1",
-      "abs_url": "http://arxiv.org/abs/2611.12870v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.12870v1",
-      "primary_category": "cs.CV",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "comment": "",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "感知与3D理解",
-        "其他机器人"
-      ],
-      "topic": "感知与3D理解",
-      "score": 5,
-      "anchor_terms": [
-        "robot"
-      ],
-      "matched_terms": [
-        "egocentric",
-        "robot"
-      ],
-      "title_zh": "SWAM: Scaling World Action Models with Cross-Modal Alignment",
-      "summary_zh": "World action models jointly predict video and actions conditioned on language. Existing studies focus primarily on architectures and training mechanisms, typically treating language-video alignment acquired through video pretraining as an established foundation. However, introducing action learning may impair this alignment. Principled guidance on data and supervision design for maintaining language-video alignment during action learning remains limited. To investigate this, we curate a pool of approximately 47,000 hours of general videos, egocentric videos, UMI demonstrations, and robot demonstrations. Building on this, we systematically study how language-video supervision, language-video-action supervision, and the joint use of these two forms affect WAM performance. In particular, we examine how language annotation quality affects pretrained language-video capabilities, and how action supervision from UMI and robot demonstrations extends these capabilities to language-video-action modeling. To better scale the model, we further conduct detailed studies on joint training recipe and model architecture. Under a fixed training budget, mixing egocentric videos and UMI demonstrations improves control generalization. Model architecture affects how effectively these experiences are used, while scaling pretraining under the selected configuration brings further gains. The resulting recipe, post-trained on RoboTwin Clean demonstrations only, achieves success rates of 88.10% and 61.56% under Easy (Clean-to-Clean) and Hard (Clean-to-Random) conditions, respectively. Our model achieves 40.00% SR across three real-world tasks, compared with 23.33% for the strongest baseline, indicating better generalization under unseen conditions. We release the curated data, training code, and model weights.",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
@@ -2835,10 +2836,10 @@
       ],
       "summary": "Traversability prediction is a core component of autonomous navigation, yet most vision-based methods operate frame-wise and produce temporally inconsistent predictions. We present SAM-VTP (Video Traversability Prediction), which fine-tunes SAM2's video memory pathway for dense, prompt-free traversability segmentation, conditioning each frame on a persistent memory of prior observations. Rather than inferring terrain geometry from appearance, we measure it: slope, roughness and height are computed from depth and fused into the image features. We also introduce an offline continuous supervision pipeline that generates dense per-pixel traversability targets in [0,1] from depth-derived geometry and semantic priors, requiring no robot deployment and no per-pixel annotation, capturing conditional feasibility that binary labels cannot represent. On TartanGround, a large-scale synthetic ground-robot dataset, SAM-VTP improves fuzzy Jaccard from 0.908 to 0.924 and binary IoU from 0.854 to 0.886 over SAM-TP, a frame-wise SAM2 baseline, against a seed-to-seed spread below 0.001, and cuts frame-to-frame flicker by 31%. In closed-loop trials at two field sites, driving the same planner and controller, the baseline's dropouts leave the planner without a feasible path 3.3x more often on a paved course and 6.9x on rough ground, while SAM-VTP runs at 21.4 FPS on the Orin Nano the robot carries.",
       "published": "2026-11-09T09:18:31Z",
-      "updated": "2026-11-09T09:18:31Z",
-      "arxiv_id": "2611.12099v1",
-      "abs_url": "http://arxiv.org/abs/2611.12099v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.12099v1",
+      "updated": "2026-11-11T04:03:09Z",
+      "arxiv_id": "2611.12099v2",
+      "abs_url": "http://arxiv.org/abs/2611.12099v2",
+      "pdf_url": "https://arxiv.org/pdf/2611.12099v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -2868,7 +2869,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-11-11T03:32:04.810515+00:00"
+        "generated_at": "2026-11-13T03:51:29.265175+00:00"
       }
     },
     {
