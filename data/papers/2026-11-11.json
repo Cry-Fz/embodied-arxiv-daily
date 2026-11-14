@@ -1,13 +1,168 @@
 {
   "date": "2026-11-11",
-  "generated_at": "2026-11-13T03:51:07.628532+00:00",
+  "generated_at": "2026-11-14T03:49:10.324986+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202611110000 TO 202611112359]",
-  "total_fetched": 271,
-  "total_matched": 38,
+  "total_fetched": 444,
+  "total_matched": 56,
   "papers": [
+    {
+      "title": "Robo-SWE: An Executable Issue-Resolution Dataset Mined from Robot Software Repositories",
+      "authors": [
+        "Vahid Haratian",
+        "Vahid Ansari",
+        "Mohammadhossein Malmir",
+        "Alois Knoll"
+      ],
+      "summary": "Coding agents are evaluated mostly on general-purpose software, but domain-specific systems require domain-aware evaluation. Robot software is a particularly challenging case: Robot Operating System 2 (ROS 2) packages have their own build tools, simulators and learning frameworks are built on physics engines, and behavior that depends on timing and hardware is hard to test. We present Robo-SWE, a dataset of 236 executable issue-resolution tasks mined from merged pull requests in 28 public robotics repositories in four domains: ROS 2 systems, simulation and physics engines, robotics algorithm libraries, and robot-learning frameworks. Each task contains the original issue text, a container recipe for the repository at the commit before the fix, the developers' fix, and the developers' tests, which fail before the fix and pass after it in repeated offline runs. The dataset also keeps a provenance ledger of all 1,567 candidate pull requests, with the stage each reached and the reason for every rejection, and, as a first use, 3,540 graded attempts by five coding-agent setups with recorded patches and 3,529 available trajectories. Across three runs per primary setup, resolve rates range from 45.8% for Claude Sonnet 5.5 to 56.5% for Claude Opus 5.5; GPT-6.1 Sol reaches 54.1% at maximum effort and 52.5% at medium effort, and GPT-6 Astra 51.4%. GLM-5.3 resolves 46.2%, and Kimi K3.1 Pro 43.9%. The tasks are validated by execution; verification of their fairness by human reviewers is future work. The dataset and public leaderboard are available online.",
+      "published": "2026-11-11T23:51:27Z",
+      "updated": "2026-11-11T23:51:27Z",
+      "arxiv_id": "2611.16116v1",
+      "abs_url": "http://arxiv.org/abs/2611.16116v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.16116v1",
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.RO"
+      ],
+      "comment": "5 pages, 1 figure, 2 tables. Submitted to the MSR 2027 Data and Tool Showcase Track. Dataset: https://huggingface.co/datasets/vharatian/Robo-SWE",
+      "code_url": "https://huggingface.co/datasets/vharatian/Robo-SWE",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "世界模型与仿真",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 8,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic",
+        "robotics",
+        "simulator"
+      ],
+      "title_zh": "Robo-SWE: An Executable Issue-Resolution Dataset Mined from Robot Software Repositories",
+      "summary_zh": "Coding agents are evaluated mostly on general-purpose software, but domain-specific systems require domain-aware evaluation. Robot software is a particularly challenging case: Robot Operating System 2 (ROS 2) packages have their own build tools, simulators and learning frameworks are built on physics engines, and behavior that depends on timing and hardware is hard to test. We present Robo-SWE, a dataset of 236 executable issue-resolution tasks mined from merged pull requests in 28 public robotics repositories in four domains: ROS 2 systems, simulation and physics engines, robotics algorithm libraries, and robot-learning frameworks. Each task contains the original issue text, a container recipe for the repository at the commit before the fix, the developers' fix, and the developers' tests, which fail before the fix and pass after it in repeated offline runs. The dataset also keeps a provenance ledger of all 1,567 candidate pull requests, with the stage each reached and the reason for every rejection, and, as a first use, 3,540 graded attempts by five coding-agent setups with recorded patches and 3,529 available trajectories. Across three runs per primary setup, resolve rates range from 45.8% for Claude Sonnet 5.5 to 56.5% for Claude Opus 5.5; GPT-6.1 Sol reaches 54.1% at maximum effort and 52.5% at medium effort, and GPT-6 Astra 51.4%. GLM-5.3 resolves 46.2%, and Kimi K3.1 Pro 43.9%. The tasks are validated by execution; verification of their fairness by human reviewers is future work. The dataset and public leaderboard are available online.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
+      }
+    },
+    {
+      "title": "JustRUA: A Controlled Study of GPT-6 Robot-Use Agents",
+      "authors": [
+        "Zefan Wang",
+        "Yufan Dang",
+        "Xuanwei Shi",
+        "Mingqi Gao",
+        "Cheng Yin",
+        "SikYuen Tam",
+        "Hanyu Liu",
+        "Yasheng Wang",
+        "Yaxi Lu",
+        "Songyang Zhang",
+        "Xin Cong",
+        "Yuan Yao"
+      ],
+      "summary": "GPT-6 Astra can drive a robot arm directly through a fixed harness, and scores of such robot-use agents on RoboDojo have risen quickly since. Reported systems differ in harness and test subset and often change several designs at once, so it is hard to tell which choices produce the gains. We take these designs apart and test them in one framework, along the harness around the model, the action interface, the reuse of experience and the scene geometry given to the model. A lean harness that keeps the full episode history and stops each motion early goes a long way. Reusing experience changes how the model acts but is not a free lunch, and scene geometry helps most, even when depth is predicted from RGB alone. JustRUA starts from the official L3 harness and keeps only what matters most. Even with no learned policy, self-improvement loop or task-specific tuning, this simple harness raises the score on the RoboDojo simulation benchmark substantially, from 29.7 to 50.3.",
+      "published": "2026-11-11T21:08:31Z",
+      "updated": "2026-11-11T21:08:31Z",
+      "arxiv_id": "2611.16009v1",
+      "abs_url": "http://arxiv.org/abs/2611.16009v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.16009v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "30 pages, 14 figures. Project page: https://zefanw.github.io/JustRUA. Code: https://github.com/ZefanW/JustRUA",
+      "code_url": "https://github.com/ZefanW/JustRUA",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "世界模型与仿真",
+        "数据集/评测",
+        "机械臂"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 6,
+      "anchor_terms": [
+        "robot"
+      ],
+      "matched_terms": [
+        "robot",
+        "robot arm"
+      ],
+      "title_zh": "JustRUA: A Controlled Study of GPT-6 Robot-Use Agents",
+      "summary_zh": "GPT-6 Astra can drive a robot arm directly through a fixed harness, and scores of such robot-use agents on RoboDojo have risen quickly since. Reported systems differ in harness and test subset and often change several designs at once, so it is hard to tell which choices produce the gains. We take these designs apart and test them in one framework, along the harness around the model, the action interface, the reuse of experience and the scene geometry given to the model. A lean harness that keeps the full episode history and stops each motion early goes a long way. Reusing experience changes how the model acts but is not a free lunch, and scene geometry helps most, even when depth is predicted from RGB alone. JustRUA starts from the official L3 harness and keeps only what matters most. Even with no learned policy, self-improvement loop or task-specific tuning, this simple harness raises the score on the RoboDojo simulation benchmark substantially, from 29.7 to 50.3.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
+      }
+    },
+    {
+      "title": "What World Model Does Active Object Search Need? A Study under Imperfect Detection",
+      "authors": [
+        "Kyeongryeol Go"
+      ],
+      "summary": "In active object search, a robot must decide where to look and when to stop. Imperfect detection complicates both decisions: a non-detection may indicate occlusion, an out-of-view target, or a false negative, while a detection may be a false positive. This raises the question of which representations a world model needs to support reliable search under imperfect detection. We introduce Bayesian Active Miss-aware Object Search (BAMOS) to investigate how target belief, occupancy belief, and detector errors affect search decisions. Through comprehensive ablations in Isaac Sim and HSSD houses, we examine the roles of these representations and their update mechanisms across different detector configurations. Notably, target belief and its update mechanisms are critical to search performance, with their contribution generally increasing as detection errors become more prevalent. These findings highlight the importance of maintaining and updating target beliefs to support reliable active search under uncertain detector observations, providing insights into the design of world models for embodied agents. Code is available in https://github.com/gokyeongryeol/BAMOS.",
+      "published": "2026-11-11T16:28:48Z",
+      "updated": "2026-11-11T16:28:48Z",
+      "arxiv_id": "2611.15689v1",
+      "abs_url": "http://arxiv.org/abs/2611.15689v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15689v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "comment": "Accepted in CoRL 2026 Workshop on Do Robots Need World Models",
+      "code_url": "https://github.com/gokyeongryeol/BAMOS",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "世界模型与仿真",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 14,
+      "anchor_terms": [
+        "embodied",
+        "embodied agent",
+        "embodied agents",
+        "robot",
+        "world model"
+      ],
+      "matched_terms": [
+        "embodied",
+        "embodied agent",
+        "embodied agents",
+        "isaac",
+        "robot",
+        "world model"
+      ],
+      "title_zh": "What World Model Does Active Object Search Need? A Study under Imperfect Detection",
+      "summary_zh": "In active object search, a robot must decide where to look and when to stop. Imperfect detection complicates both decisions: a non-detection may indicate occlusion, an out-of-view target, or a false negative, while a detection may be a false positive. This raises the question of which representations a world model needs to support reliable search under imperfect detection. We introduce Bayesian Active Miss-aware Object Search (BAMOS) to investigate how target belief, occupancy belief, and detector errors affect search decisions. Through comprehensive ablations in Isaac Sim and HSSD houses, we examine the roles of these representations and their update mechanisms across different detector configurations. Notably, target belief and its update mechanisms are critical to search performance, with their contribution generally increasing as detection errors become more prevalent. These findings highlight the importance of maintaining and updating target beliefs to support reliable active search under uncertain detector observations, providing insights into the design of world models for embodied agents. Code is available in https://github.com/gokyeongryeol/BAMOS.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
+      }
+    },
     {
       "title": "Actuation and Control of Passive Tendon-Driven Soft Extensions Through Rigid Manipulator Motion",
       "authors": [
@@ -287,6 +442,822 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-11-13T03:52:49.759137+00:00"
+      }
+    },
+    {
+      "title": "Imitating the Imperfect: Offline-to-Online Robust Imitation Learning from Heterogeneous Demonstrators",
+      "authors": [
+        "Cheng Pan",
+        "Nan Lu",
+        "Kai Arulkumaran",
+        "Josie Hughes"
+      ],
+      "summary": "Imitation learning (IL) typically relies on large-scale offline demonstrations collected from multiple human or algorithmic demonstrators. However, most existing approaches assume these demonstrators are homogeneous or near-optimal experts, a convenient but unrealistic assumption in real-world applications. In practice, demonstrations are often collected from heterogeneous demonstrators with unknown and varying levels of expertise, resulting in highly mixed-quality data. In this work, we study a challenging yet practical setting of imitation learning from such heterogeneous imperfect demonstrators. We propose Latent Expertise and Optimality Scoring based Imitation Learning (LEOS-IL), a principled framework that jointly learns (i) a state-action optimality scoring model and (ii) latent expertise levels for each demonstrator from unlabeled suboptimal offline demonstrations. The learned scoring model is then integrated into an online policy optimization procedure, where the agent is trained to maximize estimated optimality scores while its online rollouts are iteratively leveraged to refine the scoring model, thereby mitigating distributional shift during online adaptation. We further provide theoretical guarantees for optimality score identification and conditional optimal occupancy and policy recovery under explicit sufficient conditions. Experiments on continuous control benchmarks demonstrate that our approach consistently outperforms existing baselines across highly heterogeneous and low-quality demonstration regimes.",
+      "published": "2026-11-11T21:27:34Z",
+      "updated": "2026-11-11T21:27:34Z",
+      "arxiv_id": "2611.16020v1",
+      "abs_url": "http://arxiv.org/abs/2611.16020v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.16020v1",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "强化/模仿学习",
+        "数据集/评测",
+        "感知与3D理解"
+      ],
+      "topic": "强化/模仿学习",
+      "score": 4,
+      "anchor_terms": [
+        "imitation learning"
+      ],
+      "matched_terms": [
+        "imitation learning"
+      ],
+      "title_zh": "Imitating the Imperfect: Offline-to-Online Robust Imitation Learning from Heterogeneous Demonstrators",
+      "summary_zh": "Imitation learning (IL) typically relies on large-scale offline demonstrations collected from multiple human or algorithmic demonstrators. However, most existing approaches assume these demonstrators are homogeneous or near-optimal experts, a convenient but unrealistic assumption in real-world applications. In practice, demonstrations are often collected from heterogeneous demonstrators with unknown and varying levels of expertise, resulting in highly mixed-quality data. In this work, we study a challenging yet practical setting of imitation learning from such heterogeneous imperfect demonstrators. We propose Latent Expertise and Optimality Scoring based Imitation Learning (LEOS-IL), a principled framework that jointly learns (i) a state-action optimality scoring model and (ii) latent expertise levels for each demonstrator from unlabeled suboptimal offline demonstrations. The learned scoring model is then integrated into an online policy optimization procedure, where the agent is trained to maximize estimated optimality scores while its online rollouts are iteratively leveraged to refine the scoring model, thereby mitigating distributional shift during online adaptation. We further provide theoretical guarantees for optimality score identification and conditional optimal occupancy and policy recovery under explicit sufficient conditions. Experiments on continuous control benchmarks demonstrate that our approach consistently outperforms existing baselines across highly heterogeneous and low-quality demonstration regimes.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
+      }
+    },
+    {
+      "title": "Topology-Aware 4D Gaussian Splatting for Egocentric Videos",
+      "authors": [
+        "Leonardo Vanni",
+        "Stefano Gasperini",
+        "Federico Tombari",
+        "Chiara Plizzari"
+      ],
+      "summary": "Reconstructing dynamic scenes and objects from monocular egocentric video is crucial for embodied AI, yet existing 4D Gaussian Splatting (4DGS) approaches struggle with everyday interactions involving topological changes, such as cutting, assembly, opening, or closing. Since 4DGS methods rely on deforming a fixed representation, events that split, merge, or reveal surfaces cause severe visual artifacts. To address this challenge, we introduce TopoEgo, the first benchmark dedicated to topological changes in egocentric video (covering fission, fusion, open, and close), alongside Topo-4DGS, a topology-aware reconstruction method. Topo4DGS jointly models part-level motion and time-varying surface support by assigning independent rigid transformations to interacting parts and dynamically activating or deactivating Gaussians as surfaces appear, disappear, or separate. Extensive experiments demonstrate that Topo-4DGS significantly outperforms state-of-the-art 4DGS approaches across topological changes, especially on post-event frames. Code and data will be made publicly available.",
+      "published": "2026-11-11T21:13:08Z",
+      "updated": "2026-11-11T21:13:08Z",
+      "arxiv_id": "2611.16012v1",
+      "abs_url": "http://arxiv.org/abs/2611.16012v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.16012v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "comment": "Project page: https://topoego.github.io",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "数据集/评测",
+      "score": 7,
+      "anchor_terms": [
+        "embodied",
+        "embodied ai"
+      ],
+      "matched_terms": [
+        "egocentric",
+        "embodied",
+        "embodied ai"
+      ],
+      "title_zh": "Topology-Aware 4D Gaussian Splatting for Egocentric Videos",
+      "summary_zh": "Reconstructing dynamic scenes and objects from monocular egocentric video is crucial for embodied AI, yet existing 4D Gaussian Splatting (4DGS) approaches struggle with everyday interactions involving topological changes, such as cutting, assembly, opening, or closing. Since 4DGS methods rely on deforming a fixed representation, events that split, merge, or reveal surfaces cause severe visual artifacts. To address this challenge, we introduce TopoEgo, the first benchmark dedicated to topological changes in egocentric video (covering fission, fusion, open, and close), alongside Topo-4DGS, a topology-aware reconstruction method. Topo4DGS jointly models part-level motion and time-varying surface support by assigning independent rigid transformations to interacting parts and dynamically activating or deactivating Gaussians as surfaces appear, disappear, or separate. Extensive experiments demonstrate that Topo-4DGS significantly outperforms state-of-the-art 4DGS approaches across topological changes, especially on post-event frames. Code and data will be made publicly available.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
+      }
+    },
+    {
+      "title": "DexRemo: A Force-Sensing Hand Platform and Task Suite for Contact-Rich Removal Manipulation",
+      "authors": [
+        "Liman Wang",
+        "Hanyang Zhong",
+        "Sun Zhaole",
+        "Wenting Cao",
+        "Babar Jamil",
+        "Andy Tyrrell",
+        "Shan Luo",
+        "Jihong Zhu"
+      ],
+      "summary": "Many manipulation tasks require separating adhered, embedded, contaminated, or mechanically constrained targets. We study this setting as removal manipulation, where progress depends on evolving contact states that are only partially observable from vision and kinematics. We introduce DexRemo, a three-finger robotic hand with high-force actuation, modular fingertips, and three-axis fingertip force sensing, together with a nine-scenario real-robot task suite spanning adhesive detachment, surface cleaning and self-cleaning, and occluded retrieval. To make multi-finger force observations easier to fuse, we express fingertip forces in a shared wrist-centered frame, giving force components consistent geometric meaning across fingers and time. Using an Action Chunking Transformer backbone, policies fuse multi-view vision, proprioception, fingertip pose, and force observations to predict closed-loop action chunks from demonstrations. Evaluation uses six core benchmark tasks for controlled fingertip-input and force-frame ablations, plus three extension scenarios for additional held-out coverage. Across these evaluations, the learned policies achieve consistent removal performance, and ablations show that wrist-frame forces, especially with fingertip pose, improve stability and generalization over local-frame force inputs and no-force baselines. Project website: https://dexremo.github.io",
+      "published": "2026-11-11T20:33:31Z",
+      "updated": "2026-11-11T20:33:31Z",
+      "arxiv_id": "2611.15981v1",
+      "abs_url": "http://arxiv.org/abs/2611.15981v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15981v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "comment": "Accepted for publication in IEEE Transactions on Robotics (T-RO), 2026. Project website: https://dexremo.github.io",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "VLA/多模态策略",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 12,
+      "anchor_terms": [
+        "manipulation",
+        "proprioception",
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "action chunking",
+        "manipulation",
+        "proprioception",
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "DexRemo: A Force-Sensing Hand Platform and Task Suite for Contact-Rich Removal Manipulation",
+      "summary_zh": "Many manipulation tasks require separating adhered, embedded, contaminated, or mechanically constrained targets. We study this setting as removal manipulation, where progress depends on evolving contact states that are only partially observable from vision and kinematics. We introduce DexRemo, a three-finger robotic hand with high-force actuation, modular fingertips, and three-axis fingertip force sensing, together with a nine-scenario real-robot task suite spanning adhesive detachment, surface cleaning and self-cleaning, and occluded retrieval. To make multi-finger force observations easier to fuse, we express fingertip forces in a shared wrist-centered frame, giving force components consistent geometric meaning across fingers and time. Using an Action Chunking Transformer backbone, policies fuse multi-view vision, proprioception, fingertip pose, and force observations to predict closed-loop action chunks from demonstrations. Evaluation uses six core benchmark tasks for controlled fingertip-input and force-frame ablations, plus three extension scenarios for additional held-out coverage. Across these evaluations, the learned policies achieve consistent removal performance, and ablations show that wrist-frame forces, especially with fingertip pose, improve stability and generalization over local-frame force inputs and no-force baselines. Project website: https://dexremo.github.io",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
+      }
+    },
+    {
+      "title": "Video-Action Models for Data-Efficient Industrial Manipulation",
+      "authors": [
+        "Eugenio Chisari",
+        "Stefanos Charalambous",
+        "Oliver Sanchez",
+        "Thomas Umbach",
+        "Michael Gentner",
+        "Fabio Quattrini",
+        "Norica Bacuieti",
+        "Sabin Grube Doiz",
+        "Valentin Bertle",
+        "Sigmund Hennum Hoeg",
+        "Alain Ryser",
+        "German Rodriguez",
+        "Mario Arduini",
+        "Dang Nguyen",
+        "Florian Aumann",
+        "Felix Hegg",
+        "Manuel Meier",
+        "Philipp Wand",
+        "Julian Lotzer",
+        "Alessio Desogus",
+        "Benedek Forrai",
+        "Michael Bloesch",
+        "Stephan-Daniel Gravert",
+        "Stefan Weirich",
+        "Patrick Lanners",
+        "Elvis Nava"
+      ],
+      "summary": "Industrial manipulation requires precise alignment and controlled handling of rigid, deformable, and flexible components. Yet, the benefits of pretrained visuomotor policies remain underexplored in settings where limited access to specialized hardware, components, and fixtures constrains demonstration collection and evaluation. Understanding task-specific data requirements is important for assessing their scalability across diverse processes on the factory floor. We investigate whether video pretraining can support reliable industrial manipulation with limited action data. We propose FLUX-mimic, a video-action model, motivated by the potential of video pretraining to capture motion and interaction patterns that enable sample-efficient training. FLUX-mimic is built on a backbone pretrained on large-scale web and industrial task data, and an action expert to generate robot trajectories. We train our policy by joint video-action training. Across four automotive manufacturing benchmark tasks and two bimanual robot platforms, FLUX-mimic outperforms all considered baselines on the dexterous robot platform and matches pi_{0.5}'s average success rate on the gripper-based robot platform. On a deformable part kitting task, FLUX-mimic reaches 77.5% success with as little as two hours of task-specific action-labeled demonstrations.",
+      "published": "2026-11-11T20:20:56Z",
+      "updated": "2026-11-11T20:20:56Z",
+      "arxiv_id": "2611.15974v1",
+      "abs_url": "http://arxiv.org/abs/2611.15974v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15974v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "Project Webpage: https://www.mimicrobotics.com/blog/video-action-models-for-data-efficient-industrial-manipulation",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "VLA/多模态策略",
+        "人形与灵巧",
+        "数据集/评测",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 11,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "bimanual",
+        "dexterous",
+        "manipulation",
+        "robot",
+        "robotic",
+        "robotics",
+        "visuomotor"
+      ],
+      "title_zh": "Video-Action Models for Data-Efficient Industrial Manipulation",
+      "summary_zh": "Industrial manipulation requires precise alignment and controlled handling of rigid, deformable, and flexible components. Yet, the benefits of pretrained visuomotor policies remain underexplored in settings where limited access to specialized hardware, components, and fixtures constrains demonstration collection and evaluation. Understanding task-specific data requirements is important for assessing their scalability across diverse processes on the factory floor. We investigate whether video pretraining can support reliable industrial manipulation with limited action data. We propose FLUX-mimic, a video-action model, motivated by the potential of video pretraining to capture motion and interaction patterns that enable sample-efficient training. FLUX-mimic is built on a backbone pretrained on large-scale web and industrial task data, and an action expert to generate robot trajectories. We train our policy by joint video-action training. Across four automotive manufacturing benchmark tasks and two bimanual robot platforms, FLUX-mimic outperforms all considered baselines on the dexterous robot platform and matches pi_{0.5}'s average success rate on the gripper-based robot platform. On a deformable part kitting task, FLUX-mimic reaches 77.5% success with as little as two hours of task-specific action-labeled demonstrations.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
+      }
+    },
+    {
+      "title": "MOSAIC: Modular Obstacle and Spatial-Aware Framework for Manipulation In Cluttered Scenes",
+      "authors": [
+        "Richard Shi",
+        "Mohammad Mahdavian",
+        "Mehrdad Momeni Zadeh",
+        "Mohammed Elmahgiubi",
+        "Amir Rasouli"
+      ],
+      "summary": "Vision-Language-Action (VLA) models have demonstrated strong performance in robotic manipulation, yet most rely primarily on 2D visual observations and language instructions, leaving scene geometry and obstacle relationships to be inferred implicitly. This limitation is particularly problematic in cluttered environments, where small spatial errors can lead to unintended contacts or collisions. We propose MOSAIC, a modular spatial- and obstacle-aware framework that can be integrated with pretrained VLA policies to improve object-level scene understanding and action generation. Our method augments the VLA backbone with an auxiliary semantic grounding task that predicts role-specific masks for the target object, destination region, and surrounding obstacles. We further combine the target and destination masks with depth estimated from 3D scene reconstruction to construct role-specific geometric tokens that are injected directly into the action expert. In addition, we propose obstacle-aware attention supervision that emphasizes obstacles near the robot body during task execution. The resulting attention features are subsequently injected into later action-expert layers to further guide action generation. Together, these components provide explicit semantic, geometric, and obstacle-aware cues while preserving the underlying pretrained VLA architecture. We evaluate our framework on pretrained VLA model using the RoboPRO benchmark, including visual perturbation tests, and further validate it on real-world manipulation tasks. MOSAIC improves the success rate by 5.1% in cluttered scenes, and by 9.7% under visual perturbations, with gains of up to 25.0% in the most challenging environment. We will release our code and dataset upon acceptance at the following Github page: https://mmahdavian.github.io/MOSAIC/",
+      "published": "2026-11-11T19:32:35Z",
+      "updated": "2026-11-11T19:32:35Z",
+      "arxiv_id": "2611.15937v1",
+      "abs_url": "http://arxiv.org/abs/2611.15937v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15937v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "VLA/多模态策略",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 13,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robotic",
+        "vision-language-action",
+        "vla"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "robot",
+        "robotic",
+        "vision-language-action",
+        "vla",
+        "vla model"
+      ],
+      "title_zh": "MOSAIC: Modular Obstacle and Spatial-Aware Framework for Manipulation In Cluttered Scenes",
+      "summary_zh": "Vision-Language-Action (VLA) models have demonstrated strong performance in robotic manipulation, yet most rely primarily on 2D visual observations and language instructions, leaving scene geometry and obstacle relationships to be inferred implicitly. This limitation is particularly problematic in cluttered environments, where small spatial errors can lead to unintended contacts or collisions. We propose MOSAIC, a modular spatial- and obstacle-aware framework that can be integrated with pretrained VLA policies to improve object-level scene understanding and action generation. Our method augments the VLA backbone with an auxiliary semantic grounding task that predicts role-specific masks for the target object, destination region, and surrounding obstacles. We further combine the target and destination masks with depth estimated from 3D scene reconstruction to construct role-specific geometric tokens that are injected directly into the action expert. In addition, we propose obstacle-aware attention supervision that emphasizes obstacles near the robot body during task execution. The resulting attention features are subsequently injected into later action-expert layers to further guide action generation. Together, these components provide explicit semantic, geometric, and obstacle-aware cues while preserving the underlying pretrained VLA architecture. We evaluate our framework on pretrained VLA model using the RoboPRO benchmark, including visual perturbation tests, and further validate it on real-world manipulation tasks. MOSAIC improves the success rate by 5.1% in cluttered scenes, and by 9.7% under visual perturbations, with gains of up to 25.0% in the most challenging environment. We will release our code and dataset upon acceptance at the following Github page: https://mmahdavian.github.io/MOSAIC/",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
+      }
+    },
+    {
+      "title": "Runtime Safety and Emergency Stops on a Full-Size Humanoid: Deployment Lessons and a Case for Graduated Force Authority",
+      "authors": [
+        "Max Conway",
+        "Yutong Zhang",
+        "Allen Devaraj",
+        "William Xie",
+        "Alessandro Roncone",
+        "Nikolaus Correll"
+      ],
+      "summary": "Full-size humanoid robots are being considered for hazardous industrial work such as disassembling electric-vehicle batteries. We describe the safety mechanisms of an open-source autonomy stack for the Unitree H1-2 humanoid and what deploying them taught us. All joint commands pass through a safety layer that runs separately from the control software. It enforces joint position, velocity, and torque limits, and it stops the robot when a state estimate becomes stale or when the hard-wired emergency stop (e-stop) is pressed or disconnected. We pushed the standing robot until it lost balance. With a model-predictive lower-body controller it never recovered, and the operator had to press the e-stop in every trial. Pressing it removes balance control, and the robot falls. The safety layer's own limits trigger the same stop, and limits chosen for manipulation were exceeded during normal walking. Near an operator or a battery pack, the fall can be more dangerous than the cause of the stop. Joint limits bound how much force a robot can apply, but not when applying it is appropriate. Drawing on research on responsibility and on child and adolescent development, we therefore make a case for granting robots force authority in stages, with a person or organization explicitly responsible for its use.",
+      "published": "2026-11-11T19:23:36Z",
+      "updated": "2026-11-11T19:23:36Z",
+      "arxiv_id": "2611.15928v1",
+      "abs_url": "http://arxiv.org/abs/2611.15928v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15928v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "人形与灵巧",
+        "双足机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 8,
+      "anchor_terms": [
+        "humanoid",
+        "manipulation",
+        "robot"
+      ],
+      "matched_terms": [
+        "humanoid",
+        "manipulation",
+        "open-source",
+        "robot"
+      ],
+      "title_zh": "Runtime Safety and Emergency Stops on a Full-Size Humanoid: Deployment Lessons and a Case for Graduated Force Authority",
+      "summary_zh": "Full-size humanoid robots are being considered for hazardous industrial work such as disassembling electric-vehicle batteries. We describe the safety mechanisms of an open-source autonomy stack for the Unitree H1-2 humanoid and what deploying them taught us. All joint commands pass through a safety layer that runs separately from the control software. It enforces joint position, velocity, and torque limits, and it stops the robot when a state estimate becomes stale or when the hard-wired emergency stop (e-stop) is pressed or disconnected. We pushed the standing robot until it lost balance. With a model-predictive lower-body controller it never recovered, and the operator had to press the e-stop in every trial. Pressing it removes balance control, and the robot falls. The safety layer's own limits trigger the same stop, and limits chosen for manipulation were exceeded during normal walking. Near an operator or a battery pack, the fall can be more dangerous than the cause of the stop. Joint limits bound how much force a robot can apply, but not when applying it is appropriate. Drawing on research on responsibility and on child and adolescent development, we therefore make a case for granting robots force authority in stages, with a person or organization explicitly responsible for its use.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
+      }
+    },
+    {
+      "title": "Where to Generate Touch: Do Image Latents Preserve Material Recognition?",
+      "authors": [
+        "Wanghao Ye",
+        "Aarosh Das",
+        "Sihan Chen",
+        "Yiting Wang",
+        "Bowei Tian",
+        "Guoheng Sun",
+        "Shwai He",
+        "Zheyu Shen",
+        "Ziyao Wang",
+        "Yexiao He",
+        "Zhaoyi Liu",
+        "Meng Liu",
+        "Yuning Zhang",
+        "Meng Feng",
+        "Ziyi Wang",
+        "Yilong Dai",
+        "Yifei Dong",
+        "Siyuan Peng",
+        "Zhenle Duan",
+        "Joshua Liu",
+        "Lang Xiong",
+        "Daeun Jung",
+        "Aditya Sarkar",
+        "Parastoo Pilevar",
+        "Xiaochuan Gong",
+        "Yancheng Zhu",
+        "Yingying Fan",
+        "Qiong Wang",
+        "Ang Li"
+      ],
+      "summary": "Generated touch could extend robot learning beyond recorded contacts. A tactile generator needs a latent space, and we choose one by testing whether a material classifier trained on real GelSight presses still works on encode-decode reconstructions from pretrained image models. On ObjectFolder Real, the classifier loses 6.5 to 9.7 points on reconstructions from three 16x discrete tokenizers and 0.3 points on those from the Stable Diffusion VAE (SD-VAE). The 16x tokenizers again lose far more on Touch and Go and on DIGIT object recognition (YCB-Slide). Retraining the classifier on reconstructions, with no new labels, narrows the discrete gap. SD-VAE reconstructions also keep object identity, with 76.7% object-matching accuracy against 78.9% for real touch and 67.0% for MAGVIT-v2. We therefore select SD-VAE latents and show a photo-to-touch generator trained in them. Code will be released upon acceptance.",
+      "published": "2026-11-11T18:46:14Z",
+      "updated": "2026-11-11T18:46:14Z",
+      "arxiv_id": "2611.15834v1",
+      "abs_url": "http://arxiv.org/abs/2611.15834v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15834v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "comment": "13 pages, 8 figures, 10 tables",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "感知与3D理解",
+      "score": 8,
+      "anchor_terms": [
+        "robot",
+        "robot learning",
+        "tactile"
+      ],
+      "matched_terms": [
+        "robot",
+        "robot learning",
+        "tactile"
+      ],
+      "title_zh": "Where to Generate Touch: Do Image Latents Preserve Material Recognition?",
+      "summary_zh": "Generated touch could extend robot learning beyond recorded contacts. A tactile generator needs a latent space, and we choose one by testing whether a material classifier trained on real GelSight presses still works on encode-decode reconstructions from pretrained image models. On ObjectFolder Real, the classifier loses 6.5 to 9.7 points on reconstructions from three 16x discrete tokenizers and 0.3 points on those from the Stable Diffusion VAE (SD-VAE). The 16x tokenizers again lose far more on Touch and Go and on DIGIT object recognition (YCB-Slide). Retraining the classifier on reconstructions, with no new labels, narrows the discrete gap. SD-VAE reconstructions also keep object identity, with 76.7% object-matching accuracy against 78.9% for real touch and 67.0% for MAGVIT-v2. We therefore select SD-VAE latents and show a photo-to-touch generator trained in them. Code will be released upon acceptance.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
+      }
+    },
+    {
+      "title": "RUMI: A Robotiq-Matched Universal Manipulation Interface for Robot Learning with Augmented Reality and Haptic Feedback",
+      "authors": [
+        "Kevin Avdiu",
+        "Seongjin Bien",
+        "Yannik Blei",
+        "Philine Meister",
+        "Johannes Hechtl",
+        "Philipp Schmitt",
+        "Kai Wurm",
+        "Georg von Wichert",
+        "Wolfram Burgard"
+      ],
+      "summary": "Many manipulation tasks require carefully controlled contact forces for successful execution, yet large-scale, force-aware datasets remain scarce. Handheld interfaces can help by transmitting interaction forces directly through the operator's arm, but most existing designs are tailored to simple linear grippers and do not match the nonlinear mechanics of widely used robotic grippers. We present RUMI, a handheld universal manipulation interface matched to the Robotiq 2F-85 with exchangeable fingertip sensors that preserves the target gripper geometry while enabling natural input before contact and force measurement after contact. By integrating the tracking system into a virtual reality headset, our method provides real-time augmented reality feedback about the kinematic feasibility of motion on the target robot platform. We further introduce a haptic feedback mechanism that supports force-aware teleoperation for simulated and real robots. A user study shows fewer episodes containing joint-limit violations with live robot visualization and pose initialization (3/50) than without augmented reality (16/50). We additionally train imitation policies from demonstrations, collected using two different fingertip modalities enabled by the gripper-matched hardware, and assess the haptic interface's capability for collecting force-aware teleoperation datasets in simulation.",
+      "published": "2026-11-11T18:17:42Z",
+      "updated": "2026-11-11T18:17:42Z",
+      "arxiv_id": "2611.15802v1",
+      "abs_url": "http://arxiv.org/abs/2611.15802v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15802v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "数据集/评测",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 16,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robot learning",
+        "robotic",
+        "teleoperation"
+      ],
+      "matched_terms": [
+        "haptic",
+        "manipulation",
+        "robot",
+        "robot learning",
+        "robotic",
+        "teleoperation"
+      ],
+      "title_zh": "RUMI: A Robotiq-Matched Universal Manipulation Interface for Robot Learning with Augmented Reality and Haptic Feedback",
+      "summary_zh": "Many manipulation tasks require carefully controlled contact forces for successful execution, yet large-scale, force-aware datasets remain scarce. Handheld interfaces can help by transmitting interaction forces directly through the operator's arm, but most existing designs are tailored to simple linear grippers and do not match the nonlinear mechanics of widely used robotic grippers. We present RUMI, a handheld universal manipulation interface matched to the Robotiq 2F-85 with exchangeable fingertip sensors that preserves the target gripper geometry while enabling natural input before contact and force measurement after contact. By integrating the tracking system into a virtual reality headset, our method provides real-time augmented reality feedback about the kinematic feasibility of motion on the target robot platform. We further introduce a haptic feedback mechanism that supports force-aware teleoperation for simulated and real robots. A user study shows fewer episodes containing joint-limit violations with live robot visualization and pose initialization (3/50) than without augmented reality (16/50). We additionally train imitation policies from demonstrations, collected using two different fingertip modalities enabled by the gripper-matched hardware, and assess the haptic interface's capability for collecting force-aware teleoperation datasets in simulation.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
+      }
+    },
+    {
+      "title": "Prediction-Error-Tightened MPC for Socially Compliant Crowd Navigation",
+      "authors": [
+        "Alessandro Febbraro",
+        "Federico Rollo",
+        "Marcello Farina",
+        "Luca Bascetta",
+        "Navvab Kashiri"
+      ],
+      "summary": "Autonomous navigation of mobile robots in crowded environments, while preserving pedestrians' psychological comfort, requires distinguishing pedestrians from other obstacles, predicting their future motion, and accounting for uncertainty in the predicted trajectories of both pedestrians and the robot. This work extends a previous MPC framework by integrating obstacle and pedestrian detection, Koopman-based motion prediction, and online prediction-error estimation directly within the collision-avoidance mechanism. To reduce collision-avoidance complexity in crowded scenarios, nearby obstacles are aggregated, thereby reducing the number of collision-avoidance constraints. Simulation studies evaluate the prediction-error margins and the computational benefits of semantics-aware aggregation. In a paired 300-seed closed-loop comparison with a moving generic obstacle, Markov residual tightening reduces the fraction of runs with physical contact from $10.0\\%$ to $1.33\\%$, at a mean travel-time cost of $0.68$ s. In a separate crowd-navigation semantic ablation, the offline robot-footprint/personal-space overlap occupies $2.11\\%$ of observed time with pedestrian-aware handling versus $22.84\\%$ with generic-obstacle handling.",
+      "published": "2026-11-11T17:56:03Z",
+      "updated": "2026-11-11T17:56:03Z",
+      "arxiv_id": "2611.15781v1",
+      "abs_url": "http://arxiv.org/abs/2611.15781v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15781v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "9 pages, 3 figures, 4 tables. Submitted to the European Control Conference (ECC 2027)",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "世界模型与仿真",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 8,
+      "anchor_terms": [
+        "navigation",
+        "robot"
+      ],
+      "matched_terms": [
+        "autonomous navigation",
+        "mobile robot",
+        "navigation",
+        "robot"
+      ],
+      "title_zh": "Prediction-Error-Tightened MPC for Socially Compliant Crowd Navigation",
+      "summary_zh": "Autonomous navigation of mobile robots in crowded environments, while preserving pedestrians' psychological comfort, requires distinguishing pedestrians from other obstacles, predicting their future motion, and accounting for uncertainty in the predicted trajectories of both pedestrians and the robot. This work extends a previous MPC framework by integrating obstacle and pedestrian detection, Koopman-based motion prediction, and online prediction-error estimation directly within the collision-avoidance mechanism. To reduce collision-avoidance complexity in crowded scenarios, nearby obstacles are aggregated, thereby reducing the number of collision-avoidance constraints. Simulation studies evaluate the prediction-error margins and the computational benefits of semantics-aware aggregation. In a paired 300-seed closed-loop comparison with a moving generic obstacle, Markov residual tightening reduces the fraction of runs with physical contact from $10.0\\%$ to $1.33\\%$, at a mean travel-time cost of $0.68$ s. In a separate crowd-navigation semantic ablation, the offline robot-footprint/personal-space overlap occupies $2.11\\%$ of observed time with pedestrian-aware handling versus $22.84\\%$ with generic-obstacle handling.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
+      }
+    },
+    {
+      "title": "Robot-Induced Bias in Movement Smoothness Metrics for Rehabilitation: Quantification and Correction in Simulation",
+      "authors": [
+        "David Regev",
+        "Alex Scherbakov",
+        "Eran Beeri Bamani"
+      ],
+      "summary": "Robot mechanics can bias kinematic measures of recovery and limit comparisons across rehabilitation devices. We developed a closed-loop human-robot simulation calibrated to published healthy and stroke group kinematics. Paired runs held motor-control parameters and movement plans fixed to quantify bias in seven metrics relative to a low-impedance reference, normalized using external repeatability benchmarks. Within a subset informed by published device specifications, median log dimensionless jerk (LDLJ) bias was 0.93 and 1.79 benchmark units for stroke and healthy profiles, respectively. Sobol analysis identified Coulomb friction and apparent mass as leading contributors; LDLJ bias persisted across 11 robustness variants. LDLJ bias increased as simulated movements became less fragmented. If recovery similarly reduces fragmentation, this effect could partly mask improvement in measured smoothness. Correction combining identified robot dynamics and observed metrics with gradient-boosted trees reduced median normalized absolute error from 0.77 to 0.10 for LDLJ and from 0.24 to 0.08 for spectral arc length (SPARC) in the device-informed subset of a random 20% hold-out. Median smoothness residuals remained at or below 0.15 benchmark units across four separately held-out parameter regions. Under an alternative controller, LDLJ error decreased from 1.60 to 0.17 without retraining, although transfer varied across metrics. These simulation results support mechanical characterization and movement-dependent correction toward more comparable robotic assessments, motivating validation in patients.",
+      "published": "2026-11-11T17:24:43Z",
+      "updated": "2026-11-11T17:24:43Z",
+      "arxiv_id": "2611.15743v1",
+      "abs_url": "http://arxiv.org/abs/2611.15743v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15743v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "q-bio.QM"
+      ],
+      "comment": "7 pages, 4 figures, 2 tables. Submitted to the 2027 IEEE International Conference on Rehabilitation Robotics (ICORR)",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 7,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "Robot-Induced Bias in Movement Smoothness Metrics for Rehabilitation: Quantification and Correction in Simulation",
+      "summary_zh": "Robot mechanics can bias kinematic measures of recovery and limit comparisons across rehabilitation devices. We developed a closed-loop human-robot simulation calibrated to published healthy and stroke group kinematics. Paired runs held motor-control parameters and movement plans fixed to quantify bias in seven metrics relative to a low-impedance reference, normalized using external repeatability benchmarks. Within a subset informed by published device specifications, median log dimensionless jerk (LDLJ) bias was 0.93 and 1.79 benchmark units for stroke and healthy profiles, respectively. Sobol analysis identified Coulomb friction and apparent mass as leading contributors; LDLJ bias persisted across 11 robustness variants. LDLJ bias increased as simulated movements became less fragmented. If recovery similarly reduces fragmentation, this effect could partly mask improvement in measured smoothness. Correction combining identified robot dynamics and observed metrics with gradient-boosted trees reduced median normalized absolute error from 0.77 to 0.10 for LDLJ and from 0.24 to 0.08 for spectral arc length (SPARC) in the device-informed subset of a random 20% hold-out. Median smoothness residuals remained at or below 0.15 benchmark units across four separately held-out parameter regions. Under an alternative controller, LDLJ error decreased from 1.60 to 0.17 without retraining, although transfer varied across metrics. These simulation results support mechanical characterization and movement-dependent correction toward more comparable robotic assessments, motivating validation in patients.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
+      }
+    },
+    {
+      "title": "GraSLA: A Lightweight Spatial-Language-Action Model with Grasp Hypotheses as Geometric Priors",
+      "authors": [
+        "Jibao Yuan",
+        "Zixiang Zhao",
+        "Wensong Xu",
+        "Siqi Lu",
+        "Shaofei Chen"
+      ],
+      "summary": "This paper focuses on improving the behavioral diversity and effectiveness of language-conditioned manipulation policies trained through imitation learning. Recently, continuous-action policies have become mainstream in robotic manipulation, but the lack of diverse demonstrations tends to restrict their behavioral diversity. For grasping, a fundamental subtask of manipulation, 6-DoF grasp detection provides diverse grasp hypotheses, but open-loop execution constrains responsiveness in dynamic environments. This motivates us to combine the diversity of grasp hypotheses with the adaptability of continuous-action policies. To this end, we propose GraSLA, a lightweight and effective spatial-language-action model with grasp hypotheses as geometric priors. In particular, we employ spatial and language foundation models to encode scene geometry and task semantics, and integrate them with grasp hypotheses through bidirectional cross-attention for continuous action prediction. On LIBERO, GraSLA achieves an average success rate of 99.30%.",
+      "published": "2026-11-11T16:07:05Z",
+      "updated": "2026-11-11T16:07:05Z",
+      "arxiv_id": "2611.15659v1",
+      "abs_url": "http://arxiv.org/abs/2611.15659v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15659v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "VLA/多模态策略",
+        "强化/模仿学习",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 14,
+      "anchor_terms": [
+        "grasp",
+        "grasping",
+        "imitation learning",
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "foundation model",
+        "grasp",
+        "grasping",
+        "imitation learning",
+        "libero",
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "GraSLA: A Lightweight Spatial-Language-Action Model with Grasp Hypotheses as Geometric Priors",
+      "summary_zh": "This paper focuses on improving the behavioral diversity and effectiveness of language-conditioned manipulation policies trained through imitation learning. Recently, continuous-action policies have become mainstream in robotic manipulation, but the lack of diverse demonstrations tends to restrict their behavioral diversity. For grasping, a fundamental subtask of manipulation, 6-DoF grasp detection provides diverse grasp hypotheses, but open-loop execution constrains responsiveness in dynamic environments. This motivates us to combine the diversity of grasp hypotheses with the adaptability of continuous-action policies. To this end, we propose GraSLA, a lightweight and effective spatial-language-action model with grasp hypotheses as geometric priors. In particular, we employ spatial and language foundation models to encode scene geometry and task semantics, and integrate them with grasp hypotheses through bidirectional cross-attention for continuous action prediction. On LIBERO, GraSLA achieves an average success rate of 99.30%.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
+      }
+    },
+    {
+      "title": "Embedded Sim-to-Real Visual Servoing: Learned Reaching and Force-Guided Placement",
+      "authors": [
+        "Dezhi Sun",
+        "Duy Khang Banh",
+        "Kenan Niu"
+      ],
+      "summary": "Embedded perception-to-control systems must combine visual targeting with reliable contact handling under tight computational constraints. We present a shared architecture on an NVIDIA Jetson AGX Orin controlling a Franka Research 3 through Cartesian impedance control. RealSense D435i observations, YOLO11-seg segmentation, depth back-projection, and hand--eye calibration provide metric robot-frame targets. We compare two strategies: compact proximal policy optimization (PPO) policies transferred from simulation for object- and hole-region reaching, and force-guided Cartesian placement using approximately 2 N normal contact and spiral search. The PPO policies achieved 87.2% and 83.1% success over 1000 simulation episodes each. Across 50 real-robot trials per strategy, the learned hybrid and force-guided analytical pipelines achieved 70.0% and 74.0% completion, respectively. Mean perception latency with TensorRT was 34.55 ms. These results support an embedded architecture combining learned free-space reaching with explicit contact correction.",
+      "published": "2026-11-11T16:07:04Z",
+      "updated": "2026-11-11T16:07:04Z",
+      "arxiv_id": "2611.15658v1",
+      "abs_url": "http://arxiv.org/abs/2611.15658v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15658v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "6 pages. Accepted at IEEE ROBIO 2026",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 11,
+      "anchor_terms": [
+        "robot",
+        "sim-to-real"
+      ],
+      "matched_terms": [
+        "robot",
+        "sim-to-real",
+        "visual servoing"
+      ],
+      "title_zh": "Embedded Sim-to-Real Visual Servoing: Learned Reaching and Force-Guided Placement",
+      "summary_zh": "Embedded perception-to-control systems must combine visual targeting with reliable contact handling under tight computational constraints. We present a shared architecture on an NVIDIA Jetson AGX Orin controlling a Franka Research 3 through Cartesian impedance control. RealSense D435i observations, YOLO11-seg segmentation, depth back-projection, and hand--eye calibration provide metric robot-frame targets. We compare two strategies: compact proximal policy optimization (PPO) policies transferred from simulation for object- and hole-region reaching, and force-guided Cartesian placement using approximately 2 N normal contact and spiral search. The PPO policies achieved 87.2% and 83.1% success over 1000 simulation episodes each. Across 50 real-robot trials per strategy, the learned hybrid and force-guided analytical pipelines achieved 70.0% and 74.0% completion, respectively. Mean perception latency with TensorRT was 34.55 ms. These results support an embedded architecture combining learned free-space reaching with explicit contact correction.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
+      }
+    },
+    {
+      "title": "Recover, Don't Just Continue: Learning from Feedback for Physical Failure Understanding and Correction",
+      "authors": [
+        "Miao Pan",
+        "Kaixiang Yao",
+        "Xiaohe Zhou",
+        "Xu Wang",
+        "Qinfeng Li",
+        "Wenqi Zhang",
+        "Xuhong Zhang"
+      ],
+      "summary": "Multimodal large language models are regarded as the cognitive foundation of embodied intelligence, but planning from instructions alone cannot make them reliable. During execution, actions deviate from intended effects, constrained by the embodiment and environment. An embodied brain must understand why execution deviates, identify what can be reliably realized, and revise decisions using interaction experience. These correspond to causal failure localization, capability-constrained adaptation, and experience-driven revision. Current embodied foundation models largely lack these capabilities. To address this, we introduce Embodied-Corrector. We construct failure-recovery data by injecting perturbations at subtask boundaries of successful trajectories, replaying affected subtasks, and keeping failures that are observable from public evidence and recoverable from the current state. We align actions, consequences, failure causes, and recoveries into Judge-Cause-Sub-Fine supervision. Training uses evaluation-first SFT: the model learns Judge and Cause first, then Sub and Fine conditioned on accurate prefixes. Since deployment uses self-generated prefixes, evaluation errors propagate into recovery planning, and response-level rewards are too coarse to locate affected planning tokens. We therefore use OPD to internalize the planning distribution under accurate prefixes into that under self-generated ones: the model generates plans from self-generated prefixes, while a contrastive forward pass with accurate prefixes compares token probabilities to reinforce or suppress planning tokens. At deployment, this branch is removed. Experiments show stronger failure analysis and corrective planning: with a frozen VLA, composite task success improves by 6.1 percentage points; with fixed GPT-5.5 execution, manipulation and navigation tasks improve by 13.9 percentage points.",
+      "published": "2026-11-11T16:01:28Z",
+      "updated": "2026-11-11T16:01:28Z",
+      "arxiv_id": "2611.15651v1",
+      "abs_url": "http://arxiv.org/abs/2611.15651v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15651v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "导航与移动",
+        "VLA/多模态策略",
+        "数据集/评测",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 10,
+      "anchor_terms": [
+        "embodied",
+        "manipulation",
+        "navigation",
+        "vla"
+      ],
+      "matched_terms": [
+        "embodied",
+        "embodied intelligence",
+        "foundation model",
+        "manipulation",
+        "navigation",
+        "vla"
+      ],
+      "title_zh": "Recover, Don't Just Continue: Learning from Feedback for Physical Failure Understanding and Correction",
+      "summary_zh": "Multimodal large language models are regarded as the cognitive foundation of embodied intelligence, but planning from instructions alone cannot make them reliable. During execution, actions deviate from intended effects, constrained by the embodiment and environment. An embodied brain must understand why execution deviates, identify what can be reliably realized, and revise decisions using interaction experience. These correspond to causal failure localization, capability-constrained adaptation, and experience-driven revision. Current embodied foundation models largely lack these capabilities. To address this, we introduce Embodied-Corrector. We construct failure-recovery data by injecting perturbations at subtask boundaries of successful trajectories, replaying affected subtasks, and keeping failures that are observable from public evidence and recoverable from the current state. We align actions, consequences, failure causes, and recoveries into Judge-Cause-Sub-Fine supervision. Training uses evaluation-first SFT: the model learns Judge and Cause first, then Sub and Fine conditioned on accurate prefixes. Since deployment uses self-generated prefixes, evaluation errors propagate into recovery planning, and response-level rewards are too coarse to locate affected planning tokens. We therefore use OPD to internalize the planning distribution under accurate prefixes into that under self-generated ones: the model generates plans from self-generated prefixes, while a contrastive forward pass with accurate prefixes compares token probabilities to reinforce or suppress planning tokens. At deployment, this branch is removed. Experiments show stronger failure analysis and corrective planning: with a frozen VLA, composite task success improves by 6.1 percentage points; with fixed GPT-5.5 execution, manipulation and navigation tasks improve by 13.9 percentage points.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
+      }
+    },
+    {
+      "title": "Single-View RGB-D Force--Deformation Estimation for Robotic Manipulation of Elasto-Plastic Materials",
+      "authors": [
+        "Dezhi Sun",
+        "Marijn van Hilten",
+        "Kenan Niu"
+      ],
+      "summary": "Persistent deformation complicates elasto-plastic manipulation by coupling physical interaction with spatially distributed shape changes. We investigate the force--deformation relationship using a standard robot, a single eye-in-hand RGB-D camera, and intrinsic force estimates. A 7-DoF Franka Emika FR3 performs normal indentations while an Intel RealSense L515 captures pre- and post-contact surfaces. Point-cloud processing localizes deformation and estimates displaced volume. Force--volume characterization includes 27 measurements over nine force levels. A compact multilayer perceptron (MLP), trained on 52 force--volume pairs at four levels, achieves a held-out RMSE of 1.857 N and $R^2=0.440$. A separate comparison shows lower error for a quadratic model at 16 N and for the MLP at 19 and 23.5 N. An eight-step experiment at 4 N per interaction demonstrates cumulative deformation localization from the second indentation onward. These results establish a practical measurement basis for deformation-aware manipulation using intrinsic force estimates and single-view geometry.",
+      "published": "2026-11-11T16:00:58Z",
+      "updated": "2026-11-11T16:00:58Z",
+      "arxiv_id": "2611.15650v1",
+      "abs_url": "http://arxiv.org/abs/2611.15650v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15650v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "7 pages. Accepted at IEEE ROBIO 2026",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 9,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "Single-View RGB-D Force--Deformation Estimation for Robotic Manipulation of Elasto-Plastic Materials",
+      "summary_zh": "Persistent deformation complicates elasto-plastic manipulation by coupling physical interaction with spatially distributed shape changes. We investigate the force--deformation relationship using a standard robot, a single eye-in-hand RGB-D camera, and intrinsic force estimates. A 7-DoF Franka Emika FR3 performs normal indentations while an Intel RealSense L515 captures pre- and post-contact surfaces. Point-cloud processing localizes deformation and estimates displaced volume. Force--volume characterization includes 27 measurements over nine force levels. A compact multilayer perceptron (MLP), trained on 52 force--volume pairs at four levels, achieves a held-out RMSE of 1.857 N and $R^2=0.440$. A separate comparison shows lower error for a quadratic model at 16 N and for the MLP at 19 and 23.5 N. An eight-step experiment at 4 N per interaction demonstrates cumulative deformation localization from the second indentation onward. These results establish a practical measurement basis for deformation-aware manipulation using intrinsic force estimates and single-view geometry.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
+      }
+    },
+    {
+      "title": "EMS-Nav: Embodied Multi-Scale Navigation",
+      "authors": [
+        "Zenghui Yang",
+        "Xinan Wang",
+        "Danyang Li",
+        "Zhe Xu",
+        "Zheng Yang",
+        "Jingao Xu",
+        "Qiang Ma"
+      ],
+      "summary": "Industrial inspection robots must reach work areas and specific equipment. These destinations span spatial scales from regions to objects, so robots must relate each target to its surroundings to interpret the task and determine where to go. Existing methods support multi-scale navigation through rich environment representations, but at substantial computational and storage cost. These costs limit deployment where wireless coverage is incomplete and robots must rely on onboard computation to keep navigating. We introduce EMS-Nav, a biologically inspired multi-scale navigation framework for online, on-device operation. Its core innovation is to organize perception, spatial understanding, and navigation around regions, making local spaces the basic units of both environmental understanding and computation. EMS-Nav groups objects and their relationships into functionally meaningful spaces and builds a hierarchy from local areas to the broader environment. This organization supports efficient map construction alongside the interpretation and execution of language goals at different scales. In multi-scale navigation experiments, EMS-Nav achieves the highest success rates across all four target categories: objects, rooms, regions, and specific instances. It outperforms state-of-the-art open-vocabulary mapping and navigation methods, improving overall first-attempt success by 9.39 percentage points over the strongest baseline while reducing mapping overhead and language-model input size. Local deployment in real indoor environments further demonstrates its applicability to on-device embodied navigation. By establishing regions as the organizing basis for perception, spatial understanding, and language-guided action, EMS-Nav provides a system that combines multi-scale understanding with computational efficiency to support diverse language goals on resource-constrained robots.",
+      "published": "2026-11-11T15:09:28Z",
+      "updated": "2026-11-11T15:09:28Z",
+      "arxiv_id": "2611.15589v1",
+      "abs_url": "http://arxiv.org/abs/2611.15589v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15589v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "comment": "30 pages, including appendices",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 11,
+      "anchor_terms": [
+        "embodied",
+        "navigation",
+        "robot"
+      ],
+      "matched_terms": [
+        "embodied",
+        "embodied navigation",
+        "navigation",
+        "robot"
+      ],
+      "title_zh": "EMS-Nav: Embodied Multi-Scale Navigation",
+      "summary_zh": "Industrial inspection robots must reach work areas and specific equipment. These destinations span spatial scales from regions to objects, so robots must relate each target to its surroundings to interpret the task and determine where to go. Existing methods support multi-scale navigation through rich environment representations, but at substantial computational and storage cost. These costs limit deployment where wireless coverage is incomplete and robots must rely on onboard computation to keep navigating. We introduce EMS-Nav, a biologically inspired multi-scale navigation framework for online, on-device operation. Its core innovation is to organize perception, spatial understanding, and navigation around regions, making local spaces the basic units of both environmental understanding and computation. EMS-Nav groups objects and their relationships into functionally meaningful spaces and builds a hierarchy from local areas to the broader environment. This organization supports efficient map construction alongside the interpretation and execution of language goals at different scales. In multi-scale navigation experiments, EMS-Nav achieves the highest success rates across all four target categories: objects, rooms, regions, and specific instances. It outperforms state-of-the-art open-vocabulary mapping and navigation methods, improving overall first-attempt success by 9.39 percentage points over the strongest baseline while reducing mapping overhead and language-model input size. Local deployment in real indoor environments further demonstrates its applicability to on-device embodied navigation. By establishing regions as the organizing basis for perception, spatial understanding, and language-guided action, EMS-Nav provides a system that combines multi-scale understanding with computational efficiency to support diverse language goals on resource-constrained robots.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-14T03:50:07.047738+00:00"
       }
     },
     {
