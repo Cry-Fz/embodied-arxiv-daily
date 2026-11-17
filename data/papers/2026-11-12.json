@@ -1,12 +1,12 @@
 {
   "date": "2026-11-12",
-  "generated_at": "2026-11-16T03:28:46.000799+00:00",
+  "generated_at": "2026-11-17T05:28:16.920597+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202611120000 TO 202611122359]",
-  "total_fetched": 461,
-  "total_matched": 52,
+  "total_fetched": 472,
+  "total_matched": 53,
   "papers": [
     {
       "title": "NSDL: Neuro-Symbolic Division of Labor for Multi-Robot Task Planning",
@@ -419,12 +419,12 @@
         "Claire Tomlin",
         "Jonas Frey"
       ],
-      "summary": "A rescue robot entering a building with thirty seconds on the clock should sprint toward the single most promising room; given ten minutes, it should instead explore a broader tour. Yet vision-language-navigation (VLN) models are typically evaluated under a fixed episode limit that the policy never observes, even though time-critical missions require behavior to adapt to the available budget. We study budget-conditioned object search: given a target category and an explicit action budget, an agent must find as many distinct target instances as possible before the budget expires. We investigate how to supervise VLNs for this task by comparing a privileged TSP expert, which plans near-optimal routes using the full map and true target locations, with a room-level Bellman expert that maximizes expected return under partial observability using high-level cross-scene semantic priors. Despite the TSP expert achieving substantially higher expert performance, its demonstrations are less effective for learning exploration: on held-out HM3D scenes, the Bellman-supervised VLN consistently outperforms the TSP-supervised VLN, with the advantage becoming more pronounced at longer budgets. At 2000 steps (500m), the Bellman-supervised VLN finds 71.4% of reachable target instances, compared with 65.5% for the TSP-supervised VLN and 44.8% for the pretrained VLN. These results highlight a distinction between optimal routing and optimal exploration: effective exploration supervision should optimize decisions under partial observability rather than imitate routes that are optimal only once the environment is fully known.",
+      "summary": "How do action budgets shape vision-language navigation (VLN) exploration, and what expert supervision best teaches budget-aware search? We study budget-conditioned object search: finding as many distinct instances of a requested category as possible within a budget, with discovery defined geometrically by camera field of view and proximity. Distinct discoveries provide a denser evaluation signal than single-target success. We cast expert design as a choice of scene abstraction: a single budget-indexed Bellman recursion, applied to different abstractions of the full environment, yields experts that differ in what they know. An object-level Bellman expert is given every target location and reduces search to budgeted routing. A room-level Bellman expert retains observed room connectivity, doorway evidence, and cross-scene semantic priors but withholds the contents of unexplored rooms, so it must search for targets that its student also cannot see. We distill both experts into Uni-NaVid under matched training conditions and also evaluate greedy-frontier supervision on held-out HM3D scenes. Changing only the stated budget changes learned trajectories. Despite higher object-level expert return, room-level supervision achieves the highest mean collection among evaluated VLNs at every tested budget. At 2000 steps, it finds 72.7% of reachable targets, versus 68.5% under greedy-frontier supervision, 65.5% under object-level supervision, and 44.8% for the pretrained VLN. These results show that expert-return rankings need not predict supervision quality for VLN exploration, and motivate choosing an expert's abstraction with the student's information in mind rather than by expert return alone.",
       "published": "2026-11-12T19:13:20Z",
-      "updated": "2026-11-12T19:13:20Z",
-      "arxiv_id": "2611.17442v1",
-      "abs_url": "http://arxiv.org/abs/2611.17442v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.17442v1",
+      "updated": "2026-11-16T08:44:20Z",
+      "arxiv_id": "2611.17442v2",
+      "abs_url": "http://arxiv.org/abs/2611.17442v2",
+      "pdf_url": "https://arxiv.org/pdf/2611.17442v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -437,26 +437,24 @@
       "has_code": false,
       "labels": [
         "导航与移动",
-        "其他机器人"
+        "数据集/评测"
       ],
       "topic": "导航与移动",
-      "score": 7,
+      "score": 5,
       "anchor_terms": [
-        "navigation",
-        "robot"
+        "navigation"
       ],
       "matched_terms": [
         "navigation",
-        "robot",
         "vln"
       ],
       "title_zh": "Racing the Clock: Teaching VLNs Budget-Conditioned Object Search",
-      "summary_zh": "A rescue robot entering a building with thirty seconds on the clock should sprint toward the single most promising room; given ten minutes, it should instead explore a broader tour. Yet vision-language-navigation (VLN) models are typically evaluated under a fixed episode limit that the policy never observes, even though time-critical missions require behavior to adapt to the available budget. We study budget-conditioned object search: given a target category and an explicit action budget, an agent must find as many distinct target instances as possible before the budget expires. We investigate how to supervise VLNs for this task by comparing a privileged TSP expert, which plans near-optimal routes using the full map and true target locations, with a room-level Bellman expert that maximizes expected return under partial observability using high-level cross-scene semantic priors. Despite the TSP expert achieving substantially higher expert performance, its demonstrations are less effective for learning exploration: on held-out HM3D scenes, the Bellman-supervised VLN consistently outperforms the TSP-supervised VLN, with the advantage becoming more pronounced at longer budgets. At 2000 steps (500m), the Bellman-supervised VLN finds 71.4% of reachable target instances, compared with 65.5% for the TSP-supervised VLN and 44.8% for the pretrained VLN. These results highlight a distinction between optimal routing and optimal exploration: effective exploration supervision should optimize decisions under partial observability rather than imitate routes that are optimal only once the environment is fully known.",
+      "summary_zh": "How do action budgets shape vision-language navigation (VLN) exploration, and what expert supervision best teaches budget-aware search? We study budget-conditioned object search: finding as many distinct instances of a requested category as possible within a budget, with discovery defined geometrically by camera field of view and proximity. Distinct discoveries provide a denser evaluation signal than single-target success. We cast expert design as a choice of scene abstraction: a single budget-indexed Bellman recursion, applied to different abstractions of the full environment, yields experts that differ in what they know. An object-level Bellman expert is given every target location and reduces search to budgeted routing. A room-level Bellman expert retains observed room connectivity, doorway evidence, and cross-scene semantic priors but withholds the contents of unexplored rooms, so it must search for targets that its student also cannot see. We distill both experts into Uni-NaVid under matched training conditions and also evaluate greedy-frontier supervision on held-out HM3D scenes. Changing only the stated budget changes learned trajectories. Despite higher object-level expert return, room-level supervision achieves the highest mean collection among evaluated VLNs at every tested budget. At 2000 steps, it finds 72.7% of reachable targets, versus 68.5% under greedy-frontier supervision, 65.5% under object-level supervision, and 44.8% for the pretrained VLN. These results show that expert-return rankings need not predict supervision quality for VLN exploration, and motivate choosing an expert's abstraction with the student's information in mind rather than by expert return alone.",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-11-16T03:29:17.441177+00:00"
+        "generated_at": "2026-11-17T05:28:53.834800+00:00"
       }
     },
     {
@@ -576,10 +574,10 @@
       ],
       "summary": "For robots to assist, serve, and collaborate with humans, they must not only interpret human requests conveyed through language and multimodal intentional cues, but also execute long-horizon tasks that interleave navigation and manipulation. In this paper, we introduce HEIR, a resource for studying how to Harness Egocentric Intent for Human-Robot Interaction. HEIR pairs human speech, measured gaze, and egocentric video with robot observations and teleoperated navigation-manipulation trajectories, while each session preserves successive episodes, with each request fulfilled through multiple execution subtasks. The captured data, together with human-authored annotations, support the study of intent grounding, execution planning, and task completion within a unified interaction setting. To demonstrate the value of HEIR, we conduct extensive offline experiments to evaluate how models benefit from additional human-centric context across these tasks, together with real-robot experiments that assess execution task completion. HEIR thus provides a valuable resource for studying user-centric robot interaction in naturalistic household environments. Our demo and dataset are available online.",
       "published": "2026-11-12T18:25:41Z",
-      "updated": "2026-11-12T18:25:41Z",
-      "arxiv_id": "2611.17238v1",
-      "abs_url": "http://arxiv.org/abs/2611.17238v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.17238v1",
+      "updated": "2026-11-13T18:31:07Z",
+      "arxiv_id": "2611.17238v2",
+      "abs_url": "http://arxiv.org/abs/2611.17238v2",
+      "pdf_url": "https://arxiv.org/pdf/2611.17238v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -614,7 +612,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-11-14T03:51:43.652729+00:00"
+        "generated_at": "2026-11-17T05:28:53.834800+00:00"
       }
     },
     {
@@ -740,15 +738,15 @@
       ],
       "summary": "Embodied interaction requires an agent to integrate multimodal perception with verbal and nonverbal behaviors to effectively communicate its intentions, including speech, body motion, and facial expressions. We present XBot-Omni, a Thinker--Talker--Actor architecture that extends the Omni paradigm to robotic modalities, including body motion and facial expressions, with ``X'' representing the extensibility to robotic-specific modalities. The Thinker processes text, images, audio, and video to formulate contextually appropriate responses, which are then realized by the Talker and Actor through speech and coordinated bodily expressions, respectively. In this report, we innovatively introduce the concept of ``Actor'' as a dedicated component for embodied agents: a coordinated, streaming module that leverages the native representations of the Thinker and Talker within an end-to-end pipeline, introducing only modest latency overhead. This unified architecture enables multimodal generation conditioned on omni-modal inputs directly to prevent information loss in staged designs. We comprehensively evaluate XBot-Omni across seven benchmarks, demonstrating strong multimodal understanding capabilities on both general-domain and robot-centric videos, as well as high-quality, natural, and well-coordinated motion generation. Furthermore, our results validate its capability to generate embodied multimodal responses directly from omni inputs, meeting the diverse requirements of embodied interaction. XBot-Omni enables robots not only to perceive the omni world but also to express themselves through speech and bodily behaviors, extending Omni models from conversational interaction to embodied communication in physical environments.",
       "published": "2026-11-12T17:38:57Z",
-      "updated": "2026-11-12T17:38:57Z",
-      "arxiv_id": "2611.17160v1",
-      "abs_url": "http://arxiv.org/abs/2611.17160v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.17160v1",
+      "updated": "2026-11-15T14:24:00Z",
+      "arxiv_id": "2611.17160v2",
+      "abs_url": "http://arxiv.org/abs/2611.17160v2",
+      "pdf_url": "https://arxiv.org/pdf/2611.17160v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
       ],
-      "comment": "",
+      "comment": "The data in the report is incomplete as it did not include all the necessary copyrights",
       "code_url": "",
       "has_code": false,
       "labels": [
@@ -778,7 +776,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-11-14T03:51:43.652729+00:00"
+        "generated_at": "2026-11-17T05:28:53.834800+00:00"
       }
     },
     {
@@ -900,16 +898,14 @@
         "Jiachun Jin",
         "Zetong Zhou",
         "Haonan Wang",
-        "Xiao Yang",
-        "Jun Zhu",
         "Zhijie Deng"
       ],
       "summary": "Embodied foundation models hinge on diverse robot interaction data, which are costly to collect. Egocentric human videos offer a complementary source of experience, and latent action models (LAMs) provide a popular means of leveraging these videos for policy supervision. Compared with world-action models (WAMs), LAMs can offer greater training efficiency and potentially lower inference costs by avoiding explicit pixel prediction during policy learning and execution. However, most existing LAMs learn latent actions solely through video reconstruction, which can cause their representations to cluster by visual appearance rather than by the underlying actions. As a result, they struggle to align human actions with their robot counterparts. To bridge the gap, we introduce SALA, which emphasizes establishing the semantic correspondence for latent actions. Without requiring paired data, we use the language descriptions of unpaired human and robot clips to estimate semantic similarities and supervise cross-embodiment correspondence. Specifically, we translate these similarities into soft neighborhood structures that guide human latent actions toward semantically related robot latents, while robot action reconstruction grounds the latent space in control. The resulting shared latent action space provides a unified supervision signal for training an embodied foundation model on both human and robot videos. Notably, latent action supervision enables scaling along two axes: (1) pre-training on increasing amounts of general human video consistently reduces robot action prediction error on downstream tasks, and (2) post-training on increasing amounts of task-specific human video substantially improves real-world robot task success rates.",
       "published": "2026-11-12T17:04:50Z",
-      "updated": "2026-11-12T17:04:50Z",
-      "arxiv_id": "2611.17110v1",
-      "abs_url": "http://arxiv.org/abs/2611.17110v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.17110v1",
+      "updated": "2026-11-15T14:43:43Z",
+      "arxiv_id": "2611.17110v2",
+      "abs_url": "http://arxiv.org/abs/2611.17110v2",
+      "pdf_url": "https://arxiv.org/pdf/2611.17110v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -945,7 +941,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-11-14T03:51:43.652729+00:00"
+        "generated_at": "2026-11-17T05:28:53.834800+00:00"
       }
     },
     {
@@ -1070,6 +1066,52 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-11-16T03:29:17.441177+00:00"
+      }
+    },
+    {
+      "title": "Third-Place Solution for the UCF UrbanTwin V2X-Real Track at ECCV 2026: Synthetic Point Cloud Generation and Sim-to-Real 3D Object Detection",
+      "authors": [
+        "Antong Deng",
+        "Yuxin Zhang",
+        "Zhongxiang Xing",
+        "Zhenzhen Lin",
+        "Jiong Mu"
+      ],
+      "summary": "This report presents a complete technical solution for the UrbanTwin V2X-Real Sim2Real LiDAR Challenge, covering both synthetic point cloud generation and 3D object detection. For data generation, we adopt per-axis quantile calibration. Public V2X-Real training data are used to construct the real reference distribution, and independent one-dimensional quantile mappings are estimated for the x, y, and z axes of the base synthetic point clouds. The calibrated point clouds are then resampled using a fixed random seed and clipped to the valid spatial range, producing 50 frames with 2,000 float32 XYZ points per frame. For detection, we use a two-stage Voxel R-CNN (VoxelRCNN) detector trained with RangeLDM-enhanced synthetic point-cloud data, point clouds downsampled to 50k points per frame, and reconstructed pedestrian data. Training is performed on four NVIDIA GeForce RTX 4090 GPUs with a global batch size of 16 for 40 epochs. Final testing uses direct single-model inference with the original VoxelRCNN model. On the official evaluation server, the normalized Realism score is 0.7905 and the normalized Detection score is 0.5583, with mAP@0.5 of 0.3908, BEV mAP@0.5 of 0.4219, and mAP@0.7 of 0.1047. According to the official weighting rule, the final combined score is 0.6 x 0.5583 + 0.4 x 0.7905 = 0.6512. This report documents the complete implementation details of data construction, model training, inference, submission formatting, and official evaluation.",
+      "published": "2026-11-12T14:56:04Z",
+      "updated": "2026-11-12T14:56:04Z",
+      "arxiv_id": "2611.18778v1",
+      "abs_url": "http://arxiv.org/abs/2611.18778v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.18778v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "comment": "8 pages, 1 figure, 4 tables. 3rd place, Track 7 (V2X-Real), UCF UrbanTwin Sim2Real LiDAR Challenge, 6th DriveX Workshop at ECCV 2026",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "数据集/评测",
+        "感知与3D理解"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 8,
+      "anchor_terms": [
+        "sim-to-real",
+        "sim2real"
+      ],
+      "matched_terms": [
+        "sim-to-real",
+        "sim2real"
+      ],
+      "title_zh": "Third-Place Solution for the UCF UrbanTwin V2X-Real Track at ECCV 2026: Synthetic Point Cloud Generation and Sim-to-Real 3D Object Detection",
+      "summary_zh": "This report presents a complete technical solution for the UrbanTwin V2X-Real Sim2Real LiDAR Challenge, covering both synthetic point cloud generation and 3D object detection. For data generation, we adopt per-axis quantile calibration. Public V2X-Real training data are used to construct the real reference distribution, and independent one-dimensional quantile mappings are estimated for the x, y, and z axes of the base synthetic point clouds. The calibrated point clouds are then resampled using a fixed random seed and clipped to the valid spatial range, producing 50 frames with 2,000 float32 XYZ points per frame. For detection, we use a two-stage Voxel R-CNN (VoxelRCNN) detector trained with RangeLDM-enhanced synthetic point-cloud data, point clouds downsampled to 50k points per frame, and reconstructed pedestrian data. Training is performed on four NVIDIA GeForce RTX 4090 GPUs with a global batch size of 16 for 40 epochs. Final testing uses direct single-model inference with the original VoxelRCNN model. On the official evaluation server, the normalized Realism score is 0.7905 and the normalized Detection score is 0.5583, with mAP@0.5 of 0.3908, BEV mAP@0.5 of 0.4219, and mAP@0.7 of 0.1047. According to the official weighting rule, the final combined score is 0.6 x 0.5583 + 0.4 x 0.7905 = 0.6512. This report documents the complete implementation details of data construction, model training, inference, submission formatting, and official evaluation.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-17T05:28:53.834800+00:00"
       }
     },
     {
@@ -1911,12 +1953,12 @@
       "title": "PhysCapBench: A Cross-Domain Benchmark for Physically Grounded Video Captioning",
       "authors": [
         "Haofeng Wang",
+        "Xuanyi Liu",
         "Pengcheng Wen",
         "Ruiqi Li",
         "Yuhao Zhang",
         "Tiange Zhang",
         "Boren Zheng",
-        "Xuanyi Liu",
         "Siyu Tao",
         "Danni Yu",
         "Gan Lin",
@@ -1928,16 +1970,16 @@
       ],
       "summary": "Physical AI aims to learn transferable physical knowledge from real-world experience to understand, predict, and act in the physical world. Internet videos and embodied demonstrations provide complementary observations of motion, interaction, and state evolution. A foundational data challenge is to measure and preserve this physical information as training supervision. In video-language pretraining, captions express observed processes in language, yet a semantically correct description can omit the interactions and transitions that define those processes. Rich physical experience in video does not automatically translate into sufficient language supervision. This gap calls for a yardstick to assess annotation quality, compare captioning strategies, and guide training-data refinement. Motivated by our data construction for world-model pretraining, we introduce PhysCapBench, to our knowledge the first unified physical-caption benchmark spanning all three domains: third-person scenes, egocentric manipulation, and handheld-gripper demonstrations. It provides human-verified annotations for 1,500 video sequences and evaluates accuracy and coverage through seven physical dimensions. We examine downstream utility through video reconstruction and manipulation-policy fine-tuning. Physical captions reduce reconstruction LPIPS by 8.6-9.5% on third-person videos and 26.9-30.9% on egocentric videos relative to metadata captions. Training-instruction enrichment improves both PhysCapBench scores and policy success, including a 7.5-percentage-point gain for pi0.5 on a RoboTwin 2.0 subtask. PhysCapBench makes the physical content of language supervision inspectable and comparable, providing a cross-domain basis for its evaluation and improvement.",
       "published": "2026-11-12T07:33:09Z",
-      "updated": "2026-11-12T07:33:09Z",
-      "arxiv_id": "2611.16424v1",
-      "abs_url": "http://arxiv.org/abs/2611.16424v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.16424v1",
+      "updated": "2026-11-16T06:45:46Z",
+      "arxiv_id": "2611.16424v2",
+      "abs_url": "http://arxiv.org/abs/2611.16424v2",
+      "pdf_url": "https://arxiv.org/pdf/2611.16424v2",
       "primary_category": "cs.CV",
       "categories": [
         "cs.CV",
         "cs.AI"
       ],
-      "comment": "Project page: https://hfwang2001.github.io/physcapbench-site/",
+      "comment": "Updated author order. Project page: https://hfwang2001.github.io/physcapbench-site/",
       "code_url": "",
       "has_code": false,
       "labels": [
@@ -1966,7 +2008,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-11-14T03:51:43.652729+00:00"
+        "generated_at": "2026-11-17T05:28:53.834800+00:00"
       }
     },
     {
