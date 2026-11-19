@@ -1,12 +1,12 @@
 {
   "date": "2026-11-17",
-  "generated_at": "2026-11-18T04:54:51.944589+00:00",
+  "generated_at": "2026-11-19T04:47:01.417748+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202611170000 TO 202611172359]",
-  "total_fetched": 514,
-  "total_matched": 85,
+  "total_fetched": 640,
+  "total_matched": 100,
   "papers": [
     {
       "title": "Auditing a Learned Simulator for Legged Robots: The Robotic World Model on ANYmal D",
@@ -556,6 +556,687 @@
       }
     },
     {
+      "title": "LoRN: Low-Rank Noise Steering for Generative Robot Policies",
+      "authors": [
+        "Wei Liu",
+        "Abrar Anwar",
+        "Huihua Zhao",
+        "Soha Pouya",
+        "Yan Chang"
+      ],
+      "summary": "Noise steering improves pretrained generative robot policies by learning to select their initial noise without updating model weights. We find that actions in the evaluated world-action models are more sensitive to video noise than action noise, making video noise an expressive input for steering. However, the noise-steering methods we evaluate, in their published forms, struggle to scale to the high-dimensional noise inputs of large policy classes such as world-action models. We introduce Low-Rank Noise Steering (LoRN), a reinforcement learning method that scales noise steering to world-action models. A small steering actor selects a direction through a fixed low-rank random projection, while our norm-controlled construction keeps the resulting noise near the typical scale of a Gaussian sample. This separates the actor's control dimension from the full noise dimension, enabling steering of both video and action inputs. Across three world-action models and ten model-task pairs, video steering improves average success by 26.2 percentage points over the base policy, compared with 7.1 points for DSRL action steering. For smaller action policies, the same construction achieves comparable final success while generally improving early-training success. Steering actors trained in simulation also transfer to three physical bimanual manipulation tasks across two base policies, without additional real-world training.",
+      "published": "2026-11-17T23:39:48Z",
+      "updated": "2026-11-17T23:39:48Z",
+      "arxiv_id": "2611.23628v1",
+      "abs_url": "http://arxiv.org/abs/2611.23628v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23628v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 8,
+      "anchor_terms": [
+        "manipulation",
+        "reinforcement learning",
+        "robot"
+      ],
+      "matched_terms": [
+        "bimanual",
+        "manipulation",
+        "reinforcement learning",
+        "robot"
+      ],
+      "title_zh": "LoRN: Low-Rank Noise Steering for Generative Robot Policies",
+      "summary_zh": "Noise steering improves pretrained generative robot policies by learning to select their initial noise without updating model weights. We find that actions in the evaluated world-action models are more sensitive to video noise than action noise, making video noise an expressive input for steering. However, the noise-steering methods we evaluate, in their published forms, struggle to scale to the high-dimensional noise inputs of large policy classes such as world-action models. We introduce Low-Rank Noise Steering (LoRN), a reinforcement learning method that scales noise steering to world-action models. A small steering actor selects a direction through a fixed low-rank random projection, while our norm-controlled construction keeps the resulting noise near the typical scale of a Gaussian sample. This separates the actor's control dimension from the full noise dimension, enabling steering of both video and action inputs. Across three world-action models and ten model-task pairs, video steering improves average success by 26.2 percentage points over the base policy, compared with 7.1 points for DSRL action steering. For smaller action policies, the same construction achieves comparable final success while generally improving early-training success. Steering actors trained in simulation also transfer to three physical bimanual manipulation tasks across two base policies, without additional real-world training.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-19T04:47:57.591481+00:00"
+      }
+    },
+    {
+      "title": "How Uncertain Is My Action? Self-Correcting Visual Planning with Frozen World Models",
+      "authors": [
+        "Siqing Li",
+        "Luming Yang",
+        "Yijia Jiao",
+        "Junze Deng",
+        "Alper Yilmaz"
+      ],
+      "summary": "A frozen latent world model combined with sampling-based model predictive control is a visual planner. At deployment, the executed action can depart from the commanded one, and the frozen model has no way to notice. We show that the model can be run in reverse: for any hypothesized actuation shift, it predicts what it should have observed under that shift, and comparing this prediction with what was actually observed quantifies the shift and lets the planner correct itself. Unlike the residual energy, which mixes the shift with the model's own error, the score keeps only the part of the residual that a shift can produce. This shift score detects the shift with a locally optimal test, estimates it with Cramer-Rao error bars, names the dominant generator, and compensates the planner once an alarm fires. On PushT, TwoRoom and OGBench-Cube with a frozen latent world model, measured detection follows the prediction to within 0.05 AUROC. Self-correction raises success from 0.650 to 0.862 on PushT and from 0.378 to 0.432 on the harder Cube task, levels with an oracle that is told the true shift at the same block, better than five common test-time adaptation methods. On a real robotic arm, the score identifies a base-joint offset that no joint encoder registers and reduces the reach error from 36 mm to 3-5 mm, and under shifts drawn at random and sealed before the session, estimates recover 92-94% of the error reduction achieved with the true shift. The broader implication is that a frozen world model can act as a filter by predicting the future, testing action-interface uncertainty and validity, and finally correcting failures.",
+      "published": "2026-11-17T23:23:42Z",
+      "updated": "2026-11-17T23:23:42Z",
+      "arxiv_id": "2611.23620v1",
+      "abs_url": "http://arxiv.org/abs/2611.23620v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23620v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "机械臂"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 8,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "world model"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic",
+        "robotic arm",
+        "world model"
+      ],
+      "title_zh": "How Uncertain Is My Action? Self-Correcting Visual Planning with Frozen World Models",
+      "summary_zh": "A frozen latent world model combined with sampling-based model predictive control is a visual planner. At deployment, the executed action can depart from the commanded one, and the frozen model has no way to notice. We show that the model can be run in reverse: for any hypothesized actuation shift, it predicts what it should have observed under that shift, and comparing this prediction with what was actually observed quantifies the shift and lets the planner correct itself. Unlike the residual energy, which mixes the shift with the model's own error, the score keeps only the part of the residual that a shift can produce. This shift score detects the shift with a locally optimal test, estimates it with Cramer-Rao error bars, names the dominant generator, and compensates the planner once an alarm fires. On PushT, TwoRoom and OGBench-Cube with a frozen latent world model, measured detection follows the prediction to within 0.05 AUROC. Self-correction raises success from 0.650 to 0.862 on PushT and from 0.378 to 0.432 on the harder Cube task, levels with an oracle that is told the true shift at the same block, better than five common test-time adaptation methods. On a real robotic arm, the score identifies a base-joint offset that no joint encoder registers and reduces the reach error from 36 mm to 3-5 mm, and under shifts drawn at random and sealed before the session, estimates recover 92-94% of the error reduction achieved with the true shift. The broader implication is that a frozen world model can act as a filter by predicting the future, testing action-interface uncertainty and validity, and finally correcting failures.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-19T04:47:57.591481+00:00"
+      }
+    },
+    {
+      "title": "Recoverability, Not Invariance: Certified Safety for Robots at the Limits of Performance",
+      "authors": [
+        "Thomas A. Berrueta",
+        "Joshua D. Ibrahim",
+        "Gilchrist X. Johnson",
+        "John Lathrop",
+        "Soon-Jo Chung"
+      ],
+      "summary": "Safety certification in robotics typically rests on forward invariance of the deployed controller, a property that demands high-fidelity models at the edge of the operating envelope, exactly where models are least reliable and robots perform best. As a result, many of the behaviors we most want robots to run, from learned policies to aggressive maneuvers at the limits of traction, cannot be certified at all. We introduce recoverability, a contraction-theoretic safety concept that resolves this tension by certifying a robot's ability to reengage a trusted recovery mode rather than the invariance of a deployed behavior. We prove that switching to the recovery mode from anywhere inside a certified tube guarantees exponential convergence, even under disturbances and model error. To decide when to switch, we derive the contraction insertion gradient, the first-order effect of a recovery insertion on the certificate, and embed it in a switching-time program in which feasibility alone guarantees safety and optimality only shapes performance. To supply the certificates, we develop sequential convex synthesis that monotonically grows the certified tube toward the exact viability kernel. We validate our approach in simulated quadrotor flight through uncertain obstacles, where it outperforms invariance-based safety filters, and in hardware deployments aboard a full-scale IndyNXT autonomous racecar, where it repeatedly recovers the car from an aggressive raceline at the limits of handling in the rain. Recoverability provides a certified exit strategy, extending formal safety guarantees to aggressive, learned, and experimental behaviors without requiring their invariance.",
+      "published": "2026-11-17T22:40:23Z",
+      "updated": "2026-11-17T22:40:23Z",
+      "arxiv_id": "2611.23589v1",
+      "abs_url": "http://arxiv.org/abs/2611.23589v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23589v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "comment": "For our supplementary video, see https://www.youtube.com/watch?v=h1kTaiRAQEI",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "其他机器人"
+      ],
+      "topic": "其他机器人",
+      "score": 7,
+      "anchor_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "Recoverability, Not Invariance: Certified Safety for Robots at the Limits of Performance",
+      "summary_zh": "Safety certification in robotics typically rests on forward invariance of the deployed controller, a property that demands high-fidelity models at the edge of the operating envelope, exactly where models are least reliable and robots perform best. As a result, many of the behaviors we most want robots to run, from learned policies to aggressive maneuvers at the limits of traction, cannot be certified at all. We introduce recoverability, a contraction-theoretic safety concept that resolves this tension by certifying a robot's ability to reengage a trusted recovery mode rather than the invariance of a deployed behavior. We prove that switching to the recovery mode from anywhere inside a certified tube guarantees exponential convergence, even under disturbances and model error. To decide when to switch, we derive the contraction insertion gradient, the first-order effect of a recovery insertion on the certificate, and embed it in a switching-time program in which feasibility alone guarantees safety and optimality only shapes performance. To supply the certificates, we develop sequential convex synthesis that monotonically grows the certified tube toward the exact viability kernel. We validate our approach in simulated quadrotor flight through uncertain obstacles, where it outperforms invariance-based safety filters, and in hardware deployments aboard a full-scale IndyNXT autonomous racecar, where it repeatedly recovers the car from an aggressive raceline at the limits of handling in the rain. Recoverability provides a certified exit strategy, extending formal safety guarantees to aggressive, learned, and experimental behaviors without requiring their invariance.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-19T04:47:57.591481+00:00"
+      }
+    },
+    {
+      "title": "SPICE: Stochastic Policy for Interaction in Cluttered Environments",
+      "authors": [
+        "Nidhi Parayil",
+        "Benjamin Greenland",
+        "Thierry Peynot",
+        "Chris Lehnert"
+      ],
+      "summary": "Agricultural tasks such as harvesting and pruning require robots to reach through dense foliage, where contact is often unavoidable and vision is obstructed. Intermittent contact creates an imbalance between free-space and contact-rich observations, complicating the learning of contact-responsive behaviours. We present SPICE, a tactileconditioned diffusion policy for reaching targets in dense plant canopies using tactile sensing as the sole environmental feedback. SPICE exhibits three behaviours: moving through compliant foliage, manoeuvring around partially obstructing stems, and manipulating branches that block the target path. To the best of our knowledge, SPICE is the first tactile-conditioned diffusion policy for target reaching through physically cluttered plant canopies. Across over 180 real-robot trials, SPICE was evaluated against tactile-conditioned, image-conditioned, and reactive-control baselines. Spatial tactile information and explicit contact conditioning proved important, with SPICE achieving 95% branch-manoeuvring success versus 45% for the strongest tactile baseline. SPICE also achieved branch manipulation beyond the reactive controller and remained effective under visual occlusion, where the image-conditioned DP failed. Zero-shot transfer across 40 trials on unseen tomato and lime plants achieved 87.5% success rate. These results demonstrate the potential of tactile-conditioned generative policies for interaction in visually occluded plant environments.",
+      "published": "2026-11-17T22:32:14Z",
+      "updated": "2026-11-17T22:32:14Z",
+      "arxiv_id": "2611.23585v1",
+      "abs_url": "http://arxiv.org/abs/2611.23585v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23585v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "comment": "submitted to IEE RAL",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "强化/模仿学习",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 9,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "tactile"
+      ],
+      "matched_terms": [
+        "diffusion policy",
+        "manipulation",
+        "robot",
+        "tactile"
+      ],
+      "title_zh": "SPICE: Stochastic Policy for Interaction in Cluttered Environments",
+      "summary_zh": "Agricultural tasks such as harvesting and pruning require robots to reach through dense foliage, where contact is often unavoidable and vision is obstructed. Intermittent contact creates an imbalance between free-space and contact-rich observations, complicating the learning of contact-responsive behaviours. We present SPICE, a tactileconditioned diffusion policy for reaching targets in dense plant canopies using tactile sensing as the sole environmental feedback. SPICE exhibits three behaviours: moving through compliant foliage, manoeuvring around partially obstructing stems, and manipulating branches that block the target path. To the best of our knowledge, SPICE is the first tactile-conditioned diffusion policy for target reaching through physically cluttered plant canopies. Across over 180 real-robot trials, SPICE was evaluated against tactile-conditioned, image-conditioned, and reactive-control baselines. Spatial tactile information and explicit contact conditioning proved important, with SPICE achieving 95% branch-manoeuvring success versus 45% for the strongest tactile baseline. SPICE also achieved branch manipulation beyond the reactive controller and remained effective under visual occlusion, where the image-conditioned DP failed. Zero-shot transfer across 40 trials on unseen tomato and lime plants achieved 87.5% success rate. These results demonstrate the potential of tactile-conditioned generative policies for interaction in visually occluded plant environments.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-19T04:47:57.591481+00:00"
+      }
+    },
+    {
+      "title": "DOCK: Dual-Stream-Inspired Self-Supervised Object-Centric Representations Grounded in Robot Kinematics",
+      "authors": [
+        "Pengju Liu",
+        "Caiwen Ding"
+      ],
+      "summary": "Latent-space planners select actions by comparing the embedding of a predicted future image with that of a goal image. This assumes that distance in the embedding reflects how far the scene is from the goal. We profile this assumption with simulator-executed futures, which removes prediction error. For six frozen DINO and V-JEPA encoders, feature distance barely tracks the object's distance to its goal: the rank correlation is at most 0.11, against 0.87 for object-mask centroids. It is dominated by background and robot patches, and frozen-feature readouts capture the arm far better than the object. Inspired by the ventral (what) and dorsal (where/how) visual streams, we propose DOCK, which learns an object representation whose changes agree with measured physical motion. A grasped object moves with the gripper, so forward kinematics on the joint angles gives a proxy for the object's displacement without annotation. From 9,951 held-object transport trajectories in 21 simulated kitchen scenes, we mine 404K displacement pairs and train three components: an object token pooled from patch features (what), a spatial ruler that makes differences of readout coordinates equal to measured displacements (where), and a dynamics predictor over object tokens (how). Used as a planning cost, the learned representation places the object in 15 of 21 tasks, as many as an oracle that reads the true object position, while mask geometry reaches 10 and frozen feature distance 9. It still solves the most tasks when the unseen robot arm is visible, and its ranking transfers to held-out layouts with unseen object instances and categories without any adaptation.",
+      "published": "2026-11-17T22:27:05Z",
+      "updated": "2026-11-17T22:27:05Z",
+      "arxiv_id": "2611.23578v1",
+      "abs_url": "http://arxiv.org/abs/2611.23578v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23578v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "感知与3D理解",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 10,
+      "anchor_terms": [
+        "grasp",
+        "robot"
+      ],
+      "matched_terms": [
+        "grasp",
+        "object-centric",
+        "robot",
+        "robot arm",
+        "simulator"
+      ],
+      "title_zh": "DOCK: Dual-Stream-Inspired Self-Supervised Object-Centric Representations Grounded in Robot Kinematics",
+      "summary_zh": "Latent-space planners select actions by comparing the embedding of a predicted future image with that of a goal image. This assumes that distance in the embedding reflects how far the scene is from the goal. We profile this assumption with simulator-executed futures, which removes prediction error. For six frozen DINO and V-JEPA encoders, feature distance barely tracks the object's distance to its goal: the rank correlation is at most 0.11, against 0.87 for object-mask centroids. It is dominated by background and robot patches, and frozen-feature readouts capture the arm far better than the object. Inspired by the ventral (what) and dorsal (where/how) visual streams, we propose DOCK, which learns an object representation whose changes agree with measured physical motion. A grasped object moves with the gripper, so forward kinematics on the joint angles gives a proxy for the object's displacement without annotation. From 9,951 held-object transport trajectories in 21 simulated kitchen scenes, we mine 404K displacement pairs and train three components: an object token pooled from patch features (what), a spatial ruler that makes differences of readout coordinates equal to measured displacements (where), and a dynamics predictor over object tokens (how). Used as a planning cost, the learned representation places the object in 15 of 21 tasks, as many as an oracle that reads the true object position, while mask geometry reaches 10 and frozen feature distance 9. It still solves the most tasks when the unseen robot arm is visible, and its ranking transfers to held-out layouts with unseen object instances and categories without any adaptation.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-19T04:47:57.591481+00:00"
+      }
+    },
+    {
+      "title": "LuxTac: A Flexible, Scalable, and Open-Source Optical Taxel Array with Distributed Three-Axis Force Sensing for Tactile Robot Learning",
+      "authors": [
+        "Md Rakibul Islam Prince",
+        "John Pelan",
+        "Zhiyuan Zhang",
+        "Adyaa Khera",
+        "Katherine Pesetski",
+        "Adeesh Desai",
+        "Akimizu Sugiyama",
+        "Minwoo Ki",
+        "Benjamin Alan Capelle",
+        "Temitope Ibrahim Amosa",
+        "Zijie Xu",
+        "Yihan Huang",
+        "Taehun Chung",
+        "Long Wang",
+        "Wei Li",
+        "Shaoting Lin",
+        "Yu She"
+      ],
+      "summary": "Low-cost tactile arrays have made touch a practical input for robot learning, but piezoresistive designs sense only pressure, while camera-based sensors that also resolve shear are too bulky to tile over a gripper. To solve this problem, we present LuxTac, a flexible, scalable optical taxel array, about 3.5 mm thick and built from off-the-shelf parts. Each taxel is a digital RGBC light-to-digital converter under a translucent white silicone layer capped by an opaque black film, so the back-scattered LED light falls monotonically with local indentation depth. The same board accepts two interchangeable gel cartridges: a plain one for normal sensing, and one with colored walls that encodes the local shear in the color of the returned light, with no camera, magnets, or bump overlay, making LuxTac, to our knowledge, the first optical taxel array to resolve shear at individual taxels. Characterized with an automated CNC indenter and a six-axis force/torque sensor, the normal cartridge responds linearly to force ($R^2$ = 0.999) from 104 mN to at least 5.8 N, with 2.0% repeatability, 5.9% hysteresis, and a taxel-to-taxel variation of 6-10% after normalization. With the shear cartridge, per-taxel models estimate the three-axis force at every taxel; across three indenter shapes and nine held-out sessions, the summed estimates reach $R^2$ = 0.96/0.96/0.92 in x/y/z, each taxel's estimate 0.92/0.93/0.94, and the median shear-direction error is 4.8 degrees. Adding LuxTac pressure readings to an Action Chunking Transformer policy substantially improves peg-in-hole success over a vision-only baseline. Design files, code, and videos are available at https://luxtac.github.io.",
+      "published": "2026-11-17T22:21:50Z",
+      "updated": "2026-11-17T22:21:50Z",
+      "arxiv_id": "2611.23575v1",
+      "abs_url": "http://arxiv.org/abs/2611.23575v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23575v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "11 pages, 9 figures, 5 tables. Project page: https://luxtac.github.io",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 17,
+      "anchor_terms": [
+        "robot",
+        "robot learning",
+        "tactile"
+      ],
+      "matched_terms": [
+        "action chunking",
+        "open-source",
+        "robot",
+        "robot learning",
+        "tactile"
+      ],
+      "title_zh": "LuxTac: A Flexible, Scalable, and Open-Source Optical Taxel Array with Distributed Three-Axis Force Sensing for Tactile Robot Learning",
+      "summary_zh": "Low-cost tactile arrays have made touch a practical input for robot learning, but piezoresistive designs sense only pressure, while camera-based sensors that also resolve shear are too bulky to tile over a gripper. To solve this problem, we present LuxTac, a flexible, scalable optical taxel array, about 3.5 mm thick and built from off-the-shelf parts. Each taxel is a digital RGBC light-to-digital converter under a translucent white silicone layer capped by an opaque black film, so the back-scattered LED light falls monotonically with local indentation depth. The same board accepts two interchangeable gel cartridges: a plain one for normal sensing, and one with colored walls that encodes the local shear in the color of the returned light, with no camera, magnets, or bump overlay, making LuxTac, to our knowledge, the first optical taxel array to resolve shear at individual taxels. Characterized with an automated CNC indenter and a six-axis force/torque sensor, the normal cartridge responds linearly to force ($R^2$ = 0.999) from 104 mN to at least 5.8 N, with 2.0% repeatability, 5.9% hysteresis, and a taxel-to-taxel variation of 6-10% after normalization. With the shear cartridge, per-taxel models estimate the three-axis force at every taxel; across three indenter shapes and nine held-out sessions, the summed estimates reach $R^2$ = 0.96/0.96/0.92 in x/y/z, each taxel's estimate 0.92/0.93/0.94, and the median shear-direction error is 4.8 degrees. Adding LuxTac pressure readings to an Action Chunking Transformer policy substantially improves peg-in-hole success over a vision-only baseline. Design files, code, and videos are available at https://luxtac.github.io.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-19T04:47:57.591481+00:00"
+      }
+    },
+    {
+      "title": "Panini- Feasible Grammar For Robot Designs",
+      "authors": [
+        "Mayukh Debnath",
+        "Manan Roy Choudhury"
+      ],
+      "summary": "Symbolic methods make robot designs interpretable but often overlook continuous geometry; learned methods handle geometry but offer less transparent structure. We introduce a typed production grammar that uses case-role relations, parameter inheritance, and specificity-based rule arbitration to generate both manipulation skills and robot morphologies. A geometric realization map translates grammar composition into transformations in SE(3), behaving as a monoid homomorphism when inheritance is inactive and exhibiting a measurable defect when inheritance is enabled. The grammar provides a compact representation, and its arbitration decisions can be recovered from geometric containment (agreement 0.905 +/- 0.062 across 10 seeds, versus 0.611 +/- 0.090 for a Euclidean control). We also introduce PANINI, a cross-entropy search method over grammar-based morphology representations. Across 30 methods and 24 seeds, PANINI achieves the best mean rank but is not statistically distinguishable from strong generic optimizers. Its main demonstrated advantage is therefore structural rather than optimization performance: grammar-generated designs are legal by construction, and coordinated limb placement produces 95% jointly feasible edits, compared with 55% for range-constrained resampling and none for flat parameterization in 6,000 draws. These results show how typed grammars can make robot generation more interpretable and geometrically coordinated, without implying that every feasible design will locomote or that grammar-based search universally outperforms generic optimizers.",
+      "published": "2026-11-17T22:14:11Z",
+      "updated": "2026-11-17T22:14:11Z",
+      "arxiv_id": "2611.23567v1",
+      "abs_url": "http://arxiv.org/abs/2611.23567v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23567v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "其他机器人"
+      ],
+      "topic": "机器人操作",
+      "score": 6,
+      "anchor_terms": [
+        "manipulation",
+        "robot"
+      ],
+      "matched_terms": [
+        "manipulation",
+        "robot"
+      ],
+      "title_zh": "Panini- Feasible Grammar For Robot Designs",
+      "summary_zh": "Symbolic methods make robot designs interpretable but often overlook continuous geometry; learned methods handle geometry but offer less transparent structure. We introduce a typed production grammar that uses case-role relations, parameter inheritance, and specificity-based rule arbitration to generate both manipulation skills and robot morphologies. A geometric realization map translates grammar composition into transformations in SE(3), behaving as a monoid homomorphism when inheritance is inactive and exhibiting a measurable defect when inheritance is enabled. The grammar provides a compact representation, and its arbitration decisions can be recovered from geometric containment (agreement 0.905 +/- 0.062 across 10 seeds, versus 0.611 +/- 0.090 for a Euclidean control). We also introduce PANINI, a cross-entropy search method over grammar-based morphology representations. Across 30 methods and 24 seeds, PANINI achieves the best mean rank but is not statistically distinguishable from strong generic optimizers. Its main demonstrated advantage is therefore structural rather than optimization performance: grammar-generated designs are legal by construction, and coordinated limb placement produces 95% jointly feasible edits, compared with 55% for range-constrained resampling and none for flat parameterization in 6,000 draws. These results show how typed grammars can make robot generation more interpretable and geometrically coordinated, without implying that every feasible design will locomote or that grammar-based search universally outperforms generic optimizers.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-19T04:47:57.591481+00:00"
+      }
+    },
+    {
+      "title": "Learning the Dynamics of Deformable Linear Objects Through Coupled Oscillators for Bimanual Robotic Manipulation",
+      "authors": [
+        "Iván López-Broceño",
+        "Maximilian Stölzle",
+        "Daniel Feliu-Talegon",
+        "Daniela Rus",
+        "Cosimo Della Santina"
+      ],
+      "summary": "Many learning-based approaches for deformable linear objects (DLOs) rely on simplified deformation models that neglect dynamic effects and the mechanical response of the objects, limiting their applicability to lightweight, compliant objects and slow motions. Inspired by recent advances in learning physically structured dynamics with coupled oscillator networks (CONs), we propose $Φ$-CON for learning force-driven DLO dynamics. The model combines a floating-base coupled oscillator network (FBCON), whose latent potential energy depends only on the DLO's shape, with a learned affine diffeomorphism $Φ$ between observed positions along the DLO and latent coordinates. Its shape dynamics are stable by construction, and its Lagrangian structure yields explicit expressions for kinetic and potential energy. We exploit this structure to design a model-based proportional-derivative (PD) controller that compensates for the learned potential forces, thereby establishing closed-loop stability guarantees and ensuring convergence. We evaluate the approach on four simulated DLOs and a real bimanual robot setup. In simulation, $Φ$-CON achieves prediction accuracy comparable to neural ordinary differential equation (NODE) models and Lagrangian neural networks (LNNs), with $97.2\\%$ and $90.2\\%$ fewer parameters, respectively. Relative to a model-free PD baseline, the proposed controller reduces mean endpoint regulation error by $97.5$-$99.7\\%$ in simulation and achieves a mean per-target reduction of $27.9\\%$ across both endpoints in real-world experiments, demonstrating the importance of explicitly accounting for the mechanical response of stiff and heavy objects.",
+      "published": "2026-11-17T22:12:16Z",
+      "updated": "2026-11-17T22:12:16Z",
+      "arxiv_id": "2611.23563v1",
+      "abs_url": "http://arxiv.org/abs/2611.23563v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23563v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "世界模型与仿真",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 11,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "bimanual",
+        "manipulation",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "Learning the Dynamics of Deformable Linear Objects Through Coupled Oscillators for Bimanual Robotic Manipulation",
+      "summary_zh": "Many learning-based approaches for deformable linear objects (DLOs) rely on simplified deformation models that neglect dynamic effects and the mechanical response of the objects, limiting their applicability to lightweight, compliant objects and slow motions. Inspired by recent advances in learning physically structured dynamics with coupled oscillator networks (CONs), we propose $Φ$-CON for learning force-driven DLO dynamics. The model combines a floating-base coupled oscillator network (FBCON), whose latent potential energy depends only on the DLO's shape, with a learned affine diffeomorphism $Φ$ between observed positions along the DLO and latent coordinates. Its shape dynamics are stable by construction, and its Lagrangian structure yields explicit expressions for kinetic and potential energy. We exploit this structure to design a model-based proportional-derivative (PD) controller that compensates for the learned potential forces, thereby establishing closed-loop stability guarantees and ensuring convergence. We evaluate the approach on four simulated DLOs and a real bimanual robot setup. In simulation, $Φ$-CON achieves prediction accuracy comparable to neural ordinary differential equation (NODE) models and Lagrangian neural networks (LNNs), with $97.2\\%$ and $90.2\\%$ fewer parameters, respectively. Relative to a model-free PD baseline, the proposed controller reduces mean endpoint regulation error by $97.5$-$99.7\\%$ in simulation and achieves a mean per-target reduction of $27.9\\%$ across both endpoints in real-world experiments, demonstrating the importance of explicitly accounting for the mechanical response of stiff and heavy objects.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-19T04:47:57.591481+00:00"
+      }
+    },
+    {
+      "title": "Sample-Efficient Model Predictive Control via Proximal Policy Optimization",
+      "authors": [
+        "Jiarui Wang",
+        "Sina Sharifi",
+        "Mahyar Fazlyab"
+      ],
+      "summary": "Sampling-based model predictive control (MPC) enables real-time control of complex nonlinear systems but often incurs substantial computational costs due to repeated trajectory simulations. In this paper, we bridge policy optimization in reinforcement learning and sampling-based MPC to improve computational efficiency through sample reuse. Starting from a KL-regularized distributional formulation of trajectory optimization, we derive an exact performance-difference identity based on a signed exponential advantage function. This identity motivates two algorithms, PPO-MPPI and SPO-MPPI, which adapt proximal policy optimization techniques to sampling-based MPC, enabling multiple optimization updates using previously evaluated trajectories without additional forward simulations. We establish population-level monotonic improvement guarantees for both methods and prove convergence to first-order stationarity for PPO-MPPI under fixed-covariance Gaussian sampling distributions. Experiments on quadruped velocity tracking and quadrotor path tracking demonstrate that the proposed methods achieve competitive control performance at substantially lower computational cost than multi-stage sampling approaches. Our results establish a principled connection between policy optimization and sampling-based MPC and highlight the potential of trajectory reuse for sample-efficient predictive control.",
+      "published": "2026-11-17T21:50:41Z",
+      "updated": "2026-11-17T21:50:41Z",
+      "arxiv_id": "2611.23544v1",
+      "abs_url": "http://arxiv.org/abs/2611.23544v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23544v1",
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "四足机器人",
+        "其他机器人"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 3,
+      "anchor_terms": [
+        "quadruped"
+      ],
+      "matched_terms": [
+        "quadruped",
+        "reinforcement learning",
+        "trajectory optimization"
+      ],
+      "title_zh": "Sample-Efficient Model Predictive Control via Proximal Policy Optimization",
+      "summary_zh": "Sampling-based model predictive control (MPC) enables real-time control of complex nonlinear systems but often incurs substantial computational costs due to repeated trajectory simulations. In this paper, we bridge policy optimization in reinforcement learning and sampling-based MPC to improve computational efficiency through sample reuse. Starting from a KL-regularized distributional formulation of trajectory optimization, we derive an exact performance-difference identity based on a signed exponential advantage function. This identity motivates two algorithms, PPO-MPPI and SPO-MPPI, which adapt proximal policy optimization techniques to sampling-based MPC, enabling multiple optimization updates using previously evaluated trajectories without additional forward simulations. We establish population-level monotonic improvement guarantees for both methods and prove convergence to first-order stationarity for PPO-MPPI under fixed-covariance Gaussian sampling distributions. Experiments on quadruped velocity tracking and quadrotor path tracking demonstrate that the proposed methods achieve competitive control performance at substantially lower computational cost than multi-stage sampling approaches. Our results establish a principled connection between policy optimization and sampling-based MPC and highlight the potential of trajectory reuse for sample-efficient predictive control.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-19T04:47:57.591481+00:00"
+      }
+    },
+    {
+      "title": "RESCUE Jumper: A Centimeter-Scale Rolling and Jumping Robot for Search and Rescue",
+      "authors": [
+        "Kiran Marques",
+        "Shashwat Singh",
+        "Ben D'Ambrosia",
+        "Zeynep Temel",
+        "Melisa Orta Martinez"
+      ],
+      "summary": "Centimeter-scale robots are promising for urban search and rescue because they can enter confined spaces that are inaccessible or unsafe for humans. However, their small size limits obstacle traversal after deployment. This paper presents the RESCUE Jumper, a 125 g mobile robot with a 6.2 cm width and 6.2 cm diameter wheels that combines ground rolling with jumping to traverse steps and gaps that exceeds its rolling capability. The RESCUE Jumper uses its two actuators for both rolling mode and jumping by reversing the direction of wheel motion. Forward wheel motion enables rolling, while reverse wheel motion winds a spring steel tail to store elastic potential energy and release it for jumping. The RESCUE Jumper varies tail winding speed to control jump direction, transitioning from backward to forward jumps as winding speed increases from 0.75 rad/s to 8.73 rad/s. The launch angle of the jumps ranges from 45 degree to -11 degree with respect to the vertical axis, reaching a maximum height of 9.2 cm and a maximum lateral displacement of 11.2 cm. We model the winding speed-dependent jumping behavior in three phases: tail release to determine the contact point and robot orientation, tail straightening until liftoff, and ballistic flight to predict jump height and lateral displacement. Finally, qualitative tests highlight the robot's locomotion in cluttered, real-world environments. The model and experiments presented in this work can inform future designs of space-constrained jump mechanisms in centimeter-scale robots for search and rescue and inspection in unstructured environments.",
+      "published": "2026-11-17T21:37:10Z",
+      "updated": "2026-11-17T21:37:10Z",
+      "arxiv_id": "2611.23531v1",
+      "abs_url": "http://arxiv.org/abs/2611.23531v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23531v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "8 pages, 9 figures, IEEE International Symposium on Safety, Security, and Rescue Robotics 2026, Best Paper Award",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 9,
+      "anchor_terms": [
+        "locomotion",
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "matched_terms": [
+        "locomotion",
+        "mobile robot",
+        "robot",
+        "robotic",
+        "robotics"
+      ],
+      "title_zh": "RESCUE Jumper: A Centimeter-Scale Rolling and Jumping Robot for Search and Rescue",
+      "summary_zh": "Centimeter-scale robots are promising for urban search and rescue because they can enter confined spaces that are inaccessible or unsafe for humans. However, their small size limits obstacle traversal after deployment. This paper presents the RESCUE Jumper, a 125 g mobile robot with a 6.2 cm width and 6.2 cm diameter wheels that combines ground rolling with jumping to traverse steps and gaps that exceeds its rolling capability. The RESCUE Jumper uses its two actuators for both rolling mode and jumping by reversing the direction of wheel motion. Forward wheel motion enables rolling, while reverse wheel motion winds a spring steel tail to store elastic potential energy and release it for jumping. The RESCUE Jumper varies tail winding speed to control jump direction, transitioning from backward to forward jumps as winding speed increases from 0.75 rad/s to 8.73 rad/s. The launch angle of the jumps ranges from 45 degree to -11 degree with respect to the vertical axis, reaching a maximum height of 9.2 cm and a maximum lateral displacement of 11.2 cm. We model the winding speed-dependent jumping behavior in three phases: tail release to determine the contact point and robot orientation, tail straightening until liftoff, and ballistic flight to predict jump height and lateral displacement. Finally, qualitative tests highlight the robot's locomotion in cluttered, real-world environments. The model and experiments presented in this work can inform future designs of space-constrained jump mechanisms in centimeter-scale robots for search and rescue and inspection in unstructured environments.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-19T04:47:57.591481+00:00"
+      }
+    },
+    {
+      "title": "RageVLA: Augmentation-Trained Perception and Action for State-of-the-Art Robustness on LIBERO",
+      "authors": [
+        "Amrit Lal Singh",
+        "Smarak Kanjilal"
+      ],
+      "summary": "Vision-language-action (VLA) models look saturated on LIBERO, yet most of them fall apart on LIBERO-PRO as soon as an object moves or the instruction asks for something new. We argue that what is missing is not scale but decoupling. In these policies, what to do is tied to where things were during training, to the scene around them and to the wording of the instruction. We cut these ties in two places. In the data, LIBERO demonstrations are re-arranged by general rules: every object and fixture is moved and rotated, tasks are carried into other environments and onto other surfaces, and every instruction is paraphrased. In the policy, a perception engine on frozen DINOv3 features, trained on this augmented data, hands the action model the scene in decoupled form: a list of objects with their positions, and a compact code of what the gripper is looking at, next to image and instruction embeddings from TinyCLIP. A flow-matching diffusion transformer, trained from scratch, acts on this view. We call this combination of Robust Augmentation and Grounded Encoding RageVLA. With 0.21 billion parameters, RageVLA sets a new state of the art on LIBERO-PRO among VLA policies, scoring 0.72 against 0.53 for the best published model, and a larger variant reaches 0.73. Two further tests on LIBERO-Object show that the policy acts on what it perceives. When the object positions it is given are shuffled while the camera images stay correct, its success falls from 0.965 to 0.215. When the target object is displaced by 28 cm, it still succeeds in 0.865 of the episodes, where $π_{0.5}$, run through the same harness, succeeds in 0.105.",
+      "published": "2026-11-17T21:07:47Z",
+      "updated": "2026-11-17T21:07:47Z",
+      "arxiv_id": "2611.23517v1",
+      "abs_url": "http://arxiv.org/abs/2611.23517v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23517v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "comment": "10 pages, 10 figures, 9 tables",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "数据集/评测",
+        "感知与3D理解"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 10,
+      "anchor_terms": [
+        "vision-language-action",
+        "vla"
+      ],
+      "matched_terms": [
+        "libero",
+        "vision-language-action",
+        "vla"
+      ],
+      "title_zh": "RageVLA: Augmentation-Trained Perception and Action for State-of-the-Art Robustness on LIBERO",
+      "summary_zh": "Vision-language-action (VLA) models look saturated on LIBERO, yet most of them fall apart on LIBERO-PRO as soon as an object moves or the instruction asks for something new. We argue that what is missing is not scale but decoupling. In these policies, what to do is tied to where things were during training, to the scene around them and to the wording of the instruction. We cut these ties in two places. In the data, LIBERO demonstrations are re-arranged by general rules: every object and fixture is moved and rotated, tasks are carried into other environments and onto other surfaces, and every instruction is paraphrased. In the policy, a perception engine on frozen DINOv3 features, trained on this augmented data, hands the action model the scene in decoupled form: a list of objects with their positions, and a compact code of what the gripper is looking at, next to image and instruction embeddings from TinyCLIP. A flow-matching diffusion transformer, trained from scratch, acts on this view. We call this combination of Robust Augmentation and Grounded Encoding RageVLA. With 0.21 billion parameters, RageVLA sets a new state of the art on LIBERO-PRO among VLA policies, scoring 0.72 against 0.53 for the best published model, and a larger variant reaches 0.73. Two further tests on LIBERO-Object show that the policy acts on what it perceives. When the object positions it is given are shuffled while the camera images stay correct, its success falls from 0.965 to 0.215. When the target object is displaced by 28 cm, it still succeeds in 0.865 of the episodes, where $π_{0.5}$, run through the same harness, succeeds in 0.105.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-19T04:47:57.591481+00:00"
+      }
+    },
+    {
+      "title": "Learning and Control in Physically Coupled Dynamical Systems",
+      "authors": [
+        "Bao Trung Truong",
+        "Dat Thanh Nguyen",
+        "Thinh T. Doan"
+      ],
+      "summary": "We introduce TAG (Testbed for Autonomous Games), a compact, low-cost robotic platform for studying learning and control in physically coupled dynamical systems. TAG combines an actively tilted and steered ball-in-maze board with a top-mounted rotary inverted pendulum. The pendulum's reaction torque and vibration disturb the board and marble, while the board's tilt, driven by the maze-solving policy, simultaneously disturbs the pendulum's balance. The main challenge in learning control policies for each subsystem is accounting for the impact of one subsystem's dynamics on the other's learning process. To address this challenge, we present complementary reinforcement learning paradigms, leveraging model-based and model-free approaches to learn the control policies for the maze and pendulum, respectively. Our key finding is that introducing the pendulum causes an immediate, sharp drop in the maze policy's success rate, but the policy adapts online and recovers to its pre-coupling performance within a small number of learning episodes. Experimental results show that both policies, trained independently, successfully control the maze board and the pendulum despite their physical coupling.",
+      "published": "2026-11-17T20:50:47Z",
+      "updated": "2026-11-17T20:50:47Z",
+      "arxiv_id": "2611.23502v1",
+      "abs_url": "http://arxiv.org/abs/2611.23502v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23502v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "强化/模仿学习",
+        "其他机器人"
+      ],
+      "topic": "强化/模仿学习",
+      "score": 6,
+      "anchor_terms": [
+        "reinforcement learning",
+        "robot",
+        "robotic"
+      ],
+      "matched_terms": [
+        "reinforcement learning",
+        "robot",
+        "robotic"
+      ],
+      "title_zh": "Learning and Control in Physically Coupled Dynamical Systems",
+      "summary_zh": "We introduce TAG (Testbed for Autonomous Games), a compact, low-cost robotic platform for studying learning and control in physically coupled dynamical systems. TAG combines an actively tilted and steered ball-in-maze board with a top-mounted rotary inverted pendulum. The pendulum's reaction torque and vibration disturb the board and marble, while the board's tilt, driven by the maze-solving policy, simultaneously disturbs the pendulum's balance. The main challenge in learning control policies for each subsystem is accounting for the impact of one subsystem's dynamics on the other's learning process. To address this challenge, we present complementary reinforcement learning paradigms, leveraging model-based and model-free approaches to learn the control policies for the maze and pendulum, respectively. Our key finding is that introducing the pendulum causes an immediate, sharp drop in the maze policy's success rate, but the policy adapts online and recovers to its pre-coupling performance within a small number of learning episodes. Experimental results show that both policies, trained independently, successfully control the maze board and the pendulum despite their physical coupling.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-19T04:47:57.591481+00:00"
+      }
+    },
+    {
+      "title": "BiCAT: Bimanual Coordination Action Tokenization",
+      "authors": [
+        "Xuanwei Liu",
+        "Guipu Cao",
+        "Zhongyi Luo",
+        "Jiafei Duan"
+      ],
+      "summary": "Autoregressive vision-language-action (VLA) models predict discrete action tokens with the next-token objective of their vision-language backbone, so the action tokenizer defines the interface between the policy and the robot. In bimanual manipulation, the two arms share a repertoire of movements yet coordinate through complementary roles, and an action representation should capture both. However, most existing tokenizers encode both arms as a single concatenated action vector, in which motion patterns common to the two arms are not shared and cross-arm dependencies remain entangled within each token. The policy must therefore learn both aspects implicitly. We propose Bimanual Coordination Action Tokenization (BiCAT), which shares one motion representation across arms while conditioning each arm's tokens on its partner through symmetric cross-arm attention and a joint decoder. The policy then predicts all tokens of each arm in parallel, generating the left arm first and the right arm conditioned on it. Across ten RoboTwin 2.0 tasks and six real-world tasks on three embodiments, BiCAT achieves the highest success among the compared tokenizers. In simulation, it improves mean success by 17.6 percentage points over the strongest of eight baselines, with the largest gains on tasks that require close coordination between the arms, while requiring only 40.5 ms per action chunk. These results suggest that the action tokenizer is a natural place to model bimanual coordination.",
+      "published": "2026-11-17T20:50:13Z",
+      "updated": "2026-11-17T20:50:13Z",
+      "arxiv_id": "2611.23499v1",
+      "abs_url": "http://arxiv.org/abs/2611.23499v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23499v1",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "机器人操作",
+        "VLA/多模态策略",
+        "世界模型与仿真",
+        "机械臂"
+      ],
+      "topic": "机器人操作",
+      "score": 10,
+      "anchor_terms": [
+        "manipulation",
+        "robot",
+        "vision-language-action",
+        "vla"
+      ],
+      "matched_terms": [
+        "bimanual",
+        "manipulation",
+        "robot",
+        "vision-language-action",
+        "vla"
+      ],
+      "title_zh": "BiCAT: Bimanual Coordination Action Tokenization",
+      "summary_zh": "Autoregressive vision-language-action (VLA) models predict discrete action tokens with the next-token objective of their vision-language backbone, so the action tokenizer defines the interface between the policy and the robot. In bimanual manipulation, the two arms share a repertoire of movements yet coordinate through complementary roles, and an action representation should capture both. However, most existing tokenizers encode both arms as a single concatenated action vector, in which motion patterns common to the two arms are not shared and cross-arm dependencies remain entangled within each token. The policy must therefore learn both aspects implicitly. We propose Bimanual Coordination Action Tokenization (BiCAT), which shares one motion representation across arms while conditioning each arm's tokens on its partner through symmetric cross-arm attention and a joint decoder. The policy then predicts all tokens of each arm in parallel, generating the left arm first and the right arm conditioned on it. Across ten RoboTwin 2.0 tasks and six real-world tasks on three embodiments, BiCAT achieves the highest success among the compared tokenizers. In simulation, it improves mean success by 17.6 percentage points over the strongest of eight baselines, with the largest gains on tasks that require close coordination between the arms, while requiring only 40.5 ms per action chunk. These results suggest that the action tokenizer is a natural place to model bimanual coordination.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-19T04:47:57.591481+00:00"
+      }
+    },
+    {
+      "title": "GRID-UAV: Geometry and Ray-depth Integrated Decision-making for Unmanned Aerial Vehicles",
+      "authors": [
+        "Anas Anwarul Haq Khan",
+        "Amrin Kareem",
+        "Muhammad Umer Sheikh",
+        "Biplab Banerjee",
+        "Muhammad Haris Khan"
+      ],
+      "summary": "Vision-language-action models (VLAs) encode images with 2D encoders that capture little 3D structure. A common approach is to feed the policy estimated depth, but a UAV chooses its own altitude, must judge distances tens of meters away, where monocular depth is less reliable, and must relate its forward and downward views. On long aerial routes, adding depth features directly brings no significant gain (42.5% vs. 42.6% success), so we study how 3D information should be given to the policy. Analyzing flight failures, we find that two forms of 3D grounding fail in opposite ways: explicit 3D lifting of depth collides less on the way but more often fails to finish at the target, while implicit alignment with a 3D geometry model finishes more often but collides more. We propose GRID, which combines both: (1) it lifts monocular depth into ray-corrected 3D positions in the UAV's frame for both cameras, and (2) during training only, it aligns its visual features with a frozen multi-view geometry model, at no inference cost. GRID adding explicit lifting to implicit alignment significantly increases how often the policy reaches the target ($61.5\\% \\rightarrow 69.5\\%$, $p<0.001$), and adding implicit alignment to explicit lifting significantly increases how often it completes the task once there ($57.7\\% \\rightarrow 61.4\\%$, $p<0.05$). On TravelUAV (3,005 test episodes), GRID achieves the best success rate on every split, with relative gains over the state of the art of 9.5% (seen), 17.1% (unseen objects) and 25.4% (unseen map).",
+      "published": "2026-11-17T20:41:30Z",
+      "updated": "2026-11-17T20:41:30Z",
+      "arxiv_id": "2611.23491v1",
+      "abs_url": "http://arxiv.org/abs/2611.23491v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23491v1",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "comment": "",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "VLA/多模态策略",
+        "感知与3D理解",
+        "其他机器人"
+      ],
+      "topic": "VLA/多模态策略",
+      "score": 5,
+      "anchor_terms": [
+        "vision-language-action"
+      ],
+      "matched_terms": [
+        "uav",
+        "vision-language-action"
+      ],
+      "title_zh": "GRID-UAV: Geometry and Ray-depth Integrated Decision-making for Unmanned Aerial Vehicles",
+      "summary_zh": "Vision-language-action models (VLAs) encode images with 2D encoders that capture little 3D structure. A common approach is to feed the policy estimated depth, but a UAV chooses its own altitude, must judge distances tens of meters away, where monocular depth is less reliable, and must relate its forward and downward views. On long aerial routes, adding depth features directly brings no significant gain (42.5% vs. 42.6% success), so we study how 3D information should be given to the policy. Analyzing flight failures, we find that two forms of 3D grounding fail in opposite ways: explicit 3D lifting of depth collides less on the way but more often fails to finish at the target, while implicit alignment with a 3D geometry model finishes more often but collides more. We propose GRID, which combines both: (1) it lifts monocular depth into ray-corrected 3D positions in the UAV's frame for both cameras, and (2) during training only, it aligns its visual features with a frozen multi-view geometry model, at no inference cost. GRID adding explicit lifting to implicit alignment significantly increases how often the policy reaches the target ($61.5\\% \\rightarrow 69.5\\%$, $p<0.001$), and adding implicit alignment to explicit lifting significantly increases how often it completes the task once there ($57.7\\% \\rightarrow 61.4\\%$, $p<0.05$). On TravelUAV (3,005 test episodes), GRID achieves the best success rate on every split, with relative gains over the state of the art of 9.5% (seen), 17.1% (unseen objects) and 25.4% (unseen map).",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-19T04:47:57.591481+00:00"
+      }
+    },
+    {
       "title": "Spool: Low-Latency Streaming Inference for Hybrid Vision-Language Models",
       "authors": [
         "Rui Ning",
@@ -600,6 +1281,58 @@
         "provider": "google",
         "model": "deep-translator/google",
         "generated_at": "2026-11-18T04:59:15.165375+00:00"
+      }
+    },
+    {
+      "title": "Neural Circuit Architectural Priors for Rat Locomotion",
+      "authors": [
+        "Nikhil X. Bhattasali",
+        "Jaron Cui",
+        "Lerrel Pinto",
+        "Grace W. Lindsay"
+      ],
+      "summary": "Animals generate behavior through continuous interactions between their neural circuits, bodies, and environment. Embodied simulations study these interactions by testing neural circuit models in biologically realistic settings. Recent efforts have simulated diverse animals, and emerging work on biologically grounded neural architectures has begun to integrate circuit connectivity and single-unit dynamics from experimental data into artificial neural networks, introducing stronger inductive biases and closer mechanistic alignment with biology. How can we develop embodied simulations that enable the study of increasingly complex bodies and neural circuits? In this work, we address the challenge through coordinated advances in the simulated body, neural architecture, and training infrastructure. We introduce Rat v2, an efficient and flexible biomechanical body for simulating rat behavior. To control this body, we develop Rat NCAP, a biologically grounded neural architecture for locomotion based on mammalian spinal circuits that incorporates cell-type-specific connectivity and a novel flexor-extensor neuromechanical interface. To optimize circuit parameters, we develop GPU-accelerated simulation and training infrastructure. The model learns to locomote at different speeds and transition between gaits without imitation learning, producing locomotion statistics, kinematics, and cell-type-specific neural activity consistent with experimental data. Analyses reveal that the neuromechanical interface substantially affects trainability and gait quality, and in silico cell-type ablations reproduce known gait phenotypes and predict gait changes under graded perturbations. Together, these findings support the view that embodied simulations at an intermediate level of abstraction can simultaneously reproduce complex behavior and yield mechanistic insights into the neural circuits that generate it.",
+      "published": "2026-11-17T18:57:31Z",
+      "updated": "2026-11-17T18:57:31Z",
+      "arxiv_id": "2611.23364v1",
+      "abs_url": "http://arxiv.org/abs/2611.23364v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23364v1",
+      "primary_category": "q-bio.NC",
+      "categories": [
+        "q-bio.NC",
+        "cs.AI",
+        "cs.LG",
+        "cs.NE",
+        "cs.RO"
+      ],
+      "comment": "NeurIPS 2026. 10 pages main text, 41 pages total, 7 figures in main text. Code and videos: https://rat-ncap.github.io/",
+      "code_url": "",
+      "has_code": false,
+      "labels": [
+        "导航与移动",
+        "世界模型与仿真",
+        "强化/模仿学习",
+        "其他机器人"
+      ],
+      "topic": "导航与移动",
+      "score": 7,
+      "anchor_terms": [
+        "embodied",
+        "imitation learning",
+        "locomotion"
+      ],
+      "matched_terms": [
+        "embodied",
+        "imitation learning",
+        "locomotion"
+      ],
+      "title_zh": "Neural Circuit Architectural Priors for Rat Locomotion",
+      "summary_zh": "Animals generate behavior through continuous interactions between their neural circuits, bodies, and environment. Embodied simulations study these interactions by testing neural circuit models in biologically realistic settings. Recent efforts have simulated diverse animals, and emerging work on biologically grounded neural architectures has begun to integrate circuit connectivity and single-unit dynamics from experimental data into artificial neural networks, introducing stronger inductive biases and closer mechanistic alignment with biology. How can we develop embodied simulations that enable the study of increasingly complex bodies and neural circuits? In this work, we address the challenge through coordinated advances in the simulated body, neural architecture, and training infrastructure. We introduce Rat v2, an efficient and flexible biomechanical body for simulating rat behavior. To control this body, we develop Rat NCAP, a biologically grounded neural architecture for locomotion based on mammalian spinal circuits that incorporates cell-type-specific connectivity and a novel flexor-extensor neuromechanical interface. To optimize circuit parameters, we develop GPU-accelerated simulation and training infrastructure. The model learns to locomote at different speeds and transition between gaits without imitation learning, producing locomotion statistics, kinematics, and cell-type-specific neural activity consistent with experimental data. Analyses reveal that the neuromechanical interface substantially affects trainability and gait quality, and in silico cell-type ablations reproduce known gait phenotypes and predict gait changes under graded perturbations. Together, these findings support the view that embodied simulations at an intermediate level of abstraction can simultaneously reproduce complex behavior and yield mechanistic insights into the neural circuits that generate it.",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-19T04:47:57.591481+00:00"
       }
     },
     {
@@ -1042,16 +1775,16 @@
       ],
       "summary": "Large-scale robotic simulation requires diverse deformable objects with executable physical properties and realistic interaction behaviors. However, existing 3D asset collections primarily emphasize visual diversity, while scalable physical construction and verification remain challenging. We introduce RFW-S, a large-scale dataset of 83,365 simulation-verified assets spanning 485 everyday categories across five structural families: soft solids, cloth sheets, shells, garments, and bags. We develop an automated pipeline integrating reference-guided 3D generation, structure-aware physical modeling, and LLM-assisted parameter estimation and calibration. To ensure physical reliability, we introduce an independent simulation verification framework that evaluates object behaviors under interactions distinct from those used for parameter calibration. Extensive experiments demonstrate the effectiveness of independent verification and characterize deformable responses under different physical configurations. We further evaluate robotic grasping in terms of both task success and object integrity, and demonstrate the physical realism of our simulated objects through sim-to-real replay of fragile-object manipulation. RFW-S provides a scalable foundation for physically grounded simulation and embodied robotic learning.",
       "published": "2026-11-17T16:49:52Z",
-      "updated": "2026-11-17T16:49:52Z",
-      "arxiv_id": "2611.23056v1",
-      "abs_url": "http://arxiv.org/abs/2611.23056v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.23056v1",
+      "updated": "2026-11-18T11:00:51Z",
+      "arxiv_id": "2611.23056v2",
+      "abs_url": "http://arxiv.org/abs/2611.23056v2",
+      "pdf_url": "https://arxiv.org/pdf/2611.23056v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
         "cs.CV"
       ],
-      "comment": "34 pages, 19 figures. Project Page: https://sjijs.github.io/RFW-S_website/",
+      "comment": "34 pages, 19 figures. Project Page: https://roboflywheel-com.github.io/RoboFlywheel-Soft/",
       "code_url": "",
       "has_code": false,
       "labels": [
@@ -1087,7 +1820,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-11-18T04:59:15.165375+00:00"
+        "generated_at": "2026-11-19T04:47:57.591481+00:00"
       }
     },
     {
@@ -3528,17 +4261,17 @@
       ],
       "summary": "Collaboration promises to extend humanoid capabilities beyond what individual robots can achieve. However, realizing this potential requires coordinated whole-body interactions, coherent long-horizon planning, and precise synchronization across robots. We introduce Heave-Ho, a decentralized framework for long-horizon collaborative multi-humanoid loco-manipulation. At the low level, we develop a multi-agent post-training framework that adapts a humanoid foundation tracking model to physically coupled interactions between humanoids, enabling coordinated decentralized control from local observations alone. At the high level, we train a vision-language planner and design a speech-based leader-follower coordination mechanism to synchronize decentralized execution without network communication. Trained with two identical humanoids, our system scales to teams of up to ten robots and generalizes to heterogeneous teams without retraining. To benchmark these capabilities, we introduce HH-Bench, comprising 12 tasks involving teams of 2 to 10 humanoids, including heterogeneous teams. Systematic evaluations show that Heave-Ho consistently outperforms baseline methods, while real-world experiments demonstrate robust decentralized collaboration across challenging tasks.",
       "published": "2026-11-17T06:21:03Z",
-      "updated": "2026-11-17T06:21:03Z",
-      "arxiv_id": "2611.22275v1",
-      "abs_url": "http://arxiv.org/abs/2611.22275v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.22275v1",
+      "updated": "2026-11-18T06:46:21Z",
+      "arxiv_id": "2611.22275v2",
+      "abs_url": "http://arxiv.org/abs/2611.22275v2",
+      "pdf_url": "https://arxiv.org/pdf/2611.22275v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
         "cs.CV",
         "cs.LG"
       ],
-      "comment": "18 pages, 11 figures, 7 tables. Project page: https://heaveho-humanoid.github.io/",
+      "comment": "18 pages, 10 figures, 7 tables. Project page: https://heaveho-humanoid.github.io/",
       "code_url": "",
       "has_code": false,
       "labels": [
@@ -3565,7 +4298,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-11-18T04:59:15.165375+00:00"
+        "generated_at": "2026-11-19T04:47:57.591481+00:00"
       }
     },
     {
