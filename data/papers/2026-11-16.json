@@ -1,11 +1,11 @@
 {
   "date": "2026-11-16",
-  "generated_at": "2026-11-23T04:23:20.961876+00:00",
+  "generated_at": "2026-11-24T07:19:26.750363+00:00",
   "timezone": "Asia/Shanghai",
   "source": "arXiv",
   "source_url": "https://arxiv.org/",
   "query": "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG OR cat:cs.CL OR cat:cs.MA OR cat:cs.HC OR cat:stat.ML OR cat:eess.SY OR cat:eess.IV) AND submittedDate:[202611160000 TO 202611162359]",
-  "total_fetched": 655,
+  "total_fetched": 664,
   "total_matched": 73,
   "papers": [
     {
@@ -315,6 +315,48 @@
       }
     },
     {
+      "title": "Winning Solution to UrbanTwin Sim2Real LiDAR Challenge 2026 (V2X-Real Track): Site-Calibrated Synthetic Data and Multi-Detector Fusion",
+      "authors": [
+        "Arnav Kumar",
+        "Brijesh Soni"
+      ],
+      "summary": "This work summarizes a winning solution for the UrbanTwin Sim2Real LiDAR Challenge (V2X-Real track) at the IEEE BigData Cup 2026. The primary objective is to train 3D detectors for vehicles, pedestrians, and trucks using only synthetic roadside LiDAR data, and to generate synthetic scans that are sufficiently realistic to be indistinguishable from real ones. A CARLA-based pipeline was developed and calibrated to the fixed sensor site, accurately modeling the range image, including no-return beams, based on unlabeled real development scans. A combined inference detector, utilizing multiple 3D detectors (VoxelNeXt, PV-RCNN, and SECOND) trained exclusively on synthetic data, was also proposed. Each scan was aligned to the synthetic ground plane and processed through the detectors at multiple ground heights. The resulting bounding boxes were fused using bird's-eye view (BEV) clustering, followed by class-specific post-processing to refine heading and box size and to filter low-confidence detections. The final submission tied for first place with a combined score of 0.8947. The ablation study demonstrated that per-scan ground leveling more than doubled the real-scan mAP, while fusing boxes across different heights and models further improved performance. The proposed work narrows the gap between synthetic and real LiDAR data for 3D object detection in urban V2X scenarios. Reproducible code is available at https://github.com/Arnavvvkumar/IEEE-BigData-2026-Cup---V2X-Track",
+      "published": "2026-11-16T02:50:28Z",
+      "updated": "2026-11-21T14:46:30Z",
+      "arxiv_id": "2611.20431v2",
+      "abs_url": "http://arxiv.org/abs/2611.20431v2",
+      "pdf_url": "https://arxiv.org/pdf/2611.20431v2",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "eess.SP"
+      ],
+      "comment": "",
+      "code_url": "https://github.com/Arnavvvkumar/IEEE-BigData-2026-Cup---V2X-Track",
+      "has_code": true,
+      "labels": [
+        "开源",
+        "世界模型与仿真",
+        "感知与3D理解"
+      ],
+      "topic": "世界模型与仿真",
+      "score": 5,
+      "anchor_terms": [
+        "sim2real"
+      ],
+      "matched_terms": [
+        "sim2real"
+      ],
+      "title_zh": "Winning Solution to UrbanTwin Sim2Real LiDAR Challenge 2026 (V2X-Real Track): Site-Calibrated Synthetic Data and Multi-Detector Fusion",
+      "summary_zh": "This work summarizes a winning solution for the UrbanTwin Sim2Real LiDAR Challenge (V2X-Real track) at the IEEE BigData Cup 2026. The primary objective is to train 3D detectors for vehicles, pedestrians, and trucks using only synthetic roadside LiDAR data, and to generate synthetic scans that are sufficiently realistic to be indistinguishable from real ones. A CARLA-based pipeline was developed and calibrated to the fixed sensor site, accurately modeling the range image, including no-return beams, based on unlabeled real development scans. A combined inference detector, utilizing multiple 3D detectors (VoxelNeXt, PV-RCNN, and SECOND) trained exclusively on synthetic data, was also proposed. Each scan was aligned to the synthetic ground plane and processed through the detectors at multiple ground heights. The resulting bounding boxes were fused using bird's-eye view (BEV) clustering, followed by class-specific post-processing to refine heading and box size and to filter low-confidence detections. The final submission tied for first place with a combined score of 0.8947. The ablation study demonstrated that per-scan ground leveling more than doubled the real-scan mAP, while fusing boxes across different heights and models further improved performance. The proposed work narrows the gap between synthetic and real LiDAR data for 3D object detection in urban V2X scenarios. Reproducible code is available at https://github.com/Arnavvvkumar/IEEE-BigData-2026-Cup---V2X-Track",
+      "translation": {
+        "language": "zh-CN",
+        "provider": "google",
+        "model": "deep-translator/google",
+        "generated_at": "2026-11-24T07:20:20.268948+00:00"
+      }
+    },
+    {
       "title": "DreamFAR: Real-Time and Long-Horizon Interaction with Diverse Objects",
       "authors": [
         "Yiming Dou",
@@ -464,7 +506,8 @@
     {
       "title": "ALOHA Lightning: Learning Fast and Precise Manipulation",
       "authors": [
-        "John Hua Yao. Qi Wu",
+        "John Hua Yao",
+        "Qi Wu",
         "Yihuai Gao",
         "Chelsea Finn",
         "Zipeng Fu"
@@ -1226,10 +1269,10 @@
       ],
       "summary": "World-action models (WAMs) couple action generation with predictions of future states. An initial action chunk may be flawed. A future prediction that is not conditioned on the chunk is identical for every proposal and thus carries no proposal-specific signal, limiting its usefulness for refinement before execution. We introduce ThinkWAM, a latent WAM that establishes bidirectional feedback before execution through a proposal-rethink-refine loop: the policy first proposes a complete action chunk, the proposal corrects multi-horizon future latents through a learned residual, and the corrected latents are injected into a second pass of the same action head, which generates the executable chunk. An affordance-guided observation-action memory and a near-fine, far-coarse multi-horizon prediction scheme, both motivated by predictive coding, support this loop, and all prediction stays in latent space. ThinkWAM achieves 98.70% success on LIBERO, 84.76% on LIBERO-Plus without OOD fine-tuning, 85.75%/65.85% on RoboTwin 2.0 Clean/Random, and 65.17% on RoboCasa24. ThinkWAM achieves 64.4% mean success across three real-world OOD conditions. The mean two-pass inference latency per action chunk is 153.48 ms on LIBERO, 164.61 ms on RoboTwin, and 101.2 ms on the Galaxea A1Z. Ablations show complementary gains from rethinking and affordance guidance. Diagnostics indicate that proposal-conditioned corrections change both predicted futures and action trajectories, showing that the corrected future representations improve the final action.",
       "published": "2026-11-16T15:30:51Z",
-      "updated": "2026-11-19T08:07:42Z",
-      "arxiv_id": "2611.21258v3",
-      "abs_url": "http://arxiv.org/abs/2611.21258v3",
-      "pdf_url": "https://arxiv.org/pdf/2611.21258v3",
+      "updated": "2026-11-21T07:43:11Z",
+      "arxiv_id": "2611.21258v4",
+      "abs_url": "http://arxiv.org/abs/2611.21258v4",
+      "pdf_url": "https://arxiv.org/pdf/2611.21258v4",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -1260,7 +1303,7 @@
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-11-20T04:38:26.308942+00:00"
+        "generated_at": "2026-11-24T07:20:20.268948+00:00"
       }
     },
     {
@@ -1518,12 +1561,12 @@
         "Wonjib Kim",
         "Dongchul Park"
       ],
-      "summary": "Robots that work alongside people should be able to use what they have seen when new requests arise. The same experience may later support identifying an object or returning it to its original location, although these uses were unknown during observation. ReuseMem learns to use one visual memory for multiple later manipulation goals. It records visual features independently of future goals, retrieves complementary evidence for each request, and combines it with the current scene through a lightweight action interface. Retrieval is supervised by how well candidate evidence supports expert-action prediction across different current states, linking memory selection to its use in manipulation. Repeated visual features are stored once, and memory computations that remain unchanged during action generation are reused. Experiments on four simulation tasks and two physical scenarios demonstrate reuse of a common recording across different requests. With matched action adaptation, ReuseMem improves joint goal completion on the benchmark tasks by 24.5 percentage points over uniform memory. These findings show that one memory can support multiple later manipulation goals as the scene changes.",
+      "summary": "Robots that work alongside people should be able to use what they have seen when new requests arise. The same experience may later support identifying an object or returning it to its original location, although these uses were unknown during observation. ReuseMem learns to use one visual memory for multiple later manipulation goals. It records visual features independently of future goals, retrieves complementary evidence for each request, and combines it with the current scene through a lightweight action interface. Retrieval is supervised by how well candidate evidence supports expert-action prediction across different current states, linking memory selection to its use in manipulation. Repeated visual features are stored once, and memory computations that remain unchanged during action generation are reused. Experiments on four simulation tasks and two physical scenarios demonstrate reuse of a common recording across different requests. With matched action adaptation, ReuseMem improves joint goal completion on the benchmark tasks by 24.5 percentage points over uniform memory. These findings show that one memory can support multiple later manipulation goals as the scene changes. Project Page: https://yoondol.github.io/reusemem/",
       "published": "2026-11-16T13:59:05Z",
-      "updated": "2026-11-16T13:59:05Z",
-      "arxiv_id": "2611.21115v1",
-      "abs_url": "http://arxiv.org/abs/2611.21115v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.21115v1",
+      "updated": "2026-11-22T09:34:34Z",
+      "arxiv_id": "2611.21115v2",
+      "abs_url": "http://arxiv.org/abs/2611.21115v2",
+      "pdf_url": "https://arxiv.org/pdf/2611.21115v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO"
@@ -1550,12 +1593,12 @@
         "robot manipulation"
       ],
       "title_zh": "ReuseMem: One Memory, Multiple Goals in Robot Manipulation",
-      "summary_zh": "Robots that work alongside people should be able to use what they have seen when new requests arise. The same experience may later support identifying an object or returning it to its original location, although these uses were unknown during observation. ReuseMem learns to use one visual memory for multiple later manipulation goals. It records visual features independently of future goals, retrieves complementary evidence for each request, and combines it with the current scene through a lightweight action interface. Retrieval is supervised by how well candidate evidence supports expert-action prediction across different current states, linking memory selection to its use in manipulation. Repeated visual features are stored once, and memory computations that remain unchanged during action generation are reused. Experiments on four simulation tasks and two physical scenarios demonstrate reuse of a common recording across different requests. With matched action adaptation, ReuseMem improves joint goal completion on the benchmark tasks by 24.5 percentage points over uniform memory. These findings show that one memory can support multiple later manipulation goals as the scene changes.",
+      "summary_zh": "Robots that work alongside people should be able to use what they have seen when new requests arise. The same experience may later support identifying an object or returning it to its original location, although these uses were unknown during observation. ReuseMem learns to use one visual memory for multiple later manipulation goals. It records visual features independently of future goals, retrieves complementary evidence for each request, and combines it with the current scene through a lightweight action interface. Retrieval is supervised by how well candidate evidence supports expert-action prediction across different current states, linking memory selection to its use in manipulation. Repeated visual features are stored once, and memory computations that remain unchanged during action generation are reused. Experiments on four simulation tasks and two physical scenarios demonstrate reuse of a common recording across different requests. With matched action adaptation, ReuseMem improves joint goal completion on the benchmark tasks by 24.5 percentage points over uniform memory. These findings show that one memory can support multiple later manipulation goals as the scene changes. Project Page: https://yoondol.github.io/reusemem/",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-11-18T04:56:36.197655+00:00"
+        "generated_at": "2026-11-24T07:20:20.268948+00:00"
       }
     },
     {
@@ -3500,47 +3543,6 @@
       }
     },
     {
-      "title": "UrbanTwin Sim2Real LiDAR Challenge 2026: Site-Calibrated Synthetic Data and Multi-Detector Fusion for Roadside 3D Detection",
-      "authors": [
-        "Arnav Kumar",
-        "Brijesh Soni"
-      ],
-      "summary": "This report summarizes the work submitted by team arnav007 (submission ID 1054222) for the UrbanTwin Sim2Real LiDAR Challenge (V2X-Real track) at the IEEE BigData Cup 2026. The primary objective is to train 3D detectors for vehicles, pedestrians, and trucks using only synthetic roadside LiDAR data, and to generate synthetic scans that are realistic enough to be indistinguishable from real ones. A CARLA based pipeline is developed and calibrated to the fixed sensor site, accurately modeling the range image, including no-return beams, based on unlabelled real development scans. A combined inference detector, using multiple 3D detectors (VoxelNeXt, PV-RCNN, and SECOND) trained exclusively on synthetic data, is also proposed. Each scan is aligned to the synthetic ground plane and processed through the detectors at multiple ground heights. The resulting bounding boxes are fused using bird's-eye view (BEV) clustering, followed by class-specific post-processing to refine heading, box size, and filter low-confidence detections. The final submission achieved a combined score of 0.8947. The ablation study shows that per-scan ground leveling more than doubled the real-scan mAP, while fusing boxes across different heights and models further improved performance.",
-      "published": "2026-11-16T02:50:28Z",
-      "updated": "2026-11-16T02:50:28Z",
-      "arxiv_id": "2611.20431v1",
-      "abs_url": "http://arxiv.org/abs/2611.20431v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.20431v1",
-      "primary_category": "cs.CV",
-      "categories": [
-        "cs.CV",
-        "eess.SP"
-      ],
-      "comment": "",
-      "code_url": "",
-      "has_code": false,
-      "labels": [
-        "世界模型与仿真",
-        "感知与3D理解"
-      ],
-      "topic": "世界模型与仿真",
-      "score": 5,
-      "anchor_terms": [
-        "sim2real"
-      ],
-      "matched_terms": [
-        "sim2real"
-      ],
-      "title_zh": "UrbanTwin Sim2Real LiDAR Challenge 2026: Site-Calibrated Synthetic Data and Multi-Detector Fusion for Roadside 3D Detection",
-      "summary_zh": "This report summarizes the work submitted by team arnav007 (submission ID 1054222) for the UrbanTwin Sim2Real LiDAR Challenge (V2X-Real track) at the IEEE BigData Cup 2026. The primary objective is to train 3D detectors for vehicles, pedestrians, and trucks using only synthetic roadside LiDAR data, and to generate synthetic scans that are realistic enough to be indistinguishable from real ones. A CARLA based pipeline is developed and calibrated to the fixed sensor site, accurately modeling the range image, including no-return beams, based on unlabelled real development scans. A combined inference detector, using multiple 3D detectors (VoxelNeXt, PV-RCNN, and SECOND) trained exclusively on synthetic data, is also proposed. Each scan is aligned to the synthetic ground plane and processed through the detectors at multiple ground heights. The resulting bounding boxes are fused using bird's-eye view (BEV) clustering, followed by class-specific post-processing to refine heading, box size, and filter low-confidence detections. The final submission achieved a combined score of 0.8947. The ablation study shows that per-scan ground leveling more than doubled the real-scan mAP, while fusing boxes across different heights and models further improved performance.",
-      "translation": {
-        "language": "zh-CN",
-        "provider": "google",
-        "model": "deep-translator/google",
-        "generated_at": "2026-11-17T05:32:28.356100+00:00"
-      }
-    },
-    {
       "title": "Fuzzy Explainable Continual Hierarchical Reinforcement Learning for Robotic Navigation",
       "authors": [
         "Peng Qin",
@@ -3594,12 +3596,12 @@
         "Abulikemu Abuduweili",
         "Changliu Liu"
       ],
-      "summary": "A Koopman controller can stabilize its learned latent-space linear model yet fail to stabilize the nonlinear plant. The learned model propagates predictions in latent space, while the deployed controller repeatedly re-encodes the measured physical state. We show that nominal closed-loop stability transfers to the nonlinear plant when the learned and true closed-loop dynamics agree to first order on the embedding's tangent space at the target. We derive a robustness margin for approximate matching and show that a stable open-loop latent model cannot exactly match an unstable equilibrium. We introduce Tangent-Invariant Koopman (TIK), which estimates a local plant linearization from offline transitions and enforces first-order matching to this estimate. TIK recovers the fitted LQR gain at the target, while a bilinear predictor captures state-dependent actuation during large maneuvers. Across four simulated unstable benchmarks, all 40 Standard Koopman controllers have stable latent closed loops, but their deployed nonlinear systems are locally unstable. In contrast, all 40 TIK controllers locally stabilize their respective nonlinear plants. An offline stability test using empirical curvature estimates identifies stable TIK controllers on two cart-pole systems, but is inconclusive under high noise. Under explicit model-error and curvature bounds, an invariant terminal set guarantees constraint satisfaction after entry under local feedback. TIK achieves 88\\% constrained cart-pole swing-up success with a 0.25 ms planning budget and controls simulated seven-joint arms within 1-5 ms per step.",
+      "summary": "Koopman operator theory lets linear controllers handle nonlinear robots: an encoder lifts the state into a latent space with approximately linear dynamics, on which LQR or MPC is designed. A controller that stabilizes the latent model, however, may fail to stabilize the real nonlinear system. Stability is analyzed on latent rollouts, where the linear model propagates its own predictions, but on the robot the nonlinear dynamics produce each next state, which the controller re-encodes at every step. We prove that latent stability transfers to the robot when the latent model reproduces the true closed-loop dynamics to first order on the embedding's tangent space at the target. We also derive a margin for approximate matching and show that an open-loop stable latent model cannot match the plant's linearization at an unstable equilibrium. We propose Tangent-Invariant Koopman (TIK), which estimates a local plant linearization from offline transitions and builds first-order matching to it into the Koopman matrices. At the target, TIK's feedback gain equals the LQR gain of this linearization, and a bilinear input term models state-dependent actuation during large maneuvers. On four simulated open-loop unstable benchmarks, all 40 Standard Koopman controllers stabilize their latent models but are locally unstable on the real system, whereas all 40 TIK controllers stabilize it. An offline stability test with empirical curvature estimates identifies the stable TIK controllers on two cart-pole systems but is inconclusive under high noise. Given explicit model-error and curvature bounds, an invariant terminal set guarantees constraint satisfaction under local feedback after entry. TIK reaches 88% success in constrained cart-pole swing-up with a 0.25 ms planning budget and controls simulated seven-joint arms within 1~5 ms per step.",
       "published": "2026-11-16T02:02:12Z",
-      "updated": "2026-11-16T02:02:12Z",
-      "arxiv_id": "2611.20402v1",
-      "abs_url": "http://arxiv.org/abs/2611.20402v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.20402v1",
+      "updated": "2026-11-23T17:15:10Z",
+      "arxiv_id": "2611.20402v2",
+      "abs_url": "http://arxiv.org/abs/2611.20402v2",
+      "pdf_url": "https://arxiv.org/pdf/2611.20402v2",
       "primary_category": "cs.RO",
       "categories": [
         "cs.RO",
@@ -3622,12 +3624,12 @@
         "robot"
       ],
       "title_zh": "Making Koopman Control Guarantees Hold on Robots",
-      "summary_zh": "A Koopman controller can stabilize its learned latent-space linear model yet fail to stabilize the nonlinear plant. The learned model propagates predictions in latent space, while the deployed controller repeatedly re-encodes the measured physical state. We show that nominal closed-loop stability transfers to the nonlinear plant when the learned and true closed-loop dynamics agree to first order on the embedding's tangent space at the target. We derive a robustness margin for approximate matching and show that a stable open-loop latent model cannot exactly match an unstable equilibrium. We introduce Tangent-Invariant Koopman (TIK), which estimates a local plant linearization from offline transitions and enforces first-order matching to this estimate. TIK recovers the fitted LQR gain at the target, while a bilinear predictor captures state-dependent actuation during large maneuvers. Across four simulated unstable benchmarks, all 40 Standard Koopman controllers have stable latent closed loops, but their deployed nonlinear systems are locally unstable. In contrast, all 40 TIK controllers locally stabilize their respective nonlinear plants. An offline stability test using empirical curvature estimates identifies stable TIK controllers on two cart-pole systems, but is inconclusive under high noise. Under explicit model-error and curvature bounds, an invariant terminal set guarantees constraint satisfaction after entry under local feedback. TIK achieves 88\\% constrained cart-pole swing-up success with a 0.25 ms planning budget and controls simulated seven-joint arms within 1-5 ms per step.",
+      "summary_zh": "Koopman operator theory lets linear controllers handle nonlinear robots: an encoder lifts the state into a latent space with approximately linear dynamics, on which LQR or MPC is designed. A controller that stabilizes the latent model, however, may fail to stabilize the real nonlinear system. Stability is analyzed on latent rollouts, where the linear model propagates its own predictions, but on the robot the nonlinear dynamics produce each next state, which the controller re-encodes at every step. We prove that latent stability transfers to the robot when the latent model reproduces the true closed-loop dynamics to first order on the embedding's tangent space at the target. We also derive a margin for approximate matching and show that an open-loop stable latent model cannot match the plant's linearization at an unstable equilibrium. We propose Tangent-Invariant Koopman (TIK), which estimates a local plant linearization from offline transitions and builds first-order matching to it into the Koopman matrices. At the target, TIK's feedback gain equals the LQR gain of this linearization, and a bilinear input term models state-dependent actuation during large maneuvers. On four simulated open-loop unstable benchmarks, all 40 Standard Koopman controllers stabilize their latent models but are locally unstable on the real system, whereas all 40 TIK controllers stabilize it. An offline stability test with empirical curvature estimates identifies the stable TIK controllers on two cart-pole systems but is inconclusive under high noise. Given explicit model-error and curvature bounds, an invariant terminal set guarantees constraint satisfaction under local feedback after entry. TIK reaches 88% success in constrained cart-pole swing-up with a 0.25 ms planning budget and controls simulated seven-joint arms within 1~5 ms per step.",
       "translation": {
         "language": "zh-CN",
         "provider": "google",
         "model": "deep-translator/google",
-        "generated_at": "2026-11-17T05:32:28.356100+00:00"
+        "generated_at": "2026-11-24T07:20:20.268948+00:00"
       }
     },
     {
